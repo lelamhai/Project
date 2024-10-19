@@ -1,6 +1,6 @@
-#include "Splash.h"
-#include "Login.h"
-#include "Manage.h"
+#include "PageSplash.h"
+#include "PageLogin.h"
+#include "PageManage.h"
 
 #include <iostream>
 using namespace std;
