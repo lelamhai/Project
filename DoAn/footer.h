@@ -4,6 +4,5 @@
 using namespace std;
 void Footer()
 {
-	setRedText();
 	cout << "footer"<<endl;
 }

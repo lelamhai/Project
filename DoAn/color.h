@@ -55,7 +55,7 @@ void setColorText(int x)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), x);
 }
 
-void BackgroundColor()
+void setColorBT()
 {
-	system("COLOR 7F");
+	system("COLOR 9F");
 }

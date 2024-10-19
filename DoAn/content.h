@@ -4,6 +4,5 @@
 using namespace std;
 void Content()
 {
-	setGreenText();
 	cout << "Content" << endl;
 }

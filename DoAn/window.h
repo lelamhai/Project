@@ -59,3 +59,40 @@ void clrscr()
 	csbiInfo.dwCursorPosition.Y = 0;
 	SetConsoleCursorPosition(hConsoleOut, csbiInfo.dwCursorPosition);
 }
+
+void setSizeTextDefault(int size)
+{
+	CONSOLE_FONT_INFOEX cfi;
+	cfi.cbSize = sizeof(cfi);
+	cfi.nFont = 0;
+	cfi.dwFontSize.X = 0;
+	cfi.dwFontSize.Y = size;
+	cfi.FontFamily = FF_DONTCARE;
+	cfi.FontWeight = FW_NORMAL;
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
+
+int getConsoleWidth() {
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	int width;
+	if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
+		width = csbi.srWindow.Right - csbi.srWindow.Left;// +1;
+	}
+	else {
+		width = -1;
+	}
+	return width;
+}
+
+int getConsoleHeight() {
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	int height;
+
+	if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
+		height = csbi.srWindow.Bottom - csbi.srWindow.Top;// +1;
+	}
+	else {
+		height = -1;
+	}
+	return height;
+}

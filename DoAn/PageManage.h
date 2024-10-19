@@ -6,8 +6,9 @@
 
 void Manage()
 {
+	setColorBT();
 	Header();
 	Sidebar();
-	Content();
-	Footer();
+	/*Content();
+	Footer();*/
 }

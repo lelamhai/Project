@@ -1,9 +1,20 @@
 #pragma once
 #include "color.h"
+#include "draw.h"
+#include "window.h"
 #include <iostream>
 using namespace std;
+
 void Header()
 {
-	setPinkText();
-	cout << "header" << endl;
+	int width = getConsoleWidth();
+	int height = getConsoleHeight();
+	lineX(0, 6, width-1);
+
+	int y = 0;
+	gotoXY(0, y++); cout << "\t\t\t\t\t ____  _   _    _    _   _   __  __ _____ __  __   _____ _   _ ___   _____ ____      _    ____   _   _  ____ _   _ ___ _____ __  __ ";
+	gotoXY(0, y++); cout << "\t\t\t\t\t|  _ \\| | | |  / \\  | \\ | | |  \\/  | ____|  \\/  | |_   _| | | |_ _| |_   _|  _ \\    / \\  / ___| | \\ | |/ ___| | | |_ _| ____|  \\/  |";
+	gotoXY(0, y++); cout << "\t\t\t\t\t| |_) | |_| | / _ \\ |  \\| | | |\\/| |  _| | |\\/| |   | | | |_| || |    | | | |_) |  / _ \\| |     |  \\| | |  _| |_| || ||  _| | |\\/| |";
+	gotoXY(0, y++); cout << "\t\t\t\t\t|  __/|  _  |/ ___ \\| |\\  | | |  | | |___| |  | |   | | |  _  || |    | | |  _ <  / ___ \\ |___  | |\\  | |_| |  _  || || |___| |  | |";
+	gotoXY(0, y++); cout << "\t\t\t\t\t|_|   |_| |_/_/   \\_\\_| \\_| |_|  |_|_____|_|  |_|   |_| |_| |_|___|   |_| |_| \\_\\/_/   \\_\\____| |_| \\_|\\____|_| |_|___|_____|_|  |_|";
 }
