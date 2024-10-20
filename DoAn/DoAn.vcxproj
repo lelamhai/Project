@@ -130,18 +130,20 @@
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
     <ClCompile Include="draw.cpp" />
+    <ClCompile Include="footer.cpp" />
+    <ClCompile Include="sidebar.cpp" />
+    <ClCompile Include="header.cpp" />
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="Loading.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ManageLop.cpp" />
+    <ClCompile Include="ManageClass.cpp" />
     <ClCompile Include="windows.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="configApp.h" />
-    <ClInclude Include="ManageLop.h" />
+    <ClInclude Include="ManageClass.h" />
     <ClInclude Include="mycolor.h" />
-    <ClInclude Include="Content.h" />
     <ClInclude Include="mydraw.h" />
     <ClInclude Include="Footer.h" />
     <ClInclude Include="Header.h" />

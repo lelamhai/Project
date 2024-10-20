@@ -28,6 +28,9 @@
     <Filter Include="Header Files\pagetemplate">
       <UniqueIdentifier>{5537b8c0-6080-4dc8-9d28-a98dc63b40fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PageTemplate">
+      <UniqueIdentifier>{2673cbee-cc0e-4c4e-b7c7-f8c0edc5c966}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -54,8 +57,17 @@
     <ClCompile Include="configApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ManageLop.cpp">
+    <ClCompile Include="ManageClass.cpp">
       <Filter>Source Files\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="header.cpp">
+      <Filter>Source Files\PageTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="sidebar.cpp">
+      <Filter>Source Files\PageTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="footer.cpp">
+      <Filter>Source Files\PageTemplate</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +92,7 @@
     <ClInclude Include="PageTemplate.h">
       <Filter>Header Files\pagetemplate</Filter>
     </ClInclude>
-    <ClInclude Include="ManageLop.h">
+    <ClInclude Include="ManageClass.h">
       <Filter>Header Files\pages</Filter>
     </ClInclude>
     <ClInclude Include="Header.h">
@@ -90,9 +102,6 @@
       <Filter>Header Files\pagetemplate</Filter>
     </ClInclude>
     <ClInclude Include="Footer.h">
-      <Filter>Header Files\pagetemplate</Filter>
-    </ClInclude>
-    <ClInclude Include="Content.h">
       <Filter>Header Files\pagetemplate</Filter>
     </ClInclude>
     <ClInclude Include="configApp.h">

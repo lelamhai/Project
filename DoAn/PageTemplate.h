@@ -2,20 +2,11 @@
 #include "Header.h"
 #include "Sidebar.h"
 #include "Footer.h"
-
 #include <iostream>
 using namespace std;
 
 class PageTemplate
 {
-public:
-    void renderPage() 
-    {
-        header();
-        sidebar();
-        content();
-        footer();
-    }
 protected:
     virtual void header() 
     {
@@ -25,10 +16,10 @@ protected:
     {
         Sidebar();
     }
-
-    virtual void content() 
+    
+    virtual void content()
     {
-        content();
+        cout << "content";
     }
 
     virtual void footer() 

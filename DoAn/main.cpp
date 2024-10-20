@@ -1,6 +1,6 @@
 #include "configApp.h"
-#include "ManageLop.h"
-
+#include "ManageClass.h"
+#include <conio.h>
 #include <iostream>
 using namespace std;
 
@@ -10,9 +10,11 @@ int main()
 	ConfigApp config;
 	config.init();
 
-	ManageLop lop;
-	lop.renderPage();
+	ManageClassroom* lop = new ManageClassroom();
+	lop->mainClassroom();
+	delete lop;
 
+	_getch();
 	system("pause");
 	return 0;
 }
