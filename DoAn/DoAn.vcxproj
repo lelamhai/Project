@@ -128,14 +128,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="color.cpp" />
+    <ClCompile Include="configApp.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="Loading.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ManageLop.cpp" />
     <ClCompile Include="windows.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="configApp.h" />
+    <ClInclude Include="ManageLop.h" />
     <ClInclude Include="mycolor.h" />
     <ClInclude Include="Content.h" />
     <ClInclude Include="mydraw.h" />
@@ -144,10 +148,8 @@
     <ClInclude Include="mykeyboard.h" />
     <ClInclude Include="Loading.h" />
     <ClInclude Include="Login.h" />
-    <ClInclude Include="PageLogin.h" />
-    <ClInclude Include="Frame.h" />
+    <ClInclude Include="PageTemplate.h" />
     <ClInclude Include="Sidebar.h" />
-    <ClInclude Include="PageSplash.h" />
     <ClInclude Include="mywindows.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

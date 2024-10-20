@@ -25,15 +25,12 @@
     <Filter Include="Header Files\pages">
       <UniqueIdentifier>{c5f52a23-a6fa-4a81-b7c7-34ab2016b049}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\pagetemplate">
+      <UniqueIdentifier>{5537b8c0-6080-4dc8-9d28-a98dc63b40fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Loading.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="color.cpp">
@@ -48,29 +45,20 @@
     <ClCompile Include="windows.cpp">
       <Filter>Source Files\Systems</Filter>
     </ClCompile>
+    <ClCompile Include="Loading.cpp">
+      <Filter>Source Files\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="Login.cpp">
+      <Filter>Source Files\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="configApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ManageLop.cpp">
+      <Filter>Source Files\Pages</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Footer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PageLogin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PageSplash.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Frame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Sidebar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Content.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Loading.h">
       <Filter>Header Files\pages</Filter>
     </ClInclude>
@@ -88,6 +76,27 @@
     </ClInclude>
     <ClInclude Include="mywindows.h">
       <Filter>Header Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="PageTemplate.h">
+      <Filter>Header Files\pagetemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="ManageLop.h">
+      <Filter>Header Files\pages</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Header Files\pagetemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="Sidebar.h">
+      <Filter>Header Files\pagetemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="Footer.h">
+      <Filter>Header Files\pagetemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="Content.h">
+      <Filter>Header Files\pagetemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="configApp.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
