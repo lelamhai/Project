@@ -127,7 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="color.cpp" />
+    <ClCompile Include="draw.cpp" />
+    <ClCompile Include="keyboard.cpp" />
+    <ClCompile Include="Loading.cpp" />
+    <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="windows.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mycolor.h" />
+    <ClInclude Include="Content.h" />
+    <ClInclude Include="mydraw.h" />
+    <ClInclude Include="Footer.h" />
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="mykeyboard.h" />
+    <ClInclude Include="Loading.h" />
+    <ClInclude Include="Login.h" />
+    <ClInclude Include="PageLogin.h" />
+    <ClInclude Include="Frame.h" />
+    <ClInclude Include="Sidebar.h" />
+    <ClInclude Include="PageSplash.h" />
+    <ClInclude Include="mywindows.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
