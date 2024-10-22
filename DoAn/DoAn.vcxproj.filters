@@ -48,16 +48,13 @@
     <ClCompile Include="windows.cpp">
       <Filter>Source Files\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="Loading.cpp">
+    <ClCompile Include="loading.cpp">
       <Filter>Source Files\Pages</Filter>
     </ClCompile>
-    <ClCompile Include="Login.cpp">
+    <ClCompile Include="login.cpp">
       <Filter>Source Files\Pages</Filter>
     </ClCompile>
-    <ClCompile Include="configApp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ManageClass.cpp">
+    <ClCompile Include="manageClass.cpp">
       <Filter>Source Files\Pages</Filter>
     </ClCompile>
     <ClCompile Include="header.cpp">
@@ -68,6 +65,12 @@
     </ClCompile>
     <ClCompile Include="footer.cpp">
       <Filter>Source Files\PageTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="configApp.cpp">
+      <Filter>Source Files\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="about.cpp">
+      <Filter>Source Files\Pages</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,7 +92,7 @@
     <ClInclude Include="mywindows.h">
       <Filter>Header Files\systems</Filter>
     </ClInclude>
-    <ClInclude Include="PageTemplate.h">
+    <ClInclude Include="Template.h">
       <Filter>Header Files\pagetemplate</Filter>
     </ClInclude>
     <ClInclude Include="ManageClass.h">
@@ -105,7 +108,10 @@
       <Filter>Header Files\pagetemplate</Filter>
     </ClInclude>
     <ClInclude Include="configApp.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="About.h">
+      <Filter>Header Files\pages</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

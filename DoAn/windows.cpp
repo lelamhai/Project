@@ -98,3 +98,9 @@ void clrscr()
 	csbiInfo.dwCursorPosition.Y = 0;
 	SetConsoleCursorPosition(hConsoleOut, csbiInfo.dwCursorPosition);
 }
+
+int getCenterX(int widthBig, int widthSmall)
+{
+	int x = widthSmall / 2;
+	return widthBig / 2 - x;
+}

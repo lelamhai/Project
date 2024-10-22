@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="about.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
     <ClCompile Include="draw.cpp" />
@@ -134,13 +135,14 @@
     <ClCompile Include="sidebar.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="keyboard.cpp" />
-    <ClCompile Include="Loading.cpp" />
-    <ClCompile Include="Login.cpp" />
+    <ClCompile Include="loading.cpp" />
+    <ClCompile Include="login.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ManageClass.cpp" />
+    <ClCompile Include="manageClass.cpp" />
     <ClCompile Include="windows.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="About.h" />
     <ClInclude Include="configApp.h" />
     <ClInclude Include="ManageClass.h" />
     <ClInclude Include="mycolor.h" />
@@ -150,7 +152,7 @@
     <ClInclude Include="mykeyboard.h" />
     <ClInclude Include="Loading.h" />
     <ClInclude Include="Login.h" />
-    <ClInclude Include="PageTemplate.h" />
+    <ClInclude Include="Template.h" />
     <ClInclude Include="Sidebar.h" />
     <ClInclude Include="mywindows.h" />
   </ItemGroup>

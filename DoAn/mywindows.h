@@ -7,3 +7,4 @@ void setSizeTextDefault(int size);
 int getConsoleWidth();
 int getConsoleHeight();
 void clrscr();
+int getCenterX(int widthBig, int widthSmall);

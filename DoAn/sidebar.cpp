@@ -9,7 +9,7 @@ void Sidebar()
 {
 	int height = getConsoleHeight();
 
-	lineY(30, 7, height - 14);
-	gotoXY(30, 7);
+	lineY(30, 8, height - 8*2);
+	gotoXY(30, 8);
 	cout << char(194);
 }

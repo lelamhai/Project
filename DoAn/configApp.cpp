@@ -11,7 +11,6 @@ void ConfigApp::init()
 
 ConfigApp::ConfigApp()
 {
-
 }
 
 ConfigApp::~ConfigApp()

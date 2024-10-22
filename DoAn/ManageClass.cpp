@@ -11,7 +11,7 @@ ManageClassroom::~ManageClassroom()
 {
 }
 
-void ManageClassroom::mainClassroom()
+void ManageClassroom::main()
 {
 	//cout << "main";
 }

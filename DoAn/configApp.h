@@ -2,6 +2,9 @@
 #include "mycolor.h"
 #include "mywindows.h"
 #include "mykeyboard.h"
+
+
+
 class ConfigApp
 {
 public:

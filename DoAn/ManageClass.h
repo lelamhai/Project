@@ -1,10 +1,10 @@
 #pragma once
-#include "PageTemplate.h"
+#include "Template.h"
 
 class ManageClassroom : public PageTemplate
 {
 public:
-	void mainClassroom();
+	void main();
 	ManageClassroom();
 	~ManageClassroom();
 };

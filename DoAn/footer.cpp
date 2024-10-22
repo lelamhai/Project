@@ -10,8 +10,8 @@ void Footer()
 {
 	int width = getConsoleWidth();
 	int height = getConsoleHeight();
-	lineX(0, height - 7, width);
+	lineX(0, height - 8, width);
 
-	gotoXY(30, height-7);
+	gotoXY(30, height-8);
 	cout << char(193);
 }
