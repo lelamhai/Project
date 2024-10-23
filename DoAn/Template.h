@@ -8,23 +8,22 @@ using namespace std;
 class PageTemplate
 {
 protected:
-    virtual void header() 
+    virtual void templateHeader() 
     {
         Header();
     }
-    virtual void sidebar() 
+    virtual void templateSidebar() 
     {
         Sidebar();
     }
     
-    virtual void content()
+    virtual void templateContent()
     {
         cout << "content";
     }
 
-    virtual void footer() 
+    virtual void templateFooter() 
     {
         Footer();
     }
-
 };

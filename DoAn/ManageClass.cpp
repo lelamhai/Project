@@ -2,9 +2,9 @@
 
 ManageClassroom::ManageClassroom()
 {
-	header();
-	sidebar();
-	footer();
+	templateHeader();
+	templateSidebar();
+	templateFooter();
 }
 
 ManageClassroom::~ManageClassroom()
