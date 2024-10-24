@@ -1,4 +1,6 @@
 #pragma once
+#include <windows.h>
+
 enum ColorState {
 	ColorCode_Back			= 0,
 	ColorCode_DarkBlue		= 1,
@@ -20,3 +22,4 @@ enum ColorState {
 
 void setColorText(int ColorState);
 void setColorBT();
+void textbk(WORD color);

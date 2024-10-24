@@ -12,11 +12,10 @@ int main()
 	ConfigApp config;
 	config.init();
 	
-	About* about = new About();
-	about->main();
-	delete about;
+	Login* login = new Login();
+	login->main();
 
-	_getch();
+	//_getch();
 	system("pause");
 	return 0;
 }

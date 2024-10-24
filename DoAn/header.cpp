@@ -25,7 +25,6 @@ void DrawTitle()
 	};
 
 	int posX = getCenterX(width, 132);
-
 	int posY = 1;
 	for (int i = 0; i < 5; i++)
 	{

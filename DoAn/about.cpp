@@ -25,7 +25,7 @@ void About::main()
 
 void About::menu()
 {
-	char menu[8][50] = {"GIOI THIEU", "LOP HOC", "SINH VIEN", "MON HOC", "CAU HOI", "THI", "DANG XUAT", "THOAT"};
+	char menu[8][50] = {"Gioi Thieu", "Lop Hoc", "Sinh Vien", "Mom Hoc", "Cau Hoi", "Thi", "Dang Xuat", "Thoat"};
 		
 	int posY = 11;
 	for (int i = 0; i < 8; i++)

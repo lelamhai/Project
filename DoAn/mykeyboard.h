@@ -2,21 +2,24 @@
 enum KeyState
 {
     // Common
-    ENTER = 13,
-    ESC = 27,
+    ENTER       = 13,
+    ESC         = 27,
+    BACKSPACE   = 8,
+    SPACE       = 32,
+    TAB         = 9,
 
     //Number
-    NUM_0 = 48,
-    NUM_1 = 49,
-    NUM_2 = 50,
-    NUM_3 = 51,
-    NUM_4 = 52,
+    NUM_0   = 48,
+    NUM_1   = 49,
+    NUM_2   = 50,
+    NUM_3   = 51,
+    NUM_4   = 52,
 
     // Arrow
-    UP = 72,
-    DOWN = 80,
-    LEFT = 75,
-    RIGHT = 77,
+    A_UP    = 72,
+    A_DOWN  = 80,
+    A_LEFT  = 75,
+    A_RIGHT = 77,
 
     // System
     F1 = 59,
