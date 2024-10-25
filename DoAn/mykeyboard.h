@@ -16,10 +16,10 @@ enum KeyState
     NUM_4   = 52,
 
     // Arrow
-    A_UP    = 72,
-    A_DOWN  = 80,
-    A_LEFT  = 75,
-    A_RIGHT = 77,
+    UP    = 72,
+    DOWN  = 80,
+    LEFT  = 75,
+    RIGHT = 77,
 
     // System
     F1 = 59,

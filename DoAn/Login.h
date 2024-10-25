@@ -8,7 +8,7 @@ private:
 	{
 		USERNAME	= 0,
 		PASSWORD	= 1,
-		ENTER		= 2
+		CLICKENTER	= 2
 	};
 	SelectInput stateInput;
 
@@ -18,7 +18,7 @@ public:
 	void drawBox();
 	void drawUserName();
 	void drawPassword();
-	void message();
+	void textMessage(string mess);
 	void drawButton();
 	void formLogin();
 	void inputUserName(string& input, int x, int y);

@@ -22,7 +22,6 @@ void Login::main()
 	drawBox();
 	drawUserName();
 	drawPassword();
-	message();
 	drawButton();
 	formLogin();
 }
@@ -77,11 +76,21 @@ void Login::drawPassword()
 	box(posX + 12, 11 + 4, 30, 2);
 }
 
+void Login::drawButton()
+{
+	int width = getConsoleWidth();
+	int posX = getCenterX(width, 10);
+	box(posX, 16 + 4, 10, 2);
+
+	gotoXY(posX + 3, 17 + 4);
+	cout << "Enter";
+}
+
 void Login::formLogin()
 {
-	showCur(true);
 	string userName = "";
 	string password = "";
+	string message = "";
 	int width = getConsoleWidth();
 	int posX = getCenterX(width, 40);
 	posX = posX + 13 + 1;
@@ -94,25 +103,32 @@ void Login::formLogin()
 		switch (this->stateInput)
 		{
 		case USERNAME:
+			showCur(1);
 			posX += userName.length();
 			gotoXY(posX, posY);
 			inputUserName(userName, posX , posY);
 			posX = tempX;
 			break;
 		case PASSWORD:
+			showCur(1);
 			posX += password.length();
 			gotoXY(posX, posY+3);
 			inputPassword(password, posX, posY + 3);
 			posX = tempX;
 			break;
+
+		case CLICKENTER:
+			// Event enter
+			showCur(0);
+			textMessage("Message");
 		default:
 			break;
 		}
 	}
 }
-
 void Login::inputUserName(string &input, int x, int y)
 {
+	int len = input.length();
 	while (true)
 	{
 		char s = _getch();
@@ -120,13 +136,33 @@ void Login::inputUserName(string &input, int x, int y)
 
 		switch (key)
 		{
-		case A_UP:
+		case UP:
 			stateInput = USERNAME;
 			return;
 
-		case A_DOWN:
+		case DOWN:
 			stateInput = PASSWORD;
 			return;
+
+		/*case LEFT:
+			if (len <= 0)
+			{
+				continue;
+			}
+			--len;
+			gotoXY(--x, y);
+
+			continue;
+
+		case RIGHT:
+			if (len >= input.length())
+			{
+				continue;
+			}
+			++len;
+			gotoXY(++x, y);*/
+
+			continue;
 		default:
 			break;
 		}
@@ -143,6 +179,10 @@ void Login::inputUserName(string &input, int x, int y)
 			cout << "\b \b";
 			break;
 
+		case ENTER:
+			stateInput = CLICKENTER;
+			return;
+
 		case SPACE:
 			continue;
 
@@ -154,17 +194,22 @@ void Login::inputUserName(string &input, int x, int y)
 			{
 				continue;
 			}
-
-			input.push_back(s);
-			gotoXY(x, y);
-			cout << s;
-			x++;
+			if (s >= 'A' && s <= 'z' || s >= '0' && s <= '9')
+			{
+				input.push_back(s);
+				gotoXY(x, y);
+				cout << s;
+				x++;
+				len = input.length();
+			}
+			
 			break;
 		}
 	}
 }
 void Login::inputPassword(string& input, int x, int y)
 {
+	int len = input.length();
 	while (true)
 	{
 		char s = _getch();
@@ -172,13 +217,33 @@ void Login::inputPassword(string& input, int x, int y)
 
 		switch (key)
 		{
-		case A_UP:
+		case UP:
 			stateInput = USERNAME;
 			return;
 
-		case A_DOWN:
+		case DOWN:
 			stateInput = PASSWORD;
 			return;
+
+		/*case LEFT:
+			if (len <= 0)
+			{
+				continue;
+			}
+			--len;
+			gotoXY(--x, y);
+
+			continue;
+
+		case RIGHT:
+			if (len >= input.length())
+			{
+				continue;
+			}
+			++len;
+			gotoXY(++x, y);
+
+			continue;*/
 		default:
 			break;
 		}
@@ -196,6 +261,10 @@ void Login::inputPassword(string& input, int x, int y)
 			cout << "\b \b";
 			break;
 
+		case ENTER:
+			stateInput = CLICKENTER;
+			return;
+
 		case SPACE:
 			continue;
 
@@ -207,30 +276,34 @@ void Login::inputPassword(string& input, int x, int y)
 			{
 				continue;
 			}
-			input.push_back(s);
-			gotoXY(x, y);
-			cout << s;
-			Sleep(150);
+			if (s >= 'A' && s <= 'z' || s >= '0' && s <= '9')
+			{
+				input.push_back(s);
+				gotoXY(x, y);
+				cout << s;
+				Sleep(150);
 
-			gotoXY(x, y);
-			cout << "*";
-			x++;
+				gotoXY(x, y);
+				cout << "*";
+				x++;
+				len = input.length();
+			}
+			
 			break;
 		}
 	}
 }
-
-void Login::message()
-{
-
-}
-
-void Login::drawButton()
+void Login::textMessage(string mess)
 {
 	int width = getConsoleWidth();
-	int posX = getCenterX(width, 10);
-	box(posX, 16 + 4, 10, 2);
+	int posX = getCenterX(width, mess.length());
+	
+	gotoXY(posX - 20, 16 + 2);
+	cout << "                                        ";
 
-	gotoXY(posX+3, 17 + 4);
-	cout << "Enter";
+	gotoXY(posX, 16 + 2);
+	cout << mess;
+
+	Sleep(400);
+	stateInput = USERNAME;
 }
