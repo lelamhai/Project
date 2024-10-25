@@ -54,9 +54,6 @@
     <ClCompile Include="login.cpp">
       <Filter>Source Files\Pages</Filter>
     </ClCompile>
-    <ClCompile Include="manageClass.cpp">
-      <Filter>Source Files\Pages</Filter>
-    </ClCompile>
     <ClCompile Include="header.cpp">
       <Filter>Source Files\PageTemplate</Filter>
     </ClCompile>
@@ -69,7 +66,10 @@
     <ClCompile Include="configApp.cpp">
       <Filter>Source Files\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="about.cpp">
+    <ClCompile Include="page.cpp">
+      <Filter>Source Files\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="templateContent.cpp">
       <Filter>Source Files\Pages</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,12 +92,6 @@
     <ClInclude Include="mywindows.h">
       <Filter>Header Files\systems</Filter>
     </ClInclude>
-    <ClInclude Include="Template.h">
-      <Filter>Header Files\pagetemplate</Filter>
-    </ClInclude>
-    <ClInclude Include="ManageClass.h">
-      <Filter>Header Files\pages</Filter>
-    </ClInclude>
     <ClInclude Include="Header.h">
       <Filter>Header Files\pagetemplate</Filter>
     </ClInclude>
@@ -110,8 +104,11 @@
     <ClInclude Include="configApp.h">
       <Filter>Header Files\systems</Filter>
     </ClInclude>
-    <ClInclude Include="About.h">
+    <ClInclude Include="Page.h">
       <Filter>Header Files\pages</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateContent.h">
+      <Filter>Header Files\pagetemplate</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,13 @@
 #pragma once
-#include "Template.h"
+#include "mycolor.h"
+#include "mydraw.h"
+#include "mykeyboard.h"
+#include "mywindows.h"
+#include <conio.h>
+#include <iostream>
+using namespace std;
 
-class Login : public PageTemplate
+class Login
 {
 private:
 	enum SelectInput
@@ -25,7 +31,4 @@ public:
 	void inputPassword(string& input, int x, int y);
 	Login();
 	~Login();
-
-private:
-
 };

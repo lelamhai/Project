@@ -1,21 +1,14 @@
-#include "configApp.h"
-#include "Login.h"
-#include "About.h"
-#include "ManageClass.h"
-#include <conio.h>
+#include "Page.h"
 #include <iostream>
 using namespace std;
 
-
 int main()
 {
-	ConfigApp config;
-	config.init();
-	
-	Login* login = new Login();
-	login->main();
+	Page* p = new Page();
+	p->currentPage = LOADING;
+	p->main();
+	delete p;
 
-	//_getch();
 	system("pause");
 	return 0;
 }

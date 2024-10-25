@@ -127,24 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="about.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
+    <ClCompile Include="page.cpp" />
     <ClCompile Include="sidebar.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="loading.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="manageClass.cpp" />
+    <ClCompile Include="templateContent.cpp" />
     <ClCompile Include="windows.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="About.h" />
     <ClInclude Include="configApp.h" />
-    <ClInclude Include="ManageClass.h" />
     <ClInclude Include="mycolor.h" />
     <ClInclude Include="mydraw.h" />
     <ClInclude Include="Footer.h" />
@@ -152,9 +150,10 @@
     <ClInclude Include="mykeyboard.h" />
     <ClInclude Include="Loading.h" />
     <ClInclude Include="Login.h" />
-    <ClInclude Include="Template.h" />
+    <ClInclude Include="Page.h" />
     <ClInclude Include="Sidebar.h" />
     <ClInclude Include="mywindows.h" />
+    <ClInclude Include="TemplateContent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

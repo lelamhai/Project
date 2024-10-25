@@ -1,31 +1,21 @@
 #include "Login.h"
-#include "mycolor.h"
-#include "mydraw.h"
-#include "mykeyboard.h"
-#include "mywindows.h"
-#include <conio.h>
-#include <iostream>
-using namespace std;
-
 Login::Login()
 {
-	HeaderLogin();
+	
 }
-
 Login::~Login()
 {
 }
-
 void Login::main()
 {
 	showCur(1);
+	HeaderLogin();
 	drawBox();
 	drawUserName();
 	drawPassword();
 	drawButton();
 	formLogin();
 }
-
 void Login::HeaderLogin()
 {
 	char inTitle[5][55] = {
@@ -47,7 +37,6 @@ void Login::HeaderLogin()
 		posY++;
 	}
 }
-
 void Login::drawBox()
 {
 	int width = getConsoleWidth();
@@ -55,7 +44,6 @@ void Login::drawBox()
 
 	box(posX, 10, 70, 14);
 }
-
 void Login::drawUserName()
 {
 	int width = getConsoleWidth();
@@ -65,7 +53,6 @@ void Login::drawUserName()
 
 	box(posX+12, 12, 30, 2);
 }
-
 void Login::drawPassword()
 {
 	int width = getConsoleWidth();
@@ -75,7 +62,6 @@ void Login::drawPassword()
 
 	box(posX + 12, 11 + 4, 30, 2);
 }
-
 void Login::drawButton()
 {
 	int width = getConsoleWidth();
@@ -85,7 +71,6 @@ void Login::drawButton()
 	gotoXY(posX + 3, 17 + 4);
 	cout << "Enter";
 }
-
 void Login::formLogin()
 {
 	string userName = "";
@@ -121,6 +106,7 @@ void Login::formLogin()
 			// Event enter
 			showCur(0);
 			textMessage("Message");
+			return;
 		default:
 			break;
 		}
