@@ -31,6 +31,12 @@
     <Filter Include="Source Files\PageTemplate">
       <UniqueIdentifier>{2673cbee-cc0e-4c4e-b7c7-f8c0edc5c966}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Contents">
+      <UniqueIdentifier>{814952aa-5d1f-4298-9120-69464d51b9eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Contents">
+      <UniqueIdentifier>{5b17e81e-f78a-484a-8dd0-211c070d33d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -69,8 +75,17 @@
     <ClCompile Include="page.cpp">
       <Filter>Source Files\Pages</Filter>
     </ClCompile>
-    <ClCompile Include="templateContent.cpp">
+    <ClCompile Include="Layout.cpp">
       <Filter>Source Files\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="about.cpp">
+      <Filter>Source Files\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="content.cpp">
+      <Filter>Source Files\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="student.cpp">
+      <Filter>Source Files\Contents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,8 +122,17 @@
     <ClInclude Include="Page.h">
       <Filter>Header Files\pages</Filter>
     </ClInclude>
-    <ClInclude Include="TemplateContent.h">
+    <ClInclude Include="Layout.h">
       <Filter>Header Files\pagetemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="About.h">
+      <Filter>Header Files\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="Content.h">
+      <Filter>Header Files\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>Header Files\Contents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

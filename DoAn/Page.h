@@ -2,7 +2,7 @@
 #include "configApp.h"
 #include "Loading.h"
 #include "Login.h"
-#include "TemplateContent.h"
+#include "Layout.h"
 
 enum StatePage
 {

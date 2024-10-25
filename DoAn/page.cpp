@@ -28,7 +28,7 @@ void Page::main()
 
 	showCur(0);
 	clrscr();
-	TemplateContent* content = new TemplateContent();
-	content->main();
-	delete content;
+	Layout* layout = new Layout();
+	layout->main();
+	delete layout;
 }

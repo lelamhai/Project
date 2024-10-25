@@ -127,8 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="about.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
+    <ClCompile Include="content.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
     <ClCompile Include="page.cpp" />
@@ -138,11 +140,14 @@
     <ClCompile Include="loading.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="templateContent.cpp" />
+    <ClCompile Include="Layout.cpp" />
+    <ClCompile Include="student.cpp" />
     <ClCompile Include="windows.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="About.h" />
     <ClInclude Include="configApp.h" />
+    <ClInclude Include="Content.h" />
     <ClInclude Include="mycolor.h" />
     <ClInclude Include="mydraw.h" />
     <ClInclude Include="Footer.h" />
@@ -153,7 +158,8 @@
     <ClInclude Include="Page.h" />
     <ClInclude Include="Sidebar.h" />
     <ClInclude Include="mywindows.h" />
-    <ClInclude Include="TemplateContent.h" />
+    <ClInclude Include="Layout.h" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,14 +1,2 @@
-﻿  loading.cpp
-  login.cpp
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(92,27): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(99,27): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(117,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(189,23): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(198,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(275,23): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(285,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  main.cpp
-  page.cpp
-  templateContent.cpp
-  Generating Code...
+﻿  Layout.cpp
   DoAn.vcxproj -> C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\x64\Debug\DoAn.exe
