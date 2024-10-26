@@ -16,6 +16,7 @@ void Layout::main()
     choice = 0;
 
     thread t1(&Layout::templateMenu, this);
+    Sleep(200);
     thread t2(&Layout::templateConent, this);
 
     t1.join();
@@ -27,7 +28,7 @@ void Layout::templateMenu()
     char menu[5][50] = { "Gioi Thieu", "Lop Hoc", "Sinh Vien", "Mom Hoc", "Cau Hoi" };
     int hover = 0;
     int active = 0;
-    int posY = 11;
+    int posY = 10;
 
     while (true)
     {
@@ -42,6 +43,7 @@ void Layout::templateMenu()
             {
                 setColorText(ColorCode_Blue);
             }
+            
             gotoXY(8, posY + i * 3);
             cout << menu[i];
         }
