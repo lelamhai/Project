@@ -4,22 +4,26 @@
 #include "footer.h"
 
 #include "About.h"
+#include "Classroom.h"
 #include "Student.h"
 
 #include "mycolor.h"
 #include "mydraw.h"
 #include "mykeyboard.h"
 #include "mywindows.h"
+
+#include <thread>
+#include <mutex>
 #include <conio.h>
 #include <iostream>
 using namespace std;
 
 enum StateContent
 {
-    ABOUT       = 1,
-    CLASSROOM   = 2,
-    STUDENT     = 3,
-    SUBJECT     = 4,
+    ABOUT       = 0,
+    CLASSROOM   = 1,
+    STUDENT     = 2,
+    SUBJECT     = 3,
 };
 
 class Layout

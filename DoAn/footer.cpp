@@ -29,9 +29,9 @@ void Left()
 	char footerLeft[5][100] = {
 		"ThS.Luu Nguyen Ky Thu",
 		"",
-		"Mail:Lnkthu@ptithcm.edu.vn",
+		"SDT:0913763320",
 		"",
-		"SDT:0913763320"
+		"Mail:Lnkthu@ptithcm.edu.vn"
 	};
 
 	int height = getConsoleHeight();
@@ -53,7 +53,7 @@ void Center()
 	int posY = height - 6;
 
 	char center[5][100] = {
-		"    Hoc Vien Buu Chinh Vien Thong - PTIT   ",
+		"       Hoc Vien Buu Chinh Vien Thong       ",
 		"",
 		"       02437562186 - ctsv@ptit.edu.vn      ",
 		"",

@@ -15,7 +15,8 @@ public:
 		gotoXY(0,0);
 		cout << "Student";
 	}
-
+	Student();
+	~Student();
 private:
 
 };

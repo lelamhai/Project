@@ -13,17 +13,76 @@ Layout::~Layout()
 
 void Layout::main()
 {
-    choice = 1;
-    templateMenu();
-    templateConent();
+    choice = 0;
+
+    thread t1(&Layout::templateMenu, this);
+    thread t2(&Layout::templateConent, this);
+
+    t1.join();
+    t2.join();
+}
+
+void Layout::templateMenu()
+{
+    char menu[5][50] = { "Gioi Thieu", "Lop Hoc", "Sinh Vien", "Mom Hoc", "Cau Hoi" };
+    int hover = 0;
+    int active = 0;
+    int posY = 11;
+
+    while (true)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            setColorText(ColorCode_DarkWhite);
+            if (active == i)
+            {
+                setColorText(ColorCode_Green);
+            }
+            if (hover == i && hover != active)
+            {
+                setColorText(ColorCode_Blue);
+            }
+            gotoXY(8, posY + i * 3);
+            cout << menu[i];
+        }
+
+        int key = _getch();
+        int input = keyArrow(key);
+        switch (input)
+        {
+        case UP:
+            hover -= 1;
+            break;
+        case DOWN:
+            hover += 1;
+            break;
+        default:
+            break;
+        }
+
+        if (ENTER == key)
+        {
+            active = hover;
+            choice = hover;
+        }
+
+        Sleep(150);
+    }
 }
 
 void Layout::templateConent()
 {
+    int lastChoice = -1;
     while (true)
     {
+        if (choice == lastChoice)
+        {
+            continue;
+        }
+
         if (choice == ABOUT)
         {
+            showCur(0);
             About* a = new About();
             a->displayContent();
             delete a;
@@ -31,22 +90,21 @@ void Layout::templateConent()
 
         if (choice == STUDENT)
         {
+            showCur(0);
             Student* s = new Student();
             s->displayContent();
             delete s;
         }
-    }
-}
 
-void Layout::templateMenu()
-{
-    char menu[8][50] = { "Gioi Thieu", "Lop Hoc", "Sinh Vien", "Mom Hoc", "Cau Hoi", "Thi", "Dang Xuat", "Thoat" };
+        if (choice == CLASSROOM)
+        {
+            showCur(0);
+            Classroom* c = new Classroom();
+            c->displayContent();
+            delete c;
+        }
 
-    int posY = 11;
-    for (int i = 0; i < 8; i++)
-    {
-        gotoXY(8, posY);
-        cout << menu[i];
-        posY += 3;
+        lastChoice = choice;
+        Sleep(200);
     }
 }

@@ -8,13 +8,16 @@
 #include <iostream>
 using namespace std;
 
-class About: public Content
+class Classroom : public Content
 {
 public:
 	void displayContent() override {
 		gotoXY(10, 0);
-		cout << "about";
+		cout << "Classroom";
 	}
-	About();
-	~About();
+	Classroom();
+	~Classroom();
+
+private:
+
 };

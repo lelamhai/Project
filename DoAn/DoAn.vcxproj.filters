@@ -87,6 +87,9 @@
     <ClCompile Include="student.cpp">
       <Filter>Source Files\Contents</Filter>
     </ClCompile>
+    <ClCompile Include="classroom.cpp">
+      <Filter>Source Files\Contents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -132,6 +135,9 @@
       <Filter>Header Files\Contents</Filter>
     </ClInclude>
     <ClInclude Include="Student.h">
+      <Filter>Header Files\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="Classroom.h">
       <Filter>Header Files\Contents</Filter>
     </ClInclude>
   </ItemGroup>
