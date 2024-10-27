@@ -6,6 +6,8 @@
 #include "About.h"
 #include "Classroom.h"
 #include "Student.h"
+#include "Subject.h"
+#include "Question.h"
 
 #include "mycolor.h"
 #include "mydraw.h"
@@ -16,6 +18,8 @@
 #include <conio.h>
 #include <iostream>
 using namespace std;
+#define WIDTH_CONTENT  170
+#define HEIGHT_CONTENT  34
 
 enum StateContent
 {
@@ -23,6 +27,7 @@ enum StateContent
     CLASSROOM   = 1,
     STUDENT     = 2,
     SUBJECT     = 3,
+    QUESTION    = 4
 };
 
 class Layout
@@ -47,6 +52,7 @@ public:
     void templateMenu();
     void templateConent();
 	void main();
+    void cleanContent();
 	Layout();
 	~Layout();
 };

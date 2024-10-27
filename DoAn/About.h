@@ -13,7 +13,7 @@ class About: public Content
 public:
 	void displayContent() override;
 	void title();
-	void sayHi();
+	void content();
 	About();
 	~About();
 };

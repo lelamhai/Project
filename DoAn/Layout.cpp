@@ -25,11 +25,11 @@ void Layout::main()
 
 void Layout::templateMenu()
 {
-    char menu[5][50] = { "Gioi Thieu", "Lop Hoc", "Sinh Vien", "Mom Hoc", "Cau Hoi" };
+    char menu[5][50] = { "Gioi Thieu", "Lop", "Sinh Vien", "Mon Hoc", "Cau Hoi" };
     int hover = 0;
     int active = 0;
     int posY = 10;
-
+    
     while (true)
     {
         for (int i = 0; i < 5; i++)
@@ -43,7 +43,6 @@ void Layout::templateMenu()
             {
                 setColorText(ColorCode_Blue);
             }
-            
             gotoXY(8, posY + i * 3);
             cout << menu[i];
         }
@@ -62,13 +61,13 @@ void Layout::templateMenu()
             break;
         }
 
-        if (ENTER == key)
+        if (ENTER == key && active != hover)
         {
             active = hover;
             choice = hover;
         }
 
-        Sleep(150);
+        Sleep(100);
     }
 }
 
@@ -85,6 +84,7 @@ void Layout::templateConent()
         if (choice == ABOUT)
         {
             showCur(0);
+            cleanContent();
             About* a = new About();
             a->displayContent();
             delete a;
@@ -93,6 +93,7 @@ void Layout::templateConent()
         if (choice == STUDENT)
         {
             showCur(0);
+            cleanContent();
             Student* s = new Student();
             s->displayContent();
             delete s;
@@ -101,12 +102,42 @@ void Layout::templateConent()
         if (choice == CLASSROOM)
         {
             showCur(0);
+            cleanContent();
             Classroom* c = new Classroom();
             c->displayContent();
             delete c;
         }
 
+        if (choice == SUBJECT)
+        {
+            showCur(0);
+            cleanContent();
+            Subject* s = new Subject();
+            s->displayContent();
+            delete s;
+        }
+
+        if (choice == QUESTION)
+        {
+            showCur(0);
+            cleanContent();
+            Question* q = new Question();
+            q->displayContent();
+            delete q;
+        }
+
         lastChoice = choice;
         Sleep(200);
+    }
+}
+
+void Layout::cleanContent()
+{
+    string blankFill;
+    blankFill.resize(WIDTH_CONTENT, ' ');
+    for (int i = 0; i < HEIGHT_CONTENT; i++)
+    {
+        gotoXY(34, 10 + i);
+        cout << blankFill;
     }
 }

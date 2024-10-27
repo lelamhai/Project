@@ -11,10 +11,7 @@ using namespace std;
 class Student : public Content
 {
 public:
-	void displayContent() override {
-		gotoXY(0,0);
-		cout << "Student";
-	}
+	void displayContent() override;
 	Student();
 	~Student();
 private:

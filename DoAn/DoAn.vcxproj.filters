@@ -90,6 +90,12 @@
     <ClCompile Include="classroom.cpp">
       <Filter>Source Files\Contents</Filter>
     </ClCompile>
+    <ClCompile Include="subject.cpp">
+      <Filter>Source Files\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="question.cpp">
+      <Filter>Source Files\Contents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -138,6 +144,12 @@
       <Filter>Header Files\Contents</Filter>
     </ClInclude>
     <ClInclude Include="Classroom.h">
+      <Filter>Header Files\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>Header Files\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="Question.h">
       <Filter>Header Files\Contents</Filter>
     </ClInclude>
   </ItemGroup>

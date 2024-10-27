@@ -135,6 +135,7 @@
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
     <ClCompile Include="page.cpp" />
+    <ClCompile Include="question.cpp" />
     <ClCompile Include="sidebar.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="keyboard.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="student.cpp" />
+    <ClCompile Include="subject.cpp" />
     <ClCompile Include="windows.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -158,10 +160,12 @@
     <ClInclude Include="Loading.h" />
     <ClInclude Include="Login.h" />
     <ClInclude Include="Page.h" />
+    <ClInclude Include="Question.h" />
     <ClInclude Include="Sidebar.h" />
     <ClInclude Include="mywindows.h" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="Subject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

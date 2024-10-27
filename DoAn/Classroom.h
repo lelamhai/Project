@@ -11,10 +11,9 @@ using namespace std;
 class Classroom : public Content
 {
 public:
-	void displayContent() override {
-		gotoXY(10, 0);
-		cout << "Classroom";
-	}
+	void displayContent() override;
+	void title();
+	void content();
 	Classroom();
 	~Classroom();
 
