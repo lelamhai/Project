@@ -118,7 +118,7 @@ void Login::inputUserName(string &input, int x, int y)
 	while (true)
 	{
 		char s = _getch();
-		int key = keyArrow(s);
+		int key = keySpecial(s);
 
 		switch (key)
 		{
@@ -169,7 +169,7 @@ void Login::inputUserName(string &input, int x, int y)
 			stateInput = CLICKENTER;
 			return;
 
-		case SPACE:
+		case SPACEBAR:
 			continue;
 
 		case TAB:
@@ -199,7 +199,7 @@ void Login::inputPassword(string& input, int x, int y)
 	while (true)
 	{
 		char s = _getch();
-		int key = keyArrow(s);
+		int key = keySpecial(s);
 
 		switch (key)
 		{
@@ -251,7 +251,7 @@ void Login::inputPassword(string& input, int x, int y)
 			stateInput = CLICKENTER;
 			return;
 
-		case SPACE:
+		case SPACEBAR:
 			continue;
 
 		case TAB:

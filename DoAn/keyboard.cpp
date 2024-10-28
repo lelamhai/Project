@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <windows.h>
 
-int keyArrow(int key)
+int keySpecial(int key)
 {
     if (_kbhit()) //true
     {

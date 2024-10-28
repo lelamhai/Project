@@ -128,12 +128,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="about.cpp" />
+    <ClCompile Include="button.cpp" />
+    <ClCompile Include="buttonEnter.cpp" />
     <ClCompile Include="classroom.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
     <ClCompile Include="content.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
+    <ClCompile Include="inputField.cpp" />
+    <ClCompile Include="InputField.h" />
     <ClCompile Include="page.cpp" />
     <ClCompile Include="question.cpp" />
     <ClCompile Include="sidebar.cpp" />
@@ -149,6 +153,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="About.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="ButtonEnter.h" />
     <ClInclude Include="Classroom.h" />
     <ClInclude Include="configApp.h" />
     <ClInclude Include="Content.h" />

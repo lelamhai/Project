@@ -99,6 +99,24 @@ void clrscr()
 	SetConsoleCursorPosition(hConsoleOut, csbiInfo.dwCursorPosition);
 }
 
+int whereX(void)
+{
+	HANDLE hConsoleOutput;
+	hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_SCREEN_BUFFER_INFO screen_buffer_info;
+	GetConsoleScreenBufferInfo(hConsoleOutput, &screen_buffer_info);
+	return screen_buffer_info.dwCursorPosition.X;
+}
+
+int whereY(void)
+{
+	HANDLE hConsoleOutput;
+	hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_SCREEN_BUFFER_INFO screen_buffer_info;
+	GetConsoleScreenBufferInfo(hConsoleOutput, &screen_buffer_info);
+	return screen_buffer_info.dwCursorPosition.Y;
+}
+
 int getCenterX(int widthBig, int widthSmall)
 {
 	int x = widthSmall / 2;

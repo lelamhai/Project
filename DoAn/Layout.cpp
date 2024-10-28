@@ -42,13 +42,15 @@ void Layout::templateMenu()
             if (hover == i && hover != active)
             {
                 setColorText(ColorCode_Blue);
+                gotoXY(0,0);
+                cout << i;
             }
             gotoXY(8, posY + i * 3);
             cout << menu[i];
         }
 
         int key = _getch();
-        int input = keyArrow(key);
+        int input = keySpecial(key);
         switch (input)
         {
         case UP:
@@ -89,7 +91,6 @@ void Layout::templateConent()
             a->displayContent();
             delete a;
         }
-
         if (choice == STUDENT)
         {
             showCur(0);
@@ -98,7 +99,6 @@ void Layout::templateConent()
             s->displayContent();
             delete s;
         }
-
         if (choice == CLASSROOM)
         {
             showCur(0);
@@ -107,7 +107,6 @@ void Layout::templateConent()
             c->displayContent();
             delete c;
         }
-
         if (choice == SUBJECT)
         {
             showCur(0);
@@ -116,7 +115,6 @@ void Layout::templateConent()
             s->displayContent();
             delete s;
         }
-
         if (choice == QUESTION)
         {
             showCur(0);

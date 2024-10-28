@@ -37,6 +37,12 @@
     <Filter Include="Header Files\Contents">
       <UniqueIdentifier>{5b17e81e-f78a-484a-8dd0-211c070d33d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{b11b96b4-c8a8-4b3e-9bb2-161045fb196b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{f045d796-550f-4f01-ab06-5f134c2882a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -96,6 +102,18 @@
     <ClCompile Include="question.cpp">
       <Filter>Source Files\Contents</Filter>
     </ClCompile>
+    <ClCompile Include="button.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="buttonEnter.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="InputField.h">
+      <Filter>Header Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="inputField.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -151,6 +169,12 @@
     </ClInclude>
     <ClInclude Include="Question.h">
       <Filter>Header Files\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonEnter.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

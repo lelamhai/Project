@@ -8,3 +8,5 @@ int getConsoleWidth();
 int getConsoleHeight();
 void clrscr();
 int getCenterX(int widthBig, int widthSmall);
+int whereX(void);
+int whereY(void);

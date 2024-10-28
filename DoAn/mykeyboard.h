@@ -2,11 +2,12 @@
 enum KeyState
 {
     // Common
-    ENTER       = 13,
+    DEL         = 83,
+    SPACEBAR    = 32,
     ESC         = 27,
-    BACKSPACE   = 8,
-    SPACE       = 32,
+    ENTER       = 13,
     TAB         = 9,
+    BACKSPACE   = 8,
 
     //Number
     NUM_0   = 48,
@@ -16,11 +17,11 @@ enum KeyState
     NUM_4   = 52,
 
     // Arrow
-    UP    = 72,
-    DOWN  = 80,
-    LEFT  = 75,
-    RIGHT = 77,
-
+    DOWN    = 80,
+    RIGHT   = 77,
+    LEFT    = 75,
+    UP      = 72,
+    
     // System
     F1 = 59,
     F2 = 60,
@@ -30,6 +31,6 @@ enum KeyState
 
     DEFAULT = -1
 };
-int keyArrow(int key);
+int keySpecial(int key);
 void showCur(bool CursorVisibility);
 bool checkKey(int key);
