@@ -61,7 +61,7 @@ void Layout::templateMenu()
             break;
         }
 
-        if (ENTER == key && active != hover)
+        if (key == ENTER && active != hover)
         {
             active = hover;
             choice = hover;

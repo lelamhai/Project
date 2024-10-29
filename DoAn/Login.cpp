@@ -73,9 +73,6 @@ void Login::drawButton()
 }
 void Login::formLogin()
 {
-	string userName = "";
-	string password = "";
-	string message = "";
 	int width = getConsoleWidth();
 	int posX = getCenterX(width, 40);
 	posX = posX + 13 + 1;
@@ -84,6 +81,9 @@ void Login::formLogin()
 	
 	InputField inputUserName;
 	InputField inputPassword;
+	Text text;
+	text.setContent("Login not finish");
+
 
 	Login::stateLoginInput = LOGIN_USERNAME;
 	while (true)
@@ -121,13 +121,13 @@ void Login::formLogin()
 			break;
 
 		case LOGIN_ENTER:
-			if (true)
+			if (false)
 			{
 				return;
 			}
 			else {
-				gotoXY(0, 0);
-				cout << "Login not finish";
+				gotoXY(posX, 13 + 3 + 2);
+				text.display();
 				stateLoginInput = LOGIN_USERNAME;
 			}
 			break;

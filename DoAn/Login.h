@@ -5,6 +5,7 @@
 #include "mywindows.h"
 
 #include "InputField.h"
+#include "Text.h"
 
 #include <conio.h>
 #include <iostream>

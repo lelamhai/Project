@@ -1,4 +1,3 @@
-#pragma once
 #include "mycolor.h"
 #include "mywindows.h"
 #include "mydraw.h"

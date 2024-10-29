@@ -10,22 +10,6 @@ int main()
 	p->main();
 	delete p;
 
-	/*ButtonEnter bEnter;
-	while (true)
-	{
-		char s = _getch();
-		if (bEnter.checkKeyPress(s))
-		{
-			cout << "Enter";
-			break;
-		}
-	}*/
-
-	/*InputField inputUser;
-	gotoXY(5, 5);
-	inputUser.handleInput();*/
-
-
 	system("pause");
 	return 0;
 }

@@ -114,6 +114,9 @@
     <ClCompile Include="inputField.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="text.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -174,6 +177,9 @@
       <Filter>Header Files\UI</Filter>
     </ClInclude>
     <ClInclude Include="ButtonEnter.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>

@@ -149,6 +149,7 @@
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="student.cpp" />
     <ClCompile Include="subject.cpp" />
+    <ClCompile Include="text.cpp" />
     <ClCompile Include="windows.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +173,7 @@
     <ClInclude Include="Layout.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Subject.h" />
+    <ClInclude Include="Text.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
