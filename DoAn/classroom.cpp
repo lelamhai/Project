@@ -23,6 +23,6 @@ void Classroom::title()
 
 void Classroom::content()
 {
-	gotoXY(34, 16);
+	gotoXY(34, 13);
 	cout << "Content";
 }
