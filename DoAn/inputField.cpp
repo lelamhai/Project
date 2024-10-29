@@ -10,18 +10,21 @@ InputField::~InputField()
 
 void InputField::handleInput()
 {
+	cursorPosition = inputString.length();
 	while (true)
 	{
 		char s = _getch();
 		int key = keySpecial(s);
-
-		if (s == ENTER)
-		{
-			return;
-		}
-
+		
 		switch (key)
 		{
+		case UP:
+			keyInput = UP;
+			return;
+		case DOWN:
+			keyInput = DOWN;
+			return;
+
 		case LEFT:
 			if (cursorPosition <= 0)
 			{
@@ -31,6 +34,7 @@ void InputField::handleInput()
 			cursorPosition--;
 			gotoXY(whereX() - 1, whereY());
 			continue;
+
 		case RIGHT:
 			if (cursorPosition >= inputString.length())
 			{
@@ -63,6 +67,10 @@ void InputField::handleInput()
 
 		switch (s)
 		{
+		case ENTER:
+			keyInput = ENTER;
+			return;
+
 		case SPACEBAR:
 			inputString.insert(inputString.begin() + cursorPosition, s);
 			cursorPosition++;
@@ -78,9 +86,9 @@ void InputField::handleInput()
 		case BACKSPACE:
 			if (inputString.length() <= 0 || cursorPosition <= 0)
 			{
-				continue;
+				break;
 			}
-			
+
 			if (cursorPosition == inputString.length())
 			{
 				inputString.erase(inputString.length() - 1, 1);
@@ -98,7 +106,7 @@ void InputField::handleInput()
 				cout << " ";
 				gotoXY(whereX() - 1 - (inputString.length() - cursorPosition), whereY());
 			}
-			
+
 			break;
 
 		default:
@@ -122,6 +130,12 @@ void InputField::handleInput()
 		}
 	}
 }
+
+KeyState InputField::getEndKey()
+{
+	return keyInput;
+}
+
 
 string InputField::getText()
 {

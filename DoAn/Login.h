@@ -3,6 +3,9 @@
 #include "mydraw.h"
 #include "mykeyboard.h"
 #include "mywindows.h"
+
+#include "InputField.h"
+
 #include <conio.h>
 #include <iostream>
 using namespace std;
@@ -10,13 +13,13 @@ using namespace std;
 class Login
 {
 private:
-	enum SelectInput
+	enum SelectLoginInput
 	{
-		USERNAME	= 0,
-		PASSWORD	= 1,
-		CLICKENTER	= 2
+		LOGIN_USERNAME	= 0,
+		LOGIN_PASSWORD	= 1,
+		LOGIN_ENTER		= 2
 	};
-	SelectInput stateInput;
+	SelectLoginInput stateLoginInput;
 
 public:
 	void main();
@@ -24,11 +27,8 @@ public:
 	void drawBox();
 	void drawUserName();
 	void drawPassword();
-	void textMessage(string mess);
 	void drawButton();
 	void formLogin();
-	void inputUserName(string& input, int x, int y);
-	void inputPassword(string& input, int x, int y);
 	Login();
 	~Login();
 };

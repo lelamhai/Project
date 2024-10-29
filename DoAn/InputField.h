@@ -12,10 +12,12 @@ class InputField
 {
 private:
 	string inputString;
+	KeyState keyInput;
 	int cursorPosition = 0;
 public:
 	string getText();
 	void handleInput();
+	KeyState getEndKey();
 	InputField();
 	~InputField();
 };

@@ -81,215 +81,59 @@ void Login::formLogin()
 	posX = posX + 13 + 1;
 	int tempX = posX;
 	int posY = 13;
-
-	stateInput = USERNAME;
-	while (true)
-	{
-		switch (this->stateInput)
-		{
-		case USERNAME:
-			showCur(1);
-			posX += userName.length();
-			gotoXY(posX, posY);
-			inputUserName(userName, posX , posY);
-			posX = tempX;
-			break;
-		case PASSWORD:
-			showCur(1);
-			posX += password.length();
-			gotoXY(posX, posY+3);
-			inputPassword(password, posX, posY + 3);
-			posX = tempX;
-			break;
-
-		case CLICKENTER:
-			// Event enter
-			showCur(0);
-			textMessage("Message");
-			return;
-		default:
-			break;
-		}
-	}
-}
-void Login::inputUserName(string &input, int x, int y)
-{
-	int len = input.length();
-	while (true)
-	{
-		char s = _getch();
-		int key = keySpecial(s);
-
-		switch (key)
-		{
-		case UP:
-			stateInput = USERNAME;
-			return;
-
-		case DOWN:
-			stateInput = PASSWORD;
-			return;
-
-		/*case LEFT:
-			if (len <= 0)
-			{
-				continue;
-			}
-			--len;
-			gotoXY(--x, y);
-
-			continue;
-
-		case RIGHT:
-			if (len >= input.length())
-			{
-				continue;
-			}
-			++len;
-			gotoXY(++x, y);*/
-
-			continue;
-		default:
-			break;
-		}
-
-		switch (s)
-		{
-		case BACKSPACE:
-			if (input.length() <= 0)
-			{
-				continue;
-			}
-			input.erase(input.length() - 1, 1); 
-			x --;
-			cout << "\b \b";
-			break;
-
-		case ENTER:
-			stateInput = CLICKENTER;
-			return;
-
-		case SPACEBAR:
-			continue;
-
-		case TAB:
-			continue;
-
-		default:
-			if (input.length() > 14)
-			{
-				continue;
-			}
-			if (s >= 'A' && s <= 'z' || s >= '0' && s <= '9')
-			{
-				input.push_back(s);
-				gotoXY(x, y);
-				cout << s;
-				x++;
-				len = input.length();
-			}
-			
-			break;
-		}
-	}
-}
-void Login::inputPassword(string& input, int x, int y)
-{
-	int len = input.length();
-	while (true)
-	{
-		char s = _getch();
-		int key = keySpecial(s);
-
-		switch (key)
-		{
-		case UP:
-			stateInput = USERNAME;
-			return;
-
-		case DOWN:
-			stateInput = PASSWORD;
-			return;
-
-		/*case LEFT:
-			if (len <= 0)
-			{
-				continue;
-			}
-			--len;
-			gotoXY(--x, y);
-
-			continue;
-
-		case RIGHT:
-			if (len >= input.length())
-			{
-				continue;
-			}
-			++len;
-			gotoXY(++x, y);
-
-			continue;*/
-		default:
-			break;
-		}
-
-		switch (s)
-		{
-		case BACKSPACE:
-			if (input.length() <= 0)
-			{
-				continue;
-			}
-
-			input.erase(input.length() - 1, 1);
-			x--;
-			cout << "\b \b";
-			break;
-
-		case ENTER:
-			stateInput = CLICKENTER;
-			return;
-
-		case SPACEBAR:
-			continue;
-
-		case TAB:
-			continue;
-
-		default:
-			if (input.length() > 14)
-			{
-				continue;
-			}
-			if (s >= 'A' && s <= 'z' || s >= '0' && s <= '9')
-			{
-				input.push_back(s);
-				gotoXY(x, y);
-				cout << s;
-				Sleep(150);
-
-				gotoXY(x, y);
-				cout << "*";
-				x++;
-				len = input.length();
-			}
-			
-			break;
-		}
-	}
-}
-void Login::textMessage(string mess)
-{
-	int width = getConsoleWidth();
-	int posX = getCenterX(width, mess.length());
 	
-	gotoXY(posX - 20, 16 + 2);
-	cout << "                                        ";
+	InputField inputUserName;
+	InputField inputPassword;
 
-	gotoXY(posX, 16 + 2);
-	cout << mess;
+	Login::stateLoginInput = LOGIN_USERNAME;
+	while (true)
+	{
+		switch (stateLoginInput)
+		{
+		case LOGIN_USERNAME:
+			gotoXY(posX + inputUserName.getText().length(), posY);
+			inputUserName.handleInput();
 
-	Sleep(400);
-	stateInput = USERNAME;
+			if (inputUserName.getEndKey()== ENTER)
+			{
+				if (inputUserName.getText() != "" && inputPassword.getText() != "")
+				{
+					stateLoginInput = LOGIN_ENTER;
+					break;
+				}
+			}
+
+			stateLoginInput = LOGIN_PASSWORD;
+			break;
+
+		case LOGIN_PASSWORD:
+			gotoXY(posX + inputPassword.getText().length(), posY+3);
+			inputPassword.handleInput();
+			if (inputPassword.getEndKey() == ENTER)
+			{
+				if (inputPassword.getText() != "" && inputUserName.getText() != "")
+				{
+					stateLoginInput = LOGIN_ENTER;
+					break;
+				}
+			}
+			stateLoginInput = LOGIN_USERNAME;
+			break;
+
+		case LOGIN_ENTER:
+			if (true)
+			{
+				return;
+			}
+			else {
+				gotoXY(0, 0);
+				cout << "Login not finish";
+				stateLoginInput = LOGIN_USERNAME;
+			}
+			break;
+		default:
+			break;
+		}
+
+	}
 }

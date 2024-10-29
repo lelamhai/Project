@@ -42,8 +42,6 @@ void Layout::templateMenu()
             if (hover == i && hover != active)
             {
                 setColorText(ColorCode_Blue);
-                gotoXY(0,0);
-                cout << i;
             }
             gotoXY(8, posY + i * 3);
             cout << menu[i];

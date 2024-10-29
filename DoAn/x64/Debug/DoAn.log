@@ -1,6 +1,6 @@
-﻿  inputField.cpp
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp(57,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp(75,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp(99,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp(117,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+﻿  Layout.cpp
+  login.cpp
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(94,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(110,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
   DoAn.vcxproj -> C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\x64\Debug\DoAn.exe
