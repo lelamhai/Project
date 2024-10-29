@@ -3,18 +3,20 @@
 #include "Loading.h"
 #include "Login.h"
 #include "Layout.h"
-
 enum StatePage
 {
-	LOADING			= 0,
-	LOGIN			= 1,
-	PAGETEMPLATE	= 2
+	PAGE_LOADING = 0,
+	PAGE_LOGIN = 1,
+	PAGE_LAYOUT = 2
 };
 
 class Page
 {
-public:
+private:
 	StatePage currentPage;
+
+public:
+	void setRun(StatePage page);
 	void main();
 	Page();
 	~Page();

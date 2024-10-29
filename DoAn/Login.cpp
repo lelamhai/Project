@@ -121,7 +121,7 @@ void Login::formLogin()
 			break;
 
 		case LOGIN_ENTER:
-			if (false)
+			if (true)
 			{
 				return;
 			}
