@@ -46,9 +46,9 @@ protected:
     {
         Footer();
     }
-
-public:
     int choice;
+public:
+    void setRunContent(int choice);
     void templateMenu();
     void templateConent();
 	void main();

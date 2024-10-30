@@ -23,6 +23,14 @@ void Classroom::title()
 
 void Classroom::content()
 {
+	InputField inputStudent;
+
 	gotoXY(34, 13);
-	cout << "Content";
+	cout << "Tim ";
+	
+	showCur(1);
+	box(34 + 4, 12, 16, 2);
+	gotoXY(40, 13);
+	inputStudent.handleInput();
+
 }

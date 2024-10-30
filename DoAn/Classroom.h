@@ -3,6 +3,10 @@
 #include "mydraw.h"
 #include "mykeyboard.h"
 #include "mywindows.h"
+
+#include "InputField.h"
+#include "Text.h"
+
 #include "Content.h"
 #include <conio.h>
 #include <iostream>

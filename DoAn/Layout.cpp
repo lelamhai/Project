@@ -10,11 +10,13 @@ Layout::Layout()
 Layout::~Layout()
 {
 }
+void Layout::setRunContent(int content)
+{
+    choice = content;
+}
 
 void Layout::main()
 {
-    choice = 0;
-
     thread t1(&Layout::templateMenu, this);
     Sleep(200);
     thread t2(&Layout::templateConent, this);
@@ -26,47 +28,48 @@ void Layout::main()
 void Layout::templateMenu()
 {
     char menu[5][50] = { "Gioi Thieu", "Lop", "Sinh Vien", "Mon Hoc", "Cau Hoi" };
-    int hover = 0;
-    int active = 0;
     int posY = 10;
-    
+    int active = choice;
+    int hover = choice;
+    int lastHover = -1;
     while (true)
     {
-        for (int i = 0; i < 5; i++)
+        if (GetAsyncKeyState(VK_UP) & 0x8000)
         {
-            setColorText(ColorCode_DarkWhite);
-            if (active == i)
-            {
-                setColorText(ColorCode_Green);
-            }
-            if (hover == i && hover != active)
-            {
-                setColorText(ColorCode_Blue);
-            }
-            gotoXY(8, posY + i * 3);
-            cout << menu[i];
-        }
-
-        int key = _getch();
-        int input = keySpecial(key);
-        switch (input)
-        {
-        case UP:
             hover -= 1;
-            break;
-        case DOWN:
-            hover += 1;
-            break;
-        default:
-            break;
+            Sleep(100);
         }
 
-        if (key == ENTER && active != hover)
+        if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+        {
+            hover += 1;
+            Sleep(100);
+        }
+        
+        if (lastHover != hover)
+        {
+            showCur(0);
+            for (int i = 0; i < 5; i++)
+            {
+                setColorText(ColorCode_DarkWhite);
+                if (active == i)
+                {
+                    setColorText(ColorCode_Green);
+                }
+                if (hover == i && hover != active)
+                {
+                    setColorText(ColorCode_Blue);
+                }
+                gotoXY(8, posY + i * 3);
+                cout << menu[i];
+            }
+        }
+
+        if (GetAsyncKeyState(VK_RETURN) & 0x8000 && active != hover)
         {
             active = hover;
             choice = hover;
         }
-
         Sleep(100);
     }
 }
