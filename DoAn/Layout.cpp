@@ -27,28 +27,29 @@ void Layout::main()
 
 void Layout::templateMenu()
 {
-    char menu[5][50] = { "Gioi Thieu", "Lop", "Sinh Vien", "Mon Hoc", "Cau Hoi" };
+    char menu[5][50] = { "Gioi Thieu", "Lop Hoc", "Sinh Vien", "Mon Hoc", "Cau Hoi" };
     int posY = 10;
     int active = choice;
     int hover = choice;
     int lastHover = -1;
+
+    showCur(0);
     while (true)
     {
         if (GetAsyncKeyState(VK_UP) & 0x8000)
         {
             hover -= 1;
-            Sleep(100);
+            Sleep(50);
         }
 
         if (GetAsyncKeyState(VK_DOWN) & 0x8000)
         {
             hover += 1;
-            Sleep(100);
+            Sleep(50);
         }
         
         if (lastHover != hover)
         {
-            showCur(0);
             for (int i = 0; i < 5; i++)
             {
                 setColorText(ColorCode_DarkWhite);
@@ -64,12 +65,15 @@ void Layout::templateMenu()
                 cout << menu[i];
             }
         }
+        lastHover = hover;
 
         if (GetAsyncKeyState(VK_RETURN) & 0x8000 && active != hover)
         {
             active = hover;
             choice = hover;
+            lastHover = -1;
         }
+
         Sleep(100);
     }
 }
@@ -136,7 +140,7 @@ void Layout::cleanContent()
     blankFill.resize(WIDTH_CONTENT, ' ');
     for (int i = 0; i < HEIGHT_CONTENT; i++)
     {
-        gotoXY(34, 10 + i);
+        gotoXY(34, 9 + i);
         cout << blankFill;
     }
 }

@@ -12,12 +12,15 @@
 #include <iostream>
 using namespace std;
 
+
+
 class Classroom : public Content
 {
 public:
 	void displayContent() override;
-	void title();
 	void content();
+	void drawClassroom();
+	void girdContent();
 	Classroom();
 	~Classroom();
 

@@ -18,8 +18,8 @@
 #include <conio.h>
 #include <iostream>
 using namespace std;
-#define WIDTH_CONTENT  170
-#define HEIGHT_CONTENT  34
+#define WIDTH_CONTENT  172
+#define HEIGHT_CONTENT  36
 
 enum StateContent
 {

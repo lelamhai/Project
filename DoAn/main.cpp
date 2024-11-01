@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	Page* p = new Page();
-	p->setRun(PAGE_LOADING);
+	p->setRun(PAGE_LAYOUT);
 	p->main();
 	delete p;
 
