@@ -1,2 +1,39 @@
-﻿  classroom.cpp
+﻿  about.cpp
+  button.cpp
+  buttonEnter.cpp
+  classroom.cpp
+  color.cpp
+  configApp.cpp
+  content.cpp
+  popupDelete.cpp
+  draw.cpp
+  footer.cpp
+  inputField.cpp
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp(13,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp(61,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp(83,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp(107,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp(125,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  InputField.h
+  page.cpp
+  popup.cpp
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\popup.cpp(52,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  question.cpp
+  sidebar.cpp
+  header.cpp
+  keyboard.cpp
+  loading.cpp
+  login.cpp
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(94,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(110,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  main.cpp
+  Layout.cpp
+  student.cpp
+  subject.cpp
+  text.cpp
+  windows.cpp
+  Generating Code...
+x64\Debug\InputField.obj : warning LNK4042: object specified more than once; extras ignored
   DoAn.vcxproj -> C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\x64\Debug\DoAn.exe

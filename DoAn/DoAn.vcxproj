@@ -134,11 +134,13 @@
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
     <ClCompile Include="content.cpp" />
+    <ClCompile Include="popupDelete.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
     <ClCompile Include="inputField.cpp" />
     <ClCompile Include="InputField.h" />
     <ClCompile Include="page.cpp" />
+    <ClCompile Include="popup.cpp" />
     <ClCompile Include="question.cpp" />
     <ClCompile Include="sidebar.cpp" />
     <ClCompile Include="header.cpp" />
@@ -167,6 +169,8 @@
     <ClInclude Include="Loading.h" />
     <ClInclude Include="Login.h" />
     <ClInclude Include="Page.h" />
+    <ClInclude Include="Popup.h" />
+    <ClInclude Include="PopupDelete.h" />
     <ClInclude Include="Question.h" />
     <ClInclude Include="Sidebar.h" />
     <ClInclude Include="mywindows.h" />

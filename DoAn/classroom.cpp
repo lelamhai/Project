@@ -12,12 +12,21 @@ void Classroom::displayContent()
 {
 	setColorText(ColorCode_DarkWhite);
 	content();
+
 }
 
 void Classroom::content()
 {
 	drawClassroom();
 	girdContent();
+
+	//Popup
+	int posX = getCenterX(120, 50);
+	PopupDelete* p = new PopupDelete();
+	p->setPosition(posX + 30, 17);
+;	p->main();
+	/*p->setTextPopup("Ban co muon xoa du lieu nay khong?");*/
+	delete p;
 }
 
 void Classroom::drawClassroom()
@@ -60,11 +69,11 @@ void Classroom::drawClassroom()
 	gotoXY(34 + 100 + 30 + 40, 11);
 	cout << char(180);
 
-	gotoXY(34 + 100 + 30 + 4, 12 + 2);
+	gotoXY(34 + 100 + 30 + 3, 12 + 2);
 	cout << "Ma Lop";
 	box(34 + 100 + 30 + 4 + 8, 12 + 1, 24, 2);
 
-	gotoXY(34 + 100 + 30 + 4, 12 + 1 + 1 + 3);
+	gotoXY(34 + 100 + 30 + 3, 12 + 1 + 1 + 3);
 	cout << "Ten Lop";
 	box(34 + 100 + 30 + 4 + 8, 12 + 1 + 3, 24, 2);
 
@@ -80,7 +89,7 @@ void Classroom::drawClassroom()
 
 	int posEnterX = getCenterX(40, 5);
 	gotoXY(posEnterX + 34 + 100 + 30, 12 + 1 + 3 + 6);
-	cout << "Enter";
+	cout << "ENTER";
 
 	gotoXY(posX + 34 + 100 + 30, 26 + 1);
 	cout << "Huong Dan";
@@ -94,7 +103,14 @@ void Classroom::drawClassroom()
 	cout << char(180);
 	setColorText(ColorCode_DarkWhite);
 
-	char note[5][50] = { "F1: Tim Thong Tin Lop", "F2: Sua Thong Tin Lop", "INS: Them Thong Tin Lop", "DEL: Xoa Thong Tin Lop", "ENTER: Xem Chi Tiet Lop" };
+	string note[] = {
+		"F1: Tim Thong Tin Lop",
+		"F2: Sua Thong Tin Lop",
+		"INS: Them Thong Tin Lop",
+		"DEL: Xoa Thong Tin Lop",
+		"ENTER: Xem Chi Tiet Lop"
+	};
+
 	for (int i = 0; i < 5; i++)
 	{
 		gotoXY(34 + 100 + 30 + 3, 26 + 4 + i *2);
@@ -110,7 +126,12 @@ void Classroom::girdContent()
 	gotoXY(34 + 2 + 120, 10 + 2 + 2);
 	cout << char(180);
 
-	char title[3][50] = { "STT", "Ma Lop", "Ten Lop" };
+	string title[] = {
+		"STT", 
+		"Ma Lop", 
+		"Ten Lop"
+	};
+
 	gotoXY(34 + 3 + 10, 10 + 2 + 1);
 	cout << title[0];
 

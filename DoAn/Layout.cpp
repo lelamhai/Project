@@ -27,7 +27,14 @@ void Layout::main()
 
 void Layout::templateMenu()
 {
-    char menu[5][50] = { "Gioi Thieu", "Lop Hoc", "Sinh Vien", "Mon Hoc", "Cau Hoi" };
+    string menu[] = {
+        "Gioi Thieu",
+        "Lop Hoc",
+        "Sinh Vien",
+        "Mon Hoc",
+        "Cau Hoi"
+    };
+
     int posY = 10;
     int active = choice;
     int hover = choice;

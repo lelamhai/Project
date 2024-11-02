@@ -55,6 +55,12 @@
     <Filter Include="Header Files\GUI\Contents">
       <UniqueIdentifier>{5b17e81e-f78a-484a-8dd0-211c070d33d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GUI\Popups">
+      <UniqueIdentifier>{ce4779ad-09a9-497a-8aee-b7a2b96c609f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI\Popups">
+      <UniqueIdentifier>{59264cf9-e22f-4552-9e64-656524f11bd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -129,6 +135,12 @@
     <ClCompile Include="text.cpp">
       <Filter>Source Files\GUI\UI</Filter>
     </ClCompile>
+    <ClCompile Include="popup.cpp">
+      <Filter>Source Files\GUI\Popups</Filter>
+    </ClCompile>
+    <ClCompile Include="popupDelete.cpp">
+      <Filter>Source Files\GUI\Popups</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -193,6 +205,12 @@
     </ClInclude>
     <ClInclude Include="Layout.h">
       <Filter>Header Files\GUI\Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="Popup.h">
+      <Filter>Header Files\GUI\Popups</Filter>
+    </ClInclude>
+    <ClInclude Include="PopupDelete.h">
+      <Filter>Header Files\GUI\Popups</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

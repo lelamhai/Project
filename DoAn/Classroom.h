@@ -4,6 +4,7 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 
+#include "PopupDelete.h"
 #include "InputField.h"
 #include "Text.h"
 

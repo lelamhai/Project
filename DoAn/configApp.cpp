@@ -2,7 +2,7 @@
 
 void ConfigApp::init()
 {
-	setColorBT();
+	setDefualtBT();
 	setSizeWindow(1920,1080);
 	blockResizeWindow();
 	removeScroll();
