@@ -10,6 +10,7 @@
 
 #include "Content.h"
 #include <conio.h>
+#include <string>
 #include <iostream>
 using namespace std;
 
@@ -22,6 +23,7 @@ public:
 	void content();
 	void drawClassroom();
 	void girdContent();
+	void loadData();
 	Classroom();
 	~Classroom();
 

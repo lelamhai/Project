@@ -20,12 +20,15 @@ void Classroom::content()
 	drawClassroom();
 	girdContent();
 
+	loadData();
+
+
 	//Popup
-	int posX = getCenterX(120, 50);
+	/*int posX = getCenterX(120, 50);
 	PopupDelete* p = new PopupDelete();
 	p->setPosition(posX + 30, 17);
 ;	p->main();
-	delete p;
+	delete p;*/
 }
 
 void Classroom::drawClassroom()
@@ -128,15 +131,52 @@ void Classroom::girdContent()
 	string title[] = {
 		"STT", 
 		"Ma Lop", 
-		"Ten Lop"
+		"Ten Lop",
+		"Sinh Vien"
 	};
 
-	gotoXY(34 + 3 + 10, 10 + 2 + 1);
+	int idX = getCenterX(10, title[0].length());
+	gotoXY(34 + 3 + idX, 10 + 2 + 1);
 	cout << title[0];
 
-	gotoXY(34 + 3 + 20 + 25, 10 + 2 + 1);
+	int classX = getCenterX(40, title[1].length());
+	gotoXY(34 + 3 + 10 + classX, 10 + 2 + 1);
 	cout << title[1];
 
-	gotoXY(34 + 3 + 10 + 50 + 25, 10 + 2 + 1);
+	int nameX = getCenterX(40, title[2].length());
+	gotoXY(34 + 3 + 10 + 40 + nameX, 10 + 2 + 1);
 	cout << title[2];
+
+	int countX = getCenterX(30, title[3].length());
+	gotoXY(34 + 3 + 10 + 40 + 40 + countX, 10 + 2 + 1);
+	cout << title[3];
+}
+
+void Classroom::loadData()
+{
+	string data[] = {
+		"K23DTCN426",
+		"04-K"
+	};
+
+	for (int i = 0; i < 13; i++)
+	{
+		string iStr = to_string(i+1);
+		int idX = getCenterX(10, iStr.length());
+		gotoXY(34 + 3 + idX, 10 + 2 + 1 + 3 + (2 * i));
+		cout << i + 1;
+
+		int classX = getCenterX(40, data[0].length());
+		gotoXY(34 + 3 + 10 + classX, 10 + 2 + 1 + 3 + (2 * i));
+		cout << data[0];
+
+		int nameX = getCenterX(40, data[1].length());
+		gotoXY(34 + 3 + 10 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
+		cout << data[1];
+
+		string countStr = to_string(56);
+		int countX = getCenterX(30, countStr.length());
+		gotoXY(34 + 3 + 10 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
+		cout << 56;
+	}
 }
