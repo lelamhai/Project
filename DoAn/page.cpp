@@ -1,5 +1,4 @@
 #include "Page.h"
-#include <conio.h>
 
 Page::Page()
 {
@@ -22,6 +21,7 @@ void Page::main()
 	{
 		if (currentPage == PAGE_LOADING)
 		{
+			setColorText(ColorCode_DarkWhite);
 			showCur(0);
 			clrscr();
 			Loading* load = new Loading();
@@ -32,6 +32,7 @@ void Page::main()
 
 		if (currentPage == PAGE_LOGIN)
 		{
+			setColorText(ColorCode_DarkWhite);
 			showCur(0);
 			clrscr();
 			Login* login = new Login();
@@ -42,6 +43,7 @@ void Page::main()
 
 		if (currentPage == PAGE_LAYOUT)
 		{
+			setColorText(ColorCode_DarkWhite);
 			showCur(0);
 			clrscr();
 			Layout* layout = new Layout();

@@ -18,7 +18,7 @@ void PopupDelete::main()
 
 void PopupDelete::createButtonYes()
 {
-	box(getPosX() + 50 / 2 - 10 - 5, getPosY() + getHeight() - 5, 10, 2);
+	box(getPosX() + 50 / 2 - 10 - 5, getPosY() + getHeight() - 5, 9, 2);
 	gotoXY(getPosX() + 50 / 2 - 10 - 5 + 4, getPosY() + getHeight() - 5 + 1);
 	cout << "Co";
 }

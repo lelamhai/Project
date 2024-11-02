@@ -8,6 +8,7 @@
 #include "Student.h"
 #include "Subject.h"
 #include "Question.h"
+#include "Exam.h"
 
 #include "mycolor.h"
 #include "mydraw.h"
@@ -27,7 +28,8 @@ enum StateContent
     CLASSROOM   = 1,
     STUDENT     = 2,
     SUBJECT     = 3,
-    QUESTION    = 4
+    QUESTION    = 4,
+    EXAM        = 5,
 };
 
 class Layout
@@ -46,11 +48,12 @@ protected:
     {
         Footer();
     }
+    bool isRun = true;
     int choice;
 public:
     void setRunContent(int choice);
     void templateMenu();
-    void templateConent();
+    void templateContent();
 	void main();
     void cleanContent();
 	Layout();

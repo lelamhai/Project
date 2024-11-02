@@ -5,6 +5,7 @@
   color.cpp
   configApp.cpp
   content.cpp
+  exam.cpp
   popupDelete.cpp
   draw.cpp
   footer.cpp
@@ -23,11 +24,11 @@ C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\popup.cpp(52,48): warning
   header.cpp
   keyboard.cpp
   loading.cpp
+  Generating Code...
+  Compiling...
   login.cpp
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(94,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(110,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
-  Compiling...
   main.cpp
   Layout.cpp
   student.cpp

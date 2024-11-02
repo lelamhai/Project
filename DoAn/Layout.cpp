@@ -17,9 +17,11 @@ void Layout::setRunContent(int content)
 
 void Layout::main()
 {
+    isRun = true;
+
     thread t1(&Layout::templateMenu, this);
     Sleep(200);
-    thread t2(&Layout::templateConent, this);
+    thread t2(&Layout::templateContent, this);
 
     t1.join();
     t2.join();
@@ -32,7 +34,10 @@ void Layout::templateMenu()
         "Lop Hoc",
         "Sinh Vien",
         "Mon Hoc",
-        "Cau Hoi"
+        "Cau Hoi",
+        "Thi",
+        "Dang Xuat",
+        "Thoat"
     };
 
     int posY = 10;
@@ -41,7 +46,7 @@ void Layout::templateMenu()
     int lastHover = -1;
 
     showCur(0);
-    while (true)
+    while (isRun)
     {
         if (GetAsyncKeyState(VK_UP) & 0x8000)
         {
@@ -57,7 +62,7 @@ void Layout::templateMenu()
         
         if (lastHover != hover)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 8; i++)
             {
                 setColorText(ColorCode_DarkWhite);
                 if (active == i)
@@ -76,6 +81,21 @@ void Layout::templateMenu()
 
         if (GetAsyncKeyState(VK_RETURN) & 0x8000 && active != hover)
         {
+            int count = sizeof(menu) / sizeof(menu[0]);
+            if (hover == count - 2)
+            {
+                isRun = false;
+                return;
+            }
+
+            if (hover == count-1)
+            {
+                clrscr();
+                gotoXY(0, 0);
+                setColorText(ColorCode_DarkWhite);
+                exit(0);
+            }
+
             active = hover;
             choice = hover;
             lastHover = -1;
@@ -85,10 +105,10 @@ void Layout::templateMenu()
     }
 }
 
-void Layout::templateConent()
+void Layout::templateContent()
 {
     int lastChoice = -1;
-    while (true)
+    while (isRun)
     {
         if (choice == lastChoice)
         {
@@ -134,6 +154,15 @@ void Layout::templateConent()
             Question* q = new Question();
             q->displayContent();
             delete q;
+        }
+
+        if (choice == EXAM)
+        {
+            showCur(0);
+            cleanContent();
+            Exam* e = new Exam();
+            e->displayContent();
+            delete e;
         }
 
         lastChoice = choice;

@@ -134,6 +134,7 @@
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
     <ClCompile Include="content.cpp" />
+    <ClCompile Include="exam.cpp" />
     <ClCompile Include="popupDelete.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Classroom.h" />
     <ClInclude Include="configApp.h" />
     <ClInclude Include="Content.h" />
+    <ClInclude Include="Exam.h" />
     <ClInclude Include="mycolor.h" />
     <ClInclude Include="mydraw.h" />
     <ClInclude Include="Footer.h" />

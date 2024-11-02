@@ -25,7 +25,6 @@ void Classroom::content()
 	PopupDelete* p = new PopupDelete();
 	p->setPosition(posX + 30, 17);
 ;	p->main();
-	/*p->setTextPopup("Ban co muon xoa du lieu nay khong?");*/
 	delete p;
 }
 
