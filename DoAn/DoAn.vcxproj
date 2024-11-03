@@ -135,6 +135,8 @@
     <ClCompile Include="configApp.cpp" />
     <ClCompile Include="content.cpp" />
     <ClCompile Include="exam.cpp" />
+    <ClCompile Include="LoadingData.cpp" />
+    <ClCompile Include="LoginData.cpp" />
     <ClCompile Include="popupDelete.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
@@ -151,6 +153,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="student.cpp" />
+    <ClCompile Include="StudentList.cpp" />
     <ClCompile Include="subject.cpp" />
     <ClCompile Include="text.cpp" />
     <ClCompile Include="windows.cpp" />
@@ -163,6 +166,9 @@
     <ClInclude Include="configApp.h" />
     <ClInclude Include="Content.h" />
     <ClInclude Include="Exam.h" />
+    <ClInclude Include="LoadingData.h" />
+    <ClInclude Include="LoginData.h" />
+    <ClInclude Include="StudentList.h" />
     <ClInclude Include="mycolor.h" />
     <ClInclude Include="mydraw.h" />
     <ClInclude Include="Footer.h" />
@@ -177,6 +183,7 @@
     <ClInclude Include="Sidebar.h" />
     <ClInclude Include="mywindows.h" />
     <ClInclude Include="Layout.h" />
+    <ClInclude Include="StrucData.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Subject.h" />
     <ClInclude Include="Text.h" />

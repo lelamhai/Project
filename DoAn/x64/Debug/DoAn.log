@@ -1,10 +1,1 @@
-﻿  classroom.cpp
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\classroom.cpp(138,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\classroom.cpp(142,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\classroom.cpp(146,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\classroom.cpp(150,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\classroom.cpp(165,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\classroom.cpp(169,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\classroom.cpp(173,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\classroom.cpp(178,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  DoAn.vcxproj -> C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\x64\Debug\DoAn.exe
+﻿  StudentList.cpp
