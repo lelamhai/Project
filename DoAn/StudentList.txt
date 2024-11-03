@@ -2,3 +2,4 @@ k2,hoang,nguyen,M,321
 k1,huy,nguyen,M,111
 DTCN01,hoang,la,F,000
 DTCN02,hoang,lai,F,121
+K31,hoang,lai,F,333A
