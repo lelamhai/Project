@@ -1,0 +1,10 @@
+2312|Hãy tính phép tính sau 1+1 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|B|
+2311|Hãy tính phép tính sau 1-1 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|A|
+12|Hãy tính phép tính sau 2+1 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|C|
+211|Hãy tính phép tính sau 1+1 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|B|
+2012|Hãy tính phép tính sau 1-4 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|A|
+1242|Hãy tính phép tính sau 2+4 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|C|
+1232|Hãy tính phép tính sau 2+1 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|A|
+2311|Hãy tính phép tính sau 1+1 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|B|
+1012|Hãy tính phép tính sau 1-4 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|A|
+13242|Hãy tính phép tính sau 2+4 = ?|A. 1|B. 2|C. 3|D. A, B, C đều sai|A|

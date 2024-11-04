@@ -1,32 +1,29 @@
 #pragma once
-#include "mycolor.h"
-#include "mydraw.h"
-#include "mykeyboard.h"
-#include "mywindows.h"
-
-#include "PopupDelete.h"
-#include "InputField.h"
-#include "Text.h"
-
-#include "Content.h"
-#include <conio.h>
-#include <string>
-#include <iostream>
-using namespace std;
+#include "StrucData.h"
 
 
+/*--------------------------------------------------------------------*/
+/*-----------------------------CLASSROOM FUNCTION---------------------*/
+// Add class to class list
+void addClassToClassList(ClassList& classList, const Classroom& classroom);
 
-class Classroom : public Content
-{
-public:
-	void displayContent() override;
-	void content();
-	void drawClassroom();
-	void girdContent();
-	void loadData();
-	Classroom();
-	~Classroom();
+// Print class and student in class
+void printClasses(ClassList& classList);
 
-private:
+// Find class in class list
+int findClass(const ClassList& classList, const char* classCode);
 
-};
+// Edit class
+void editClass(ClassList& classList, const char* classCode, const Classroom newClassroom);
+
+// Delete class in list
+void deleteClass(ClassList& classList, const char* classCode);
+
+// Save class list to file
+void saveClassListToFile(const ClassList& classList, const char* filename);
+
+// Load class list from file
+void loadClassListFromFile(ClassList& classList, const char* filename);
+
+// Function release memory list class
+void freeClassList(ClassList& classList);

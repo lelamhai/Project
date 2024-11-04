@@ -56,9 +56,9 @@ typedef NodeScore* PTRSCORE;
 
 struct Student {
 	char studentCode[15];
-	char firstName[15];
-	char lastName[50];
-	char gender; //f is female, m is male
+	char firstName[30];
+	char lastName[30];
+	char gender;
 	char password[30];
 	PTRSCORE scoreList = nullptr;
 };
