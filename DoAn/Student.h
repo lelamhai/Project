@@ -1,7 +1,9 @@
 #pragma once
 
 #include "StrucData.h"
-
+#include<cstring>
+#include <string>
+#include <fstream>
 /*--------------------------------------------------------------------*/
 /*-----------------------------STUDENT FUNCTION-----------------------*/
 
@@ -20,9 +22,6 @@ bool editStudent(PTRSTUDENT studentList, char* studentCode, Student& updatedInfo
 
 // Find student by code or name
 PTRSTUDENT findStudent(PTRSTUDENT studentList, char* studentCode);
-
-// Save student in file
-void saveStudentsToFile(PTRSTUDENT studentList, const string fileName);
 
 // Load student from file
 void loadStudentsFromFile(PTRSTUDENT& studentList, const string& fileName);

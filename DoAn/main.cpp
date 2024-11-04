@@ -1,5 +1,6 @@
 #include "Page.h"
 #include "HuyTest.h"
+#include "DungTest.h"
 
 using namespace std;
 
@@ -13,13 +14,15 @@ int main()
 	//----------------------------------
 
 	//----------------HUY ----------------
-	HuyTest* h = new HuyTest();
-	h->main();
-	delete h;
+	//HuyTest* h = new HuyTest();
+	//h->main();
+	//delete h;
 	//------------------------------------------
 	
 	//--------------------DUNG-------------------
-
+	DungTest* shyni = new DungTest();
+	shyni->main();
+	delete shyni;
 
 
 	//-------------------------------------------

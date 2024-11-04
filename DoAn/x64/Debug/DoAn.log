@@ -1,6 +1,7 @@
 ﻿  button.cpp
   buttonEnter.cpp
   ClassroomSevice.cpp
+D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\ClassroomSevice.cpp(87,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   ClassServiceDemo.cpp
   color.cpp
   configApp.cpp
@@ -12,15 +13,15 @@
   draw.cpp
   footer.cpp
   inputField.cpp
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(13,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(61,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(83,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(107,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(125,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(13,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(61,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(83,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(107,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(125,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   InputField.h
   page.cpp
   popup.cpp
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\popup.cpp(52,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\popup.cpp(52,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   sidebar.cpp
   header.cpp
   keyboard.cpp
@@ -28,8 +29,8 @@ C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\popup.cpp(52,48): warning C4267:
   Compiling...
   loading.cpp
   login.cpp
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\login.cpp(94,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\login.cpp(110,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\login.cpp(94,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\login.cpp(110,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   main.cpp
   Layout.cpp
   StudentList.cpp
@@ -38,4 +39,4 @@ C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\login.cpp(110,16): warning C4267
   windows.cpp
   Generating Code...
 x64\Debug\InputField.obj : warning LNK4042: object specified more than once; extras ignored
-  DoAn.vcxproj -> C:\Users\ngoch\OneDrive\Máy tính\Project\x64\Debug\DoAn.exe
+  DoAn.vcxproj -> D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\x64\Debug\DoAn.exe
