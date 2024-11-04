@@ -127,16 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="about.cpp" />
     <ClCompile Include="button.cpp" />
     <ClCompile Include="buttonEnter.cpp" />
-    <ClCompile Include="classroom.cpp" />
     <ClCompile Include="ClassroomSevice.cpp" />
     <ClCompile Include="ClassServiceDemo.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
-    <ClCompile Include="content.cpp" />
-    <ClCompile Include="exam.cpp" />
+    <ClCompile Include="DungTest.cpp" />
+    <ClCompile Include="HuyTest.cpp" />
     <ClCompile Include="LoadingData.cpp" />
     <ClCompile Include="LoginData.cpp" />
     <ClCompile Include="popupDelete.cpp" />
@@ -146,7 +144,6 @@
     <ClCompile Include="InputField.h" />
     <ClCompile Include="page.cpp" />
     <ClCompile Include="popup.cpp" />
-    <ClCompile Include="question.cpp" />
     <ClCompile Include="sidebar.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="keyboard.cpp" />
@@ -154,24 +151,22 @@
     <ClCompile Include="login.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Layout.cpp" />
-    <ClCompile Include="student.cpp" />
     <ClCompile Include="StudentList.cpp" />
     <ClCompile Include="StudentService.cpp" />
-    <ClCompile Include="subject.cpp" />
     <ClCompile Include="text.cpp" />
     <ClCompile Include="windows.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="About.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ButtonEnter.h" />
     <ClInclude Include="Classroom.h" />
     <ClInclude Include="configApp.h" />
-    <ClInclude Include="Content.h" />
-    <ClInclude Include="Exam.h" />
+    <ClInclude Include="DungTest.h" />
+    <ClInclude Include="HuyTest.h" />
     <ClInclude Include="LoadingData.h" />
     <ClInclude Include="LoginData.h" />
-    <ClInclude Include="QUIZ_SYSTEM_H.h" />
+    <ClInclude Include="MCQ.h" />
+    <ClInclude Include="Student.h" />
     <ClInclude Include="StudentList.h" />
     <ClInclude Include="mycolor.h" />
     <ClInclude Include="mydraw.h" />
@@ -183,13 +178,10 @@
     <ClInclude Include="Page.h" />
     <ClInclude Include="Popup.h" />
     <ClInclude Include="PopupDelete.h" />
-    <ClInclude Include="Question.h" />
     <ClInclude Include="Sidebar.h" />
     <ClInclude Include="mywindows.h" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="StrucData.h" />
-    <ClInclude Include="Student.h" />
-    <ClInclude Include="Subject.h" />
     <ClInclude Include="Text.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

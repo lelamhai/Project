@@ -1,61 +1,41 @@
-﻿  about.cpp
-  button.cpp
+﻿  button.cpp
   buttonEnter.cpp
-  classroom.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\classroom.cpp(138,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\classroom.cpp(142,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\classroom.cpp(146,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\classroom.cpp(150,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\classroom.cpp(165,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\classroom.cpp(169,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\classroom.cpp(173,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\classroom.cpp(178,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  ClassroomSevice.cpp
+  ClassServiceDemo.cpp
   color.cpp
   configApp.cpp
-  content.cpp
-  exam.cpp
-/exam.cpp(1,1): error C1083: Cannot open source file: 'exam.cpp': No such file or directory
-  (compiling source file '/exam.cpp')
-  
+  DungTest.cpp
+  HuyTest.cpp
   LoadingData.cpp
   LoginData.cpp
   popupDelete.cpp
   draw.cpp
   footer.cpp
   inputField.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(13,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(61,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(83,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(107,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(125,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(13,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(61,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(83,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(107,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(125,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   InputField.h
   page.cpp
   popup.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\popup.cpp(52,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  question.cpp
-/question.cpp(1,1): error C1083: Cannot open source file: 'question.cpp': No such file or directory
-  (compiling source file '/question.cpp')
-  
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\popup.cpp(52,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   sidebar.cpp
   header.cpp
+  keyboard.cpp
   Generating Code...
   Compiling...
-  keyboard.cpp
   loading.cpp
   login.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\login.cpp(94,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\login.cpp(110,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\login.cpp(94,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\login.cpp(110,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   main.cpp
   Layout.cpp
-  student.cpp
-/student.cpp(1,1): error C1083: Cannot open source file: 'student.cpp': No such file or directory
-  (compiling source file '/student.cpp')
-  
   StudentList.cpp
-  subject.cpp
-/subject.cpp(1,1): error C1083: Cannot open source file: 'subject.cpp': No such file or directory
-  (compiling source file '/subject.cpp')
-  
+  StudentService.cpp
   text.cpp
   windows.cpp
   Generating Code...
+x64\Debug\InputField.obj : warning LNK4042: object specified more than once; extras ignored
+  DoAn.vcxproj -> C:\Users\ngoch\OneDrive\Máy tính\Project\x64\Debug\DoAn.exe

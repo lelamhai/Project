@@ -64,6 +64,33 @@
     <Filter Include="Header Files\DATA\Pages">
       <UniqueIdentifier>{d37ce050-ed96-4972-83f0-d2c75fc63086}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DATA\Student">
+      <UniqueIdentifier>{3e78d13a-9df4-4502-aa8e-d841f38f88c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DATA\MCQ">
+      <UniqueIdentifier>{2d7020b0-c018-4e7a-863f-a519e7803051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DATA\Classroom">
+      <UniqueIdentifier>{c484740d-9e74-4590-a437-5de7c76910be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DATA\MCQ">
+      <UniqueIdentifier>{bc475abf-cf13-4176-b674-9b0c3b4b0805}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DATA\Student">
+      <UniqueIdentifier>{a07e405e-e868-4d71-a52b-3baded9f234c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DATA\Classroom">
+      <UniqueIdentifier>{50a46e9a-85d5-429c-ae96-c2307f5c338a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DATA\Pages">
+      <UniqueIdentifier>{4b3824ff-c703-497b-8fd9-8c5b7d753540}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DATA\Main">
+      <UniqueIdentifier>{09aeca34-0907-4fd6-a624-fcce05c33886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DATA\Main">
+      <UniqueIdentifier>{aa9ca743-c022-4e3e-a88b-90db3055b6ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -105,24 +132,6 @@
     <ClCompile Include="Layout.cpp">
       <Filter>Source Files\GUI\Pages</Filter>
     </ClCompile>
-    <ClCompile Include="about.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="content.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="student.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="classroom.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="subject.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="question.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
-    </ClCompile>
     <ClCompile Include="button.cpp">
       <Filter>Source Files\GUI\UI</Filter>
     </ClCompile>
@@ -144,26 +153,29 @@
     <ClCompile Include="popupDelete.cpp">
       <Filter>Source Files\GUI\Popups</Filter>
     </ClCompile>
-    <ClCompile Include="exam.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="LoginData.cpp">
-      <Filter>Source Files\DATA</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingData.cpp">
-      <Filter>Source Files\DATA</Filter>
-    </ClCompile>
-    <ClCompile Include="StudentList.cpp">
-      <Filter>Source Files\DATA</Filter>
-    </ClCompile>
     <ClCompile Include="ClassroomSevice.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DATA\Classroom</Filter>
     </ClCompile>
     <ClCompile Include="ClassServiceDemo.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DATA\Classroom</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentList.cpp">
+      <Filter>Source Files\DATA\Student</Filter>
     </ClCompile>
     <ClCompile Include="StudentService.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DATA\Student</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingData.cpp">
+      <Filter>Source Files\DATA\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginData.cpp">
+      <Filter>Source Files\DATA\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="HuyTest.cpp">
+      <Filter>Source Files\DATA\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="DungTest.cpp">
+      <Filter>Source Files\DATA\Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -200,24 +212,6 @@
     <ClInclude Include="Page.h">
       <Filter>Header Files\GUI\Pages</Filter>
     </ClInclude>
-    <ClInclude Include="About.h">
-      <Filter>Header Files\GUI\Contents</Filter>
-    </ClInclude>
-    <ClInclude Include="Content.h">
-      <Filter>Header Files\GUI\Contents</Filter>
-    </ClInclude>
-    <ClInclude Include="Student.h">
-      <Filter>Header Files\GUI\Contents</Filter>
-    </ClInclude>
-    <ClInclude Include="Classroom.h">
-      <Filter>Header Files\GUI\Contents</Filter>
-    </ClInclude>
-    <ClInclude Include="Subject.h">
-      <Filter>Header Files\GUI\Contents</Filter>
-    </ClInclude>
-    <ClInclude Include="Question.h">
-      <Filter>Header Files\GUI\Contents</Filter>
-    </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Header Files\GUI\UI</Filter>
     </ClInclude>
@@ -236,13 +230,7 @@
     <ClInclude Include="PopupDelete.h">
       <Filter>Header Files\GUI\Popups</Filter>
     </ClInclude>
-    <ClInclude Include="Exam.h">
-      <Filter>Header Files\GUI\Contents</Filter>
-    </ClInclude>
     <ClInclude Include="StrucData.h">
-      <Filter>Header Files\DATA</Filter>
-    </ClInclude>
-    <ClInclude Include="StudentList.h">
       <Filter>Header Files\DATA</Filter>
     </ClInclude>
     <ClInclude Include="LoginData.h">
@@ -251,8 +239,23 @@
     <ClInclude Include="LoadingData.h">
       <Filter>Header Files\DATA\Pages</Filter>
     </ClInclude>
-    <ClInclude Include="QUIZ_SYSTEM_H.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="StudentList.h">
+      <Filter>Header Files\DATA\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="Classroom.h">
+      <Filter>Header Files\DATA\Classroom</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>Header Files\DATA\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="MCQ.h">
+      <Filter>Header Files\DATA\MCQ</Filter>
+    </ClInclude>
+    <ClInclude Include="HuyTest.h">
+      <Filter>Header Files\DATA\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="DungTest.h">
+      <Filter>Header Files\DATA\Main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
