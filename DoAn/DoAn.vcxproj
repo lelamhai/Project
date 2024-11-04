@@ -131,6 +131,8 @@
     <ClCompile Include="button.cpp" />
     <ClCompile Include="buttonEnter.cpp" />
     <ClCompile Include="classroom.cpp" />
+    <ClCompile Include="ClassroomSevice.cpp" />
+    <ClCompile Include="ClassServiceDemo.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
     <ClCompile Include="content.cpp" />
@@ -154,6 +156,7 @@
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="student.cpp" />
     <ClCompile Include="StudentList.cpp" />
+    <ClCompile Include="StudentService.cpp" />
     <ClCompile Include="subject.cpp" />
     <ClCompile Include="text.cpp" />
     <ClCompile Include="windows.cpp" />
@@ -168,6 +171,7 @@
     <ClInclude Include="Exam.h" />
     <ClInclude Include="LoadingData.h" />
     <ClInclude Include="LoginData.h" />
+    <ClInclude Include="QUIZ_SYSTEM_H.h" />
     <ClInclude Include="StudentList.h" />
     <ClInclude Include="mycolor.h" />
     <ClInclude Include="mydraw.h" />

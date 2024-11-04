@@ -156,6 +156,15 @@
     <ClCompile Include="StudentList.cpp">
       <Filter>Source Files\DATA</Filter>
     </ClCompile>
+    <ClCompile Include="ClassroomSevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassServiceDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -241,6 +250,9 @@
     </ClInclude>
     <ClInclude Include="LoadingData.h">
       <Filter>Header Files\DATA\Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="QUIZ_SYSTEM_H.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
