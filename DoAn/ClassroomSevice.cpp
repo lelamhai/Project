@@ -3,23 +3,22 @@
 
 // Function add class to list class
 // Input: Array class list,  new classroom need to add
-void addClassToClassList(ClassList &classList, const Classroom &classroom) {
-	int index = findClass(classList, classroom.classCode);
+bool addClassToClassList(ClassList &classList, const Classroom &classroom) {
+	int index = findClassPositionInList(classList, classroom.classCode);
 	if (index != -1) {
-		cout << "Ma lop da ton tai!";
-		return;
+		return false;
 	}
 	if(classList.countClass < MAX_NUMBER_CLASS) {
 		classList.classes[classList.countClass] = new Classroom;
 		*classList.classes[classList.countClass] = classroom;
 		classList.countClass++;
-	} else {
-		cout << "Danh sach lop da day!" << endl;
-	}
+		return true;
+	} 
+	return false;
 }
 
 // Function find class by class Code in classList;
-int findClass(const ClassList& classList, const char* classCode) {
+int findClassPositionInList(const ClassList& classList, const char* classCode) {
 	for (int i = 0; i < classList.countClass; i++) {
 		if (strcmp(classList.classes[i]->classCode, classCode) == 0) {
 			return i;
@@ -29,15 +28,14 @@ int findClass(const ClassList& classList, const char* classCode) {
 }
 
 // Function edit class
-void editClass(ClassList& classList, const char* classCode, const Classroom newClassroom) {
-	int index = findClass(classList, classCode);
+bool editClass(ClassList& classList, const char* classCode, const Classroom newClassroom) {
+	int index = findClassPositionInList(classList, classCode);
 	if (index != -1) {
 		classList.classes[index]->className = newClassroom.className;
 		saveClassListToFile(classList, "classlist.dat");
+		return true;
 	}
-	else {
-		cout << "Khong tim thay lop voi ma nay!" << endl;
-	}
+	return false;
 }
 
 // Function print List class;
@@ -51,18 +49,18 @@ void printClasses(ClassList &classList) {
 }
 
 // Delete class from classlist
-void deleteClass(ClassList& classList, const char* classCode) {
-	int index = findClass(classList, classCode);
+bool deleteClass(ClassList& classList, const char* classCode) {
+	int index = findClassPositionInList(classList, classCode);
 	if (index != -1) {
 		delete classList.classes[index];
+
 		for (int i = index; i < classList.countClass - 1; i++) {
 			classList.classes[i] = classList.classes[i + 1];
 		}
 		classList.countClass--;
+		return true;
 	}
-	else {
-		cout << "Khong tim thay lop voi ma nay!" << endl;
-	}
+	return false;
 }
 
 // Save class List to file
@@ -236,6 +234,17 @@ void freeClassList(ClassList& classList) {
 		}
 	}
 	classList.countClass = 0;
+}
+
+// Function get total student in class
+int getCountStudentInClass(Classroom classroom) {
+	int count = 0;
+	PTRSTUDENT student= classroom.studentList;
+	while (student != nullptr) {
+		count++;
+		student = student->next;
+	}
+	return count;
 }
 
 

@@ -198,6 +198,9 @@
     <ClCompile Include="contentSubject.cpp">
       <Filter>Source Files\GUI\Contents</Filter>
     </ClCompile>
+    <ClCompile Include="ManageStudent.cpp">
+      <Filter>Source Files\DATA\Classroom</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -295,6 +298,9 @@
     </ClInclude>
     <ClInclude Include="Content.h">
       <Filter>Header Files\GUI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentClass.h">
+      <Filter>Header Files\DATA\Student</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

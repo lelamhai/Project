@@ -4,6 +4,8 @@
 #include "Student.h"
 #include <iostream>
 #include <windows.h>
+#include "StudentClass.h"
+
 
 class DungTest
 {
