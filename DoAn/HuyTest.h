@@ -2,6 +2,7 @@
 
 #include "LoadingData.h"
 #include "LoginData.h"
+#include "ManageStudent.h"
 #include <iostream>
 
 class HuyTest

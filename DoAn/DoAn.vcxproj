@@ -181,7 +181,7 @@
     <ClInclude Include="LoginData.h" />
     <ClInclude Include="MCQ.h" />
     <ClInclude Include="Student.h" />
-    <ClInclude Include="StudentClass.h" />
+    <ClInclude Include="ManageStudent.h" />
     <ClInclude Include="StudentList.h" />
     <ClInclude Include="mycolor.h" />
     <ClInclude Include="mydraw.h" />

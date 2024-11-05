@@ -299,7 +299,7 @@
     <ClInclude Include="Content.h">
       <Filter>Header Files\GUI\Contents</Filter>
     </ClInclude>
-    <ClInclude Include="StudentClass.h">
+    <ClInclude Include="ManageStudent.h">
       <Filter>Header Files\DATA\Student</Filter>
     </ClInclude>
   </ItemGroup>
