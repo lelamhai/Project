@@ -156,9 +156,6 @@
     <ClCompile Include="ClassroomSevice.cpp">
       <Filter>Source Files\DATA\Classroom</Filter>
     </ClCompile>
-    <ClCompile Include="ClassServiceDemo.cpp">
-      <Filter>Source Files\DATA\Classroom</Filter>
-    </ClCompile>
     <ClCompile Include="StudentList.cpp">
       <Filter>Source Files\DATA\Student</Filter>
     </ClCompile>
@@ -176,6 +173,30 @@
     </ClCompile>
     <ClCompile Include="DungTest.cpp">
       <Filter>Source Files\DATA\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ContentSubject.h">
+      <Filter>Header Files\GUI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="content.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contentAbout.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contentClassroom.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contentExam.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contentQuestion.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contentStudent.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contentSubject.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +277,24 @@
     </ClInclude>
     <ClInclude Include="DungTest.h">
       <Filter>Header Files\DATA\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentAbout.h">
+      <Filter>Header Files\GUI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentClassroom.h">
+      <Filter>Header Files\GUI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentStudent.h">
+      <Filter>Header Files\GUI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentQuestion.h">
+      <Filter>Header Files\GUI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentExam.h">
+      <Filter>Header Files\GUI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="Content.h">
+      <Filter>Header Files\GUI\Contents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

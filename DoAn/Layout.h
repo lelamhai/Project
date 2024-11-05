@@ -3,12 +3,12 @@
 #include "sidebar.h"
 #include "footer.h"
 
-//#include "About.h"
-//#include "Classroom.h"
-//#include "Student.h"
-//#include "Subject.h"
-//#include "Question.h"
-//#include "Exam.h"
+#include "ContentAbout.h"
+#include "ContentClassroom.h"
+#include "ContentStudent.h"
+#include "ContentSubject.h"
+#include "ContentQuestion.h"
+#include "ContentExam.h"
 
 #include "mycolor.h"
 #include "mydraw.h"

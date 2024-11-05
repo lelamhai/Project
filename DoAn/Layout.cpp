@@ -110,63 +110,63 @@ void Layout::templateContent()
     int lastChoice = -1;
     while (isRun)
     {
-        //if (choice == lastChoice)
-        //{
-        //    continue;
-        //}
+        if (choice == lastChoice)
+        {
+            continue;
+        }
 
-        //if (choice == ABOUT)
-        //{
-        //    showCur(0);
-        //    cleanContent();
-        //    About* a = new About();
-        //    a->displayContent();
-        //    delete a;
-        //}
-        //if (choice == STUDENT)
-        //{
-        //    showCur(0);
-        //    cleanContent();
-        //  /*  Student* s = new Student();
-        //    s->displayContent();
-        //    delete s;*/
-        //}
-        //if (choice == CLASSROOM)
-        //{
-        //    showCur(0);
-        //    cleanContent();
-        //    Classroom* c = new Classroom();
-        //    c->displayContent();
-        //    delete c;
-        //}
-        //if (choice == SUBJECT)
-        //{
-        //    showCur(0);
-        //    cleanContent();
-        //    Subject* s = new Subject();
-        //    s->displayContent();
-        //    delete s;
-        //}
-        //if (choice == QUESTION)
-        //{
-        //    showCur(0);
-        //    cleanContent();
-        //    Question* q = new Question();
-        //    q->displayContent();
-        //    delete q;
-        //}
+        if (choice == ABOUT)
+        {
+            showCur(0);
+            cleanContent();
+            ContentAbout* a = new ContentAbout();
+            a->displayContent();
+            delete a;
+        }
+        if (choice == STUDENT)
+        {
+            showCur(0);
+            cleanContent();
+            ContentStudent* s = new ContentStudent();
+            s->displayContent();
+            delete s;
+        }
+        if (choice == CLASSROOM)
+        {
+            showCur(0);
+            cleanContent();
+            ContentClassroom* c = new ContentClassroom();
+            c->displayContent();
+            delete c;
+        }
+        if (choice == SUBJECT)
+        {
+            showCur(0);
+            cleanContent();
+            ContentSubject* s = new ContentSubject();
+            s->displayContent();
+            delete s;
+        }
+        if (choice == QUESTION)
+        {
+            showCur(0);
+            cleanContent();
+            ContentQuestion* q = new ContentQuestion();
+            q->displayContent();
+            delete q;
+        }
 
-        //if (choice == EXAM)
-        //{
-        //    showCur(0);
-        //    cleanContent();
-        //    Exam* e = new Exam();
-        //    e->displayContent();
-        //    delete e;
-        //}
+        if (choice == EXAM)
+        {
+            showCur(0);
+            cleanContent();
+            ContentExam* e = new ContentExam();
+            e->displayContent();
+            delete e;
+        }
 
-        //lastChoice = choice;
-        //Sleep(200);
+        lastChoice = choice;
+        Sleep(200);
     }
 }
 
