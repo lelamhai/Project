@@ -178,6 +178,7 @@
     <ClInclude Include="ContentStudent.h" />
     <ClInclude Include="DungTest.h" />
     <ClInclude Include="HuyTest.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="LoadingData.h" />
     <ClInclude Include="LoginData.h" />
     <ClInclude Include="ManageClass.h" />

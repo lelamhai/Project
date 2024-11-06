@@ -19,10 +19,10 @@ void DungTest::main()
     cout << ketQua << endl;*/
 
     ManageClass test;
-    test.addClass("C001", "D23TXCN04-K");
-    test.addClass("C002", "D23TXCN05-K");
-    test.addClass("C003", "D23TXCN06-K");
+    test.loadFromFile();
+    ClassList a = test.getClassPerPage(2,2);
+    cout << a.countClass;
     test.printClasses();
-
+    
 }
 	

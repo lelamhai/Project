@@ -4,6 +4,11 @@
 #include <fstream> 
 #include <sstream> 
 #include "StrucData.h"
+#include "json.hpp"
+
+using json = nlohmann::json;
+
+const string SOURCE_CLASS = "classdata.json";
 
 class ManageClass
 {
@@ -33,8 +38,14 @@ public:
 	// Function print class list;
 	void printClasses();
 
+	// Function save class list to file
+	void saveToFile();
 
+	// Function load class list from file
+	void loadFromFile();
 
+	// Pagination
+	ClassList getClassPerPage(int pageNumber = 1, int classesPerPage = 10);
 };
 
 

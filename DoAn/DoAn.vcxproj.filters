@@ -308,5 +308,8 @@
     <ClInclude Include="ManageClass.h">
       <Filter>Header Files\DATA\Classroom</Filter>
     </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

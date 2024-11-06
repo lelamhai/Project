@@ -1,0 +1,20 @@
+{
+    "classCount": 3,
+    "classes": [
+        {
+            "classCode": "C001",
+            "className": "D23TXCN04-K",
+            "students": []
+        },
+        {
+            "classCode": "C002",
+            "className": "K23DTCN05-K U",
+            "students": []
+        },
+        {
+            "classCode": "C003",
+            "className": "D23TXCN06-K",
+            "students": []
+        }
+    ]
+}
