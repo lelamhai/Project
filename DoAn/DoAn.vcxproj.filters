@@ -91,6 +91,12 @@
     <Filter Include="Header Files\DATA\Main">
       <UniqueIdentifier>{aa9ca743-c022-4e3e-a88b-90db3055b6ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DATA\Question">
+      <UniqueIdentifier>{437b72d3-537e-4e2f-971f-8e16d516e116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DATA\Question">
+      <UniqueIdentifier>{315882e5-f8ad-4821-94c5-67b54993e164}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -204,6 +210,9 @@
     <ClCompile Include="ManageStudent.cpp">
       <Filter>Source Files\DATA\Student</Filter>
     </ClCompile>
+    <ClCompile Include="ManageQuestion.cpp">
+      <Filter>Source Files\DATA\Question</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -310,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="json.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ManageQuestion.h">
+      <Filter>Header Files\DATA\Question</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,9 +4,6 @@
 #include <fstream> 
 #include <sstream> 
 #include "StrucData.h"
-#include "json.hpp"
-
-using json = nlohmann::json;
 
 const string SOURCE_CLASS = "classdata.json";
 

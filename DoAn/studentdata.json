@@ -1,0 +1,28 @@
+{
+    "students": [
+        {
+            "firstName": "duy",
+            "gender": 77,
+            "lastName": "khoa",
+            "password": "12345776",
+            "scores": [],
+            "studentCode": "hs3"
+        },
+        {
+            "firstName": "thanh",
+            "gender": 70,
+            "lastName": "nhan",
+            "password": "123456",
+            "scores": [],
+            "studentCode": "hs2"
+        },
+        {
+            "firstName": "duy",
+            "gender": 77,
+            "lastName": "dungggg",
+            "password": "12345776",
+            "scores": [],
+            "studentCode": "hs"
+        }
+    ]
+}

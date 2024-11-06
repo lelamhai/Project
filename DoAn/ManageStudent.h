@@ -6,7 +6,7 @@
 #include "StrucData.h"
 using namespace std;
 
-
+const string SOURCE_STUDENT = "studentdata.json";
 
 class ManageStudent
 {
@@ -35,6 +35,9 @@ public:
 
 	int getCountStudents();
 	
+	void saveToFile();
+
+	void loadFromFile();
 };
 
 int getCountStudentOfList(PTRSTUDENT listStudent);

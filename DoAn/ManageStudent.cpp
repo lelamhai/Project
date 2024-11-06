@@ -189,6 +189,108 @@ PTRSTUDENT ManageStudent::paginateStudents(int page, int pageSize) {
     return paginatedList;  // Trả về danh sách sinh viên trong trang hiện tại
 }
 
+void ManageStudent::saveToFile() {
+    json j;  // Tạo đối tượng JSON để lưu dữ liệu sinh viên
+
+    PTRSTUDENT temp = studentList;
+    int studentIndex = 0;  // Chỉ số cho sinh viên trong mảng JSON
+
+    while (temp != nullptr) {
+        // Tạo đối tượng JSON cho sinh viên
+        json studentData;
+        studentData["studentCode"] = temp->info.studentCode;
+        studentData["firstName"] = temp->info.firstName;
+        studentData["lastName"] = temp->info.lastName;
+        studentData["gender"] = temp->info.gender;
+        studentData["password"] = temp->info.password;
+
+        // Mảng điểm của sinh viên
+        studentData["scores"] = json::array();
+        PTRSCORE scorePtr = temp->info.scoreList;
+        int scoreIndex = 0;  // Chỉ số cho điểm trong mảng JSON
+        while (scorePtr != nullptr) {
+            json scoreData;
+            scoreData["subjectCode"] = scorePtr->info.subjectCode;
+            scoreData["score"] = scorePtr->info.diem;
+
+            // Thêm điểm vào mảng với chỉ số xác định
+            studentData["scores"][scoreIndex++] = scoreData;
+            scorePtr = scorePtr->next;
+        }
+
+        // Thêm sinh viên vào mảng sinh viên trong JSON bằng cách sử dụng chỉ số
+        j["students"][studentIndex++] = studentData;
+        temp = temp->next;
+}
+
+    // Ghi đối tượng JSON vào file
+    ofstream file(SOURCE_STUDENT);
+    if (file.is_open()) {
+        file << j.dump(4);  // Lưu với định dạng đẹp (indent = 4)
+        file.close();
+        cout << "Data saved successfully in JSON format." << endl;
+    }
+    else {
+        cout << "Unable to open file for saving." << endl;
+    }
+}
+
+void ManageStudent::loadFromFile() {
+    ifstream file(SOURCE_STUDENT);  // Mở file JSON
+    if (!file.is_open()) {
+        cout << "Could not open file!" << endl;
+        return;
+    }
+
+    json j;
+    file >> j;  // Đọc dữ liệu từ file vào đối tượng JSON
+    file.close();
+
+    studentList = nullptr;  // Khởi tạo danh sách sinh viên
+    PTRSTUDENT* lastStudent = &studentList;  // Con trỏ để quản lý sinh viên cuối cùng trong danh sách
+
+    // Duyệt qua từng sinh viên trong JSON
+    for (int studentIndex = 0; studentIndex < j["students"].size(); studentIndex++) {
+        json studentData = j["students"][studentIndex];  // Lấy dữ liệu của từng sinh viên
+
+        // Tạo sinh viên mới
+        PTRSTUDENT newStudent = new NodeStudent();
+        strcpy_s(newStudent->info.studentCode, studentData["studentCode"].get<string>().c_str());
+        strcpy_s(newStudent->info.firstName, studentData["firstName"].get<string>().c_str());
+        strcpy_s(newStudent->info.lastName, studentData["lastName"].get<string>().c_str());
+        newStudent->info.gender = studentData["gender"].get<char>();
+        strcpy_s(newStudent->info.password, studentData["password"].get<string>().c_str());
+
+        // Đọc danh sách điểm của sinh viên
+        newStudent->info.scoreList = nullptr;
+        PTRSCORE* lastScore = &newStudent->info.scoreList;
+        for (int scoreIndex = 0; scoreIndex < studentData["scores"].size(); scoreIndex++) {
+            json scoreData = studentData["scores"][scoreIndex];  // Lấy dữ liệu của từng điểm
+
+            // Tạo điểm mới
+            PTRSCORE newScore = new NodeScore();
+            strcpy_s(newScore->info.subjectCode, scoreData["subjectCode"].get<string>().c_str());
+            newScore->info.diem = scoreData["score"].get<float>();
+
+            // Thêm điểm vào danh sách điểm của sinh viên
+            *lastScore = newScore;
+            lastScore = &newScore->next;
+        }
+        *lastScore = nullptr;  // Kết thúc danh sách điểm
+
+        // Thêm sinh viên vào danh sách sinh viên
+        *lastStudent = newStudent;
+        lastStudent = &newStudent->next;
+    }
+
+    *lastStudent = nullptr;  // Kết thúc danh sách sinh viên
+
+    cout << "Data loaded successfully from JSON format." << endl;
+}
+
+
+
+
 int ManageStudent::getCountStudents() {
     int count = 0;
     PTRSTUDENT temp = studentList;

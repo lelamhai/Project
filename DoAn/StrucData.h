@@ -3,6 +3,9 @@
 #include<iostream>
 #include<cstring>
 #include <string>
+#include "json.hpp"
+
+using json = nlohmann::json;
 using namespace std;
 
 const int MAX_NUMBER_CLASS = 1000;
