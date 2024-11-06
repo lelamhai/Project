@@ -1,5 +1,7 @@
-#pragma once
+﻿#pragma once
 #include "StrucData.h"
+
+
 
 class ManageQuestion
 {
@@ -9,13 +11,13 @@ public:
 	ManageQuestion();
 	~ManageQuestion();
 
-	bool addQuestion(const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password);
+	bool addQuestion(const string content, const string optionA, const string optionB, const string optionC, const string optionD, const char answer);
 
-	bool editQuestion(const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password);
+	bool editQuestion(int questionId, const string content, const string optionA, const string optionB, const string optionC, const string optionD, const char answer);
 
-	PTRSTUDENT findQuestion(char* studentCode);
+	PTRQUESTION findQuestion(int questionId);
 
-	bool deleteQuestion(const char* studentCode);
+	bool deleteQuestion(int questionId);
 
 	void printQuestions();
 
@@ -26,6 +28,21 @@ public:
 	void saveToFile();
 
 	void loadFromFile();
- 
+
+
+	// Tạo ra 1 id ngẫu nhiên không trùng lặp
+	int generateUniqueId();
+
+	// Kiểm tra xem Id đã tồn tại chưa
+	bool isUniqueId(int randomId);
+	
 };
+
+
+
+
+
+
+
+
 
