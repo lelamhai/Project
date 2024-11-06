@@ -18,7 +18,7 @@ public:
 
 	bool addStudent(const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password);
 	bool openFile_Student(const char* filename);
-	string logIn(string user, string password);
+	bool logIn(string user, string password);
 };
 
 

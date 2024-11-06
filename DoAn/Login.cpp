@@ -73,6 +73,10 @@ void Login::drawButton()
 }
 void Login::formLogin()
 {
+	ManageStudent student;
+	student.openFile_Student("StudentList.txt");
+	bool result;
+
 	int width = getConsoleWidth();
 	int posX = getCenterX(width, 40);
 	posX = posX + 13 + 1;
@@ -82,7 +86,7 @@ void Login::formLogin()
 	InputField inputUserName;
 	InputField inputPassword;
 	Text text;
-	text.setContent("Login not finish");
+	text.setContent("Tai khoan khong dung!");
 
 
 	Login::stateLoginInput = LOGIN_USERNAME;
@@ -121,12 +125,17 @@ void Login::formLogin()
 			break;
 
 		case LOGIN_ENTER:
-			if (true)
+
+			result = student.logIn(inputUserName.getText(), inputPassword.getText());
+
+			if (result)
 			{
 				return;
 			}
 			else {
-				gotoXY(posX, 13 + 3 + 2);
+
+				int x = getCenterX(getConsoleWidth(), 22);
+				gotoXY(x, 13 + 3 + 2);
 				text.display();
 				stateLoginInput = LOGIN_USERNAME;
 			}

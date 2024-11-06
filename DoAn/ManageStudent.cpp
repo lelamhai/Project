@@ -67,45 +67,24 @@ bool ManageStudent::openFile_Student(const char* filename) {
     return true;
 }
 
-string ManageStudent::logIn(string user, string password) {
-    /*char user[15];
-    char password[30];*/
-    bool isUserCorrect;
+bool ManageStudent::logIn(string user, string password) 
+{
+    if (user.empty() && password.empty())
+    {
+        return false;
+    }
 
-    while (true) {
-        isUserCorrect = false;
-        /*cout << "Nhap tai khoan dang nhap: ";
-        cin >> user;
-        cout << "Nhap mat khau: ";
-        cin >> password;*/
-
-        if (user =="GV") {
-            if (password=="GV") {
-                cout << "Dang nhap thanh cong tai khoan Giao Vien" << endl;
-                return "GV";
-            }
-            else {
-                return "Mat khau khong dung, vui long nhap lai";
-            }
-        }
-
-        else {
-            for (PTRSTUDENT p = studentList; p != NULL; p = p->next) {
-                if (user == p->info.studentCode) {
-                    isUserCorrect = true;
-                    if (password == p->info.password) {
-                        cout << "Dang nhap thanh cong!" << endl;
-                        return p->info.studentCode;
-                    }
-                    else {
-                        cout << "Mat khau khong dung, vui long nhap lai";
-                    }
-                }
-            }
-
-            if (!isUserCorrect) {
-                return "Tai khoan khong ton tai, vui long thu lai";
-            }
+    for (PTRSTUDENT p = studentList; p != NULL; p = p->next) 
+    {
+        if (user == p->info.studentCode && password == p->info.password)
+        {
+            return true;
         }
     }
+    if (user == "GV" && password == "GV")
+    {
+        return true;
+    } 
+
+    return false;
 }

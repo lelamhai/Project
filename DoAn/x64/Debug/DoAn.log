@@ -1,5 +1,4 @@
-﻿  HuyTest.cpp
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\HuyTest.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-x64\Debug\ContentSubject.obj : warning LNK4042: object specified more than once; extras ignored
-x64\Debug\InputField.obj : warning LNK4042: object specified more than once; extras ignored
-  DoAn.vcxproj -> C:\Users\ngoch\OneDrive\Máy tính\Project\x64\Debug\DoAn.exe
+﻿  login.cpp
+C:\Users\ADMIN\Desktop\Project\DoAn\login.cpp(98,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\login.cpp(114,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  DoAn.vcxproj -> C:\Users\ADMIN\Desktop\Project\x64\Debug\DoAn.exe

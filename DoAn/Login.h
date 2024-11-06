@@ -4,6 +4,8 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 
+#include "ManageStudent.h"
+
 #include "InputField.h"
 #include "Text.h"
 
