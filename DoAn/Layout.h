@@ -1,4 +1,5 @@
 #pragma once
+#include "Singleton.h"
 #include "header.h"
 #include "sidebar.h"
 #include "footer.h"
@@ -17,6 +18,7 @@
 
 #include <thread>
 #include <conio.h>
+#include <vector>
 #include <iostream>
 using namespace std;
 #define WIDTH_CONTENT  172

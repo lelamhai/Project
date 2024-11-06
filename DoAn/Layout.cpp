@@ -29,16 +29,31 @@ void Layout::main()
 
 void Layout::templateMenu()
 {
-    string menu[] = {
-        "Gioi Thieu",
-        "Lop Hoc",
-        "Sinh Vien",
-        "Mon Hoc",
-        "Cau Hoi",
-        "Thi",
-        "Dang Xuat",
-        "Thoat"
-    };
+    vector<string> menu;
+
+    if (Singleton::getInstance()->role == 0)
+    {
+        menu = {
+           "Gioi Thieu",
+           "Mon Hoc",
+           "Thi",
+           "Dang Xuat",
+           "Thoat"
+        };
+    }
+    else {
+        menu = {
+            "Gioi Thieu",
+            "Lop Hoc",
+            "Sinh Vien",
+            "Mon Hoc",
+            "Cau Hoi",
+            "Thi",
+            "Dang Xuat",
+            "Thoat"
+        };
+    }
+    
 
     int posY = 10;
     int active = choice;
@@ -62,7 +77,7 @@ void Layout::templateMenu()
         
         if (lastHover != hover)
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < menu.size(); i++)
             {
                 setColorText(ColorCode_DarkWhite);
                 if (active == i)
@@ -81,7 +96,7 @@ void Layout::templateMenu()
 
         if (GetAsyncKeyState(VK_RETURN) & 0x8000 && active != hover)
         {
-            int count = sizeof(menu) / sizeof(menu[0]);
+            int count = menu.size();
             if (hover == count - 2)
             {
                 isRun = false;
@@ -115,56 +130,85 @@ void Layout::templateContent()
             continue;
         }
 
-        if (choice == ABOUT)
+        if (Singleton::getInstance()->role == 0)
         {
-            showCur(0);
-            cleanContent();
-            ContentAbout* a = new ContentAbout();
-            a->displayContent();
-            delete a;
+            if (choice == 0)
+            {
+                showCur(0);
+                cleanContent();
+                ContentAbout* a = new ContentAbout();
+                a->displayContent();
+                delete a;
+            }
+            if (choice == 1)
+            {
+                showCur(0);
+                cleanContent();
+                ContentSubject* s = new ContentSubject();
+                s->displayContent();
+                delete s;
+            }
+            if (choice == 2)
+            {
+                showCur(0);
+                cleanContent();
+                ContentExam* e = new ContentExam();
+                e->displayContent();
+                delete e;
+            }
         }
-        if (choice == STUDENT)
-        {
-            showCur(0);
-            cleanContent();
-            ContentStudent* s = new ContentStudent();
-            s->displayContent();
-            delete s;
-        }
-        if (choice == CLASSROOM)
-        {
-            showCur(0);
-            cleanContent();
-            ContentClassroom* c = new ContentClassroom();
-            c->displayContent();
-            delete c;
-        }
-        if (choice == SUBJECT)
-        {
-            showCur(0);
-            cleanContent();
-            ContentSubject* s = new ContentSubject();
-            s->displayContent();
-            delete s;
-        }
-        if (choice == QUESTION)
-        {
-            showCur(0);
-            cleanContent();
-            ContentQuestion* q = new ContentQuestion();
-            q->displayContent();
-            delete q;
-        }
+        else {
+            if (choice == ABOUT)
+            {
+                showCur(0);
+                cleanContent();
+                ContentAbout* a = new ContentAbout();
+                a->displayContent();
+                delete a;
+            }
+            if (choice == STUDENT)
+            {
+                showCur(0);
+                cleanContent();
+                ContentStudent* s = new ContentStudent();
+                s->displayContent();
+                delete s;
+            }
+            if (choice == CLASSROOM)
+            {
+                showCur(0);
+                cleanContent();
+                ContentClassroom* c = new ContentClassroom();
+                c->displayContent();
+                delete c;
+            }
+            if (choice == SUBJECT)
+            {
+                showCur(0);
+                cleanContent();
+                ContentSubject* s = new ContentSubject();
+                s->displayContent();
+                delete s;
+            }
+            if (choice == QUESTION)
+            {
+                showCur(0);
+                cleanContent();
+                ContentQuestion* q = new ContentQuestion();
+                q->displayContent();
+                delete q;
+            }
 
-        if (choice == EXAM)
-        {
-            showCur(0);
-            cleanContent();
-            ContentExam* e = new ContentExam();
-            e->displayContent();
-            delete e;
+            if (choice == EXAM)
+            {
+                showCur(0);
+                cleanContent();
+                ContentExam* e = new ContentExam();
+                e->displayContent();
+                delete e;
+            }
         }
-
+        
         lastChoice = choice;
         Sleep(200);
     }

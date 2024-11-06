@@ -78,11 +78,13 @@ bool ManageStudent::logIn(string user, string password)
     {
         if (user == p->info.studentCode && password == p->info.password)
         {
+            Singleton::getInstance()->role = 0;
             return true;
         }
     }
     if (user == "GV" && password == "GV")
     {
+        Singleton::getInstance()->role = 1;
         return true;
     } 
 
