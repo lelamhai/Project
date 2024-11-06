@@ -144,6 +144,7 @@
     <ClCompile Include="HuyTest.cpp" />
     <ClCompile Include="LoadingData.cpp" />
     <ClCompile Include="LoginData.cpp" />
+    <ClCompile Include="ManageClass.cpp" />
     <ClCompile Include="ManageStudent.cpp" />
     <ClCompile Include="popupDelete.cpp" />
     <ClCompile Include="draw.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="HuyTest.h" />
     <ClInclude Include="LoadingData.h" />
     <ClInclude Include="LoginData.h" />
+    <ClInclude Include="ManageClass.h" />
     <ClInclude Include="MCQ.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="ManageStudent.h" />

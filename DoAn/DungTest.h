@@ -5,6 +5,7 @@
 #include <iostream>
 #include <windows.h>
 #include "ManageStudent.h"
+#include "ManageClass.h"
 
 
 class DungTest

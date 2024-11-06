@@ -198,8 +198,11 @@
     <ClCompile Include="contentSubject.cpp">
       <Filter>Source Files\GUI\Contents</Filter>
     </ClCompile>
-    <ClCompile Include="ManageStudent.cpp">
+    <ClCompile Include="ManageClass.cpp">
       <Filter>Source Files\DATA\Classroom</Filter>
+    </ClCompile>
+    <ClCompile Include="ManageStudent.cpp">
+      <Filter>Source Files\DATA\Student</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -301,6 +304,9 @@
     </ClInclude>
     <ClInclude Include="ManageStudent.h">
       <Filter>Header Files\DATA\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="ManageClass.h">
+      <Filter>Header Files\DATA\Classroom</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
