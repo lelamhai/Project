@@ -16,10 +16,28 @@ public:
 	ManageStudent();
 	~ManageStudent();
 
+
 	bool addStudent(const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password);
+	
+	bool editStudent(const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password);
+	
+	PTRSTUDENT findStudent(char* studentCode);
+
+	bool deleteStudent(const char* studentCode);
+
+	void printStudents();
+
 	bool openFile_Student(const char* filename);
+
 	bool logIn(string user, string password);
+
+	PTRSTUDENT paginateStudents(int page = 0, int pageSize = 10);
+
+	int getCountStudents();
+	
 };
+
+int getCountStudentOfList(PTRSTUDENT listStudent);
 
 
 
