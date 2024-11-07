@@ -4,6 +4,7 @@
 #include <fstream> 
 #include <sstream> 
 #include "StrucData.h"
+#include "ManageStudent.h"
 
 const string SOURCE_CLASS = "classdata.json";
 
@@ -15,6 +16,9 @@ private:
 public:
 	ManageClass();
 	~ManageClass();
+
+	ClassList getClasses();
+	int getCountClass();
 
 	// Function find class by classcode
 	// Input: Class code
@@ -41,9 +45,20 @@ public:
 	// Function load class list from file
 	void loadFromFile();
 
+	// Function add student to class
+	bool addStudentToClass(const char* classCode, const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password);
+
+
+	// Function get count student of class by class code
+	int getCountSudentOfClass(const char* classCode);
+
 	// Pagination
 	ClassList getClassPerPage(int pageNumber = 1, int classesPerPage = 10);
+
+	// Delte student in class
+	bool deleteStudentInClass(const char* classCode, const char* studentCode);
 };
+
 
 
 

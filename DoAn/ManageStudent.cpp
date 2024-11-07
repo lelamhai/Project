@@ -313,3 +313,57 @@ int getCountStudentOfList(PTRSTUDENT listStudent) {
     return count;
 }
 
+// Print list student
+void printStudentsInList(PTRSTUDENT studentList) {
+    PTRSTUDENT temp = studentList;
+    while (temp != nullptr) {
+        cout << "Ma sinh vien: " << temp->info.studentCode << endl;
+        cout << "Ho va ten: " << temp->info.firstName << " " << temp->info.lastName << endl;
+        cout << "Gioi tinh: " << (temp->info.gender == 'M' ? "Nam" : "Nu") << endl;
+        cout << "-------------------------------------------" << endl;
+        temp = temp->next;
+    }
+}
+
+// Find student in list student
+PTRSTUDENT findStudentInList(PTRSTUDENT studentList, const char* studentCode) {
+    PTRSTUDENT result = new NodeStudent;
+    while (studentList != nullptr) {
+        if (strcmp(studentList->info.studentCode, studentCode) == 0) {
+            Student studentFound;
+            strcpy_s(studentFound.studentCode, studentCode);
+            strcpy_s(studentFound.firstName, studentList->info.firstName);
+            strcpy_s(studentFound.lastName, studentList->info.lastName);
+            studentFound.gender = studentList->info.gender;
+            strcpy_s(studentFound.password, studentList->info.password);
+            result->info = studentFound;
+            return result;
+        }
+        studentList = studentList->next;
+    }
+    return nullptr;
+}
+
+// Delete student by student code
+bool deleteStudentInList(PTRSTUDENT studentList, const char* studentCode) {
+    if (studentList == nullptr) return false;
+    if (strcmp(studentList->info.studentCode, studentCode) == 0) {
+        PTRSTUDENT temp = studentList;
+        studentList = studentList->next;
+        delete temp;
+        return true;
+    }
+
+    PTRSTUDENT prev = studentList;
+    PTRSTUDENT curr = studentList->next;
+    while (curr != nullptr && strcmp(curr->info.studentCode, studentCode) != 0) {
+        prev = curr;
+        curr = curr->next;
+    }
+    if (curr != nullptr) {
+        prev->next = curr->next;
+        delete curr;
+        return true;
+    }
+    return false;
+}

@@ -4,7 +4,24 @@
         {
             "classCode": "C001",
             "className": "D23TXCN04-K",
-            "students": []
+            "students": [
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Duy Khoa",
+                    "password": "khoavd",
+                    "scores": [],
+                    "studentCode": "K23DTCN270"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Duy Dung",
+                    "password": "dungvd",
+                    "scores": [],
+                    "studentCode": "K23DTCN269"
+                }
+            ]
         },
         {
             "classCode": "C002",

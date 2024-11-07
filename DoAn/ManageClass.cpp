@@ -8,6 +8,19 @@ ManageClass::~ManageClass()
 {
 }
 
+ClassList ManageClass::getClasses() {
+    ClassList classList;
+    classList.countClass = countClass;
+    for (int i = 0; i < countClass; i++) {
+        classList.classes[i] = classes[i];
+    }
+    return classList;
+}
+
+int ManageClass::getCountClass() {
+    return countClass;
+}
+
 int ManageClass::findClass(const char* classCode) {
 	for (int i = 0; i < countClass; i++) {
 		if (strcmp(classes[i]->classCode, classCode) == 0) {
@@ -58,10 +71,13 @@ bool ManageClass::deleteClass(const char* classCode) {
 }
 
 void ManageClass::printClasses() {
+    
 	for (int i = 0; i < countClass; i++) {
+
 		cout << "Ma lop: " << classes[i]->classCode << endl;
 		cout << "Ten lop: " << classes[i]->className << endl;
 		cout << "-------------------------------------------" << endl;
+        printStudentsInList(classes[i]->studentList);
 	}
 }
 
@@ -169,6 +185,53 @@ void ManageClass::loadFromFile() {
     cout << "Data loaded successfully from JSON format." << endl;
 }
 
+bool ManageClass::addStudentToClass(const char* classCode, const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password)
+{
+    int index = findClass(classCode); // Check is classCode exist
+    if (index == -1) return 0;
+    if (findStudentInList(classes[index]->studentList, studentCode) != nullptr) return 0; //Check is student code exist in class
+    
+    Student std1;
+    strcpy_s(std1.studentCode, studentCode);
+    strcpy_s(std1.firstName, firstName);
+    strcpy_s(std1.lastName, lastName);
+    std1.gender = gender;
+    strcpy_s(std1.password, password);
+
+    PTRSTUDENT tmpStudent = new NodeStudent;
+    tmpStudent->info = std1;
+    tmpStudent->next = nullptr;
+    if (classes[index]->studentList == nullptr) {
+        classes[index]->studentList = tmpStudent;
+    }
+    else {
+        tmpStudent->next = classes[index]->studentList;
+        classes[index]->studentList = tmpStudent;
+    }
+    saveToFile();
+    return false;
+}
+
+bool ManageClass::deleteStudentInClass(const char* classCode, const char* studentCode) {
+    int index = findClass(classCode); // Check is classCode exist
+    if (index == -1) return 0;
+    deleteStudentInList(classes[index]->studentList, studentCode);
+    saveToFile();
+}
+
+// Get count student in class
+int ManageClass::getCountSudentOfClass(const char* classCode)
+{
+    int count = 0;
+    int index = findClass(classCode);
+    if (index == -1) return 0;
+    PTRSTUDENT studentList = classes[index]->studentList;
+    while (studentList != nullptr) {
+        count++;
+    }
+    return count;
+}
+
 // phân trang
 ClassList ManageClass::getClassPerPage(int pageNumber, int classesPerPage) {
     int totalClasses = countClass;
@@ -193,6 +256,7 @@ ClassList ManageClass::getClassPerPage(int pageNumber, int classesPerPage) {
 
     return pageResult;  // Trả về danh sách lớp của trang đã chọn
 }
+
 
 
 
