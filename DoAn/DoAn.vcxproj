@@ -161,6 +161,7 @@
     <ClCompile Include="login.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Layout.cpp" />
+    <ClCompile Include="singleton.cpp" />
     <ClCompile Include="StudentList.cpp" />
     <ClCompile Include="StudentService.cpp" />
     <ClCompile Include="text.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="ManageClass.h" />
     <ClInclude Include="ManageQuestion.h" />
     <ClInclude Include="MCQ.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="ManageStudent.h" />
     <ClInclude Include="StudentList.h" />
