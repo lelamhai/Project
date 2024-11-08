@@ -1,4 +1,4 @@
-#include "ManageQuestion.h"
+﻿#include "ManageQuestion.h"
 
 ManageQuestion::ManageQuestion()
 {
@@ -138,4 +138,41 @@ bool ManageQuestion::isUniqueId(int randomId) {
 		questionList = questionList->next;
 	}
 	return true;
+}
+
+int generateUniqueQuestionId(PTRQUESTION listQuestion) {
+	// Sử dụng random để tạo số ngẫu nhiên
+	random_device rd;
+	mt19937 gen(rd());
+	uniform_int_distribution<> dis(1, 10000); // Sinh số trong khoảng 1 - 10000
+
+	int newId;
+	bool isUnique;
+	do {
+		newId = dis(gen);  // Sinh ra một questionId mới
+		isUnique = true;
+
+		// Kiểm tra xem questionId này có trùng với bất kỳ câu hỏi nào đã tồn tại không
+		PTRQUESTION current = listQuestion;
+		while (current != nullptr) {
+			if (current->info.questionId == newId) {
+				isUnique = false;
+				break;
+			}
+			current = current->next;
+		}
+	} while (!isUnique);  // Lặp lại nếu questionId không duy nhất
+
+	return newId;
+}
+
+int getCountQuestionInList(PTRQUESTION questionList) {
+	// Đếm tổng số câu hỏi của một môn học
+	int count = 0;
+	PTRQUESTION temp = questionList;
+	while (temp) {
+		count++;
+		temp = temp->next;
+	}
+	return count;
 }

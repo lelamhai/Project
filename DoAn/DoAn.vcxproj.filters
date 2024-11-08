@@ -97,6 +97,12 @@
     <Filter Include="Source Files\DATA\Question">
       <UniqueIdentifier>{315882e5-f8ad-4821-94c5-67b54993e164}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DATA\Subject">
+      <UniqueIdentifier>{ee2de02e-3c7c-40a7-9d10-24a3db8efcff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DATA\Subject">
+      <UniqueIdentifier>{c6241ce7-08c7-46e6-9800-79a558d55105}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -213,6 +219,12 @@
     <ClCompile Include="ManageQuestion.cpp">
       <Filter>Source Files\DATA\Question</Filter>
     </ClCompile>
+    <ClCompile Include="singleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ManageSubject.cpp">
+      <Filter>Source Files\DATA\Subject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -322,6 +334,12 @@
     </ClInclude>
     <ClInclude Include="ManageQuestion.h">
       <Filter>Header Files\DATA\Question</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ManageSubject.h">
+      <Filter>Header Files\DATA\Subject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

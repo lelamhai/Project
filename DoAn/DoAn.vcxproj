@@ -147,6 +147,7 @@
     <ClCompile Include="ManageClass.cpp" />
     <ClCompile Include="ManageQuestion.cpp" />
     <ClCompile Include="ManageStudent.cpp" />
+    <ClCompile Include="ManageSubject.cpp" />
     <ClCompile Include="popupDelete.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="LoginData.h" />
     <ClInclude Include="ManageClass.h" />
     <ClInclude Include="ManageQuestion.h" />
+    <ClInclude Include="ManageSubject.h" />
     <ClInclude Include="MCQ.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Student.h" />

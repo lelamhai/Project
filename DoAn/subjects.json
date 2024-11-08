@@ -1,0 +1,24 @@
+{
+    "subjects": [
+        {
+            "questions": [
+                {
+                    "answer": 65,
+                    "content": "Dau la phep toi uu nhat?",
+                    "optionA": "A",
+                    "optionB": "B",
+                    "optionC": "C",
+                    "optionD": "D",
+                    "questionId": 3347
+                }
+            ],
+            "subjectCode": "T01",
+            "subjectName": "Toan roi rac"
+        },
+        {
+            "questions": [],
+            "subjectCode": "CNXHKH",
+            "subjectName": "Chu nghia xa hoi khoa hoc"
+        }
+    ]
+}

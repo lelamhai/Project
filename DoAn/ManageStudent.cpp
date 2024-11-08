@@ -230,17 +230,12 @@ void ManageStudent::saveToFile() {
     if (file.is_open()) {
         file << j.dump(4);  // Lưu với định dạng đẹp (indent = 4)
         file.close();
-        cout << "Data saved successfully in JSON format." << endl;
-    }
-    else {
-        cout << "Unable to open file for saving." << endl;
     }
 }
 
 void ManageStudent::loadFromFile() {
     ifstream file(SOURCE_STUDENT);  // Mở file JSON
     if (!file.is_open()) {
-        cout << "Could not open file!" << endl;
         return;
     }
 
@@ -287,7 +282,6 @@ void ManageStudent::loadFromFile() {
 
     *lastStudent = nullptr;  // Kết thúc danh sách sinh viên
 
-    cout << "Data loaded successfully from JSON format." << endl;
 }
 
 

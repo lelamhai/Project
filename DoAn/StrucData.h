@@ -4,6 +4,8 @@
 #include<cstring>
 #include <string>
 #include "json.hpp"
+#include <random>
+#include <ctime>
 
 using json = nlohmann::json;
 using namespace std;

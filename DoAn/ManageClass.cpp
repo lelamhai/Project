@@ -2,6 +2,7 @@
 
 ManageClass::ManageClass()
 {
+    loadFromFile();
 }
 
 ManageClass::~ManageClass()

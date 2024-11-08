@@ -6,6 +6,7 @@
 #include <windows.h>
 #include "ManageStudent.h"
 #include "ManageClass.h"
+#include "ManageSubject.h"
 
 
 class DungTest

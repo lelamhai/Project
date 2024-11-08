@@ -38,6 +38,10 @@ public:
 	
 };
 
+int generateUniqueQuestionId(PTRQUESTION listQuestion);
+
+int getCountQuestionInList(PTRQUESTION questionList);
+
 
 
 
