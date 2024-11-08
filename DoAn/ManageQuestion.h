@@ -1,12 +1,13 @@
 ﻿#pragma once
 #include "StrucData.h"
-
-
+#include <fstream>
+using namespace std;
+const string SOURCE_QUESTION = "QuestionData.json";
 
 class ManageQuestion
 {
 private:
-	PTRQUESTION questionList;
+	PTRQUESTION questionList = nullptr;
 public:
 	ManageQuestion();
 	~ManageQuestion();

@@ -2,8 +2,8 @@
 
 #include "StrucData.h"
 
-/*--------------------------------------------------------------------*/
-/*-----------------------------QUESTION FUNCTION----------------------*/
+class MCQ
+
 // Add question to linked list
 void addQuestion(PTRQUESTION& questionList, const Question& question);
 
