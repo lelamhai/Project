@@ -33,17 +33,6 @@ void ContentClassroom::drawClassroom()
 	gotoXY(34 + 120 - 6, 10 + 28 + 5);
 	txtPaging.display();
 
-	/*while (true)
-	{
-		if (GetAsyncKeyState(VK_F1) & 0x8000)
-		{
-			showCur(1);
-			gotoXY(40, 13);
-			inputStudent.handleInput();
-		}
-	}*/
-
-
 	int posX = getCenterX(40, 9);
 	gotoXY(posX + 34 + 100 + 30, 10);
 	cout << "Thong Tin";
@@ -139,153 +128,91 @@ void ContentClassroom::content()
 {
 	drawClassroom();
 	girdContent();
-	InputField inputClassroomCode;
-	InputField inputClassroomName;
+	currentClassroom = C_SELECT;
+	handle();
+}
 
-	PopupDelete pDelete;// = new PopupDelete();
-	bool resultPopup;
-	SelectInput stateInput = FORM_CODE;
-	int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
-	int deletePosX = getCenterX(120, 50);
-
-	pDelete.setPosition(deletePosX + 30, 17);
+void ContentClassroom::handle()
+{
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_F1) & 0x8000)
-		{
-			currentClassroom = C_SEARCH;
-		}
-
-		if (GetAsyncKeyState(VK_F2) & 0x8000)
-		{
-			currentClassroom = C_CREATE;
-		}
-
-		if (GetAsyncKeyState(VK_DELETE) & 0x8000)
-		{
-			currentClassroom = C_DELETE;
-		}
-
 		switch (currentClassroom)
 		{
-		case ContentClassroom::C_DEFUALT:
-			continue;
+		case ContentClassroom::C_SELECT:
+			selectData();
+			break;
 		case ContentClassroom::C_SEARCH:
-			showCur(1);
-			gotoXY(34 + 2 + 4 + 2, 10 - 1 + 1);
+
 			break;
 		case ContentClassroom::C_CREATE:
-			showCur(1);
-			while (true)
-			{
-				if (stateInput == FORM_CODE)
-				{
-					gotoXY(createPosX + inputClassroomCode.getText().length(), 12 + 1 + 1);
-					inputClassroomCode.handleInput();
 
-					if (inputClassroomCode.getEndKey() == ENTER)
-					{
-						if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
-						{
-							stateInput = FORM_ENTER;
-							break;
-						}
-					}
-					stateInput = FORM_NAME;
-				}
-				
-				if (stateInput == FORM_NAME)
-				{
-					gotoXY(createPosX + inputClassroomName.getText().length(), 12 + 1 + 3 + 1);
-					inputClassroomName.handleInput();
-					if (inputClassroomCode.getEndKey() == ENTER)
-					{
-						if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
-						{
-							stateInput = FORM_ENTER;
-							break;
-						}
-					}
-					stateInput = FORM_CODE;
-				}
-
-				if (stateInput == FORM_ENTER)
-				{
-					ManageClass c;
-					bool result = c.addClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
-					if (result)
-					{
-						gotoXY(0,0);
-						cout << "Thanh cong";
-					}
-					else {
-						gotoXY(0, 0);
-						cout << "That bai";
-					}
-					stateInput = FORM_CODE;
-				}
-			}
 			break;
 		case ContentClassroom::C_EDIT:
+
 			break;
 		case ContentClassroom::C_DELETE:
-			pDelete.open();
-			pDelete.close();
-			gotoXY(0,0);
-			pDelete.getResult();
-			currentClassroom = C_DEFUALT;
+			deleteData();
 			break;
 		default:
 			break;
 		}
 	}
-
-	//F1
-	//F2
-	//F3
-	//loadData();
-
-
-	//Popup
-	/*int posX = getCenterX(120, 50);
-	PopupDelete* p = new PopupDelete();
-	p->setPosition(posX + 30, 17);
-;	p->main();
-	delete p;*/
 }
 
-void ContentClassroom::loadData()
+void ContentClassroom::selectData()
 {
-	string data[] = {
-		"K23DTCN426",
-		"04-K"
-	};
-
 	int hover = 0;
 	int lastHover = -1;
-	int flagMenu = 0;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_UP) & 0x8000)
+		if (GetAsyncKeyState(VK_UP))
 		{
 			hover -= 1;
 			Sleep(50);
 		}
 
-		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+		if (GetAsyncKeyState(VK_DOWN))
 		{
 			hover += 1;
 			Sleep(50);
 		}
 
+		if (GetAsyncKeyState(VK_F1) & 0x8000)
+		{
+			currentClassroom = C_SEARCH;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F2) & 0x8000)
+		{
+			currentClassroom = C_CREATE;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F3) & 0x8000)
+		{
+			currentClassroom = C_EDIT;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_DELETE) & 0x8000)
+		{
+			currentClassroom = C_DELETE;
+			return;
+		}
+
 		if (lastHover != hover)
 		{
-			for (int i = 0; i < 13; i++)
+			ManageClass nl;
+			ClassPage page = nl.getClassPerPage(1);
+
+			for (int i = 0; i < page.classList.countClass; i++)
 			{
 				setColorText(ColorCode_DarkWhite);
 				if (hover == i)
 				{
 					setColorText(ColorCode_DarkCyan);
+					classCode = page.classList.classes[i]->classCode;
 				}
 
 				string iStr = to_string(i + 1);
@@ -293,40 +220,57 @@ void ContentClassroom::loadData()
 				gotoXY(34 + 3 + idX, 10 + 2 + 1 + 3 + (2 * i));
 				cout << i + 1;
 
-				int classX = getCenterX(40, data[0].length());
+				int classX = getCenterX(40, 10);
 				gotoXY(34 + 3 + 10 + classX, 10 + 2 + 1 + 3 + (2 * i));
-				cout << data[0];
+				cout << page.classList.classes[i]->classCode;
 
-				int nameX = getCenterX(40, data[1].length());
+				int nameX = getCenterX(40, page.classList.classes[i]->className.length());
 				gotoXY(34 + 3 + 10 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
-				cout << data[1];
+				cout << page.classList.classes[i]->className;
 
-				string countStr = to_string(56);
+				string countStr = to_string(getCountStudentOfList(page.classList.classes[i]->studentList));
 				int countX = getCenterX(30, countStr.length());
 				gotoXY(34 + 3 + 10 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
-				cout << 56;
+				cout << countStr;
 			}
 		}
 		lastHover = hover;
-
-		if (GetAsyncKeyState(VK_UP))
-		{
-			flagMenu -= 1;
-		}
-
-		if (GetAsyncKeyState(VK_DOWN))
-		{
-			flagMenu += 1;
-		}
-
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
-		{
-			if (flagMenu != 0)
-			{
-				return;
-			}
-		}
-
 		Sleep(100);
+	}
+}
+
+void ContentClassroom::deleteData()
+{
+	int deletePosX = getCenterX(120, 50);
+	PopupDelete pDelete;
+	pDelete.setPosition(deletePosX + 30, 17);
+	pDelete.open();
+	pDelete.close();
+
+	if (pDelete.getResult())
+	{
+		cleanTable();
+		ManageClass nl;
+		nl.deleteClass(classCode.c_str());
+	}
+
+	currentClassroom = C_SELECT;
+	return;
+}
+
+void ContentClassroom::cleanTable()
+{
+	int posX = 34 + 2 + 1;
+	int posY = 10 + 2 + 3;
+
+	string blankFill;
+	blankFill.resize(118, ' ');
+
+	for (int i = 0; i < 26; i++)
+	{
+		setColorText(ColorCode_Back);
+		gotoXY(posX, posY + i);
+		cout << blankFill;
+		gotoXY(posX, posY + i);
 	}
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include "ManageClass.h"
-
+#include "ManageStudent.h"
 #include "Content.h"
 
 #include "mycolor.h"
@@ -23,13 +23,13 @@ class ContentClassroom : public Content
 private:
 	enum StateClassroom
 	{
-		C_DEFUALT	= 0,
-		C_SEARCH	= 1,
-		C_CREATE	= 2,
-		C_EDIT		= 3,
-		C_DELETE	= 4
+		C_SELECT = 0,
+		C_SEARCH = 1,
+		C_CREATE = 2,
+		C_EDIT = 3,
+		C_DELETE = 4
 	};
-	StateClassroom currentClassroom = C_EDIT;
+	StateClassroom currentClassroom;
 
 	enum SelectInput
 	{
@@ -38,13 +38,18 @@ private:
 		FORM_ENTER = 2
 	};
 	SelectInput stateInput;
+	string classCode;
 
 public:
 	void displayContent() override;
 	void content();
 	void drawClassroom();
 	void girdContent();
-	void loadData();
+	void handle();
+	void selectData();
+	void deleteData();
+
+	void cleanTable();
 	ContentClassroom();
 	~ContentClassroom();
 };
