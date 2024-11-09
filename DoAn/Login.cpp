@@ -73,8 +73,7 @@ void Login::drawButton()
 }
 void Login::formLogin()
 {
-	ManageStudent student;
-	student.openFile_Student("StudentList.txt");
+	ManageClass classList;
 	bool result;
 
 	int width = getConsoleWidth();
@@ -126,7 +125,7 @@ void Login::formLogin()
 
 		case LOGIN_ENTER:
 
-			result = student.logIn(inputUserName.getText(), inputPassword.getText());
+			result = classList.logIn(inputUserName.getText().c_str(), inputPassword.getText().c_str());
 
 			if (result)
 			{

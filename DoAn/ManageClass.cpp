@@ -262,6 +262,37 @@ ClassPage ManageClass::getClassPerPage(int pageNumber) {
     return classPage;  // Trả về danh sách lớp của trang đã chọn
 }
 
+// Login
+bool ManageClass::logIn(const char* user, const char* password)
+{
+    if (strcmp(user, "") == 0 && strcmp(password, "") == 0)
+    {
+        return false;
+    }
+
+    if (strcmp(user,"GV") == 0 && strcmp(password, "GV")==0) 
+    {
+        Singleton::getInstance()->role = "GV";
+        return true;
+    }
+
+    for (int i = 0 ; i < countClass; i++) 
+    {
+        PTRSTUDENT temp = classes[i]->studentList;
+        while (temp != nullptr) {
+            if (strcmp(temp->info.studentCode, user) == 0 && strcmp(temp->info.password, password) == 0) {
+                 Singleton::getInstance()->role = temp->info.studentCode;
+                 return true;
+            }
+            temp = temp->next;
+        }
+    }
+
+    return false;
+}
+
+
+
 void printClassPage(ClassPage classPage)
 {
     cout << "Trang " << classPage.currentPage << "/" << classPage.totalPage<<endl;

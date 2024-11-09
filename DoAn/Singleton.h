@@ -7,7 +7,7 @@ class Singleton
 private:
 	static Singleton* instance;
 public:
-	int role;
+	string role;
 	static Singleton* getInstance();
 	void print();
 	Singleton();

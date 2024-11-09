@@ -31,7 +31,7 @@ void Layout::templateMenu()
 {
     vector<string> menu;
 
-    if (Singleton::getInstance()->role == 0)
+    if (Singleton::getInstance()->role != "GV")
     {
         menu = {
            "Gioi Thieu",
@@ -132,7 +132,7 @@ void Layout::templateContent()
             continue;
         }
 
-        if (Singleton::getInstance()->role == 0)
+        if (Singleton::getInstance()->role != "GV")
         {
             if (choice == 0)
             {

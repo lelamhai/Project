@@ -43,7 +43,7 @@ void DungTest::main()
 
      // Hàm này để lấy ra số lượng sinh viên trong 1 linked list bất kì (không cần class)
      int countStudentInList = getCountStudentOfList(page.classList.classes[0]->studentList);
-  
+        
 
     
     // Lấy danh sách các lớp 

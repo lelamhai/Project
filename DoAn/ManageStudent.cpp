@@ -67,29 +67,6 @@ bool ManageStudent::openFile_Student(const char* filename) {
     return true;
 }
 
-bool ManageStudent::logIn(string user, string password) 
-{
-    if (user.empty() && password.empty())
-    {
-        return false;
-    }
-
-    for (PTRSTUDENT p = studentList; p != NULL; p = p->next) 
-    {
-        if (user == p->info.studentCode && password == p->info.password)
-        {
-            Singleton::getInstance()->role = 0;
-            return true;
-        }
-    }
-    if (user == "GV" && password == "GV")
-    {
-        Singleton::getInstance()->role = 1;
-        return true;
-    } 
-
-    return false;
-}
 
 // Edit info of student
 bool ManageStudent::editStudent(const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password) {

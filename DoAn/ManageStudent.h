@@ -34,8 +34,6 @@ public:
 
 	bool openFile_Student(const char* filename);
 
-	bool logIn(string user, string password);
-	
 	// Pagination for student list default page 0, size 10
 	PTRSTUDENT paginateStudents(int page = 0, int pageSize = 10);
 	
@@ -47,6 +45,8 @@ public:
 
 	// Load list student from file
 	void loadFromFile();
+
+
 };
 
 
