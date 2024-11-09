@@ -67,6 +67,8 @@ public:
 
 	// Delte student in class
 	bool deleteStudentInClass(const char* classCode, const char* studentCode);
+
+	bool ManageClass::logIn(string user, string password);
 };
 
 void printClassPage(ClassPage classPage);

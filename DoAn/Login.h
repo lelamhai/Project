@@ -5,6 +5,7 @@
 #include "mywindows.h"
 
 #include "ManageStudent.h"
+#include "ManageClass.h"
 
 #include "InputField.h"
 #include "Text.h"
