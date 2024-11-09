@@ -60,12 +60,15 @@ public:
     // In danh sách tất cả các môn học
     void printAllSubjects();
 
+    // Lấy ra tổng số môn học hiện có
     int getCountSubjects();
 
+    // Đếm số lượng câu hỏi trong môn
     int countQuestionsInSubject(const char* subjectCode);
-
-   
+    
+    // Lưu thông tin môn học xuống file
     void saveToFile();
 
+    // Load thông tin từ file lên
     void loadFromFile();
 };

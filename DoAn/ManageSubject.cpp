@@ -31,6 +31,7 @@ bool ManageSubject::addSubject(const char* code, const string& name) {
     else {
         subjectList = insertBalance(subjectList, newNode);
     }
+    saveToFile();
     return true;
 }
 
@@ -50,10 +51,8 @@ bool ManageSubject::addQuestion(const char* subjectCode, const string& content,
     if (subject) {
         // Nếu tìm thấy môn học, thêm câu hỏi
         addQuestionToSubject(subject, content, optionA, optionB, optionC, optionD, answer);
+        saveToFile();
         return true;
-    }
-    else {
-        cout << "Subject not found!" << endl;
     }
     return false;
 }
