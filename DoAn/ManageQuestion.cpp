@@ -11,8 +11,7 @@ ManageQuestion::~ManageQuestion()
 bool ManageQuestion::addQuestion(const string content, const string optionA, const string optionB, const string optionC, const string optionD, const char answer)
 {
 	Question newQuestion;
-	//newQuestion.questionId = generateUniqueId();
-	newQuestion.questionId = 100;
+	newQuestion.questionId = generateUniqueId();
 	newQuestion.content = content;
 	newQuestion.optionA = optionA;
 	newQuestion.optionB = optionB;
@@ -94,7 +93,7 @@ void ManageQuestion::printQuestions()
 {
 	PTRQUESTION temp = questionList;
 	while (temp != nullptr) {
-		cout << "Cau hoi: " << temp->info.questionId << endl;
+		cout << temp->info.questionId << " - " << temp->info.content << endl;
 		cout << "A. " << temp->info.optionA << endl;
 		cout << "B. " << temp->info.optionB << endl;
 		cout << "C. " << temp->info.optionC << endl;
@@ -140,7 +139,7 @@ void ManageQuestion::saveToFile() {
 	if (file.is_open()) {
 		file << js.dump(4);  // Lưu với định dạng đẹp (indent = 4)
 		file.close();
-		cout << "Luu thanh cong";
+		//cout << "Luu thanh cong";
 	}
 }
 
@@ -151,36 +150,41 @@ void ManageQuestion::loadFromFile()
 int ManageQuestion::generateUniqueId()
 {
 	int newId;
+	srand(static_cast<unsigned int>(time(NULL)));
 	do {
-		newId = rand() % 10000 + 1000;
-	} while (isUniqueId(newId));
+		newId = rand() % 10000 + 1;
+	} while (!isUniqueId(newId));
 	return newId;
 }
 
+
 bool ManageQuestion::isUniqueId(int randomId) {
-	while (questionList != nullptr) {
-		if (questionList->info.questionId == randomId) {
+	PTRQUESTION temp = questionList;
+	while (temp != nullptr) {
+		if (temp->info.questionId == randomId) {
 			return false;
 		}
-		questionList = questionList->next;
+		temp = temp->next;
 	}
 	return true;
 }
 
-int generateUniqueQuestionId(PTRQUESTION listQuestion) {
-	// Sử dụng random để tạo số ngẫu nhiên
+int generateUniqueQuestionId(PTRQUESTION questionList) {
+	 //Sử dụng random để tạo số ngẫu nhiên
 	random_device rd;
 	mt19937 gen(rd());
 	uniform_int_distribution<> dis(1, 10000); // Sinh số trong khoảng 1 - 10000
 
 	int newId;
 	bool isUnique;
+
+	//PTRQUESTION current = questionList;
 	do {
 		newId = dis(gen);  // Sinh ra một questionId mới
 		isUnique = true;
 
 		// Kiểm tra xem questionId này có trùng với bất kỳ câu hỏi nào đã tồn tại không
-		PTRQUESTION current = listQuestion;
+		PTRQUESTION current = questionList;
 		while (current != nullptr) {
 			if (current->info.questionId == newId) {
 				isUnique = false;
