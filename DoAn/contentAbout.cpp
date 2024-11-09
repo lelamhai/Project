@@ -34,13 +34,13 @@ void ContentAbout::content()
 
 
 	gotoXY(34, 20);
-	cout << "* Huong Dan";
+	cout << "* Huong Dan Su Dung Menu";
 	gotoXY(34, 22);
-	cout << "1) Dung phim mui ten de lua chon muc ban can.";
+	cout << "1) PGUP|PGDOWN.";
 	gotoXY(34, 24);
-	cout << "2) Chu mau xanh la cay la muc ban dang chon.";
+	cout << "2) Mau xanh la cay la muc ban chon.";
 	gotoXY(34, 26);
-	cout << "3) Chu mau xanh nuoc bien lua chon cua ban.";
+	cout << "3) Mau xanh nuoc bien la muc ban dang lua chon.";
 
 
 	gotoXY(34, 30);

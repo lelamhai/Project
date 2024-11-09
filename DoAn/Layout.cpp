@@ -63,14 +63,16 @@ void Layout::templateMenu()
     showCur(0);
     while (isRun)
     {
-        if (GetAsyncKeyState(VK_UP) & 0x8000)
+        if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
         {
+            showCur(0);
             hover -= 1;
             Sleep(50);
         }
 
-        if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+        if (GetAsyncKeyState(VK_NEXT) & 0x8000)
         {
+            showCur(0);
             hover += 1;
             Sleep(50);
         }

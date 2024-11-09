@@ -11,7 +11,8 @@ ManageQuestion::~ManageQuestion()
 bool ManageQuestion::addQuestion(const string content, const string optionA, const string optionB, const string optionC, const string optionD, const char answer)
 {
 	Question newQuestion;
-	newQuestion.questionId = generateUniqueId();
+	//newQuestion.questionId = generateUniqueId();
+	newQuestion.questionId = 100;
 	newQuestion.content = content;
 	newQuestion.optionA = optionA;
 	newQuestion.optionB = optionB;
@@ -113,8 +114,34 @@ int ManageQuestion::getCountQuestions()
 	return 0;
 }
 
-void ManageQuestion::saveToFile()
-{
+void ManageQuestion::saveToFile() {
+	json js; // tạo một đối tượng JASON để lưu dữ liệu câu hỏi trắc nghiệm
+	PTRQUESTION temp = questionList;
+	int questionIndex = 0; // chỉ số cho câu hỏi trong mảng JSON
+
+	while (temp != nullptr) {
+		// tạo đối tượng JASON để lưu mảng câu hỏi
+		json questionData; 
+		questionData["questionID"] = temp->info.questionId;
+		questionData["content"] = temp->info.content;
+		questionData["optionA"] = temp->info.optionA;
+		questionData["optionB"] = temp->info.optionB;
+		questionData["optionC"] = temp->info.optionC;
+		questionData["optionD"] = temp->info.optionD;
+		questionData["answer"] = temp->info.answer;
+
+		// thêm câu hỏi vào mảng trong JSON bằng cách sử dụng chỉ số 
+		js["question"][questionIndex++] = questionData; 
+		temp = temp->next;
+	}
+
+	// ghi đối tượng JSON vào file
+	ofstream file(SOURCE_QUESTION);
+	if (file.is_open()) {
+		file << js.dump(4);  // Lưu với định dạng đẹp (indent = 4)
+		file.close();
+		cout << "Luu thanh cong";
+	}
 }
 
 void ManageQuestion::loadFromFile()

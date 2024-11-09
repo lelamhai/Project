@@ -219,11 +219,11 @@
     <ClCompile Include="ManageQuestion.cpp">
       <Filter>Source Files\DATA\Question</Filter>
     </ClCompile>
-    <ClCompile Include="singleton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ManageSubject.cpp">
       <Filter>Source Files\DATA\Subject</Filter>
+    </ClCompile>
+    <ClCompile Include="singleton.cpp">
+      <Filter>Source Files\GUI\Systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
