@@ -18,7 +18,7 @@ void DungTest::main()
     //hihi.loadFromFile();
     //hihi.printStudents();
 
-
+    ///------TEST FOR CLASS----------------
      
      ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn
      test.printClasses(); // In thử danh sách lớp hiện có
@@ -36,6 +36,14 @@ void DungTest::main()
 	    int startIndex; // Số thứ tự bắt đầu của trang đó
 	    int endIndex; // số kết thúc của trang đó*/
      printClassPage(page); // Hàm này để in ra page có gì thuộc page nào
+
+     // Hàm này chỉ dùng khi tính số lượng sinh viên bằng mã lớp (trong class)
+     int countStudent = test.getCountSudentOfClass("C001");
+
+
+     // Hàm này để lấy ra số lượng sinh viên trong 1 linked list bất kì (không cần class)
+     int countStudentInList = getCountStudentOfList(page.classList.classes[0]->studentList);
+  
 
     
     // Lấy danh sách các lớp 
@@ -58,6 +66,8 @@ void DungTest::main()
    
     //test.printClasses();
 
+
+    // -----------------------------TEST FOR SUBJECT----------------------------
     // ManageSubject testSubject;
     // testSubject.printAllSubjects();
     /*testSubject.addSubject("T01", "Toan roi rac");
