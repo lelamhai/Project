@@ -8,24 +8,89 @@ PopupDelete::~PopupDelete()
 {
 }
 
-void PopupDelete::main()
+void PopupDelete::open()
 {
 	this->setTitle("Ban co muon xoa du lieu nay khong?");
 	this->content();
-	createButtonYes();
 	createButtonNo();
+	createButtonYes();
+	handle();
 }
 
-void PopupDelete::createButtonYes()
+void PopupDelete::close()
 {
-	box(getPosX() + 50 / 2 - 10 - 5, getPosY() + getHeight() - 5, 9, 2);
-	gotoXY(getPosX() + 50 / 2 - 10 - 5 + 4, getPosY() + getHeight() - 5 + 1);
-	cout << "Co";
+	string blankFill;
+	blankFill.resize(getWidth(), ' ');
+
+	for (int i = 0; i < getHeight(); i++)
+	{
+		setColorText(ColorCode_Back);
+		gotoXY(getPosX(), getPosY() + i);
+		cout << blankFill;
+	}
+}
+
+void PopupDelete::handle()
+{
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+		{
+			setColorText(ColorCode_DarkGreen);
+			textbk(ColorCode_DarkCyan);
+			gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
+			cout << "Khong";
+
+			setColorText(ColorCode_White);
+			textbk(ColorCode_DarkCyan);
+			gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
+			cout << "Co";
+
+			result = 0;
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+		{
+			setColorText(ColorCode_White);
+			textbk(ColorCode_DarkCyan);
+			gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
+			cout << "Khong";
+
+			setColorText(ColorCode_DarkGreen);
+			textbk(ColorCode_DarkCyan);
+			gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
+			cout << "Co";
+
+			result = 1;
+		}
+		
+		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		{
+			return;
+		}
+
+		Sleep(100);
+	}
 }
 
 void PopupDelete::createButtonNo()
 {
-	box(getPosX() + 50 / 2 + 5, getPosY() + getHeight() - 5, 10, 2);
-	gotoXY(getPosX() + 50 / 2 + 5 + 3, getPosY() + getHeight() - 5 + 1);
+	box(getPosX() + 50 / 2 - 10 - 5, getPosY() + getHeight() - 5, 10, 2);
+	gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
 	cout << "Khong";
+}
+
+void PopupDelete::createButtonYes()
+{
+	box(getPosX() + 50 / 2 + 4, getPosY() + getHeight() - 5, 9, 2);
+
+	setColorText(ColorCode_DarkGreen);
+	textbk(ColorCode_DarkCyan);
+	gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
+	cout << "Co";
+}
+
+bool PopupDelete::getResult()
+{
+	return result;
 }

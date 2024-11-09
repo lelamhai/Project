@@ -139,8 +139,111 @@ void ContentClassroom::content()
 {
 	drawClassroom();
 	girdContent();
+	InputField inputClassroomCode;
+	InputField inputClassroomName;
 
-	loadData();
+	PopupDelete pDelete;// = new PopupDelete();
+	bool resultPopup;
+	SelectInput stateInput = FORM_CODE;
+	int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
+	int deletePosX = getCenterX(120, 50);
+
+	pDelete.setPosition(deletePosX + 30, 17);
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_F1) & 0x8000)
+		{
+			currentClassroom = C_SEARCH;
+		}
+
+		if (GetAsyncKeyState(VK_F2) & 0x8000)
+		{
+			currentClassroom = C_CREATE;
+		}
+
+		if (GetAsyncKeyState(VK_DELETE) & 0x8000)
+		{
+			currentClassroom = C_DELETE;
+		}
+
+		switch (currentClassroom)
+		{
+		case ContentClassroom::C_DEFUALT:
+			continue;
+		case ContentClassroom::C_SEARCH:
+			showCur(1);
+			gotoXY(34 + 2 + 4 + 2, 10 - 1 + 1);
+			break;
+		case ContentClassroom::C_CREATE:
+			showCur(1);
+			while (true)
+			{
+				if (stateInput == FORM_CODE)
+				{
+					gotoXY(createPosX + inputClassroomCode.getText().length(), 12 + 1 + 1);
+					inputClassroomCode.handleInput();
+
+					if (inputClassroomCode.getEndKey() == ENTER)
+					{
+						if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
+						{
+							stateInput = FORM_ENTER;
+							break;
+						}
+					}
+					stateInput = FORM_NAME;
+				}
+				
+				if (stateInput == FORM_NAME)
+				{
+					gotoXY(createPosX + inputClassroomName.getText().length(), 12 + 1 + 3 + 1);
+					inputClassroomName.handleInput();
+					if (inputClassroomCode.getEndKey() == ENTER)
+					{
+						if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
+						{
+							stateInput = FORM_ENTER;
+							break;
+						}
+					}
+					stateInput = FORM_CODE;
+				}
+
+				if (stateInput == FORM_ENTER)
+				{
+					ManageClass c;
+					bool result = c.addClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
+					if (result)
+					{
+						gotoXY(0,0);
+						cout << "Thanh cong";
+					}
+					else {
+						gotoXY(0, 0);
+						cout << "That bai";
+					}
+					stateInput = FORM_CODE;
+				}
+			}
+			break;
+		case ContentClassroom::C_EDIT:
+			break;
+		case ContentClassroom::C_DELETE:
+			pDelete.open();
+			pDelete.close();
+			gotoXY(0,0);
+			pDelete.getResult();
+			currentClassroom = C_DEFUALT;
+			break;
+		default:
+			break;
+		}
+	}
+
+	//F1
+	//F2
+	//F3
+	//loadData();
 
 
 	//Popup
@@ -160,15 +263,16 @@ void ContentClassroom::loadData()
 
 	int hover = 0;
 	int lastHover = -1;
+	int flagMenu = 0;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		if (GetAsyncKeyState(VK_UP) & 0x8000)
 		{
 			hover -= 1;
 			Sleep(50);
 		}
 
-		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 		{
 			hover += 1;
 			Sleep(50);
@@ -205,10 +309,24 @@ void ContentClassroom::loadData()
 		}
 		lastHover = hover;
 
-		/*if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		if (GetAsyncKeyState(VK_UP))
 		{
-			return;
-		}*/
+			flagMenu -= 1;
+		}
+
+		if (GetAsyncKeyState(VK_DOWN))
+		{
+			flagMenu += 1;
+		}
+
+		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		{
+			if (flagMenu != 0)
+			{
+				return;
+			}
+		}
+
 		Sleep(100);
 	}
 }

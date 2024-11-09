@@ -1,2 +1,71 @@
-﻿  ManageQuestion.cpp
-  DoAn.vcxproj -> C:\Users\ngoch\OneDrive\Máy tính\Project\x64\Debug\DoAn.exe
+﻿  button.cpp
+  buttonEnter.cpp
+  ClassroomSevice.cpp
+C:\Users\ADMIN\Desktop\Project\DoAn\ClassroomSevice.cpp(85,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  color.cpp
+  configApp.cpp
+  content.cpp
+  contentAbout.cpp
+  contentClassroom.cpp
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(121,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(125,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(129,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(133,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(183,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(199,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(146,7): warning C4101: 'resultPopup': unreferenced local variable
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(292,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(296,47): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(300,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\contentClassroom.cpp(305,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  contentExam.cpp
+  contentQuestion.cpp
+  contentStudent.cpp
+  contentSubject.cpp
+  ContentSubject.h
+  DungTest.cpp
+  HuyTest.cpp
+C:\Users\ADMIN\Desktop\Project\DoAn\HuyTest.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  LoadingData.cpp
+  LoginData.cpp
+  ManageClass.cpp
+C:\Users\ADMIN\Desktop\Project\DoAn\ManageClass.cpp(245,43): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
+C:\Users\ADMIN\Desktop\Project\DoAn\ManageClass.cpp(245,43): warning C4566: character represented by universal-character-name '\u1EA1' cannot be represented in the current code page (1252)
+  ManageQuestion.cpp
+  ManageStudent.cpp
+  Generating Code...
+C:\Users\ADMIN\Desktop\Project\DoAn\ManageClass.cpp(221,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
+  Compiling...
+  ManageSubject.cpp
+  popupDelete.cpp
+  draw.cpp
+  footer.cpp
+  inputField.cpp
+C:\Users\ADMIN\Desktop\Project\DoAn\inputField.cpp(13,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\inputField.cpp(61,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\inputField.cpp(83,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\inputField.cpp(107,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\inputField.cpp(125,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  InputField.h
+  page.cpp
+  popup.cpp
+C:\Users\ADMIN\Desktop\Project\DoAn\popup.cpp(52,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  sidebar.cpp
+  header.cpp
+  keyboard.cpp
+  loading.cpp
+  login.cpp
+C:\Users\ADMIN\Desktop\Project\DoAn\login.cpp(98,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Project\DoAn\login.cpp(114,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+  Layout.cpp
+C:\Users\ADMIN\Desktop\Project\DoAn\Layout.cpp(101,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  singleton.cpp
+  StudentList.cpp
+  StudentService.cpp
+  text.cpp
+  windows.cpp
+  Generating Code...
+x64\Debug\ContentSubject.obj : warning LNK4042: object specified more than once; extras ignored
+x64\Debug\InputField.obj : warning LNK4042: object specified more than once; extras ignored
+  DoAn.vcxproj -> C:\Users\ADMIN\Desktop\Project\x64\Debug\DoAn.exe

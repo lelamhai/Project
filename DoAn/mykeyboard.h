@@ -1,10 +1,4 @@
 #pragma once
-#define VK_LEFT           0x25
-#define VK_UP             0x26
-#define VK_RIGHT          0x27
-#define VK_DOWN           0x28
-#define VK_RETURN         0x0D
-
 enum KeyState
 {
     // Common

@@ -47,7 +47,7 @@ void Page::main()
 			showCur(0);
 			clrscr();
 			Layout* layout = new Layout();
-			layout->setRunContent(0);
+			layout->setRunContent(1);
 			layout->main();
 			delete layout;
 			currentPage = PAGE_LOGIN;

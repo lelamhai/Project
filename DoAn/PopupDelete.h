@@ -3,11 +3,14 @@
 class PopupDelete : public Popup
 {
 private:
-
+	bool result = 1;
 public:
-	void main();
+	void open();
 	void createButtonYes();
 	void createButtonNo();
+	void handle();
+	void close();
+	bool getResult();
 	PopupDelete();
 	~PopupDelete();
 };
