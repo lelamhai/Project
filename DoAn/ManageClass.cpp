@@ -123,10 +123,6 @@ void ManageClass::saveToFile() {
     if (file.is_open()) {
         file << j.dump(4);  // Lưu file với định dạng JSON, thụt đầu dòng 4 spaces
         file.close();
-        cout << "Data saved successfully in JSON format." << endl;
-    }
-    else {
-        cout << "Unable to open file for saving." << endl;
     }
 }
 
@@ -182,8 +178,6 @@ void ManageClass::loadFromFile() {
         }
         *lastStudent = nullptr;  // Kết thúc danh sách sinh viên
     }
-
-    cout << "Data loaded successfully from JSON format." << endl;
 }
 
 bool ManageClass::addStudentToClass(const char* classCode, const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password)
@@ -234,16 +228,22 @@ int ManageClass::getCountSudentOfClass(const char* classCode)
 }
 
 // phân trang
-ClassList ManageClass::getClassPerPage(int pageNumber, int classesPerPage) {
+ClassPage ManageClass::getClassPerPage(int pageNumber) {
+    ClassPage classPage;
+    int classesPerPage = 13;
     int totalClasses = countClass;
     int totalPages = (totalClasses + classesPerPage - 1) / classesPerPage;
+    classPage.currentPage = pageNumber;
+    classPage.totalPage = totalPages;
+    classPage.totalClass = countClass;
+    classPage.numberClassPerPage = classesPerPage;
 
     ClassList pageResult;  // Tạo đối tượng kết quả trả về
 
     // Kiểm tra nếu trang không hợp lệ
     if (pageNumber < 1 || pageNumber > totalPages) {
         cout << "Trang " << pageNumber << " không tồn tại!" << endl;
-        return pageResult;  // Trả về ClassList rỗng
+        return classPage;
     }
 
     // Tính toán chỉ số bắt đầu và kết thúc
@@ -255,19 +255,20 @@ ClassList ManageClass::getClassPerPage(int pageNumber, int classesPerPage) {
         pageResult.classes[pageResult.countClass++] = classes[i];
     }
 
-    return pageResult;  // Trả về danh sách lớp của trang đã chọn
+    classPage.startIndex = startIndex;
+    classPage.endIndex = endIndex;
+    classPage.classList = pageResult;
+
+    return classPage;  // Trả về danh sách lớp của trang đã chọn
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+void printClassPage(ClassPage classPage)
+{
+    cout << "Trang " << classPage.currentPage << "/" << classPage.totalPage<<endl;
+    cout << classPage.classList.countClass << "/" << classPage.numberClassPerPage<<endl;
+    for (int i = 0; i < classPage.classList.countClass; i++) {
+        cout << "Ma lop: " << classPage.classList.classes[i]->classCode << endl;
+        cout << "Ten lop: " << classPage.classList.classes[i]->className << endl;
+        cout << "-------------------------------------------" << endl;
+    }
+}

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <string>
 #include <fstream> 
@@ -7,6 +7,16 @@
 #include "ManageStudent.h"
 
 const string SOURCE_CLASS = "classdata.json";
+
+struct ClassPage {
+	ClassList classList;
+	int currentPage; // trang hiện tại
+	int numberClassPerPage; // tổng số class trên 1 trang
+	int totalPage; // tổng số trang
+	int totalClass; // tổng số class
+	int startIndex; // Số thứ tự bắt đầu của trang đó
+	int endIndex; // số kết thúc của trang đó
+};
 
 class ManageClass
 {
@@ -53,12 +63,13 @@ public:
 	int getCountSudentOfClass(const char* classCode);
 
 	// Pagination
-	ClassList getClassPerPage(int pageNumber = 1, int classesPerPage = 10);
+	ClassPage getClassPerPage(int pageNumber = 1);
 
 	// Delte student in class
 	bool deleteStudentInClass(const char* classCode, const char* studentCode);
 };
 
+void printClassPage(ClassPage classPage);
 
 
 

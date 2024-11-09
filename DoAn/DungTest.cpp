@@ -14,16 +14,32 @@ void DungTest::main()
 	    /*-------------------TEST CLASS SERVICE-------------------*/
     //SetConsoleOutputCP(CP_UTF8);
 
-    ManageStudent hihi;
-    hihi.loadFromFile();
-    hihi.printStudents();
+    //ManageStudent hihi;
+    //hihi.loadFromFile();
+    //hihi.printStudents();
 
 
+     
+     ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn
+     test.printClasses(); // In thử danh sách lớp hiện có
+     
+     //test.editClass("C003", "D23TXCN06-K Updated"); // Chỉnh sửa thông tin class và lưu vào file
 
-    // ManageClass test;
-    // test.printClasses();
+     //test.addClass("C004", "D23TXCN07-K"); // Thêm class đồng thời lưu vào file
+     
+     ClassPage page = test.getClassPerPage(1); // Phân trang ở đây sẽ lấy class ở trang 1, mặc định 13 phần tử trả về ClassPage có đầy đủ thông số từ đây a sẽ load ra giao diện
+     /* ClassList classList;
+	    int currentPage; // trang hiện tại
+	    int numberClassPerPage; // tổng số class trên 1 trang
+	    int totalPage; // tổng số trang
+	    int totalClass; // tổng số class
+	    int startIndex; // Số thứ tự bắt đầu của trang đó
+	    int endIndex; // số kết thúc của trang đó*/
+     printClassPage(page); // Hàm này để in ra page có gì thuộc page nào
+
     
     // Lấy danh sách các lớp 
+
     //ClassList listClass = test.getClasses();
 
     // Lấy ra tổng các lớp
