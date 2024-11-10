@@ -27,6 +27,8 @@ public:
 	ManageClass();
 	~ManageClass();
 
+	Classroom findClassByCode(const char* classCode);
+
 	ClassList getClasses();
 	int getCountClass();
 

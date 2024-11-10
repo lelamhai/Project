@@ -9,6 +9,19 @@ ManageClass::~ManageClass()
 {
 }
 
+Classroom ManageClass::findClassByCode(const char* classCode)
+{
+    Classroom classFound;
+    strcpy_s(classFound.classCode, "");
+    classFound.className = "";
+    int index = findClass(classCode);
+    if (index != -1) {
+        strcpy_s(classFound.classCode, classes[index]->classCode);
+        classFound.className = classes[index]->className;
+    }
+    return classFound;
+}
+
 ClassList ManageClass::getClasses() {
     ClassList classList;
     classList.countClass = countClass;
