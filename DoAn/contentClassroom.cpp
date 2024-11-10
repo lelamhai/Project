@@ -156,10 +156,9 @@ void ContentClassroom::handle()
 			break;
 
 		case C_SEARCH:
-
+			showCur(1);
+			findData();
 			break;
-
-		
 
 		case C_DELETE:
 			showCur(0);
@@ -210,6 +209,12 @@ void ContentClassroom::selectData()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_F4) & 0x8000)
+		{
+			currentClassroom = C_SEARCH;
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_DELETE) & 0x8000)
 		{
 			ClassPage page = nl.getClassPerPage(1);
@@ -242,7 +247,7 @@ void ContentClassroom::selectData()
 				gotoXY(34 + 3 + idX, 10 + 2 + 1 + 3 + (2 * i));
 				cout << i + 1;
 
-				int classX = getCenterX(40, 10);
+				int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
 				gotoXY(34 + 3 + 10 + classX, 10 + 2 + 1 + 3 + (2 * i));
 				cout << page.classList.classes[i]->classCode;
 
@@ -420,6 +425,54 @@ void ContentClassroom::editData()
 			gotoXY(34 + 100 + 30 + textPosX, 19);
 			text.display();
 			stateInput = FORM_NAME;
+		}
+	}
+}
+
+void ContentClassroom::findData()
+{
+	ManageClass nl;
+
+	InputField inputSearch;
+
+	stateSearchInput = SEARCH_VALUE;
+	while (true)
+	{
+		if (stateSearchInput == SEARCH_VALUE)
+		{
+			gotoXY(34 + 2 + 4 + 2 + inputSearch.getText().length(), 10);
+			inputSearch.handleInput();
+
+			if (inputSearch.getEndKey() == ENTER)
+			{
+				if (inputSearch.getText() != "")
+				{
+					stateSearchInput = SEARCH_ENTER;
+					continue;
+				}
+			}
+
+			if (inputSearch.getEndKey() == F1)
+			{
+				currentClassroom = C_SELECT;
+				return;
+			}
+		}
+
+		if (stateSearchInput == SEARCH_ENTER)
+		{
+			Classroom cl = nl.findClassByCode(inputSearch.getText().c_str());
+
+			if (cl.classCode != "")
+			{
+				gotoXY(0, 0);
+				cout << cl.classCode;
+			}
+			else {
+				// NULL
+			}
+			
+			stateSearchInput = SEARCH_VALUE;
 		}
 	}
 }

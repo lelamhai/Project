@@ -38,6 +38,14 @@ private:
 		FORM_ENTER = 2
 	};
 	SelectInput stateInput;
+
+	enum SearchInput
+	{
+		SEARCH_VALUE = 0,
+		SEARCH_ENTER = 1
+	};
+	SearchInput stateSearchInput;
+
 	string classCode;
 
 public:
@@ -50,6 +58,7 @@ public:
 	void deleteData();
 	void createData();
 	void editData();
+	void findData();
 	void loadData();
 	void cleanTable();
 	void cleanInput();
