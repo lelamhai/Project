@@ -139,27 +139,37 @@ void ContentClassroom::handle()
 		switch (currentClassroom)
 		{
 		case C_SELECT:
-			choiceData();
+			showCur(0);
+			selectData();
 			break;
+
+		case C_CREATE:
+			showCur(1);
+			createData();
+			cleanInput();
+			break;
+
 		case C_SEARCH:
 
 			break;
-		case C_CREATE:
-			createData();
-			break;
-		case C_EDIT:
 
+		case C_EDIT:
+			showCur(1);
+			editData();
 			break;
+
 		case C_DELETE:
+			showCur(0);
 			deleteData();
 			break;
+
 		default:
 			break;
 		}
 	}
 }
 
-void ContentClassroom::choiceData()
+void ContentClassroom::selectData()
 {
 	ManageClass nl;
 
@@ -170,18 +180,18 @@ void ContentClassroom::choiceData()
 		if (GetAsyncKeyState(VK_UP))
 		{
 			hover -= 1;
-			Sleep(50);
+			Sleep(150);
 		}
 
 		if (GetAsyncKeyState(VK_DOWN))
 		{
 			hover += 1;
-			Sleep(50);
+			Sleep(150);
 		}
 
 		if (GetAsyncKeyState(VK_F1) & 0x8000)
 		{
-			currentClassroom = C_SEARCH;
+			currentClassroom = C_SELECT;
 			return;
 		}
 
@@ -206,7 +216,7 @@ void ContentClassroom::choiceData()
 				currentClassroom = C_SELECT;
 				return;
 			}
-			
+
 			currentClassroom = C_DELETE;
 			return;
 		}
@@ -242,9 +252,8 @@ void ContentClassroom::choiceData()
 				gotoXY(34 + 3 + 10 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
 				cout << countStr;
 			}
+			lastHover = hover;
 		}
-		lastHover = hover;
-		Sleep(100);
 	}
 }
 
@@ -269,7 +278,6 @@ void ContentClassroom::deleteData()
 
 void ContentClassroom::createData()
 {
-	showCur(true);
 	ManageClass nl;
 	InputField inputClassroomCode;
 	InputField inputClassroomName;
@@ -306,7 +314,7 @@ void ContentClassroom::createData()
 		{
 			gotoXY(createPosX + inputClassroomName.getText().length(), 12 + 1 + 3 + 1);
 			inputClassroomName.handleInput();
-			if (inputClassroomCode.getEndKey() == ENTER)
+			if (inputClassroomName.getEndKey() == ENTER)
 			{
 				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
 				{
@@ -315,7 +323,7 @@ void ContentClassroom::createData()
 				}
 			}
 
-			if (inputClassroomCode.getEndKey() == F1)
+			if (inputClassroomName.getEndKey() == F1)
 			{
 				currentClassroom = C_SELECT;
 				return;
@@ -344,9 +352,17 @@ void ContentClassroom::createData()
 			gotoXY(34 + 100 + 30 + textPosX, 19);
 			text.display();
 			stateInput = FORM_CODE;
-
 		}
 	}
+}
+
+void ContentClassroom::editData()
+{
+	// Display data
+
+	// Update data
+
+
 }
 
 void ContentClassroom::loadData()
@@ -393,4 +409,25 @@ void ContentClassroom::cleanTable()
 		cout << blankFill;
 		gotoXY(posX, posY + i);
 	}
+}
+
+void ContentClassroom::cleanInput()
+{
+	int inputPosX = 34 + 100 + 30 + 4 + 8 + 2;
+
+	string blankFill;
+	blankFill.resize(21, ' ');
+
+	setColorText(ColorCode_Back);
+	gotoXY(inputPosX, 12 + 1 + 1);
+	cout << blankFill;
+
+	setColorText(ColorCode_Back);
+	gotoXY(inputPosX, 12 + 1 + 3 + 1);
+	cout << blankFill;
+
+	int textPosX = getCenterX(40, 22);
+	setColorText(ColorCode_Back);
+	gotoXY(34 + 100 + 30 + textPosX, 19);
+	cout << blankFill;
 }

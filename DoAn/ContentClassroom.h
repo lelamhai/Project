@@ -23,11 +23,11 @@ class ContentClassroom : public Content
 private:
 	enum StateClassroom
 	{
-		C_SELECT = 0,
-		C_SEARCH = 1,
-		C_CREATE = 2,
-		C_EDIT = 3,
-		C_DELETE = 4
+		C_SELECT	= 0, // F1
+		C_CREATE	= 1, // F2
+		C_SEARCH	= 2,
+		C_EDIT		= 3,
+		C_DELETE	= 4
 	};
 	StateClassroom currentClassroom;
 
@@ -46,11 +46,13 @@ public:
 	void drawClassroom();
 	void girdContent();
 	void handle();
-	void choiceData();
+	void selectData();
 	void deleteData();
 	void createData();
+	void editData();
 	void loadData();
 	void cleanTable();
+	void cleanInput();
 	ContentClassroom();
 	~ContentClassroom();
 };
