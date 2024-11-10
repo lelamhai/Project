@@ -335,11 +335,11 @@
     <ClInclude Include="ManageQuestion.h">
       <Filter>Header Files\DATA\Question</Filter>
     </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ManageSubject.h">
       <Filter>Header Files\DATA\Subject</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files\GUI\Systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

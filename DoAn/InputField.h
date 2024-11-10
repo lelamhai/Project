@@ -3,7 +3,6 @@
 #include "mydraw.h"
 #include "mykeyboard.h"
 #include "mywindows.h"
-//#include "Content.h"
 #include <conio.h>
 #include <iostream>
 using namespace std;

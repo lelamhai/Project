@@ -46,9 +46,10 @@ public:
 	void drawClassroom();
 	void girdContent();
 	void handle();
-	void selectData();
+	void choiceData();
 	void deleteData();
-
+	void createData();
+	void loadData();
 	void cleanTable();
 	ContentClassroom();
 	~ContentClassroom();

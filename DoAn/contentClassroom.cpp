@@ -138,19 +138,19 @@ void ContentClassroom::handle()
 	{
 		switch (currentClassroom)
 		{
-		case ContentClassroom::C_SELECT:
-			selectData();
+		case C_SELECT:
+			choiceData();
 			break;
-		case ContentClassroom::C_SEARCH:
+		case C_SEARCH:
 
 			break;
-		case ContentClassroom::C_CREATE:
+		case C_CREATE:
+			createData();
+			break;
+		case C_EDIT:
 
 			break;
-		case ContentClassroom::C_EDIT:
-
-			break;
-		case ContentClassroom::C_DELETE:
+		case C_DELETE:
 			deleteData();
 			break;
 		default:
@@ -159,8 +159,10 @@ void ContentClassroom::handle()
 	}
 }
 
-void ContentClassroom::selectData()
+void ContentClassroom::choiceData()
 {
+	ManageClass nl;
+
 	int hover = 0;
 	int lastHover = -1;
 	while (true)
@@ -197,13 +199,20 @@ void ContentClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_DELETE) & 0x8000)
 		{
+			ClassPage page = nl.getClassPerPage(1);
+
+			if (page.totalClass <= 0)
+			{
+				currentClassroom = C_SELECT;
+				return;
+			}
+			
 			currentClassroom = C_DELETE;
 			return;
 		}
 
 		if (lastHover != hover)
 		{
-			ManageClass nl;
 			ClassPage page = nl.getClassPerPage(1);
 
 			for (int i = 0; i < page.classList.countClass; i++)
@@ -256,6 +265,117 @@ void ContentClassroom::deleteData()
 
 	currentClassroom = C_SELECT;
 	return;
+}
+
+void ContentClassroom::createData()
+{
+	showCur(true);
+	ManageClass nl;
+	InputField inputClassroomCode;
+	InputField inputClassroomName;
+	Text text;
+
+	int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
+	stateInput = FORM_NAME;
+	while (true)
+	{
+		if (stateInput == FORM_CODE)
+		{
+			gotoXY(createPosX + inputClassroomCode.getText().length(), 12 + 1 + 1);
+			inputClassroomCode.handleInput();
+
+			if (inputClassroomCode.getEndKey() == ENTER)
+			{
+				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+			}
+
+			if (inputClassroomCode.getEndKey() == F1)
+			{
+				currentClassroom = C_SELECT;
+				return;
+			}
+
+			stateInput = FORM_NAME;
+		}
+
+		if (stateInput == FORM_NAME)
+		{
+			gotoXY(createPosX + inputClassroomName.getText().length(), 12 + 1 + 3 + 1);
+			inputClassroomName.handleInput();
+			if (inputClassroomCode.getEndKey() == ENTER)
+			{
+				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+			}
+
+			if (inputClassroomCode.getEndKey() == F1)
+			{
+				currentClassroom = C_SELECT;
+				return;
+			}
+
+			stateInput = FORM_CODE;
+		}
+
+		if (stateInput == FORM_ENTER)
+		{
+			bool result = nl.addClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
+			if (result)
+			{
+				gotoXY(0, 0);
+				cleanTable();
+				loadData();
+				text.setContent("Them lop thanh cong!");
+			}
+			else {
+				gotoXY(0, 0);
+				text.setContent("Them lop that bai!");
+			}
+
+			int textPosX = getCenterX(40, text.getLenString());
+
+			gotoXY(34 + 100 + 30 + textPosX, 19);
+			text.display();
+			stateInput = FORM_CODE;
+
+		}
+	}
+}
+
+void ContentClassroom::loadData()
+{
+	ManageClass nl;
+	ClassPage page = nl.getClassPerPage(1);
+
+	for (int i = 0; i < page.classList.countClass; i++)
+	{
+		setColorText(ColorCode_DarkWhite);
+
+		string iStr = to_string(i + 1);
+		int idX = getCenterX(10, iStr.length());
+		gotoXY(34 + 3 + idX, 10 + 2 + 1 + 3 + (2 * i));
+		cout << i + 1;
+
+		int classX = getCenterX(40, 10);
+		gotoXY(34 + 3 + 10 + classX, 10 + 2 + 1 + 3 + (2 * i));
+		cout << page.classList.classes[i]->classCode;
+
+		int nameX = getCenterX(40, page.classList.classes[i]->className.length());
+		gotoXY(34 + 3 + 10 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
+		cout << page.classList.classes[i]->className;
+
+		string countStr = to_string(getCountStudentOfList(page.classList.classes[i]->studentList));
+		int countX = getCenterX(30, countStr.length());
+		gotoXY(34 + 3 + 10 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
+		cout << countStr;
+	}
 }
 
 void ContentClassroom::cleanTable()
