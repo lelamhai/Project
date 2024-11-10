@@ -44,6 +44,10 @@ void DungTest::main()
      // Hàm này để lấy ra số lượng sinh viên trong 1 linked list bất kì (không cần class)
      int countStudentInList = getCountStudentOfList(page.classList.classes[0]->studentList);
         
+     // Hàm lấy ra class bằng class code
+     Classroom classFound = test.findClassByCode("C001");
+     cout << "@@@@@@@@@@@@@@" << endl;
+
 
     
     // Lấy danh sách các lớp 
