@@ -148,8 +148,17 @@ KeyState InputField::getEndKey()
 	return keyInput;
 }
 
-
 string InputField::getText()
 {
 	return inputString;
+}
+
+void InputField::setText(string value)
+{
+	inputString = value;
+}
+
+void InputField::display()
+{
+	cout << inputString;
 }

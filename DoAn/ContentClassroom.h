@@ -25,8 +25,8 @@ private:
 	{
 		C_SELECT	= 0, // F1
 		C_CREATE	= 1, // F2
-		C_SEARCH	= 2,
-		C_EDIT		= 3,
+		C_EDIT		= 2,
+		C_SEARCH	= 3,
 		C_DELETE	= 4
 	};
 	StateClassroom currentClassroom;

@@ -149,14 +149,17 @@ void ContentClassroom::handle()
 			cleanInput();
 			break;
 
+		case C_EDIT:
+			showCur(1);
+			editData();
+			cleanInput();
+			break;
+
 		case C_SEARCH:
 
 			break;
 
-		case C_EDIT:
-			showCur(1);
-			editData();
-			break;
+		
 
 		case C_DELETE:
 			showCur(0);
@@ -358,11 +361,67 @@ void ContentClassroom::createData()
 
 void ContentClassroom::editData()
 {
+	ManageClass nl;
+	InputField inputClassroomCode;
+	InputField inputClassroomName;
+	Text text;
+
+	Classroom cl = nl.findClassByCode(classCode.c_str());
 	// Display data
+	inputClassroomCode.setText(classCode);
+	inputClassroomName.setText(cl.className);
 
-	// Update data
+	int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
+	gotoXY(createPosX, 12 + 1 + 1);
+	inputClassroomCode.display();
 
+	stateInput = FORM_NAME;
+	while (true)
+	{
+		if (stateInput == FORM_NAME)
+		{
+			gotoXY(createPosX, 12 + 1 + 3 + 1);
+			inputClassroomName.display();
+			inputClassroomName.handleInput();
 
+			if (inputClassroomName.getEndKey() == ENTER)
+			{
+				if (inputClassroomName.getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+			}
+
+			if (inputClassroomName.getEndKey() == F1)
+			{
+				currentClassroom = C_SELECT;
+				return;
+			}
+		}
+
+		if (stateInput == FORM_ENTER)
+		{
+			bool result = nl.editClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
+			if (result)
+			{
+				gotoXY(0, 0);
+				cleanTable();
+				loadData();
+				text.setContent("Them lop thanh cong!");
+			}
+			else {
+				gotoXY(0, 0);
+				text.setContent("Them lop that bai!");
+			}
+
+			int textPosX = getCenterX(40, text.getLenString());
+
+			gotoXY(34 + 100 + 30 + textPosX, 19);
+			text.display();
+			stateInput = FORM_NAME;
+		}
+	}
 }
 
 void ContentClassroom::loadData()

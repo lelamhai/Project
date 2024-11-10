@@ -15,7 +15,9 @@ private:
 	int cursorPosition = 0;
 public:
 	string getText();
+	void setText(string value);
 	void handleInput();
+	void display();
 	KeyState getEndKey();
 	InputField();
 	~InputField();
