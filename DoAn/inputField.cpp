@@ -18,6 +18,18 @@ void InputField::handleInput()
 		
 		switch (key)
 		{
+		case F1:
+			keyInput = F1;
+			return;
+
+		case F2:
+			keyInput = F2;
+			return;
+
+		case F3:
+			keyInput = F3;
+			return;
+
 		case UP:
 			keyInput = UP;
 			return;

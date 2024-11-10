@@ -4,6 +4,7 @@
 #include "LoginData.h"
 #include "ManageStudent.h"
 #include "ManageQuestion.h"
+#include "ManageSubject.h"
 #include <iostream>
 using namespace std;
 

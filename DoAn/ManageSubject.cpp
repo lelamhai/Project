@@ -175,9 +175,10 @@ void ManageSubject::loadFromFile() {
                     newQuestion.optionD = questionData["optionD"];
 
                     // Kiểm tra answer và lấy ký tự đầu tiên
-                    if (questionData.contains("answer") && questionData["answer"].is_string()) {
-                        newQuestion.answer = questionData["answer"].get<string>()[0];
-                    }
+                    //if (questionData.contains("answer") && questionData["answer"].is_string()) {
+                    //    newQuestion.answer = questionData["answer"].get<string>()[0];
+                    //}
+                    newQuestion.answer = questionData["answer"].get<char>();
 
                     // Chèn câu hỏi vào danh sách câu hỏi của môn học
                     PTRQUESTION questionNode = new NodeQuestion;
@@ -202,7 +203,27 @@ void ManageSubject::loadFromFile() {
     cout << "Data loaded successfully from JSON format." << endl;
 }
 
+// Hàm in ra tất cả câu hỏi của một môn học
+void ManageSubject::printQuestionList(const char* subjectCode) {
 
+    PTRQUESTION a = getSubject(subjectCode)->info.listQuestion;
+    if (a == nullptr) {
+        cout << "No questions available for this subject." << endl;
+        return;
+    }
+
+    // Duyệt qua danh sách câu hỏi và in ra thông tin
+    while (a != nullptr) {
+        cout << "Question ID: " << a->info.questionId << endl;
+        cout << "Content: " << a->info.content << endl;
+        cout << "A. " << a->info.optionA << endl;
+        cout << "B. " << a->info.optionB << endl;
+        cout << "C. " << a->info.optionC << endl;
+        cout << "D. " << a->info.optionD << endl;
+        cout << "Answer: " << a->info.answer << endl << endl;
+        a = a->next; // Di chuyển đến câu hỏi tiếp theo
+    }
+}
 
 
 // ----------------------- PRIVATE METHOD --------------------------//
@@ -322,7 +343,6 @@ void ManageSubject::addQuestionToSubject(PTRSUBJECT subjectNode, const string& c
     const string& optionC, const string& optionD, char answer) {
     // Tạo câu hỏi mới
     PTRQUESTION newQuestion = new NodeQuestion;
-
     // Sinh tự động questionId
     newQuestion->info.questionId = generateUniqueQuestionId(subjectNode->info.listQuestion);
 
@@ -332,10 +352,21 @@ void ManageSubject::addQuestionToSubject(PTRSUBJECT subjectNode, const string& c
     newQuestion->info.optionC = optionC;
     newQuestion->info.optionD = optionD;
     newQuestion->info.answer = answer;
-
+    newQuestion->next = nullptr;
     // Thêm câu hỏi vào danh sách câu hỏi của môn học
-    newQuestion->next = subjectNode->info.listQuestion;
-    subjectNode->info.listQuestion = newQuestion;
+    //newQuestion->next = subjectNode->info.listQuestion;
+    //subjectNode->info.listQuestion = newQuestion;
+    if (subjectNode->info.listQuestion == nullptr) {
+        newQuestion->next = nullptr;
+        subjectNode->info.listQuestion = newQuestion;
+        return;
+    }
+    PTRQUESTION p = subjectNode->info.listQuestion;
+    while (p->next != nullptr) {
+        p = p->next;
+    }
+    p->next = newQuestion;
+    return;
 }
 
 // Hàm in tất cả các môn học (traversal cây nhị phân)

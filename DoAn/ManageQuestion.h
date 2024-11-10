@@ -27,9 +27,15 @@ public:
 
 	int getCountQuestions();
 
+	int insertFirst_Question(const Question &question);
+
+	int insertLast_Question(const Question &question);
+
+	void clearQuestionList();
+
 	void saveToFile();
 
-	void loadFromFile();
+	int loadFromFile();
 
 
 	// Tạo ra 1 id ngẫu nhiên không trùng lặp
@@ -37,6 +43,8 @@ public:
 
 	// Kiểm tra xem Id đã tồn tại chưa
 	bool isUniqueId(int randomId);
+
+	char getAnswer(const int questionID);
 	
 };
 

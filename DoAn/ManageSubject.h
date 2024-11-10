@@ -71,4 +71,6 @@ public:
 
     // Load thông tin từ file lên
     void loadFromFile();
+
+    void printQuestionList(const char* subjectCode);
 };

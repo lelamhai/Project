@@ -255,7 +255,7 @@ ClassPage ManageClass::getClassPerPage(int pageNumber) {
 
     // Kiểm tra nếu trang không hợp lệ
     if (pageNumber < 1 || pageNumber > totalPages) {
-        cout << "Trang " << pageNumber << " không tồn tại!" << endl;
+        //cout << "Trang " << pageNumber << " không tồn tại!" << endl;
         return classPage;
     }
 

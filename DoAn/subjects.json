@@ -3,22 +3,122 @@
         {
             "questions": [
                 {
-                    "answer": 65,
-                    "content": "Dau la phep toi uu nhat?",
-                    "optionA": "A",
-                    "optionB": "B",
-                    "optionC": "C",
-                    "optionD": "D",
-                    "questionId": 3347
+                    "answer": 66,
+                    "content": "1*4= ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 5731
+                },
+                {
+                    "answer": 68,
+                    "content": "tinh dien tich ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 1723
+                },
+                {
+                    "answer": 68,
+                    "content": "hay lam ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 7746
+                },
+                {
+                    "answer": 68,
+                    "content": "hay lam ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 4503
+                },
+                {
+                    "answer": 68,
+                    "content": "hay lam ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 7678
+                },
+                {
+                    "answer": 68,
+                    "content": "hay lam ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 9509
+                },
+                {
+                    "answer": 68,
+                    "content": "hay lam ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 5940
                 }
             ],
-            "subjectCode": "T01",
-            "subjectName": "Toan roi rac"
+            "subjectCode": "CSDL",
+            "subjectName": "co so du lieu"
         },
         {
-            "questions": [],
-            "subjectCode": "CNXHKH",
-            "subjectName": "Chu nghia xa hoi khoa hoc"
+            "questions": [
+                {
+                    "answer": 66,
+                    "content": "nhiet do la ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 6136
+                },
+                {
+                    "answer": 66,
+                    "content": "nhiet do la ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 839
+                },
+                {
+                    "answer": 66,
+                    "content": "nhiet do la ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 2312
+                },
+                {
+                    "answer": 66,
+                    "content": "nhiet do la ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 8656
+                },
+                {
+                    "answer": 66,
+                    "content": "nhiet do la ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 2355
+                }
+            ],
+            "subjectCode": "VL",
+            "subjectName": "vatly"
         }
     ]
 }

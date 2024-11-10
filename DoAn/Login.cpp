@@ -124,7 +124,6 @@ void Login::formLogin()
 			break;
 
 		case LOGIN_ENTER:
-
 			result = classList.logIn(inputUserName.getText().c_str(), inputPassword.getText().c_str());
 
 			if (result)
@@ -139,6 +138,7 @@ void Login::formLogin()
 				stateLoginInput = LOGIN_USERNAME;
 			}
 			break;
+
 		default:
 			break;
 		}

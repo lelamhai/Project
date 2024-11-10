@@ -113,6 +113,42 @@ int ManageQuestion::getCountQuestions()
 	return 0;
 }
 
+int ManageQuestion::insertFirst_Question(const Question &question) {
+	PTRQUESTION temp = new NodeQuestion;
+	temp->info = question;
+	temp->next = questionList;
+	
+	questionList = temp;
+	return 1;
+}
+
+int ManageQuestion::insertLast_Question(const Question& question) {
+	PTRQUESTION temp = new NodeQuestion;
+	temp->info = question;
+	temp->next = nullptr;
+
+	if(questionList == nullptr) {
+		questionList = temp;
+		return 1;
+	}
+	
+	PTRQUESTION ptrLast = questionList;
+	while (ptrLast->next != nullptr) {
+		ptrLast = ptrLast->next;
+	}
+	ptrLast->next = temp;
+	return 1;
+}
+
+void ManageQuestion::clearQuestionList() {
+	// duyệt qua từng phần tử của list và giải phóng bộ nhớ
+	while (questionList != nullptr) {
+		PTRQUESTION temp = questionList;
+		questionList = questionList->next;
+		delete temp;
+	}
+}
+
 void ManageQuestion::saveToFile() {
 	json js; // tạo một đối tượng JASON để lưu dữ liệu câu hỏi trắc nghiệm
 	PTRQUESTION temp = questionList;
@@ -136,6 +172,7 @@ void ManageQuestion::saveToFile() {
 
 	// ghi đối tượng JSON vào file
 	ofstream file(SOURCE_QUESTION);
+
 	if (file.is_open()) {
 		file << js.dump(4);  // Lưu với định dạng đẹp (indent = 4)
 		file.close();
@@ -143,8 +180,32 @@ void ManageQuestion::saveToFile() {
 	}
 }
 
-void ManageQuestion::loadFromFile()
-{
+int ManageQuestion::loadFromFile(){
+	ifstream file(SOURCE_QUESTION);
+
+	if (!file.is_open()) {
+		return -1; // load không thành công
+	}
+
+	json js;
+	file >> js; // Đọc file jason lưu vào đối tượng js
+	file.close();
+
+	clearQuestionList(); // xóa danh sách cũ để chuẩn bị cho đọc dữ liệu mới từ file
+	
+	for (const auto& questionData : js["question"]) {
+		Question question;
+		question.questionId = questionData["questionID"].get<int>();
+		question.content = questionData["content"].get<string>();
+		question.optionA = questionData["optionA"].get<string>();
+		question.optionB = questionData["optionB"].get<string>();
+		question.optionC = questionData["optionC"].get<string>();
+		question.optionD = questionData["optionD"].get<string>();
+		question.answer = questionData["answer"].get<char>();
+
+		insertLast_Question(question);
+	}
+	return 1;
 }
 
 int ManageQuestion::generateUniqueId()
@@ -168,6 +229,23 @@ bool ManageQuestion::isUniqueId(int randomId) {
 	}
 	return true;
 }
+
+char ManageQuestion::getAnswer(const int questionID) {
+	PTRQUESTION temp = questionList;
+	while (temp != nullptr) {
+		if (temp->info.questionId == questionID) {
+			return temp->info.answer;
+		}
+		temp = temp->next;
+	}
+	return NULL; // ID câu hỏi không tồn tại
+}
+
+
+
+
+
+
 
 int generateUniqueQuestionId(PTRQUESTION questionList) {
 	 //Sử dụng random để tạo số ngẫu nhiên
