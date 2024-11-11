@@ -9,17 +9,20 @@ ManageClass::~ManageClass()
 {
 }
 
-Classroom ManageClass::findClassByCode(const char* classCode)
+ClassPage ManageClass::findClassByKeyword(string keyword, int page)
 {
-    Classroom classFound;
-    strcpy_s(classFound.classCode, "");
-    classFound.className = "";
-    int index = findClass(classCode);
-    if (index != -1) {
-        strcpy_s(classFound.classCode, classes[index]->classCode);
-        classFound.className = classes[index]->className;
+    ManageClass classList2;
+    int countClass2 = 0;
+    classList2.reset();
+    for (int i = 0; i < countClass; i++) {
+        string classCodeStr = string(classes[i]->classCode);
+        if (containString(classCodeStr, keyword) || containString(classes[i]->className, keyword)) {
+            classList2.classes[countClass2] = classes[i];
+            countClass2++;
+        }
     }
-    return classFound;
+    classList2.countClass = countClass2;
+    return classList2.getClassPerPage(page);
 }
 
 ClassList ManageClass::getClasses() {
@@ -304,7 +307,15 @@ bool ManageClass::logIn(const char* user, const char* password)
     return false;
 }
 
-
+// Reset class
+void ManageClass::reset() {
+    for (int i = 0; i < countClass; i++) {
+        delete classes[i]; 
+        classes[i] = nullptr;
+    }
+    
+    countClass = 0; 
+}
 
 void printClassPage(ClassPage classPage)
 {
@@ -315,4 +326,9 @@ void printClassPage(ClassPage classPage)
         cout << "Ten lop: " << classPage.classList.classes[i]->className << endl;
         cout << "-------------------------------------------" << endl;
     }
+}
+
+// Hàm kiểm tra chuỗi
+bool containString(const string& str, const string& substr) {
+    return str.find(substr) != string::npos;
 }

@@ -21,7 +21,7 @@ void DungTest::main()
     ///------TEST FOR CLASS----------------
      
      ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn
-     test.printClasses(); // In thử danh sách lớp hiện có
+     //test.printClasses(); // In thử danh sách lớp hiện có
      
      //test.editClass("C003", "D23TXCN06-K Updated"); // Chỉnh sửa thông tin class và lưu vào file
 
@@ -35,7 +35,13 @@ void DungTest::main()
 	    int totalClass; // tổng số class
 	    int startIndex; // Số thứ tự bắt đầu của trang đó
 	    int endIndex; // số kết thúc của trang đó*/
+     
      printClassPage(page); // Hàm này để in ra page có gì thuộc page nào
+
+     // Test filter class // nhập vào keyword vào số trang, mặc định là 1 vì tìm cũng cần phân trang chứ
+     ClassPage listFound = test.findClassByKeyword("C01", 1);
+     
+     printClassPage(listFound);
 
      // Hàm này chỉ dùng khi tính số lượng sinh viên bằng mã lớp (trong class)
      int countStudent = test.getCountSudentOfClass("C001");
@@ -44,10 +50,7 @@ void DungTest::main()
      // Hàm này để lấy ra số lượng sinh viên trong 1 linked list bất kì (không cần class)
      int countStudentInList = getCountStudentOfList(page.classList.classes[0]->studentList);
         
-     // Hàm lấy ra class bằng class code
-     Classroom classFound = test.findClassByCode("C001");
-     cout << "@@@@@@@@@@@@@@" << endl;
-
+     
 
     
     // Lấy danh sách các lớp 

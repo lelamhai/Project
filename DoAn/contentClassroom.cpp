@@ -371,10 +371,10 @@ void ContentClassroom::editData()
 	InputField inputClassroomName;
 	Text text;
 
-	Classroom cl = nl.findClassByCode(classCode.c_str());
+	//Classroom cl = nl.findClassByCode(classCode.c_str());
 	// Display data
 	inputClassroomCode.setText(classCode);
-	inputClassroomName.setText(cl.className);
+	//inputClassroomName.setText(cl.className);
 
 	int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
 	gotoXY(createPosX, 12 + 1 + 1);
@@ -461,16 +461,16 @@ void ContentClassroom::findData()
 
 		if (stateSearchInput == SEARCH_ENTER)
 		{
-			Classroom cl = nl.findClassByCode(inputSearch.getText().c_str());
+			//Classroom cl = nl.findClassByCode(inputSearch.getText().c_str());
 
-			if (cl.classCode != "")
-			{
-				gotoXY(0, 0);
-				cout << cl.classCode;
-			}
-			else {
-				// NULL
-			}
+			//if (cl.classCode != "")
+			//{
+			//	gotoXY(0, 0);
+			//	cout << cl.classCode;
+			//}
+			//else {
+			//	// NULL
+			//}
 			
 			stateSearchInput = SEARCH_VALUE;
 		}

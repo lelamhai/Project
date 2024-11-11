@@ -27,7 +27,7 @@ public:
 	ManageClass();
 	~ManageClass();
 
-	Classroom findClassByCode(const char* classCode);
+	ClassPage findClassByKeyword(string classCode, int page = 1);
 
 	ClassList getClasses();
 	int getCountClass();
@@ -72,9 +72,12 @@ public:
 
 	bool logIn(const char* user, const char* password);
 
+	void reset();
 };
 
 void printClassPage(ClassPage classPage);
+
+bool containString(const string& str, const string& substr);
 
 
 
