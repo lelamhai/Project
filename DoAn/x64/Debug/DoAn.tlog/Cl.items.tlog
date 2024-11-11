@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\button.cpp;D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\button.obj
 D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\buttonEnter.cpp;D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\buttonEnter.obj
 D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\ClassroomSevice.cpp;D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ClassroomSevice.obj
@@ -38,3 +39,45 @@ D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\StudentList.cpp;D:\HOC HANH\PTIT\C
 D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\StudentService.cpp;D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\StudentService.obj
 D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\text.cpp;D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\text.obj
 D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\windows.cpp;D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\windows.obj
+=======
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\button.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\button.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\buttonEnter.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\buttonEnter.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ClassroomSevice.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\ClassroomSevice.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\color.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\color.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\configApp.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\configApp.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\content.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\content.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentAbout.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\contentAbout.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\contentClassroom.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentExam.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\contentExam.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentQuestion.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\contentQuestion.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentStudent.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\contentStudent.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentSubject.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\contentSubject.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ContentSubject.h;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\ContentSubject.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\DungTest.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\DungTest.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\HuyTest.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\HuyTest.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\LoadingData.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\LoadingData.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\LoginData.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\LoginData.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageClass.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\ManageClass.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageQuestion.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\ManageQuestion.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageStudent.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\ManageStudent.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageSubject.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\ManageSubject.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\popupDelete.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\popupDelete.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\draw.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\draw.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\footer.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\footer.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\inputField.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\InputField.h;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\InputField.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\page.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\page.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\popup.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\popup.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\sidebar.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\sidebar.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\header.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\header.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\keyboard.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\keyboard.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\loading.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\loading.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\login.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\login.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\main.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\main.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\Layout.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\Layout.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\singleton.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\singleton.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\StudentList.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\StudentList.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\StudentService.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\StudentService.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\text.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\text.obj
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\windows.cpp;C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\x64\Debug\windows.obj
+>>>>>>> e29ac0755abc3b6d3d051a80233bf2ba45f408b1

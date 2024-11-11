@@ -21,15 +21,21 @@ int main()
 	//----------------------------------
 
 	//----------------HUY ----------------
+<<<<<<< HEAD
 	//HuyTest* h = new HuyTest();
 	//h->main();
 	//delete h;
+=======
+	HuyTest* h = new HuyTest();
+	h->main();
+	delete h;
+>>>>>>> e29ac0755abc3b6d3d051a80233bf2ba45f408b1
 	//------------------------------------------
 	
 	//--------------------DUNG-------------------
-	DungTest* shyni = new DungTest();
-	shyni->main();
-	delete shyni;
+	//DungTest* shyni = new DungTest();
+	//shyni->main();
+	//delete shyni;
 
 
 	//-------------------------------------------

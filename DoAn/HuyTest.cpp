@@ -14,10 +14,16 @@ HuyTest::~HuyTest()
 void HuyTest::main()
 {
 	ManageSubject subjectList;
-	subjectList.addSubject("VL", "vatly");
-	subjectList.addQuestion("VL", "nhiet do la ", " = 1 ", " = 2 ", " = 3 ", " = 4 ", 'B');
-	subjectList.addQuestion("CSDL", "hay lam ", " = 1 ", " = 2 ", " = 3 ", " = 4 ", 'D');
-	subjectList.printQuestionList("VL");
+	//subjectList.addSubject("VL", "vatly");
+	//subjectList.addQuestion("VL", "do dai quang duong ", " = 1 ", " = 2 ", " = 3 ", " = 4 ", 'B');
+	//subjectList.addQuestion("VL", "dong dien xoay chieu ", " = 1 ", " = 2 ", " = 3 ", " = 4 ", 'D');
+	//subjectList.printQuestionList("VL");
+
+	int* a = subjectList.getRandomQuestion(3,"CSDL");
+	for (int i = 0; i < 3; i++) {
+		cout << a[i] << "   ";
+	}
+
 	//subjectList.saveToFile();
 
 	//ManageQuestion ;
