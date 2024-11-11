@@ -1,5 +1,2 @@
-﻿  ManageClass.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\ManageClass.cpp(259,43): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1252)
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\ManageClass.cpp(259,43): warning C4566: character represented by universal-character-name '\u1EA1' cannot be represented in the current code page (1252)
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\ManageClass.cpp(229,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
-  DoAn.vcxproj -> D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\x64\Debug\DoAn.exe
+﻿  HuyTest.cpp
+  DoAn.vcxproj -> C:\Users\ngoch\OneDrive\Máy tính\Project\x64\Debug\DoAn.exe
