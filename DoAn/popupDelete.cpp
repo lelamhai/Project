@@ -14,7 +14,6 @@ void PopupDelete::open()
 	this->content();
 	createButtonNo();
 	createButtonYes();
-	handle();
 }
 
 void PopupDelete::close()
@@ -32,8 +31,20 @@ void PopupDelete::close()
 
 void PopupDelete::handle()
 {
+	int flagExit = 0;
+
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		{
+			flagExit--;
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			flagExit++;
+		}
+
 		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
 		{
 			setColorText(ColorCode_DarkGreen);
@@ -46,7 +57,7 @@ void PopupDelete::handle()
 			gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
 			cout << "Co";
 
-			result = 0;
+			result = false;
 		}
 
 		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
@@ -61,7 +72,7 @@ void PopupDelete::handle()
 			gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
 			cout << "Co";
 
-			result = 1;
+			result = true;
 		}
 		
 		if (GetAsyncKeyState(VK_RETURN) & 0x8000)

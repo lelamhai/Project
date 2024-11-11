@@ -69,7 +69,7 @@ void ContentClassroom::drawClassroom()
 	cout << "Huong Dan";
 
 	setColorText(ColorCode_DarkYellow);
-	box(34 + 100 + 30, 26, 40, 16);
+	box(34 + 100 + 30, 26, 40, 17);
 	lineX(34 + 100 + 30, 26 + 2, 40);
 	gotoXY(34 + 100 + 30, 26 + 2);
 	cout << char(195);
@@ -78,16 +78,23 @@ void ContentClassroom::drawClassroom()
 	setColorText(ColorCode_DarkWhite);
 
 	string note[] = {
-		"F1: Tim Thong Tin Lop",
-		"F2: Sua Thong Tin Lop",
-		"INS: Them Thong Tin Lop",
-		"DEL: Xoa Thong Tin Lop",
-		"ENTER: Xem Chi Tiet Lop"
+		"F1: Chon Lop",
+		"F3: Tim Kiem Lop",
+		"Ins: Them Lop",
+		"Phim Len|Xuong: Chon Du Lieu",
+		"Phim Trai|Phai: Xem Trang Moi|Cu",
+		" ",
+		"* Chinh Sua Lop",
+		"   F1 -> Len|Xuong -> F2",
+		"* Xoa Lop",
+		"   F1 -> Len|Xuong -> Del -> Trai|Phai",
+		"* Xem Chi Tiet Lop",
+		"   F1 -> Len|Xuong -> Enter"
 	};
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 12; i++)
 	{
-		gotoXY(34 + 100 + 30 + 3, 26 + 4 + i * 2);
+		gotoXY(34 + 100 + 30 + 2, 26 + 3 + i);
 		cout << note[i];
 	}
 }
@@ -165,6 +172,9 @@ void ContentClassroom::handle()
 			deleteData();
 			break;
 
+		case C_EXIT:
+			return;
+
 		default:
 			break;
 		}
@@ -173,6 +183,8 @@ void ContentClassroom::handle()
 
 void ContentClassroom::selectData()
 {
+	int flagExit = 0;
+
 	ManageClass nl;
 
 	int hover = 0;
@@ -191,27 +203,31 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_F1) & 0x8000)
+		if (GetAsyncKeyState(VK_F1) & 0x0001)
 		{
 			currentClassroom = C_SELECT;
+			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_F2) & 0x8000)
+		if (GetAsyncKeyState(VK_F2) & 0x0001)
 		{
-			currentClassroom = C_CREATE;
+			currentClassroom = C_EDIT;
+			Sleep(150);
 			return;
 		}
 
 		if (GetAsyncKeyState(VK_F3) & 0x8000)
 		{
-			currentClassroom = C_EDIT;
+			currentClassroom = C_SEARCH;
+			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_F4) & 0x8000)
+		if (GetAsyncKeyState(VK_INSERT) & 0x8000)
 		{
-			currentClassroom = C_SEARCH;
+			currentClassroom = C_CREATE;
+			Sleep(150);
 			return;
 		}
 
@@ -227,6 +243,25 @@ void ContentClassroom::selectData()
 
 			currentClassroom = C_DELETE;
 			return;
+		}
+
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		{
+			flagExit--;
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			flagExit++;
+		}
+
+		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		{
+			if (flagExit != 0)
+			{
+				currentClassroom = C_EXIT;
+				return;
+			}
 		}
 
 		if (lastHover != hover)
@@ -271,6 +306,7 @@ void ContentClassroom::deleteData()
 	PopupDelete pDelete;
 	pDelete.setPosition(deletePosX + 30, 17);
 	pDelete.open();
+	pDelete.handle();
 	pDelete.close();
 
 	if (pDelete.getResult())
@@ -279,7 +315,6 @@ void ContentClassroom::deleteData()
 		ManageClass nl;
 		nl.deleteClass(classCode.c_str());
 	}
-
 	currentClassroom = C_SELECT;
 	return;
 }
@@ -312,6 +347,12 @@ void ContentClassroom::createData()
 			if (inputClassroomCode.getEndKey() == F1)
 			{
 				currentClassroom = C_SELECT;
+				return;
+			}
+
+			if (inputClassroomCode.getEndKey() == F4)
+			{
+				currentClassroom = C_SEARCH;
 				return;
 			}
 
@@ -367,12 +408,13 @@ void ContentClassroom::createData()
 void ContentClassroom::editData()
 {
 	ManageClass nl;
+
+	Text text;
 	InputField inputClassroomCode;
 	InputField inputClassroomName;
-	Text text;
 
-	Classroom cl = nl.findClassByCode(classCode.c_str());
 	// Display data
+	Classroom cl = nl.findClassByCode(classCode.c_str());
 	inputClassroomCode.setText(classCode);
 	inputClassroomName.setText(cl.className);
 
@@ -389,6 +431,12 @@ void ContentClassroom::editData()
 			inputClassroomName.display();
 			inputClassroomName.handleInput();
 
+			if (inputClassroomName.getEndKey() == F1)
+			{
+				currentClassroom = C_SELECT;
+				return;
+			}
+
 			if (inputClassroomName.getEndKey() == ENTER)
 			{
 				if (inputClassroomName.getText() != "")
@@ -396,12 +444,6 @@ void ContentClassroom::editData()
 					stateInput = FORM_ENTER;
 					continue;
 				}
-			}
-
-			if (inputClassroomName.getEndKey() == F1)
-			{
-				currentClassroom = C_SELECT;
-				return;
 			}
 		}
 
@@ -413,11 +455,11 @@ void ContentClassroom::editData()
 				gotoXY(0, 0);
 				cleanTable();
 				loadData();
-				text.setContent("Them lop thanh cong!");
+				text.setContent("Cap nhat thong tin thanh cong!");
 			}
 			else {
 				gotoXY(0, 0);
-				text.setContent("Them lop that bai!");
+				text.setContent("Cap nhat thong tin that bai!");
 			}
 
 			int textPosX = getCenterX(40, text.getLenString());
@@ -431,13 +473,24 @@ void ContentClassroom::editData()
 
 void ContentClassroom::findData()
 {
+	int flagExit = 0;
+
 	ManageClass nl;
 
 	InputField inputSearch;
-
 	stateSearchInput = SEARCH_VALUE;
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		{
+			flagExit--;
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			flagExit++;
+		}
+
 		if (stateSearchInput == SEARCH_VALUE)
 		{
 			gotoXY(34 + 2 + 4 + 2 + inputSearch.getText().length(), 10);
@@ -445,6 +498,12 @@ void ContentClassroom::findData()
 
 			if (inputSearch.getEndKey() == ENTER)
 			{
+				if (flagExit != 0)
+				{
+					currentClassroom = C_EXIT;
+					return;
+				}
+
 				if (inputSearch.getText() != "")
 				{
 					stateSearchInput = SEARCH_ENTER;
@@ -491,7 +550,7 @@ void ContentClassroom::loadData()
 		gotoXY(34 + 3 + idX, 10 + 2 + 1 + 3 + (2 * i));
 		cout << i + 1;
 
-		int classX = getCenterX(40, 10);
+		int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
 		gotoXY(34 + 3 + 10 + classX, 10 + 2 + 1 + 3 + (2 * i));
 		cout << page.classList.classes[i]->classCode;
 
@@ -538,8 +597,10 @@ void ContentClassroom::cleanInput()
 	gotoXY(inputPosX, 12 + 1 + 3 + 1);
 	cout << blankFill;
 
-	int textPosX = getCenterX(40, 22);
+	string blankFillText;
+	blankFillText.resize(36, ' ');
+	int textPosX = getCenterX(40, 36);
 	setColorText(ColorCode_Back);
 	gotoXY(34 + 100 + 30 + textPosX, 19);
-	cout << blankFill;
+	cout << blankFillText;
 }

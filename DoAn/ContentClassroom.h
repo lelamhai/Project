@@ -24,10 +24,11 @@ private:
 	enum StateClassroom
 	{
 		C_SELECT	= 0, // F1
-		C_CREATE	= 1, // F2
-		C_EDIT		= 2,
-		C_SEARCH	= 3,
-		C_DELETE	= 4
+		C_CREATE	= 1, // Ins
+		C_EDIT		= 2, // F2
+		C_SEARCH	= 3, // F3
+		C_DELETE	= 4, // Del
+		C_EXIT		= 5
 	};
 	StateClassroom currentClassroom;
 

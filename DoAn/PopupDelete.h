@@ -3,7 +3,7 @@
 class PopupDelete : public Popup
 {
 private:
-	bool result = 1;
+	bool result;
 public:
 	void open();
 	void createButtonYes();

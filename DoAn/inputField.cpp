@@ -13,26 +13,41 @@ void InputField::handleInput()
 	cursorPosition = inputString.length();
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_F1))
+		{
+			keyInput = F1;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F2))
+		{
+			keyInput = F2;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F3))
+		{
+			keyInput = F3;
+			Sleep(150);
+			return;
+		}
+
 		char s = _getch();
 		int key = keySpecial(s);
-		
 		switch (key)
 		{
-		case F1:
-			keyInput = F1;
-			return;
+		case PGUP:
+			keyInput = PGUP;
 
-		case F2:
-			keyInput = F2;
-			return;
-
-		case F3:
-			keyInput = F3;
-			return;
+		case PGDN:
+			keyInput = PGDN;
 
 		case UP:
 			keyInput = UP;
 			return;
+
 		case DOWN:
 			keyInput = DOWN;
 			return;
@@ -72,9 +87,7 @@ void InputField::handleInput()
 			cout << " ";
 			gotoXY(whereX() - 1 - (inputString.length() - cursorPosition), whereY());
 			continue;
-
-		default:
-			break;
+		
 		}
 
 		switch (s)

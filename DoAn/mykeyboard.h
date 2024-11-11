@@ -9,6 +9,7 @@ enum KeyState
     TAB         = 9,
     BACKSPACE   = 8,
 
+
     //Number
     NUM_0   = 48,
     NUM_1   = 49,
@@ -21,6 +22,10 @@ enum KeyState
     RIGHT   = 77,
     LEFT    = 75,
     UP      = 72,
+
+
+    PGUP    = 73,
+    PGDN    = 81,
     
     // System
     F1 = 59,
