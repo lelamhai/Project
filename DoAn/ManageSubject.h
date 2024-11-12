@@ -73,4 +73,7 @@ public:
     void loadFromFile();
 
     void printQuestionList(const char* subjectCode);
+
+
+    int* getRandomQuestion(int n, const char* subjectCode);
 };

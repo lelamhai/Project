@@ -225,6 +225,43 @@ void ManageSubject::printQuestionList(const char* subjectCode) {
     }
 }
 
+int* ManageSubject::getRandomQuestion(int n, const char* subjectCode) { //truyền vào số câu hỏi thi và mã môn học
+    int totalQuestion = countQuestionsInSubject(subjectCode);
+    if (n > totalQuestion) {
+        cout << "Số lượng câu hỏi vượt quá tổng kho câu hỏi " << endl;
+        return nullptr;
+    }
+    
+    // Tạo mảng để lưu tất cả các questionId của môn học
+    int* questionID = new int[totalQuestion];
+    PTRSUBJECT subject = searchSubject(subjectList, subjectCode);
+    PTRQUESTION listQuestion = subject->info.listQuestion;
+
+    // Lưu từng questionId của môn học vào mảng
+    for (int i = 0; i < totalQuestion; i++) {
+        questionID[i] = listQuestion->info.questionId;
+        listQuestion = listQuestion->next;       
+    }
+
+    // trộn ngẫu nhiên mảng
+    srand(static_cast<unsigned int>(time(NULL)));
+    for (int i = totalQuestion - 1; i > 0; --i) {
+        int j = rand() % (i + 1);
+        std::swap(questionID[i], questionID[j]);
+    }
+
+    // Tạo mảng kết quả và sao chép n câu hỏi đầu tiên trong mảng đã trộn
+    int* randomQuestion = new int[n];
+    for (int i = 0; i < n; i++) {
+        randomQuestion[i] = questionID[i];
+    }
+
+    // Giải phóng bộ nhớ của questionID
+    delete[] questionID;
+
+    // Trả về mảng chứa n câu hỏi ngẫu nhiên
+    return randomQuestion;
+}
 
 // ----------------------- PRIVATE METHOD --------------------------//
 // Hàm giúp tạo SubjectNode mới
@@ -399,4 +436,6 @@ int ManageSubject::countSubjectsInRoot(PTRSUBJECT root) {
     if (!root) return 0;
     return 1 + countSubjectsInRoot(root->left) + countSubjectsInRoot(root->right);
 }
+
+
 

@@ -22,6 +22,23 @@ Classroom ManageClass::findClassByCode(const char* classCode)
     return classFound;
 }
 
+
+ClassPage ManageClass::searchClass(string keyword, int page)
+{
+    ManageClass classList2;
+    int countClass2 = 0;
+    classList2.reset();
+    for (int i = 0; i < countClass; i++) {
+        string classCodeStr = string(classes[i]->classCode);
+        if (containString(classCodeStr, keyword) || containString(classes[i]->className, keyword)) {
+            classList2.classes[countClass2] = classes[i];
+            countClass2++;
+        }
+    }
+    classList2.countClass = countClass2;
+    return classList2.getClassPerPage(page);
+}
+
 ClassList ManageClass::getClasses() {
     ClassList classList;
     classList.countClass = countClass;
@@ -304,7 +321,15 @@ bool ManageClass::logIn(const char* user, const char* password)
     return false;
 }
 
-
+// Reset class
+void ManageClass::reset() {
+    for (int i = 0; i < countClass; i++) {
+        delete classes[i]; 
+        classes[i] = nullptr;
+    }
+    
+    countClass = 0; 
+}
 
 void printClassPage(ClassPage classPage)
 {
@@ -315,4 +340,9 @@ void printClassPage(ClassPage classPage)
         cout << "Ten lop: " << classPage.classList.classes[i]->className << endl;
         cout << "-------------------------------------------" << endl;
     }
+}
+
+// Hàm kiểm tra chuỗi
+bool containString(const string& str, const string& substr) {
+    return str.find(substr) != string::npos;
 }

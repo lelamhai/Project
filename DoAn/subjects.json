@@ -64,6 +64,15 @@
                     "optionC": " = 3 ",
                     "optionD": " = 4 ",
                     "questionId": 5940
+                },
+                {
+                    "answer": 68,
+                    "content": "hay lam ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 8321
                 }
             ],
             "subjectCode": "CSDL",
@@ -115,6 +124,51 @@
                     "optionC": " = 3 ",
                     "optionD": " = 4 ",
                     "questionId": 2355
+                },
+                {
+                    "answer": 66,
+                    "content": "nhiet do la ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 4302
+                },
+                {
+                    "answer": 66,
+                    "content": "do dai quang duong ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 3133
+                },
+                {
+                    "answer": 68,
+                    "content": "dong dien xoay chieu ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 4540
+                },
+                {
+                    "answer": 66,
+                    "content": "do dai quang duong ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 125
+                },
+                {
+                    "answer": 68,
+                    "content": "dong dien xoay chieu ",
+                    "optionA": " = 1 ",
+                    "optionB": " = 2 ",
+                    "optionC": " = 3 ",
+                    "optionD": " = 4 ",
+                    "questionId": 5409
                 }
             ],
             "subjectCode": "VL",

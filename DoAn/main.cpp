@@ -7,24 +7,22 @@ using namespace std;
 int main()
 {	
 	//---------------HAI----------------
-	/*Page* p = new Page();
+	Page* p = new Page();
 	p->setRun(PAGE_LOADING);
 	p->main();
-	delete p;*/
+	delete p;
 	//----------------------------------
 
 	//----------------HUY ----------------
-	/*HuyTest* h = new HuyTest();
-	h->main();
-	delete h;*/
+	//HuyTest* h = new HuyTest();
+	//h->main();
+	//delete h;
 	//------------------------------------------
 	
 	//--------------------DUNG-------------------
-	DungTest* shyni = new DungTest();
+	/*DungTest* shyni = new DungTest();
 	shyni->main();
-	delete shyni;
-
-
+	delete shyni;*/
 	//-------------------------------------------
 
 
