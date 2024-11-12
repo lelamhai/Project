@@ -74,7 +74,7 @@ void ContentClassroom::drawClassroom()
 	setColorText(ColorCode_DarkWhite);
 
 	string note[] = {
-		"F1: Chon Lop",
+		"F1: Chon Du Lieu Trong Bang",
 		"F3: Tim Kiem Lop",
 		"Ins: Them Lop",
 		"Phim Len|Xuong: Chon Du Lieu",
@@ -84,7 +84,7 @@ void ContentClassroom::drawClassroom()
 		"   F1->Len|Xuong->F2",
 		"* Xoa Lop",
 		"   F1->Len|Xuong->Del->Trai|Phai",
-		"* Xem Chi Tiet Lop",
+		"* Them Sinh Vien Cho Lop",
 		"   F1->Len|Xuong->Enter"
 	};
 
@@ -603,7 +603,7 @@ void ContentClassroom::pagging()
 	int currentPage = 0;
 	if (page.totalClass > 0)
 	{
-		currentPage = 0;
+		currentPage = pageNumber;
 	}
 
 	setColorText(ColorCode_DarkWhite);
