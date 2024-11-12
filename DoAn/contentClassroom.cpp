@@ -267,6 +267,11 @@ void ContentClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_F2) & 0x0001)
 		{
+			if (page.totalClass <= 0)
+			{
+				continue;
+			}
+
 			currentClassroom = C_EDIT;
 			Sleep(150);
 			return;
@@ -595,8 +600,14 @@ void ContentClassroom::pagging()
 	string blankFillText;
 	blankFillText.resize(10, ' ');
 
+	int currentPage = 0;
+	if (page.totalClass > 0)
+	{
+		currentPage = 0;
+	}
+
 	setColorText(ColorCode_DarkWhite);
-	string pageTitle = "Trang " + to_string(pageNumber) + '/' + to_string(page.totalPage);
+	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(page.totalPage);
 	gotoXY(34 + 120 - 6, 10 + 28 + 5);
 	cout << pageTitle;
 }
