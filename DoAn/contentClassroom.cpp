@@ -137,6 +137,7 @@ void ContentClassroom::handle()
 		switch (currentClassroom)
 		{
 		case C_SELECT:
+			pageNumber = 1;
 			showCur(0);
 			selectData();
 			break;
@@ -145,12 +146,15 @@ void ContentClassroom::handle()
 			showCur(1);
 			createData();
 			cleanInput();
+			pageNumber = 1;
 			break;
 
 		case C_EDIT:
 			showCur(1);
 			editData();
 			cleanInput();
+			cleanTable();
+			pageNumber = 1;
 			break;
 
 		case C_SEARCH:
@@ -177,10 +181,20 @@ void ContentClassroom::selectData()
 	int flagExit = 0;
 
 	ManageClass nl;
-	ClassPage page = nl.getClassPerPage(pageNumber);
+	ClassPage page;
+
+	if (textSearch != "")
+	{
+		page = nl.searchClass(textSearch, pageNumber);
+	}
+	else 
+	{
+		page = nl.getClassPerPage(pageNumber);
+	}
 
 	int start = 0;
 	int end = pageNumber * page.numberClassPerPage;
+
 	if (pageNumber * page.numberClassPerPage < page.totalClass)
 	{
 		end = page.numberClassPerPage - 1;
@@ -326,7 +340,14 @@ void ContentClassroom::selectData()
 
 		if (lastHover != hover)
 		{
-			page = nl.getClassPerPage(pageNumber);
+			if (textSearch != "")
+			{
+				page = nl.searchClass(textSearch, 1);
+			}
+			else
+			{
+				page = nl.getClassPerPage(pageNumber);
+			}
 
 			for (int i = 0; i < page.classList.countClass; i++)
 			{
@@ -529,65 +550,77 @@ void ContentClassroom::editData()
 
 void ContentClassroom::findData()
 {
-	int flagExit = 0;
-
-	ManageClass nl;
-
-	InputField inputSearch;
-	stateSearchInput = SEARCH_VALUE;
+	int cursorPosition = textSearch.length();
+	stateSearchInput = SEARCH_INPUT;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		if (GetAsyncKeyState(VK_F1) & 0x0001)
 		{
-			flagExit--;
+			currentClassroom = C_SELECT;
+			Sleep(150);
+			return;
 		}
 
-		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		if (stateSearchInput == SEARCH_INPUT)
 		{
-			flagExit++;
-		}
+			gotoXY(34 + 2 + 4 + 2 + textSearch.length(), 10);
 
-		if (stateSearchInput == SEARCH_VALUE)
-		{
-			gotoXY(34 + 2 + 4 + 2 + inputSearch.getText().length(), 10);
-			inputSearch.handleInput();
-
-			if (inputSearch.getEndKey() == ENTER)
+			char s = _getch();
+			int key = keySpecial(s);
+			switch (s)
 			{
-				if (flagExit != 0)
+			case BACKSPACE:
+				if (textSearch.length() <= 0 || cursorPosition <= 0)
 				{
-					currentClassroom = C_EXIT;
-					return;
+					break;
 				}
 
-				if (inputSearch.getText() != "")
+				if (cursorPosition == textSearch.length())
 				{
-					stateSearchInput = SEARCH_ENTER;
-					continue;
+					textSearch.erase(textSearch.length() - 1, 1);
+					cursorPosition--;
+					cout << "\b \b";
+				}
+				else {
+					textSearch.erase(--cursorPosition, 1);
+					gotoXY(whereX() - 1, whereY());
+					for (int i = cursorPosition; i < textSearch.length(); i++)
+					{
+						cout << textSearch[i];
+					}
+					gotoXY(whereX(), whereY());
+					cout << " ";
+					gotoXY(whereX() - 1 - (textSearch.length() - cursorPosition), whereY());
+				}
+				loadData();
+				pagging();
+				break;
+
+			default:
+				if (textSearch.length() > 14)
+				{
+					break;
+				}
+
+				if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+				{
+					textSearch.insert(textSearch.begin() + cursorPosition, s);
+					cursorPosition++;
+					cout << s;
+
+					if (cursorPosition != textSearch.length())
+					{
+						for (int i = cursorPosition; i <= textSearch.length(); i++)
+						{
+							cout << textSearch[i];
+						}
+						gotoXY(whereX() - (textSearch.length() - cursorPosition), whereY());
+					}
+					loadData();
+					pagging();
 				}
 			}
-
-			if (inputSearch.getEndKey() == F1)
-			{
-				currentClassroom = C_SELECT;
-				return;
-			}
-		}
-
-		if (stateSearchInput == SEARCH_ENTER)
-		{
-			Classroom cl = nl.findClassByCode(inputSearch.getText().c_str());
-
-			if (cl.classCode != "")
-			{
-				gotoXY(0, 0);
-				cout << cl.classCode;
-			}
-			else {
-				// NULL
-			}
-			
-			stateSearchInput = SEARCH_VALUE;
+			break;
 		}
 	}
 }
@@ -595,7 +628,17 @@ void ContentClassroom::findData()
 void ContentClassroom::pagging()
 {
 	ManageClass nl;
-	ClassPage page = nl.getClassPerPage(pageNumber);
+	ClassPage page;
+
+	if (textSearch != "")
+	{
+		page = nl.searchClass(textSearch, pageNumber);
+	}
+	else
+	{
+		page = nl.getClassPerPage(pageNumber);
+	}
+
 
 	string blankFillText;
 	blankFillText.resize(10, ' ');
@@ -614,17 +657,20 @@ void ContentClassroom::pagging()
 
 void ContentClassroom::loadData()
 {
+	cleanTable();
 	ManageClass nl;
-	ClassPage page = nl.getClassPerPage(1);
+	ClassPage page;
+	if (textSearch != "")
+	{
+		page = nl.searchClass(textSearch, 1);
+	}
+	else {
+		page = nl.getClassPerPage(1);
+	}
 
 	for (int i = 0; i < page.classList.countClass; i++)
 	{
 		setColorText(ColorCode_DarkWhite);
-
-		/*string iStr = to_string(i + 1);
-		int idX = getCenterX(10, iStr.length());
-		gotoXY(34 + 3 + idX, 10 + 2 + 1 + 3 + (2 * i));
-		cout << i + 1;*/
 
 		int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
 		gotoXY(34 + 3 + classX, 10 + 2 + 1 + 3 + (2 * i));

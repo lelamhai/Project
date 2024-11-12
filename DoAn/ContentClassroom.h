@@ -42,13 +42,15 @@ private:
 
 	enum SearchInput
 	{
-		SEARCH_VALUE = 0,
-		SEARCH_ENTER = 1
+		SEARCH_INPUT	= 0,
+		SEARCH_F1		= 1,
+		SEARCH_EXIT		= 2
 	};
 	SearchInput stateSearchInput;
 
 	string classCode;
 	int pageNumber = 1;
+	string textSearch = "";
 
 public:
 	void displayContent() override;
