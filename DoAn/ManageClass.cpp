@@ -67,9 +67,12 @@ bool ManageClass::addClass(const char* classCode, const string className) {
 		return false;
 	}
 	if (countClass < MAX_NUMBER_CLASS) {
-		classes[countClass] = new Classroom;
-		strcpy_s(classes[countClass]->classCode, classCode);
-		classes[countClass]->className = className;
+        for (int i = countClass; i > 0 ; i--) {
+            classes[i] = classes[i-1];
+        }
+		classes[0] = new Classroom;
+		strcpy_s(classes[0]->classCode, classCode);
+		classes[0]->className = className;
 		countClass++;
         saveToFile();
 		return true;
