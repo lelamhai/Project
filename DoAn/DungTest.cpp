@@ -39,7 +39,7 @@ void DungTest::main()
      printClassPage(page); // Hàm này để in ra page có gì thuộc page nào
 
      // Test filter class // nhập vào keyword vào số trang, mặc định là 1 vì tìm cũng cần phân trang chứ
-     ClassPage listFound = test.findClassByKeyword("C01", 1);
+     ClassPage listFound = test.searchClass("C01", 1);
      
      printClassPage(listFound);
 

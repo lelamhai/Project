@@ -27,7 +27,7 @@ public:
 	ManageClass();
 	~ManageClass();
 
-	ClassPage findClassByKeyword(string classCode, int page = 1);
+	ClassPage searchClass(string classCode, int page = 1);
 
 	ClassList getClasses();
 	int getCountClass();
@@ -36,6 +36,8 @@ public:
 	// Input: Class code
 	// Output: Position of class in list
 	int findClass(const char* classCode);
+
+	Classroom findClassByCode(const char* classCode);
 
 	// Function add class to classlist
 	// Input: classCode, className

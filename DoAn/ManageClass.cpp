@@ -9,7 +9,21 @@ ManageClass::~ManageClass()
 {
 }
 
-ClassPage ManageClass::findClassByKeyword(string keyword, int page)
+Classroom ManageClass::findClassByCode(const char* classCode)
+{
+    Classroom classFound;
+    strcpy_s(classFound.classCode, "");
+    classFound.className = "";
+    int index = findClass(classCode);
+    if (index != -1) {
+        strcpy_s(classFound.classCode, classes[index]->classCode);
+        classFound.className = classes[index]->className;
+    }
+    return classFound;
+}
+
+
+ClassPage ManageClass::searchClass(string keyword, int page)
 {
     ManageClass classList2;
     int countClass2 = 0;
