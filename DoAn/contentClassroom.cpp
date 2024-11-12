@@ -18,9 +18,7 @@ void ContentClassroom::drawClassroom()
 {
 	InputField inputStudent;
 	Text txtSearch;
-	Text txtPaging;
 	txtSearch.setContent("Tim");
-	txtPaging.setContent("Trang 1/2");
 
 	gotoXY(34 + 2, 10);
 	txtSearch.display();
@@ -30,8 +28,6 @@ void ContentClassroom::drawClassroom()
 	box(34 + 2, 10 + 2, 120, 30);
 	box(34 + 100 + 30, 9, 40, 15);
 
-	gotoXY(34 + 120 - 6, 10 + 28 + 5);
-	txtPaging.display();
 
 	int posX = getCenterX(40, 9);
 	gotoXY(posX + 34 + 100 + 30, 10);
@@ -82,14 +78,14 @@ void ContentClassroom::drawClassroom()
 		"F3: Tim Kiem Lop",
 		"Ins: Them Lop",
 		"Phim Len|Xuong: Chon Du Lieu",
-		"Phim Trai|Phai: Xem Trang Moi|Cu",
+		"Phim Trai|Phai: Xem Trang Cu|Moi",
 		" ",
 		"* Chinh Sua Lop",
-		"   F1 -> Len|Xuong -> F2",
+		"   F1->Len|Xuong->F2",
 		"* Xoa Lop",
-		"   F1 -> Len|Xuong -> Del -> Trai|Phai",
+		"   F1->Len|Xuong->Del->Trai|Phai",
 		"* Xem Chi Tiet Lop",
-		"   F1 -> Len|Xuong -> Enter"
+		"   F1->Len|Xuong->Enter"
 	};
 
 	for (int i = 0; i < 12; i++)
@@ -227,9 +223,12 @@ void ContentClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_RIGHT))
 		{
-			cleanTable();
-			pageNumber++;
-			lastHover = -1;
+			if (pageNumber < page.totalPage)
+			{
+				cleanTable();
+				pageNumber++;
+				lastHover = -1;
+			}
 			Sleep(200);
 		}
 
@@ -321,6 +320,7 @@ void ContentClassroom::selectData()
 				cout << countStr;
 			}
 			lastHover = hover;
+			pagging();
 		}
 	}
 }
@@ -561,6 +561,20 @@ void ContentClassroom::findData()
 	}
 }
 
+void ContentClassroom::pagging()
+{
+	ManageClass nl;
+	ClassPage page = nl.getClassPerPage(pageNumber);
+
+	string blankFillText;
+	blankFillText.resize(10, ' ');
+
+	setColorText(ColorCode_DarkWhite);
+	string pageTitle = "Trang " + to_string(pageNumber) + '/' + to_string(page.totalPage);
+	gotoXY(34 + 120 - 6, 10 + 28 + 5);
+	cout << pageTitle;
+}
+
 void ContentClassroom::loadData()
 {
 	ManageClass nl;
@@ -570,22 +584,22 @@ void ContentClassroom::loadData()
 	{
 		setColorText(ColorCode_DarkWhite);
 
-		string iStr = to_string(i + 1);
+		/*string iStr = to_string(i + 1);
 		int idX = getCenterX(10, iStr.length());
 		gotoXY(34 + 3 + idX, 10 + 2 + 1 + 3 + (2 * i));
-		cout << i + 1;
+		cout << i + 1;*/
 
 		int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
-		gotoXY(34 + 3 + 10 + classX, 10 + 2 + 1 + 3 + (2 * i));
+		gotoXY(34 + 3 + classX, 10 + 2 + 1 + 3 + (2 * i));
 		cout << page.classList.classes[i]->classCode;
 
 		int nameX = getCenterX(40, page.classList.classes[i]->className.length());
-		gotoXY(34 + 3 + 10 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
+		gotoXY(34 + 3 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
 		cout << page.classList.classes[i]->className;
 
 		string countStr = to_string(getCountStudentOfList(page.classList.classes[i]->studentList));
-		int countX = getCenterX(30, countStr.length());
-		gotoXY(34 + 3 + 10 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
+		int countX = getCenterX(40, countStr.length());
+		gotoXY(34 + 3 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
 		cout << countStr;
 	}
 }

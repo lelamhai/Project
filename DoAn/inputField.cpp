@@ -135,6 +135,11 @@ void InputField::handleInput()
 			break;
 
 		default:
+			if (inputString.length() > 14)
+			{
+				break;
+			}
+
 			if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 			{
 				inputString.insert(inputString.begin() + cursorPosition, s);

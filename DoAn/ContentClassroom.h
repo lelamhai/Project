@@ -61,6 +61,7 @@ public:
 	void createData();
 	void editData();
 	void findData();
+	void pagging();
 	void loadData();
 	void cleanTable();
 	void cleanInput();
