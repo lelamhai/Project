@@ -179,8 +179,15 @@ void ContentClassroom::selectData()
 	ManageClass nl;
 	ClassPage page = nl.getClassPerPage(pageNumber);
 
-	int startIndex = page.startIndex;
-	int endIndex = page.endIndex - 1;
+	int start = 0;
+	int end = pageNumber * page.numberClassPerPage;
+	if (pageNumber * page.numberClassPerPage < page.totalClass)
+	{
+		end = page.numberClassPerPage - 1;
+	}
+	else {
+		end = (page.numberClassPerPage - (end - page.totalClass)) - 1;
+	}
 
 	int hover = 0;
 	int lastHover = -1;
@@ -188,7 +195,7 @@ void ContentClassroom::selectData()
 	{
 		if (GetAsyncKeyState(VK_UP))
 		{
-			if (startIndex < hover)
+			if (start < hover)
 			{
 				hover -= 1;
 			}
@@ -200,12 +207,12 @@ void ContentClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_DOWN))
 		{
-			if (endIndex > hover)
+			if (end > hover)
 			{
 				hover += 1;
 			}
 			else {
-				hover = endIndex;
+				hover = end;
 			}
 			Sleep(150);
 		}
@@ -214,8 +221,17 @@ void ContentClassroom::selectData()
 		{
 			if (pageNumber > 1)
 			{
+				hover = 0;
 				cleanTable();
 				pageNumber--;
+				end = pageNumber * page.numberClassPerPage;
+				if (pageNumber * page.numberClassPerPage < page.totalClass)
+				{
+					end = page.numberClassPerPage - 1;
+				}
+				else {
+					end = (page.numberClassPerPage - (end - page.totalClass)) - 1;
+				}
 				lastHover = -1;
 			}
 			Sleep(200);
@@ -227,6 +243,16 @@ void ContentClassroom::selectData()
 			{
 				cleanTable();
 				pageNumber++;
+
+				end = pageNumber * page.numberClassPerPage;
+				if (pageNumber * page.numberClassPerPage < page.totalClass)
+				{
+					end = page.numberClassPerPage - 1;
+				}
+				else {
+					end = (page.numberClassPerPage - (end - page.totalClass)) - 1;
+				}
+				hover = 0;
 				lastHover = -1;
 			}
 			Sleep(200);
