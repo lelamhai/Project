@@ -108,27 +108,22 @@ void ContentClassroom::girdContent()
 	cout << char(180);
 
 	string title[] = {
-		"STT",
 		"Ma Lop",
 		"Ten Lop",
 		"Sinh Vien"
 	};
 
-	int idX = getCenterX(10, title[0].length());
-	gotoXY(34 + 3 + idX, 10 + 2 + 1);
+	int classX = getCenterX(40, title[0].length());
+	gotoXY(34 + 3 + classX, 10 + 2 + 1);
 	cout << title[0];
 
-	int classX = getCenterX(40, title[1].length());
-	gotoXY(34 + 3 + 10 + classX, 10 + 2 + 1);
+	int nameX = getCenterX(40, title[1].length());
+	gotoXY(34 + 3  + 40 + nameX, 10 + 2 + 1);
 	cout << title[1];
 
-	int nameX = getCenterX(40, title[2].length());
-	gotoXY(34 + 3 + 10 + 40 + nameX, 10 + 2 + 1);
+	int countX = getCenterX(40, title[2].length());
+	gotoXY(34 + 3 + 40 + 40 + countX, 10 + 2 + 1);
 	cout << title[2];
-
-	int countX = getCenterX(30, title[3].length());
-	gotoXY(34 + 3 + 10 + 40 + 40 + countX, 10 + 2 + 1);
-	cout << title[3];
 }
 
 void ContentClassroom::content()
@@ -186,6 +181,10 @@ void ContentClassroom::selectData()
 	int flagExit = 0;
 
 	ManageClass nl;
+	ClassPage page = nl.getClassPerPage(pageNumber);
+
+	int startIndex = page.startIndex;
+	int endIndex = page.endIndex - 1;
 
 	int hover = 0;
 	int lastHover = -1;
@@ -193,14 +192,45 @@ void ContentClassroom::selectData()
 	{
 		if (GetAsyncKeyState(VK_UP))
 		{
-			hover -= 1;
+			if (startIndex < hover)
+			{
+				hover -= 1;
+			}
+			else {
+				hover = 0;
+			}
 			Sleep(150);
 		}
 
 		if (GetAsyncKeyState(VK_DOWN))
 		{
-			hover += 1;
+			if (endIndex > hover)
+			{
+				hover += 1;
+			}
+			else {
+				hover = endIndex;
+			}
 			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_LEFT))
+		{
+			if (pageNumber > 1)
+			{
+				cleanTable();
+				pageNumber--;
+				lastHover = -1;
+			}
+			Sleep(200);
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT))
+		{
+			cleanTable();
+			pageNumber++;
+			lastHover = -1;
+			Sleep(200);
 		}
 
 		if (GetAsyncKeyState(VK_F1) & 0x0001)
@@ -233,7 +263,7 @@ void ContentClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_DELETE) & 0x8000)
 		{
-			ClassPage page = nl.getClassPerPage(1);
+			page = nl.getClassPerPage(1);
 
 			if (page.totalClass <= 0)
 			{
@@ -266,33 +296,28 @@ void ContentClassroom::selectData()
 
 		if (lastHover != hover)
 		{
-			ClassPage page = nl.getClassPerPage(1);
+			page = nl.getClassPerPage(pageNumber);
 
 			for (int i = 0; i < page.classList.countClass; i++)
 			{
 				setColorText(ColorCode_DarkWhite);
 				if (hover == i)
 				{
-					setColorText(ColorCode_DarkCyan);
+					setColorText(ColorCode_DarkGreen);
 					classCode = page.classList.classes[i]->classCode;
 				}
 
-				string iStr = to_string(i + 1);
-				int idX = getCenterX(10, iStr.length());
-				gotoXY(34 + 3 + idX, 10 + 2 + 1 + 3 + (2 * i));
-				cout << i + 1;
-
 				int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
-				gotoXY(34 + 3 + 10 + classX, 10 + 2 + 1 + 3 + (2 * i));
+				gotoXY(34 + 3 + classX, 10 + 2 + 1 + 3 + (2 * i));
 				cout << page.classList.classes[i]->classCode;
 
 				int nameX = getCenterX(40, page.classList.classes[i]->className.length());
-				gotoXY(34 + 3 + 10 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
+				gotoXY(34 + 3 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
 				cout << page.classList.classes[i]->className;
 
 				string countStr = to_string(getCountStudentOfList(page.classList.classes[i]->studentList));
-				int countX = getCenterX(30, countStr.length());
-				gotoXY(34 + 3 + 10 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
+				int countX = getCenterX(40, countStr.length());
+				gotoXY(34 + 3 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
 				cout << countStr;
 			}
 			lastHover = hover;

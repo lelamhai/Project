@@ -48,6 +48,7 @@ private:
 	SearchInput stateSearchInput;
 
 	string classCode;
+	int pageNumber = 1;
 
 public:
 	void displayContent() override;
