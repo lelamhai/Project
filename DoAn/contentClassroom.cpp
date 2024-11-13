@@ -85,7 +85,7 @@ void ContentClassroom::drawClassroom()
 		"* Xoa Lop",
 		"   F1->Len|Xuong->Del->Trai|Phai",
 		"* Them Sinh Vien Cho Lop",
-		"   F1->Len|Xuong->Spacebar"
+		"   F1->Len|Xuong->Enter"
 	};
 
 	for (int i = 0; i < 12; i++)
@@ -328,7 +328,7 @@ void ContentClassroom::selectData()
 		{
 			if (textSearch != "")
 			{
-				page = nl.searchClass(textSearch, 1);
+				page = nl.searchClass(textSearch, pageNumber);
 			}
 			else
 			{
