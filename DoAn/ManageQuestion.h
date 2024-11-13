@@ -11,6 +11,8 @@ private:
 	PTRQUESTION questionList = nullptr;
 public:
 	ManageQuestion();
+	ManageQuestion(const PTRQUESTION& q);
+
 	~ManageQuestion();
 
 	bool addQuestion(const string content, const string optionA, const string optionB, const string optionC, const string optionD, const char answer);
@@ -45,6 +47,9 @@ public:
 	bool isUniqueId(int randomId);
 
 	char getAnswer(const int questionID);
+
+	// Hàm chuyển một list question thành n question random. Sau khi thực hiện hàm sẽ thay thế list cũ
+	void getRandomQuestion(int n);
 	
 };
 

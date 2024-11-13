@@ -1,61 +1,62 @@
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\vc143.pdb
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\vc143.idb
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\managestudent.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\managequestion.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\manageclass.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\logindata.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\loadingdata.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\huytest.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\dungtest.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\contentsubject.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\contentstudent.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\contentquestion.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\contentexam.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\contentclassroom.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\contentabout.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\content.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\configapp.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\color.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\classroomsevice.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\buttonenter.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\button.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\windows.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\text.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\studentservice.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\studentlist.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\singleton.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\layout.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\main.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\login.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\loading.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\keyboard.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\header.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\sidebar.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\popup.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\page.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\inputfield.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\footer.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\draw.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\popupdelete.obj
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\managesubject.obj
-<<<<<<< head
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.ilk
-=======
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\vc143.pdb
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\vc143.idb
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\managestudent.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\managequestion.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\manageclass.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\logindata.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\loadingdata.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\huytest.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\dungtest.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\contentsubject.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\contentstudent.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\contentquestion.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\contentexam.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\contentclassroom.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\contentabout.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\content.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\configapp.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\color.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\classroomsevice.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\buttonenter.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\button.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\windows.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\text.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\studentservice.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\studentlist.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\singleton.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\layout.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\main.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\login.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\loading.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\keyboard.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\header.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\sidebar.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\popup.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\page.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\inputfield.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\footer.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\draw.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\popupdelete.obj
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\managesubject.obj
 c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.ilk
->>>>>>> e29ac0755abc3b6d3d051a80233bf2ba45f408b1
-d:\hoc hanh\ptit\ctdl & gt\do an\project\x64\debug\doan.pdb
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\cl.command.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\cl.items.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\cl.read.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\cl.write.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.4128-cvtres.read.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.4128-cvtres.write.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.4128-rc.read.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.4128-rc.write.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.4128.read.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.4128.read.2.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.4128.write.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.command.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.read.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.secondary.1.tlog
-d:\hoc hanh\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.write.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\x64\debug\doan.pdb
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\cl.command.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\cl.items.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\cl.read.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\cl.write.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link-cvtres.read.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link-cvtres.write.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link-rc.read.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link-rc.write.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.4136-cvtres.read.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.4136-cvtres.write.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.4136-rc.read.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.4136-rc.write.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.4136.read.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.4136.read.2.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.4136.write.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.command.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.read.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.read.2.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.secondary.1.tlog
+c:\users\ngoch\onedrive\máy tính\project\doan\x64\debug\doan.tlog\link.write.1.tlog

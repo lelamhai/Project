@@ -4,6 +4,41 @@ ManageQuestion::ManageQuestion()
 {
 }
 
+// khởi tạo sao chép infor từ q
+//ManageQuestion::ManageQuestion(PTRQUESTION q) {
+//	if (q == nullptr) {
+//		questionList = nullptr;
+//		return;
+//	}
+//
+//	// Tạo node đầu tiên của questionList
+//	questionList = new NodeQuestion;
+//	questionList->info = q->info;
+//	questionList->next = nullptr;
+//
+//	PTRQUESTION temp = questionList;
+//	q = q->next;
+//
+//	// Sao chép phần còn lại của danh sách
+//	while (q != nullptr) {
+//		// Tạo một node mới và sao chép dữ liệu
+//		PTRQUESTION newNode = new NodeQuestion;
+//		newNode->info = q->info;
+//		newNode->next = nullptr;
+//
+//		// Kết nối node mới vào danh sách
+//		temp->next = newNode;
+//		temp = newNode; // Di chuyển con trỏ current đến node mới
+//
+//		q = q->next; // Di chuyển con trỏ q đến node tiếp theo
+//	}
+//}
+
+// khởi tạo với con trỏ questionList trỏ vào con trỏ truyền vào hàm
+ManageQuestion::ManageQuestion(const PTRQUESTION &q) {
+	questionList = q;
+}
+
 ManageQuestion::~ManageQuestion()
 {
 }
@@ -239,6 +274,58 @@ char ManageQuestion::getAnswer(const int questionID) {
 		temp = temp->next;
 	}
 	return NULL; // ID câu hỏi không tồn tại
+}
+
+void ManageQuestion::getRandomQuestion(int n) {
+	// Tạo mảng để lưu tất cả các questionId của môn học
+	int totalQuestion = getCountQuestionInList(questionList);
+	int* questionIdAll = new int[totalQuestion];
+	PTRQUESTION temp = questionList;
+	for (int i = 0; i < totalQuestion; i++) {
+		questionIdAll[i] = temp->info.questionId;
+		temp = temp->next;
+	}
+	// trộn ngẫu nhiên mảng ID câu hỏi
+	srand(static_cast<unsigned int>(time(NULL)));
+	for (int i = totalQuestion - 1; i > 0; --i) {
+		int j = rand() % (i + 1);
+		swap(questionIdAll[i], questionIdAll[j]);
+	}
+
+	// tạo một list mới với n ID đã random. xóa list cũ
+	PTRQUESTION questionList_Random = nullptr;;
+	PTRQUESTION tempR = nullptr; // con trỏ để duyệt questionList_Random
+	
+	int currID;
+	temp = questionList;
+	bool isFirstElement = true;
+	for (int i = 0; i < n; i++) {
+		temp = questionList;
+		currID = questionIdAll[i];
+
+		while (temp != nullptr) {
+			if (currID == temp->info.questionId) {
+				PTRQUESTION newNode = new NodeQuestion; // Khởi tạo một node mới
+				newNode->info = temp->info;
+				newNode->next = nullptr;
+
+				if (isFirstElement) { // Nếu là node đầu tiên
+					questionList_Random = newNode;
+					tempR = questionList_Random; // Gán con trỏ để duyệt
+					isFirstElement = false;
+				}
+				else {
+					tempR->next = newNode;
+					tempR = tempR->next; // Chuyển con trỏ đến node cuối
+				}
+				break; // Thoát khỏi vòng lặp khi tìm thấy câu hỏi
+			}
+			temp = temp->next;
+		}
+	}
+
+	questionList = questionList_Random;
+	delete[] questionIdAll;
 }
 
 
