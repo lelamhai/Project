@@ -225,42 +225,84 @@ void ManageSubject::printQuestionList(const char* subjectCode) {
     }
 }
 
-int* ManageSubject::getRandomQuestion(int n, const char* subjectCode) { //truyền vào số câu hỏi thi và mã môn học
+// Hàm trả về n câu hỏi ramdom lấy ra từ một môn học
+//int* ManageSubject::getRandomQuestion(int n, const char* subjectCode) { //truyền vào số câu hỏi thi và mã môn học
+//    int totalQuestion = countQuestionsInSubject(subjectCode);
+//    if (n > totalQuestion) {
+//        cout << "Số lượng câu hỏi vượt quá tổng kho câu hỏi " << endl;
+//        return nullptr;
+//    }
+//    // tìm môn học bằng mã môn học
+//    PTRSUBJECT subject = searchSubject(subjectList, subjectCode);
+//    if (!subject) {
+//        cout << "Không tìm thấy môn học" << endl;
+//        return nullptr;
+//    }
+//
+//    // Tạo mảng để lưu tất cả các questionId của môn học
+//    int* questionID_Subject = new int[totalQuestion];
+//    PTRQUESTION p = subject->info.listQuestion;
+//    for (int i = 0; i < totalQuestion; i++) {
+//        questionID_Subject[i] = p->info.questionId;
+//        p = p->next;       
+//    }
+//    // trộn ngẫu nhiên mảng ID câu hỏi
+//    srand(static_cast<unsigned int>(time(NULL)));
+//    for (int i = totalQuestion - 1; i > 0; --i) {
+//        int j = rand() % (i + 1);
+//        swap(questionID_Subject[i], questionID_Subject[j]);
+//    }
+//    // Tạo mảng kết quả và lấy ra n câu hỏi đầu tiên trong mảng đã trộn trước đó
+//    int* questionID_Random = new int[n];
+//    for (int i = 0; i < n; i++) {
+//        questionID_Random[i] = questionID_Subject[i];
+//    }
+//
+//    // tạo một danh sách các câu hỏi từ mảng các ID đã random
+//    //PTRQUESTION questionList_Random;
+//    ManageQuestion questionList_Random;
+//    
+//    p = subject->info.listQuestion;
+//    int currID; // biến duyệt ID hiện tại của mảng
+//    
+//    for (int i = 0; i < n; i++) {
+//        p = subject->info.listQuestion;
+//        currID = questionID_Random[i];
+//
+//        while (p != nullptr) {
+//            if (currID == p->info.questionId) {
+//                
+//                break;
+//            }
+//            p = p->next;
+//        }
+//
+//    }
+//
+//
+//    // Giải phóng bộ nhớ của questionID
+//    delete[] questionID_Subject;
+//
+//    // Trả về mảng chứa n câu hỏi ngẫu nhiên
+//    return questionID_Random;
+//}
+
+ManageQuestion ManageSubject::getRandomQuestion(int n, const char* subjectCode) { //truyền vào số câu hỏi thi và mã môn học
+    PTRSUBJECT subject = searchSubject(subjectList, subjectCode); // tìm môn học bằng mã môn học
+    ManageQuestion questionList_Random(subject->info.listQuestion); //tạo đối tượng quản lý danh sách câu hỏi sau khi random
+    
+    if (!subject) {
+        cout << "Không tìm thấy môn học" << endl;
+        return questionList_Random;
+    }
+
     int totalQuestion = countQuestionsInSubject(subjectCode);
     if (n > totalQuestion) {
         cout << "Số lượng câu hỏi vượt quá tổng kho câu hỏi " << endl;
-        return nullptr;
-    }
-    
-    // Tạo mảng để lưu tất cả các questionId của môn học
-    int* questionID = new int[totalQuestion];
-    PTRSUBJECT subject = searchSubject(subjectList, subjectCode);
-    PTRQUESTION listQuestion = subject->info.listQuestion;
-
-    // Lưu từng questionId của môn học vào mảng
-    for (int i = 0; i < totalQuestion; i++) {
-        questionID[i] = listQuestion->info.questionId;
-        listQuestion = listQuestion->next;       
+        return questionList_Random;
     }
 
-    // trộn ngẫu nhiên mảng
-    srand(static_cast<unsigned int>(time(NULL)));
-    for (int i = totalQuestion - 1; i > 0; --i) {
-        int j = rand() % (i + 1);
-        std::swap(questionID[i], questionID[j]);
-    }
-
-    // Tạo mảng kết quả và sao chép n câu hỏi đầu tiên trong mảng đã trộn
-    int* randomQuestion = new int[n];
-    for (int i = 0; i < n; i++) {
-        randomQuestion[i] = questionID[i];
-    }
-
-    // Giải phóng bộ nhớ của questionID
-    delete[] questionID;
-
-    // Trả về mảng chứa n câu hỏi ngẫu nhiên
-    return randomQuestion;
+    questionList_Random.getRandomQuestion(n);
 }
 
 // ----------------------- PRIVATE METHOD --------------------------//

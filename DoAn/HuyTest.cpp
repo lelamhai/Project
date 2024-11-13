@@ -19,10 +19,9 @@ void HuyTest::main()
 	//subjectList.addQuestion("VL", "dong dien xoay chieu ", " = 1 ", " = 2 ", " = 3 ", " = 4 ", 'D');
 	//subjectList.printQuestionList("VL");
 
-	int* a = subjectList.getRandomQuestion(3,"CSDL");
-	for (int i = 0; i < 3; i++) {
-		cout << a[i] << "   ";
-	}
+	ManageQuestion questionList_Random = subjectList.getRandomQuestion(2,"CSDL");
+	questionList_Random.printQuestions();
+
 
 	//subjectList.saveToFile();
 
