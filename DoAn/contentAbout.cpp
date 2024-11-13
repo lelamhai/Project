@@ -36,19 +36,23 @@ void ContentAbout::content()
 	gotoXY(34, 20);
 	cout << "* Huong Dan Su Dung Menu";
 	gotoXY(34, 22);
-	cout << "1) PGUP|PGDOWN.";
+	cout << "1) PGUP|PGDOWN: Di chuyen menu";
 	gotoXY(34, 24);
-	cout << "2) Mau xanh la cay la muc ban chon.";
-	gotoXY(34, 26);
-	cout << "3) Mau xanh nuoc bien la muc ban dang lua chon.";
+	cout << "2) Spacebar: Chon menu";
 
 
-	gotoXY(34, 30);
+	gotoXY(34, 28);
 	cout << "* Phim Nong";
+	gotoXY(34, 30);
+	cout << "- F1: Chuc nang chon du lieu trong bang";
 	gotoXY(34, 32);
-	cout << "- F1: Chuc nang";
+	cout << "- F2: Chuc nang chinh sua du lieu";
 	gotoXY(34, 34);
-	cout << "- F2: Chuc nang";
+	cout << "- F3: Chuc nang tim kiem";
 	gotoXY(34, 36);
-	cout << "- F3: Chuc nang";
+	cout << "- Ins: Chuc nang them du lieu";
+	gotoXY(34, 38);
+	cout << "- Del: Chuc nang xoa du lieu";
+	gotoXY(34, 40);
+	cout << "- Phim mui ten: Tren|Duoi|Trai|Phai";
 }

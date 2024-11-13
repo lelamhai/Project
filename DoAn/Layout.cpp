@@ -94,9 +94,9 @@ void Layout::templateMenu()
                 cout << menu[i];
             }
         }
-        lastHover = hover;
 
-        if (GetAsyncKeyState(VK_RETURN) & 0x8000 && active != hover)
+        lastHover = hover;
+        if (GetAsyncKeyState(VK_SPACE) & 0x8000 && active != hover)
         {
             int count = menu.size();
             if (hover == count - 2)
@@ -117,21 +117,14 @@ void Layout::templateMenu()
             choice = hover;
             lastHover = -1;
         }
-
         Sleep(100);
     }
 }
 
 void Layout::templateContent()
 {
-    int lastChoice = -1;
     while (isRun)
     {
-        if (choice == lastChoice)
-        {
-            continue;
-        }
-
         if (Singleton::getInstance()->role != "GV")
         {
             if (choice == 0)
@@ -210,8 +203,6 @@ void Layout::templateContent()
                 delete e;
             }
         }
-        
-        lastChoice = choice;
         Sleep(200);
     }
 }

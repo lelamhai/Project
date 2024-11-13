@@ -85,7 +85,7 @@ void ContentClassroom::drawClassroom()
 		"* Xoa Lop",
 		"   F1->Len|Xuong->Del->Trai|Phai",
 		"* Them Sinh Vien Cho Lop",
-		"   F1->Len|Xuong->Enter"
+		"   F1->Len|Xuong->Spacebar"
 	};
 
 	for (int i = 0; i < 12; i++)
@@ -137,7 +137,6 @@ void ContentClassroom::handle()
 		switch (currentClassroom)
 		{
 		case C_SELECT:
-			pageNumber = 1;
 			showCur(0);
 			selectData();
 			break;
@@ -146,7 +145,6 @@ void ContentClassroom::handle()
 			showCur(1);
 			createData();
 			cleanInput();
-			pageNumber = 1;
 			break;
 
 		case C_EDIT:
@@ -154,7 +152,6 @@ void ContentClassroom::handle()
 			editData();
 			cleanInput();
 			cleanTable();
-			pageNumber = 1;
 			break;
 
 		case C_SEARCH:
@@ -178,8 +175,6 @@ void ContentClassroom::handle()
 
 void ContentClassroom::selectData()
 {
-	int flagExit = 0;
-
 	ManageClass nl;
 	ClassPage page;
 
@@ -203,11 +198,10 @@ void ContentClassroom::selectData()
 		end = (page.numberClassPerPage - (end - page.totalClass)) - 1;
 	}
 
-	int hover = 0;
 	int lastHover = -1;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_UP))
+		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
 			if (start < hover)
 			{
@@ -219,7 +213,7 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_DOWN))
+		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
 		{
 			if (end > hover)
 			{
@@ -291,21 +285,21 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_F3) & 0x8000)
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
 		{
 			currentClassroom = C_SEARCH;
 			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_INSERT) & 0x8000)
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
 		{
 			currentClassroom = C_CREATE;
 			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_DELETE) & 0x8000)
+		if (GetAsyncKeyState(VK_DELETE) & 0x0001)
 		{
 			page = nl.getClassPerPage(1);
 
@@ -319,23 +313,15 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
 		{
-			flagExit--;
-		}
-
-		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
-		{
-			flagExit++;
+			currentClassroom = C_EXIT;
+			return;
 		}
 
 		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
-			if (flagExit != 0)
-			{
-				currentClassroom = C_EXIT;
-				return;
-			}
+
 		}
 
 		if (lastHover != hover)
@@ -355,7 +341,7 @@ void ContentClassroom::selectData()
 				if (hover == i)
 				{
 					setColorText(ColorCode_DarkGreen);
-					classCode = page.classList.classes[i]->classCode;
+					classCode = page.classList.classes[i]->classCode; // Get ClassCode for edit and delete
 				}
 
 				int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
@@ -370,6 +356,7 @@ void ContentClassroom::selectData()
 				int countX = getCenterX(40, countStr.length());
 				gotoXY(34 + 3 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
 				cout << countStr;
+				setColorText(ColorCode_DarkWhite);
 			}
 			lastHover = hover;
 			pagging();
@@ -388,9 +375,14 @@ void ContentClassroom::deleteData()
 
 	if (pDelete.getResult())
 	{
-		cleanTable();
 		ManageClass nl;
-		nl.deleteClass(classCode.c_str());
+		bool result = nl.deleteClass(classCode.c_str());
+		if (result)
+		{
+			hover = 0;
+		}
+
+		cleanTable();
 	}
 	currentClassroom = C_SELECT;
 	return;
@@ -404,7 +396,7 @@ void ContentClassroom::createData()
 	Text text;
 
 	int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
-	stateInput = FORM_NAME;
+	stateInput = FORM_CODE;
 	while (true)
 	{
 		if (stateInput == FORM_CODE)
@@ -665,12 +657,16 @@ void ContentClassroom::loadData()
 		page = nl.searchClass(textSearch, 1);
 	}
 	else {
-		page = nl.getClassPerPage(1);
+		page = nl.getClassPerPage(pageNumber);
 	}
 
 	for (int i = 0; i < page.classList.countClass; i++)
 	{
 		setColorText(ColorCode_DarkWhite);
+		if (hover == i)
+		{
+			setColorText(ColorCode_DarkGreen);
+		}
 
 		int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
 		gotoXY(34 + 3 + classX, 10 + 2 + 1 + 3 + (2 * i));
@@ -684,6 +680,7 @@ void ContentClassroom::loadData()
 		int countX = getCenterX(40, countStr.length());
 		gotoXY(34 + 3 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
 		cout << countStr;
+		setColorText(ColorCode_DarkWhite);
 	}
 }
 

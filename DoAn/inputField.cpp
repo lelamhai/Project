@@ -13,24 +13,105 @@ void InputField::handleInput()
 	cursorPosition = inputString.length();
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_F1))
+		if (GetAsyncKeyState(VK_F1) & 0x0001)
 		{
 			keyInput = F1;
 			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_F2))
+		if (GetAsyncKeyState(VK_F2) & 0x0001)
 		{
 			keyInput = F2;
 			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_F3))
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
 		{
 			keyInput = F3;
 			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_UP) & 0x0001)
+		{
+			keyInput = UP;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
+		{
+			keyInput = DOWN;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
+		{
+			if (cursorPosition <= 0)
+			{
+				Sleep(150);
+				continue;
+			}
+
+			cursorPosition--;
+			gotoXY(whereX() - 1, whereY());
+			Sleep(150);
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
+		{
+			if (cursorPosition >= inputString.length())
+			{
+				Sleep(150);
+				continue;
+			}
+
+			cursorPosition++;
+			gotoXY(whereX() + 1, whereY());
+			Sleep(150);
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_DELETE) & 0x0001)
+		{
+			if (cursorPosition == inputString.length())
+			{
+				Sleep(150);
+				continue;
+			}
+
+			inputString.erase(cursorPosition, 1);
+			for (int i = cursorPosition; i < inputString.length(); i++)
+			{
+				cout << inputString[i];
+			}
+			gotoXY(whereX(), whereY());
+			cout << " ";
+			gotoXY(whereX() - 1 - (inputString.length() - cursorPosition), whereY());
+			Sleep(150);
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_PRIOR) & 0x0001)
+		{
+			keyInput = F1;
+			Sleep(150);
+			return;
+		}
+		if (GetAsyncKeyState(VK_NEXT) & 0x0001)
+		{
+			keyInput = F1;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		{
+			keyInput = ENTER;
 			return;
 		}
 
@@ -44,15 +125,15 @@ void InputField::handleInput()
 		case PGDN:
 			keyInput = PGDN;
 
-		case UP:
+	/*	case UP:
 			keyInput = UP;
 			return;
 
 		case DOWN:
 			keyInput = DOWN;
-			return;
+			return;*/
 
-		case LEFT:
+		/*case LEFT:
 			if (cursorPosition <= 0)
 			{
 				continue;
@@ -60,9 +141,9 @@ void InputField::handleInput()
 
 			cursorPosition--;
 			gotoXY(whereX() - 1, whereY());
-			continue;
+			continue;*/
 
-		case RIGHT:
+	/*	case RIGHT:
 			if (cursorPosition >= inputString.length())
 			{
 				continue;
@@ -70,9 +151,9 @@ void InputField::handleInput()
 
 			cursorPosition++;
 			gotoXY(whereX() + 1, whereY());
-			continue;
+			continue;*/
 
-		case DEL:
+		/*case DEL:
 			if (cursorPosition == inputString.length())
 			{
 				continue;
@@ -86,15 +167,14 @@ void InputField::handleInput()
 			gotoXY(whereX(), whereY());
 			cout << " ";
 			gotoXY(whereX() - 1 - (inputString.length() - cursorPosition), whereY());
-			continue;
-		
+			continue;*/
 		}
 
 		switch (s)
 		{
-		case ENTER:
+		/*case ENTER:
 			keyInput = ENTER;
-			return;
+			return;*/
 
 		case SPACEBAR:
 			inputString.insert(inputString.begin() + cursorPosition, s);

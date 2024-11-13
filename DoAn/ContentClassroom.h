@@ -50,6 +50,7 @@ private:
 
 	string classCode;
 	int pageNumber = 1;
+	int hover = 0;
 	string textSearch = "";
 
 public:
