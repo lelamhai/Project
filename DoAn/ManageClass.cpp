@@ -26,11 +26,14 @@ Classroom ManageClass::findClassByCode(const char* classCode)
 ClassPage ManageClass::searchClass(string keyword, int page)
 {
     ManageClass classList2;
+    if (keyword == "") {
+        return classList2.getClassPerPage(page);
+    }
     int countClass2 = 0;
     classList2.reset();
     for (int i = 0; i < countClass; i++) {
         string classCodeStr = string(classes[i]->classCode);
-        if (containString(classCodeStr, keyword) || containString(classes[i]->className, keyword)) {
+        if (containString(toLowerString(classCodeStr), toLowerString(keyword)) || containString(toLowerString(classes[i]->className), toLowerString(keyword))) {
             classList2.classes[countClass2] = classes[i];
             countClass2++;
         }
@@ -348,4 +351,13 @@ void printClassPage(ClassPage classPage)
 // Hàm kiểm tra chuỗi
 bool containString(const string& str, const string& substr) {
     return str.find(substr) != string::npos;
+}
+
+string toLowerString(string str) {
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;
+        }
+    }
+    return str;
 }
