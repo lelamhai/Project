@@ -55,4 +55,13 @@ void ContentAbout::content()
 	cout << "- Del: Chuc nang xoa du lieu";
 	gotoXY(34, 40);
 	cout << "- Phim mui ten: Tren|Duoi|Trai|Phai";
+
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
+		{
+			return;
+		}
+		Sleep(150);
+	}
 }
