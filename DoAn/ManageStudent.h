@@ -17,6 +17,16 @@ public:
 	ManageStudent();
 	~ManageStudent();
 
+	// Get list student
+	PTRSTUDENT getStudentList() {
+		return studentList;
+	}
+
+	// Set list student 
+	void setStudentList(PTRSTUDENT studentList) {
+		studentList = studentList;                                                                                                                                    
+	}
+
 	// Add new student to list
 	bool addStudent(const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password);
 	
