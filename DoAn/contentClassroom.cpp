@@ -394,6 +394,13 @@ void ContentClassroom::deleteData()
 	pDelete.setPosition(deletePosX + 30, 17);
 	pDelete.open();
 	pDelete.handle();
+
+	if (pDelete.getMenu() != 0)
+	{
+		currentClassroom = C_EXIT;
+		return;
+	}
+
 	pDelete.close();
 
 	if (pDelete.getResult())
@@ -527,6 +534,7 @@ void ContentClassroom::createData()
 
 void ContentClassroom::editData()
 {
+	int moveMenu = 0;
 	ManageClass nl;
 
 	Text text;
@@ -550,23 +558,29 @@ void ContentClassroom::editData()
 			gotoXY(createPosX, 12 + 1 + 3 + 1);
 			inputClassroomName.display();
 			inputClassroomName.handleInput();
+			moveMenu = inputClassroomName.getMenu();
 
 			switch (inputClassroomName.getEndKey())
 			{
-			case F1:
-				currentClassroom = C_SELECT;
-				return;
-			case F3:
-				currentClassroom = C_SEARCH;
-				return;
-
 			case ENTER:
+				if (moveMenu != 0)
+				{
+					currentClassroom = C_EXIT;
+					return;
+				}
+
 				if (inputClassroomName.getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
 				}
 				break;
+			case F1:
+				currentClassroom = C_SELECT;
+				return;
+			case F3:
+				currentClassroom = C_SEARCH;
+				return;
 			default:
 				break;
 			}
@@ -614,6 +628,13 @@ void ContentClassroom::findData()
 			if (GetAsyncKeyState(VK_F1) & 0x0001)
 			{
 				currentClassroom = C_SELECT;
+				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+			{
+				currentClassroom = C_CREATE;
 				Sleep(150);
 				return;
 			}

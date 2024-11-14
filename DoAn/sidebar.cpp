@@ -17,7 +17,7 @@ void TutorialMenu()
 {
 	string tutorialMenu[] = {
 		"PGUP|PGDN",
-		"Spacebar"
+		"Enter"
 	};
 
 	int height = getConsoleHeight();
@@ -27,7 +27,7 @@ void TutorialMenu()
 	gotoXY(1, posY);
 	cout << tutorialMenu[0];
 
-	gotoXY(21, posY);
+	gotoXY(24, posY);
 	cout << tutorialMenu[1];
 	setColorText(ColorCode_DarkWhite);
 }

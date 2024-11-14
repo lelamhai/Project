@@ -81,7 +81,7 @@ void Layout::templateMenu()
             if (hover == count - 2)
             {
                 choice = hover;
-                Sleep(150);
+                Sleep(50);
                 return;
             }
 
@@ -97,7 +97,7 @@ void Layout::templateMenu()
             active = hover;
             choice = hover;
             lastHover = -1;
-            Sleep(150);
+            Sleep(50);
             continue;
         }
 
@@ -129,7 +129,7 @@ void Layout::templateContent()
         // Flag reload content
         if (isLoadContent)
         {
-            Sleep(300);
+            Sleep(200);
             isLoadContent = false;
             continue;
         }

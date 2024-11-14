@@ -100,6 +100,7 @@ void InputField::handleInput()
 		{
 			moveMenu--;
 			Sleep(150);
+
 			return;
 		}
 
@@ -117,6 +118,8 @@ void InputField::handleInput()
 			return;
 		}
 
+		int x = whereX();
+		int y = whereY();
 		char s = _getch();
 		int key = keySpecial(s);
 		switch (key)
@@ -226,6 +229,8 @@ void InputField::handleInput()
 
 			if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 			{
+				showCur(1);
+				gotoXY(x, y);
 				inputString.insert(inputString.begin() + cursorPosition, s);
 				cursorPosition++;
 				cout << s;
@@ -242,8 +247,6 @@ void InputField::handleInput()
 
 			break;
 		}
-
-		
 	}
 }
 
