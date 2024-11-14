@@ -115,6 +115,8 @@ void InputField::handleInput()
 			return;
 		}
 
+		
+
 		char s = _getch();
 		int key = keySpecial(s);
 		switch (key)
@@ -176,7 +178,7 @@ void InputField::handleInput()
 			keyInput = ENTER;
 			return;*/
 
-		case SPACEBAR:
+		/*case SPACEBAR:
 			inputString.insert(inputString.begin() + cursorPosition, s);
 			cursorPosition++;
 			cout << " ";
@@ -186,7 +188,7 @@ void InputField::handleInput()
 			}
 
 			gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
-			break;
+			break;*/
 
 		case BACKSPACE:
 			if (inputString.length() <= 0 || cursorPosition <= 0)
@@ -237,6 +239,20 @@ void InputField::handleInput()
 			}
 
 			break;
+		}
+
+		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
+		{
+			inputString.insert(inputString.begin() + cursorPosition, s);
+			cursorPosition++;
+			cout << " ";
+			for (int i = cursorPosition; i < inputString.length(); i++)
+			{
+				cout << inputString[i];
+			}
+
+			gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
+			continue;
 		}
 	}
 }

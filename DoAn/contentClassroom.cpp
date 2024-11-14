@@ -242,7 +242,7 @@ void ContentClassroom::selectData()
 				}
 				lastHover = -1;
 			}
-			Sleep(200);
+			Sleep(150);
 		}
 
 		if (GetAsyncKeyState(VK_RIGHT))
@@ -263,7 +263,7 @@ void ContentClassroom::selectData()
 				hover = 0;
 				lastHover = -1;
 			}
-			Sleep(200);
+			Sleep(150);
 		}
 
 		if (GetAsyncKeyState(VK_F1) & 0x0001)
@@ -313,13 +313,14 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
+		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 		{
 			currentClassroom = C_EXIT;
+			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
 		{
 
 		}

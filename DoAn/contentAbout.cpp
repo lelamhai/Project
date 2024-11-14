@@ -32,34 +32,43 @@ void ContentAbout::content()
 	gotoXY(34, 16);
 	cout << "bai thi theo y muon va nhan ket qua ngay lap tuc.";
 
+	string tutorialMenu[] = {
+		"* Huong Dan Su Dung Menu",
+		"- PGUP|PGDN: Di chuyen menu",
+		"- Spacebar: Chon menu"
+	};
 
-	gotoXY(34, 20);
-	cout << "* Huong Dan Su Dung Menu";
-	gotoXY(34, 22);
-	cout << "1) PGUP|PGDOWN: Di chuyen menu";
-	gotoXY(34, 24);
-	cout << "2) Spacebar: Chon menu";
+	string hotKey[] = {
+		"* Phim Nong",
+		"- F1: Chuc nang chon du lieu trong bang",
+		"- F2: Chuc nang chinh sua du lieu",
+		"- F3: Chuc nang tim kiem",
+		"- F12: Xem huong dan",
+		"- Ins: Chuc nang them du lieu",
+		"- Del: Chuc nang xoa du lieu",
+		"- ESC: Tro ve trang truoc",
+		"- Phim mui ten: Tren|Duoi|Trai|Phai"
+	};
 
+	int posYMenu = 20;
+	for (int i = 0; i < 3; i++)
+	{
+		gotoXY(34, posYMenu + i * 2);
+		cout << tutorialMenu[i];
+	}
 
-	gotoXY(34, 28);
-	cout << "* Phim Nong";
-	gotoXY(34, 30);
-	cout << "- F1: Chuc nang chon du lieu trong bang";
-	gotoXY(34, 32);
-	cout << "- F2: Chuc nang chinh sua du lieu";
-	gotoXY(34, 34);
-	cout << "- F3: Chuc nang tim kiem";
-	gotoXY(34, 36);
-	cout << "- Ins: Chuc nang them du lieu";
-	gotoXY(34, 38);
-	cout << "- Del: Chuc nang xoa du lieu";
-	gotoXY(34, 40);
-	cout << "- Phim mui ten: Tren|Duoi|Trai|Phai";
-
+	int posYKey = 27;
+	for (int i = 0; i < 9; i++)
+	{
+		gotoXY(34, posYKey + i * 2);
+		cout << hotKey[i];
+	}
+	
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
+		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 		{
+			Sleep(150);
 			return;
 		}
 		Sleep(150);

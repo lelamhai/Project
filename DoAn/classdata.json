@@ -25,8 +25,17 @@
     },
     {
       "classCode": "C002",
-      "className": "K23DTCN05-K U",
-      "students": []
+      "className": "K23DTCN100-K",
+      "students": [
+       {
+          "firstName": "Vu",
+          "gender": 77,
+          "lastName": "Duy Dung",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "admin"
+       }
+      ]
     },
     {
       "classCode": "C003",

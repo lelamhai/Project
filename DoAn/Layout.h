@@ -32,6 +32,7 @@ enum StateContent
     SUBJECT     = 3,
     QUESTION    = 4,
     EXAM        = 5,
+    EXIT        = 6
 };
 
 class Layout
@@ -44,14 +45,15 @@ protected:
     virtual void layoutSidebar()
     {
         Sidebar();
+        TutorialMenu();
     }
 
     virtual void layoutFooter()
     {
         Footer();
     }
-    bool isRun = true;
     int choice;
+    bool isLoadContent = true;
 public:
     void setRunContent(int choice);
     void templateMenu();

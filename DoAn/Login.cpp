@@ -79,7 +79,6 @@ void Login::formLogin()
 	int width = getConsoleWidth();
 	int posX = getCenterX(width, 40);
 	posX = posX + 13 + 1;
-	int tempX = posX;
 	int posY = 13;
 	
 	InputField inputUserName;

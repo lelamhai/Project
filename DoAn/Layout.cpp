@@ -10,6 +10,7 @@ Layout::Layout()
 Layout::~Layout()
 {
 }
+
 void Layout::setRunContent(int content)
 {
     choice = content;
@@ -17,10 +18,7 @@ void Layout::setRunContent(int content)
 
 void Layout::main()
 {
-    isRun = true;
-
     thread t1(&Layout::templateMenu, this);
-    Sleep(200);
     thread t2(&Layout::templateContent, this);
 
     t1.join();
@@ -54,29 +52,56 @@ void Layout::templateMenu()
         };
     }
     
-
     int posY = 10;
     int active = choice;
     int hover = choice;
     int lastHover = -1;
 
     showCur(0);
-    while (isRun)
+    while (true)
     {
         if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
         {
             showCur(0);
             hover -= 1;
-            Sleep(50);
+            Sleep(150);
+            continue;
         }
 
         if (GetAsyncKeyState(VK_NEXT) & 0x8000)
         {
             showCur(0);
             hover += 1;
-            Sleep(50);
+            Sleep(150);
+            continue;
         }
         
+        if (GetAsyncKeyState(VK_SPACE) & 0x0001 && active != hover)
+        {
+            int count = menu.size();
+            if (hover == count - 2)
+            {
+                choice = hover;
+                Sleep(150);
+                return;
+            }
+
+            if (hover == count - 1)
+            {
+                clrscr();
+                gotoXY(0, 0);
+                setColorText(ColorCode_DarkWhite);
+                exit(0);
+            }
+
+            isLoadContent = true;
+            active = hover;
+            choice = hover;
+            lastHover = -1;
+            Sleep(150);
+            continue;
+        }
+
         if (lastHover != hover)
         {
             for (int i = 0; i < menu.size(); i++)
@@ -93,38 +118,23 @@ void Layout::templateMenu()
                 gotoXY(8, posY + i * 3);
                 cout << menu[i];
             }
+            lastHover = hover;
         }
-
-        lastHover = hover;
-        if (GetAsyncKeyState(VK_SPACE) & 0x8000 && active != hover)
-        {
-            int count = menu.size();
-            if (hover == count - 2)
-            {
-                isRun = false;
-                return;
-            }
-
-            if (hover == count-1)
-            {
-                clrscr();
-                gotoXY(0, 0);
-                setColorText(ColorCode_DarkWhite);
-                exit(0);
-            }
-
-            active = hover;
-            choice = hover;
-            lastHover = -1;
-        }
-        Sleep(100);
     }
 }
 
 void Layout::templateContent()
 {
-    while (isRun)
+    while (true)
     {
+        // Flag reload content
+        if (isLoadContent)
+        {
+            Sleep(300);
+            isLoadContent = false;
+            continue;
+        }
+
         if (Singleton::getInstance()->role != "GV")
         {
             if (choice == 0)
@@ -150,6 +160,11 @@ void Layout::templateContent()
                 ContentExam* e = new ContentExam();
                 e->displayContent();
                 delete e;
+            }
+
+            if (choice == 3)
+            {
+                return;
             }
         }
         else {
@@ -193,7 +208,6 @@ void Layout::templateContent()
                 q->displayContent();
                 delete q;
             }
-
             if (choice == EXAM)
             {
                 showCur(0);
@@ -202,8 +216,11 @@ void Layout::templateContent()
                 e->displayContent();
                 delete e;
             }
+            if (choice == EXIT)
+            {
+                return;
+            }
         }
-        Sleep(200);
     }
 }
 

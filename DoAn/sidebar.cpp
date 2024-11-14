@@ -12,3 +12,22 @@ void Sidebar()
 	gotoXY(30, 8);
 	cout << char(194);
 }
+
+void TutorialMenu()
+{
+	string tutorialMenu[] = {
+		"PGUP|PGDN",
+		"Spacebar"
+	};
+
+	int height = getConsoleHeight();
+	int posY = height - 8 * 2 + 6;
+
+	setColorText(ColorCode_DarkYellow);
+	gotoXY(1, posY);
+	cout << tutorialMenu[0];
+
+	gotoXY(21, posY);
+	cout << tutorialMenu[1];
+	setColorText(ColorCode_DarkWhite);
+}
