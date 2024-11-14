@@ -21,7 +21,9 @@ void HuyTest::main()
 
 	ManageQuestion questionList_Random = subjectList.getRandomQuestion(2,"CSDL");
 	questionList_Random.printQuestions();
-
+	
+	cout << "Cau hoi cua mon hoc la:" << endl;
+	subjectList.printQuestionList("CSDL");
 
 	//subjectList.saveToFile();
 

@@ -11,6 +11,7 @@ private:
 	PTRQUESTION questionList = nullptr;
 public:
 	ManageQuestion();
+	//ManageQuestion(PTRQUESTION q);
 	ManageQuestion(const PTRQUESTION& q);
 
 	~ManageQuestion();
