@@ -63,7 +63,7 @@ void Layout::templateMenu()
         {
             showCur(0);
             hover -= 1;
-            Sleep(150);
+            Sleep(50);
             continue;
         }
 
@@ -71,7 +71,7 @@ void Layout::templateMenu()
         {
             showCur(0);
             hover += 1;
-            Sleep(150);
+            Sleep(50);
             continue;
         }
         
