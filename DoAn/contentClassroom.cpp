@@ -151,7 +151,7 @@ void ContentClassroom::handle()
 			showCur(1);
 			editData();
 			cleanInput();
-			cleanTable();
+			//cleanTable();
 			break;
 
 		case C_SEARCH:
@@ -407,13 +407,14 @@ void ContentClassroom::createData()
 			gotoXY(createPosX + inputClassroomCode.getText().length(), 12 + 1 + 1);
 			inputClassroomCode.setMenu(moveMenu);
 			inputClassroomCode.handleInput();
+			moveMenu = inputClassroomCode.getMenu();
 
-			if (inputClassroomCode.getEndKey() == ENTER)
+			switch (inputClassroomCode.getEndKey())
 			{
-				moveMenu = inputClassroomCode.getMenu();
+			case ENTER:
 				if (moveMenu != 0)
 				{
-					stateInput = FORM_EXIT;
+					currentClassroom = C_EXIT;
 					continue;
 				}
 
@@ -422,20 +423,20 @@ void ContentClassroom::createData()
 					stateInput = FORM_ENTER;
 					continue;
 				}
-			}
+				break;
 
-			if (inputClassroomCode.getEndKey() == F1)
-			{
+			case F1:
 				currentClassroom = C_SELECT;
 				return;
-			}
-
-			if (inputClassroomCode.getEndKey() == F3)
-			{
+			
+			case F3:
 				currentClassroom = C_SEARCH;
 				return;
+
+			default:
+				stateInput = FORM_NAME;
+				break;
 			}
-			stateInput = FORM_NAME;
 		}
 
 		if (stateInput == FORM_NAME)
@@ -443,14 +444,15 @@ void ContentClassroom::createData()
 			gotoXY(createPosX + inputClassroomName.getText().length(), 12 + 1 + 3 + 1);
 			inputClassroomName.setMenu(moveMenu);
 			inputClassroomName.handleInput();
+			moveMenu = inputClassroomName.getMenu();
 
-			if (inputClassroomName.getEndKey() == ENTER)
+			switch (inputClassroomName.getEndKey())
 			{
-				moveMenu = inputClassroomName.getMenu();
+			case ENTER:
 				if (moveMenu != 0)
 				{
-					stateInput = FORM_EXIT;
-					continue;
+					currentClassroom = C_EXIT;
+					return;
 				}
 
 				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
@@ -458,15 +460,18 @@ void ContentClassroom::createData()
 					stateInput = FORM_ENTER;
 					continue;
 				}
-			}
-
-			if (inputClassroomName.getEndKey() == F1)
-			{
+				break;
+			case F1:
 				currentClassroom = C_SELECT;
 				return;
-			}
 
-			stateInput = FORM_CODE;
+			case F3:
+				currentClassroom = C_SEARCH;
+				return;
+			default:
+				stateInput = FORM_CODE;
+				break;
+			}
 		}
 
 		if (stateInput == FORM_ENTER)
@@ -524,19 +529,24 @@ void ContentClassroom::editData()
 			inputClassroomName.display();
 			inputClassroomName.handleInput();
 
-			if (inputClassroomName.getEndKey() == F1)
+			switch (inputClassroomName.getEndKey())
 			{
+			case F1:
 				currentClassroom = C_SELECT;
 				return;
-			}
+			case F3:
+				currentClassroom = C_SEARCH;
+				return;
 
-			if (inputClassroomName.getEndKey() == ENTER)
-			{
+			case ENTER:
 				if (inputClassroomName.getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
 				}
+				break;
+			default:
+				break;
 			}
 		}
 

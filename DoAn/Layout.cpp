@@ -118,7 +118,6 @@ void Layout::templateMenu()
                 cout << menu[i];
             }
             lastHover = hover;
-            showCur(0);
         }
     }
 }
