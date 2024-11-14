@@ -175,6 +175,8 @@ void ContentClassroom::handle()
 
 void ContentClassroom::selectData()
 {
+	int moveMenu = 0;
+
 	ManageClass nl;
 	ClassPage page;
 
@@ -313,16 +315,36 @@ void ContentClassroom::selectData()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		{
+			moveMenu--;
+			Sleep(150);
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			moveMenu++;
+			Sleep(150);
+			continue;
+		}
+
 		/*if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 		{
-			
+
 		}*/
+
 
 		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
-			currentClassroom = C_EXIT;
+			if (moveMenu != 0)
+			{
+				currentClassroom = C_EXIT;
+				Sleep(150);
+				return;
+			}
 			Sleep(150);
-			return;
+			continue;
 		}
 
 		if (lastHover != hover)
@@ -576,25 +598,52 @@ void ContentClassroom::editData()
 
 void ContentClassroom::findData()
 {
+	int moveMenu = 0;
+
+	int currentX = 0;
+	int currentY = 0;
+
 	int cursorPosition = textSearch.length();
 	stateSearchInput = SEARCH_INPUT;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_F1) & 0x0001)
-		{
-			currentClassroom = C_SELECT;
-			Sleep(150);
-			return;
-		}
-
 		if (stateSearchInput == SEARCH_INPUT)
 		{
 			gotoXY(34 + 2 + 4 + 2 + textSearch.length(), 10);
+
+			if (GetAsyncKeyState(VK_F1) & 0x0001)
+			{
+				currentClassroom = C_SELECT;
+				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+			{
+				moveMenu--;
+				Sleep(150);
+				continue;
+			}
+
+			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+			{
+				moveMenu++;
+				Sleep(150);
+				continue;
+			}
 
 			char s = _getch();
 			int key = keySpecial(s);
 			switch (s)
 			{
+			case ENTER:
+				if (moveMenu != 0)
+				{
+					currentClassroom = C_EXIT;
+					Sleep(150);
+					return;
+				}
+				break;
 			case BACKSPACE:
 				if (textSearch.length() <= 0 || cursorPosition <= 0)
 				{
@@ -630,6 +679,8 @@ void ContentClassroom::findData()
 
 				if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 				{
+					showCur(1);
+
 					textSearch.insert(textSearch.begin() + cursorPosition, s);
 					cursorPosition++;
 					cout << s;
@@ -645,8 +696,10 @@ void ContentClassroom::findData()
 					loadData();
 					pagging();
 				}
+				break;
 			}
-			break;
+
+			
 		}
 	}
 }
