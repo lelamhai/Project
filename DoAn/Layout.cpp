@@ -57,10 +57,9 @@ void Layout::templateMenu()
     int hover = choice;
     int lastHover = -1;
 
-    showCur(0);
     while (true)
     {
-        if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+        if (GetAsyncKeyState(VK_PRIOR) & 0x0001)
         {
             showCur(0);
             hover -= 1;
@@ -68,7 +67,7 @@ void Layout::templateMenu()
             continue;
         }
 
-        if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+        if (GetAsyncKeyState(VK_NEXT) & 0x0001)
         {
             showCur(0);
             hover += 1;
@@ -76,7 +75,7 @@ void Layout::templateMenu()
             continue;
         }
         
-        if (GetAsyncKeyState(VK_SPACE) & 0x0001 && active != hover)
+        if (GetAsyncKeyState(VK_RETURN) & 0x0001 && active != hover)
         {
             int count = menu.size();
             if (hover == count - 2)
@@ -119,6 +118,7 @@ void Layout::templateMenu()
                 cout << menu[i];
             }
             lastHover = hover;
+            showCur(0);
         }
     }
 }

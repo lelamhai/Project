@@ -96,36 +96,38 @@ void InputField::handleInput()
 			continue;
 		}
 
-		if (GetAsyncKeyState(VK_PRIOR) & 0x0001)
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
 		{
-			keyInput = F1;
-			Sleep(150);
-			return;
-		}
-		if (GetAsyncKeyState(VK_NEXT) & 0x0001)
-		{
-			keyInput = F1;
+			moveMenu--;
 			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			moveMenu++;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
 			keyInput = ENTER;
+			Sleep(150);
 			return;
 		}
-
-		
 
 		char s = _getch();
 		int key = keySpecial(s);
 		switch (key)
 		{
-		case PGUP:
-			keyInput = PGUP;
+	/*	case PGUP:
+			moveMenu--;
+			break;
 
 		case PGDN:
-			keyInput = PGDN;
+			moveMenu++;
+			break;*/
 
 	/*	case UP:
 			keyInput = UP;
@@ -178,7 +180,7 @@ void InputField::handleInput()
 			keyInput = ENTER;
 			return;*/
 
-		/*case SPACEBAR:
+		case SPACEBAR:
 			inputString.insert(inputString.begin() + cursorPosition, s);
 			cursorPosition++;
 			cout << " ";
@@ -188,7 +190,7 @@ void InputField::handleInput()
 			}
 
 			gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
-			break;*/
+			break;
 
 		case BACKSPACE:
 			if (inputString.length() <= 0 || cursorPosition <= 0)
@@ -241,19 +243,7 @@ void InputField::handleInput()
 			break;
 		}
 
-		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
-		{
-			inputString.insert(inputString.begin() + cursorPosition, s);
-			cursorPosition++;
-			cout << " ";
-			for (int i = cursorPosition; i < inputString.length(); i++)
-			{
-				cout << inputString[i];
-			}
-
-			gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
-			continue;
-		}
+		
 	}
 }
 
@@ -275,4 +265,14 @@ void InputField::setText(string value)
 void InputField::display()
 {
 	cout << inputString;
+}
+
+void InputField::setMenu(int move)
+{
+	this->moveMenu = move;
+}
+
+int InputField::getMenu()
+{
+	return this->moveMenu;
 }

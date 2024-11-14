@@ -10,6 +10,7 @@ using namespace std;
 class InputField
 {
 private:
+	int moveMenu = 0;
 	string inputString;
 	KeyState keyInput;
 	int cursorPosition = 0;
@@ -19,6 +20,8 @@ public:
 	void handleInput();
 	void display();
 	KeyState getEndKey();
+	void setMenu(int move);
+	int getMenu();
 	InputField();
 	~InputField();
 };

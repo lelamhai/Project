@@ -34,9 +34,10 @@ private:
 
 	enum SelectInput
 	{
-		FORM_CODE = 0,
-		FORM_NAME = 1,
-		FORM_ENTER = 2
+		FORM_CODE	= 0,
+		FORM_NAME	= 1,
+		FORM_ENTER	= 2,
+		FORM_EXIT	= 3
 	};
 	SelectInput stateInput;
 

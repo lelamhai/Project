@@ -313,16 +313,16 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
+		/*if (GetAsyncKeyState(VK_SPACE) & 0x8000)
+		{
+			
+		}*/
+
+		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
 			currentClassroom = C_EXIT;
 			Sleep(150);
 			return;
-		}
-
-		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
-		{
-
 		}
 
 		if (lastHover != hover)
@@ -391,6 +391,8 @@ void ContentClassroom::deleteData()
 
 void ContentClassroom::createData()
 {
+	int moveMenu = 0;
+
 	ManageClass nl;
 	InputField inputClassroomCode;
 	InputField inputClassroomName;
@@ -403,10 +405,18 @@ void ContentClassroom::createData()
 		if (stateInput == FORM_CODE)
 		{
 			gotoXY(createPosX + inputClassroomCode.getText().length(), 12 + 1 + 1);
+			inputClassroomCode.setMenu(moveMenu);
 			inputClassroomCode.handleInput();
 
 			if (inputClassroomCode.getEndKey() == ENTER)
 			{
+				moveMenu = inputClassroomCode.getMenu();
+				if (moveMenu != 0)
+				{
+					stateInput = FORM_EXIT;
+					continue;
+				}
+
 				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
 				{
 					stateInput = FORM_ENTER;
@@ -420,21 +430,29 @@ void ContentClassroom::createData()
 				return;
 			}
 
-			if (inputClassroomCode.getEndKey() == F4)
+			if (inputClassroomCode.getEndKey() == F3)
 			{
 				currentClassroom = C_SEARCH;
 				return;
 			}
-
 			stateInput = FORM_NAME;
 		}
 
 		if (stateInput == FORM_NAME)
 		{
 			gotoXY(createPosX + inputClassroomName.getText().length(), 12 + 1 + 3 + 1);
+			inputClassroomName.setMenu(moveMenu);
 			inputClassroomName.handleInput();
+
 			if (inputClassroomName.getEndKey() == ENTER)
 			{
+				moveMenu = inputClassroomName.getMenu();
+				if (moveMenu != 0)
+				{
+					stateInput = FORM_EXIT;
+					continue;
+				}
+
 				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
 				{
 					stateInput = FORM_ENTER;
@@ -471,6 +489,11 @@ void ContentClassroom::createData()
 			gotoXY(34 + 100 + 30 + textPosX, 19);
 			text.display();
 			stateInput = FORM_CODE;
+		}
+
+		if (stateInput == FORM_EXIT)
+		{
+			return;
 		}
 	}
 }
