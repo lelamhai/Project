@@ -56,7 +56,6 @@ public:
 	// Load list student from file
 	void loadFromFile();
 
-
 };
 
 

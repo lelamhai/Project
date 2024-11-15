@@ -298,17 +298,9 @@ void printStudentsInList(PTRSTUDENT studentList) {
 
 // Find student in list student
 PTRSTUDENT findStudentInList(PTRSTUDENT studentList, const char* studentCode) {
-    PTRSTUDENT result = new NodeStudent;
     while (studentList != nullptr) {
         if (strcmp(studentList->info.studentCode, studentCode) == 0) {
-            Student studentFound;
-            strcpy_s(studentFound.studentCode, studentCode);
-            strcpy_s(studentFound.firstName, studentList->info.firstName);
-            strcpy_s(studentFound.lastName, studentList->info.lastName);
-            studentFound.gender = studentList->info.gender;
-            strcpy_s(studentFound.password, studentList->info.password);
-            result->info = studentFound;
-            return result;
+            return studentList;
         }
         studentList = studentList->next;
     }

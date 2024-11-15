@@ -216,18 +216,18 @@ void ManageClass::loadFromFile() {
     }
 }
 
-bool ManageClass::addStudentToClass(const char* classCode, const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password)
+bool ManageClass::addStudentToClass(const string classCode, const string studentCode, const string firstName, const string lastName, char gender, const string password)
 {
-    int index = findClass(classCode); // Check is classCode exist
-    if (index == -1) return 0;
-    if (findStudentInList(classes[index]->studentList, studentCode) != nullptr) return 0; //Check is student code exist in class
+    int index = findClass(classCode.c_str()); // Check is classCode exist
+    if (index == -1) return false;
+    if (findStudentInList(classes[index]->studentList, studentCode.c_str()) != nullptr) return false; //Check is student code exist in class
     
     Student std1;
-    strcpy_s(std1.studentCode, studentCode);
-    strcpy_s(std1.firstName, firstName);
-    strcpy_s(std1.lastName, lastName);
+    strcpy_s(std1.studentCode, studentCode.c_str());
+    strcpy_s(std1.firstName, firstName.c_str());
+    strcpy_s(std1.lastName, lastName.c_str());
     std1.gender = gender;
-    strcpy_s(std1.password, password);
+    strcpy_s(std1.password, password.c_str());
 
     PTRSTUDENT tmpStudent = new NodeStudent;
     tmpStudent->info = std1;
@@ -240,7 +240,21 @@ bool ManageClass::addStudentToClass(const char* classCode, const char* studentCo
         classes[index]->studentList = tmpStudent;
     }
     saveToFile();
-    return false;
+    return true;
+}
+
+bool ManageClass::editStudentInClass(const string classCode, const string studentCode, const string firstName, const string lastName, char gender, const string password)
+{
+    int index = findClass(classCode.c_str());
+    if (index == -1) return false;
+    PTRSTUDENT student = findStudentInList(classes[index]->studentList, studentCode.c_str());
+    if (student == nullptr) return false;
+    strcpy_s(student->info.firstName, firstName.c_str());
+    strcpy_s(student->info.lastName, lastName.c_str());
+    strcpy_s(student->info.password, password.c_str());
+    student->info.gender = gender;
+    saveToFile();
+    return true;
 }
 
 bool ManageClass::deleteStudentInClass(const char* classCode, const char* studentCode) {

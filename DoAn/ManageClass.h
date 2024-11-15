@@ -59,22 +59,32 @@ public:
 	// Function load class list from file
 	void loadFromFile();
 
-	// Function add student to class
-	bool addStudentToClass(const char* classCode, const char* studentCode, const char* firstName, const char* lastName, char gender, const char* password);
-
-
-	// Function get count student of class by class code
-	int getCountSudentOfClass(const char* classCode);
+	
 
 	// Pagination
 	ClassPage getClassPerPage(int pageNumber = 1);
 
-	// Delte student in class
-	bool deleteStudentInClass(const char* classCode, const char* studentCode);
+	
 
 	bool logIn(const char* user, const char* password);
 
 	void reset();
+
+
+	// -------- FUNCTION FOR STUDENT IN CLASS ----------- //
+	// Function add student to class
+	bool addStudentToClass(const string classCode, const string studentCode, const string firstName, const string lastName, char gender, const string password);
+
+	// Function edit student in class
+	bool editStudentInClass(const string classCode, const string studentCode, const string firstName, const string lastName, char gender, const string password);
+
+	// Function get count student of class by class code
+	int getCountSudentOfClass(const char* classCode);
+
+	// Delte student in class
+	bool deleteStudentInClass(const char* classCode, const char* studentCode);
+
+
 };
 
 void printClassPage(ClassPage classPage);
