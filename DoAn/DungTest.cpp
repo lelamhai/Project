@@ -21,34 +21,54 @@ void DungTest::main()
     ///------TEST FOR CLASS----------------
      
      ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn
+     //StudentPage studentPage = test.searchStudentInCLass("C001", "khoa", 1); // Mã lớp, từ khóa, trang
+     // Student page cũng có tham số y chang class page
+
+     //printStudents(studentPage.studentList);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      //test.printClasses(); // In thử danh sách lớp hiện có
      
      //test.editClass("C003", "D23TXCN06-K Updated"); // Chỉnh sửa thông tin class và lưu vào file
 
      //test.addClass("C004", "D23TXCN07-K"); // Thêm class đồng thời lưu vào file
      
-     ClassPage page = test.getClassPerPage(1); // Phân trang ở đây sẽ lấy class ở trang 1, mặc định 13 phần tử trả về ClassPage có đầy đủ thông số từ đây a sẽ load ra giao diện
-     /* ClassList classList;
-	    int currentPage; // trang hiện tại
-	    int numberClassPerPage; // tổng số class trên 1 trang
-	    int totalPage; // tổng số trang
-	    int totalClass; // tổng số class
-	    int startIndex; // Số thứ tự bắt đầu của trang đó
-	    int endIndex; // số kết thúc của trang đó*/
-     
-     printClassPage(page); // Hàm này để in ra page có gì thuộc page nào
+     //ClassPage page = test.getClassPerPage(1); // Phân trang ở đây sẽ lấy class ở trang 1, mặc định 13 phần tử trả về ClassPage có đầy đủ thông số từ đây a sẽ load ra giao diện
+     ///* ClassList classList;
+	    //int currentPage; // trang hiện tại
+	    //int numberClassPerPage; // tổng số class trên 1 trang
+	    //int totalPage; // tổng số trang
+	    //int totalClass; // tổng số class
+	    //int startIndex; // Số thứ tự bắt đầu của trang đó
+	    //int endIndex; // số kết thúc của trang đó*/
+     //
+     //printClassPage(page); // Hàm này để in ra page có gì thuộc page nào
 
-     // Test filter class // nhập vào keyword vào số trang, mặc định là 1 vì tìm cũng cần phân trang chứ
-     ClassPage listFound = test.searchClass("C01", 1);
-     
-     printClassPage(listFound);
+     //// Test filter class // nhập vào keyword vào số trang, mặc định là 1 vì tìm cũng cần phân trang chứ
+     //ClassPage listFound = test.searchClass("C01", 1);
+     //
+     //printClassPage(listFound);
 
-     // Hàm này chỉ dùng khi tính số lượng sinh viên bằng mã lớp (trong class)
-     int countStudent = test.getCountSudentOfClass("C001");
+     //// Hàm này chỉ dùng khi tính số lượng sinh viên bằng mã lớp (trong class)
+     //int countStudent = test.getCountSudentOfClass("C001");
 
 
-     // Hàm này để lấy ra số lượng sinh viên trong 1 linked list bất kì (không cần class)
-     int countStudentInList = getCountStudentOfList(page.classList.classes[0]->studentList);
+     //// Hàm này để lấy ra số lượng sinh viên trong 1 linked list bất kì (không cần class)
+     //int countStudentInList = getCountStudentOfList(page.classList.classes[0]->studentList);
         
      
 
@@ -72,6 +92,8 @@ void DungTest::main()
     //ClassList a = test.getClassPerPage(2,2);
    
     //test.printClasses();
+
+
 
 
     // -----------------------------TEST FOR SUBJECT----------------------------

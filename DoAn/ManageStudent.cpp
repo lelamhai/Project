@@ -330,3 +330,57 @@ bool deleteStudentInList(PTRSTUDENT studentList, const char* studentCode) {
     }
     return false;
 }
+
+// Add student to list
+bool addStudentToList(PTRSTUDENT studentList, Student std1) {
+    PTRSTUDENT tmpStudent = new NodeStudent;
+    tmpStudent->info = std1;
+    tmpStudent->next = nullptr;
+    if (studentList == nullptr) {
+        studentList = tmpStudent;
+    }
+    else {
+        tmpStudent->next = studentList;
+        studentList = tmpStudent;
+    }
+    return true;
+}
+
+StudentPage getStudentPerPage(PTRSTUDENT studentList, int page)
+{
+    StudentPage studentPage;
+    int studentPerPage = 13;
+    int totalStudents = getCountStudentOfList(studentList);
+    int totalPages = (totalStudents + studentPerPage - 1) / studentPerPage;
+    studentPage.currentPage = page;
+    studentPage.totalPage = totalPages;
+    studentPage.totalStudent = totalStudents;
+    studentPage.numberStudentPerPage = studentPerPage;
+
+    PTRSTUDENT pageResult = new NodeStudent;
+
+    if (page < 1 || page > totalPages) {
+        return studentPage;
+    }
+
+    // Tính toán chỉ số bắt đầu và kết thúc
+    int startIndex = (page - 1) * studentPerPage;
+    int endIndex = min(startIndex + studentPerPage, totalStudents);
+    int count = 0;
+    while (studentList != nullptr && count < startIndex) {
+        count++;
+        studentList = studentList->next;
+    }
+
+    while (studentList != nullptr && count < endIndex) {
+        addStudentToList(pageResult, studentList->info);
+        count++;
+        studentList = studentList->next;
+    }
+
+    studentPage.startIndex = startIndex;
+    studentPage.endIndex = endIndex;
+    studentPage.studentList = pageResult;
+
+    return studentPage;
+}

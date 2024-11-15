@@ -87,12 +87,15 @@ public:
 	// Delte student in class
 	bool deleteStudentInClass(const char* classCode, const char* studentCode);
 
+	// Search student In class
+	StudentPage searchStudentInCLass(const string classCode, string keyword, int page = 1);
 
 };
 
 void printClassPage(ClassPage classPage);
 
 bool containString(const string& str, const string& substr);
+
 
 string toLowerString(string str);
 

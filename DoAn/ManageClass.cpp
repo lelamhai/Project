@@ -33,7 +33,7 @@ ClassPage ManageClass::searchClass(string keyword, int page)
     classList2.reset();
     for (int i = 0; i < countClass; i++) {
         string classCodeStr = string(classes[i]->classCode);
-        if (containString(toLowerString(classCodeStr), toLowerString(keyword)) || containString(toLowerString(classes[i]->className), toLowerString(keyword))) {
+        if (containString(classCodeStr, keyword) || containString(classes[i]->className, keyword)) {
             classList2.classes[countClass2] = classes[i];
             countClass2++;
         }
@@ -257,11 +257,34 @@ bool ManageClass::editStudentInClass(const string classCode, const string studen
     return true;
 }
 
+
 bool ManageClass::deleteStudentInClass(const char* classCode, const char* studentCode) {
     int index = findClass(classCode); // Check is classCode exist
     if (index == -1) return 0;
     deleteStudentInList(classes[index]->studentList, studentCode);
     saveToFile();
+}
+
+StudentPage ManageClass::searchStudentInCLass(const string classCode, string keyword, int page)
+{
+    StudentPage result;
+    int index = findClass(classCode.c_str()); // Check is classCode exist
+    if (index == -1) return result;
+    if (keyword == "") {
+        return getStudentPerPage(classes[index]->studentList, page);
+    }
+    PTRSTUDENT resultList = new NodeStudent;
+    PTRSTUDENT startList = classes[index]->studentList;
+    while (startList != nullptr) {
+        string fullName = string(startList->info.firstName) + " " + string(startList->info.lastName);
+        
+        if (containString(fullName, keyword) || containString(string(startList->info.studentCode), keyword)) {
+            addStudentToList(resultList, startList->info);
+        }
+        startList = startList->next;
+    }
+    
+    return getStudentPerPage(resultList, page);
 }
 
 // Get count student in class
@@ -389,7 +412,7 @@ void printClassPage(ClassPage classPage)
 
 // Hàm kiểm tra chuỗi
 bool containString(const string& str, const string& substr) {
-    return str.find(substr) != string::npos;
+    return toLowerString(str).find(toLowerString(substr)) != string::npos;
 }
 
 string toLowerString(string str) {

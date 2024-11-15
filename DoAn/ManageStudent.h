@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Singleton.h"
 #include <iostream>
 #include <string>
@@ -8,6 +8,16 @@
 using namespace std;
 
 const string SOURCE_STUDENT = "studentdata.json";
+
+struct StudentPage {
+	PTRSTUDENT studentList = nullptr;
+	int currentPage; // trang hiện tại
+	int numberStudentPerPage; // tổng số student trên 1 trang
+	int totalPage; // tổng số trang
+	int totalStudent; // tổng số class
+	int startIndex; // Số thứ tự bắt đầu của trang đó
+	int endIndex; // số kết thúc của trang đó
+};
 
 class ManageStudent
 {
@@ -70,6 +80,12 @@ PTRSTUDENT findStudentInList(PTRSTUDENT studentList, const char* studentCode);
 
 // Delete student in list
 bool deleteStudentInList(PTRSTUDENT studentList, const char* studentCode);
+
+// Add student to list
+bool addStudentToList(PTRSTUDENT studentList, Student std1);
+
+// Paginate for student
+StudentPage getStudentPerPage(PTRSTUDENT studentList, int page);
 
 
 
