@@ -156,6 +156,7 @@
     <ClCompile Include="InputField.h" />
     <ClCompile Include="page.cpp" />
     <ClCompile Include="popup.cpp" />
+    <ClCompile Include="popupTutorial.cpp" />
     <ClCompile Include="sidebar.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="keyboard.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="ManageQuestion.h" />
     <ClInclude Include="ManageSubject.h" />
     <ClInclude Include="MCQ.h" />
+    <ClInclude Include="PopupTutorial.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="ManageStudent.h" />

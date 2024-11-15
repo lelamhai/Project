@@ -21,7 +21,7 @@ public:
 	virtual void setPosition(int x, int y);
 	virtual void setFrame(int width, int height);
 	virtual void setTitle(string title);
-	void content();
+	virtual void content();
 	
 	Popup();
 	~Popup();

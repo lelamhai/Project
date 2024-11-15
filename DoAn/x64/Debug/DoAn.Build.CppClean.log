@@ -19,7 +19,6 @@ c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\color.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\classroomsevice.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\buttonenter.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\button.obj
-c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\text.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\studentservice.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\studentlist.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\singleton.obj
@@ -30,6 +29,7 @@ c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\loading.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\keyboard.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\header.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\sidebar.obj
+c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\popuptutorial.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\popup.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\page.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\inputfield.obj
@@ -39,6 +39,7 @@ c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\popupdelete.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\managesubject.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\managestudent.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\windows.obj
+c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\text.obj
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\x64\debug\doan.exe
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\x64\debug\doan.pdb
 c:\users\admin\documents\ptit\hk3\ctdl&gt\project\doan\x64\debug\doan.ilk

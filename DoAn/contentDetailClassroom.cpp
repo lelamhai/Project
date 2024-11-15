@@ -133,11 +133,20 @@ void ContentDetailClassroom::content()
 
 void ContentDetailClassroom::handle()
 {
-	gotoXY(0, 0);
-	cout << "abc";
 	while (true)
 	{
-		Sleep(300);
+		if (GetAsyncKeyState(VK_F12) & 0x8000)
+		{
+			int posX = getCenterX(120, 50);
+			PopupTutorial pTutorial;
+			pTutorial.setFrame(50,19);
+			pTutorial.setPosition(posX + 30, 17);
+			pTutorial.open();
+			pTutorial.handle();
+			pTutorial.close();
+		}
+
+		Sleep(150);
 	}
 }
 
