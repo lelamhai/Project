@@ -100,6 +100,7 @@ void InputField::handleInput()
 		{
 			moveMenu--;
 			Sleep(150);
+			showCur(1);
 			return;
 		}
 
@@ -107,6 +108,7 @@ void InputField::handleInput()
 		{
 			moveMenu++;
 			Sleep(150);
+			showCur(1);
 			return;
 		}
 
@@ -242,8 +244,6 @@ void InputField::handleInput()
 
 			break;
 		}
-
-		
 	}
 }
 

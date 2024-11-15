@@ -341,6 +341,31 @@ bool ManageClass::logIn(const char* user, const char* password)
     return false;
 }
 
+// hàm bắt đầu thi trắc nghiệm
+bool ManageClass::startExam(const char* studentCode, const char* subjectCode, int n, int timeSetting_Minute) {
+    ManageSubject subject;
+    ManageQuestion questionList_Random;
+    // tạo ra danh sách n câu hỏi ngẫu nhiên từ môn học
+    questionList_Random = subject.getRandomQuestion(n, subjectCode);
+    
+    // khởi tạo mảng để lưu kết quả thi
+    resultList result_List;
+    result_List.countDone = 0;
+    result_List.score = 0;
+
+    // đưa ra từng nội dung câu hỏi cho front end hiển thị sau đó
+
+
+    // khởi tạo thời gian theo dõi làm bài
+    int startTime = static_cast<int>(time(NULL));
+    int endTime = startTime + timeSetting_Minute * 60;  // Chuyển thời gian từ phút sang giây
+    int remainingTime = timeSetting_Minute * 60;        // Thời gian còn lại, tính bằng giây
+
+
+
+    return true;
+}
+
 // Reset class
 void ManageClass::reset() {
     for (int i = 0; i < countClass; i++) {

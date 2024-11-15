@@ -134,6 +134,13 @@ void ContentClassroom::handle()
 {
 	while (true)
 	{
+		if (currentClassroom == C_DETAIL)
+		{
+			ContentDetailClassroom* detail = new ContentDetailClassroom();
+			detail->content();
+			delete detail;
+		}
+
 		switch (currentClassroom)
 		{
 		case C_SELECT:
@@ -151,7 +158,7 @@ void ContentClassroom::handle()
 			showCur(1);
 			editData();
 			cleanInput();
-			cleanTable();
+			//cleanTable();
 			break;
 
 		case C_SEARCH:
@@ -175,6 +182,8 @@ void ContentClassroom::handle()
 
 void ContentClassroom::selectData()
 {
+	int moveMenu = 0;
+
 	ManageClass nl;
 	ClassPage page;
 
@@ -313,14 +322,35 @@ void ContentClassroom::selectData()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		{
+			moveMenu--;
+			Sleep(150);
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			moveMenu++;
+			Sleep(150);
+			continue;
+		}
+
 		/*if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 		{
-			
+
 		}*/
+
 
 		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
-			currentClassroom = C_EXIT;
+			if (moveMenu != 0)
+			{
+				currentClassroom = C_EXIT;
+				return;
+			}
+
+			currentClassroom = C_DETAIL;
 			Sleep(150);
 			return;
 		}
@@ -372,6 +402,13 @@ void ContentClassroom::deleteData()
 	pDelete.setPosition(deletePosX + 30, 17);
 	pDelete.open();
 	pDelete.handle();
+
+	if (pDelete.getMenu() != 0)
+	{
+		currentClassroom = C_EXIT;
+		return;
+	}
+
 	pDelete.close();
 
 	if (pDelete.getResult())
@@ -407,14 +444,15 @@ void ContentClassroom::createData()
 			gotoXY(createPosX + inputClassroomCode.getText().length(), 12 + 1 + 1);
 			inputClassroomCode.setMenu(moveMenu);
 			inputClassroomCode.handleInput();
+			moveMenu = inputClassroomCode.getMenu();
 
-			if (inputClassroomCode.getEndKey() == ENTER)
+			switch (inputClassroomCode.getEndKey())
 			{
-				moveMenu = inputClassroomCode.getMenu();
+			case ENTER:
 				if (moveMenu != 0)
 				{
-					stateInput = FORM_EXIT;
-					continue;
+					currentClassroom = C_EXIT;
+					return;
 				}
 
 				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
@@ -422,20 +460,25 @@ void ContentClassroom::createData()
 					stateInput = FORM_ENTER;
 					continue;
 				}
-			}
+				stateInput = FORM_NAME;
+				break;
 
-			if (inputClassroomCode.getEndKey() == F1)
-			{
+			case F1:
 				currentClassroom = C_SELECT;
 				return;
-			}
-
-			if (inputClassroomCode.getEndKey() == F3)
-			{
+			
+			case F3:
 				currentClassroom = C_SEARCH;
 				return;
+
+			case DOWN:
+			case UP:
+				stateInput = FORM_NAME;
+				break;
+
+			default:
+				break;
 			}
-			stateInput = FORM_NAME;
 		}
 
 		if (stateInput == FORM_NAME)
@@ -443,14 +486,15 @@ void ContentClassroom::createData()
 			gotoXY(createPosX + inputClassroomName.getText().length(), 12 + 1 + 3 + 1);
 			inputClassroomName.setMenu(moveMenu);
 			inputClassroomName.handleInput();
+			moveMenu = inputClassroomName.getMenu();
 
-			if (inputClassroomName.getEndKey() == ENTER)
+			switch (inputClassroomName.getEndKey())
 			{
-				moveMenu = inputClassroomName.getMenu();
+			case ENTER:
 				if (moveMenu != 0)
 				{
-					stateInput = FORM_EXIT;
-					continue;
+					currentClassroom = C_EXIT;
+					return;
 				}
 
 				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
@@ -458,15 +502,24 @@ void ContentClassroom::createData()
 					stateInput = FORM_ENTER;
 					continue;
 				}
-			}
-
-			if (inputClassroomName.getEndKey() == F1)
-			{
+				stateInput = FORM_CODE;
+				break;
+			case F1:
 				currentClassroom = C_SELECT;
 				return;
-			}
 
-			stateInput = FORM_CODE;
+			case F3:
+				currentClassroom = C_SEARCH;
+				return;
+
+			case DOWN:
+			case UP:
+				stateInput = FORM_CODE;
+				break;
+
+			default:
+				break;
+			}
 		}
 
 		if (stateInput == FORM_ENTER)
@@ -500,6 +553,7 @@ void ContentClassroom::createData()
 
 void ContentClassroom::editData()
 {
+	int moveMenu = 0;
 	ManageClass nl;
 
 	Text text;
@@ -523,26 +577,45 @@ void ContentClassroom::editData()
 			gotoXY(createPosX, 12 + 1 + 3 + 1);
 			inputClassroomName.display();
 			inputClassroomName.handleInput();
+			moveMenu = inputClassroomName.getMenu();
 
-			if (inputClassroomName.getEndKey() == F1)
+			switch (inputClassroomName.getEndKey())
 			{
-				currentClassroom = C_SELECT;
-				return;
-			}
+			case ENTER:
+				if (moveMenu != 0)
+				{
+					currentClassroom = C_EXIT;
+					return;
+				}
 
-			if (inputClassroomName.getEndKey() == ENTER)
-			{
 				if (inputClassroomName.getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
 				}
+				break;
+			case F1:
+				currentClassroom = C_SELECT;
+				return;
+			case F3:
+				currentClassroom = C_SEARCH;
+				return;
+			default:
+				break;
 			}
 		}
 
 		if (stateInput == FORM_ENTER)
 		{
 			bool result = nl.editClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
+			
+			string blankFillText;
+			blankFillText.resize(36, ' ');
+			int x = getCenterX(40, 36);
+			setColorText(ColorCode_Back);
+			gotoXY(34 + 100 + 30 + x, 19);
+			cout << blankFillText;
+			
 			if (result)
 			{
 				gotoXY(0, 0);
@@ -566,25 +639,59 @@ void ContentClassroom::editData()
 
 void ContentClassroom::findData()
 {
+	int moveMenu = 0;
+
+	int currentX = 0;
+	int currentY = 0;
+
 	int cursorPosition = textSearch.length();
 	stateSearchInput = SEARCH_INPUT;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_F1) & 0x0001)
-		{
-			currentClassroom = C_SELECT;
-			Sleep(150);
-			return;
-		}
-
 		if (stateSearchInput == SEARCH_INPUT)
 		{
 			gotoXY(34 + 2 + 4 + 2 + textSearch.length(), 10);
+
+			if (GetAsyncKeyState(VK_F1) & 0x0001)
+			{
+				currentClassroom = C_SELECT;
+				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+			{
+				currentClassroom = C_CREATE;
+				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+			{
+				moveMenu--;
+				Sleep(150);
+				continue;
+			}
+
+			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+			{
+				moveMenu++;
+				Sleep(150);
+				continue;
+			}
 
 			char s = _getch();
 			int key = keySpecial(s);
 			switch (s)
 			{
+			case ENTER:
+				if (moveMenu != 0)
+				{
+					currentClassroom = C_EXIT;
+					Sleep(150);
+					return;
+				}
+				break;
 			case BACKSPACE:
 				if (textSearch.length() <= 0 || cursorPosition <= 0)
 				{
@@ -620,6 +727,8 @@ void ContentClassroom::findData()
 
 				if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 				{
+					showCur(1);
+
 					textSearch.insert(textSearch.begin() + cursorPosition, s);
 					cursorPosition++;
 					cout << s;
@@ -635,8 +744,10 @@ void ContentClassroom::findData()
 					loadData();
 					pagging();
 				}
+				break;
 			}
-			break;
+
+			
 		}
 	}
 }

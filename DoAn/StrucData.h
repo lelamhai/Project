@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include<iostream>
 #include<cstring>
@@ -11,6 +11,7 @@ using json = nlohmann::json;
 using namespace std;
 
 const int MAX_NUMBER_CLASS = 1000;
+const int MAX_NUMBER_QUESTION = 200; // số câu hỏi chọn tối đa cho một lần thi
 
 // Struct question with question id, 4 option and answer;
 struct Question {
@@ -84,4 +85,16 @@ struct Classroom {
 struct ClassList {
 	Classroom* classes[MAX_NUMBER_CLASS];
 	int countClass = 0;
+};
+
+// struc để lưu kết quả thi sau mỗi lần thi
+struct ResultMCQ {
+	int questionId;
+	char chosenAnswer;
+	char correctAnswer;
+};
+struct resultList {
+	ResultMCQ* result[MAX_NUMBER_QUESTION];
+	int countDone; //đếm số câu hỏi đã thi
+	int score;
 };

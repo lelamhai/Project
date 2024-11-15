@@ -2,6 +2,7 @@
 #include "ManageClass.h"
 #include "ManageStudent.h"
 #include "Content.h"
+#include "ContentDetailClassroom.h"
 
 #include "mycolor.h"
 #include "mydraw.h"
@@ -28,7 +29,9 @@ private:
 		C_EDIT		= 2, // F2
 		C_SEARCH	= 3, // F3
 		C_DELETE	= 4, // Del
-		C_EXIT		= 5
+		C_DETAIL	= 5,
+
+		C_EXIT		= 6
 	};
 	StateClassroom currentClassroom;
 

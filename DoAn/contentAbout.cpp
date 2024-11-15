@@ -35,7 +35,7 @@ void ContentAbout::content()
 	string tutorialMenu[] = {
 		"* Huong Dan Su Dung Menu",
 		"- PGUP|PGDN: Di chuyen menu",
-		"- Spacebar: Chon menu"
+		"- Enter: Chon menu"
 	};
 
 	string hotKey[] = {

@@ -5,6 +5,7 @@
 #include <sstream> 
 #include "StrucData.h"
 #include "ManageStudent.h"
+#include "ManageSubject.h"
 
 const string SOURCE_CLASS = "classdata.json";
 
@@ -67,6 +68,8 @@ public:
 	
 
 	bool logIn(const char* user, const char* password);
+
+	bool startExam(const char* studentCode, const char* subjectCode, int n, int timeSetting_Minute);
 
 	void reset();
 

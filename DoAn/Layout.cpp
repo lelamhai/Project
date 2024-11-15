@@ -63,16 +63,12 @@ void Layout::templateMenu()
         {
             showCur(0);
             hover -= 1;
-            Sleep(150);
-            continue;
         }
 
         if (GetAsyncKeyState(VK_NEXT) & 0x0001)
         {
             showCur(0);
             hover += 1;
-            Sleep(150);
-            continue;
         }
         
         if (GetAsyncKeyState(VK_RETURN) & 0x0001 && active != hover)
@@ -81,7 +77,7 @@ void Layout::templateMenu()
             if (hover == count - 2)
             {
                 choice = hover;
-                Sleep(150);
+                Sleep(50);
                 return;
             }
 
@@ -97,7 +93,6 @@ void Layout::templateMenu()
             active = hover;
             choice = hover;
             lastHover = -1;
-            Sleep(150);
             continue;
         }
 
@@ -118,7 +113,6 @@ void Layout::templateMenu()
                 cout << menu[i];
             }
             lastHover = hover;
-            showCur(0);
         }
     }
 }
@@ -130,7 +124,7 @@ void Layout::templateContent()
         // Flag reload content
         if (isLoadContent)
         {
-            Sleep(300);
+            Sleep(100);
             isLoadContent = false;
             continue;
         }
