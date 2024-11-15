@@ -1,7 +1,2 @@
-﻿  ManageClass.cpp
-  windows.cpp
-  Generating Code...
-C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageClass.cpp(251,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
-x64\Debug\ContentSubject.obj : warning LNK4042: object specified more than once; extras ignored
-x64\Debug\InputField.obj : warning LNK4042: object specified more than once; extras ignored
-  DoAn.vcxproj -> C:\Users\ngoch\OneDrive\Máy tính\Project\x64\Debug\DoAn.exe
+﻿  page.cpp
+  DoAn.vcxproj -> C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\x64\Debug\DoAn.exe

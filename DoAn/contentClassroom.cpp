@@ -134,6 +134,13 @@ void ContentClassroom::handle()
 {
 	while (true)
 	{
+		if (currentClassroom == C_DETAIL)
+		{
+			ContentDetailClassroom* detail = new ContentDetailClassroom();
+			detail->content();
+			delete detail;
+		}
+
 		switch (currentClassroom)
 		{
 		case C_SELECT:
@@ -342,8 +349,10 @@ void ContentClassroom::selectData()
 				currentClassroom = C_EXIT;
 				return;
 			}
+
+			currentClassroom = C_DETAIL;
 			Sleep(150);
-			continue;
+			return;
 		}
 
 		if (lastHover != hover)
