@@ -63,16 +63,12 @@ void Layout::templateMenu()
         {
             showCur(0);
             hover -= 1;
-            Sleep(50);
-            continue;
         }
 
         if (GetAsyncKeyState(VK_NEXT) & 0x0001)
         {
             showCur(0);
             hover += 1;
-            Sleep(50);
-            continue;
         }
         
         if (GetAsyncKeyState(VK_RETURN) & 0x0001 && active != hover)
@@ -97,7 +93,6 @@ void Layout::templateMenu()
             active = hover;
             choice = hover;
             lastHover = -1;
-            Sleep(50);
             continue;
         }
 
@@ -129,7 +124,7 @@ void Layout::templateContent()
         // Flag reload content
         if (isLoadContent)
         {
-            Sleep(200);
+            Sleep(100);
             isLoadContent = false;
             continue;
         }

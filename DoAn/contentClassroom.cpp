@@ -340,7 +340,6 @@ void ContentClassroom::selectData()
 			if (moveMenu != 0)
 			{
 				currentClassroom = C_EXIT;
-				Sleep(150);
 				return;
 			}
 			Sleep(150);
@@ -444,7 +443,7 @@ void ContentClassroom::createData()
 				if (moveMenu != 0)
 				{
 					currentClassroom = C_EXIT;
-					continue;
+					return;
 				}
 
 				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
@@ -452,6 +451,7 @@ void ContentClassroom::createData()
 					stateInput = FORM_ENTER;
 					continue;
 				}
+				stateInput = FORM_NAME;
 				break;
 
 			case F1:
@@ -462,8 +462,12 @@ void ContentClassroom::createData()
 				currentClassroom = C_SEARCH;
 				return;
 
-			default:
+			case DOWN:
+			case UP:
 				stateInput = FORM_NAME;
+				break;
+
+			default:
 				break;
 			}
 		}
@@ -489,6 +493,7 @@ void ContentClassroom::createData()
 					stateInput = FORM_ENTER;
 					continue;
 				}
+				stateInput = FORM_CODE;
 				break;
 			case F1:
 				currentClassroom = C_SELECT;
@@ -497,8 +502,13 @@ void ContentClassroom::createData()
 			case F3:
 				currentClassroom = C_SEARCH;
 				return;
-			default:
+
+			case DOWN:
+			case UP:
 				stateInput = FORM_CODE;
+				break;
+
+			default:
 				break;
 			}
 		}
@@ -589,6 +599,14 @@ void ContentClassroom::editData()
 		if (stateInput == FORM_ENTER)
 		{
 			bool result = nl.editClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
+			
+			string blankFillText;
+			blankFillText.resize(36, ' ');
+			int x = getCenterX(40, 36);
+			setColorText(ColorCode_Back);
+			gotoXY(34 + 100 + 30 + x, 19);
+			cout << blankFillText;
+			
 			if (result)
 			{
 				gotoXY(0, 0);
