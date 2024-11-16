@@ -85,7 +85,7 @@ void ContentClassroom::drawClassroom()
 		"* Xoa Lop",
 		"   F1->Len|Xuong->Del->Trai|Phai",
 		"* Xem Chi Tiet Lop",
-		"   F1->Len|Xuong->Enter"
+		"   F1->Len|Xuong->Spacebar"
 	};
 
 	for (int i = 0; i < 12; i++)
@@ -499,29 +499,31 @@ void ContentClassroom::createData()
 		{
 			bool result = nl.addClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
 			
-			string blankFillText;
-			blankFillText.resize(36, ' ');
-			int x = getCenterX(40, 36);
-			setColorText(ColorCode_Back);
-			gotoXY(34 + 100 + 30 + x, 19);
-			cout << blankFillText;
-			
 			if (result)
 			{
-				gotoXY(0, 0);
 				cleanTable();
 				loadData();
 				text.setContent("Them lop thanh cong!");
+
+				int textPosX = getCenterX(40, text.getLenString());
+				gotoXY(34 + 100 + 30 + textPosX, 19);
+				text.display();
 			}
-			else {
-				gotoXY(0, 0);
+			else 
+			{
+				string blankFillText;
+				blankFillText.resize(36, ' ');
+
+				gotoXY(34 + 120 + 8 + 2 + 1, 19);
+				cout << blankFillText;
+
 				text.setContent("Them lop that bai!");
+				int textPosX = getCenterX(40, text.getLenString());
+				gotoXY(34 + 100 + 30 + textPosX, 19);
+				text.display();
 			}
 
-			int textPosX = getCenterX(40, text.getLenString());
-
-			gotoXY(34 + 100 + 30 + textPosX, 19);
-			text.display();
+			
 			stateInput = FORM_CODE;
 		}
 
