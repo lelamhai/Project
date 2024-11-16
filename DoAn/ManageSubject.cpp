@@ -303,6 +303,7 @@ ManageQuestion ManageSubject::getRandomQuestion(int n, const char* subjectCode) 
     }
 
     questionList_Random.getRandomQuestion(n);
+    return questionList_Random;
 }
 
 // ----------------------- PRIVATE METHOD --------------------------//

@@ -231,6 +231,9 @@
     <ClCompile Include="popupTutorial.cpp">
       <Filter>Source Files\GUI\Popups</Filter>
     </ClCompile>
+    <ClCompile Include="ManageExam.cpp">
+      <Filter>Source Files\DATA\Pages</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -352,6 +355,9 @@
     </ClInclude>
     <ClInclude Include="PopupTutorial.h">
       <Filter>Header Files\GUI\Popups</Filter>
+    </ClInclude>
+    <ClInclude Include="ManageExam.h">
+      <Filter>Header Files\DATA\Pages</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

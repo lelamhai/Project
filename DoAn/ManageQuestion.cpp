@@ -145,7 +145,13 @@ PTRSTUDENT ManageQuestion::paginateQuestions(int page, int pageSize)
 
 int ManageQuestion::getCountQuestions()
 {
-	return 0;
+	int count = 0;
+	PTRQUESTION p = questionList;
+	while (p != nullptr) {
+		count++;
+		p = p->next;
+	}
+	return count;
 }
 
 int ManageQuestion::insertFirst_Question(const Question &question) {
@@ -328,7 +334,20 @@ void ManageQuestion::getRandomQuestion(int n) {
 	delete[] questionIdAll;
 }
 
+Question ManageQuestion::getQuestionByIndex(int n) {
+	PTRQUESTION p = questionList;
+	for (int i = 0; i < n; i++) {
+		if (p == nullptr) {
+			return p->info; // n vượt quá phần tử của list
+		}
+		p = p->next;
+	}
+	return p->info;
+}
 
+PTRQUESTION ManageQuestion::getList() {
+	return questionList;
+}
 
 
 

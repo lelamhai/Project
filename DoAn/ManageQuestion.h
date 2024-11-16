@@ -51,7 +51,11 @@ public:
 
 	// Hàm chuyển một list question thành n question random. Sau khi thực hiện hàm sẽ thay thế list cũ
 	void getRandomQuestion(int n);
+
+	// Hàm trả về infor của Node ở vị trí i của list
+	Question getQuestionByIndex(int n);
 	
+	PTRQUESTION getList();
 };
 
 int generateUniqueQuestionId(PTRQUESTION listQuestion);

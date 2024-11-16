@@ -88,13 +88,15 @@ struct ClassList {
 };
 
 // struc để lưu kết quả thi sau mỗi lần thi
-struct ResultMCQ {
+struct answer {
 	int questionId;
 	char chosenAnswer;
 	char correctAnswer;
 };
 struct resultList {
-	ResultMCQ* result[MAX_NUMBER_QUESTION];
+	char studentCode[15];
+	char* subjectCode;
+	answer* answerList[MAX_NUMBER_QUESTION];
 	int countDone; //đếm số câu hỏi đã thi
 	int score;
 };

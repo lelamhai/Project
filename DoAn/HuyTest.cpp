@@ -1,6 +1,5 @@
 ﻿#include "HuyTest.h"
 
-
 HuyTest::HuyTest()
 {
 
@@ -11,33 +10,37 @@ HuyTest::~HuyTest()
 
 }
 
-void HuyTest::main()
-{
-	ManageSubject subjectList;
+void HuyTest::main() {
+	//ManageSubject subjectList2;
 	//subjectList.addSubject("VL", "vatly");
 	//subjectList.addQuestion("VL", "do dai quang duong ", " = 1 ", " = 2 ", " = 3 ", " = 4 ", 'B');
 	//subjectList.addQuestion("VL", "dong dien xoay chieu ", " = 1 ", " = 2 ", " = 3 ", " = 4 ", 'D');
 	//subjectList.printQuestionList("VL");
 
-	ManageQuestion questionList_Random = subjectList.getRandomQuestion(2,"CSDL");
-	questionList_Random.printQuestions();
+	//ManageQuestion questionList_Random = subjectList2.getRandomQuestion(2,"CSDL");
+	//questionList_Random.printQuestions();
+	//
+	//cout << "Cau hoi cua mon hoc la:" << endl;
+	//subjectList2.printQuestionList("CSDL");
 	
-	cout << "Cau hoi cua mon hoc la:" << endl;
-	subjectList.printQuestionList("CSDL");
-
-	//subjectList.saveToFile();
-
-	//ManageQuestion ;
-	//mcq1.addQuestion("Mot cong mot bang bao nhieu ? ", " = 1 ", " = 2 ", " = 3 ", " = 4 ", 'A');
-	//mcq1.addQuestion("Mot cong mot bang bao nhieu 1 ? ", " = 1 ", " = 2 ", " = 3 ", " = 4 ", 'A');
-	//mcq1.addQuestion("co bao nhieu con ga ? ", " = 0 ", " = 2 ", " = 3 ", " = 4 ", 'B');
-	//mcq1.saveToFile();
-	//x.loadFromFile();
-	//x.printQuestions();
-	//cout << "Dap an la: " << x.getAnswer(2324) << endl;
-
-	//ManageStudent stdList1;
-	//stdList1.openFile_Student("StudentList.txt");
-	//cout << stdList1.logIn("K31", "333A");
+	//ManageExam* test1 = new ManageExam();
+	//test1->main();
 	
+	ManageExam exam1(3, "CSDL", 1); // 100 câu hỏi, mã môn học, số phút thi
+	
+
+	// tạo một thread quản lý thời gian và một thread quản lý thi
+	thread timerThread(&ManageExam::countDown, &exam1);
+	thread examThread(&ManageExam::conductExam, &exam1);
+	
+	// chờ hai thread hoàn thành
+	timerThread.join();
+	examThread.join();
+
+	//ManageSubject subjectList;
+	//ManageQuestion questionList_Random = subjectList.getRandomQuestion(2, "CSDL");
+	//questionList_Random.printQuestions();
+
+
+
 }
