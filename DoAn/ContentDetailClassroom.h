@@ -16,12 +16,9 @@
 #include <string>
 #include <iostream>
 using namespace std;
-#define WIDTH_CONTENT  172
-#define HEIGHT_CONTENT  36
 
 class ContentDetailClassroom : public Content
 {
-
 private:
 	string classCode = "C002";
 public:
@@ -30,7 +27,6 @@ public:
 	void drawClassroom();
 	void girdContent();
 	void handle();
-	void cleanContent();
 	ContentDetailClassroom();
 	~ContentDetailClassroom();
 };

@@ -22,9 +22,13 @@ void ContentDetailClassroom::drawClassroom()
 	cout << "ESC: Tro Lai";
 	box(34 + 2, 10 - 1, 15, 2);
 
-	int titlePosX = getCenterX(121, 12);
-	gotoXY(34 + titlePosX, 10);
-	cout << "Ten Lop: K23DTCN100-K";
+	string className = "K23DTCN100K";
+	string count = "67";
+	string title = "Lop:" + className + " - Sinh Vien:" + count;
+
+	int titlePosX = getCenterX(getConsoleWidth(), title.length());
+	gotoXY(titlePosX - 12, 10);
+	cout << title;
 
 	gotoXY(34 + 2 + 120 - 20 - 4, 10);
 	cout << "Tim";
@@ -135,7 +139,7 @@ void ContentDetailClassroom::handle()
 {
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_F12) & 0x8000)
+		if (GetAsyncKeyState(VK_F12) & 0x0001)
 		{
 			int posX = getCenterX(120, 50);
 			PopupTutorial pTutorial;
@@ -146,17 +150,11 @@ void ContentDetailClassroom::handle()
 			pTutorial.close();
 		}
 
-		Sleep(150);
-	}
-}
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		{
+			return;
+		}
 
-void ContentDetailClassroom::cleanContent()
-{
-	string blankFill;
-	blankFill.resize(WIDTH_CONTENT, ' ');
-	for (int i = 0; i < HEIGHT_CONTENT; i++)
-	{
-		gotoXY(34, 9 + i);
-		cout << blankFill;
+		Sleep(150);
 	}
 }

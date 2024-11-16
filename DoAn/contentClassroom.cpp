@@ -84,7 +84,7 @@ void ContentClassroom::drawClassroom()
 		"   F1->Len|Xuong->F2",
 		"* Xoa Lop",
 		"   F1->Len|Xuong->Del->Trai|Phai",
-		"* Them Sinh Vien Cho Lop",
+		"* Xem Chi Tiet Lop",
 		"   F1->Len|Xuong->Enter"
 	};
 
@@ -136,9 +136,15 @@ void ContentClassroom::handle()
 	{
 		if (currentClassroom == C_DETAIL)
 		{
+			cleanContent();
 			ContentDetailClassroom* detail = new ContentDetailClassroom();
 			detail->content();
 			delete detail;
+			currentClassroom = C_SELECT;
+			cleanContent();
+			displayContent();
+			drawClassroom();
+			girdContent();
 		}
 
 		switch (currentClassroom)
@@ -234,7 +240,7 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_LEFT))
+		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
 		{
 			if (pageNumber > 1)
 			{
@@ -254,7 +260,7 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_RIGHT))
+		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
 		{
 			if (pageNumber < page.totalPage)
 			{
@@ -336,10 +342,12 @@ void ContentClassroom::selectData()
 			continue;
 		}
 
-		/*if (GetAsyncKeyState(VK_SPACE) & 0x8000)
+		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 		{
-
-		}*/
+			currentClassroom = C_DETAIL;
+			Sleep(150);
+			return;
+		}
 
 
 		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
@@ -349,10 +357,6 @@ void ContentClassroom::selectData()
 				currentClassroom = C_EXIT;
 				return;
 			}
-
-			currentClassroom = C_DETAIL;
-			Sleep(150);
-			return;
 		}
 
 		if (lastHover != hover)
@@ -395,37 +399,6 @@ void ContentClassroom::selectData()
 	}
 }
 
-void ContentClassroom::deleteData()
-{
-	int deletePosX = getCenterX(120, 50);
-	PopupDelete pDelete;
-	pDelete.setPosition(deletePosX + 30, 17);
-	pDelete.open();
-	pDelete.handle();
-
-	if (pDelete.getMenu() != 0)
-	{
-		currentClassroom = C_EXIT;
-		return;
-	}
-
-	pDelete.close();
-
-	if (pDelete.getResult())
-	{
-		ManageClass nl;
-		bool result = nl.deleteClass(classCode.c_str());
-		if (result)
-		{
-			hover = 0;
-		}
-
-		cleanTable();
-	}
-	currentClassroom = C_SELECT;
-	return;
-}
-
 void ContentClassroom::createData()
 {
 	int moveMenu = 0;
@@ -466,7 +439,7 @@ void ContentClassroom::createData()
 			case F1:
 				currentClassroom = C_SELECT;
 				return;
-			
+
 			case F3:
 				currentClassroom = C_SEARCH;
 				return;
@@ -525,6 +498,14 @@ void ContentClassroom::createData()
 		if (stateInput == FORM_ENTER)
 		{
 			bool result = nl.addClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
+			
+			string blankFillText;
+			blankFillText.resize(36, ' ');
+			int x = getCenterX(40, 36);
+			setColorText(ColorCode_Back);
+			gotoXY(34 + 100 + 30 + x, 19);
+			cout << blankFillText;
+			
 			if (result)
 			{
 				gotoXY(0, 0);
@@ -549,6 +530,37 @@ void ContentClassroom::createData()
 			return;
 		}
 	}
+}
+
+void ContentClassroom::deleteData()
+{
+	int deletePosX = getCenterX(120, 50);
+	PopupDelete pDelete;
+	pDelete.setPosition(deletePosX + 30, 17);
+	pDelete.open();
+	pDelete.handle();
+
+	if (pDelete.getMenu() != 0)
+	{
+		currentClassroom = C_EXIT;
+		return;
+	}
+
+	pDelete.close();
+
+	if (pDelete.getResult())
+	{
+		ManageClass nl;
+		bool result = nl.deleteClass(classCode.c_str());
+		if (result)
+		{
+			hover = 0;
+		}
+
+		cleanTable();
+	}
+	currentClassroom = C_SELECT;
+	return;
 }
 
 void ContentClassroom::editData()

@@ -47,7 +47,7 @@ void PopupDelete::handle()
 			continue;
 		}
 
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
 		{
 			setColorText(ColorCode_DarkGreen);
 			textbk(ColorCode_DarkCyan);
@@ -62,7 +62,7 @@ void PopupDelete::handle()
 			result = false;
 		}
 
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
 		{
 			setColorText(ColorCode_White);
 			textbk(ColorCode_DarkCyan);
@@ -76,6 +76,7 @@ void PopupDelete::handle()
 
 			result = true;
 		}
+
 		
 		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{

@@ -3,6 +3,9 @@ enum KeyState
 {
     // Common
     DEL         = 83,
+    INSERT      = 82,
+    END         = 79,
+    HOME        = 71,
     SPACEBAR    = 32,
     ESC         = 27,
     ENTER       = 13,
@@ -16,6 +19,7 @@ enum KeyState
     NUM_2   = 50,
     NUM_3   = 51,
     NUM_4   = 52,
+
 
     // Arrow
     DOWN    = 80,
@@ -33,6 +37,7 @@ enum KeyState
     F3 = 61,
     F4 = 62,
     F5 = 63,
+    F12= 70,
 
     DEFAULT = -1
 };
