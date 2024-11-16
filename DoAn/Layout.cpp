@@ -33,7 +33,6 @@ void Layout::templateMenu()
     {
         menu = {
            "Gioi Thieu",
-           "Mon Hoc",
            "Thi",
            "Dang Xuat",
            "Thoat"
@@ -42,10 +41,9 @@ void Layout::templateMenu()
     else {
         menu = {
             "Gioi Thieu",
-            "Lop Hoc",
+            "Lop",
             "Sinh Vien",
             "Mon Hoc",
-            "Cau Hoi",
             "Thi",
             "Dang Xuat",
             "Thoat"
@@ -139,15 +137,8 @@ void Layout::templateContent()
                 a->displayContent();
                 delete a;
             }
+          
             if (choice == 1)
-            {
-                showCur(0);
-                cleanContent();
-                ContentSubject* s = new ContentSubject();
-                s->displayContent();
-                delete s;
-            }
-            if (choice == 2)
             {
                 showCur(0);
                 cleanContent();
@@ -156,7 +147,7 @@ void Layout::templateContent()
                 delete e;
             }
 
-            if (choice == 3)
+            if (choice == 2)
             {
                 return;
             }
@@ -170,14 +161,7 @@ void Layout::templateContent()
                 a->displayContent();
                 delete a;
             }
-            if (choice == STUDENT)
-            {
-                showCur(0);
-                cleanContent();
-                ContentStudent* s = new ContentStudent();
-                s->displayContent();
-                delete s;
-            }
+
             if (choice == CLASSROOM)
             {
                 showCur(0);
@@ -186,6 +170,16 @@ void Layout::templateContent()
                 c->displayContent();
                 delete c;
             }
+
+            if (choice == STUDENT)
+            {
+                showCur(0);
+                cleanContent();
+                ContentStudent* s = new ContentStudent();
+                s->displayContent();
+                delete s;
+            }
+            
             if (choice == SUBJECT)
             {
                 showCur(0);
@@ -194,14 +188,7 @@ void Layout::templateContent()
                 s->displayContent();
                 delete s;
             }
-            if (choice == QUESTION)
-            {
-                showCur(0);
-                cleanContent();
-                ContentQuestion* q = new ContentQuestion();
-                q->displayContent();
-                delete q;
-            }
+
             if (choice == EXAM)
             {
                 showCur(0);
@@ -210,6 +197,7 @@ void Layout::templateContent()
                 e->displayContent();
                 delete e;
             }
+
             if (choice == EXIT)
             {
                 return;

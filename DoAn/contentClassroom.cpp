@@ -78,7 +78,7 @@ void ContentClassroom::drawClassroom()
 		"F3: Tim Kiem Lop",
 		"Ins: Them Lop",
 		"Phim Len|Xuong: Chon Du Lieu",
-		"Phim Trai|Phai: Xem Trang Cu|Moi",
+		"Phim Trai|Phai: Xem Trang Sau|Truoc",
 		" ",
 		"* Chinh Sua Lop",
 		"   F1->Len|Xuong->F2",

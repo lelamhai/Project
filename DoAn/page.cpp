@@ -15,8 +15,7 @@ void Page::setRun(StatePage page)
 
 void Page::main()
 {
-	ConfigApp config;
-	config.init();
+	init();
 	while (true)
 	{
 		if (currentPage == PAGE_LOADING)

@@ -1,4 +1,5 @@
 #include "ContentStudent.h"
+
 ContentStudent::ContentStudent()
 {
 }
@@ -7,11 +8,97 @@ ContentStudent::~ContentStudent()
 {
 }
 
+void ContentStudent::drawContent()
+{
+	// Search
+	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING + PADDING);
+	cout << "Tim";
+	box(DISTANCE_SIDEBAR + MARGIN + 4, DISTANCE_HEADER + PADDING, 20, 2);
+
+	// Gird Data
+	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING * 4, COLUMN_CENTER, ROW_CENTER);
+
+	// Tutorial
+	int posXT = getCenterX(COLUMN_RIGHT, 9);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + posXT, DISTANCE_HEADER + PADDING * 2);
+	cout << "Huong Dan";
+
+	string note[] = {
+		"F1: Chon Du Lieu Trong Bang",
+		"F3: Tim Kiem Lop",
+		"Phim Len|Xuong: Chon Du Lieu",
+		"Phim Trai|Phai: Xem Trang Sau|Truoc"
+	};
+
+	int y = DISTANCE_HEADER + PADDING + 4;
+	for (int i = 0; i < 4; i++)
+	{
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING *2, y + (i * 2));
+		cout << note[i];
+	}
+
+	setColorText(ColorCode_DarkYellow);
+	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
+
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 12);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
+	cout << char(195);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
+	cout << char(180);
+	setColorText(ColorCode_DarkWhite);
+
+}
+
+void ContentStudent::girdTitle()
+{
+	lineX(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN, 120);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN);
+	cout << char(195);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER, DISTANCE_HEADER + MARGIN);
+	cout << char(180);
+
+	string title[] = {
+		"MSSV",
+		"Ho Va Ten",
+		"Phai",
+		"Mon Hoc",
+		"Diem"
+	};
+
+	int mssvX = getCenterX(24, title[0].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + mssvX, DISTANCE_HEADER + MARGIN - 1);
+	cout << title[0];
+
+	int fullnameX = getCenterX(24, title[1].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + fullnameX, DISTANCE_HEADER + MARGIN - 1);
+	cout << title[1];
+
+	int sexX = getCenterX(24, title[2].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + sexX, DISTANCE_HEADER + MARGIN - 1);
+	cout << title[2];
+
+	int subjectX = getCenterX(24, title[3].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + subjectX, DISTANCE_HEADER + MARGIN - 1);
+	cout << title[3];
+
+	int pointX = getCenterX(24, title[4].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + 24 + pointX, DISTANCE_HEADER + MARGIN - 1);
+	cout << title[4];
+}
+
 void ContentStudent::displayContent()
 {
+	drawContent();
+	girdTitle();
+	handle();
+}
+
+void ContentStudent::handle()
+{
+
 	setColorText(ColorCode_DarkWhite);
-	gotoXY(34, 12);
-	cout << "Student";
+	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER, DISTANCE_HEADER);
+	cout << "Student";*/
 	while (true)
 	{
 		if (GetAsyncKeyState(VK_RETURN) & 0x8000)

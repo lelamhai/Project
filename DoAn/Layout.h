@@ -30,9 +30,9 @@ enum StateContent
     CLASSROOM   = 1,
     STUDENT     = 2,
     SUBJECT     = 3,
-    QUESTION    = 4,
-    EXAM        = 5,
-    EXIT        = 6
+    EXAM        = 4,
+
+    EXIT        = -1
 };
 
 class Layout
