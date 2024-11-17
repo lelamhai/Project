@@ -82,7 +82,7 @@ PTRSTUDENT findStudentInList(PTRSTUDENT studentList, const char* studentCode);
 bool deleteStudentInList(PTRSTUDENT studentList, const char* studentCode);
 
 // Add student to list
-bool addStudentToList(PTRSTUDENT studentList, Student std1);
+bool addStudentToList(PTRSTUDENT& studentList, Student std1);
 
 // Paginate for student
 StudentPage getStudentPerPage(PTRSTUDENT studentList, int page);

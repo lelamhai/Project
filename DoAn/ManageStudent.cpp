@@ -286,14 +286,16 @@ int getCountStudentOfList(PTRSTUDENT listStudent) {
 
 // Print list student
 void printStudentsInList(PTRSTUDENT studentList) {
-    PTRSTUDENT temp = studentList;
+    PTRSTUDENT temp = studentList;int count = 0;
     while (temp != nullptr) {
         cout << "Ma sinh vien: " << temp->info.studentCode << endl;
         cout << "Ho va ten: " << temp->info.firstName << " " << temp->info.lastName << endl;
         cout << "Gioi tinh: " << (temp->info.gender == 'M' ? "Nam" : "Nu") << endl;
         cout << "-------------------------------------------" << endl;
+        count++;
         temp = temp->next;
     }
+    cout << count;
 }
 
 // Find student in list student
@@ -332,7 +334,7 @@ bool deleteStudentInList(PTRSTUDENT studentList, const char* studentCode) {
 }
 
 // Add student to list
-bool addStudentToList(PTRSTUDENT studentList, Student std1) {
+bool addStudentToList(PTRSTUDENT& studentList, Student std1) {
     PTRSTUDENT tmpStudent = new NodeStudent;
     tmpStudent->info = std1;
     tmpStudent->next = nullptr;
@@ -350,6 +352,7 @@ StudentPage getStudentPerPage(PTRSTUDENT studentList, int page)
 {
     StudentPage studentPage;
     int studentPerPage = 13;
+    if (studentList == nullptr) return studentPage;
     int totalStudents = getCountStudentOfList(studentList);
     int totalPages = (totalStudents + studentPerPage - 1) / studentPerPage;
     studentPage.currentPage = page;

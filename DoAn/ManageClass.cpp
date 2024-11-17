@@ -18,6 +18,7 @@ Classroom ManageClass::findClassByCode(const char* classCode)
     if (index != -1) {
         strcpy_s(classFound.classCode, classes[index]->classCode);
         classFound.className = classes[index]->className;
+        classFound.studentList = classes[index]->studentList;
     }
     return classFound;
 }
@@ -296,6 +297,7 @@ int ManageClass::getCountSudentOfClass(const char* classCode)
     PTRSTUDENT studentList = classes[index]->studentList;
     while (studentList != nullptr) {
         count++;
+        studentList = studentList->next;
     }
     return count;
 }
