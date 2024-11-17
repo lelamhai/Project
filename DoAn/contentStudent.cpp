@@ -61,29 +61,39 @@ void ContentStudent::girdTitle()
 		"MSSV",
 		"Ho Va Ten",
 		"Phai",
+		"Ma Lop",
+		"Ten Lop",
 		"Mon Hoc",
 		"Diem"
 	};
 
-	int mssvX = getCenterX(24, title[0].length());
+	int mssvX = getCenterX(17, title[0].length());
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + mssvX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[0];
 
-	int fullnameX = getCenterX(24, title[1].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + fullnameX, DISTANCE_HEADER + MARGIN - 1);
+	int fullnameX = getCenterX(17, title[1].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + fullnameX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[1];
 
-	int sexX = getCenterX(24, title[2].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + sexX, DISTANCE_HEADER + MARGIN - 1);
+	int sexX = getCenterX(17, title[2].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + sexX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[2];
 
-	int subjectX = getCenterX(24, title[3].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + subjectX, DISTANCE_HEADER + MARGIN - 1);
+	int codeX = getCenterX(17, title[3].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + 17 + codeX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[3];
 
-	int pointX = getCenterX(24, title[4].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + 24 + pointX, DISTANCE_HEADER + MARGIN - 1);
+	int classX = getCenterX(17, title[4].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + 17 + 17 + classX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[4];
+
+	int subjectX = getCenterX(17, title[5].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + 17 + 17 + 17 + subjectX, DISTANCE_HEADER + MARGIN - 1);
+	cout << title[5];
+
+	int pointX = getCenterX(17, title[6].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + 17 + 17 + 17 + 17 + pointX, DISTANCE_HEADER + MARGIN - 1);
+	cout << title[6];
 }
 
 void ContentStudent::displayContent()
