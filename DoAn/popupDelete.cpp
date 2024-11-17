@@ -33,18 +33,9 @@ void PopupDelete::handle()
 {
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
 		{
-			moveMenu--;
-			Sleep(150);
-			continue;
-		}
-
-		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
-		{
-			moveMenu++;
-			Sleep(150);
-			continue;
+			return;
 		}
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
@@ -77,10 +68,18 @@ void PopupDelete::handle()
 			result = true;
 		}
 
-		
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
 		{
-			return;
+			moveMenu--;
+			Sleep(150);
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			moveMenu++;
+			Sleep(150);
+			continue;
 		}
 		Sleep(150);
 	}

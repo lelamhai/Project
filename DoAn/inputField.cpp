@@ -96,6 +96,13 @@ void InputField::handleInput()
 			continue;
 		}
 
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		{
+			keyInput = ENTER;
+			Sleep(150);
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
 		{
 			moveMenu--;
@@ -112,12 +119,14 @@ void InputField::handleInput()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			keyInput = ENTER;
+			keyInput = TAB;
 			Sleep(150);
 			return;
 		}
+
+		
 
 		char s = _getch();
 		int key = keySpecial(s);

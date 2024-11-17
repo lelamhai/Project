@@ -94,6 +94,7 @@ void ContentSubject::drawContent()
 	cout << char(180);
 	setColorText(ColorCode_DarkWhite);
 }
+
 void ContentSubject::girdTitle()
 {
 	lineX(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN, COLUMN_CENTER);
@@ -132,6 +133,10 @@ void ContentSubject::handle()
 {
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			return;
+		}
 		Sleep(150);
 	}
 }
