@@ -13,7 +13,7 @@ void ContentSubject::drawContent()
 	// Search
 	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING + PADDING);
 	cout << "Tim";
-	box(DISTANCE_SIDEBAR + MARGIN + 4, DISTANCE_HEADER + PADDING, 20, 2);
+	box(DISTANCE_SIDEBAR + MARGIN + 4, DISTANCE_HEADER + PADDING, WIDTH_INPUT, HEIGHT_INPUT);
 
 	// Gird Data
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING * 4, COLUMN_CENTER, ROW_CENTER);
@@ -105,7 +105,7 @@ void ContentSubject::girdTitle()
 	string title[] = {
 		"Ma Mon Hoc",
 		"Ten Mon Hoc",
-		"So Luong Cau Hoi"
+		"Cau Hoi"
 	};
 
 	int maMHX = getCenterX(40, title[0].length());

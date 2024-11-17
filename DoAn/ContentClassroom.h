@@ -1,6 +1,7 @@
 #pragma once
 #include "ManageClass.h"
 #include "ManageStudent.h"
+#include "configApp.h"
 #include "Content.h"
 #include "ContentDetailClassroom.h"
 

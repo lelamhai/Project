@@ -16,91 +16,96 @@ void ContentClassroom::displayContent()
 
 void ContentClassroom::drawClassroom()
 {
-	InputField inputStudent;
-	Text txtSearch;
-	txtSearch.setContent("Tim");
+	// Search
+	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING + PADDING);
+	cout << "Tim";
+	box(DISTANCE_SIDEBAR + MARGIN + 4, DISTANCE_HEADER + PADDING, WIDTH_INPUT, HEIGHT_INPUT);
 
-	gotoXY(34 + 2, 10);
-	txtSearch.display();
-	box(34 + 2 + 4, 10 - 1, 20, 2);
+	// Gird Data
+	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING * 4, COLUMN_CENTER, ROW_CENTER);
 
-
-	box(34 + 2, 10 + 2, 120, 30);
-	box(34 + 100 + 30, 9, 40, 15);
-
-
-	int posX = getCenterX(40, 9);
-	gotoXY(posX + 34 + 100 + 30, 10);
+	// Info
+	int posXInfo = getCenterX(COLUMN_RIGHT, 9);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + posXInfo, DISTANCE_HEADER + PADDING * 2);
 	cout << "Thong Tin";
 
-	lineX(34 + 100 + 30, 11, 40);
-	gotoXY(34 + 100 + 30, 11);
+	string titleInput[] = {
+		"Ma Lop",
+		"Ten Lop"
+	};
+
+	int y = DISTANCE_HEADER + PADDING + 5;
+	for (int i = 0; i < 2; i++)
+	{
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
+		cout << titleInput[i];
+		box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1, WIDTH_INPUT, HEIGHT_INPUT);
+	}
+
+	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 16);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
 	cout << char(195);
-	gotoXY(34 + 100 + 30 + 40, 11);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
 	cout << char(180);
 
-	gotoXY(34 + 100 + 30 + 3, 12 + 2);
-	cout << "Ma Lop";
-	box(34 + 100 + 30 + 4 + 8, 12 + 1, 24, 2);
+	/*y = y + (2 * 3) - 1;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
+	cout << "Message";*/
 
-	gotoXY(34 + 100 + 30 + 3, 12 + 1 + 1 + 3);
-	cout << "Ten Lop";
-	box(34 + 100 + 30 + 4 + 8, 12 + 1 + 3, 24, 2);
-
-	int posFrameX = getCenterX(40, 11);
-	box(posFrameX + 34 + 100 + 30, 12 + 1 + 3 + 5, 10, 2);
-
-	/*lineX(34 + 100 + 30, 20, 40);
-	gotoXY(34 + 100 + 30, 20);
-	cout << char(195);
-	gotoXY(34 + 100 + 30 + 40, 20);
-	cout << char(180);*/
-
-
-	int posEnterX = getCenterX(40, 5);
-	gotoXY(posEnterX + 34 + 100 + 30, 12 + 1 + 3 + 6);
+	y = y + 2;
+	int infoX = getCenterX(COLUMN_RIGHT, 10);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + infoX, y, 10, 2);
+	int enterX = getCenterX(COLUMN_RIGHT, 5);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + enterX, y + 1);
 	cout << "Enter";
 
-	gotoXY(posX + 34 + 100 + 30, 26 + 1);
+	y = y + 5 + 1;
+	// Tutorial
+	int tutorialY = y;
+	tutorialY += 1;
+	int titleTutorial = getCenterX(COLUMN_RIGHT, 9);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + titleTutorial, tutorialY);
 	cout << "Huong Dan";
-
-	setColorText(ColorCode_DarkYellow);
-	box(34 + 100 + 30, 26, 40, 17);
-	lineX(34 + 100 + 30, 26 + 2, 40);
-	gotoXY(34 + 100 + 30, 26 + 2);
-	cout << char(195);
-	gotoXY(34 + 100 + 30 + 40, 26 + 2);
-	cout << char(180);
-	setColorText(ColorCode_DarkWhite);
+	tutorialY += 1;
 
 	string note[] = {
 		"F1: Chon Du Lieu Trong Bang",
-		"F3: Tim Kiem Lop",
-		"Ins: Them Lop",
+		"F3: Tim Kiem Mon Hoc",
+		"Ins: Them Mon Hoc",
 		"Phim Len|Xuong: Chon Du Lieu",
 		"Phim Trai|Phai: Xem Trang Sau|Truoc",
 		" ",
-		"* Chinh Sua Lop",
+		"* Chinh Sua Mon Hoc",
 		"   F1->Len|Xuong->F2",
-		"* Xoa Lop",
+		"* Xoa Mon Hoc",
 		"   F1->Len|Xuong->Del->Trai|Phai",
-		"* Xem Chi Tiet Lop",
-		"   F1->Len|Xuong->Spacebar"
+		"* Xem Danh Sach Cau Hoi",
+		"   F1->Len|Xuong->Enter"
 	};
 
+	int contentY = tutorialY + 1;
 	for (int i = 0; i < 12; i++)
 	{
-		gotoXY(34 + 100 + 30 + 2, 26 + 3 + i);
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
 	}
+	setColorText(ColorCode_DarkYellow);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT, 16);
+	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY, COLUMN_RIGHT);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY);
+	cout << char(195);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, tutorialY);
+	cout << char(180);
+	setColorText(ColorCode_DarkWhite);
 }
 
 void ContentClassroom::girdContent()
 {
-	lineX(34 + 2, 10 + 2 + 2, 120);
-	gotoXY(34 + 2, 10 + 2 + 2);
+	lineX(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN, COLUMN_CENTER);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN);
 	cout << char(195);
-	gotoXY(34 + 2 + 120, 10 + 2 + 2);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER, DISTANCE_HEADER + MARGIN);
 	cout << char(180);
 
 	string title[] = {
@@ -109,16 +114,16 @@ void ContentClassroom::girdContent()
 		"Sinh Vien"
 	};
 
-	int classX = getCenterX(40, title[0].length());
-	gotoXY(34 + 3 + classX, 10 + 2 + 1);
+	int maMHX = getCenterX(40, title[0].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + maMHX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[0];
 
 	int nameX = getCenterX(40, title[1].length());
-	gotoXY(34 + 3  + 40 + nameX, 10 + 2 + 1);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + nameX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[1];
 
 	int countX = getCenterX(40, title[2].length());
-	gotoXY(34 + 3 + 40 + 40 + countX, 10 + 2 + 1);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + 40 + countX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[2];
 }
 
