@@ -275,6 +275,7 @@ StudentPage ManageClass::searchStudentInCLass(const string classCode, string key
         return getStudentPerPage(classes[index]->studentList, page);
     }
     PTRSTUDENT resultList = new NodeStudent;
+    resultList = nullptr;
     PTRSTUDENT startList = classes[index]->studentList;
     while (startList != nullptr) {
         string fullName = string(startList->info.firstName) + " " + string(startList->info.lastName);

@@ -336,7 +336,13 @@ bool deleteStudentInList(PTRSTUDENT studentList, const char* studentCode) {
 // Add student to list
 bool addStudentToList(PTRSTUDENT& studentList, Student std1) {
     PTRSTUDENT tmpStudent = new NodeStudent;
-    tmpStudent->info = std1;
+    strcpy_s(tmpStudent->info.firstName, std1.firstName);
+    strcpy_s(tmpStudent->info.lastName, std1.lastName);
+    strcpy_s(tmpStudent->info.password, std1.password);
+    strcpy_s(tmpStudent->info.studentCode, std1.studentCode);
+    tmpStudent->info.gender = std1.gender;
+    tmpStudent->next = nullptr;
+     
     tmpStudent->next = nullptr;
     if (studentList == nullptr) {
         studentList = tmpStudent;

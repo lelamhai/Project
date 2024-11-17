@@ -22,10 +22,10 @@ void DungTest::main()
      
      ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn
      //StudentPage studentPage = test.searchStudentInCLass("C001", "khoa", 1); // Mã lớp, từ khóa, trang
-     Classroom a = test.findClassByCode("C001");
-     cout << getCountStudentOfList(a.studentList);
+     /*Classroom a = test.findClassByCode("C001");*/
      //Student page cũng có tham số y chang class page
      //test.printClasses();
+     // cout << getCountStudentOfList(studentPage.studentList);
      //printStudents(studentPage.studentList);
      
 
