@@ -25,11 +25,8 @@ private:
 	bool isSubmitted; // trả về true khi người thi nhấn nộp bài, muốn kết thúc trước khi hết giờ
 	int remainingTime_sec; // thời gian còn lại bài thi tính bằng giây
 
-	//ManageSubject subjectList;
-
-	//ManageQuestion questionList_Random;
-	//ManageSubject subjectList;
-	//ManageQuestion questionList_Random;
+	ManageSubject subjectList;
+	ManageQuestion questionList_Random;
 
 	struct resultList answerRecord;
 
@@ -38,6 +35,6 @@ public:
 	~ManageExam();
 
 	void countDown();
-	void conductExam();
+	resultList conductExam();
 };
 

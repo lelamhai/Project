@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "LoadingData.h"
 #include "LoginData.h"
@@ -6,6 +6,7 @@
 #include "ManageQuestion.h"
 #include "ManageSubject.h"
 #include "ManageExam.h"
+#include <future> // Thêm thư viện để sử dụng std::promise và std::future
 
 #include <iostream>
 using namespace std;

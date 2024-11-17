@@ -14,13 +14,11 @@ ManageExam::ManageExam(int numberQuestion, const char* subjectCode, int timeForE
         answerRecord.answerList[i] = new answer; // Cấp phát bộ nhớ cho mỗi phần tử
     }
 
-    //ManageSubject subjectList;
-    //ManageQuestion questionList_Random;
-    //questionList_Random = subjectList.getRandomQuestion(numberQuestion, subjectCode);
 
-    //if (questionList_Random.getCountQuestions() == 0) {
-    //    cout << "Danh sach cau hoi trong!" << endl;
-    //}
+    questionList_Random = subjectList.getRandomQuestion(numberQuestion, subjectCode);
+    if (questionList_Random.getCountQuestions() == 0) {
+        cout << "Danh sach cau hoi trong!" << endl;
+    }
 
 }
 
@@ -51,7 +49,7 @@ void ManageExam::countDown() {
     }
 }
 
-void ManageExam::conductExam() {
+resultList ManageExam::conductExam() {
     // Xử lý hiển thị thời gian bắt đầu thi
     time_t currentTime = time(NULL); // thời gian bắt thi format giây
     tm timeStartExam;                // thời gian bắt thi format giây, giờ phút giây, ngày tháng năm
@@ -72,27 +70,11 @@ void ManageExam::conductExam() {
         << (timeEndExam.tm_min < 10 ? "0" : "") << timeEndExam.tm_min << ":"
         << (timeEndExam.tm_sec < 10 ? "0" : "") << timeEndExam.tm_sec << "\n";
 
-    
-    
-    
-    ManageSubject subjectList;
-    ManageQuestion questionList_Random;
-    questionList_Random = subjectList.getRandomQuestion(numberQuestion, subjectCode);
-
-    if (questionList_Random.getCountQuestions() == 0) {
-        cout << "Danh sach cau hoi trong!" << endl;
-    }
-
 
     // Sao chép dữ liệu ID câu hỏi và câu trả lời qua mảng
     int currQuestion = 0;
     Question q = questionList_Random.getQuestionByIndex(currQuestion);
     PTRQUESTION p = questionList_Random.getList();
-
-    //if (q == NULL) {
-    //    cout << "Loi truy cap cau hoi!" << endl;
-    //    return;
-    //}
 
     //struct resultList answerRecord;
     for (int i = 0; i < numberQuestion; i++) {
@@ -140,7 +122,7 @@ void ManageExam::conductExam() {
         }
         else if (choose == "E") {
             isSubmitted = true;
-            return;
+            return answerRecord;
         }
         else if (choose == "A") {
             answerRecord.answerList[currQuestion]->chosenAnswer = 'A';
@@ -179,7 +161,7 @@ void ManageExam::conductExam() {
                 currQuestion++;
             }
         }
-  
     }
+    return answerRecord;
 }
 
