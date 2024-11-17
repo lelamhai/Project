@@ -69,7 +69,7 @@ void Layout::templateMenu()
             hover += 1;
         }
         
-        if (GetAsyncKeyState(VK_RETURN) & 0x0001 && active != hover)
+        if (GetAsyncKeyState(VK_TAB) & 0x0001 && active != hover)
         {
             int count = menu.size();
             if (hover == count - 2)

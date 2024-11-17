@@ -16,7 +16,7 @@ private:
 	StatePage currentPage;
 
 public:
-	void setRun(StatePage page);
+	void setRunPage(StatePage page);
 	void main();
 	Page();
 	~Page();

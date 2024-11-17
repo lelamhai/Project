@@ -8,7 +8,7 @@ Page::~Page()
 {
 }
 
-void Page::setRun(StatePage page)
+void Page::setRunPage(StatePage page)
 {
 	currentPage = page;
 }

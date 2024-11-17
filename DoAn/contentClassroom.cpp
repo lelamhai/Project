@@ -49,8 +49,8 @@ void ContentClassroom::drawClassroom()
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
 	cout << char(180);
 
-	/*y = y + (2 * 3) - 1;
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
+	y = y + (2 * 3) - 1;
+	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
 	cout << "Message";*/
 
 	y = y + 2;
@@ -333,6 +333,13 @@ void ContentClassroom::selectData()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		{
+			currentClassroom = C_DETAIL;
+			Sleep(150);
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
 		{
 			moveMenu--;
@@ -347,15 +354,7 @@ void ContentClassroom::selectData()
 			continue;
 		}
 
-		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
-		{
-			currentClassroom = C_DETAIL;
-			Sleep(150);
-			return;
-		}
-
-
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
 			if (moveMenu != 0)
 			{
@@ -427,12 +426,6 @@ void ContentClassroom::createData()
 			switch (inputClassroomCode.getEndKey())
 			{
 			case ENTER:
-				if (moveMenu != 0)
-				{
-					currentClassroom = C_EXIT;
-					return;
-				}
-
 				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
 				{
 					stateInput = FORM_ENTER;
@@ -448,6 +441,14 @@ void ContentClassroom::createData()
 			case F3:
 				currentClassroom = C_SEARCH;
 				return;
+
+			case TAB:
+				if (moveMenu != 0)
+				{
+					currentClassroom = C_EXIT;
+					return;
+				}
+				break;
 
 			case DOWN:
 			case UP:
@@ -469,12 +470,6 @@ void ContentClassroom::createData()
 			switch (inputClassroomName.getEndKey())
 			{
 			case ENTER:
-				if (moveMenu != 0)
-				{
-					currentClassroom = C_EXIT;
-					return;
-				}
-
 				if (inputClassroomCode.getText() != "" && inputClassroomName.getText() != "")
 				{
 					stateInput = FORM_ENTER;
@@ -482,6 +477,7 @@ void ContentClassroom::createData()
 				}
 				stateInput = FORM_CODE;
 				break;
+
 			case F1:
 				currentClassroom = C_SELECT;
 				return;
@@ -493,6 +489,14 @@ void ContentClassroom::createData()
 			case DOWN:
 			case UP:
 				stateInput = FORM_CODE;
+				break;
+
+			case TAB:
+				if (moveMenu != 0)
+				{
+					currentClassroom = C_EXIT;
+					return;
+				}
 				break;
 
 			default:
@@ -527,11 +531,9 @@ void ContentClassroom::createData()
 				gotoXY(34 + 100 + 30 + textPosX, 19);
 				text.display();
 			}
-
-			
 			stateInput = FORM_CODE;
 		}
-
+	
 		if (stateInput == FORM_EXIT)
 		{
 			return;
@@ -601,24 +603,28 @@ void ContentClassroom::editData()
 			switch (inputClassroomName.getEndKey())
 			{
 			case ENTER:
-				if (moveMenu != 0)
-				{
-					currentClassroom = C_EXIT;
-					return;
-				}
-
 				if (inputClassroomName.getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
 				}
 				break;
+
 			case F1:
 				currentClassroom = C_SELECT;
 				return;
+
 			case F3:
 				currentClassroom = C_SEARCH;
 				return;
+
+			case TAB:
+				if (moveMenu != 0)
+				{
+					currentClassroom = C_EXIT;
+					return;
+				}
+				break;
 			default:
 				break;
 			}
@@ -699,18 +705,20 @@ void ContentClassroom::findData()
 				continue;
 			}
 
-			char s = _getch();
-			int key = keySpecial(s);
-			switch (s)
+			if (GetAsyncKeyState(VK_TAB) & 0x8000)
 			{
-			case ENTER:
 				if (moveMenu != 0)
 				{
 					currentClassroom = C_EXIT;
 					Sleep(150);
 					return;
 				}
-				break;
+			}
+
+			char s = _getch();
+			int key = keySpecial(s);
+			switch (s)
+			{
 			case BACKSPACE:
 				if (textSearch.length() <= 0 || cursorPosition <= 0)
 				{

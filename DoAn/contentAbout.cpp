@@ -66,9 +66,8 @@ void ContentAbout::content()
 	
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			Sleep(150);
 			return;
 		}
 		Sleep(150);
