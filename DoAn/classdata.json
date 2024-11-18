@@ -1,101 +1,109 @@
 {
-  "classCount": 14,
-  "classes": [
-    {
-      "classCode": "C001",
-      "className": "D23TXCN04-K",
-      "students": [
+    "classCount": 14,
+    "classes": [
         {
-          "firstName": "Vu",
-          "gender": 77,
-          "lastName": "Duy Khoa",
-          "password": "khoavd",
-          "scores": [],
-          "studentCode": "K23DTCN270"
+            "classCode": "C001",
+            "className": "D23TXCN04-K",
+            "students": [
+                {
+                    "firstName": "Ta",
+                    "gender": 77,
+                    "lastName": "Anh Tai - Update",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN307"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Duy Khoa",
+                    "password": "khoavd",
+                    "scores": [],
+                    "studentCode": "K23DTCN270"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Duy Dung",
+                    "password": "dungvd",
+                    "scores": [],
+                    "studentCode": "K23DTCN269"
+                }
+            ]
         },
         {
-          "firstName": "Vu",
-          "gender": 77,
-          "lastName": "Duy Dung",
-          "password": "dungvd",
-          "scores": [],
-          "studentCode": "K23DTCN269"
+            "classCode": "C002",
+            "className": "K23DTCN100-K",
+            "students": [
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Duy Dung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "admin"
+                }
+            ]
+        },
+        {
+            "classCode": "C003",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C004",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C005",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C006",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C007",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C008",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C009",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C010",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C011",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C012",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C012",
+            "className": "D23TXCN06-K Updated",
+            "students": []
+        },
+        {
+            "classCode": "C014",
+            "className": "D23TXCN07-K",
+            "students": []
         }
-      ]
-    },
-    {
-      "classCode": "C002",
-      "className": "K23DTCN100-K",
-      "students": [
-       {
-          "firstName": "Vu",
-          "gender": 77,
-          "lastName": "Duy Dung",
-          "password": "123456",
-          "scores": [],
-          "studentCode": "admin"
-       }
-      ]
-    },
-    {
-      "classCode": "C003",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C004",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C005",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C006",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C007",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C008",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C009",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C010",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C011",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C012",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C012",
-      "className": "D23TXCN06-K Updated",
-      "students": []
-    },
-    {
-      "classCode": "C014",
-      "className": "D23TXCN07-K",
-      "students": []
-    }
-  ]
+    ]
 }

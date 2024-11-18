@@ -10,7 +10,7 @@ using namespace std;
 const string SOURCE_STUDENT = "studentdata.json";
 
 struct StudentPage {
-	PTRSTUDENT studentList = nullptr;
+	PTRSTUDENT studentList = new NodeStudent;
 	int currentPage; // trang hiện tại
 	int numberStudentPerPage; // tổng số student trên 1 trang
 	int totalPage; // tổng số trang
@@ -79,7 +79,7 @@ void printStudentsInList(PTRSTUDENT studentList);
 PTRSTUDENT findStudentInList(PTRSTUDENT studentList, const char* studentCode);
 
 // Delete student in list
-bool deleteStudentInList(PTRSTUDENT studentList, const char* studentCode);
+bool deleteStudentInList(PTRSTUDENT& studentList, const char* studentCode);
 
 // Add student to list
 bool addStudentToList(PTRSTUDENT& studentList, Student std1);

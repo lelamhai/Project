@@ -21,12 +21,25 @@ void DungTest::main()
     ///------TEST FOR CLASS----------------
      
      ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn
-     //StudentPage studentPage = test.searchStudentInCLass("C001", "khoa", 1); // Mã lớp, từ khóa, trang
-     /*Classroom a = test.findClassByCode("C001");*/
-     //Student page cũng có tham số y chang class page
-     //test.printClasses();
-     // cout << getCountStudentOfList(studentPage.studentList);
-     //printStudents(studentPage.studentList);
+     
+     // Hàm thêm học sinh vào  lớp
+     test.addStudentToClass("C001", "K23DTCN307", "Ta", "Anh Tai", 'M', "123456");
+
+     // Hàm chỉnh sửa thông tin học sinh trong lớp
+     // MÃ lớp, mã sinh viên, họ, tên, giới tính, mật khẩu
+     test.editStudentInClass("C001", "K23DTCN307", "Ta", "Anh Tai - Update", 'M', "123456");
+
+     // Lấy tổng số sinh viên của lớp
+     int soHS = test.getCountSudentOfClass("C001");
+     cout << "So hoc sinh trong lop la: " << soHS << endl;
+
+     // Hàm xóa thông tin 1 học sinh trong lớp
+     // Mã lớp, mã sinh viên
+     test.deleteStudentInClass("C001", "K23DTCN307");
+
+     // Hàm tìm kiếm này có phân trang luôn, nếu như a muốn load tất cả thì bỏ trống từ khóa
+     StudentPage studentPage = test.searchStudentInCLass("C001", "", 1); // Mã lớp, từ khóa, trang
+     printStudents(studentPage.studentList);
      
 
 

@@ -310,7 +310,7 @@ PTRSTUDENT findStudentInList(PTRSTUDENT studentList, const char* studentCode) {
 }
 
 // Delete student by student code
-bool deleteStudentInList(PTRSTUDENT studentList, const char* studentCode) {
+bool deleteStudentInList(PTRSTUDENT& studentList, const char* studentCode) {
     if (studentList == nullptr) return false;
     if (strcmp(studentList->info.studentCode, studentCode) == 0) {
         PTRSTUDENT temp = studentList;
@@ -343,7 +343,6 @@ bool addStudentToList(PTRSTUDENT& studentList, Student std1) {
     tmpStudent->info.gender = std1.gender;
     tmpStudent->next = nullptr;
      
-    tmpStudent->next = nullptr;
     if (studentList == nullptr) {
         studentList = tmpStudent;
     }
@@ -366,7 +365,7 @@ StudentPage getStudentPerPage(PTRSTUDENT studentList, int page)
     studentPage.totalStudent = totalStudents;
     studentPage.numberStudentPerPage = studentPerPage;
 
-    PTRSTUDENT pageResult = new NodeStudent;
+    PTRSTUDENT pageResult = nullptr;
 
     if (page < 1 || page > totalPages) {
         return studentPage;

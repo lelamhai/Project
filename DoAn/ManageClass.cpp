@@ -229,6 +229,7 @@ bool ManageClass::addStudentToClass(const string classCode, const string student
     strcpy_s(std1.lastName, lastName.c_str());
     std1.gender = gender;
     strcpy_s(std1.password, password.c_str());
+    std1.scoreList = nullptr;
 
     PTRSTUDENT tmpStudent = new NodeStudent;
     tmpStudent->info = std1;
@@ -274,8 +275,7 @@ StudentPage ManageClass::searchStudentInCLass(const string classCode, string key
     if (keyword == "") {
         return getStudentPerPage(classes[index]->studentList, page);
     }
-    PTRSTUDENT resultList = new NodeStudent;
-    resultList = nullptr;
+    PTRSTUDENT resultList = nullptr;
     PTRSTUDENT startList = classes[index]->studentList;
     while (startList != nullptr) {
         string fullName = string(startList->info.firstName) + " " + string(startList->info.lastName);
