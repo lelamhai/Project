@@ -74,6 +74,5 @@ public:
 
     void printQuestionList(const char* subjectCode);
 
-
     ManageQuestion getRandomQuestion(int n, const char* subjectCode);
 };
