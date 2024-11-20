@@ -11,10 +11,12 @@
 #include <iostream>
 using namespace std;
 
+
 class HuyTest
 {
 public:
-	void main();
 	HuyTest();
 	~HuyTest();
+	void main();
+	void conductExam();
 };
