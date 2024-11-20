@@ -1,3 +1,0 @@
-﻿  ManageClass.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\ManageClass.cpp(268,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
-  DoAn.vcxproj -> D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\x64\Debug\DoAn.exe
