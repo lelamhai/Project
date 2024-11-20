@@ -7,10 +7,10 @@ using namespace std;
 int main()
 {	
 	//---------------HAI----------------
-	/*Page* p = new Page();
+	Page* p = new Page();
 	p->setRun(PAGE_LOADING);
 	p->main();
-	delete p;*/
+	delete p;
 	//----------------------------------
 
 	//----------------HUY ----------------

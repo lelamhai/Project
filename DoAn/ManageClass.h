@@ -61,11 +61,8 @@ public:
 	void loadFromFile();
 
 	
-
 	// Pagination
 	ClassPage getClassPerPage(int pageNumber = 1);
-
-	
 
 	bool logIn(const char* user, const char* password);
 
