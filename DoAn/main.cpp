@@ -8,15 +8,15 @@ int main()
 {	
 	//---------------HAI----------------
 	Page* p = new Page();
-	p->setRun(PAGE_LOADING);
+	p->setRunPage(PAGE_LOADING);
 	p->main();
 	delete p;
-	//----------------------------------
+	//----------p;------------------------
 
 	//----------------HUY ----------------
-	HuyTest* h = new HuyTest();
-	h->main();
-	delete h;
+	//HuyTest* h = new HuyTest();
+	//h->main();
+	//delete h;
 	//------------------------------------------
 	
 	//--------------------DUNG-------------------
