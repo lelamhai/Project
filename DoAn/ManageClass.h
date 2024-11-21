@@ -87,6 +87,13 @@ public:
 	// Search student In class
 	StudentPage searchStudentInCLass(const string classCode, string keyword, int page = 1);
 
+	// View score of class in subject
+	//StudentPage getListScoreByClassAndSubject(const string classCode, const string subjectCode);
+
+
+
+	
+
 };
 
 void printClassPage(ClassPage classPage);

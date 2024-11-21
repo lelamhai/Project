@@ -87,6 +87,9 @@ bool addStudentToList(PTRSTUDENT& studentList, Student std1);
 // Paginate for student
 StudentPage getStudentPerPage(PTRSTUDENT studentList, int page);
 
+// Get Score of student 
+int getScoreOfStudent(PTRSTUDENT studentList, const string studentCode, const string subjectCode);
+
 
 
 

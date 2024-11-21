@@ -147,6 +147,7 @@
     <ClCompile Include="LoginData.cpp" />
     <ClCompile Include="ManageClass.cpp" />
     <ClCompile Include="ManageQuestion.cpp" />
+    <ClCompile Include="ManageScore.cpp" />
     <ClCompile Include="ManageStudent.cpp" />
     <ClCompile Include="ManageSubject.cpp" />
     <ClCompile Include="popupDelete.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="LoginData.h" />
     <ClInclude Include="ManageClass.h" />
     <ClInclude Include="ManageQuestion.h" />
+    <ClInclude Include="ManageScore.h" />
     <ClInclude Include="ManageSubject.h" />
     <ClInclude Include="MCQ.h" />
     <ClInclude Include="PopupTutorial.h" />

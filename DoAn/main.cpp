@@ -7,19 +7,19 @@ using namespace std;
 int main()
 {	
 	//---------------HAI----------------
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	//Page* p = new Page();
 	//p->setRun(PAGE_LOADING);
 	//p->main();
 	//delete p;
 	//----------------------------------
-=======
+//=======
 	Page* p = new Page();
 	p->setRunPage(PAGE_LOADING);
 	p->main();
 	delete p;
 	//----------p;------------------------
->>>>>>> cbff50688a88d1d1a38e063e534e2d97f0302792
+//>>>>>>> cbff50688a88d1d1a38e063e534e2d97f0302792
 
 	//----------------HUY ----------------
 	//HuyTest* h = new HuyTest();

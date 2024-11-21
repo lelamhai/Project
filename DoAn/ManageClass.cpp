@@ -289,6 +289,12 @@ StudentPage ManageClass::searchStudentInCLass(const string classCode, string key
     return getStudentPerPage(resultList, page);
 }
 
+//StudentPage ManageClass::getListScoreByClassAndSubject(const string classCode, const string subjectCode, int page)
+//{
+//    StudentPage getPage = searchStudentInCLass(classCode, "", 1);
+//
+//}
+
 // Get count student in class
 int ManageClass::getCountSudentOfClass(const char* classCode)
 {

@@ -392,3 +392,8 @@ StudentPage getStudentPerPage(PTRSTUDENT studentList, int page)
 
     return studentPage;
 }
+
+int getScoreOfStudent(PTRSTUDENT studentList, const string studentCode, const string subjectCode)
+{
+    return 0;
+}

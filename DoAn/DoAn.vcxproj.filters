@@ -103,6 +103,12 @@
     <Filter Include="Source Files\DATA\Subject">
       <UniqueIdentifier>{c6241ce7-08c7-46e6-9800-79a558d55105}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DATA\Score">
+      <UniqueIdentifier>{49f4a09b-ccdc-4b3d-9c91-32d1fd606dda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DATA\Score">
+      <UniqueIdentifier>{b3a71ed6-1a7d-438a-97a5-4229076df177}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -234,6 +240,9 @@
     <ClCompile Include="ManageExam.cpp">
       <Filter>Source Files\DATA\Pages</Filter>
     </ClCompile>
+    <ClCompile Include="ManageScore.cpp">
+      <Filter>Source Files\DATA\Score</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -358,6 +367,9 @@
     </ClInclude>
     <ClInclude Include="ManageExam.h">
       <Filter>Header Files\DATA\Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="ManageScore.h">
+      <Filter>Header Files\DATA\Score</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
