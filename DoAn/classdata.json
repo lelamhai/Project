@@ -6,14 +6,6 @@
             "className": "D23TXCN04-K",
             "students": [
                 {
-                    "firstName": "Ta",
-                    "gender": 77,
-                    "lastName": "Anh Tai - Update",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN307"
-                },
-                {
                     "firstName": "Vu",
                     "gender": 77,
                     "lastName": "Duy Khoa",
