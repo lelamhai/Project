@@ -6,6 +6,7 @@ ManageExam::ManageExam(int numberQuestion, const char* subjectCode, int timeForE
     this->subjectCode = subjectCode;
     
     remainingTime_sec = timeForExam_min * 60;
+    isTimeUp = false;
     isSubmitted = false;
 
 
@@ -53,20 +54,29 @@ void ManageExam::setSubmitted() {
     isSubmitted = true;
 }
 
+bool ManageExam::getTimeUp() {
+    return isTimeUp;
+}
+void ManageExam::setTimeUp() {
+    isTimeUp = true;
+}
+
 int ManageExam::getNumberQuestion() {
     return numberQuestion;
 }
 
-Question ManageExam::getRandomedAnswerByIndex(int i) {
+Question ManageExam::getRandomedQuestionByIndex(int i) {
     return questionList_Random.getQuestionByIndex(i); 
 }
 
-resultList ManageExam::getResult() {
-    return answerRecord;
+answer* ManageExam::getAnswer(int index) {
+    return answerRecord.answerList[index];
 }
 void ManageExam::setAnswer(int index, char choose) {
     answerRecord.answerList[index]->chosenAnswer = choose;
 }
+
+
 
 tm ManageExam::getTimeStart() {
     time_t currentTime = time(NULL); // lấy thời gian hiện tại gán vào biến (format giây)

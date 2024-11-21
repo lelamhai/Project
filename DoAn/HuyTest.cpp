@@ -13,18 +13,17 @@ HuyTest::~HuyTest()
 
 void HuyTest::main() {
 
-
-
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM---------------------------------------------*/
-
-	// Khởi tạo
 	mutex mtx; // Tạo mutex cho đồng bộ hóa
+
+	// Phần nhập thông tin đầu vào
 	int numberQuestion_input = 3; // số câu hỏi muốn thi
 	const char* subjectCode_input = "CSDL"; // tên môn học muốn thi
 	int timeForExam_min_input = 1; // số phút muốn thi
 
-
+	// Khởi tạo đối tượng quản lý thi
 	ManageExam exam1(numberQuestion_input, subjectCode_input, timeForExam_min_input);
+
 
 	// Xuất thời gian bắt đầu thi
 	tm timeStart = exam1.getTimeStart();
@@ -42,10 +41,10 @@ void HuyTest::main() {
 
 	// Luồng đếm thời gian
 	thread thr_Timer([&exam1, &mtx]() {
-		while (exam1.getRemainingTime() > 0) {
+		while (true) {
 			{
 				lock_guard<mutex> lock(mtx);
-				if (exam1.getIsSubmitted()) {
+				if (exam1.getIsSubmitted() || exam1.getTimeUp()) {
 					break; // Nếu người thi chọn nộp bài thi sớm
 				}
 			}
@@ -56,12 +55,16 @@ void HuyTest::main() {
 				exam1.changeRemainingTime(-1);
 				cout << "Thoi gian con lai: " << exam1.getRemainingTime() << endl;
 				if (exam1.getRemainingTime() <= 0) {
-					cout << "\nHet thoi gian lam bai!\n";
+					cout << "\nHet thoi gian lam bai. Hay nhan phim bat ky de xem ket qua !\n";
+					exam1.setTimeUp();
+					break;
 				}
 			}
 		}
 
 		});
+
+	
 
 	// Luồng thực thi
 	thread thr_Exam ([&exam1, &mtx]() {
@@ -69,30 +72,42 @@ void HuyTest::main() {
 		int currQuestion = 0;
 		char choose;
 
-		while (exam1.getRemainingTime() > 0 && !exam1.getIsSubmitted()) {
-			//int ID = getRandomedAnswerByIndex(int i)(currQuestion).questionId;
+		while (true) {
 
-			string content = exam1.getRandomedAnswerByIndex(currQuestion).content;
-			std::cout << "Cau " << currQuestion + 1 << ": " << content << endl;
+			if (exam1.getTimeUp() || exam1.getIsSubmitted()) {
+				break;
+			}
 
-			string optionA = exam1.getRandomedAnswerByIndex(currQuestion).optionA;
-			std::cout << optionA << endl;
+			// In ra câu hỏi và các đáp án để lựa chọn
+			string content = exam1.getRandomedQuestionByIndex(currQuestion).content;
+			cout << "Cau " << currQuestion + 1 << ": " << content << endl;
 
-			string optionB = exam1.getRandomedAnswerByIndex(currQuestion).optionB;
-			std::cout << optionB << endl;
+			string optionA = exam1.getRandomedQuestionByIndex(currQuestion).optionA;
+			cout << optionA << endl;
 
-			string optionC = exam1.getRandomedAnswerByIndex(currQuestion).optionC;
-			std::cout << optionC << endl;
+			string optionB = exam1.getRandomedQuestionByIndex(currQuestion).optionB;
+			cout << optionB << endl;
 
-			string optionD = exam1.getRandomedAnswerByIndex(currQuestion).optionD;
-			std::cout << optionD << endl;
+			string optionC = exam1.getRandomedQuestionByIndex(currQuestion).optionC;
+			cout << optionC << endl;
+
+			string optionD = exam1.getRandomedQuestionByIndex(currQuestion).optionD;
+			cout << optionD << endl;
 
 
-			std::cout << "Nhap lua chon (A, B, C, D, N =next, P =previous, E =exit):" << endl;
+			// Nhập lựa chọn của người thi và xử lý
+			cout << "Nhap lua chon (A, B, C, D, N =next, P =previous, E =exit):" << endl;
 			cin >> choose;
 
-			if (choose == 'N') { // KIỂM TRA PHẦN CHỨC NĂNG NEXT
-				if (currQuestion >= numberQuestion) {
+			{
+				lock_guard<mutex> lock(mtx);
+				if (exam1.getTimeUp()) {
+					break; // Nếu hết thời gian trong lúc nhập lựa chọn, thì thoát
+				}
+			}
+
+			if (choose == 'N') {
+				if (currQuestion >= numberQuestion - 1) {
 					currQuestion = 0;
 				}
 				else {
@@ -101,17 +116,25 @@ void HuyTest::main() {
 			}
 			else if (choose == 'P') {
 				if (currQuestion <= 0) {
-					currQuestion = numberQuestion;
+					currQuestion = numberQuestion - 1;
 				}
-				currQuestion--;
-
+				else {
+					currQuestion--;
+				}
 			}
 			else if (choose == 'E') {
 				exam1.setSubmitted();
 				break;
 			}
-			else if (choose == 'A') {
+
+			else if (choose == 'A' || choose == 'B' || choose == 'C' || choose == 'D') {
 				exam1.setAnswer(currQuestion, choose);
+
+				// In ra trạng thái bài thi
+				for (int i = 0; i < numberQuestion; i++) {
+					answer* p = exam1.getAnswer(i);
+					cout << "Cau " << i + 1 << ": " << p->chosenAnswer << endl;
+				}
 
 				if (currQuestion >= numberQuestion - 1) {
 					currQuestion = 0;
@@ -120,47 +143,23 @@ void HuyTest::main() {
 					currQuestion++;
 				}
 			}
-			else if (choose == 'B') {
-				exam1.setAnswer(currQuestion, choose);
-				if (currQuestion >= numberQuestion - 1) {
-					currQuestion = 0;
-				}
-				else {
-					currQuestion++;
-				}
-
-			}
-			else if (choose == 'C') {
-				exam1.setAnswer(currQuestion, choose);
-				if (currQuestion >= numberQuestion - 1) {
-					currQuestion = 0;
-				}
-				else {
-					currQuestion++;
-				}
-			}
-			else if (choose == 'D') {
-				exam1.setAnswer(currQuestion, choose);
-				if (currQuestion >= numberQuestion - 1) {
-					currQuestion = 0;
-				}
-				else {
-					currQuestion++;
-				}
+			else {
+				cout << "Nhap lieu khong hop le !" << endl;
 			}
 
-			// VIẾT THÊM CODE ĐỂ IN RA TRẠNG THÁI CÁC CÂU HỎI ĐÃ THI , CHƯA THI
 		}
-		});
+	});
 
 	thr_Timer.join();
 	thr_Exam.join();
 
 	// In ra kết quả sau khi thi xong
-	cout << "\nKet qua thi la:";
-	for (int i = 0; i < exam1.getNumberQuestion(); i++) {
-		cout << "\nCau hoi " << i + 1 << exam1.getResult().answerList[i]->questionId;
-		cout << "\nDap an da chon: " << exam1.getResult().answerList[i]->chosenAnswer;
-		cout << "\nDap an dung la: " << exam1.getResult().answerList[i]->correctAnswer;
+	int numberQuestion = exam1.getNumberQuestion();
+	cout << "\nKet qua thi la:" << endl;
+	for (int i = 0; i < numberQuestion; i++) {
+		answer* p = exam1.getAnswer(i);
+		cout << "Cau " << i + 1 << ": " << (p->chosenAnswer == p->correctAnswer ? "Dung" : "Sai")
+			<< " - Da chon " << p->chosenAnswer
+			<< " - Dap an la " << p->correctAnswer << endl;
 	}
 }

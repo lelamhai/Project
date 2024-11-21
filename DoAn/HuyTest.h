@@ -6,7 +6,6 @@
 #include "ManageQuestion.h"
 #include "ManageSubject.h"
 #include "ManageExam.h"
-#include <future> // Thêm thư viện để sử dụng std::promise và std::future
 
 #include <iostream>
 using namespace std;
@@ -18,5 +17,4 @@ public:
 	HuyTest();
 	~HuyTest();
 	void main();
-	void conductExam();
 };

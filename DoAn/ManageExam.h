@@ -21,6 +21,7 @@ private:
 	const char* subjectCode;
   
 	bool isSubmitted; // trả về true khi người thi nhấn nộp bài, muốn kết thúc trước khi hết giờ
+	bool isTimeUp;
 	int remainingTime_sec; // thời gian còn lại bài thi tính bằng giây
 
 	ManageSubject subjectList;
@@ -38,19 +39,25 @@ public:
 	bool getIsSubmitted();
 	void setSubmitted();
 
+	bool getTimeUp();
+	void setTimeUp();
+
 	int getNumberQuestion();
 
 
-	Question getRandomedAnswerByIndex(int i); // hàm trả về câu hỏi thứ i trong số các câu đã lấy ramdom
+	Question getRandomedQuestionByIndex(int i); // hàm trả về câu hỏi thứ i trong số các câu đã lấy ramdom
 	
-	void setAnswer(int index, char choose);
+	void setAnswer(int index, char choose); // lưu đáp án người thi đã chọn
+	
 
-	resultList getResult(); // hàm trả về struc lưu kết quả thi
+	answer* getAnswer(int index); // hàm trả về struc lưu kết quả thi sau khi thi xong
 
 
 	tm getTimeStart(); // hàm trả về đối tượng lưu thời gian bắt đầu thi
 
 	tm getTimeEnd(tm timeStartExam); // hàm trả về đối tượng lưu thời gian kết thúc thi
+
+
 
 };
 
