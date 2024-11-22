@@ -9,13 +9,10 @@ ManageExam::ManageExam(int numberQuestion, const char* subjectCode, int timeForE
     isTimeUp = false;
     isSubmitted = false;
 
-
-    answerRecord.countDone = 0;
     answerRecord.answerList[MAX_NUMBER_QUESTION];
     for (int i = 0; i < numberQuestion; i++) {
         answerRecord.answerList[i] = new answer; // Cấp phát bộ nhớ cho mỗi phần tử
     }
-
 
     questionList_Random = subjectList.getRandomQuestion(numberQuestion, subjectCode);
     if (questionList_Random.getCountQuestions() == 0) {
@@ -23,11 +20,7 @@ ManageExam::ManageExam(int numberQuestion, const char* subjectCode, int timeForE
     }
 
     // Sao chép dữ liệu ID câu hỏi và câu trả lời qua mảng
-    int currQuestion = 0;
-    Question q = questionList_Random.getQuestionByIndex(currQuestion);
     PTRQUESTION p = questionList_Random.getList();
-
-    //struct resultList answerRecord;
     for (int i = 0; i < numberQuestion; i++) {
         answerRecord.answerList[i]->questionId = p->info.questionId;
         answerRecord.answerList[i]->correctAnswer = p->info.answer;

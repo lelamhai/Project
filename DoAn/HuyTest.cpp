@@ -17,13 +17,23 @@ void HuyTest::main() {
 	mutex mtx; // Tạo mutex cho đồng bộ hóa
 
 	// Phần nhập thông tin đầu vào
-	int numberQuestion_input = 3; // số câu hỏi muốn thi
-	const char* subjectCode_input = "CSDL"; // tên môn học muốn thi
-	int timeForExam_min_input = 1; // số phút muốn thi
+	char subjectCode_input[15];
+	cout << "Nhap ma mon hoc: ";
+	cin.getline(subjectCode_input, 15);
+	// CẦN BỔ SUNG THÊM PHẦN KIỂM TRA MÔN HỌC NHẬP ĐÚNG KHÔNG, CÓ TỒN TẠI TRONG DANH SÁCH CHƯA, NẾ CHWUA THÌ YÊU CÂU NHẬP LẠI
+	
+	int numberQuestion_input; // số câu hỏi muốn thi
+	cout << "Nhap so sau muon thi: ";
+	cin >> numberQuestion_input;
+	// CẦN BỔ SUNG TÍNH NĂNG KIỂM TRA NHẬP LIỆU HỢP LỆ
+
+	int timeForExam_min_input; // số phút muốn thi
+	cout << "Nhap so phut thi: ";
+	cin >> timeForExam_min_input;
+	// CẦN BỔ SUNG TÍNH NĂNG KIỂM TRA NHẬP LIỆU HỢP LỆ
 
 	// Khởi tạo đối tượng quản lý thi
 	ManageExam exam1(numberQuestion_input, subjectCode_input, timeForExam_min_input);
-
 
 	// Xuất thời gian bắt đầu thi
 	tm timeStart = exam1.getTimeStart();
@@ -123,6 +133,7 @@ void HuyTest::main() {
 				}
 			}
 			else if (choose == 'E') {
+				// them chuc nang hoi co muon chac chan nop bai khong kiem tra if con bai thi hoi chuwa hoan thanh
 				exam1.setSubmitted();
 				break;
 			}
