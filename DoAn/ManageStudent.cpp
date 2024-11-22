@@ -395,5 +395,18 @@ StudentPage getStudentPerPage(PTRSTUDENT studentList, int page)
 
 int getScoreOfStudent(PTRSTUDENT studentList, const string studentCode, const string subjectCode)
 {
-    return 0;
+    int bestScore = -1;
+    PTRSTUDENT current = studentList;
+    while (current != nullptr) {
+        PTRSCORE scoreList = current->info.scoreList;
+        while (scoreList != nullptr) {
+            if (scoreList->info.subjectCode == subjectCode && bestScore < scoreList->info.diem) {
+                bestScore = scoreList->info.diem;
+            }
+            scoreList = scoreList->next;
+        }
+        current = current->next;
+    }
+
+    return bestScore;
 }
