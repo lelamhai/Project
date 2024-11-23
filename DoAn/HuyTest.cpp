@@ -20,17 +20,16 @@ void HuyTest::main() {
 	char subjectCode_input[15];
 	cout << "Nhap ma mon hoc: ";
 	cin.getline(subjectCode_input, 15);
-	// CẦN BỔ SUNG THÊM PHẦN KIỂM TRA MÔN HỌC NHẬP ĐÚNG KHÔNG, CÓ TỒN TẠI TRONG DANH SÁCH CHƯA, NẾ CHWUA THÌ YÊU CÂU NHẬP LẠI
 	
 	int numberQuestion_input; // số câu hỏi muốn thi
-	cout << "Nhap so sau muon thi: ";
+	cout << "Nhap so cau muon thi: ";
 	cin >> numberQuestion_input;
-	// CẦN BỔ SUNG TÍNH NĂNG KIỂM TRA NHẬP LIỆU HỢP LỆ
+	// CẦN BỔ SUNG TÍNH NĂNG KIỂM TRA NHẬP LIỆU HỢP LỆ dung countQuestionsInSubject trong ManageSubject class. sau khi thuc hien thi
 
 	int timeForExam_min_input; // số phút muốn thi
 	cout << "Nhap so phut thi: ";
 	cin >> timeForExam_min_input;
-	// CẦN BỔ SUNG TÍNH NĂNG KIỂM TRA NHẬP LIỆU HỢP LỆ
+	// CẦN BỔ SUNG TÍNH NĂNG KIỂM TRA NHẬP LIỆU HỢP LỆ // BO SUNG THEM KHOI TAO BAO DAU CAU TRA LOI LA ""
 
 	// Khởi tạo đối tượng quản lý thi
 	ManageExam exam1(numberQuestion_input, subjectCode_input, timeForExam_min_input);
@@ -49,8 +48,10 @@ void HuyTest::main() {
 		<< (timeEnd.tm_min < 10 ? "0" : "") << timeEnd.tm_min << ":"
 		<< (timeEnd.tm_sec < 10 ? "0" : "") << timeEnd.tm_sec << "\n";
 
-	// Luồng đếm thời gian
+	// Luồng đếm thời gian nguoc
 	thread thr_Timer([&exam1, &mtx]() {
+		int time_sec_total, time_min, time_sec;
+
 		while (true) {
 			{
 				lock_guard<mutex> lock(mtx);
@@ -63,7 +64,12 @@ void HuyTest::main() {
 			{
 				lock_guard<mutex> lock(mtx);
 				exam1.changeRemainingTime(-1);
-				cout << "Thoi gian con lai: " << exam1.getRemainingTime() << endl;
+				time_sec_total = exam1.getRemainingTime();
+				time_min = time_sec_total / 60;
+				time_sec = time_sec_total - time_min * 60;
+				cout << "Thoi gian con lai: " << (time_min < 10 ? "0": "") << time_min << " phut : "
+					                         <<(time_sec < 10 ? "0": "") << time_sec << " giay" << endl;
+				
 				if (exam1.getRemainingTime() <= 0) {
 					cout << "\nHet thoi gian lam bai. Hay nhan phim bat ky de xem ket qua !\n";
 					exam1.setTimeUp();
@@ -133,7 +139,6 @@ void HuyTest::main() {
 				}
 			}
 			else if (choose == 'E') {
-				// them chuc nang hoi co muon chac chan nop bai khong kiem tra if con bai thi hoi chuwa hoan thanh
 				exam1.setSubmitted();
 				break;
 			}
@@ -173,4 +178,6 @@ void HuyTest::main() {
 			<< " - Da chon " << p->chosenAnswer
 			<< " - Dap an la " << p->correctAnswer << endl;
 	}
+
+	// CAN THEM CHAM DIEM VA IN RA TONG SO CAU DUNG TREN SO CAU
 }

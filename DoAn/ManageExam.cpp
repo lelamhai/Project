@@ -84,7 +84,7 @@ tm ManageExam::getTimeEnd(tm timeStart) {
     tm timeEnd;
 
     time_t timeStart_t = mktime(&timeStart); //chuyển đổi time kiểu tm sang kiểu time_t
-    timeStart_t += timeForExam_min; // cộng thêm thời gian thi vào thời gian bắt đầu
+    timeStart_t += timeForExam_min * 60; // cộng thêm thời gian thi vào thời gian bắt đầu
     
     localtime_s(&timeEnd, &timeStart_t); // chuyển đối time dạng time_t thành kiểu tm
     
