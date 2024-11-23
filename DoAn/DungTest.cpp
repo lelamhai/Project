@@ -35,7 +35,16 @@ void DungTest::main()
 
      // Hàm tìm kiếm này có phân trang luôn, nếu như a muốn load tất cả thì bỏ trống từ khóa
      StudentPage studentPage = test.searchStudentInCLass("C001", "", 1); // Mã lớp, từ khóa, trang
+     // Các thông số trong studentPage
+     //PTRSTUDENT studentList = new NodeStudent;
+     //int currentPage; // trang hiện tại
+     //int numberStudentPerPage; // tổng số student trên 1 trang
+     //int totalPage; // tổng số trang
+     //int totalStudent; // tổng số class
+     //int startIndex; // Số thứ tự bắt đầu của trang đó
+     //int endIndex; // số kết thúc của trang đó
      printStudents(studentPage.studentList);
+
 
      // Demo lấy tên lớp từ mã lớp
      Classroom classFound = test.findClassByCode("C001");
