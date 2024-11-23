@@ -20,11 +20,7 @@ void DungTest::main()
 
     ///------TEST FOR CLASS----------------
      
-     ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn
-     
-     // Hàm thêm học sinh vào  lớp
-     test.addStudentToClass("C001", "K23DTCN307", "Ta", "Anh Tai", 'M', "123456");
-
+     ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn 
      // Hàm chỉnh sửa thông tin học sinh trong lớp
      // MÃ lớp, mã sinh viên, họ, tên, giới tính, mật khẩu
      test.editStudentInClass("C001", "K23DTCN307", "Ta", "Anh Tai - Update", 'M', "123456");
@@ -40,6 +36,10 @@ void DungTest::main()
      // Hàm tìm kiếm này có phân trang luôn, nếu như a muốn load tất cả thì bỏ trống từ khóa
      StudentPage studentPage = test.searchStudentInCLass("C001", "", 1); // Mã lớp, từ khóa, trang
      printStudents(studentPage.studentList);
+
+     // Demo lấy tên lớp từ mã lớp
+     Classroom classFound = test.findClassByCode("C001");
+     string className = classFound.className;
      
 
 
