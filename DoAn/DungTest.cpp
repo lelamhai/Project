@@ -21,10 +21,15 @@ void DungTest::main()
     ///------TEST FOR CLASS----------------
      
      ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn 
+     
+     // Hàm tạo thông tin sinh viên cho lớp (trả về true false)
+     test.editStudentInClass("C001", "K23DTCN307", "Ta", "Anh Tai", 'M', "123456");
+     
      // Hàm chỉnh sửa thông tin học sinh trong lớp
      // MÃ lớp, mã sinh viên, họ, tên, giới tính, mật khẩu
      test.editStudentInClass("C001", "K23DTCN307", "Ta", "Anh Tai - Update", 'M', "123456");
 
+     
      // Lấy tổng số sinh viên của lớp
      int soHS = test.getCountSudentOfClass("C001");
      cout << "So hoc sinh trong lop la: " << soHS << endl;
