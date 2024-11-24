@@ -143,6 +143,7 @@ void ContentClassroom::handle()
 		{
 			cleanContent();
 			ContentDetailClassroom* detail = new ContentDetailClassroom();
+			detail->setClassCode(classCode);
 			detail->content();
 			delete detail;
 			currentClassroom = C_SELECT;
@@ -333,7 +334,7 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
 			currentClassroom = C_DETAIL;
 			Sleep(150);

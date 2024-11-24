@@ -20,13 +20,44 @@ using namespace std;
 class ContentDetailClassroom : public Content
 {
 private:
-	string classCode = "C002";
+	enum StateDetailClassroom
+	{
+		C_SELECT	= 0, // F1
+		C_CREATE	= 1, // Ins
+		C_EDIT		= 2, // F2
+		C_SEARCH	= 3, // F3
+		C_DELETE	= 4, // Del
+		C_DETAIL	= 5,
+
+		C_EXIT		= -1
+	};
+	StateDetailClassroom currentDetailClassroom;
+
+	enum SelectInput
+	{
+		FORM_CODE		= 0,
+		FORM_LAST		= 1,
+		FORM_FIRST		= 2,
+		FORM_SEX		= 3,
+		FORM_PASSWORD	= 4,
+		FORM_ENTER		= 5,
+		FORM_EXIT		= -1
+	};
+	SelectInput stateInput;
+
+
+	string classCode;
+	int pageNumber = 1;
+	int hover = 0;
 public:
 	void displayContent() override;
 	void content();
 	void drawClassroom();
 	void girdContent();
 	void handle();
+	void selectData();
+	void createData();
+	void setClassCode(string classCode);
 	ContentDetailClassroom();
 	~ContentDetailClassroom();
 };

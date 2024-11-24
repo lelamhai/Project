@@ -17,7 +17,7 @@ void TutorialMenu()
 {
 	string tutorialMenu[] = {
 		"PGUP|PGDN",
-		"Enter"
+		"Tab"
 	};
 
 	int height = getConsoleHeight();

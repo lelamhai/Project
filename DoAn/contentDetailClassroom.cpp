@@ -16,14 +16,19 @@ void ContentDetailClassroom::displayContent()
 
 void ContentDetailClassroom::drawClassroom()
 {
+	ManageClass test;
+	Classroom classFound = test.findClassByCode(classCode.c_str());
+	
+	int total = test.getCountSudentOfClass(classCode.c_str());
+
 	InputField inputStudent;
 
 	gotoXY(34 + 4, 10);
 	cout << "ESC: Tro Lai";
 	box(34 + 2, 10 - 1, 15, 2);
 
-	string className = "K23DTCN100K";
-	string count = "67";
+	string className = classFound.className;
+	string count = to_string(total);
 	string title = "Lop:" + className + " - Sinh Vien:" + count;
 
 	int titlePosX = getCenterX(getConsoleWidth(), title.length());
@@ -127,11 +132,17 @@ void ContentDetailClassroom::girdContent()
 	cout << title[4];
 }
 
+void ContentDetailClassroom::setClassCode(string classCode)
+{
+	this->classCode = classCode;
+}
+
 void ContentDetailClassroom::content()
 {
 	cleanContent();
 	drawClassroom();
 	girdContent();
+	currentDetailClassroom = C_SELECT;
 	handle();
 }
 
@@ -150,11 +161,245 @@ void ContentDetailClassroom::handle()
 			pTutorial.close();
 		}
 
-		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		switch (currentDetailClassroom)
 		{
+		case ContentDetailClassroom::C_SELECT:
+			showCur(0);
+			selectData();
+			break;
+		case ContentDetailClassroom::C_CREATE:
+			showCur(1);
+			createData();
+			break;
+		case ContentDetailClassroom::C_EDIT:
+			break;
+		case ContentDetailClassroom::C_SEARCH:
+			break;
+		case ContentDetailClassroom::C_DELETE:
+			break;
+		case ContentDetailClassroom::C_DETAIL:
+			break;
+		case ContentDetailClassroom::C_EXIT:
 			return;
+		default:
+			break;
 		}
+
 
 		Sleep(150);
 	}
+}
+
+void ContentDetailClassroom::selectData()
+{
+	int moveMenu = 0;
+
+	ManageClass test;
+	StudentPage studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
+	
+
+	int start = 0;
+	int end = pageNumber * studentPage.numberStudentPerPage;
+
+	if (pageNumber * studentPage.numberStudentPerPage < studentPage.totalStudent)
+	{
+		end = studentPage.numberStudentPerPage - 1;
+	}
+	else {
+		end = (studentPage.numberStudentPerPage - (end - studentPage.totalStudent)) - 1;
+	}
+
+	int lastHover = -1;
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		{
+			currentDetailClassroom = C_EXIT;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		{
+			currentDetailClassroom = C_CREATE;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_UP) & 0x0001)
+		{
+			if (start < hover)
+			{
+				hover -= 1;
+			}
+			else {
+				hover = 0;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
+		{
+			if (end > hover)
+			{
+				hover += 1;
+			}
+			else {
+				hover = end;
+			}
+			Sleep(150);
+		}
+
+		if (lastHover != hover)
+		{
+			int posX = 3;
+			int i = 0;
+			PTRSTUDENT temp = studentPage.studentList;
+			while (temp != nullptr) 
+			{
+				setColorText(ColorCode_DarkWhite);
+				if (hover == i)
+				{
+					setColorText(ColorCode_DarkGreen);
+				}
+
+				int classX = getCenterX(24, strlen(temp->info.studentCode));
+				gotoXY(34 + 3 + classX, 10 + 2 + 1 + posX +(2 * i));
+				cout << temp->info.studentCode;
+
+				int lastX = getCenterX(24, strlen(temp->info.lastName));
+				gotoXY(34 + 3 + 24 + lastX, 10 + 2 + 1 + posX + (2 * i));
+				cout << temp->info.lastName;
+
+				int firstX = getCenterX(24, strlen(temp->info.firstName));
+				gotoXY(34 + 3 + 24 + 24 + firstX, 10 + 2 + 1 + posX + (2 * i));
+				cout << temp->info.firstName;
+
+				int sexX = getCenterX(24, 3);
+				gotoXY(34 + 3 + 24 + 24 + 24 + sexX, 10 + 2 + 1 + posX + (2 * i));
+				cout << (temp->info.gender == 'M' ? "Nam" : "Nu");
+
+				int passX = getCenterX(24, strlen(temp->info.password));
+				gotoXY(34 + 3 + 24 + 24 + 24 + 24 + passX, 10 + 2 + 1 + posX + (2 * i));
+				cout << temp->info.password;
+				setColorText(ColorCode_DarkWhite);
+
+				i++;
+				temp = temp->next;
+			}
+			lastHover == hover;
+		}
+	}
+}
+
+void ContentDetailClassroom::createData()
+{
+	int moveMenu = 0;
+	InputField inputStudentCode;
+	InputField inputStudentLastName;
+	InputField inputStudentFirstName;
+	InputField inputStudentSex;
+	InputField inputStudentPassword;
+	Text text;
+
+	int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
+	int createPosY = 12 + 2;
+
+	int i = 0;
+
+	KeyState key;
+	stateInput = FORM_CODE;
+	while (true)
+	{
+		if (stateInput == FORM_CODE)
+		{
+			gotoXY(createPosX + inputStudentCode.getText().length(), createPosY);
+			inputStudentCode.setMenu(moveMenu);
+			inputStudentCode.handleInput();
+
+			key = inputStudentCode.getEndKey();
+			if (key == DOWN)
+			{
+				stateInput = FORM_LAST;
+				continue;
+			}
+		}
+		if (stateInput == FORM_LAST)
+		{
+			gotoXY(createPosX + inputStudentLastName.getText().length(), createPosY + 3);
+			inputStudentLastName.setMenu(moveMenu);
+			inputStudentLastName.handleInput();
+
+			key = inputStudentLastName.getEndKey();
+			if (key == UP)
+			{
+				stateInput = FORM_CODE;
+			}
+
+			if (key == DOWN)
+			{
+				stateInput = FORM_FIRST;
+			}
+		}
+
+		if (stateInput == FORM_FIRST)
+		{
+			gotoXY(createPosX + inputStudentFirstName.getText().length(), createPosY + 6);
+			inputStudentFirstName.setMenu(moveMenu);
+			inputStudentFirstName.handleInput();
+
+			key = inputStudentFirstName.getEndKey();
+			if (key == UP)
+			{
+				stateInput = FORM_LAST;
+			}
+
+			if (key == DOWN)
+			{
+				stateInput = FORM_SEX;
+			}
+		}
+
+		if (stateInput == FORM_SEX)
+		{
+			gotoXY(createPosX + inputStudentSex.getText().length(), createPosY + 9);
+			inputStudentSex.setMenu(moveMenu);
+			inputStudentSex.handleInput();
+
+			key = inputStudentSex.getEndKey();
+			if (key == UP)
+			{
+				stateInput = FORM_FIRST;
+			}
+
+			if (key == DOWN)
+			{
+				stateInput = FORM_PASSWORD;
+			}
+		}
+		if (stateInput == FORM_PASSWORD)
+		{
+			gotoXY(createPosX + inputStudentPassword.getText().length(), createPosY + 12);
+			inputStudentPassword.setMenu(moveMenu);
+			inputStudentPassword.handleInput();
+
+			key = inputStudentPassword.getEndKey();
+			if (key == UP)
+			{
+				stateInput = FORM_SEX;
+			}
+
+		}
+		if (stateInput == FORM_ENTER)
+		{
+			stateInput == FORM_CODE;
+		}
+
+		if (stateInput == FORM_EXIT)
+		{
+			return;
+		}
+	}
+
+	
+
 }
