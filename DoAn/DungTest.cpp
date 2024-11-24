@@ -23,7 +23,7 @@ void DungTest::main()
      ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn 
      
      // Hàm tạo thông tin sinh viên cho lớp (trả về true false)
-     test.addStudentToClass("C001", "K23DTCN307", "Ta", "Anh Tai", 'M', "123456");
+     test.addStudentToClass("C001", "K23DTCN307", "Ta", "Anh Tai", 'M', "123456"); 
      
      // Hàm chỉnh sửa thông tin học sinh trong lớp
      // MÃ lớp, mã sinh viên, họ, tên, giới tính, mật khẩu
