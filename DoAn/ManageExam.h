@@ -30,10 +30,20 @@ private:
 	resultList answerRecord;
 
 public:
-	ManageExam(int numberQuestion, const char* subjectCode, int timeForExam_min);
+	ManageExam();
 	~ManageExam();
 
+	bool setTimeForExam(int timeForExam); // hàm set thời gian thi
+
+	bool setNumberQuestion(int numberQuestion);
+	int getNumberQuestion();
+
+	bool setSubjectCode(char* subjectCode);
+	
+	bool getRandomQuestion(); // hàm tạo ra các câu hỏi random
+	
 	int getRemainingTime(); 
+
 	void changeRemainingTime(int t); // hàm thay đổi thời gian còn lại
 
 	bool getIsSubmitted();
@@ -42,7 +52,7 @@ public:
 	bool getTimeUp();
 	void setTimeUp();
 
-	int getNumberQuestion();
+
 
 
 	Question getRandomedQuestionByIndex(int i); // hàm trả về câu hỏi thứ i trong số các câu đã lấy ramdom

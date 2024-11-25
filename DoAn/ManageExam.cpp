@@ -1,14 +1,46 @@
 ﻿#include "ManageExam.h"
 
-ManageExam::ManageExam(int numberQuestion, const char* subjectCode, int timeForExam_min) {
-    this->numberQuestion = numberQuestion;
-    this->timeForExam_min = timeForExam_min;
-    this->subjectCode = subjectCode;
-    
-    remainingTime_sec = timeForExam_min * 60;
+ManageExam::ManageExam() {
     isTimeUp = false;
     isSubmitted = false;
+}
 
+ManageExam::~ManageExam() {
+
+}
+
+bool ManageExam::setTimeForExam(int timeForExam) {
+    if (timeForExam <= 0) {
+        return false;
+    }
+
+    this->timeForExam_min = timeForExam;
+    remainingTime_sec = timeForExam_min * 60;
+    return true;
+}
+
+bool ManageExam::setNumberQuestion(int numberQuestion) {
+    ManageSubject subject;
+    int totalQuestion = subject.countQuestionsInSubject(subjectCode);
+    
+    if (numberQuestion<0 || numberQuestion > totalQuestion) {
+        return false;
+    }
+
+    this->numberQuestion = numberQuestion;
+    return true;
+}
+
+int ManageExam::getNumberQuestion() {
+    return numberQuestion;
+}
+
+bool ManageExam::setSubjectCode(char* subjectCode) {
+    this->subjectCode = subjectCode;
+    return true;
+}
+
+bool ManageExam::getRandomQuestion() {
     answerRecord.answerList[MAX_NUMBER_QUESTION];
     for (int i = 0; i < numberQuestion; i++) {
         answerRecord.answerList[i] = new answer; // Cấp phát bộ nhớ cho mỗi phần tử
@@ -27,15 +59,13 @@ ManageExam::ManageExam(int numberQuestion, const char* subjectCode, int timeForE
         p = p->next;
     }
 
-}
-
-ManageExam::~ManageExam() {
-
+    return true;
 }
 
 int ManageExam::getRemainingTime() {
     return remainingTime_sec;
 }
+
 void ManageExam::changeRemainingTime(int t) {
     remainingTime_sec += t;
 }
@@ -54,9 +84,6 @@ void ManageExam::setTimeUp() {
     isTimeUp = true;
 }
 
-int ManageExam::getNumberQuestion() {
-    return numberQuestion;
-}
 
 Question ManageExam::getRandomedQuestionByIndex(int i) {
     return questionList_Random.getQuestionByIndex(i); 
