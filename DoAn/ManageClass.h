@@ -90,7 +90,8 @@ public:
 	// View score of class in subject
 	//StudentPage getListScoreByClassAndSubject(const string classCode, const string subjectCode);
 
-
+	// Function add score for student at subject
+	bool addScoreToStudent(const string studentCode, const string subjectCode, float score);
 
 	
 

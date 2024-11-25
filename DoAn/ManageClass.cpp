@@ -408,6 +408,16 @@ void ManageClass::reset() {
     countClass = 0; 
 }
 
+
+// Add score for student
+bool ManageClass::addScoreToStudent(const string studentCode, const string subjectCode, float score) {
+    PTRSCORE newScore = new NodeScore;
+    newScore->info.diem = score;
+    strcpy_s(newScore->info.subjectCode, subjectCode.c_str());
+    newScore->next = nullptr;
+    return true;
+}
+
 void printClassPage(ClassPage classPage)
 {
     cout << "Trang " << classPage.currentPage << "/" << classPage.totalPage<<endl;

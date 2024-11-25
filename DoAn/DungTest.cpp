@@ -29,7 +29,7 @@ void DungTest::main()
      // MÃ lớp, mã sinh viên, họ, tên, giới tính, mật khẩu
      test.editStudentInClass("C001", "K23DTCN307", "Ta", "Anh Tai - Update", 'M', "123456");
 
-     
+      
      // Lấy tổng số sinh viên của lớp
      int soHS = test.getCountSudentOfClass("C001");
      cout << "So hoc sinh trong lop la: " << soHS << endl;
