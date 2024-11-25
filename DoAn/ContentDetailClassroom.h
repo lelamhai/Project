@@ -8,6 +8,7 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 
+#include "configApp.h"
 #include "PopupTutorial.h"
 #include "InputField.h"
 #include "Text.h"
@@ -49,6 +50,7 @@ private:
 	string classCode;
 	int pageNumber = 1;
 	int hover = 0;
+	string textSearch = "";
 public:
 	void displayContent() override;
 	void content();
@@ -57,6 +59,8 @@ public:
 	void handle();
 	void selectData();
 	void createData();
+	void showTutorial();
+	void loadData();
 	void setClassCode(string classCode);
 	ContentDetailClassroom();
 	~ContentDetailClassroom();
