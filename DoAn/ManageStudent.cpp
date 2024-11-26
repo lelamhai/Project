@@ -356,6 +356,7 @@ bool addStudentToList(PTRSTUDENT& studentList, Student std1) {
 StudentPage getStudentPerPage(PTRSTUDENT studentList, int page)
 {
     StudentPage studentPage;
+    studentPage.studentList = nullptr;
     int studentPerPage = 13;
     if (studentList == nullptr) return studentPage;
     int totalStudents = getCountStudentOfList(studentList);

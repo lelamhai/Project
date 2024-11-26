@@ -39,7 +39,7 @@ void DungTest::main()
      test.deleteStudentInClass("C001", "K23DTCN307");
 
      // Hàm tìm kiếm này có phân trang luôn, nếu như a muốn load tất cả thì bỏ trống từ khóa
-     StudentPage studentPage = test.searchStudentInCLass("C001", "", 1); // Mã lớp, từ khóa, trang
+     StudentPage studentPage = test.searchStudentInCLass("C003", "", 1); // Mã lớp, từ khóa, trang
      // Các thông số trong studentPage
      //PTRSTUDENT studentList = new NodeStudent;
      //int currentPage; // trang hiện tại
@@ -55,6 +55,8 @@ void DungTest::main()
      Classroom classFound = test.findClassByCode("C001");
      string className = classFound.className;
      
+     // Thêm điểm cho sinh viên đầu vào, mã sinh viên, mã môn, điểm
+     test.addScoreToStudent("K23DTCN269", "VL", 8);
 
 
 

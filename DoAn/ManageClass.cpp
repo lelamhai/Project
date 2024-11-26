@@ -270,6 +270,7 @@ bool ManageClass::deleteStudentInClass(const char* classCode, const char* studen
 StudentPage ManageClass::searchStudentInCLass(const string classCode, string keyword, int page)
 {
     StudentPage result;
+    result.studentList = nullptr;
     int index = findClass(classCode.c_str()); // Check is classCode exist
     if (index == -1) return result;
     if (keyword == "") {
@@ -408,14 +409,23 @@ void ManageClass::reset() {
     countClass = 0; 
 }
 
-
 // Add score for student
 bool ManageClass::addScoreToStudent(const string studentCode, const string subjectCode, float score) {
-    PTRSCORE newScore = new NodeScore;
-    newScore->info.diem = score;
-    strcpy_s(newScore->info.subjectCode, subjectCode.c_str());
-    newScore->next = nullptr;
-    return true;
+    
+
+    for (int i = 0; i < countClass; i++) {
+        PTRSTUDENT studentList = classes[i]->studentList;
+        while (studentList != nullptr) {
+            if (studentCode == studentList->info.studentCode) {
+                addScoreToList(studentList->info.scoreList, subjectCode, score);
+                saveToFile();
+                return true;
+            }
+            studentList = studentList->next;
+        }
+    }
+
+    return false;
 }
 
 void printClassPage(ClassPage classPage)

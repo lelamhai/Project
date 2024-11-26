@@ -8,7 +8,6 @@ private:
 public:
 	ManageScore();
 	~ManageScore();
-
-
 };
 
+bool addScoreToList(PTRSCORE& scoreList, string subjectCode, float score);

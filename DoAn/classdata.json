@@ -18,7 +18,12 @@
                     "gender": 77,
                     "lastName": "Duy Dung",
                     "password": "dungvd",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 8.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "K23DTCN269"
                 }
             ]

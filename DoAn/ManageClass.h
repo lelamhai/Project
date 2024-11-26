@@ -6,6 +6,7 @@
 #include "StrucData.h"
 #include "ManageStudent.h"
 #include "ManageSubject.h"
+#include "ManageScore.h"
 
 const string SOURCE_CLASS = "classdata.json";
 
@@ -92,8 +93,6 @@ public:
 
 	// Function add score for student at subject
 	bool addScoreToStudent(const string studentCode, const string subjectCode, float score);
-
-	
 
 };
 
