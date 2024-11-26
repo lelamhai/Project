@@ -194,6 +194,8 @@ void ContentClassroom::handle()
 
 void ContentClassroom::selectData()
 {
+	cleanMessage(10);
+
 	int moveMenu = 0;
 
 	ManageClass nl;
@@ -847,22 +849,22 @@ void ContentClassroom::loadData()
 	}
 }
 
-void ContentClassroom::cleanTable()
-{
-	int posX = 34 + 2 + 1;
-	int posY = 10 + 2 + 3;
-
-	string blankFill;
-	blankFill.resize(118, ' ');
-
-	for (int i = 0; i < 26; i++)
-	{
-		setColorText(ColorCode_Back);
-		gotoXY(posX, posY + i);
-		cout << blankFill;
-		gotoXY(posX, posY + i);
-	}
-}
+//void ContentClassroom::cleanTable()
+//{
+//	int posX = 34 + 2 + 1;
+//	int posY = 10 + 2 + 3;
+//
+//	string blankFill;
+//	blankFill.resize(118, ' ');
+//
+//	for (int i = 0; i < 26; i++)
+//	{
+//		setColorText(ColorCode_Back);
+//		gotoXY(posX, posY + i);
+//		cout << blankFill;
+//		gotoXY(posX, posY + i);
+//	}
+//}
 
 void ContentClassroom::cleanInput()
 {

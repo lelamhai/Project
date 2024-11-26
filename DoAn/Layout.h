@@ -21,8 +21,6 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#define WIDTH_CONTENT  172
-#define HEIGHT_CONTENT  36
 
 enum StateContent
 {
@@ -59,7 +57,6 @@ public:
     void templateMenu();
     void templateContent();
 	void main();
-    void cleanContent();
 	Layout();
 	~Layout();
 };
