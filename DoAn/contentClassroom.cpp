@@ -806,7 +806,7 @@ void ContentClassroom::pagging()
 
 	setColorText(ColorCode_DarkWhite);
 	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(page.totalPage);
-	gotoXY(34 + 120 - 6, 10 + 28 + 5);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 8, 10 + 28 + 5);
 	cout << pageTitle;
 }
 
