@@ -96,6 +96,31 @@ void ManageExam::setAnswer(int index, char choose) {
     answerRecord.answerList[index]->chosenAnswer = choose;
 }
 
+void ManageExam::toCalculateResult() {
+    int index = 0;
+    int correctAnswer = 0;
+    float score;
+    answer* p;
+    
+    for (int i = 0; i < numberQuestion; i++) {
+        p = answerRecord.answerList[index];
+        if (p->chosenAnswer == p->correctAnswer) {
+            correctAnswer++;
+        }
+        index++;
+    }
+    answerRecord.countCorrect = correctAnswer;
+    score = (float)correctAnswer * 10 / numberQuestion;
+    answerRecord.score = roundFloat(score, 1);
+}
+
+int ManageExam::countCorrectAnswer() {
+    return answerRecord.countCorrect;
+}
+
+float ManageExam::getScore() {
+    return answerRecord.score;
+}
 
 
 tm ManageExam::getTimeStart() {
@@ -116,6 +141,11 @@ tm ManageExam::getTimeEnd(tm timeStart) {
     localtime_s(&timeEnd, &timeStart_t); // chuyển đối time dạng time_t thành kiểu tm
     
     return timeEnd;
+}
+
+float ManageExam::roundFloat(float number, int n) {
+    float x = pow(10, n);
+    return round(number * x) / x;
 }
 
 

@@ -1,52 +1,119 @@
-﻿  DungTest.cpp
-  HuyTest.cpp
-  Layout.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\Layout.cpp(74,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  ManageClass.cpp
-  ManageExam.cpp
-  ManageScore.cpp
+﻿  button.cpp
+  buttonEnter.cpp
+  ClassroomSevice.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ClassroomSevice.cpp(85,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  color.cpp
+  configApp.cpp
+  content.cpp
+  contentAbout.cpp
   contentClassroom.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(117,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(121,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(125,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(387,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(391,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(396,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(422,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(466,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(673,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(679,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(744,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(770,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(834,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(838,73): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(843,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(117,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(121,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(125,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(389,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(393,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(398,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(424,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(468,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(675,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(681,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(746,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(772,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(836,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(840,73): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentClassroom.cpp(845,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   contentDetailClassroom.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(32,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(130,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(134,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(138,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(142,43): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(146,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(286,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(290,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(294,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(302,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(310,14): warning C4553: '==': result of expression not used; did you intend '='?
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(335,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(379,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(424,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(469,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(514,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(603,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(607,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(611,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\contentDetailClassroom.cpp(619,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  login.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\login.cpp(96,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\login.cpp(112,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  main.cpp
-  page.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(134,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(138,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(142,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(146,43): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(150,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(392,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(396,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(400,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(408,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(416,14): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(442,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(486,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(531,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(576,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(621,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(710,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(714,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(718,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(726,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentDetailClassroom.cpp(767,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  contentExam.cpp
+  contentQuestion.cpp
+  contentStudent.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentStudent.cpp(69,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentStudent.cpp(73,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentStudent.cpp(77,43): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentStudent.cpp(81,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentStudent.cpp(85,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentStudent.cpp(89,47): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentStudent.cpp(93,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  contentSubject.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentSubject.cpp(112,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentSubject.cpp(116,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\contentSubject.cpp(120,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  ContentSubject.h
+  DungTest.cpp
+  HuyTest.cpp
+  LoadingData.cpp
+  LoginData.cpp
+  ManageClass.cpp
+  ManageQuestion.cpp
   Generating Code...
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\ManageClass.cpp(268,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
-  DoAn.vcxproj -> D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\x64\Debug\DoAn.exe
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageClass.cpp(268,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
+  Compiling...
+  ManageScore.cpp
+  ManageStudent.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageStudent.cpp(405,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  ManageSubject.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageSubject.cpp(295,17): warning C4566: character represented by universal-character-name '\u1EA5' cannot be represented in the current code page (1252)
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageSubject.cpp(295,17): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u1ED1' cannot be represented in the current code page (1252)
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u01B0' cannot be represented in the current code page (1252)
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u1EE3' cannot be represented in the current code page (1252)
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u1ECF' cannot be represented in the current code page (1252)
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u1ED5' cannot be represented in the current code page (1252)
+  popupDelete.cpp
+  draw.cpp
+  footer.cpp
+  inputField.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(13,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(94,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(203,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(227,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(250,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\inputField.cpp(186,3): warning C4060: switch statement contains no 'case' or 'default' labels
+  InputField.h
+  page.cpp
+  popup.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\popup.cpp(52,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  popupTutorial.cpp
+  sidebar.cpp
+  header.cpp
+  keyboard.cpp
+  loading.cpp
+  login.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\login.cpp(96,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\login.cpp(112,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+  Layout.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\Layout.cpp(74,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  singleton.cpp
+  ManageExam.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\ManageExam.cpp(147,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  StudentList.cpp
+  StudentService.cpp
+  text.cpp
+C:\Users\ngoch\OneDrive\Máy tính\Project\DoAn\text.cpp(13,23): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  windows.cpp
+  Generating Code...
+x64\Debug\ContentSubject.obj : warning LNK4042: object specified more than once; extras ignored
+x64\Debug\InputField.obj : warning LNK4042: object specified more than once; extras ignored
+  DoAn.vcxproj -> C:\Users\ngoch\OneDrive\Máy tính\Project\x64\Debug\DoAn.exe
