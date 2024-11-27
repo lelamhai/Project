@@ -1,4 +1,5 @@
 ﻿#include "HuyTest.h"
+#include <cmath>
 
 HuyTest::HuyTest()
 {
@@ -200,12 +201,11 @@ void HuyTest::main() {
 	}
 	printf("Dung %d/%d cau\n", exam1.countCorrectAnswer(), numberQuestion);
 	float scoreExam = exam1.getScore();
-	printf("Diem so: %.8f\n", scoreExam);
+	printf("Diem so: %.1f\n", scoreExam);
 
-
+	// LƯU ĐIỂM THI VÀO DANH SÁCH
 	ManageClass tempClass;
-	char studentCode[15] = "K23DTCN269";
-
-
-	tempClass.addScoreToStudent(studentCode, subjectCode_input, scoreExam); // lưu điểm vào file
+	char studentCode[15] = "K23DTCN270";
+	tempClass.addScoreToStudent(studentCode, subjectCode_input, scoreExam);
+	
 }

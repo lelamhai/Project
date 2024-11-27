@@ -1,3 +1,6 @@
-﻿  ManageStudent.cpp
-D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\DoAn\ManageStudent.cpp(407,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  DoAn.vcxproj -> D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\x64\Debug\DoAn.exe
+﻿  HuyTest.cpp
+C:\Users\ngoch\Desktop\Project\DoAn\HuyTest.cpp(203,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  ManageClass.cpp
+  Generating Code...
+C:\Users\ngoch\Desktop\Project\DoAn\ManageClass.cpp(268,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
+  DoAn.vcxproj -> C:\Users\ngoch\Desktop\Project\x64\Debug\DoAn.exe
