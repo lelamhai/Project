@@ -358,6 +358,8 @@ StudentPage getStudentPerPage(PTRSTUDENT studentList, int page)
     StudentPage studentPage;
     studentPage.studentList = nullptr;
     int studentPerPage = 13;
+    studentPage.totalPage = 0;
+    studentPage.totalStudent = 0;
     if (studentList == nullptr) return studentPage;
     int totalStudents = getCountStudentOfList(studentList);
     int totalPages = (totalStudents + studentPerPage - 1) / studentPerPage;
