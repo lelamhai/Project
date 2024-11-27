@@ -411,8 +411,6 @@ void ManageClass::reset() {
 
 // Add score for student
 bool ManageClass::addScoreToStudent(const string studentCode, const string subjectCode, float score) {
-    
-
     for (int i = 0; i < countClass; i++) {
         PTRSTUDENT studentList = classes[i]->studentList;
         while (studentList != nullptr) {
@@ -424,9 +422,9 @@ bool ManageClass::addScoreToStudent(const string studentCode, const string subje
             studentList = studentList->next;
         }
     }
-
     return false;
 }
+
 
 void printClassPage(ClassPage classPage)
 {
