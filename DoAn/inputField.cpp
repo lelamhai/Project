@@ -8,9 +8,38 @@ InputField::~InputField()
 {
 }
 
+void InputField::setPosition(int posX, int posY)
+{
+	this->x = posX;
+	this->y = posY;
+}
+
+void InputField::setFrame(int width, int height)
+{
+	this->w = width;
+	this->h = height;
+}
+
+void InputField::drawBox()
+{
+	box(x, y, w, h);
+}
+
+void InputField::clean()
+{
+	string blankFill;
+	blankFill.resize(WIDTH_INPUT - 1, ' ');
+	for (int i = 0; i < 1; i++)
+	{
+		gotoXY(x+1, y+1);
+		cout << blankFill;
+	}
+}
+
 void InputField::handleInput()
 {
 	cursorPosition = inputString.length();
+	gotoXY(x + 1 + cursorPosition, y + 1);
 	while (true)
 	{
 		if (GetAsyncKeyState(VK_F1) & 0x0001)
@@ -230,7 +259,7 @@ void InputField::handleInput()
 			break;
 
 		default:
-			if (inputString.length() > 14)
+			if (inputString.length() > 13)
 			{
 				break;
 			}
@@ -240,6 +269,12 @@ void InputField::handleInput()
 				inputString.insert(inputString.begin() + cursorPosition, s);
 				cursorPosition++;
 				cout << s;
+				if (useHide)
+				{
+					Sleep(150);
+					gotoXY(whereX() - 1, whereY());
+					cout << "*";
+				}
 
 				if (cursorPosition != inputString.length())
 				{

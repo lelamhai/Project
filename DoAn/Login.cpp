@@ -110,6 +110,7 @@ void Login::formLogin()
 
 		case LOGIN_PASSWORD:
 			gotoXY(posX + inputPassword.getText().length(), posY+3);
+			inputPassword.useHide = true;
 			inputPassword.handleInput();
 			if (inputPassword.getEndKey() == ENTER)
 			{

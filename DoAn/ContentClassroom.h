@@ -53,6 +53,15 @@ private:
 	};
 	SearchInput stateSearchInput;
 
+	InputField inputClassroomCode;
+	InputField inputClassroomName;
+
+	InputField input[2] = {
+		inputClassroomCode,
+		inputClassroomName
+	};
+
+
 	string classCode;
 	int pageNumber = 1;
 	int hover = 0;
