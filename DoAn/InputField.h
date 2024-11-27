@@ -19,7 +19,7 @@ private:
 	int cursorPosition = 0;
 public:
 	bool useHide = false;
-
+	bool useSpace = false;
 	void setPosition(int posX, int posY);
 	void setFrame(int width, int height);
 	void drawBox();

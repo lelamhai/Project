@@ -56,12 +56,12 @@ private:
 	InputField inputClassroomCode;
 	InputField inputClassroomName;
 
-	InputField input[2] = {
+	InputField listInput[2] = {
 		inputClassroomCode,
 		inputClassroomName
 	};
-
-
+	Text text;
+	int posXMessage = 0;
 	string classCode;
 	int pageNumber = 1;
 	int hover = 0;

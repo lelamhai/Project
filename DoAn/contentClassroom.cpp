@@ -44,8 +44,8 @@ void ContentClassroom::drawClassroom()
 		cout << titleInput[i];
 
 		
-		input[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1);
-		input[i].drawBox();
+		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1);
+		listInput[i].drawBox();
 	}
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
@@ -56,8 +56,9 @@ void ContentClassroom::drawClassroom()
 	cout << char(180);
 
 	y = y + (2 * 3) - 1;
+	posXMessage = y;
 	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
-	cout << "Message";*/
+	cout << y;*/
 
 	y = y + 2;
 	int infoX = getCenterX(COLUMN_RIGHT, 10);
@@ -170,13 +171,14 @@ void ContentClassroom::handle()
 			showCur(1);
 			createData();
 			cleanInput();
+			cleanMessage(posXMessage);
 			break;
 
 		case C_EDIT:
 			showCur(1);
 			editData();
 			cleanInput();
-			//cleanTable();
+			cleanMessage(posXMessage);
 			break;
 
 		case C_SEARCH:
@@ -413,25 +415,21 @@ void ContentClassroom::selectData()
 void ContentClassroom::createData()
 {
 	int moveMenu = 0;
-
 	ManageClass nl;
-	Text text;
 
-	//int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
 	stateInput = FORM_CODE;
 	while (true)
 	{
 		if (stateInput == FORM_CODE)
 		{
-			//gotoXY(createPosX + inputClassroomCode.getText().length(), 12 + 1 + 1);
-			input[0].setMenu(moveMenu);
-			input[0].handleInput();
-			moveMenu = input[0].getMenu();
+			listInput[0].setMenu(moveMenu);
+			listInput[0].handleInput();
+			moveMenu = listInput[0].getMenu();
 
-			switch (input[0].getEndKey())
+			switch (listInput[0].getEndKey())
 			{
 			case ENTER:
-				if (input[0].getText() != "" && input[1].getText() != "")
+				if (listInput[0].getText() != "" && listInput[1].getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
@@ -467,15 +465,14 @@ void ContentClassroom::createData()
 
 		if (stateInput == FORM_NAME)
 		{
-			//gotoXY(createPosX + inputClassroomName.getText().length(), 12 + 1 + 3 + 1);
-			input[1].setMenu(moveMenu);
-			input[1].handleInput();
-			moveMenu = input[1].getMenu();
+			listInput[1].setMenu(moveMenu);
+			listInput[1].handleInput();
+			moveMenu = listInput[1].getMenu();
 
-			switch (input[1].getEndKey())
+			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
-				if (input[0].getText() != "" && input[1].getText() != "")
+				if (listInput[0].getText() != "" && listInput[1].getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
@@ -511,29 +508,25 @@ void ContentClassroom::createData()
 
 		if (stateInput == FORM_ENTER)
 		{
-			bool result = nl.addClass(input[0].getText().c_str(), input[1].getText());
+			bool result = nl.addClass(listInput[0].getText().c_str(), listInput[1].getText());
 			
 			if (result)
 			{
 				cleanTable();
 				loadData();
+				cleanMessage(19);
 				text.setContent("Them lop thanh cong!");
 
-				int textPosX = getCenterX(40, text.getLenString());
-				gotoXY(34 + 100 + 30 + textPosX, 19);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posXMessage);
 				text.display();
 			}
 			else 
 			{
-				string blankFillText;
-				blankFillText.resize(36, ' ');
-
-				gotoXY(34 + 120 + 8 + 2 + 1, 19);
-				cout << blankFillText;
-
+				cleanMessage(19);
 				text.setContent("Them lop that bai!");
-				int textPosX = getCenterX(40, text.getLenString());
-				gotoXY(34 + 100 + 30 + textPosX, 19);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posXMessage);
 				text.display();
 			}
 			stateInput = FORM_CODE;
@@ -853,5 +846,8 @@ void ContentClassroom::loadData()
 
 void ContentClassroom::cleanInput()
 {
-	
+	for (int i = 0; i < 2; i++)
+	{
+		listInput[i].clean();
+	}
 }

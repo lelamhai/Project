@@ -221,15 +221,19 @@ void InputField::handleInput()
 			return;*/
 
 		case SPACEBAR:
-			inputString.insert(inputString.begin() + cursorPosition, s);
-			cursorPosition++;
-			cout << " ";
-			for (int i = cursorPosition; i < inputString.length(); i++)
+			if (useSpace)
 			{
-				cout << inputString[i];
-			}
+				inputString.insert(inputString.begin() + cursorPosition, s);
+				cursorPosition++;
+				cout << " ";
+				for (int i = cursorPosition; i < inputString.length(); i++)
+				{
+					cout << inputString[i];
+				}
 
-			gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
+				gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
+			}
+			
 			break;
 
 		case BACKSPACE:
