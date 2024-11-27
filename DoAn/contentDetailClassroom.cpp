@@ -207,6 +207,8 @@ void ContentDetailClassroom::handle()
 		case ContentDetailClassroom::C_SEARCH:
 			break;
 		case ContentDetailClassroom::C_DELETE:
+			showCur(0);
+			deleteData();
 			break;
 		case ContentDetailClassroom::C_DETAIL:
 			break;
@@ -346,13 +348,14 @@ void ContentDetailClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_DELETE) & 0x0001)
 		{
-			/*page = nl.getClassPerPage(1);
+			ManageClass test;
+			StudentPage studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
 
-			if (page.totalClass <= 0)
+			if (studentPage.totalStudent <= 0)
 			{
-				currentClassroom = C_SELECT;
+				currentDetailClassroom = C_SELECT;
 				return;
-			}*/
+			}
 
 			currentDetailClassroom = C_DELETE;
 			return;
@@ -397,6 +400,7 @@ void ContentDetailClassroom::selectData()
 				if (hover == i)
 				{
 					setColorText(ColorCode_DarkGreen);
+					studentCode = temp->info.studentCode;
 				}
 
 				int classX = getCenterX(24, strlen(temp->info.studentCode));
@@ -726,6 +730,40 @@ void ContentDetailClassroom::createData()
 			stateInput = FORM_CODE;
 		}
 	}
+}
+
+void ContentDetailClassroom::deleteData()
+{
+	int deletePosX = getCenterX(COLUMN_CENTER, 50);
+	PopupDelete pDelete;
+	pDelete.setPosition(deletePosX + 30, 17);
+	pDelete.open();
+	pDelete.handle();
+
+	if (pDelete.getMenu() != 0)
+	{
+		currentDetailClassroom = C_EXIT;
+		return;
+	}
+
+	if (pDelete.getResult())
+	{
+		ManageClass test;
+		bool result = test.deleteStudentInClass(classCode.c_str(), studentCode.c_str());//nl.deleteClass(classCode.c_str());
+		if (result)
+		{
+			hover = 0;
+		}
+	}
+	pDelete.close();
+
+	currentDetailClassroom = C_SELECT;
+	return;
+}
+
+void ContentDetailClassroom::editData()
+{
+
 }
 
 void ContentDetailClassroom::loadData()
