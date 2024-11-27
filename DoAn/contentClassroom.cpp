@@ -342,7 +342,7 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
 		{
 			currentClassroom = C_DETAIL;
 			Sleep(150);
@@ -514,21 +514,22 @@ void ContentClassroom::createData()
 			{
 				cleanTable();
 				loadData();
-				cleanMessage(19);
+				cleanMessage(posXMessage);
 				text.setContent("Them lop thanh cong!");
 
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posXMessage);
-				text.display();
 			}
 			else 
 			{
-				cleanMessage(19);
+				cleanMessage(posXMessage);
 				text.setContent("Them lop that bai!");
+
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posXMessage);
-				text.display();
 			}
+
+			text.display();
 			stateInput = FORM_CODE;
 		}
 	
@@ -541,7 +542,7 @@ void ContentClassroom::createData()
 
 void ContentClassroom::deleteData()
 {
-	int deletePosX = getCenterX(120, 50);
+	int deletePosX = getCenterX(COLUMN_CENTER, 50);
 	PopupDelete pDelete;
 	pDelete.setPosition(deletePosX + 30, 17);
 	pDelete.open();
@@ -553,8 +554,6 @@ void ContentClassroom::deleteData()
 		return;
 	}
 
-	pDelete.close();
-
 	if (pDelete.getResult())
 	{
 		ManageClass nl;
@@ -563,9 +562,9 @@ void ContentClassroom::deleteData()
 		{
 			hover = 0;
 		}
-
-		cleanTable();
 	}
+	pDelete.close();
+
 	currentClassroom = C_SELECT;
 	return;
 }

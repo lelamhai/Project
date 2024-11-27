@@ -61,12 +61,17 @@ void ContentDetailClassroom::drawClassroom()
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
 		cout << titleInput[i];
-		box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1, WIDTH_INPUT, HEIGHT_INPUT);
+
+
+		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1);
+		listInput[i].drawBox();
 		posXRight = y + (i * 3);
 	}
 
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + WIDTH_INPUT + 10 - 2, 23);
-	cout << "<-|->";
+	setColorText(ColorCode_DarkYellow);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + WIDTH_INPUT + 16, 23);
+	cout << "+/-";
+	setColorText(ColorCode_White);
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 25);
@@ -76,8 +81,7 @@ void ContentDetailClassroom::drawClassroom()
 	cout << char(180);
 
 	y = posXRight + 2;
-	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
-	cout << "Message";*/
+	posXMessage = y;
 
 	y = y + 2;
 	int infoX = getCenterX(COLUMN_RIGHT, 10);
@@ -96,11 +100,13 @@ void ContentDetailClassroom::drawClassroom()
 	tutorialY += 1;
 
 	string note[] = {
-		"F12: Xem Huong Dan Chi Tiet"
+		"F12: Xem Huong Dan Chi Tiet",
+		"Phim +: Nam",
+		"Phim -: Nu"
 	};
 
 	int contentY = tutorialY + 1;
-	for (int i = 0; i < 1; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
@@ -190,8 +196,13 @@ void ContentDetailClassroom::handle()
 		case ContentDetailClassroom::C_CREATE:
 			showCur(1);
 			createData();
+			cleanInput();
+			cleanMessage(posXMessage);
 			break;
 		case ContentDetailClassroom::C_EDIT:
+
+			cleanInput();
+			cleanMessage(posXMessage);
 			break;
 		case ContentDetailClassroom::C_SEARCH:
 			break;
@@ -217,7 +228,6 @@ void ContentDetailClassroom::selectData()
 	ManageClass test;
 	StudentPage studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
 	
-
 	int start = 0;
 	int end = pageNumber * studentPage.numberStudentPerPage;
 
@@ -422,16 +432,7 @@ void ContentDetailClassroom::selectData()
 void ContentDetailClassroom::createData()
 {
 	int moveMenu = 0;
-	InputField inputStudentCode;
-	InputField inputStudentLastName;
-	InputField inputStudentFirstName;
-	InputField inputStudentSex;
-	InputField inputStudentPassword;
-	Text text;
-
-	int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
-	int createPosY = 12 + 2;
-
+	string gender = "Nam";
 	ManageClass test;
 	int i = 0;
 	stateInput = FORM_CODE;
@@ -439,13 +440,12 @@ void ContentDetailClassroom::createData()
 	{
 		if (stateInput == FORM_CODE)
 		{
-			gotoXY(createPosX + inputStudentCode.getText().length(), createPosY);
-			inputStudentCode.setMenu(moveMenu);
-			inputStudentCode.handleInput();
-			switch (inputStudentCode.getEndKey())
+			listInput[0].setMenu(moveMenu);
+			listInput[0].handleInput();
+			switch (listInput[0].getEndKey())
 			{
 			case ENTER:
-				if (inputStudentCode.getText() != "" && inputStudentLastName.getText() != "" && inputStudentFirstName.getText() != "" && inputStudentPassword.getText() != "")
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "" && listInput[4].getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
@@ -481,15 +481,15 @@ void ContentDetailClassroom::createData()
 				break;
 			}
 		}
+
 		if (stateInput == FORM_LAST)
 		{
-			gotoXY(createPosX + inputStudentLastName.getText().length(), createPosY + 3);
-			inputStudentLastName.setMenu(moveMenu);
-			inputStudentLastName.handleInput();
-			switch (inputStudentLastName.getEndKey())
+			listInput[1].setMenu(moveMenu);
+			listInput[1].handleInput();
+			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
-				if (inputStudentCode.getText() != "" && inputStudentLastName.getText() != "" && inputStudentFirstName.getText() != "" && inputStudentPassword.getText() != "")
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "" && listInput[4].getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
@@ -528,13 +528,12 @@ void ContentDetailClassroom::createData()
 
 		if (stateInput == FORM_FIRST)
 		{
-			gotoXY(createPosX + inputStudentFirstName.getText().length(), createPosY + 6);
-			inputStudentFirstName.setMenu(moveMenu);
-			inputStudentFirstName.handleInput();
-			switch (inputStudentFirstName.getEndKey())
+			listInput[2].setMenu(moveMenu);
+			listInput[2].handleInput();
+			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
-				if (inputStudentCode.getText() != "" && inputStudentLastName.getText() != "" && inputStudentFirstName.getText() != "" && inputStudentPassword.getText() != "")
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "" && listInput[4].getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
@@ -573,13 +572,19 @@ void ContentDetailClassroom::createData()
 
 		if (stateInput == FORM_SEX)
 		{
-			gotoXY(createPosX + inputStudentSex.getText().length(), createPosY + 9);
-			inputStudentSex.setMenu(moveMenu);
-			inputStudentSex.handleInput();
-			switch (inputStudentSex.getEndKey())
+			if (listInput[3].getText() == "")
+			{
+				listInput[3].focus();
+				listInput[3].setText(gender);
+				listInput[3].display();
+			}
+			listInput[3].useGender = true;
+			listInput[3].setMenu(moveMenu);
+			listInput[3].handleInput();
+			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
-				if (inputStudentCode.getText() != "" && inputStudentLastName.getText() != "" && inputStudentFirstName.getText() != "" && inputStudentPassword.getText() != "")
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "" && listInput[4].getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
@@ -603,6 +608,30 @@ void ContentDetailClassroom::createData()
 				stateInput = FORM_PASSWORD;
 				break;
 
+			case ADD:
+				if (listInput[3].getText() !=  "Nam")
+				{
+					gotoXY(whereX() - 2, whereY());
+					cout << "  ";
+					gotoXY(whereX() - 2, whereY());
+					listInput[3].setText("Nam");
+					listInput[3].display();
+				}
+				
+				break;
+
+			case SUBTRACT:
+				if (listInput[3].getText() != "Nu")
+				{
+					gotoXY(whereX() - 3, whereY());
+					cout << "   ";
+					gotoXY(whereX() - 3, whereY());
+					listInput[3].setText("Nu");
+					listInput[3].display();
+				}
+				
+				break;
+
 			case TAB:
 				if (moveMenu != 0)
 				{
@@ -618,13 +647,12 @@ void ContentDetailClassroom::createData()
 
 		if (stateInput == FORM_PASSWORD)
 		{
-			gotoXY(createPosX + inputStudentPassword.getText().length(), createPosY + 12);
-			inputStudentPassword.setMenu(moveMenu);
-			inputStudentPassword.handleInput();
-			switch (inputStudentPassword.getEndKey())
+			listInput[4].setMenu(moveMenu);
+			listInput[4].handleInput();
+			switch (listInput[4].getEndKey())
 			{
 			case ENTER:
-				if (inputStudentCode.getText() != "" && inputStudentLastName.getText() != "" && inputStudentFirstName.getText() != "" && inputStudentPassword.getText() != "")
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "" && listInput[4].getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
@@ -663,7 +691,16 @@ void ContentDetailClassroom::createData()
 
 		if (stateInput == FORM_ENTER)
 		{
-			bool result = test.addStudentToClass(classCode, inputStudentCode.getText(), inputStudentLastName.getText(), inputStudentFirstName.getText(), 'M', inputStudentPassword.getText());
+			char sex;
+			if (listInput[3].getText() == "Nam")
+			{
+				sex = 'M';
+			}
+			else {
+				sex = 'F';
+			}
+
+			bool result = test.addStudentToClass(classCode, listInput[0].getText(), listInput[1].getText(), listInput[2].getText(), sex, listInput[4].getText());
 			if (result)
 			{
 				loadData();
@@ -689,7 +726,6 @@ void ContentDetailClassroom::createData()
 			stateInput = FORM_CODE;
 		}
 	}
-
 }
 
 void ContentDetailClassroom::loadData()
@@ -752,6 +788,14 @@ void ContentDetailClassroom::pagging()
 	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(studentPage.totalPage);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 8, 10 + 28 + 5);
 	cout << pageTitle;
+}
+
+void ContentDetailClassroom::cleanInput()
+{
+	for (int i = 0; i < 5; i++)
+	{
+		listInput[i].clean();
+	}
 }
 
 void ContentDetailClassroom::showTitleStudent()

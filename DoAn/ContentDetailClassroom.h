@@ -46,7 +46,22 @@ private:
 	};
 	SelectInput stateInput;
 
+	InputField inputStudentCode;
+	InputField inputStudentLastName;
+	InputField inputStudentFirstName;
+	InputField inputStudentSex;
+	InputField inputStudentPassword;
+	Text text;
 
+	InputField listInput[5] = {
+		inputStudentCode,
+		inputStudentLastName,
+		inputStudentFirstName,
+		inputStudentSex,
+		inputStudentPassword
+	};
+
+	int posXMessage = 0;
 	string classCode;
 	int pageNumber = 1;
 	int hover = 0;
@@ -63,6 +78,7 @@ public:
 	void showTitleStudent();
 	void pagging();
 	void loadData();
+	void cleanInput();
 	void setClassCode(string classCode);
 	ContentDetailClassroom();
 	~ContentDetailClassroom();

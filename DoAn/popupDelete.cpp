@@ -18,15 +18,8 @@ void PopupDelete::open()
 
 void PopupDelete::close()
 {
-	string blankFill;
-	blankFill.resize(getWidth(), ' ');
-
-	for (int i = 0; i < getHeight(); i++)
-	{
-		setColorText(ColorCode_Back);
-		gotoXY(getPosX(), getPosY() + i);
-		cout << blankFill;
-	}
+	textbk(ColorCode_Back);
+	cleanTable();
 }
 
 void PopupDelete::handle()

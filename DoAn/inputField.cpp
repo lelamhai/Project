@@ -25,6 +25,11 @@ void InputField::drawBox()
 	box(x, y, w, h);
 }
 
+void InputField::focus()
+{
+	gotoXY(x+1,y+1);
+}
+
 void InputField::clean()
 {
 	string blankFill;
@@ -79,6 +84,11 @@ void InputField::handleInput()
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
 		{
+			if (useGender)
+			{
+				continue;
+			}
+
 			if (cursorPosition <= 0)
 			{
 				Sleep(150);
@@ -93,6 +103,11 @@ void InputField::handleInput()
 
 		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
 		{
+			if (useGender)
+			{
+				continue;
+			}
+
 			if (cursorPosition >= inputString.length())
 			{
 				Sleep(150);
@@ -219,24 +234,42 @@ void InputField::handleInput()
 		/*case ENTER:
 			keyInput = ENTER;
 			return;*/
+		case ADD:
+			keyInput = ADD;
+			return;
+
+		case SUBTRACT:
+			keyInput = SUBTRACT;
+			return;
 
 		case SPACEBAR:
+			if (useGender)
+			{
+				continue;
+			}
+
 			if (useSpace)
 			{
-				inputString.insert(inputString.begin() + cursorPosition, s);
-				cursorPosition++;
-				cout << " ";
-				for (int i = cursorPosition; i < inputString.length(); i++)
-				{
-					cout << inputString[i];
-				}
-
-				gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
+				continue;
 			}
-			
+
+			inputString.insert(inputString.begin() + cursorPosition, s);
+			cursorPosition++;
+			cout << " ";
+			for (int i = cursorPosition; i < inputString.length(); i++)
+			{
+				cout << inputString[i];
+			}
+
+			gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
 			break;
 
 		case BACKSPACE:
+			if (useGender)
+			{
+				break;
+			}
+
 			if (inputString.length() <= 0 || cursorPosition <= 0)
 			{
 				break;
