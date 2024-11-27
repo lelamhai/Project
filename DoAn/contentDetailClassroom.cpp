@@ -21,7 +21,7 @@ void ContentDetailClassroom::drawClassroom()
 	cout << "ESC: Tro Lai";
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING, WIDTH_INPUT - 5, HEIGHT_INPUT);
 
-	ManageClass test;
+	/*ManageClass test;
 	Classroom classFound = test.findClassByCode(classCode.c_str());
 	string className = classFound.className;
 	int total = test.getCountSudentOfClass(classCode.c_str());
@@ -31,7 +31,8 @@ void ContentDetailClassroom::drawClassroom()
 
 	int titlePosX = getCenterX(getConsoleWidth(), title.length());
 	gotoXY(titlePosX - 12, 10);
-	cout << title;
+	cout << title;*/
+	showTitleStudent();
 
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT - 4, DISTANCE_HEADER + PADDING + PADDING);
 	cout << "Tim";
@@ -63,6 +64,9 @@ void ContentDetailClassroom::drawClassroom()
 		box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1, WIDTH_INPUT, HEIGHT_INPUT);
 		posXRight = y + (i * 3);
 	}
+
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + WIDTH_INPUT + 10 - 2, 23);
+	cout << "<-|->";
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 25);
@@ -228,24 +232,6 @@ void ContentDetailClassroom::selectData()
 	int lastHover = -1;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
-		{
-			currentDetailClassroom = C_EXIT;
-			return;
-		}
-
-		if (GetAsyncKeyState(VK_F12) & 0x0001)
-		{
-			showTutorial();
-		}
-
-		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
-		{
-			currentDetailClassroom = C_CREATE;
-			Sleep(150);
-			return;
-		}
-
 		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
 			if (start < hover)
@@ -268,6 +254,126 @@ void ContentDetailClassroom::selectData()
 				hover = end;
 			}
 			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
+		{
+			if (pageNumber > 1)
+			{
+				hover = 0;
+				pageNumber--;
+				end = pageNumber * studentPage.numberStudentPerPage;
+				if (pageNumber * studentPage.numberStudentPerPage < studentPage.totalStudent)
+				{
+					end = studentPage.numberStudentPerPage - 1;
+				}
+				else {
+					end = (studentPage.numberStudentPerPage - (end - studentPage.totalStudent)) - 1;
+				}
+				lastHover = -1;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
+		{
+			if (pageNumber < studentPage.totalPage)
+			{
+				pageNumber++;
+
+				end = pageNumber * studentPage.numberStudentPerPage;
+				if (pageNumber * studentPage.numberStudentPerPage < studentPage.totalStudent)
+				{
+					end = studentPage.numberStudentPerPage - 1;
+				}
+				else {
+					end = (studentPage.numberStudentPerPage - (end - studentPage.totalStudent)) - 1;
+				}
+				hover = 0;
+				lastHover = -1;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_F1) & 0x0001)
+		{
+			currentDetailClassroom = C_SELECT;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F2) & 0x0001)
+		{
+			if (studentPage.totalStudent <= 0)
+			{
+				continue;
+			}
+
+			currentDetailClassroom = C_EDIT;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
+		{
+			currentDetailClassroom = C_SEARCH;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		{
+			currentDetailClassroom = C_EXIT;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		{
+			currentDetailClassroom = C_CREATE;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_DELETE) & 0x0001)
+		{
+			/*page = nl.getClassPerPage(1);
+
+			if (page.totalClass <= 0)
+			{
+				currentClassroom = C_SELECT;
+				return;
+			}*/
+
+			currentDetailClassroom = C_DELETE;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		{
+			moveMenu--;
+			Sleep(150);
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			moveMenu++;
+			Sleep(150);
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (moveMenu != 0)
+			{
+				currentDetailClassroom = C_EXIT;
+				return;
+			}
+		}
+
+		if (GetAsyncKeyState(VK_F12) & 0x0001)
+		{
+			showTutorial();
 		}
 
 		if (lastHover != hover)
@@ -308,6 +414,7 @@ void ContentDetailClassroom::selectData()
 				temp = temp->next;
 			}
 			lastHover == hover;
+			pagging();
 		}
 	}
 }
@@ -624,6 +731,42 @@ void ContentDetailClassroom::loadData()
 		i++;
 		temp = temp->next;
 	}
+}
+
+void ContentDetailClassroom::pagging()
+{
+	ManageClass test;
+	StudentPage studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
+	PTRSTUDENT temp = studentPage.studentList;
+
+	string blankFillText;
+	blankFillText.resize(10, ' ');
+
+	int currentPage = 0;
+	if (studentPage.totalPage > 0)
+	{
+		currentPage = pageNumber;
+	}
+
+	setColorText(ColorCode_DarkWhite);
+	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(studentPage.totalPage);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 8, 10 + 28 + 5);
+	cout << pageTitle;
+}
+
+void ContentDetailClassroom::showTitleStudent()
+{
+	ManageClass test;
+	Classroom classFound = test.findClassByCode(classCode.c_str());
+	string className = classFound.className;
+	int total = test.getCountSudentOfClass(classCode.c_str());
+
+	string count = to_string(total);
+	string title = "Lop:" + className + " - Sinh Vien:" + count;
+
+	int titlePosX = getCenterX(getConsoleWidth(), title.length());
+	gotoXY(titlePosX - 12, 10);
+	cout << title;
 }
 
 void ContentDetailClassroom::showTutorial()

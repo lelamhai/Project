@@ -1,4 +1,5 @@
 #pragma once
+#include "mydraw.h"
 #include "mycolor.h"
 #include "mywindows.h"
 #include "mykeyboard.h"
@@ -16,4 +17,12 @@
 #define COLUMN_CENTER 120
 #define ROW_CENTER 30
 #define COLUMN_RIGHT 40
+
+// Frame Content
+#define WIDTH_CONTENT  172
+#define HEIGHT_CONTENT  36
+
 void init();
+void cleanContent();
+void cleanTable();
+void cleanMessage(int y);

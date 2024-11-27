@@ -60,6 +60,8 @@ public:
 	void selectData();
 	void createData();
 	void showTutorial();
+	void showTitleStudent();
+	void pagging();
 	void loadData();
 	void setClassCode(string classCode);
 	ContentDetailClassroom();

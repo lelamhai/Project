@@ -20,6 +20,82 @@
                     "password": "dungvd",
                     "scores": [
                         {
+                            "score": 2.9000000953674316,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 0.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 0.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 1.399999976158142,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 4.300000190734863,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 2.9000000953674316,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 1.399999976158142,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 1.399999976158142,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 1.399999976158142,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 2.9000000953674316,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 5.699999809265137,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 2.9000000953674316,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 2.9000000953674316,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 2.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 0.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 4.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 2.0,
+                            "subjectCode": "CSDL"
+                        },
+                        {
+                            "score": 0.0,
+                            "subjectCode": "CSDL"
+                        },
+                        {
+                            "score": 1.7000000476837158,
+                            "subjectCode": "VL"
+                        },
+                        {
                             "score": 8.0,
                             "subjectCode": "VL"
                         }

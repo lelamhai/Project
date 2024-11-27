@@ -11,6 +11,8 @@
 #include <chrono>
 #include <ctime>
 #include <vector>
+#include <cmath>
+
 using namespace std;
 
 
@@ -62,12 +64,18 @@ public:
 
 	answer* getAnswer(int index); // hàm trả về struc lưu kết quả thi sau khi thi xong
 
+	void toCalculateResult(); // hàm thực hiện tính toán số câu đúng và điểm
+
+	int countCorrectAnswer();
+
+	float getScore();
 
 	tm getTimeStart(); // hàm trả về đối tượng lưu thời gian bắt đầu thi
 
 	tm getTimeEnd(tm timeStartExam); // hàm trả về đối tượng lưu thời gian kết thúc thi
 
-
+	static float roundFloat(float number, int n);
 
 };
+
 

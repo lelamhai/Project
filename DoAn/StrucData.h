@@ -97,6 +97,6 @@ struct resultList {
 	char studentCode[15];
 	char* subjectCode;
 	answer* answerList[MAX_NUMBER_QUESTION];
-	int countDone; //đếm số câu hỏi đã thi
-	int score;
+	int countCorrect; //đếm số câu hỏi đúng
+	float score;
 };

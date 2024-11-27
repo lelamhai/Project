@@ -383,7 +383,7 @@ bool ManageClass::startExam(const char* studentCode, const char* subjectCode, in
     
     // khởi tạo mảng để lưu kết quả thi
     resultList result_List;
-    result_List.countDone = 0;
+    result_List.countCorrect = 0;
     result_List.score = 0;
 
     // đưa ra từng nội dung câu hỏi cho front end hiển thị sau đó
