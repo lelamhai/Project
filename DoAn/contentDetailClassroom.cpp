@@ -200,7 +200,8 @@ void ContentDetailClassroom::handle()
 			cleanMessage(posXMessage);
 			break;
 		case ContentDetailClassroom::C_EDIT:
-
+			showCur(1);
+			editData();
 			cleanInput();
 			cleanMessage(posXMessage);
 			break;
@@ -786,7 +787,271 @@ void ContentDetailClassroom::deleteData()
 
 void ContentDetailClassroom::editData()
 {
+	ManageClass test;
+	Student studentFound = test.findStudentByCode(studentCode, classCode);
+	listInput[0].setText(studentFound.studentCode);
+	listInput[1].setText(studentFound.lastName);
+	listInput[2].setText(studentFound.firstName);
+	if (studentFound.gender == 'M')
+	{
+		listInput[3].setText("Nam");
+	}
+	else {
+		listInput[3].setText("Nu");
+	}
+	listInput[4].setText(studentFound.password);
 
+	for (int i = 0; i < 5; i++)
+	{
+		listInput[i].focus();
+		listInput[i].display();
+	}
+
+	string gender = "Nam";
+	int moveMenu = 0;
+	stateInput = FORM_LAST;
+	while (true)
+	{
+		if (stateInput == FORM_LAST)
+		{
+			listInput[1].setMenu(moveMenu);
+			listInput[1].handleInput();
+			switch (listInput[1].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "" && listInput[4].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_FIRST;
+				break;
+
+			case F1:
+				currentDetailClassroom = C_SELECT;
+				return;
+
+			case F3:
+				currentDetailClassroom = C_SEARCH;
+				return;
+
+			case DOWN:
+				stateInput = FORM_FIRST;
+				break;
+
+			case TAB:
+				if (moveMenu != 0)
+				{
+					currentDetailClassroom = C_EXIT;
+					return;
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_FIRST)
+		{
+			listInput[2].setMenu(moveMenu);
+			listInput[2].handleInput();
+			switch (listInput[2].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "" && listInput[4].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_SEX;
+				break;
+
+			case F1:
+				currentDetailClassroom = C_SELECT;
+				return;
+
+			case F3:
+				currentDetailClassroom = C_SEARCH;
+				return;
+
+			case UP:
+				stateInput = FORM_LAST;
+				break;
+
+			case DOWN:
+				stateInput = FORM_SEX;
+				break;
+
+			case TAB:
+				if (moveMenu != 0)
+				{
+					currentDetailClassroom = C_EXIT;
+					return;
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_SEX)
+		{
+			if (listInput[3].getText() == "")
+			{
+				listInput[3].focus();
+				listInput[3].setText(gender);
+				listInput[3].display();
+			}
+			listInput[3].useGender = true;
+			listInput[3].setMenu(moveMenu);
+			listInput[3].handleInput();
+			switch (listInput[3].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "" && listInput[4].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_PASSWORD;
+				break;
+
+			case F1:
+				currentDetailClassroom = C_SELECT;
+				return;
+
+			case F3:
+				currentDetailClassroom = C_SEARCH;
+				return;
+
+			case UP:
+				stateInput = FORM_FIRST;
+				break;
+
+			case DOWN:
+				stateInput = FORM_PASSWORD;
+				break;
+
+			case ADD:
+				if (listInput[3].getText() != "Nam")
+				{
+					gotoXY(whereX() - 2, whereY());
+					cout << "  ";
+					gotoXY(whereX() - 2, whereY());
+					listInput[3].setText("Nam");
+					listInput[3].display();
+				}
+
+				break;
+
+			case SUBTRACT:
+				if (listInput[3].getText() != "Nu")
+				{
+					gotoXY(whereX() - 3, whereY());
+					cout << "   ";
+					gotoXY(whereX() - 3, whereY());
+					listInput[3].setText("Nu");
+					listInput[3].display();
+				}
+
+				break;
+
+			case TAB:
+				if (moveMenu != 0)
+				{
+					currentDetailClassroom = C_EXIT;
+					return;
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_PASSWORD)
+		{
+			listInput[4].setMenu(moveMenu);
+			listInput[4].handleInput();
+			switch (listInput[4].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "" && listInput[4].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_CODE;
+				break;
+
+			case F1:
+				currentDetailClassroom = C_SELECT;
+				return;
+
+			case F3:
+				currentDetailClassroom = C_SEARCH;
+				return;
+
+			case UP:
+				stateInput = FORM_SEX;
+				break;
+
+			case DOWN:
+				stateInput = FORM_LAST;
+				break;
+
+			case TAB:
+				if (moveMenu != 0)
+				{
+					currentDetailClassroom = C_EXIT;
+					return;
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ENTER)
+		{
+			char sex;
+			if (listInput[3].getText() == "Nam")
+			{
+				sex = 'M';
+			}
+			else {
+				sex = 'F';
+			}
+
+			bool result = test.editStudentInClass(classCode,studentCode, listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
+			if (result)
+			{
+				loadData();
+
+				text.setContent("Cap nhat thong tin thanh cong!");
+				int textPosX = getCenterX(40, text.getLenString());
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, 26 + 2);
+				text.display();
+			}
+			else
+			{
+				string blankFillText;
+				blankFillText.resize(36, ' ');
+
+				gotoXY(34 + 120 + 8 + 2 + 1, 19);
+				cout << blankFillText;
+
+				text.setContent("Cap nhat thong tin that bai!");
+				int textPosX = getCenterX(40, text.getLenString());
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, 26 + 2);
+				text.display();
+			}
+			stateInput = FORM_LAST;
+		}
+	}
 }
 
 void ContentDetailClassroom::findData()
