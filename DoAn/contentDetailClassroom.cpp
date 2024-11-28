@@ -731,8 +731,8 @@ void ContentDetailClassroom::createData()
 			bool result = test.addStudentToClass(classCode, listInput[0].getText(), listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
 			if (result)
 			{
+				cleanMessage(posXMessage);
 				loadData();
-
 				text.setContent("Them sinh vien thanh cong!");
 				int textPosX = getCenterX(40, text.getLenString());
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, 26 + 2);
@@ -740,11 +740,7 @@ void ContentDetailClassroom::createData()
 			}
 			else
 			{
-				string blankFillText;
-				blankFillText.resize(36, ' ');
-
-				gotoXY(34 + 120 + 8 + 2 + 1, 19);
-				cout << blankFillText;
+				cleanMessage(posXMessage);
 
 				text.setContent("Them sinh vien that bai!");
 				int textPosX = getCenterX(40, text.getLenString());
@@ -1029,8 +1025,8 @@ void ContentDetailClassroom::editData()
 			bool result = test.editStudentInClass(classCode,studentCode, listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
 			if (result)
 			{
+				cleanMessage(posXMessage);
 				loadData();
-
 				text.setContent("Cap nhat thong tin thanh cong!");
 				int textPosX = getCenterX(40, text.getLenString());
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, 26 + 2);
@@ -1038,12 +1034,7 @@ void ContentDetailClassroom::editData()
 			}
 			else
 			{
-				string blankFillText;
-				blankFillText.resize(36, ' ');
-
-				gotoXY(34 + 120 + 8 + 2 + 1, 19);
-				cout << blankFillText;
-
+				cleanMessage(posXMessage);
 				text.setContent("Cap nhat thong tin that bai!");
 				int textPosX = getCenterX(40, text.getLenString());
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, 26 + 2);
