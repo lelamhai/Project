@@ -103,7 +103,6 @@ void printClassPage(ClassPage classPage);
 
 bool containString(const string& str, const string& substr);
 
-
 string toLowerString(string str);
 
 

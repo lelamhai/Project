@@ -88,7 +88,11 @@ bool addStudentToList(PTRSTUDENT& studentList, Student std1);
 StudentPage getStudentPerPage(PTRSTUDENT studentList, int page);
 
 // Get Score of student 
+// Input: list student, student code, subjectcode
+// Output: float score of student in subject
 int getScoreOfStudent(PTRSTUDENT studentList, const string studentCode, const string subjectCode);
+
+void reverseStudentList(PTRSTUDENT& head);
 
 
 

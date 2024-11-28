@@ -341,6 +341,7 @@ bool addStudentToList(PTRSTUDENT& studentList, Student std1) {
     strcpy_s(tmpStudent->info.password, std1.password);
     strcpy_s(tmpStudent->info.studentCode, std1.studentCode);
     tmpStudent->info.gender = std1.gender;
+    tmpStudent->info.scoreList = nullptr;
     tmpStudent->next = nullptr;
      
     if (studentList == nullptr) {
@@ -391,6 +392,7 @@ StudentPage getStudentPerPage(PTRSTUDENT studentList, int page)
 
     studentPage.startIndex = startIndex;
     studentPage.endIndex = endIndex;
+    //reverseStudentList(pageResult); // Reverse student list 
     studentPage.studentList = pageResult;
 
     return studentPage;
@@ -412,4 +414,25 @@ int getScoreOfStudent(PTRSTUDENT studentList, const string studentCode, const st
     }
 
     return bestScore;
+}
+
+void reverseStudentList(PTRSTUDENT& head) {
+    PTRSTUDENT prev = nullptr;
+    PTRSTUDENT current = head;
+    PTRSTUDENT next = nullptr;
+
+    while (current != nullptr) {
+        // Lưu node tiếp theo
+        next = current->next;
+
+        // Đảo ngược liên kết
+        current->next = prev;
+
+        // Di chuyển các con trỏ lên một bước
+        prev = current;
+        current = next;
+    }
+
+    // Cập nhật head thành node cuối cùng
+    head = prev;
 }

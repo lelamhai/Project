@@ -6,6 +6,46 @@
             "className": "D23TXCN04-K",
             "students": [
                 {
+                    "firstName": "mmmm",
+                    "gender": 77,
+                    "lastName": "aaaa",
+                    "password": "5687",
+                    "scores": [],
+                    "studentCode": "das2171"
+                },
+                {
+                    "firstName": "mmmm",
+                    "gender": 77,
+                    "lastName": "aaaa",
+                    "password": "5687",
+                    "scores": [],
+                    "studentCode": "das217"
+                },
+                {
+                    "firstName": "mmmm",
+                    "gender": 77,
+                    "lastName": "aaaa",
+                    "password": "5687",
+                    "scores": [],
+                    "studentCode": "das21"
+                },
+                {
+                    "firstName": "d",
+                    "gender": 77,
+                    "lastName": "m",
+                    "password": "98624",
+                    "scores": [],
+                    "studentCode": "hvm"
+                },
+                {
+                    "firstName": "sadasd",
+                    "gender": 77,
+                    "lastName": "asdasdsa",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "sagdhas"
+                },
+                {
                     "firstName": "aaaaaa",
                     "gender": 70,
                     "lastName": "bbbbbb",
@@ -68,14 +108,6 @@
                     "password": "123456",
                     "scores": [],
                     "studentCode": "K23DTCN306"
-                },
-                {
-                    "firstName": "Hai 7",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN307"
                 },
                 {
                     "firstName": "Hai 8",
@@ -173,23 +205,23 @@
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 0.0,
+                            "score": 8.0,
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 1.399999976158142,
+                            "score": 8.0,
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 4.300000190734863,
+                            "score": 8.0,
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 2.9000000953674316,
+                            "score": 8.0,
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 1.399999976158142,
+                            "score": 8.0,
                             "subjectCode": "VL"
                         },
                         {
@@ -270,6 +302,54 @@
                     "password": "123456",
                     "scores": [],
                     "studentCode": "lehuyenthao"
+                },
+                {
+                    "firstName": "asdhasd",
+                    "gender": 70,
+                    "lastName": "asdasda",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "hsdhf"
+                },
+                {
+                    "firstName": "adsfas",
+                    "gender": 77,
+                    "lastName": "das",
+                    "password": "12097",
+                    "scores": [],
+                    "studentCode": "dsa"
+                },
+                {
+                    "firstName": "Tran ",
+                    "gender": 77,
+                    "lastName": "Van Cuong",
+                    "password": "346321",
+                    "scores": [],
+                    "studentCode": "696969"
+                },
+                {
+                    "firstName": "Tran ",
+                    "gender": 77,
+                    "lastName": "Van Cuong",
+                    "password": "346321",
+                    "scores": [],
+                    "studentCode": "696968"
+                },
+                {
+                    "firstName": "Tran ",
+                    "gender": 77,
+                    "lastName": "Van Cuongggg",
+                    "password": "346321",
+                    "scores": [],
+                    "studentCode": "6969612"
+                },
+                {
+                    "firstName": "Tran ",
+                    "gender": 77,
+                    "lastName": "Van Cuongggg",
+                    "password": "346321",
+                    "scores": [],
+                    "studentCode": "6969612123"
                 }
             ]
         },
