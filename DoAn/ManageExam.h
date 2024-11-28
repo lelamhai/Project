@@ -68,13 +68,13 @@ public:
 
 	int countCorrectAnswer();
 
-	float getScore();
+	double getScore();
 
 	tm getTimeStart(); // hàm trả về đối tượng lưu thời gian bắt đầu thi
 
 	tm getTimeEnd(tm timeStartExam); // hàm trả về đối tượng lưu thời gian kết thúc thi
 
-	static float roundFloat(float number, int n);
+	static float roundNumber(float number, int n);
 
 };
 

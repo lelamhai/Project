@@ -1,4 +1,6 @@
 #pragma once
+#include "configApp.h"
+
 #include "ManageClass.h"
 #include "ManageStudent.h"
 #include "Content.h"
@@ -8,7 +10,7 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 
-#include "configApp.h"
+#include "PopupDelete.h"
 #include "PopupTutorial.h"
 #include "InputField.h"
 #include "Text.h"
@@ -46,8 +48,24 @@ private:
 	};
 	SelectInput stateInput;
 
+	InputField inputStudentCode;
+	InputField inputStudentLastName;
+	InputField inputStudentFirstName;
+	InputField inputStudentSex;
+	InputField inputStudentPassword;
+	Text text;
 
+	InputField listInput[5] = {
+		inputStudentCode,
+		inputStudentLastName,
+		inputStudentFirstName,
+		inputStudentSex,
+		inputStudentPassword
+	};
+
+	int posXMessage = 0;
 	string classCode;
+	string studentCode;
 	int pageNumber = 1;
 	int hover = 0;
 	string textSearch = "";
@@ -59,10 +77,13 @@ public:
 	void handle();
 	void selectData();
 	void createData();
+	void deleteData();
+	void editData();
 	void showTutorial();
 	void showTitleStudent();
 	void pagging();
 	void loadData();
+	void cleanInput();
 	void setClassCode(string classCode);
 	ContentDetailClassroom();
 	~ContentDetailClassroom();

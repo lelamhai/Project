@@ -111,14 +111,14 @@ void ManageExam::toCalculateResult() {
     }
     answerRecord.countCorrect = correctAnswer;
     score = (float)correctAnswer * 10 / numberQuestion;
-    answerRecord.score = roundFloat(score, 1);
+    answerRecord.score = roundNumber(score, 1); // làm tròn điểm đến 1 số thập phân
 }
 
 int ManageExam::countCorrectAnswer() {
     return answerRecord.countCorrect;
 }
 
-float ManageExam::getScore() {
+double ManageExam::getScore() {
     return answerRecord.score;
 }
 
@@ -143,8 +143,8 @@ tm ManageExam::getTimeEnd(tm timeStart) {
     return timeEnd;
 }
 
-float ManageExam::roundFloat(float number, int n) {
-    float x = pow(10, n);
+float ManageExam::roundNumber(float number, int n) {
+    float x = pow(10.0f, n);
     return round(number * x) / x;
 }
 

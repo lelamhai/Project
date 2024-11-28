@@ -20,8 +20,11 @@ private:
 public:
 	bool useHide = false;
 	bool useSpace = false;
+	bool useGender = false;
+
 	void setPosition(int posX, int posY);
 	void setFrame(int width, int height);
+	void focus();
 	void drawBox();
 	string getText();
 	void setText(string value);

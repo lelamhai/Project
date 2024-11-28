@@ -26,7 +26,16 @@
                     "gender": 77,
                     "lastName": "Duy Khoa",
                     "password": "khoavd",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 0.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 2.9000000953674316,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "K23DTCN270"
                 },
                 {

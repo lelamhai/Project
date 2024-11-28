@@ -1,4 +1,5 @@
 #pragma once
+#include "configApp.h"
 #include "Popup.h"
 class PopupDelete : public Popup
 {

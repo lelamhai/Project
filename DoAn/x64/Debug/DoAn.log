@@ -1,2 +1,11 @@
+<<<<<<< HEAD
 ﻿  DungTest.cpp
   DoAn.vcxproj -> D:\HOC HANH\PTIT\CTDL & GT\Do An\Project\x64\Debug\DoAn.exe
+=======
+﻿  HuyTest.cpp
+C:\Users\ngoch\Desktop\Project\DoAn\HuyTest.cpp(203,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  ManageClass.cpp
+  Generating Code...
+C:\Users\ngoch\Desktop\Project\DoAn\ManageClass.cpp(268,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
+  DoAn.vcxproj -> C:\Users\ngoch\Desktop\Project\x64\Debug\DoAn.exe
+>>>>>>> 6bc06864a1b74c38a8b2609ec4913f9d4fde9373
