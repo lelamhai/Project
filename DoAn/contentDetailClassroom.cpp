@@ -231,13 +231,13 @@ void ContentDetailClassroom::selectData()
 
 	ManageClass test;
 	StudentPage studentPage;
-	if (textSearch != "")
+	if (textSearch == "")
 	{
-		studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
+		studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
 	}
 	else
 	{
-		studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
+		studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
 	}
 
 
@@ -407,13 +407,13 @@ void ContentDetailClassroom::selectData()
 			int posX = 3;
 			int i = 0;
 
-			if (textSearch != "")
+			if (textSearch == "")
 			{
-				studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
+				studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
 			}
 			else
 			{
-				studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
+				studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
 			}
 			PTRSTUDENT temp = studentPage.studentList;
 
@@ -904,13 +904,13 @@ void ContentDetailClassroom::loadData()
 	cleanTable();
 	ManageClass test;
 	StudentPage studentPage;
-	if (textSearch != "")
+	if (textSearch == "")
 	{
-		studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
+		studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
 	}
 	else
 	{
-		studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
+		studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
 	}
 	PTRSTUDENT temp = studentPage.studentList;
 
