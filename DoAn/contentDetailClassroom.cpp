@@ -727,7 +727,7 @@ void ContentDetailClassroom::createData()
 				sex = 'F';
 			}
 
-			bool result = test.addStudentToClass(classCode, listInput[0].getText(), listInput[1].getText(), listInput[2].getText(), sex, listInput[4].getText());
+			bool result = test.addStudentToClass(classCode, listInput[0].getText(), listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
 			if (result)
 			{
 				loadData();
