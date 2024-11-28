@@ -32,6 +32,7 @@ enum StateContent
 
     EXIT        = -1
 };
+DWORD WINAPI threadFunction(LPVOID lpParam);
 
 class Layout
 {
@@ -50,13 +51,12 @@ protected:
     {
         Footer();
     }
-    int choice;
-    bool isLoadContent = true;
+    static int choice;
 public:
     void setRunContent(int choice);
-    void templateMenu();
-    void templateContent();
 	void main();
+    static DWORD WINAPI threadContent(LPVOID lpParam);
+
 	Layout();
 	~Layout();
 };
