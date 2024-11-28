@@ -48,6 +48,15 @@ private:
 	};
 	SelectInput stateInput;
 
+	enum SearchInput
+	{
+		SEARCH_INPUT = 0,
+		SEARCH_F1 = 1,
+		SEARCH_EXIT = 2
+	};
+	SearchInput stateSearchInput;
+
+
 	InputField inputStudentCode;
 	InputField inputStudentLastName;
 	InputField inputStudentFirstName;
@@ -79,6 +88,7 @@ public:
 	void createData();
 	void deleteData();
 	void editData();
+	void findData();
 	void showTutorial();
 	void showTitleStudent();
 	void pagging();

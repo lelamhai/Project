@@ -205,6 +205,8 @@ void ContentDetailClassroom::handle()
 			cleanMessage(posXMessage);
 			break;
 		case ContentDetailClassroom::C_SEARCH:
+			showCur(1);
+			findData();
 			break;
 		case ContentDetailClassroom::C_DELETE:
 			showCur(0);
@@ -228,8 +230,17 @@ void ContentDetailClassroom::selectData()
 	int moveMenu = 0;
 
 	ManageClass test;
-	StudentPage studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
-	
+	StudentPage studentPage;
+	if (textSearch != "")
+	{
+		studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
+	}
+	else
+	{
+		studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
+	}
+
+
 	int start = 0;
 	int end = pageNumber * studentPage.numberStudentPerPage;
 
@@ -273,6 +284,7 @@ void ContentDetailClassroom::selectData()
 			if (pageNumber > 1)
 			{
 				hover = 0;
+				cleanTable();
 				pageNumber--;
 				end = pageNumber * studentPage.numberStudentPerPage;
 				if (pageNumber * studentPage.numberStudentPerPage < studentPage.totalStudent)
@@ -291,6 +303,7 @@ void ContentDetailClassroom::selectData()
 		{
 			if (pageNumber < studentPage.totalPage)
 			{
+				cleanTable();
 				pageNumber++;
 
 				end = pageNumber * studentPage.numberStudentPerPage;
@@ -393,7 +406,17 @@ void ContentDetailClassroom::selectData()
 		{
 			int posX = 3;
 			int i = 0;
+
+			if (textSearch != "")
+			{
+				studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
+			}
+			else
+			{
+				studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
+			}
 			PTRSTUDENT temp = studentPage.studentList;
+
 			while (temp != nullptr) 
 			{
 				setColorText(ColorCode_DarkWhite);
@@ -766,11 +789,131 @@ void ContentDetailClassroom::editData()
 
 }
 
+void ContentDetailClassroom::findData()
+{
+	int moveMenu = 0;
+	int cursorPosition = textSearch.length();
+	stateSearchInput = SEARCH_INPUT;
+	while (true)
+	{
+		if (stateSearchInput == SEARCH_INPUT)
+		{
+			gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT + 1 + textSearch.length(), DISTANCE_HEADER + PADDING + 1);
+			if (GetAsyncKeyState(VK_F1) & 0x0001)
+			{
+				currentDetailClassroom = C_SELECT;
+				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+			{
+				currentDetailClassroom = C_CREATE;
+				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+			{
+				moveMenu--;
+				Sleep(150);
+				continue;
+			}
+
+			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+			{
+				moveMenu++;
+				Sleep(150);
+				continue;
+			}
+
+			if (GetAsyncKeyState(VK_TAB) & 0x8000)
+			{
+				if (moveMenu != 0)
+				{
+					currentDetailClassroom = C_EXIT;
+					Sleep(150);
+					return;
+				}
+			}
+
+			char s = _getch();
+			int key = keySpecial(s);
+			switch (s)
+			{
+			case BACKSPACE:
+				if (textSearch.length() <= 0 || cursorPosition <= 0)
+				{
+					break;
+				}
+
+				if (cursorPosition == textSearch.length())
+				{
+					textSearch.erase(textSearch.length() - 1, 1);
+					cursorPosition--;
+					cout << "\b \b";
+				}
+				else {
+					textSearch.erase(--cursorPosition, 1);
+					gotoXY(whereX() - 1, whereY());
+					for (int i = cursorPosition; i < textSearch.length(); i++)
+					{
+						cout << textSearch[i];
+					}
+					gotoXY(whereX(), whereY());
+					cout << " ";
+					gotoXY(whereX() - 1 - (textSearch.length() - cursorPosition), whereY());
+				}
+				loadData();
+				pagging();
+				break;
+
+			default:
+				if (textSearch.length() > 14)
+				{
+					break;
+				}
+
+				if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+				{
+					showCur(1);
+
+					textSearch.insert(textSearch.begin() + cursorPosition, s);
+					cursorPosition++;
+					cout << s;
+
+					if (cursorPosition != textSearch.length())
+					{
+						for (int i = cursorPosition; i <= textSearch.length(); i++)
+						{
+							cout << textSearch[i];
+						}
+						gotoXY(whereX() - (textSearch.length() - cursorPosition), whereY());
+					}
+					loadData();
+					pagging();
+				}
+				break;
+			}
+		}
+	}
+}
+
 void ContentDetailClassroom::loadData()
 {
+	cleanTable();
 	ManageClass test;
-	StudentPage studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
+	StudentPage studentPage;
+	if (textSearch != "")
+	{
+		studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
+	}
+	else
+	{
+		studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
+	}
 	PTRSTUDENT temp = studentPage.studentList;
+
 	int posX = 3;
 	int i = 0;
 	while (temp != nullptr)

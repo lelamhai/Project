@@ -663,9 +663,6 @@ void ContentClassroom::findData()
 {
 	int moveMenu = 0;
 
-	int currentX = 0;
-	int currentY = 0;
-
 	int cursorPosition = textSearch.length();
 	stateSearchInput = SEARCH_INPUT;
 	while (true)
@@ -770,8 +767,6 @@ void ContentClassroom::findData()
 				}
 				break;
 			}
-
-			
 		}
 	}
 }
