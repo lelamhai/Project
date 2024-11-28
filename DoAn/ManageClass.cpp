@@ -23,6 +23,24 @@ Classroom ManageClass::findClassByCode(const char* classCode)
     return classFound;
 }
 
+Student ManageClass::findStudentByCode(const string studentCode, const string classCode)
+{
+    Student studentFound;
+    Classroom classFound = findClassByCode(classCode.c_str());
+    PTRSTUDENT temp = classFound.studentList;
+    while (temp != nullptr) {
+        if (studentCode == string(temp->info.studentCode)) {
+            strcpy_s(studentFound.studentCode, temp->info.studentCode);
+            strcpy_s(studentFound.firstName, temp->info.firstName);
+            strcpy_s(studentFound.lastName, temp->info.lastName);
+            strcpy_s(studentFound.password, temp->info.password);
+            studentFound.gender = temp->info.gender;
+        }
+        temp = temp->next;
+    }
+    return studentFound;
+}
+
 
 ClassPage ManageClass::searchClass(string keyword, int page)
 {
@@ -187,10 +205,10 @@ void ManageClass::loadFromFile() {
         classes[i]->className = classData["className"];
 
         // Đọc danh sách sinh viên
-        classes[i]->studentList = nullptr;
-        PTRSTUDENT* lastStudent = &classes[i]->studentList;
+        classes[i]->studentList = nullptr;  // Khởi tạo danh sách sinh viên rỗng
 
         for (const auto& studentData : classData["students"]) {
+            // Tạo sinh viên mới
             PTRSTUDENT newStudent = new NodeStudent();
             strcpy_s(newStudent->info.studentCode, studentData["studentCode"].get<string>().c_str());
             strcpy_s(newStudent->info.firstName, studentData["firstName"].get<string>().c_str());
@@ -199,23 +217,26 @@ void ManageClass::loadFromFile() {
             strcpy_s(newStudent->info.password, studentData["password"].get<string>().c_str());
 
             // Đọc danh sách điểm
-            newStudent->info.scoreList = nullptr;
-            PTRSCORE* lastScore = &newStudent->info.scoreList;
+            newStudent->info.scoreList = nullptr;  // Khởi tạo danh sách điểm rỗng
+            PTRSCORE* lastScore = &newStudent->info.scoreList;  // Con trỏ để thêm điểm
+
             for (const auto& scoreData : studentData["scores"]) {
+                // Tạo điểm mới
                 PTRSCORE newScore = new NodeScore();
                 strcpy_s(newScore->info.subjectCode, scoreData["subjectCode"].get<string>().c_str());
                 newScore->info.diem = scoreData["score"].get<float>();
-                *lastScore = newScore;
-                lastScore = &newScore->next;
+                *lastScore = newScore;  // Gắn điểm mới vào danh sách
+                lastScore = &newScore->next;  // Cập nhật con trỏ cuối
             }
             *lastScore = nullptr;  // Kết thúc danh sách điểm
 
-            *lastStudent = newStudent;
-            lastStudent = &newStudent->next;
+            // Thêm sinh viên vào đầu danh sách
+            newStudent->next = classes[i]->studentList;  // Liên kết nút mới với danh sách hiện tại
+            classes[i]->studentList = newStudent;        // Cập nhật đầu danh sách
         }
-        *lastStudent = nullptr;  // Kết thúc danh sách sinh viên
     }
 }
+
 
 bool ManageClass::addStudentToClass(const string classCode, const string studentCode, const string firstName, const string lastName, char gender, const string password)
 {
@@ -415,7 +436,7 @@ bool ManageClass::addScoreToStudent(const string studentCode, const string subje
         PTRSTUDENT studentList = classes[i]->studentList;
         while (studentList != nullptr) {
             if (studentCode == studentList->info.studentCode) {
-                addScoreToList(studentList->info.scoreList, subjectCode, score);
+                updateScoreToList(studentList->info.scoreList, subjectCode, score);
                 saveToFile();
                 return true;
             }

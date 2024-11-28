@@ -59,7 +59,9 @@ void DungTest::main()
      test.addScoreToStudent("K23DTCN269", "VL", 8);
 
 
-
+     // Hàm lấy ra học sinh để sửa đầu vào ("Mã sinh viên", "Mã lớp")
+     Student studentFound = test.findStudentByCode("K23DTCN269", "C001"); 
+     cout << "Hoc sinh tim thay ten: " << studentFound.firstName << endl;
 
 
 

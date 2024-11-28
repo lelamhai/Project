@@ -41,6 +41,9 @@ public:
 
 	Classroom findClassByCode(const char* classCode);
 
+	// Function get student by code
+	Student findStudentByCode(const string studentCode, const string classCode);
+
 	// Function add class to classlist
 	// Input: classCode, className
 	// Output: ++ count and return true if success or false if fail;

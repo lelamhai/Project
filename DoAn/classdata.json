@@ -6,6 +6,22 @@
             "className": "D23TXCN04-K",
             "students": [
                 {
+                    "firstName": "vu",
+                    "gender": 77,
+                    "lastName": "hihi",
+                    "password": "12345",
+                    "scores": [],
+                    "studentCode": "ahsdh"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "ThiThanhNhan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN273"
+                },
+                {
                     "firstName": "Vu",
                     "gender": 77,
                     "lastName": "Duy Khoa",
@@ -20,11 +36,11 @@
                     "password": "dungvd",
                     "scores": [
                         {
-                            "score": 2.9000000953674316,
+                            "score": 8.0,
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 0.0,
+                            "score": 8.0,
                             "subjectCode": "VL"
                         },
                         {
@@ -101,6 +117,22 @@
                         }
                     ],
                     "studentCode": "K23DTCN269"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Dung",
+                    "password": "12345",
+                    "scores": [],
+                    "studentCode": "K23DTCN298"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Dung",
+                    "password": "12345",
+                    "scores": [],
+                    "studentCode": "K23DTCN299"
                 }
             ]
         },

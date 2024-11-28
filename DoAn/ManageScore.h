@@ -10,4 +10,4 @@ public:
 	~ManageScore();
 };
 
-bool addScoreToList(PTRSCORE& scoreList, string subjectCode, float score);
+bool updateScoreToList(PTRSCORE& scoreList, string subjectCode, float score);
