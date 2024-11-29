@@ -202,8 +202,6 @@ void ContentClassroom::handle()
 
 void ContentClassroom::selectData()
 {
-	int moveMenu = 0;
-
 	ManageClass nl;
 	ClassPage page;
 
@@ -365,11 +363,8 @@ void ContentClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			if (moveMenu != 0)
-			{
-				currentClassroom = C_EXIT;
-				return;
-			}
+			currentClassroom = C_EXIT;
+			return;
 		}
 
 		if (lastHover != hover)
@@ -414,7 +409,6 @@ void ContentClassroom::selectData()
 
 void ContentClassroom::createData()
 {
-	int moveMenu = 0;
 	ManageClass nl;
 
 	stateInput = FORM_CODE;
@@ -571,7 +565,6 @@ void ContentClassroom::deleteData()
 
 void ContentClassroom::editData()
 {
-	int moveMenu = 0;
 	ManageClass nl;
 
 	Text text;
@@ -614,6 +607,7 @@ void ContentClassroom::editData()
 			case F3:
 				currentClassroom = C_SEARCH;
 				return;
+
 
 			case TAB:
 				if (moveMenu != 0)
@@ -661,8 +655,6 @@ void ContentClassroom::editData()
 
 void ContentClassroom::findData()
 {
-	int moveMenu = 0;
-
 	int cursorPosition = textSearch.length();
 	stateSearchInput = SEARCH_INPUT;
 	while (true)
@@ -688,15 +680,17 @@ void ContentClassroom::findData()
 			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
 			{
 				moveMenu--;
+				currentClassroom = C_SELECT;
 				Sleep(150);
-				continue;
+				return;
 			}
 
 			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
 			{
 				moveMenu++;
+				currentClassroom = C_SELECT;
 				Sleep(150);
-				continue;
+				return;
 			}
 
 			if (GetAsyncKeyState(VK_TAB) & 0x8000)

@@ -15,17 +15,20 @@ Layout::~Layout()
 
 void Layout::setRunContent(int content)
 {
-    //choice = content;
+    choice = content;
 }
 
 void Layout::main()
 {
-    Singleton::getInstance()->role = "GV";
-
     DWORD ID = 0;
-    HANDLE hThread = CreateThread(NULL, 0, threadContent, this, 0, &ID);
+    hThread = CreateThread(NULL, 0, templateContent, this, 0, &ID);
+    templateMenu();
+}
 
+void Layout::templateMenu()
+{
     vector<string> menu;
+
     if (Singleton::getInstance()->role != "GV")
     {
         menu = {
@@ -46,9 +49,10 @@ void Layout::main()
             "Thoat"
         };
     }
+
     int posY = 10;
-    int active = 0;
-    int hover = 0;
+    int active = choice;
+    int hover = choice;
     int lastHover = -1;
     SuspendThread(hThread);
     while (true)
@@ -65,11 +69,29 @@ void Layout::main()
             hover += 1;
         }
 
-        if (GetAsyncKeyState(VK_TAB) & 0x0001 && active != hover)
+        if (GetAsyncKeyState(VK_TAB) & 0x8000 && active != hover)
         {
+            int count = menu.size();
+            if (hover == count - 2)
+            {
+                choice = hover;
+                Sleep(50);
+                return;
+            }
+
+            if (hover == count - 1)
+            {
+                clrscr();
+                gotoXY(0, 0);
+                setColorText(ColorCode_DarkWhite);
+                exit(0);
+            }
+
+            active = hover;
             choice = hover;
-            SuspendThread(hThread);
             lastHover = -1;
+            SuspendThread(hThread);
+            continue;
         }
 
         if (lastHover != hover)
@@ -94,60 +116,76 @@ void Layout::main()
     }
 }
 
-DWORD WINAPI Layout::threadContent(LPVOID lpParam) 
+DWORD WINAPI Layout::templateContent(LPVOID lpParam) 
 {
-    int i = 0;
     while (true)
     {
-        if (choice == 0)
+        if (Singleton::getInstance()->role != "GV")
         {
-            showCur(0);
-            cleanContent();
-            ContentAbout* a = new ContentAbout();
-            a->displayContent();
-            delete a;
-        }
+            if (choice == 0)
+            {
+                showCur(0);
+                cleanContent();
+                ContentAbout* a = new ContentAbout();
+                a->displayContent();
+                delete a;
+            }
 
-        if (choice == 1)
-        {
-            showCur(0);
-            cleanContent();
-            ContentClassroom* c = new ContentClassroom();
-            c->displayContent();
-            delete c;
+            if (choice == 1)
+            {
+                showCur(0);
+                cleanContent();
+                ContentExam* e = new ContentExam();
+                e->displayContent();
+                delete e;
+            }
         }
+        else {
+            if (choice == ABOUT)
+            {
+                showCur(0);
+                cleanContent();
+                ContentAbout* a = new ContentAbout();
+                a->displayContent();
+                delete a;
+            }
 
-        if (choice == 2)
-        {
-            showCur(0);
-            cleanContent();
-            ContentStudent* s = new ContentStudent();
-            s->displayContent();
-            delete s;
+            if (choice == CLASSROOM)
+            {
+                showCur(0);
+                cleanContent();
+                ContentClassroom* c = new ContentClassroom();
+                c->displayContent();
+                delete c;
+            }
+
+            if (choice == STUDENT)
+            {
+                showCur(0);
+                cleanContent();
+                ContentStudent* s = new ContentStudent();
+                s->displayContent();
+                delete s;
+            }
+
+            if (choice == SUBJECT)
+            {
+                showCur(0);
+                cleanContent();
+                ContentSubject* s = new ContentSubject();
+                s->displayContent();
+                delete s;
+            }
+
+            if (choice == EXAM)
+            {
+                showCur(0);
+                cleanContent();
+                ContentExam* e = new ContentExam();
+                e->displayContent();
+                delete e;
+            }
         }
-
-        if (choice == 3)
-        {
-            showCur(0);
-            cleanContent();
-            ContentSubject* s = new ContentSubject();
-            s->displayContent();
-            delete s;
-        }
-
-        if (choice == 4)
-        {
-            showCur(0);
-            cleanContent();
-            ContentExam* e = new ContentExam();
-            e->displayContent();
-            delete e;
-        }
-
-        /*gotoXY(0,i);
-        cout << i;
-        i++;
-        Sleep(1500);*/
     }
     return 0;
 }

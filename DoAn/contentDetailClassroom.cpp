@@ -470,6 +470,7 @@ void ContentDetailClassroom::createData()
 		{
 			listInput[0].setMenu(moveMenu);
 			listInput[0].handleInput();
+			moveMenu = listInput[0].getMenu();
 			switch (listInput[0].getEndKey())
 			{
 			case ENTER:
@@ -488,6 +489,14 @@ void ContentDetailClassroom::createData()
 			case F3:
 				currentDetailClassroom = C_SEARCH;
 				return;
+
+			case PGUP:
+				moveMenu--;
+				break;
+
+			case PGDN:
+				moveMenu++;
+				break;
 
 			case TAB:
 				if (moveMenu != 0)
@@ -514,6 +523,7 @@ void ContentDetailClassroom::createData()
 		{
 			listInput[1].setMenu(moveMenu);
 			listInput[1].handleInput();
+			moveMenu = listInput[1].getMenu();
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -558,6 +568,7 @@ void ContentDetailClassroom::createData()
 		{
 			listInput[2].setMenu(moveMenu);
 			listInput[2].handleInput();
+			moveMenu = listInput[2].getMenu();
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -609,6 +620,7 @@ void ContentDetailClassroom::createData()
 			listInput[3].useGender = true;
 			listInput[3].setMenu(moveMenu);
 			listInput[3].handleInput();
+			moveMenu = listInput[3].getMenu();
 			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
@@ -812,6 +824,7 @@ void ContentDetailClassroom::editData()
 		{
 			listInput[1].setMenu(moveMenu);
 			listInput[1].handleInput();
+			moveMenu = listInput[1].getMenu();
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -852,6 +865,7 @@ void ContentDetailClassroom::editData()
 		{
 			listInput[2].setMenu(moveMenu);
 			listInput[2].handleInput();
+			moveMenu = listInput[2].getMenu();
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -903,6 +917,7 @@ void ContentDetailClassroom::editData()
 			listInput[3].useGender = true;
 			listInput[3].setMenu(moveMenu);
 			listInput[3].handleInput();
+			moveMenu = listInput[3].getMenu();
 			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
@@ -971,6 +986,7 @@ void ContentDetailClassroom::editData()
 		{
 			listInput[4].setMenu(moveMenu);
 			listInput[4].handleInput();
+			moveMenu = listInput[4].getMenu();
 			switch (listInput[4].getEndKey())
 			{
 			case ENTER:
