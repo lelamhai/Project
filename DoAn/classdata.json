@@ -6,189 +6,108 @@
             "className": "D23TXCN04-K",
             "students": [
                 {
-                    "firstName": "mmmm",
+                    "firstName": "d",
                     "gender": 77,
-                    "lastName": "aaaa",
-                    "password": "5687",
+                    "lastName": "d",
+                    "password": "1234",
                     "scores": [],
-                    "studentCode": "das2171"
-                },
-                {
-                    "firstName": "mmmm",
-                    "gender": 77,
-                    "lastName": "aaaa",
-                    "password": "5687",
-                    "scores": [],
-                    "studentCode": "das217"
-                },
-                {
-                    "firstName": "mmmm",
-                    "gender": 77,
-                    "lastName": "aaaa",
-                    "password": "5687",
-                    "scores": [],
-                    "studentCode": "das21"
+                    "studentCode": "sd4"
                 },
                 {
                     "firstName": "d",
                     "gender": 77,
-                    "lastName": "m",
-                    "password": "98624",
+                    "lastName": "d",
+                    "password": "1234",
                     "scores": [],
-                    "studentCode": "hvm"
+                    "studentCode": "sd"
                 },
                 {
-                    "firstName": "sadasd",
+                    "firstName": "vjas",
                     "gender": 77,
-                    "lastName": "asdasdsa",
-                    "password": "123456",
+                    "lastName": "lvt",
+                    "password": "123",
                     "scores": [],
-                    "studentCode": "sagdhas"
+                    "studentCode": "hsj"
                 },
                 {
-                    "firstName": "aaaaaa",
+                    "firstName": "123",
                     "gender": 70,
-                    "lastName": "bbbbbb",
-                    "password": "123456",
+                    "lastName": "123",
+                    "password": "123",
                     "scores": [],
-                    "studentCode": "lethanhtinh"
+                    "studentCode": "12336143112354"
                 },
                 {
-                    "firstName": "Hai",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
+                    "firstName": "123",
+                    "gender": 70,
+                    "lastName": "123",
+                    "password": "123",
                     "scores": [],
-                    "studentCode": "K23DTCN300"
+                    "studentCode": "123361431123"
                 },
                 {
-                    "firstName": "Hai 1",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
+                    "firstName": "123",
+                    "gender": 70,
+                    "lastName": "123",
+                    "password": "123",
                     "scores": [],
-                    "studentCode": "K23DTCN301"
+                    "studentCode": "123361431"
                 },
                 {
-                    "firstName": "Hai 2",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
+                    "firstName": "123",
+                    "gender": 70,
+                    "lastName": "123",
+                    "password": "123",
                     "scores": [],
-                    "studentCode": "K23DTCN302"
+                    "studentCode": "123361"
                 },
                 {
-                    "firstName": "Hai 3",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
+                    "firstName": "123",
+                    "gender": 70,
+                    "lastName": "123",
+                    "password": "123",
                     "scores": [],
-                    "studentCode": "K23DTCN303"
+                    "studentCode": "12336"
                 },
                 {
-                    "firstName": "Hai 4",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
+                    "firstName": "123",
+                    "gender": 70,
+                    "lastName": "123",
+                    "password": "123",
                     "scores": [],
-                    "studentCode": "K23DTCN304"
+                    "studentCode": "1233"
                 },
                 {
-                    "firstName": "Hai 5",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
+                    "firstName": "123",
+                    "gender": 70,
+                    "lastName": "123",
+                    "password": "123",
                     "scores": [],
-                    "studentCode": "K23DTCN305"
+                    "studentCode": "123"
                 },
                 {
-                    "firstName": "Hai 6",
-                    "gender": 77,
-                    "lastName": "Le Lam",
+                    "firstName": "aaaaa",
+                    "gender": 70,
+                    "lastName": "bbbbb",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "K23DTCN306"
-                },
-                {
-                    "firstName": "Hai 8",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN308"
-                },
-                {
-                    "firstName": "Hai 9",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN308"
-                },
-                {
-                    "firstName": "Hai 10",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN3010"
-                },
-                {
-                    "firstName": "Hai 11",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN3011"
-                },
-                {
-                    "firstName": "Hai 12",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN3012"
-                },
-                {
-                    "firstName": "Hai 13",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN3013"
-                },
-                {
-                    "firstName": "vu",
-                    "gender": 77,
-                    "lastName": "hihi",
-                    "password": "12345",
-                    "scores": [],
-                    "studentCode": "ahsdh"
-                },
-                {
-                    "firstName": "Bui",
-                    "gender": 77,
-                    "lastName": "ThiThanhNhan",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN273"
+                    "studentCode": "lehuyenthao"
                 },
                 {
                     "firstName": "Vu",
                     "gender": 77,
-                    "lastName": "Duy Khoa",
-                    "password": "khoavd",
-                    "scores": [
-                        {
-                            "score": 0.0,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 2.9000000953674316,
-                            "subjectCode": "VL"
-                        }
-                    ],
-                    "studentCode": "K23DTCN270"
+                    "lastName": "Dung",
+                    "password": "12345",
+                    "scores": [],
+                    "studentCode": "K23DTCN299"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Dung",
+                    "password": "12345",
+                    "scores": [],
+                    "studentCode": "K23DTCN298"
                 },
                 {
                     "firstName": "Vu",
@@ -205,23 +124,23 @@
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 8.0,
+                            "score": 0.0,
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 8.0,
+                            "score": 1.399999976158142,
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 8.0,
+                            "score": 4.300000190734863,
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 8.0,
+                            "score": 2.9000000953674316,
                             "subjectCode": "VL"
                         },
                         {
-                            "score": 8.0,
+                            "score": 1.399999976158142,
                             "subjectCode": "VL"
                         },
                         {
@@ -282,74 +201,155 @@
                 {
                     "firstName": "Vu",
                     "gender": 77,
-                    "lastName": "Dung",
-                    "password": "12345",
-                    "scores": [],
-                    "studentCode": "K23DTCN298"
+                    "lastName": "Duy Khoa",
+                    "password": "khoavd",
+                    "scores": [
+                        {
+                            "score": 0.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 2.9000000953674316,
+                            "subjectCode": "VL"
+                        }
+                    ],
+                    "studentCode": "K23DTCN270"
                 },
                 {
-                    "firstName": "Vu",
+                    "firstName": "Bui",
                     "gender": 77,
-                    "lastName": "Dung",
-                    "password": "12345",
-                    "scores": [],
-                    "studentCode": "K23DTCN299"
-                },
-                {
-                    "firstName": "aaaaa",
-                    "gender": 70,
-                    "lastName": "bbbbb",
+                    "lastName": "ThiThanhNhan",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "lehuyenthao"
+                    "studentCode": "K23DTCN273"
                 },
                 {
-                    "firstName": "asdhasd",
-                    "gender": 70,
-                    "lastName": "asdasda",
+                    "firstName": "vu",
+                    "gender": 77,
+                    "lastName": "hihi",
+                    "password": "12345",
+                    "scores": [],
+                    "studentCode": "ahsdh"
+                },
+                {
+                    "firstName": "Hai 13",
+                    "gender": 77,
+                    "lastName": "Le Lam",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "hsdhf"
+                    "studentCode": "K23DTCN3013"
                 },
                 {
-                    "firstName": "adsfas",
+                    "firstName": "Hai 12",
                     "gender": 77,
-                    "lastName": "das",
-                    "password": "12097",
+                    "lastName": "Le Lam",
+                    "password": "123456",
                     "scores": [],
-                    "studentCode": "dsa"
+                    "studentCode": "K23DTCN3012"
                 },
                 {
-                    "firstName": "Tran ",
+                    "firstName": "Hai 11",
                     "gender": 77,
-                    "lastName": "Van Cuong",
-                    "password": "346321",
+                    "lastName": "Le Lam",
+                    "password": "123456",
                     "scores": [],
-                    "studentCode": "696969"
+                    "studentCode": "K23DTCN3011"
                 },
                 {
-                    "firstName": "Tran ",
+                    "firstName": "Hai 10",
                     "gender": 77,
-                    "lastName": "Van Cuong",
-                    "password": "346321",
+                    "lastName": "Le Lam",
+                    "password": "123456",
                     "scores": [],
-                    "studentCode": "696968"
+                    "studentCode": "K23DTCN3010"
                 },
                 {
-                    "firstName": "Tran ",
+                    "firstName": "Hai 9",
                     "gender": 77,
-                    "lastName": "Van Cuongggg",
-                    "password": "346321",
+                    "lastName": "Le Lam",
+                    "password": "123456",
                     "scores": [],
-                    "studentCode": "6969612"
+                    "studentCode": "K23DTCN308"
                 },
                 {
-                    "firstName": "Tran ",
+                    "firstName": "Hai 8",
                     "gender": 77,
-                    "lastName": "Van Cuongggg",
-                    "password": "346321",
+                    "lastName": "Le Lam",
+                    "password": "123456",
                     "scores": [],
-                    "studentCode": "6969612123"
+                    "studentCode": "K23DTCN308"
+                },
+                {
+                    "firstName": "Hai 7",
+                    "gender": 77,
+                    "lastName": "Le Lam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN307"
+                },
+                {
+                    "firstName": "Hai 6",
+                    "gender": 77,
+                    "lastName": "Le Lam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN306"
+                },
+                {
+                    "firstName": "Hai 5",
+                    "gender": 77,
+                    "lastName": "Le Lam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN305"
+                },
+                {
+                    "firstName": "Hai 4",
+                    "gender": 77,
+                    "lastName": "Le Lam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN304"
+                },
+                {
+                    "firstName": "Hai 3",
+                    "gender": 77,
+                    "lastName": "Le Lam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN303"
+                },
+                {
+                    "firstName": "Hai 2",
+                    "gender": 77,
+                    "lastName": "Le Lam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN302"
+                },
+                {
+                    "firstName": "Hai 1",
+                    "gender": 77,
+                    "lastName": "Le Lam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN301"
+                },
+                {
+                    "firstName": "Hai",
+                    "gender": 77,
+                    "lastName": "Le Lam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K23DTCN300"
+                },
+                {
+                    "firstName": "aaaaaa",
+                    "gender": 70,
+                    "lastName": "bbbbbb",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "lethanhtinh"
                 }
             ]
         },

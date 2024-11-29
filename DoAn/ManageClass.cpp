@@ -149,6 +149,7 @@ void ManageClass::saveToFile() {
 
         // Duyệt danh sách sinh viên
         PTRSTUDENT studentPtr = classes[i]->studentList;
+        //reverseStudentList(studentPtr);
         while (studentPtr != nullptr) {
             json studentData;
             studentData["studentCode"] = studentPtr->info.studentCode;
@@ -230,9 +231,10 @@ void ManageClass::loadFromFile() {
             }
             *lastScore = nullptr;  // Kết thúc danh sách điểm
 
-            // Thêm sinh viên vào đầu danh sách
-            newStudent->next = classes[i]->studentList;  // Liên kết nút mới với danh sách hiện tại
-            classes[i]->studentList = newStudent;        // Cập nhật đầu danh sách
+            // Thêm sinh viên vào cuối danh sách
+            addStudentToEnd(classes[i]->studentList, newStudent);
+            //newStudent->next = classes[i]->studentList;  // Liên kết nút mới với danh sách hiện tại
+            //classes[i]->studentList = newStudent;        // Cập nhật đầu danh sách
         }
     }
 }
@@ -242,7 +244,7 @@ bool ManageClass::addStudentToClass(const string classCode, const string student
 {
     int index = findClass(classCode.c_str()); // Check is classCode exist
     if (index == -1) return false;
-    if (findStudentInList(classes[index]->studentList, studentCode.c_str()) != nullptr) return false; //Check is student code exist in class
+    if (findStudentInList(classes[index]->studentList, studentCode.c_str()) != nullptr) return false; //Check is student code e st in class
     
     Student std1;
     strcpy_s(std1.studentCode, studentCode.c_str());
