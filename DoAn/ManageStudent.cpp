@@ -436,3 +436,23 @@ void reverseStudentList(PTRSTUDENT& head) {
     // Cập nhật head thành node cuối cùng
     head = prev;
 }
+
+void addStudentToEnd(PTRSTUDENT& head, PTRSTUDENT newStudent) {
+    // Đảm bảo node mới không trỏ đến đâu (node cuối danh sách)
+    newStudent->next = nullptr;
+
+    // Nếu danh sách rỗng, gán node mới làm head
+    if (head == nullptr) {
+        head = newStudent;
+    }
+    else {
+        // Duyệt đến node cuối danh sách
+        PTRSTUDENT temp = head;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        // Gắn node mới vào cuối danh sách
+        temp->next = newStudent;
+    }
+}
+ 

@@ -94,6 +94,9 @@ int getScoreOfStudent(PTRSTUDENT studentList, const string studentCode, const st
 
 void reverseStudentList(PTRSTUDENT& head);
 
+void addStudentToEnd(PTRSTUDENT& head, PTRSTUDENT newStudent);
+
+
 
 
 
