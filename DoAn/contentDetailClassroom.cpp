@@ -228,8 +228,6 @@ void ContentDetailClassroom::handle()
 
 void ContentDetailClassroom::selectData()
 {
-	int moveMenu = 0;
-
 	ManageClass test;
 	StudentPage studentPage;
 	if (textSearch == "")
@@ -459,7 +457,6 @@ void ContentDetailClassroom::selectData()
 
 void ContentDetailClassroom::createData()
 {
-	int moveMenu = 0;
 	string gender = "Nam";
 	ManageClass test;
 	int i = 0;
@@ -816,7 +813,6 @@ void ContentDetailClassroom::editData()
 	}
 
 	string gender = "Nam";
-	int moveMenu = 0;
 	stateInput = FORM_LAST;
 	while (true)
 	{
@@ -1063,7 +1059,6 @@ void ContentDetailClassroom::editData()
 
 void ContentDetailClassroom::findData()
 {
-	int moveMenu = 0;
 	int cursorPosition = textSearch.length();
 	stateSearchInput = SEARCH_INPUT;
 	while (true)

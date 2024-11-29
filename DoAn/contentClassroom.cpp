@@ -78,16 +78,16 @@ void ContentClassroom::drawClassroom()
 
 	string note[] = {
 		"F1: Chon Du Lieu Trong Bang",
-		"F3: Tim Kiem Mon Hoc",
-		"Ins: Them Mon Hoc",
+		"F3: Tim Kiem Lop",
+		"Ins: Them Lop",
 		"Phim Len|Xuong: Chon Du Lieu",
 		"Phim Trai|Phai: Xem Trang Sau|Truoc",
 		" ",
-		"* Chinh Sua Mon Hoc",
+		"* Chinh Sua Lop",
 		"   F1->Len|Xuong->F2",
-		"* Xoa Mon Hoc",
+		"* Xoa Lop",
 		"   F1->Len|Xuong->Del->Trai|Phai",
-		"* Xem Danh Sach Cau Hoi",
+		"* Xem Danh Sach Sinh Vien Cua Lop",
 		"   F1->Len|Xuong->Enter"
 	};
 
