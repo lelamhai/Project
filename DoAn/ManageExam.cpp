@@ -36,6 +36,12 @@ int ManageExam::getNumberQuestion() {
 }
 
 bool ManageExam::setSubjectCode(char* subjectCode) {
+    ManageSubject subjectManage1;
+    PTRSUBJECT subject1 = subjectManage1.getSubject(subjectCode);
+    if (subject1 == nullptr) {
+        return false;
+    }
+    
     this->subjectCode = subjectCode;
     return true;
 }
@@ -111,7 +117,7 @@ void ManageExam::toCalculateResult() {
     }
     answerRecord.countCorrect = correctAnswer;
     score = (float)correctAnswer * 10 / numberQuestion;
-    answerRecord.score = roundNumber(score, 1); // làm tròn điểm đến 1 số thập phân
+    answerRecord.score = roundScore(score); // làm tròn điểm đến 1 số thập phân
 }
 
 int ManageExam::countCorrectAnswer() {
@@ -143,9 +149,8 @@ tm ManageExam::getTimeEnd(tm timeStart) {
     return timeEnd;
 }
 
-float ManageExam::roundNumber(float number, int n) {
-    float x = pow(10.0f, n);
-    return round(number * x) / x;
+float ManageExam::roundScore(float number) {
+    return round(number * 10) / 10;
 }
 
 

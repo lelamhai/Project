@@ -163,7 +163,7 @@ void ManageClass::saveToFile() {
             while (scorePtr != nullptr) {
                 json scoreData;
                 scoreData["subjectCode"] = scorePtr->info.subjectCode;
-                scoreData["score"] = scorePtr->info.diem;
+                scoreData["score"] = scorePtr->info.diem*10;
                 studentData["scores"].push_back(scoreData);
                 scorePtr = scorePtr->next;
             }
@@ -225,7 +225,7 @@ void ManageClass::loadFromFile() {
                 // Tạo điểm mới
                 PTRSCORE newScore = new NodeScore();
                 strcpy_s(newScore->info.subjectCode, scoreData["subjectCode"].get<string>().c_str());
-                newScore->info.diem = scoreData["score"].get<float>();
+                newScore->info.diem = scoreData["score"].get<float>()/10;
                 *lastScore = newScore;  // Gắn điểm mới vào danh sách
                 lastScore = &newScore->next;  // Cập nhật con trỏ cuối
             }

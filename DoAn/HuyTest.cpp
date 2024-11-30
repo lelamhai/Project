@@ -21,9 +21,20 @@ void HuyTest::main() {
 
 	// PHẦN NHẬP VÀO MÔN HỌC MUỐN THI
 	char subjectCode_input[15];
-	cout << "Nhap ma mon hoc: ";
+	bool isSubjectInput_Done = false;
+	do {
+		cout << "Nhap ma mon hoc: ";
+		cin.getline(subjectCode_input, 15);
+		isSubjectInput_Done = exam1.setSubjectCode(subjectCode_input);
+		if (!isSubjectInput_Done) {
+			cout << "Khong tim thay mon hoc, hay nhap lai: \n";
+		}
+	} while (!isSubjectInput_Done);
+
+
+	/*cout << "Nhap ma mon hoc: ";
 	cin.getline(subjectCode_input, 15);
-	exam1.setSubjectCode(subjectCode_input);
+	exam1.setSubjectCode(subjectCode_input);*/
 	
 	// PHẦN NHẬP VÀO SỐ CÂU HỎI MUỐN THI
 	int numberQuestion_input; // số câu hỏi muốn thi
@@ -192,6 +203,7 @@ void HuyTest::main() {
 	int numberQuestion = exam1.getNumberQuestion();
 	exam1.toCalculateResult();
 
+	// In ra ket qua thi tung cau
 	cout << "\nKet qua thi la:" << endl;
 	for (int i = 0; i < numberQuestion; i++) {
 		answer* p = exam1.getAnswer(i);
@@ -199,13 +211,15 @@ void HuyTest::main() {
 			<< " - Da chon " << p->chosenAnswer
 			<< " - Dap an la " << p->correctAnswer << endl;
 	}
+	
+	// In ra so diem dat duoc
 	printf("Dung %d/%d cau\n", exam1.countCorrectAnswer(), numberQuestion);
 	float scoreExam = exam1.getScore();
-	printf("Diem so: %.1f\n", scoreExam);
+	printf("Diem so: %.6f\n", scoreExam);
 
 	// LƯU ĐIỂM THI VÀO DANH SÁCH
 	ManageClass tempClass;
-	char studentCode[15] = "K23DTCN270";
+	char studentCode[15] = "12rfhdah";
 	tempClass.addScoreToStudent(studentCode, subjectCode_input, scoreExam);
 	
 }

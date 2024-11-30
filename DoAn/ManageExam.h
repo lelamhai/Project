@@ -74,7 +74,7 @@ public:
 
 	tm getTimeEnd(tm timeStartExam); // hàm trả về đối tượng lưu thời gian kết thúc thi
 
-	static float roundNumber(float number, int n);
+	static float roundScore(float number);
 
 };
 
