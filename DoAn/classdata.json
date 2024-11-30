@@ -10,24 +10,7 @@
                     "gender": 70,
                     "lastName": "123",
                     "password": "123",
-                    "scores": [
-                        {
-                            "score": 14.0,
-                            "subjectCode": "CSDL"
-                        },
-                        {
-                            "score": 3.299999713897705,
-                            "subjectCode": "CSDL"
-                        },
-                        {
-                            "score": 4.300000190734863,
-                            "subjectCode": "CSDL"
-                        },
-                        {
-                            "score": 29.0,
-                            "subjectCode": "VL"
-                        }
-                    ],
+                    "scores": [],
                     "studentCode": "12rfhdah"
                 },
                 {
@@ -279,10 +262,6 @@
                     "scores": [
                         {
                             "score": 0.0,
-                            "subjectCode": "CSDL"
-                        },
-                        {
-                            "score": 2.9000000953674316,
                             "subjectCode": "VL"
                         },
                         {
