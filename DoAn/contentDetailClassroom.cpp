@@ -449,8 +449,8 @@ void ContentDetailClassroom::selectData()
 				i++;
 				temp = temp->next;
 			}
-			lastHover == hover;
 			pagging();
+			lastHover = hover;
 		}
 	}
 }
