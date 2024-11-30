@@ -46,6 +46,7 @@ C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExam.cpp(123,44): 
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExam.cpp(203,16): warning C4553: '==': result of expression not used; did you intend '='?
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExam.cpp(228,16): warning C4553: '==': result of expression not used; did you intend '='?
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExam.cpp(253,16): warning C4553: '==': result of expression not used; did you intend '='?
+  contentExecute.cpp
   contentQuestion.cpp
   contentStudent.cpp
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentStudent.cpp(69,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
@@ -66,10 +67,10 @@ C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\HuyTest.cpp(203,18): warn
   LoadingData.cpp
   LoginData.cpp
   ManageClass.cpp
-  ManageQuestion.cpp
   Generating Code...
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageClass.cpp(291,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
   Compiling...
+  ManageQuestion.cpp
   ManageScore.cpp
   ManageStudent.cpp
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageStudent.cpp(412,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
@@ -107,10 +108,10 @@ C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(112,16): warnin
   Layout.cpp
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\Layout.cpp(74,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   singleton.cpp
-  ManageExam.cpp
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageExam.cpp(147,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Generating Code...
   Compiling...
+  ManageExam.cpp
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageExam.cpp(147,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   StudentList.cpp
   StudentService.cpp
   text.cpp

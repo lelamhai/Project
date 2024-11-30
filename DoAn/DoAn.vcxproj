@@ -137,6 +137,7 @@
     <ClCompile Include="contentClassroom.cpp" />
     <ClCompile Include="contentDetailClassroom.cpp" />
     <ClCompile Include="contentExam.cpp" />
+    <ClCompile Include="contentExecute.cpp" />
     <ClCompile Include="contentQuestion.cpp" />
     <ClCompile Include="contentStudent.cpp" />
     <ClCompile Include="contentSubject.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="ContentClassroom.h" />
     <ClInclude Include="ContentDetailClassroom.h" />
     <ClInclude Include="ContentExam.h" />
+    <ClInclude Include="ContentExecute.h" />
     <ClInclude Include="ContentQuestion.h" />
     <ClInclude Include="ContentStudent.h" />
     <ClInclude Include="DungTest.h" />
