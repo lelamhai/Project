@@ -96,6 +96,8 @@ void reverseStudentList(PTRSTUDENT& head);
 
 void addStudentToEnd(PTRSTUDENT& head, PTRSTUDENT newStudent);
 
+PTRSTUDENT copyListStudent(PTRSTUDENT source);
+
 
 
 

@@ -392,8 +392,11 @@ StudentPage getStudentPerPage(PTRSTUDENT studentList, int page)
 
     studentPage.startIndex = startIndex;
     studentPage.endIndex = endIndex;
-    //reverseStudentList(pageResult); // Reverse student list 
-    studentPage.studentList = pageResult;
+    PTRSTUDENT listStudentCopy = copyListStudent(pageResult);
+
+
+    reverseStudentList(listStudentCopy); // Reverse student list 
+    studentPage.studentList = listStudentCopy;
 
     return studentPage;
 }
@@ -455,4 +458,36 @@ void addStudentToEnd(PTRSTUDENT& head, PTRSTUDENT newStudent) {
         temp->next = newStudent;
     }
 }
+
+PTRSTUDENT copyListStudent(PTRSTUDENT source) {
+    if (source == nullptr) return nullptr; // Danh sách nguồn rỗng
+
+    // Tạo nút đầu tiên cho danh sách đích
+    PTRSTUDENT dest = new NodeStudent;
+    dest->info = source->info; // Sao chép thông tin sinh viên
+    dest->next = nullptr;
+
+    // Con trỏ cho danh sách đích
+    PTRSTUDENT currentDest = dest;
+
+    // Con trỏ duyệt danh sách nguồn
+    PTRSTUDENT currentSource = source->next;
+
+    while (currentSource != nullptr) {
+        // Tạo nút mới cho danh sách đích
+        PTRSTUDENT newNode = new NodeStudent;
+        newNode->info = currentSource->info; // Sao chép thông tin sinh viên
+        newNode->next = nullptr;
+
+        // Liên kết nút mới với danh sách đích
+        currentDest->next = newNode;
+
+        // Tiến tới nút tiếp theo
+        currentDest = newNode;
+        currentSource = currentSource->next;
+    }
+
+    return dest; // Trả về danh sách đích
+}
+
  
