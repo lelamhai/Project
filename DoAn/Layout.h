@@ -45,18 +45,18 @@ protected:
         Sidebar();
         TutorialMenu();
     }
-
     virtual void layoutFooter()
     {
         Footer();
     }
-    int choice;
-    bool isLoadContent = true;
+    static int choice;
+    HANDLE hThread;
 public:
     void setRunContent(int choice);
-    void templateMenu();
-    void templateContent();
 	void main();
+    void templateMenu();
+    static DWORD WINAPI templateContent(LPVOID lpParam);
+
 	Layout();
 	~Layout();
 };

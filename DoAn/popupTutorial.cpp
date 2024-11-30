@@ -23,16 +23,14 @@ void PopupTutorial::content()
 		"* Chinh Sua Sinh Vien",
 		"   F1->Len|Xuong->F2",
 		"* Xoa Sinh Vien",
-		"   F1->Len|Xuong->Del->Trai|Phai",
-		"* Xem Diem Sinh Vien",
-		"   F1->Len|Xuong->Enter"
+		"   F1->Len|Xuong->Del->Trai|Phai"
 	};
 
 	int posX = getCenterX(getWidth(), 33);
 	textbk(ColorCode_DarkCyan);
-	for (int i = 0; i < 13; i++)
+	for (int i = 0; i < 11; i++)
 	{
-		gotoXY(getPosX() + posX, getPosY() + 1 + i);
+		gotoXY(getPosX() + posX, getPosY() + 2 + i);
 		cout << note[i];
 	}
 }

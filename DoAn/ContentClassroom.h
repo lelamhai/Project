@@ -66,7 +66,7 @@ private:
 	int pageNumber = 1;
 	int hover = 0;
 	string textSearch = "";
-
+	int moveMenu = 0;
 public:
 	void displayContent() override;
 	void content();

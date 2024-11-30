@@ -1,5 +1,7 @@
 #include "Layout.h"
 
+int Layout::choice = 0;
+
 Layout::Layout()
 {
 	layoutHeader();
@@ -18,11 +20,9 @@ void Layout::setRunContent(int content)
 
 void Layout::main()
 {
-    thread t1(&Layout::templateMenu, this);
-    thread t2(&Layout::templateContent, this);
-
-    t1.join();
-    t2.join();
+    DWORD ID = 0;
+    hThread = CreateThread(NULL, 0, templateContent, this, 0, &ID);
+    templateMenu();
 }
 
 void Layout::templateMenu()
@@ -49,12 +49,12 @@ void Layout::templateMenu()
             "Thoat"
         };
     }
-    
+
     int posY = 10;
     int active = choice;
     int hover = choice;
     int lastHover = -1;
-
+    SuspendThread(hThread);
     while (true)
     {
         if (GetAsyncKeyState(VK_PRIOR) & 0x0001)
@@ -68,8 +68,8 @@ void Layout::templateMenu()
             showCur(0);
             hover += 1;
         }
-        
-        if (GetAsyncKeyState(VK_TAB) & 0x0001 && active != hover)
+
+        if (GetAsyncKeyState(VK_TAB) & 0x8000 && active != hover)
         {
             int count = menu.size();
             if (hover == count - 2)
@@ -87,10 +87,10 @@ void Layout::templateMenu()
                 exit(0);
             }
 
-            isLoadContent = true;
             active = hover;
             choice = hover;
             lastHover = -1;
+            SuspendThread(hThread);
             continue;
         }
 
@@ -111,22 +111,15 @@ void Layout::templateMenu()
                 cout << menu[i];
             }
             lastHover = hover;
+            ResumeThread(hThread);
         }
     }
 }
 
-void Layout::templateContent()
+DWORD WINAPI Layout::templateContent(LPVOID lpParam) 
 {
     while (true)
     {
-        // Flag reload content
-        if (isLoadContent)
-        {
-            Sleep(100);
-            isLoadContent = false;
-            continue;
-        }
-
         if (Singleton::getInstance()->role != "GV")
         {
             if (choice == 0)
@@ -137,7 +130,7 @@ void Layout::templateContent()
                 a->displayContent();
                 delete a;
             }
-          
+
             if (choice == 1)
             {
                 showCur(0);
@@ -145,11 +138,6 @@ void Layout::templateContent()
                 ContentExam* e = new ContentExam();
                 e->displayContent();
                 delete e;
-            }
-
-            if (choice == 2)
-            {
-                return;
             }
         }
         else {
@@ -179,7 +167,7 @@ void Layout::templateContent()
                 s->displayContent();
                 delete s;
             }
-            
+
             if (choice == SUBJECT)
             {
                 showCur(0);
@@ -197,11 +185,7 @@ void Layout::templateContent()
                 e->displayContent();
                 delete e;
             }
-
-            if (choice == EXIT)
-            {
-                return;
-            }
         }
     }
+    return 0;
 }
