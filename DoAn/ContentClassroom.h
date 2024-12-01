@@ -32,7 +32,7 @@ private:
 		C_DELETE	= 4, // Del
 		C_DETAIL	= 5,
 
-		C_EXIT		= 6
+		C_EXIT		= -1
 	};
 	StateClassroom currentClassroom;
 
@@ -61,12 +61,13 @@ private:
 		inputClassroomName
 	};
 	Text text;
+	int moveMenu = 0;
+
 	int posXMessage = 0;
 	string classCode;
 	int pageNumber = 1;
 	int hover = 0;
 	string textSearch = "";
-	int moveMenu = 0;
 public:
 	void displayContent() override;
 	void content();

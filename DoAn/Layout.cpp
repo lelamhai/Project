@@ -20,9 +20,13 @@ void Layout::setRunContent(int content)
 
 void Layout::main()
 {
-    DWORD ID = 0;
     hThread = CreateThread(NULL, 0, templateContent, this, 0, &ID);
     templateMenu();
+
+    if (hThread != NULL) {
+        WaitForSingleObject(hThread, INFINITE);
+        CloseHandle(hThread);
+    }
 }
 
 void Layout::templateMenu()
@@ -184,6 +188,13 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 ContentExam* e = new ContentExam();
                 e->displayContent();
                 delete e;
+            }
+
+            if (choice == 5)
+            {
+                showCur(0);
+                cleanContent();
+                return 0;
             }
         }
     }

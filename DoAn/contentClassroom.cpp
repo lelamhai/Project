@@ -153,11 +153,10 @@ void ContentClassroom::handle()
 			detail->setClassCode(classCode);
 			detail->content();
 			delete detail;
-			currentClassroom = C_SELECT;
 			cleanContent();
-			displayContent();
 			drawClassroom();
 			girdContent();
+			currentClassroom = C_EXIT;
 		}
 
 		switch (currentClassroom)
@@ -363,8 +362,11 @@ void ContentClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			currentClassroom = C_EXIT;
-			return;
+			if (moveMenu != 0)
+			{
+				currentClassroom = C_EXIT;
+				return;
+			}
 		}
 
 		if (lastHover != hover)
