@@ -12,6 +12,8 @@ using namespace std;
 
 class ContentSubject : public Content
 {
+private:
+
 public:
 	void displayContent() override;
 	void drawContent();
@@ -19,7 +21,4 @@ public:
 	void handle();
 	ContentSubject();
 	~ContentSubject();
-
-private:
-
 };
