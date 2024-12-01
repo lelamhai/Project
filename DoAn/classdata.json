@@ -364,7 +364,28 @@
                     "gender": 77,
                     "lastName": "Le Lam",
                     "password": "123456",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 40.0,
+                            "subjectCode": "CSDL"
+                        },
+                        {
+                            "score": 20.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 20.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 20.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 20.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "K23DTCN304"
                 },
                 {

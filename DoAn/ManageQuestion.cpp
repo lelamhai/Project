@@ -345,7 +345,7 @@ Question ManageQuestion::getQuestionByIndex(int n) {
 	return p->info;
 }
 
-PTRQUESTION ManageQuestion::getList() {
+PTRQUESTION ManageQuestion::getQuestionList() {
 	return questionList;
 }
 

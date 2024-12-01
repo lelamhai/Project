@@ -40,7 +40,29 @@ bool ManageExam::setSubjectCode(char* subjectCode) {
     return true;
 }
 
-bool ManageExam::getRandomQuestion() {
+bool ManageExam::setInputExam(char* subjectCode, int numberQuestion, int timeForExam){
+    ManageSubject manageSubject1;
+    
+    // trả về false nếu mã môn không tồn tại
+    PTRSUBJECT subject = manageSubject1.getSubject(subjectCode);
+    if (subject == nullptr) {
+        return false;
+    }
+
+    // trả về false số câu hỏi nhập không hợp lệ
+    int totalQuestion = manageSubject1.countQuestionsInSubject(subjectCode);
+    if (numberQuestion<0 || numberQuestion > totalQuestion) {
+        return false;
+    }
+    
+    this->subjectCode = subjectCode;
+    this->numberQuestion = numberQuestion;
+    this->timeForExam_min = timeForExam;
+    remainingTime_sec = timeForExam_min * 60;
+    return true;
+}
+
+PTRQUESTION ManageExam::getRandomQuestion() {
     answerRecord.answerList[MAX_NUMBER_QUESTION];
     for (int i = 0; i < numberQuestion; i++) {
         answerRecord.answerList[i] = new answer; // Cấp phát bộ nhớ cho mỗi phần tử
@@ -52,14 +74,14 @@ bool ManageExam::getRandomQuestion() {
     }
 
     // Sao chép dữ liệu ID câu hỏi và câu trả lời qua mảng
-    PTRQUESTION p = questionList_Random.getList();
+    PTRQUESTION p = questionList_Random.getQuestionList();
     for (int i = 0; i < numberQuestion; i++) {
         answerRecord.answerList[i]->questionId = p->info.questionId;
         answerRecord.answerList[i]->correctAnswer = p->info.answer;
         p = p->next;
     }
 
-    return true;
+    return questionList_Random.getQuestionList();
 }
 
 int ManageExam::getRemainingTime() {
@@ -89,7 +111,12 @@ Question ManageExam::getRandomedQuestionByIndex(int i) {
     return questionList_Random.getQuestionByIndex(i); 
 }
 
-answer* ManageExam::getAnswer(int index) {
+
+resultList ManageExam::getAnsweredList() {
+    return answerRecord;
+}
+
+answer* ManageExam::getAnsweredByIndex(int index) {
     return answerRecord.answerList[index];
 }
 void ManageExam::setAnswer(int index, char choose) {

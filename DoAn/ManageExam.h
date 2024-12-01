@@ -42,7 +42,9 @@ public:
 
 	bool setSubjectCode(char* subjectCode);
 	
-	bool getRandomQuestion(); // hàm tạo ra các câu hỏi random
+	bool setInputExam(char* subjectCode, int numberQuestion, int timeForExam);
+
+	PTRQUESTION getRandomQuestion(); // hàm tạo ra va trả về các câu hỏi random
 	
 	int getRemainingTime(); 
 
@@ -61,8 +63,9 @@ public:
 	
 	void setAnswer(int index, char choose); // lưu đáp án người thi đã chọn
 	
+	resultList getAnsweredList(); // hàm trả về list lưu kết quả thi sau khi thi xong
+	answer* getAnsweredByIndex(int index); // hàm trả về kết quat thi của câu thứ i
 
-	answer* getAnswer(int index); // hàm trả về struc lưu kết quả thi sau khi thi xong
 
 	void toCalculateResult(); // hàm thực hiện tính toán số câu đúng và điểm
 

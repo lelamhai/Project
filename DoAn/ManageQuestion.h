@@ -55,7 +55,7 @@ public:
 	// Hàm trả về infor của Node ở vị trí i của list
 	Question getQuestionByIndex(int n);
 	
-	PTRQUESTION getList();
+	PTRQUESTION getQuestionList();
 };
 
 int generateUniqueQuestionId(PTRQUESTION listQuestion);
