@@ -102,11 +102,12 @@ void ContentDetailClassroom::drawClassroom()
 	string note[] = {
 		"F12: Xem Huong Dan Chi Tiet",
 		"Phim +: Nam",
-		"Phim -: Nu"
+		"Phim -: Nu",
+		"ESC: Tro Lai"
 	};
 
 	int contentY = tutorialY + 1;
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
@@ -220,8 +221,6 @@ void ContentDetailClassroom::handle()
 		default:
 			break;
 		}
-
-
 		Sleep(150);
 	}
 }
@@ -399,6 +398,7 @@ void ContentDetailClassroom::selectData()
 		if (GetAsyncKeyState(VK_F12) & 0x0001)
 		{
 			showTutorial();
+			lastHover = -1;
 		}
 
 		if (lastHover != hover)
@@ -1270,4 +1270,5 @@ void ContentDetailClassroom::showTutorial()
 	pTutorial.open();
 	pTutorial.handle();
 	pTutorial.close();
+	currentDetailClassroom = C_SELECT;
 }
