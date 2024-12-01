@@ -16,6 +16,9 @@ bool updateScoreToList(PTRSCORE& scoreList,string subjectCode, float score)
             temp->info.diem = score;
             return true;
         }
+        else if (string(temp->info.subjectCode) == subjectCode && temp->info.diem >= score) {
+            return false;
+        }
         temp = temp->next;
     }
 

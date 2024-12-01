@@ -437,7 +437,7 @@ bool ManageClass::addScoreToStudent(const string studentCode, const string subje
     for (int i = 0; i < countClass; i++) {
         PTRSTUDENT studentList = classes[i]->studentList;
         while (studentList != nullptr) {
-            if (studentCode == studentList->info.studentCode) {
+            if (studentCode == (string) studentList->info.studentCode) {
                 updateScoreToList(studentList->info.scoreList, subjectCode, score);
                 saveToFile();
                 return true;
