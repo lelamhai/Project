@@ -21,7 +21,7 @@ void Loading::drawPage()
 	};
 
 	int posX = width / 10 - 10;
-	int posY = height/3 - 8;
+	int posY = height/3 - 10;
 	for (int i = 0; i < 5; i++)
 	{
 		gotoXY(posX, posY);
@@ -38,8 +38,8 @@ void Loading::drawPage()
 		"  |_| |_| \\_\\/_/   \\_\\____| |_| \\_|\\____|_| |_|___|_____|_|  |_|"
 	};
 
-	int x = width / 5;
-	int y = height / 2 - 10;
+	int x = width / 5 - 10;
+	int y = height / 2 - 12;
 	for (int i = 0; i < 5; i++)
 	{
 		gotoXY(x, y + i);
@@ -62,7 +62,7 @@ void Loading::drawPage()
 	}
 
 	int ix = getCenterX(width + width / 2, 41);
-	int iy = getConsoleHeight() / 5 - 2;
+	int iy = getConsoleHeight() / 5 - 6;
 	setColorText(ColorCode_DarkRed);
 	gotoXY(ix, iy + 0);  cout << "                                         \n";
 	gotoXY(ix, iy + 1);  cout << "                                         \n";
@@ -95,18 +95,27 @@ void Loading::drawPage()
 
 void Loading::processing()
 {
+	int widthLoading = 180;
 	int height = getConsoleHeight();
 	int width = getConsoleWidth();
-	int x = getCenterX(width, 180);
-	setColorText(ColorCode_DarkBlue);
-	gotoXY(x, height - 5);
-	cout << char(219);
+
+
+	int x = getCenterX(width, widthLoading);
+	box(x - 1, height - 11, widthLoading + 1, 2);
+
+	setColorText(ColorCode_Blue);
+	for (int i = 0; i < widthLoading; i++)
+	{
+		gotoXY(x+i, height - 10);
+		cout << char(219);
+		Sleep(30);
+	}
 	setColorText(ColorCode_White);
+
 }
 
 void Loading::main()
 {
 	drawPage();
 	processing();
-	_getch();
 }
