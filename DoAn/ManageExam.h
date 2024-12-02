@@ -21,6 +21,7 @@ private:
 	int numberQuestion;
 	int timeForExam_min;
 	const char* subjectCode;
+	const char* studentCode;
   
 	bool isSubmitted; // trả về true khi người thi nhấn nộp bài, muốn kết thúc trước khi hết giờ
 	bool isTimeUp;
@@ -28,6 +29,7 @@ private:
 
 	ManageSubject subjectList;
 	ManageQuestion questionList_Random;
+	Question randomQuestionList[MAX_NUMBER_QUESTION];
 
 	resultList answerRecord;
 
@@ -42,9 +44,9 @@ public:
 
 	bool setSubjectCode(char* subjectCode);
 	
-	bool setInputExam(char* subjectCode, int numberQuestion, int timeForExam);
+	bool setInputExam(char* subjectCode, char* studentCode, int numberQuestion, int timeForExam);
 
-	PTRQUESTION getRandomQuestion(); // hàm tạo ra va trả về các câu hỏi random
+	Question* getRandomQuestion(); // hàm tạo ra va trả về các câu hỏi random
 	
 	int getRemainingTime(); 
 
@@ -66,8 +68,7 @@ public:
 	resultList getAnsweredList(); // hàm trả về list lưu kết quả thi sau khi thi xong
 	answer* getAnsweredByIndex(int index); // hàm trả về kết quat thi của câu thứ i
 
-
-	void toCalculateResult(); // hàm thực hiện tính toán số câu đúng và điểm
+	void toCalculateResult();
 
 	int countCorrectAnswer();
 

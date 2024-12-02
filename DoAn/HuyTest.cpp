@@ -20,39 +20,47 @@ void HuyTest::main() {
 	ManageExam exam1;
 	
 	char subjectCode_input[15];	 //mã môn muốn thi
+	char studentCode[15];		 // mã sinh viên
 	int numberQuestion_input;    //số câu hỏi muốn thi
 	int timeForExam_min_input;   //số phút muốn thi
 
 	// NHẬP THÔNG TIN INPUT ĐỂ THI
 	cin.getline(subjectCode_input, 15);
+	cin.getline(studentCode, 15);
 	cin >> numberQuestion_input;
 	cin >> timeForExam_min_input;
 
 	// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
 	bool isCorrectInput = false;
-	isCorrectInput = exam1.setInputExam(subjectCode_input, numberQuestion_input, timeForExam_min_input);
+	isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
 
 	if (!isCorrectInput) {
 		cout << "Du lieu nhap khong hop le ! " << endl;
 	}
 
 	// LẤY LIST CÁC CÂU HỎI NGẪU NHIÊN
-	PTRQUESTION randomQuestionList = exam1.getRandomQuestion();
-
-
+	Question* randomQuestionList = exam1.getRandomQuestion();
+	
+	// demo in ra thông tin câu hỏi
+	for (int i = 0; i < numberQuestion_input; i++) {
+		cout << randomQuestionList[i].content << endl;
+		cout << randomQuestionList[i].optionA << endl;
+		cout << randomQuestionList[i].optionB << endl;
+		cout << randomQuestionList[i].optionC << endl;
+		cout << randomQuestionList[i].optionD << endl;
+	}
+	
 
 	// TRUYỀN KẾT QUẢ ĐÃ THI XUỐNG BACK END SAU KHI KẾT THÚC BÀI TI
-	char answeredList[MAX_NUMBER_QUESTION] = {'C','D','D','C',' '}; // dòng này đê giả lập danh sách câu trả lời
+	char answeredList[MAX_NUMBER_QUESTION] = {'D','D','D','C',' ','A','B' }; // dòng này đê giả lập danh sách câu trả lời
 	for (int i=0; i < numberQuestion_input; i++){
 		exam1.setAnswer(i, answeredList[i]);
 	}
 
-	// LẤY KẾT QUẢ THI ̃& ĐIỂM
-	exam1.toCalculateResult();
+	// LẤY KẾT QUẢ THI ̃& ĐIỂM SAU KHI THI XONG
 	resultList result = exam1.getAnsweredList();
 
-
-	// demo in ra kết quả thi
+	// demo in ra kết quả thi cho từng câu
 	cout << "\nKet qua thi la:" << endl;
 	for (int i = 0; i < numberQuestion_input; i++) {
 		answer* p = result.answerList[i];
@@ -60,18 +68,14 @@ void HuyTest::main() {
 			<< " - Da chon " << p->chosenAnswer
 			<< " - Dap an la " << p->correctAnswer << endl;
 	}
-	printf("Dung %d/%d cau\n", result.countCorrect, numberQuestion_input);
+	
+	// demo in ra số câu trả lời đúng
+	int countCorrectAnswer = result.countCorrect;
+	printf("Dung %d/%d cau\n", countCorrectAnswer, numberQuestion_input);
+	
+	// demo in ra điểm số
 	float scoreExam = result.score;
 	printf("Diem so: %.1f\n", scoreExam);
-
-
-	// LƯU ĐIỂM THI VÀO DANH SÁCH
-	ManageClass tempClass;
-	char studentCode[15] = "K23DTCN304";
-	tempClass.addScoreToStudent(studentCode, subjectCode_input, scoreExam);
-
-
-
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R0 ---------------------------------------------*/
 	// KHỞI TẠO

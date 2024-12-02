@@ -40,7 +40,7 @@ bool ManageExam::setSubjectCode(char* subjectCode) {
     return true;
 }
 
-bool ManageExam::setInputExam(char* subjectCode, int numberQuestion, int timeForExam){
+bool ManageExam::setInputExam(char* subjectCode,char* studentCode , int numberQuestion, int timeForExam){
     ManageSubject manageSubject1;
     
     // trả về false nếu mã môn không tồn tại
@@ -56,16 +56,17 @@ bool ManageExam::setInputExam(char* subjectCode, int numberQuestion, int timeFor
     }
     
     this->subjectCode = subjectCode;
+    this->studentCode = studentCode;
     this->numberQuestion = numberQuestion;
     this->timeForExam_min = timeForExam;
     remainingTime_sec = timeForExam_min * 60;
     return true;
 }
 
-PTRQUESTION ManageExam::getRandomQuestion() {
-    answerRecord.answerList[MAX_NUMBER_QUESTION];
+Question* ManageExam::getRandomQuestion() {
+    // cấp phát vùng nhớ cho mảng lưu kết quả
     for (int i = 0; i < numberQuestion; i++) {
-        answerRecord.answerList[i] = new answer; // Cấp phát bộ nhớ cho mỗi phần tử
+        answerRecord.answerList[i] = new answer;  
     }
 
     questionList_Random = subjectList.getRandomQuestion(numberQuestion, subjectCode);
@@ -78,10 +79,22 @@ PTRQUESTION ManageExam::getRandomQuestion() {
     for (int i = 0; i < numberQuestion; i++) {
         answerRecord.answerList[i]->questionId = p->info.questionId;
         answerRecord.answerList[i]->correctAnswer = p->info.answer;
+        
+        randomQuestionList[i].content = p->info.content;
+        randomQuestionList[i].optionA = p->info.optionA;
+        randomQuestionList[i].optionB = p->info.optionB;
+        randomQuestionList[i].optionC = p->info.optionC;
+        randomQuestionList[i].optionD = p->info.optionD;
+        randomQuestionList[i].answer = p->info.answer;
+        
         p = p->next;
+
+        //randomQuestionList[i] = questionList_Random.getQuestionByIndex(i);
     }
 
-    return questionList_Random.getQuestionList();
+    //return questionList_Random.getQuestionList();
+
+    return randomQuestionList;
 }
 
 int ManageExam::getRemainingTime() {
@@ -113,6 +126,7 @@ Question ManageExam::getRandomedQuestionByIndex(int i) {
 
 
 resultList ManageExam::getAnsweredList() {
+    toCalculateResult();
     return answerRecord;
 }
 
@@ -139,6 +153,10 @@ void ManageExam::toCalculateResult() {
     answerRecord.countCorrect = correctAnswer;
     score = (float)correctAnswer * 10 / numberQuestion;
     answerRecord.score = roundNumber(score, 1); // làm tròn điểm đến 1 số thập phân
+    
+    // Ghi điểm vào file data
+    ManageClass tempClass;
+    tempClass.addScoreToStudent(studentCode, subjectCode, answerRecord.score);
 }
 
 int ManageExam::countCorrectAnswer() {
