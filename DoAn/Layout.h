@@ -12,6 +12,7 @@
 #include "ContentExam.h"
 #include "ContentFilterPoint.h"
 #include "ContentPrintPoint.h"
+#include "ContentExecute.h"
 
 #include "mycolor.h"
 #include "mydraw.h"
