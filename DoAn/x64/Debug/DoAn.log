@@ -46,7 +46,8 @@ C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExam.cpp(203,16): 
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExam.cpp(228,16): warning C4553: '==': result of expression not used; did you intend '='?
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExam.cpp(253,16): warning C4553: '==': result of expression not used; did you intend '='?
   contentExecute.cpp
-  ContentPrintPoint.cpp
+  contentFilterPoint.cpp
+  contentPrintPoint.cpp
   contentQuestion.cpp
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentQuestion.cpp(138,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentQuestion.cpp(142,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
@@ -71,9 +72,9 @@ C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentSubject.cpp(120,45
   DungTest.cpp
   HuyTest.cpp
   LoadingData.cpp
-  LoginData.cpp
   Generating Code...
   Compiling...
+  LoginData.cpp
   ManageClass.cpp
   ManageQuestion.cpp
   ManageScore.cpp
@@ -110,11 +111,11 @@ C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\popup.cpp(52,48): warning
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(96,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(112,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   main.cpp
-  Layout.cpp
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\Layout.cpp(78,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Generating Code...
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageClass.cpp(291,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
   Compiling...
+  Layout.cpp
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\Layout.cpp(78,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   singleton.cpp
   ManageExam.cpp
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageExam.cpp(174,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data

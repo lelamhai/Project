@@ -10,6 +10,7 @@
 #include "ContentSubject.h"
 #include "ContentQuestion.h"
 #include "ContentExam.h"
+#include "ContentFilterPoint.h"
 
 #include "mycolor.h"
 #include "mydraw.h"

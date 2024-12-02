@@ -243,6 +243,15 @@
     <ClCompile Include="ManageScore.cpp">
       <Filter>Source Files\DATA\Score</Filter>
     </ClCompile>
+    <ClCompile Include="contentExecute.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contentPrintPoint.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contentFilterPoint.cpp">
+      <Filter>Source Files\GUI\Contents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -370,6 +379,15 @@
     </ClInclude>
     <ClInclude Include="ManageScore.h">
       <Filter>Header Files\DATA\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentExecute.h">
+      <Filter>Header Files\GUI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentPrintPoint.h">
+      <Filter>Header Files\GUI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentFilterPoint.h">
+      <Filter>Header Files\GUI\Contents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
