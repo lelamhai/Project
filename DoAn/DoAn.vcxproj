@@ -138,7 +138,7 @@
     <ClCompile Include="contentDetailClassroom.cpp" />
     <ClCompile Include="contentExam.cpp" />
     <ClCompile Include="contentExecute.cpp" />
-    <ClCompile Include="ContentPrintPoint.cpp" />
+    <ClCompile Include="contentPrintPoint.cpp" />
     <ClCompile Include="contentQuestion.cpp" />
     <ClCompile Include="contentStudent.cpp" />
     <ClCompile Include="contentSubject.cpp" />
