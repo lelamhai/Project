@@ -18,7 +18,12 @@
                     "gender": 70,
                     "lastName": "123",
                     "password": "123",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 14.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "12rfhda"
                 },
                 {
