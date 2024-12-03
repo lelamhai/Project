@@ -149,7 +149,7 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
             {
                 showCur(0);
                 cleanContent();
-                ContentExecute* a = new ContentExecute();
+                ContentAbout* a = new ContentAbout();
                 a->displayContent();
                 delete a;
             }

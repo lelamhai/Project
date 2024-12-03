@@ -1,5 +1,8 @@
 #pragma once
 #include "configApp.h"
+#include "ManageQuestion.h"
+#include "ManageExam.h"
+
 #include "Content.h"
 #include "mycolor.h"
 #include "mydraw.h"

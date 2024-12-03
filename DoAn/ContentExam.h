@@ -1,7 +1,10 @@
 #pragma once
 #include "configApp.h"
+#include "ManageExam.h"
+
 #include "InputField.h"
 #include "Content.h"
+#include "ContentExecute.h"
 #include "mycolor.h"
 #include "mydraw.h"
 #include "mykeyboard.h"
@@ -34,13 +37,13 @@ private:
 
 
 	InputField inputExamCode;
-	InputField inputMinute;
 	InputField inputCount;
+	InputField inputMinute;
 
 	InputField listInput[3] = {
 		inputExamCode,
-		inputMinute,
-		inputCount
+		inputCount,
+		inputMinute
 	};
 	int moveMenu = 0;
 	int posXMessage = 0;

@@ -189,6 +189,7 @@ void ContentExam::selectData()
 
 void ContentExam::createData()
 {
+	ManageExam exam;
 	stateInput = FORM_CODE;
 	while (true)
 	{
@@ -197,19 +198,19 @@ void ContentExam::createData()
 			listInput[0].setMenu(moveMenu);
 			listInput[0].handleInput();
 			moveMenu = listInput[0].getMenu();
+
 			switch (listInput[0].getEndKey())
 			{
 			case ENTER:
-				stateInput == FORM_ENTER;
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					break;
+				}
+				stateInput = FORM_COUNT;
 				break;
-
-			case F1:
-				break;
-
 			case DOWN:
-				break;
-
-			case UP:
+				stateInput = FORM_COUNT;
 				break;
 
 			default:
@@ -222,19 +223,24 @@ void ContentExam::createData()
 			listInput[1].setMenu(moveMenu);
 			listInput[1].handleInput();
 			moveMenu = listInput[1].getMenu();
+
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
-				stateInput == FORM_ENTER;
-				break;
-
-			case F1:
-				break;
-
-			case DOWN:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					break;
+				}
+				stateInput = FORM_MINUTE;
 				break;
 
 			case UP:
+				stateInput = FORM_CODE;
+				break;
+
+			case DOWN:
+				stateInput = FORM_MINUTE;
 				break;
 
 			default:
@@ -247,19 +253,24 @@ void ContentExam::createData()
 			listInput[2].setMenu(moveMenu);
 			listInput[2].handleInput();
 			moveMenu = listInput[2].getMenu();
+
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
-				stateInput == FORM_ENTER;
-				break;
-
-			case F1:
-				break;
-
-			case DOWN:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					break;
+				}
+				stateInput = FORM_COUNT;
 				break;
 
 			case UP:
+				stateInput = FORM_COUNT;
+				break;
+
+			case DOWN:
+				stateInput = FORM_CODE;
 				break;
 
 			default:
@@ -269,12 +280,19 @@ void ContentExam::createData()
 
 		if (stateInput == FORM_ENTER)
 		{
-
-		}
-
-		if (stateInput == FORM_EXIT)
-		{
-
+			/*bool result = exam.setInputExam(listInput[0].getText().c_str(), Singleton::getInstance()->role.c_str(), stoi(listInput[1].getText()), stoi(listInput[2].getText()));
+			if (result)
+			{
+				cleanContent();
+				showCur(0);
+				ContentExecute* e = new ContentExecute();
+				e->displayContent();
+				delete e;
+				currentExam = C_SELECT;
+				return;
+			}
+			
+			stateInput = FORM_CODE;*/
 		}
 	}
 }

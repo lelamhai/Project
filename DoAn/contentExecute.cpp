@@ -50,32 +50,39 @@ void ContentExecute::content()
 
 void ContentExecute::handle()
 {
+	ManageExam exam;
+	/*Question* randomQuestionList = exam.getRandomQuestion();*/
+
 	int y = 3;
 	int titleTime = getCenterX(COLUMN_CENTER, 2);
 	gotoXY(DISTANCE_SIDEBAR + titleTime, DISTANCE_HEADER + PADDING + PADDING + y);
 	setColorText(ColorCode_DarkGreen);
-	cout << "60";
+	cout << "00:00:00";
 	setColorText(ColorCode_DarkWhite);
+	
 
-	for (int i = 0; i < 1; i++)
-	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + i+2);
-		cout << "Cau 1: 1+1=?";
-		y += 3;
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + i + 2);
-		cout << "A) 1";
-		y += 3;
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + i + 2);
-		cout << "B) 2";
-		y += 3;
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + i + 2);
-		cout << "C) 3";
-		y += 3;
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + i + 2);
-		cout << "D) 4";
-		y += 3;
-	}
-	y += 5;
+	/*int index = 0;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
+	string titleQuest = "Cau " + (index+1);
+	cout << titleQuest + " :" + randomQuestionList[index].content;
+	y += 3;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
+	cout << "A) " + randomQuestionList[index].optionA;
+	y += 3;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
+	cout << "B) " + randomQuestionList[index].optionB;
+	y += 3;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
+	cout << "C) " + randomQuestionList[index].optionC;
+	y += 3;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
+	cout << "D) " + randomQuestionList[index].optionD;
+	y += 3;*/
+
+
+	
+
+	y += 3;
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y);
 	cout << "Chon dap an: A";
 

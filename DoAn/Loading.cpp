@@ -111,7 +111,6 @@ void Loading::processing()
 		Sleep(30);
 	}
 	setColorText(ColorCode_White);
-
 }
 
 void Loading::main()
