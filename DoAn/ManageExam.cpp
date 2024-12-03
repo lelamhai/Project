@@ -40,7 +40,7 @@ bool ManageExam::setSubjectCode(char* subjectCode) {
     return true;
 }
 
-bool ManageExam::setInputExam(char* subjectCode,char* studentCode , int numberQuestion, int timeForExam){
+bool ManageExam::setInputExam(const char* subjectCode, const char* studentCode , const int numberQuestion, const int timeForExam){
     ManageSubject manageSubject1;
     
     // trả về false nếu mã môn không tồn tại

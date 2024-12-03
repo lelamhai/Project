@@ -19,20 +19,21 @@ void HuyTest::main() {
 	mutex mtx; // Tạo mutex cho đồng bộ hóa
 	ManageExam exam1;
 	
-	char subjectCode_input[15];	 //mã môn muốn thi
-	char studentCode[15];		 // mã sinh viên
-	int numberQuestion_input;    //số câu hỏi muốn thi
-	int timeForExam_min_input;   //số phút muốn thi
+	//char subjectCode_input[15];	 //mã môn muốn thi
+	//char studentCode[15];		 // mã sinh viên
+	int numberQuestion_input = 7;    //số câu hỏi muốn thi
+	int timeForExam_min_input = 1;   //số phút muốn thi
 
-	// NHẬP THÔNG TIN INPUT ĐỂ THI
-	cin.getline(subjectCode_input, 15);
-	cin.getline(studentCode, 15);
-	cin >> numberQuestion_input;
-	cin >> timeForExam_min_input;
+	//// NHẬP THÔNG TIN INPUT ĐỂ THI
+	//cin.getline(subjectCode_input, 15);
+	//cin.getline(studentCode, 15);
+	//cin >> numberQuestion_input;
+	//cin >> timeForExam_min_input;
 
 	// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
 	bool isCorrectInput = false;
-	isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
+	//isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
+	isCorrectInput = exam1.setInputExam("VL", "GV", numberQuestion_input, timeForExam_min_input);
 
 	if (!isCorrectInput) {
 		cout << "Du lieu nhap khong hop le ! " << endl;

@@ -44,7 +44,7 @@ public:
 
 	bool setSubjectCode(char* subjectCode);
 	
-	bool setInputExam(char* subjectCode, char* studentCode, int numberQuestion, int timeForExam);
+	bool setInputExam(const char* subjectCode, const char* studentCode, const int numberQuestion, const int timeForExam);
 
 	Question* getRandomQuestion(); // hàm tạo ra va trả về các câu hỏi random
 	
