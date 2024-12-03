@@ -32,6 +32,7 @@ enum StateContent
     STUDENT     = 2,
     SUBJECT     = 3,
     EXAM        = 4,
+    FILTERPOINT = 5,
 
     EXIT        = -1
 };

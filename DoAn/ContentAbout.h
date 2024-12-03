@@ -10,6 +10,9 @@ using namespace std;
 
 class ContentAbout : public Content
 {
+private:
+	int moveMenu = 0;
+
 public:
 	void displayContent() override;
 	void title();

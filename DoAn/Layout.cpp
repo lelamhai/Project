@@ -49,6 +49,7 @@ void Layout::templateMenu()
             "Sinh Vien",
             "Mon Hoc",
             "Thi",
+            "In Diem",
             "Dang Xuat",
             "Thoat"
         };
@@ -190,7 +191,16 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 delete e;
             }
 
-            if (choice == 5)
+            if (choice == FILTERPOINT)
+            {
+                showCur(0);
+                cleanContent();
+                ContentFilterPoint* p = new ContentFilterPoint();
+                p->displayContent();
+                delete p;
+            }
+
+            if (choice == 6)
             {
                 showCur(0);
                 cleanContent();

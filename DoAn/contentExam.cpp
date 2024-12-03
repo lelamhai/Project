@@ -189,7 +189,6 @@ void ContentExam::selectData()
 
 void ContentExam::createData()
 {
-	ManageExam exam;
 	stateInput = FORM_CODE;
 	while (true)
 	{
@@ -280,19 +279,24 @@ void ContentExam::createData()
 
 		if (stateInput == FORM_ENTER)
 		{
-			/*bool result = exam.setInputExam(listInput[0].getText().c_str(), Singleton::getInstance()->role.c_str(), stoi(listInput[1].getText()), stoi(listInput[2].getText()));
-			if (result)
+			//bool result = exam.setInputExam(listInput[0].getText().c_str(), Singleton::getInstance()->role.c_str(), stoi(listInput[1].getText()), stoi(listInput[2].getText()));
+
+			int result = ManageExam::checkInputExam(listInput[0].getText().c_str(), stoi(listInput[1].getText()));
+			//-1: Ma Mon Hoc
+			//-2: So cau vuot qua database
+			if (result == 1)
 			{
 				cleanContent();
 				showCur(0);
 				ContentExecute* e = new ContentExecute();
+				e->init(listInput[0].getText(), stoi(listInput[1].getText()), stoi(listInput[2].getText()));
 				e->displayContent();
 				delete e;
 				currentExam = C_SELECT;
 				return;
 			}
 			
-			stateInput = FORM_CODE;*/
+			stateInput = FORM_CODE;
 		}
 	}
 }

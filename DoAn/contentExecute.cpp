@@ -13,6 +13,12 @@ void ContentExecute::displayContent()
 	setColorText(ColorCode_DarkWhite);
 	content();
 }
+void ContentExecute::init(string classCode, int count, int time)
+{
+	this->classCode = classCode;
+	this->count = count;
+	this->time;
+}
 
 void ContentExecute::drawContent()
 {
@@ -51,7 +57,10 @@ void ContentExecute::content()
 void ContentExecute::handle()
 {
 	ManageExam exam;
-	/*Question* randomQuestionList = exam.getRandomQuestion();*/
+
+	exam.setInputExam(classCode.c_str(), Singleton::getInstance()->role.c_str(), count, time);
+
+	Question* randomQuestionList = exam.getRandomQuestion();
 
 	int y = 3;
 	int titleTime = getCenterX(COLUMN_CENTER, 2);
@@ -61,28 +70,34 @@ void ContentExecute::handle()
 	setColorText(ColorCode_DarkWhite);
 	
 
-	/*int index = 0;
+	int index = 1;
+	int temp = index + 1;
+	string titleQuestion = "Cau " + to_string(temp);
+	//titleQuestion =  randomQuestionList[index].content;
+
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
-	string titleQuest = "Cau " + (index+1);
-	cout << titleQuest + " :" + randomQuestionList[index].content;
+	cout << titleQuestion + ": " << randomQuestionList[index].content;
+
 	y += 3;
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
 	cout << "A) " + randomQuestionList[index].optionA;
+
 	y += 3;
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
 	cout << "B) " + randomQuestionList[index].optionB;
+
 	y += 3;
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
 	cout << "C) " + randomQuestionList[index].optionC;
+
 	y += 3;
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
 	cout << "D) " + randomQuestionList[index].optionD;
-	y += 3;*/
 
 
 	
 
-	y += 3;
+	y += 6;
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y);
 	cout << "Chon dap an: A";
 
@@ -127,5 +142,5 @@ void ContentExecute::handle()
 	cout << "Phim Trai|Phai: Chon Cau Sau|Truoc";
 
 	setColorText(ColorCode_DarkWhite);
-	_getch();
+	//_getch();
 }

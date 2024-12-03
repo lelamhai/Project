@@ -23,6 +23,8 @@ private:
 	};
 	int width = 55;
 	int posXMessage = 0;
+	int moveMenu = 0;
+
 public:
 	void displayContent() override;
 	void content();

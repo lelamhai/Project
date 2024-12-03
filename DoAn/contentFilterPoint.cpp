@@ -164,5 +164,26 @@ void ContentFilterPoint::content()
 
 void ContentFilterPoint::handle()
 {
-	_getch();
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		{
+			moveMenu--;
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			moveMenu++;
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (moveMenu != 0)
+			{
+				return;
+			}
+		}
+	}
 }

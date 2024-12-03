@@ -66,10 +66,26 @@ void ContentAbout::content()
 	
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		if (GetAsyncKeyState(VK_PRIOR) & 0x0001)
 		{
-			return;
+			moveMenu--;
+			Sleep(50);
+			continue;
 		}
-		Sleep(150);
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x0001)
+		{
+			moveMenu++;
+			Sleep(50);
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_TAB) & 0x0001)
+		{
+			if (moveMenu != 0)
+			{
+				return;
+			}
+		}
 	}
 }
