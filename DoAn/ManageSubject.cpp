@@ -200,7 +200,7 @@ void ManageSubject::loadFromFile() {
         }
     }
 
-    cout << "Data loaded successfully from JSON format." << endl;
+    //cout << "Data loaded successfully from JSON format." << endl;
 }
 
 // Hàm in ra tất cả câu hỏi của một môn học
