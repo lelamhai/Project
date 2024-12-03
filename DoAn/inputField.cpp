@@ -303,9 +303,20 @@ void InputField::handleInput()
 
 			if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 			{
-				inputString.insert(inputString.begin() + cursorPosition, s);
+				char upper;
+				if (s >= 'a' && s <= 'z')
+				{
+					upper = s - ('a' - 'A');
+				}
+
+				if (s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+				{
+					upper = s;
+				}
+
+				inputString.insert(inputString.begin() + cursorPosition, upper);
 				cursorPosition++;
-				cout << s;
+				cout << upper;
 				if (useHide)
 				{
 					Sleep(150);

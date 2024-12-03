@@ -10,7 +10,7 @@ void Login::main()
 {
 	showCur(1);
 	HeaderLogin();
-	drawBox();
+	drawPage();
 	drawUserName();
 	drawPassword();
 	drawButton();
@@ -37,7 +37,7 @@ void Login::HeaderLogin()
 		posY++;
 	}
 }
-void Login::drawBox()
+void Login::drawPage()
 {
 	int width = getConsoleWidth();
 	int posX = getCenterX(width, 70);
@@ -93,7 +93,8 @@ void Login::formLogin()
 		switch (stateLoginInput)
 		{
 		case LOGIN_USERNAME:
-			gotoXY(posX + inputUserName.getText().length(), posY);
+			gotoXY(posX + inputUserName.getText().length(), posY); 
+			inputUserName.useSpace = true;
 			inputUserName.handleInput();
 
 			if (inputUserName.getEndKey()== ENTER)
@@ -111,6 +112,7 @@ void Login::formLogin()
 		case LOGIN_PASSWORD:
 			gotoXY(posX + inputPassword.getText().length(), posY+3);
 			inputPassword.useHide = true;
+			inputPassword.useSpace = true;
 			inputPassword.handleInput();
 			if (inputPassword.getEndKey() == ENTER)
 			{

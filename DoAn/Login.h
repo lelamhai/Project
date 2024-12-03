@@ -28,7 +28,7 @@ private:
 public:
 	void main();
 	void HeaderLogin();
-	void drawBox();
+	void drawPage();
 	void drawUserName();
 	void drawPassword();
 	void drawButton();
