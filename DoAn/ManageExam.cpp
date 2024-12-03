@@ -193,4 +193,23 @@ float ManageExam::roundNumber(float number, int n) {
     return round(number * x) / x;
 }
 
+int ManageExam::checkInputExam(const char* subjectCode, const int numberQuestion) {
+    ManageSubject manageSubject1;
+
+    // trả về false nếu mã môn không tồn tại
+    PTRSUBJECT subject = manageSubject1.getSubject(subjectCode);
+    if (subject == nullptr) {
+        return -1;
+    }
+
+    // trả về false số câu hỏi nhập không hợp lệ
+    int totalQuestion = manageSubject1.countQuestionsInSubject(subjectCode);
+    if (numberQuestion<0 || numberQuestion > totalQuestion) {
+        return -2;
+    }
+    
+    return 1;
+
+}
+
 

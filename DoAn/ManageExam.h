@@ -80,6 +80,8 @@ public:
 
 	static float roundNumber(float number, int n);
 
+	static int checkInputExam(const char* subjectCode, const int numberQuestion);
+
 };
 
 
