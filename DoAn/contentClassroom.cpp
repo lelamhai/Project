@@ -157,6 +157,7 @@ void ContentClassroom::handle()
 			drawClassroom();
 			girdContent();
 			currentClassroom = C_EXIT;
+			Singleton::getInstance()->moveMenu = 0;
 		}
 
 		switch (currentClassroom)
@@ -346,23 +347,9 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
-		{
-			moveMenu--;
-			Sleep(150);
-			continue;
-		}
-
-		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
-		{
-			moveMenu++;
-			Sleep(150);
-			continue;
-		}
-
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			if (moveMenu != 0)
+			if (Singleton::getInstance()->moveMenu != 0)
 			{
 				currentClassroom = C_EXIT;
 				return;
@@ -442,7 +429,7 @@ void ContentClassroom::createData()
 				return;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentClassroom = C_EXIT;
 					return;
@@ -490,7 +477,7 @@ void ContentClassroom::createData()
 				break;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentClassroom = C_EXIT;
 					return;
@@ -612,7 +599,7 @@ void ContentClassroom::editData()
 
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentClassroom = C_EXIT;
 					return;
@@ -679,28 +666,11 @@ void ContentClassroom::findData()
 				return;
 			}
 
-			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
-			{
-				moveMenu--;
-				currentClassroom = C_SELECT;
-				Sleep(150);
-				return;
-			}
-
-			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
-			{
-				moveMenu++;
-				currentClassroom = C_SELECT;
-				Sleep(150);
-				return;
-			}
-
 			if (GetAsyncKeyState(VK_TAB) & 0x8000)
 			{
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentClassroom = C_EXIT;
-					Sleep(150);
 					return;
 				}
 			}

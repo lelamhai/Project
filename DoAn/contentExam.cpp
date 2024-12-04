@@ -133,7 +133,7 @@ void ContentExam::content()
 {
 	drawExam();
 	girdContent();
-	currentExam = C_CREATE;
+	currentExam = C_SELECT;
 	handle();
 }
 
@@ -141,54 +141,20 @@ void ContentExam::handle()
 {
 	while (true)
 	{
-		/*if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			return;
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				return;
+			}
 		}
-		Sleep(150);*/
-		switch (currentExam)
-		{
-		case C_SELECT:
-			showCur(0);
-			selectData();
-			break;
-
-		case C_CREATE:
-			showCur(1);
-			createData();
-			//cleanInput();
-			cleanMessage(posXMessage);
-			break;
-
-		case C_EDIT:
-			/*showCur(1);
-			editData();
-			cleanInput();
-			cleanMessage(posXMessage);*/
-			break;
-
-		case C_SEARCH:
-			showCur(1);
-			//findData();
-			break;
-
-		case C_DELETE:
-			/*showCur(0);
-			deleteData();*/
-			break;
-
-		case C_EXIT:
-			return;
-
-		default:
-			break;
-		}
+		Sleep(100);
 	}
 }
 
 void ContentExam::selectData()
 {
-
+	
 }
 
 void ContentExam::createData()
@@ -212,6 +178,15 @@ void ContentExam::createData()
 				}
 				stateInput = FORM_COUNT;
 				break;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentExam = C_EXIT;
+					return;
+				}
+				break;
+
 			case DOWN:
 				stateInput = FORM_COUNT;
 				break;
@@ -236,6 +211,14 @@ void ContentExam::createData()
 					break;
 				}
 				stateInput = FORM_MINUTE;
+				break;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentExam = C_EXIT;
+					return;
+				}
 				break;
 
 			case UP:
@@ -266,6 +249,14 @@ void ContentExam::createData()
 					break;
 				}
 				stateInput = FORM_COUNT;
+				break;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentExam = C_EXIT;
+					return;
+				}
 				break;
 
 			case UP:

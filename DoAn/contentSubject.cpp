@@ -135,8 +135,11 @@ void ContentSubject::handle()
 	{
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			return;
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				return;
+			}
 		}
-		Sleep(150);
+		Sleep(100);
 	}
 }

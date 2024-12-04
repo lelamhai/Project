@@ -388,7 +388,7 @@ void ContentDetailClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			if (moveMenu != 0)
+			if (Singleton::getInstance()->moveMenu != 0)
 			{
 				currentDetailClassroom = C_EXIT;
 				return;

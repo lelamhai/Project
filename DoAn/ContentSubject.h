@@ -1,10 +1,11 @@
 #pragma once
+#include "configApp.h"
 #include "mycolor.h"
 #include "mydraw.h"
 #include "mykeyboard.h"
 #include "mywindows.h"
 
-#include "configApp.h"
+#include "Singleton.h"
 #include "Content.h"
 #include <conio.h>
 #include <iostream>

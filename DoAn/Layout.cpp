@@ -66,15 +66,17 @@ void Layout::templateMenu()
         {
             showCur(0);
             hover -= 1;
+            Singleton::getInstance()->moveMenu -= 1;
         }
 
         if (GetAsyncKeyState(VK_NEXT) & 0x0001)
         {
             showCur(0);
             hover += 1;
+            Singleton::getInstance()->moveMenu += 1;
         }
 
-        if (GetAsyncKeyState(VK_TAB) & 0x8000 && active != hover)
+        if (GetAsyncKeyState(VK_TAB) & 0x0001 && active != hover)
         {
             int count = menu.size();
             if (hover == count - 2)
@@ -96,7 +98,6 @@ void Layout::templateMenu()
             choice = hover;
             lastHover = -1;
             SuspendThread(hThread);
-            continue;
         }
 
         if (lastHover != hover)
@@ -134,6 +135,7 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 ContentAbout* a = new ContentAbout();
                 a->displayContent();
                 delete a;
+                Singleton::getInstance()->moveMenu = 0;
             }
 
             if (choice == 1)
@@ -143,6 +145,7 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 ContentExam* e = new ContentExam();
                 e->displayContent();
                 delete e;
+                Singleton::getInstance()->moveMenu = 0;
             }
         }
         else {
@@ -153,6 +156,7 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 ContentAbout* a = new ContentAbout();
                 a->displayContent();
                 delete a;
+                Singleton::getInstance()->moveMenu = 0;
             }
 
             if (choice == CLASSROOM)
@@ -162,6 +166,7 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 ContentClassroom* c = new ContentClassroom();
                 c->displayContent();
                 delete c;
+                Singleton::getInstance()->moveMenu = 0;
             }
 
             if (choice == STUDENT)
@@ -171,6 +176,7 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 ContentStudent* s = new ContentStudent();
                 s->displayContent();
                 delete s;
+                Singleton::getInstance()->moveMenu = 0;
             }
 
             if (choice == SUBJECT)
@@ -180,6 +186,7 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 ContentSubject* s = new ContentSubject();
                 s->displayContent();
                 delete s;
+                Singleton::getInstance()->moveMenu = 0;
             }
 
             if (choice == EXAM)
@@ -189,6 +196,7 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 ContentExam* e = new ContentExam();
                 e->displayContent();
                 delete e;
+                Singleton::getInstance()->moveMenu = 0;
             }
 
             if (choice == FILTERPOINT)
@@ -198,12 +206,14 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 ContentFilterPoint* p = new ContentFilterPoint();
                 p->displayContent();
                 delete p;
+                Singleton::getInstance()->moveMenu = 0;
             }
 
             if (choice == 6)
             {
                 showCur(0);
                 cleanContent();
+                Singleton::getInstance()->moveMenu = 0;
                 return 0;
             }
         }

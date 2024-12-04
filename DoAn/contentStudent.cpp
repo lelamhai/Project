@@ -106,14 +106,15 @@ void ContentStudent::handle()
 {
 
 	setColorText(ColorCode_DarkWhite);
-	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER, DISTANCE_HEADER);
-	cout << "Student";*/
 	while (true)
 	{
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			return;
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				return;
+			}
 		}
-		Sleep(150);
+		Sleep(100);
 	}
 }

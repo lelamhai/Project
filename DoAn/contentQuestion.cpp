@@ -173,10 +173,12 @@ void ContentQuestion::handle()
 	{
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
-			Sleep(150);
-			return;
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				return;
+			}
 		}
-		Sleep(150);
+		Sleep(100);
 	}
 }
 
