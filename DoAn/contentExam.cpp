@@ -139,7 +139,7 @@ void ContentExam::content()
 
 void ContentExam::handle()
 {
-	while (true)
+	/*while (true)
 	{
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
@@ -149,7 +149,8 @@ void ContentExam::handle()
 			}
 		}
 		Sleep(100);
-	}
+	}*/
+	createData();
 }
 
 void ContentExam::selectData()
@@ -284,7 +285,7 @@ void ContentExam::createData()
 				cleanContent();
 				showCur(0);
 				ContentExecute* e = new ContentExecute();
-				e->init(listInput[0].getText(), stoi(listInput[1].getText()), stoi(listInput[2].getText()));
+				e->initExecute(listInput[0].getText(), stoi(listInput[1].getText()), stoi(listInput[2].getText()));
 				e->displayContent();
 				delete e;
 				currentExam = C_SELECT;

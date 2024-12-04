@@ -27,8 +27,9 @@ public:
 	void displayContent() override;
 	void content();
 	void drawContent();
-	void init(string classCode, int count, int time);
+	void initExecute(string classCode, int count, int time);
 	void handle();
+	void countdown();
 	void cleanQuestion();
 	ContentExecute();
 	~ContentExecute();
