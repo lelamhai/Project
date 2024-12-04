@@ -24,6 +24,7 @@ void HuyTest::main() {
 	int numberQuestion_input = 7;    //số câu hỏi muốn thi
 	int timeForExam_min_input = 1;   //số phút muốn thi
 
+	ManageExam::checkInputExam("CSDL", 7);
 	//// NHẬP THÔNG TIN INPUT ĐỂ THI
 	//cin.getline(subjectCode_input, 15);
 	//cin.getline(studentCode, 15);
@@ -33,11 +34,15 @@ void HuyTest::main() {
 	// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
 	bool isCorrectInput = false;
 	//isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
-	isCorrectInput = exam1.setInputExam("VL", "GV", numberQuestion_input, timeForExam_min_input);
+	isCorrectInput = exam1.setInputExam("CSDL", "12rfh", numberQuestion_input, timeForExam_min_input);
 
 	if (!isCorrectInput) {
 		cout << "Du lieu nhap khong hop le ! " << endl;
 	}
+
+	// TRẢ VỀ TÊN MÔN HỌC
+	string subjectName = exam1.getSubjectName();
+	cout << "Ten mon hoc: " << subjectName << endl;
 
 	// LẤY LIST CÁC CÂU HỎI NGẪU NHIÊN
 	Question* randomQuestionList = exam1.getRandomQuestion();

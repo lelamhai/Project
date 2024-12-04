@@ -68,6 +68,8 @@ public:
 	resultList getAnsweredList(); // hàm trả về list lưu kết quả thi sau khi thi xong
 	answer* getAnsweredByIndex(int index); // hàm trả về kết quat thi của câu thứ i
 
+	string getSubjectName(); // hàm trả về tên môn thi
+
 	void toCalculateResult();
 
 	int countCorrectAnswer();

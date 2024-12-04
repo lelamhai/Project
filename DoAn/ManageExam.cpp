@@ -137,6 +137,17 @@ void ManageExam::setAnswer(int index, char choose) {
     answerRecord.answerList[index]->chosenAnswer = choose;
 }
 
+string ManageExam::getSubjectName() {
+    ManageSubject manageSubject2;
+    PTRSUBJECT subjectExam = manageSubject2.getSubject(subjectCode);
+    
+    if (subjectExam == nullptr) {
+        return "Khong tim thay mon hoc";
+    }
+
+    return subjectExam->info.subjectName;
+}
+
 void ManageExam::toCalculateResult() {
     int index = 0;
     int correctAnswer = 0;
