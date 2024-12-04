@@ -20,7 +20,7 @@ class ContentExecute : public Content
 {
 private:
 	string classCode;
-	int count;
+	int countQuestion;
 	int time;
 
 public:
@@ -29,6 +29,7 @@ public:
 	void drawContent();
 	void init(string classCode, int count, int time);
 	void handle();
+	void cleanQuestion();
 	ContentExecute();
 	~ContentExecute();
 };

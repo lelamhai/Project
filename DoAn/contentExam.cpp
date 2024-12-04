@@ -48,6 +48,10 @@ void ContentExam::drawExam()
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1);
 		listInput[i].drawBox();
 	}
+	listInput[0].setText("VL");
+	listInput[1].setText("5");
+	listInput[2].setText("5");
+
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 18);
