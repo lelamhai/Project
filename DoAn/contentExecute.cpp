@@ -71,12 +71,9 @@ void ContentExecute::handle()
 	
 
 	int index = 1;
-	int temp = index + 1;
-	string titleQuestion = "Cau " + to_string(temp);
-	//titleQuestion =  randomQuestionList[index].content;
 
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
-	cout << titleQuestion + ": " << randomQuestionList[index].content;
+	cout << "Cau " << to_string(index + 1) << ": " << randomQuestionList[index].content;
 
 	y += 3;
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + y + index + 2);
