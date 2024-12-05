@@ -26,7 +26,6 @@ bool ManageStudent::addStudent(const char* studentCode, const char* firstName, c
         tmpStudent->next = studentList;
         studentList = tmpStudent;
     }
-    
     return true;
 }
 

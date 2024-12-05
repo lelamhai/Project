@@ -3,6 +3,16 @@
 #include "ManageQuestion.h"
 #include <fstream> 
 
+struct SubjectPage {
+    PTRSUBJECT subjects = new SubjectNode;
+    int currentPage; // trang hiện tại
+    int numberSubjectPerPage; // tổng số trên 1 trang
+    int totalPage; // tổng số trang
+    int totalSubject; // tổng số
+    int startIndex; // Số thứ tự bắt đầu của trang đó
+    int endIndex; // số kết thúc của trang đó
+};
+
 class ManageSubject
 {
 private:
