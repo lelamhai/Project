@@ -54,7 +54,7 @@ protected:
         Footer();
     }
     static int choice;
-    DWORD ID = 0;
+    
     HANDLE hThread;
 public:
     void setRunContent(int choice);

@@ -1,4 +1,5 @@
 #include "ContentExecute.h"
+int ContentExecute::timeExecute = 0;
 
 ContentExecute::ContentExecute()
 {
@@ -18,6 +19,8 @@ void ContentExecute::initExecute(string classCode, int count, int time)
 	this->classCode = classCode;
 	this->countQuestion = count;
 	this->time = time;
+
+	this->timeExecute = time;
 }
 
 void ContentExecute::drawContent()
@@ -28,12 +31,16 @@ void ContentExecute::drawContent()
 
 	int titleTime = getCenterX(COLUMN_CENTER, 26);
 	gotoXY(DISTANCE_SIDEBAR + titleTime, DISTANCE_HEADER + PADDING + PADDING);
-	cout << "Thoi Gian Lam Bai: 90 Phut";
+	cout << "Thoi Gian Lam Bai: " << time << " Phut";
 
-	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 6, DISTANCE_HEADER + PADDING + PADDING);
-	cout << "Mon: Ly";*/
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - exam.getSubjectName().length() - 5, DISTANCE_HEADER + PADDING + PADDING);
+	cout << "Mon: ";
 
-	//box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING * 4, COLUMN_CENTER, ROW_CENTER);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - exam.getSubjectName().length(), DISTANCE_HEADER + PADDING + PADDING);
+	cout << exam.getSubjectName();
+
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, 32);
+	cout << "Chon dap an: ";
 
 	lineY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER, ROW_CENTER + 7);
 
@@ -46,31 +53,22 @@ void ContentExecute::drawContent()
 	int titleAnswer = getCenterX(COLUMN_RIGHT + 8, 14);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + titleAnswer, DISTANCE_HEADER + PADDING + PADDING);
 	cout << "Dap An Da Chon";
-}
 
-void ContentExecute::content()
-{
-	drawContent();
-	handle();
-}
 
-void ContentExecute::handle()
-{
-	ManageExam exam;
-	exam.setInputExam(classCode.c_str(), Singleton::getInstance()->role.c_str(), countQuestion, time);
+	int resultY = 3;
 
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - exam.getSubjectName().length() - 5, DISTANCE_HEADER + PADDING + PADDING);
-	cout << "Mon: ";
+	// Right
+	vector<char> list(countQuestion);
+	for (int i = 0; i < countQuestion; ++i) {
+		list[i] = ' ';
+	}
 
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - exam.getSubjectName().length(), DISTANCE_HEADER + PADDING + PADDING);
-	cout << exam.getSubjectName();
-
-	
-
-	Question* randomQuestionList = exam.getRandomQuestion();
-	
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, 32);
-	cout << "Chon dap an: ";
+	resultY = 3;
+	for (int j = 0; j < list.size(); j++)
+	{
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7, DISTANCE_HEADER + PADDING + PADDING + resultY + (j * 2));
+		cout << "Cau " << j + 1 << ": " << list[j];
+	}
 
 	// Bottom
 	int tutorialY = 37;
@@ -90,30 +88,64 @@ void ContentExecute::handle()
 	gotoXY(DISTANCE_SIDEBAR + MARGIN, tutorialY);
 	cout << "Phim Trai|Phai: Chon Cau Sau|Truoc";
 	setColorText(ColorCode_DarkWhite);
+}
 
-	vector<char> list(countQuestion);  
-	for (int i = 0; i < countQuestion; ++i) {
-		list[i] = ' ';
-	}
+void ContentExecute::content()
+{
+	exam.setInputExam(classCode.c_str(), Singleton::getInstance()->role.c_str(), countQuestion, time);
+	drawContent();
+	handle();
+}
 
+void ContentExecute::handle()
+{
+	DWORD ID = 0;
+
+	hThread = CreateThread(NULL, 0, countdown, this, 0, &ID);
+	Sleep(100);
+	executeExam();
+}
+
+void ContentExecute::executeExam()
+{
+	Question* randomQuestionList = exam.getRandomQuestion();
 	char answer[] = { 'A', 'B', 'C', 'D' };
+	
 	int contentY = 4;
-	int resultY = 3;
-
-	// Right
-	resultY = 3;
-	for (int j = 0; j < list.size(); j++)
-	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7, DISTANCE_HEADER + PADDING + PADDING + resultY + (j * 2));
-		cout << "Cau " << j + 1 << ": " << list[j];
-	}
 
 	int indexQuestion = 0;
 	int indexAnswer = 0;
-	bool isLoadQuestion = true;
+	bool isLoadQuestion = false;
 	bool isLoadAnswer = true;
+
+	loadQuestion(indexQuestion, randomQuestionList);
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_UP))
+		{
+			if (indexAnswer > 0)
+			{
+				indexAnswer--;
+			}
+			else {
+				indexAnswer = 3;
+			}
+			isLoadAnswer = true;
+		}
+
+		if (GetAsyncKeyState(VK_DOWN))
+		{
+			if (indexAnswer < 4 - 1)
+			{
+				indexAnswer++;
+			}
+			else
+			{
+				indexAnswer = 0;
+			}
+			isLoadAnswer = true;
+		}
+
 		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
 		{
 			if (indexQuestion > 0)
@@ -140,53 +172,15 @@ void ContentExecute::handle()
 			}
 		}
 
-		if (GetAsyncKeyState(VK_UP))
-		{
-			if (indexAnswer > 0)
-			{
-				indexAnswer--;
-			}
-			else {
-				indexAnswer = 3;
-			}
-			isLoadAnswer = true;
-		}
-
-		if (GetAsyncKeyState(VK_DOWN))
-		{
-			if (indexAnswer < 4-1)
-			{
-				indexAnswer++;
-			}
-			else
-			{
-				indexAnswer = 0;
-			}
-			isLoadAnswer = true;
-		}
-
 		if (isLoadQuestion)
 		{
-			gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
-			cout << "Cau " << to_string(indexQuestion + 1) << ": " << randomQuestionList[indexQuestion].content;
-			contentY += 3;
-			gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
-			cout << "A) " + randomQuestionList[indexQuestion].optionA;
-			contentY += 3;
-			gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
-			cout << "B) " + randomQuestionList[indexQuestion].optionB;
-			contentY += 3;
-			gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
-			cout << "C) " + randomQuestionList[indexQuestion].optionC;
-			contentY += 3;
-			gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
-			cout << "D) " + randomQuestionList[indexQuestion].optionD;
+			loadQuestion(indexQuestion, randomQuestionList);
 
 			isLoadQuestion = false;
 			Sleep(150);
 		}
-		
-		if (isLoadAnswer)
+
+		/*if (isLoadAnswer)
 		{
 			setColorText(ColorCode_DarkGreen);
 			gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + 13, 32);
@@ -194,13 +188,33 @@ void ContentExecute::handle()
 			isLoadAnswer = false;
 			Sleep(150);
 			setColorText(ColorCode_White);
-		}
+		}*/
 	}
 }
 
-void ContentExecute::countdown()
+void ContentExecute::loadQuestion(int index, Question* randomQuestionList)
 {
-	int total_seconds = time * 60;
+	int contentY = 4;
+
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
+	cout << "Cau " << to_string(index + 1) << ": " << randomQuestionList[index].content;
+	contentY += 3;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
+	cout << "A) " + randomQuestionList[index].optionA;
+	contentY += 3;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
+	cout << "B) " + randomQuestionList[index].optionB;
+	contentY += 3;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
+	cout << "C) " + randomQuestionList[index].optionC;
+	contentY += 3;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
+	cout << "D) " + randomQuestionList[index].optionD;
+}
+
+DWORD WINAPI ContentExecute::countdown(LPVOID lpParam)
+{
+	int total_seconds = timeExecute * 60;
 
 	while (total_seconds >= 0) {
 		int hours = total_seconds / 3600;
@@ -224,30 +238,10 @@ void ContentExecute::countdown()
 		cout.flush();
 		setColorText(ColorCode_DarkWhite);
 
-		this_thread::sleep_for(std::chrono::seconds(1));
+		this_thread::sleep_for(chrono::seconds(1));
 		total_seconds--;
 	}
-	
-
-
-	/*int total_seconds = time * 60;
-
-	while (total_seconds >= 0) {
-		int hours = total_seconds / 3600;
-		int minutes = (total_seconds % 3600) / 60;
-		int seconds = total_seconds % 60;
-
-		int titleTime = getCenterX(COLUMN_CENTER, 2);
-		gotoXY(DISTANCE_SIDEBAR + titleTime, DISTANCE_HEADER + PADDING + PADDING + 3);
-		setColorText(ColorCode_DarkGreen);
-
-		cout << hours << minutes << seconds;
-
-		setColorText(ColorCode_DarkWhite);
-
-		this_thread::sleep_for(std::chrono::seconds(1));
-		total_seconds--;
-	}*/
+	return 0;
 }
 
 void ContentExecute::cleanQuestion()

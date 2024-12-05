@@ -9,6 +9,7 @@ private:
 public:
 	string role;
 	int moveMenu = 0;
+	bool isExecute = false;
 	static Singleton* getInstance();
 	void print();
 	Singleton();

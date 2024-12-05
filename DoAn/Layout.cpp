@@ -20,6 +20,7 @@ void Layout::setRunContent(int content)
 
 void Layout::main()
 {
+    DWORD ID = 0;
     hThread = CreateThread(NULL, 0, templateContent, this, 0, &ID);
     templateMenu();
 
@@ -62,6 +63,11 @@ void Layout::templateMenu()
     SuspendThread(hThread);
     while (true)
     {
+        if (Singleton::getInstance()->isExecute)
+        {
+            continue;
+        }
+
         if (GetAsyncKeyState(VK_PRIOR) & 0x0001)
         {
             showCur(0);

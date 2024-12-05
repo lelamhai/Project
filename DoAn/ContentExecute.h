@@ -22,6 +22,9 @@ private:
 	string classCode;
 	int countQuestion;
 	int time;
+	static int timeExecute;
+	HANDLE hThread;
+	ManageExam exam;
 
 public:
 	void displayContent() override;
@@ -29,7 +32,9 @@ public:
 	void drawContent();
 	void initExecute(string classCode, int count, int time);
 	void handle();
-	void countdown();
+	void executeExam();
+	void loadQuestion(int index, Question* randomQuestionList);
+	static DWORD WINAPI countdown(LPVOID lpParam);
 	void cleanQuestion();
 	ContentExecute();
 	~ContentExecute();

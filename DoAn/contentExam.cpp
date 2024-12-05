@@ -282,6 +282,8 @@ void ContentExam::createData()
 			//-2: So cau vuot qua database
 			if (result == 1)
 			{
+				Singleton::getInstance()->isExecute = true;
+
 				cleanContent();
 				showCur(0);
 				ContentExecute* e = new ContentExecute();
