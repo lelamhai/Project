@@ -24,6 +24,20 @@ void lineX(int x, int y, int w)
 	}
 }
 
+void lineXDot(int x, int y, int w)
+{
+	if (w < 1)
+	{
+		return;
+	}
+
+	for (int i = x; i <= x + w; i++)
+	{
+		gotoXY(i, y);
+		cout << "-";
+	}
+}
+
 void lineY(int x, int y, int h)
 {
 	for (int i = y; i <= y + h; i++)

@@ -134,6 +134,33 @@
                     "optionD": "quang 4",
                     "questionId": 125
                 },
+		{
+                    "answer": 66,
+                    "content": "Con tho la gi?",
+                    "optionA": "tho 1",
+                    "optionB": "tho 2",
+                    "optionC": "tho 3",
+                    "optionD": "tho 4",
+                    "questionId": 125
+                },
+		{
+                    "answer": 66,
+                    "content": "Con ho la gi?",
+                    "optionA": "ho 1",
+                    "optionB": "ho 2",
+                    "optionC": "ho 3",
+                    "optionD": "ho 4",
+                    "questionId": 125
+                },
+		{
+                    "answer": 66,
+                    "content": "Con rong la gi?",
+                    "optionA": "rong 1",
+                    "optionB": "rong 2",
+                    "optionC": "rong 3",
+                    "optionD": "rong 4",
+                    "questionId": 125
+                },
                 {
                     "answer": 68,
                     "content": "dong dien xoay chieu ",

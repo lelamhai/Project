@@ -10,6 +10,7 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 
+#include "Text.h"
 #include "InputField.h"
 #include "Content.h"
 #include <conio.h>
@@ -23,6 +24,8 @@ private:
 	int countQuestion;
 	int time;
 	static int timeExecute;
+	vector<Text> listText;
+	vector<char> listResults;
 	HANDLE hThread;
 	ManageExam exam;
 
@@ -33,7 +36,9 @@ public:
 	void initExecute(string classCode, int count, int time);
 	void handle();
 	void executeExam();
-	void loadQuestion(int index, Question* randomQuestionList);
+	void loadQuestion(int indexQuestion, int indexAnswer, Question* randomQuestionList);
+	void displayResultQuestion(int indexQuestion, int indexAnswer);
+	void loadDisplayResult();
 	static DWORD WINAPI countdown(LPVOID lpParam);
 	void cleanQuestion();
 	ContentExecute();

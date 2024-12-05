@@ -49,7 +49,7 @@ void ContentExam::drawExam()
 		listInput[i].drawBox();
 	}
 	listInput[0].setText("VL");
-	listInput[1].setText("5");
+	listInput[1].setText("10");
 	listInput[2].setText("5");
 
 
