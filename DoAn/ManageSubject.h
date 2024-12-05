@@ -23,16 +23,6 @@ private:
 
     void insertSubject(const Subject& subject);
     
-    PTRSUBJECT insertBalance(PTRSUBJECT root, PTRSUBJECT newNode);
-
-    int getBalance(PTRSUBJECT node);
-
-    int getHeight(PTRSUBJECT node);
-
-    PTRSUBJECT rotateRight(PTRSUBJECT z);
-
-    PTRSUBJECT rotateLeft(PTRSUBJECT z);
-
     // Hàm tìm kiếm môn học theo mã môn
     PTRSUBJECT searchSubject(PTRSUBJECT root, const char* code);
 
@@ -52,6 +42,10 @@ private:
 
     // Lưu dưới dạng json
     void saveSubjectToJson(PTRSUBJECT node, json& j);
+
+    void deleteTree(PTRSUBJECT& root);
+
+    void collectMatchingSubjects(PTRSUBJECT root, PTRSUBJECT& tempTree, const string& keyword);
 public:
 	ManageSubject();
 	~ManageSubject();
@@ -85,4 +79,26 @@ public:
     void printQuestionList(const char* subjectCode);
 
     ManageQuestion getRandomQuestion(int n, const char* subjectCode);
+
+    SubjectPage getSubjectPerPage(int pageNumber);
+
+    SubjectPage searchSubjects(string keyword, int page);
+
+    void getPageSubject(PTRSUBJECT& result, PTRSUBJECT root, int& count, int startIndex, int endIndex);
+
+    void reset();
 };
+
+PTRSUBJECT insertBalance(PTRSUBJECT root, PTRSUBJECT newNode);
+
+int getBalance(PTRSUBJECT node);
+
+int getHeight(PTRSUBJECT node);
+
+PTRSUBJECT rotateRight(PTRSUBJECT z);
+
+PTRSUBJECT rotateLeft(PTRSUBJECT z);
+
+void insertSubjectToTree(PTRSUBJECT root, string subjectCode, string subjectName);
+
+void printSubjectInAVL(PTRSUBJECT root);

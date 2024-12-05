@@ -306,6 +306,59 @@ ManageQuestion ManageSubject::getRandomQuestion(int n, const char* subjectCode) 
     return questionList_Random;
 }
 
+SubjectPage ManageSubject::getSubjectPerPage(int pageNumber)
+{
+    SubjectPage subjectPage;
+    int subjectPerPage = 13;
+    int totalSubject = getCountSubjects();
+    int totalPages = (totalSubject + subjectPerPage - 1) / subjectPerPage;
+    subjectPage.currentPage = pageNumber;
+    subjectPage.currentPage = pageNumber;
+    subjectPage.totalPage = totalPages;
+    subjectPage.totalPage = totalSubject;
+    subjectPage.numberSubjectPerPage = subjectPerPage;
+
+    PTRSUBJECT pageResult = nullptr;
+
+    if (pageNumber < 1 || pageNumber > totalPages) {
+        return subjectPage;
+    }
+
+    // Tính toán chỉ số bắt đầu và kết thúc
+    int startIndex = (pageNumber - 1) * subjectPerPage;
+    int endIndex = min(startIndex + subjectPerPage, totalPages);
+    int count = 0;
+    getPageSubject(pageResult, subjectList, count, startIndex, endIndex);
+
+    subjectPage.startIndex = startIndex;
+    subjectPage.endIndex = endIndex;
+    subjectPage.subjects = pageResult;
+    return subjectPage;
+}
+
+
+
+SubjectPage ManageSubject::searchSubjects(string keyword, int page)
+{
+
+    ManageSubject subjectList;
+    if (keyword == "") {
+        return subjectList.getSubjectPerPage(page);
+    }
+    int countSubject = 0;
+    
+    // Duyệt cây AVL gốc và thêm các môn học khớp từ khóa vào cây tạm
+    collectMatchingSubjects(this->subjectList, subjectList.subjectList, keyword);
+
+    // Trả về danh sách phân trang từ cây tạm
+    return subjectList.getSubjectPerPage(page);
+}
+
+void ManageSubject::reset() {
+    deleteTree(subjectList);
+    subjectList = nullptr; // Đặt cây về trạng thái rỗng
+}
+
 // ----------------------- PRIVATE METHOD --------------------------//
 // Hàm giúp tạo SubjectNode mới
 PTRSUBJECT ManageSubject::createSubjectNode(const char* code, const string& name) {
@@ -331,81 +384,6 @@ void ManageSubject::insertSubject(const Subject& subject) {
     else {
         subjectList = insertBalance(subjectList, newNode);
     }
-}
-
-PTRSUBJECT ManageSubject::insertBalance(PTRSUBJECT root, PTRSUBJECT newNode) {
-    if (root == nullptr) return newNode;
-
-    if (strcmp(newNode->info.subjectCode, root->info.subjectCode) < 0) {
-        root->left = insertBalance(root->left, newNode);
-    }
-    else {
-        root->right = insertBalance(root->right, newNode);
-    }
-
-    // Cập nhật chiều cao của cây
-    root->height = 1 + max(getHeight(root->left), getHeight(root->right));
-
-    // Cân bằng cây nếu cần
-    int balance = getBalance(root);
-
-    // Xoay trái nếu cần
-    if (balance > 1 && strcmp(newNode->info.subjectCode, root->left->info.subjectCode) < 0) {
-        return rotateRight(root);
-    }
-
-    // Xoay phải nếu cần
-    if (balance < -1 && strcmp(newNode->info.subjectCode, root->right->info.subjectCode) > 0) {
-        return rotateLeft(root);
-    }
-
-    // Xoay trái-phải
-    if (balance > 1 && strcmp(newNode->info.subjectCode, root->left->info.subjectCode) > 0) {
-        root->left = rotateLeft(root->left);
-        return rotateRight(root);
-    }
-
-    // Xoay phải-trái
-    if (balance < -1 && strcmp(newNode->info.subjectCode, root->right->info.subjectCode) < 0) {
-        root->right = rotateRight(root->right);
-        return rotateLeft(root);
-    }
-
-    return root;
-}
-
-PTRSUBJECT ManageSubject::rotateLeft(PTRSUBJECT z) {
-    PTRSUBJECT y = z->right;
-    PTRSUBJECT T2 = y->left;
-
-    y->left = z;
-    z->right = T2;
-
-    z->height = max(getHeight(z->left), getHeight(z->right)) + 1;
-    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
-
-    return y;
-}
-
-PTRSUBJECT ManageSubject::rotateRight(PTRSUBJECT z) {
-    PTRSUBJECT y = z->left;
-    PTRSUBJECT T3 = y->right;
-
-    y->right = z;
-    z->left = T3;
-
-    z->height = max(getHeight(z->left), getHeight(z->right)) + 1;
-    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
-
-    return y;
-}
-
-int ManageSubject::getHeight(PTRSUBJECT node) {
-    return (node == nullptr) ? 0 : node->height;
-}
-
-int ManageSubject::getBalance(PTRSUBJECT node) {
-    return (node == nullptr) ? 0 : getHeight(node->left) - getHeight(node->right);
 }
 
 // Hàm tìm kiếm môn học theo mã môn
@@ -480,5 +458,151 @@ int ManageSubject::countSubjectsInRoot(PTRSUBJECT root) {
     return 1 + countSubjectsInRoot(root->left) + countSubjectsInRoot(root->right);
 }
 
+// Hàm xác định vị trí cây
+void ManageSubject::getPageSubject(PTRSUBJECT& result, PTRSUBJECT root, int& count, int startIndex, int endIndex) {
+    if (!root || count >= endIndex) return;
+
+    getPageSubject(result, root->left, count, startIndex, endIndex);
+
+    if (count >= startIndex && count < endIndex) {
+        // Chỉ thêm node vào kết quả nếu trong khoảng
+        insertSubjectToTree(result, root->info.subjectName, root->info.subjectCode);
+    }
+
+    count++; 
+
+    getPageSubject(result, root->right, count, startIndex, endIndex);
+}
+
+void ManageSubject::deleteTree(PTRSUBJECT& root) {
+    if (!root) return;
+    // Đệ quy giải phóng các node con
+    deleteTree(root->left);
+    deleteTree(root->right);
+
+    // Giải phóng node hiện tại
+    delete root;
+    root = nullptr; // Đảm bảo không trỏ tới vùng nhớ đã giải phóng
+}
+
+void ManageSubject::collectMatchingSubjects(PTRSUBJECT root, PTRSUBJECT& tempTree, const string& keyword) {
+    if (!root) return;
+
+    // Duyệt cây theo thứ tự in-order (left → root → right)
+    collectMatchingSubjects(root->left, tempTree, keyword);
+
+    // Kiểm tra nếu khớp từ khóa trong tên hoặc mã môn học
+    if (root->info.subjectName.find(keyword) != string::npos ||
+        string(root->info.subjectCode).find(keyword) != string::npos) {
+        insertSubjectToTree(tempTree, root->info.subjectName, root->info.subjectCode);
+    }
+
+    collectMatchingSubjects(root->right, tempTree, keyword);
+}
 
 
+///////////////////////////////////////////////////////
+
+PTRSUBJECT insertBalance(PTRSUBJECT root, PTRSUBJECT newNode) {
+    if (root == nullptr) return newNode;
+
+    if (strcmp(newNode->info.subjectCode, root->info.subjectCode) < 0) {
+        root->left = insertBalance(root->left, newNode);
+    }
+    else {
+        root->right = insertBalance(root->right, newNode);
+    }
+
+    // Cập nhật chiều cao của cây
+    root->height = 1 + max(getHeight(root->left), getHeight(root->right));
+
+    // Cân bằng cây nếu cần
+    int balance = getBalance(root);
+
+    // Xoay trái nếu cần
+    if (balance > 1 && strcmp(newNode->info.subjectCode, root->left->info.subjectCode) < 0) {
+        return rotateRight(root);
+    }
+
+    // Xoay phải nếu cần
+    if (balance < -1 && strcmp(newNode->info.subjectCode, root->right->info.subjectCode) > 0) {
+        return rotateLeft(root);
+    }
+
+    // Xoay trái-phải
+    if (balance > 1 && strcmp(newNode->info.subjectCode, root->left->info.subjectCode) > 0) {
+        root->left = rotateLeft(root->left);
+        return rotateRight(root);
+    }
+
+    // Xoay phải-trái
+    if (balance < -1 && strcmp(newNode->info.subjectCode, root->right->info.subjectCode) < 0) {
+        root->right = rotateRight(root->right);
+        return rotateLeft(root);
+    }
+
+    return root;
+}
+
+PTRSUBJECT rotateLeft(PTRSUBJECT z) {
+    PTRSUBJECT y = z->right;
+    PTRSUBJECT T2 = y->left;
+
+    y->left = z;
+    z->right = T2;
+
+    z->height = max(getHeight(z->left), getHeight(z->right)) + 1;
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
+
+    return y;
+}
+
+PTRSUBJECT rotateRight(PTRSUBJECT z) {
+    PTRSUBJECT y = z->left;
+    PTRSUBJECT T3 = y->right;
+
+    y->right = z;
+    z->left = T3;
+
+    z->height = max(getHeight(z->left), getHeight(z->right)) + 1;
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
+
+    return y;
+}
+
+int getHeight(PTRSUBJECT node) {
+    return (node == nullptr) ? 0 : node->height;
+}
+
+int getBalance(PTRSUBJECT node) {
+    return (node == nullptr) ? 0 : getHeight(node->left) - getHeight(node->right);
+}
+
+// Hàm chèn môn học vào cây nhị phân cân bằng
+void insertSubjectToTree(PTRSUBJECT root, string subjectCode, string subjectName) {
+    Subject newSubject;
+    strcpy_s(newSubject.subjectCode, subjectCode.c_str());
+    newSubject.subjectName = subjectName;
+    newSubject.listQuestion = nullptr;
+    
+    PTRSUBJECT newNode = new SubjectNode;
+    newNode->info = newSubject;
+    newNode->left = newNode->right = nullptr;
+    newNode->height = 1;
+
+    if (root == nullptr) {
+        root = newNode;
+    }
+    else {
+        root = insertBalance(root, newNode);
+    }
+}
+
+
+// Hàm in tất cả các môn học (traversal cây nhị phân)
+void printSubjectInAVL(PTRSUBJECT root) {
+    if (!root) return;
+    printSubjectInAVL(root->left);
+    cout << "Subject Code: " << root->info.subjectCode << ", Subject Name: " << root->info.subjectName << endl;
+    printSubjectInAVL(root->right);
+}

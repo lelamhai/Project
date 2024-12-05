@@ -19,7 +19,7 @@ void DungTest::main()
     //hihi.printStudents();
 
     ///------TEST FOR CLASS----------------
-     
+     /*
      ManageClass test; // Khởi tạo danh sách các lớp load data vào luôn 
      
      // Hàm tạo thông tin sinh viên cho lớp (trả về true false)
@@ -66,8 +66,11 @@ void DungTest::main()
      Student studentFound = test.findStudentByCode("K23DTCN269", "C001"); 
      cout << "Hoc sinh tim thay ten: " << studentFound.firstName << endl;
 
-
-
+     */
+    ManageSubject subject;
+    SubjectPage a = subject.searchSubjects("", 1);
+    subject.printAllSubjects();
+    printSubjectInAVL(a.subjects);
 
 
 

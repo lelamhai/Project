@@ -35,7 +35,6 @@ struct Subject {
 	char subjectCode[15];
 	string subjectName;
 	PTRQUESTION listQuestion = nullptr;
-
 };
 
 struct SubjectNode {
