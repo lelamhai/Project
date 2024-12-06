@@ -10,6 +10,7 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 
+#include "PopupFinishExam.h"
 #include "Text.h"
 #include "InputField.h"
 #include "Content.h"

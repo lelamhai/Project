@@ -61,6 +61,7 @@ void ContentExecute::drawContent()
 
 	resultScore.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + 2, 43);
 	resultScore.setContent("Diem: ");
+	resultScore.display();
 
 	int resultY = 3;
 	// Right
@@ -127,7 +128,6 @@ void ContentExecute::executeExam()
 				indexAnswer = 3;
 			}
 			isLoadQuestion = true;
-			Sleep(100);
 		}
 
 		if (GetAsyncKeyState(VK_DOWN))
@@ -141,7 +141,6 @@ void ContentExecute::executeExam()
 				indexAnswer = 0;
 			}
 			isLoadQuestion = true;
-			Sleep(100);
 		}
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
@@ -174,10 +173,8 @@ void ContentExecute::executeExam()
 					indexAnswer = 3;
 				}
 
-				//indexAnswer = -1;
 				cleanQuestion();
 				isLoadQuestion = true;
-				Sleep(100);
 			}
 		}
 
@@ -213,7 +210,6 @@ void ContentExecute::executeExam()
 
 				cleanQuestion();
 				isLoadQuestion = true;
-				Sleep(100);
 			}
 		}
 
@@ -279,11 +275,23 @@ void ContentExecute::executeExam()
 					indexAnswer = 3;
 				}
 			}
-			else {
+		}
+
+		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
+		{
+			PopupFinishExam p;
+			int x = getCenterX(COLUMN_CENTER, 50);
+			p.setPosition(DISTANCE_SIDEBAR+MARGIN+x, 17);
+			p.open();
+			p.handle();
+			if (p.getResult())
+			{
 				resultList result = exam.getAnsweredList();
 				SuspendThread(hThread);
+				p.close();
 				return;
 			}
+			p.close();
 		}
 
 		if (isLoadQuestion)
@@ -356,7 +364,12 @@ void ContentExecute::finishExam()
 
 	while (true)
 	{
-		_getch();
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		{
+			gotoXY(0,0);
+			cout << "LLH";
+			return;
+		}
 	}
 }
 

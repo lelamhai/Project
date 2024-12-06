@@ -22,6 +22,7 @@ public:
 	virtual void setFrame(int width, int height);
 	virtual void setTitle(string title);
 	virtual void content();
+	virtual void clean();
 	
 	Popup();
 	~Popup();

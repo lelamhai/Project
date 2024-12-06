@@ -54,3 +54,14 @@ void Popup::content()
 	textbk(ColorCode_DarkCyan);
 	cout << title;
 }
+
+void Popup::clean()
+{
+	string blankFill;
+	blankFill.resize(width, ' ');
+	for (int i = 0; i < height; i++)
+	{
+		gotoXY(posX, posY + i);
+		cout << blankFill;
+	}
+}
