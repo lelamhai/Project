@@ -50,7 +50,7 @@ void ContentExam::drawExam()
 	}
 	listInput[0].setText("VL");
 	listInput[1].setText("10");
-	listInput[2].setText("5");
+	listInput[2].setText("1");
 
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
