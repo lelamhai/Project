@@ -14,6 +14,7 @@ private:
 	string content;
 public:
 	void setPosition(int posX, int posY);
+	void updatePositionY(int posY);
 	void display();
 	void setContent(string newContent);
 	int getLenString();

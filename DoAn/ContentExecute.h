@@ -26,6 +26,9 @@ private:
 	static int timeExecute;
 	vector<Text> listText;
 	vector<char> listResults;
+	Text resultScore;
+	
+	DWORD ID = 0;
 	HANDLE hThread;
 	ManageExam exam;
 
@@ -37,8 +40,10 @@ public:
 	void handle();
 	void executeExam();
 	void loadQuestion(int indexQuestion, int indexAnswer, Question* randomQuestionList);
-	void displayResultQuestion(int indexQuestion, int indexAnswer);
-	void loadDisplayResult();
+	void displayChoiceQuestion(int indexQuestion, int indexAnswer);
+	void loadDisplayChoice();
+	void finishExam();
+	void loadResultExam();
 	static DWORD WINAPI countdown(LPVOID lpParam);
 	void cleanQuestion();
 	ContentExecute();

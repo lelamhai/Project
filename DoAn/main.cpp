@@ -14,10 +14,10 @@ int main()
 	//delete p;
 	//----------------------------------
 //=======
-	//Page* p = new Page();
-	//p->setRunPage(PAGE_LOADING);
-	//p->main();
-	//delete p;
+	Page* p = new Page();
+	p->setRunPage(PAGE_LOADING);
+	p->main();
+	delete p;
 	//----------p;------------------------
 //>>>>>>> cbff50688a88d1d1a38e063e534e2d97f0302792
 
@@ -28,9 +28,9 @@ int main()
 	//------------------------------------------
 	
 	//--------------------DUNG-------------------
-	DungTest* shyni = new DungTest();
+	/*DungTest* shyni = new DungTest();
 	shyni->main();
-	delete shyni;
+	delete shyni;*/
 	//-------------------------------------------
 
 

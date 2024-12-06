@@ -59,8 +59,8 @@ void ContentExecute::drawContent()
 
 	lineXDot(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, 41, COLUMN_RIGHT + MARGIN);
 
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + 2, 43);
-	cout << "Diem: ";
+	resultScore.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + 2, 43);
+	resultScore.setContent("Diem: ");
 
 	int resultY = 3;
 	// Right
@@ -68,7 +68,7 @@ void ContentExecute::drawContent()
 		listText.push_back(Text());
 		listResults.push_back(' ');
 	}
-	loadDisplayResult();
+	loadDisplayChoice();
 
 	// Bottom
 	int tutorialY = 37;
@@ -99,11 +99,10 @@ void ContentExecute::content()
 
 void ContentExecute::handle()
 {
-	DWORD ID = 0;
-
 	hThread = CreateThread(NULL, 0, countdown, this, 0, &ID);
 	Sleep(100);
 	executeExam();
+	finishExam();
 }
 
 void ContentExecute::executeExam()
@@ -247,7 +246,7 @@ void ContentExecute::executeExam()
 			}
 
 			listResults[indexQuestion] = c;
-			displayResultQuestion(indexQuestion, indexAnswer);
+			displayChoiceQuestion(indexQuestion, indexAnswer);
 			Sleep(100);
 			isLoadQuestion = true;
 			if (indexQuestion < countQuestion - 1)
@@ -279,6 +278,11 @@ void ContentExecute::executeExam()
 				{
 					indexAnswer = 3;
 				}
+			}
+			else {
+				resultList result = exam.getAnsweredList();
+				SuspendThread(hThread);
+				return;
 			}
 		}
 
@@ -320,7 +324,7 @@ void ContentExecute::loadQuestion(int indexQuestion, int indexAnswer, Question* 
 	}
 }
 
-void ContentExecute::loadDisplayResult()
+void ContentExecute::loadDisplayChoice()
 {
 	int resultY = 1;
 	for (int j = 0; j < countQuestion; j++)
@@ -332,12 +336,53 @@ void ContentExecute::loadDisplayResult()
 	}
 }
 
-void ContentExecute::displayResultQuestion(int indexQuestion, int indexAnswer)
+void ContentExecute::displayChoiceQuestion(int indexQuestion, int indexAnswer)
 {
 	listText[indexQuestion].display();
 	cout << listResults[indexQuestion];
 }
 
+void ContentExecute::finishExam()
+{
+	for (int i = 0; i < countQuestion; i++) {
+		exam.setAnswer(i, listResults[i]);
+	}
+
+	loadResultExam();
+
+	resultList result = exam.getAnsweredList();
+	resultScore.display();
+	cout << result.score;
+
+	while (true)
+	{
+		_getch();
+	}
+}
+
+void ContentExecute::loadResultExam()
+{
+	resultList result = exam.getAnsweredList();
+
+	for (int i = 0; i < countQuestion; i++) {
+		answer* p = result.answerList[i];
+		listText[i].display();
+		if (p->chosenAnswer == p->correctAnswer)
+		{
+			setColorText(ColorCode_DarkGreen);
+		}
+		else {
+			setColorText(ColorCode_Red);
+		}
+		cout << p->chosenAnswer;
+		setColorText(ColorCode_White);
+
+		listText[i].updatePositionY(1);
+		listText[i].setContent("Dap an: ");
+		listText[i].display();
+		cout << p->correctAnswer;
+	}
+}
 
 DWORD WINAPI ContentExecute::countdown(LPVOID lpParam)
 {
