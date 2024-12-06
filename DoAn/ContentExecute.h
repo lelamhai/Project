@@ -26,8 +26,7 @@ private:
 
 	string classCode;
 	int countQuestion;
-	int time;
-	static int timeExecute;
+	static int time;
 	vector<Text> listText;
 	vector<char> listResults;
 	Text resultScore;

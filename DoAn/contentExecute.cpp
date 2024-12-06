@@ -1,5 +1,5 @@
 #include "ContentExecute.h"
-int ContentExecute::timeExecute = 0;
+int ContentExecute::time = 0;
 bool ContentExecute::isEnd = false;
 
 ContentExecute::ContentExecute()
@@ -21,7 +21,7 @@ void ContentExecute::initExecute(string classCode, int count, int time)
 	this->countQuestion = count;
 	this->time = time;
 
-	this->timeExecute = time;
+	/*this->timeExecute = time;*/
 }
 
 void ContentExecute::drawContent()
@@ -249,7 +249,6 @@ void ContentExecute::executeExam()
 
 			listResults[indexQuestion] = c;
 			displayChoiceQuestion(indexQuestion, indexAnswer);
-			Sleep(100);
 			isLoadQuestion = true;
 			if (indexQuestion < countQuestion - 1)
 			{
@@ -315,7 +314,7 @@ void ContentExecute::executeExam()
 			loadQuestion(indexQuestion, indexAnswer, randomQuestionList);
 			isLoadQuestion = false;
 		}
-		Sleep(150);
+		Sleep(80);
 	}
 }
 
@@ -414,7 +413,7 @@ void ContentExecute::loadResultExam()
 
 DWORD WINAPI ContentExecute::countdown(LPVOID lpParam)
 {
-	int total_seconds = timeExecute * 60;
+	int total_seconds = time * 60;
 
 	while (total_seconds >= 0) {
 		int hours = total_seconds / 3600;
