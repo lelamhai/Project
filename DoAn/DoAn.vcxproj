@@ -160,6 +160,7 @@
     <ClCompile Include="InputField.h" />
     <ClCompile Include="page.cpp" />
     <ClCompile Include="popup.cpp" />
+    <ClCompile Include="popupFinishExam.cpp" />
     <ClCompile Include="popupTutorial.cpp" />
     <ClCompile Include="sidebar.cpp" />
     <ClCompile Include="header.cpp" />
@@ -200,6 +201,7 @@
     <ClInclude Include="ManageScore.h" />
     <ClInclude Include="ManageSubject.h" />
     <ClInclude Include="MCQ.h" />
+    <ClInclude Include="PopupFinishExam.h" />
     <ClInclude Include="PopupTutorial.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="ManageExam.h" />

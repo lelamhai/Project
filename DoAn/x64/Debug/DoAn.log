@@ -1,12 +1,6 @@
-﻿  DungTest.cpp
-  ManageSubject.cpp
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(295,17): warning C4566: character represented by universal-character-name '\u1EA5' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(295,17): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u1ED1' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u01B0' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u1EE3' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u1ECF' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(301,17): warning C4566: character represented by universal-character-name '\u1ED5' cannot be represented in the current code page (1252)
-  main.cpp
-  Generating Code...
-  DoAn.vcxproj -> D:\Code\PTIT\CTDL & GT\Project\x64\Debug\DoAn.exe
+﻿  contentExecute.cpp
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExecute.cpp(36,87): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExecute.cpp(39,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExecute.cpp(42,84): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExecute.cpp(45,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  DoAn.vcxproj -> C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\x64\Debug\DoAn.exe

@@ -14,6 +14,11 @@ void Text::setPosition(int posX, int posY)
 	this->y = posY;
 }
 
+void Text::updatePositionY(int posY)
+{
+	this->y += posY;
+}
+
 int Text::getLenString()
 {
 	return content.length();
