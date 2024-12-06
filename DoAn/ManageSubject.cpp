@@ -16,11 +16,11 @@ PTRSUBJECT ManageSubject::getListSubject()
 
 // ----------------------- PUBLIC METHOD --------------------------//
 // Thêm môn học mới
-bool ManageSubject::addSubject(const char* code, const string& name) {
-    PTRSUBJECT subjectFound = searchSubject(subjectList, code);
+bool ManageSubject::addSubject(const string code, const string name) {
+    PTRSUBJECT subjectFound = searchSubject(subjectList, code.c_str());
     if (subjectFound != nullptr) return false;
     PTRSUBJECT newNode = new SubjectNode;
-    strcpy_s(newNode->info.subjectCode, code);
+    strcpy_s(newNode->info.subjectCode, code.c_str());
     newNode->info.subjectName = name;
     newNode->left = newNode->right = nullptr;
     newNode->height = 1;
@@ -309,13 +309,13 @@ ManageQuestion ManageSubject::getRandomQuestion(int n, const char* subjectCode) 
 SubjectPage ManageSubject::getSubjectPerPage(int pageNumber)
 {
     SubjectPage subjectPage;
+    subjectPage.subjects = nullptr;
     int subjectPerPage = 13;
     int totalSubject = getCountSubjects();
     int totalPages = (totalSubject + subjectPerPage - 1) / subjectPerPage;
     subjectPage.currentPage = pageNumber;
-    subjectPage.currentPage = pageNumber;
     subjectPage.totalPage = totalPages;
-    subjectPage.totalPage = totalSubject;
+    subjectPage.totalSubject = totalSubject;
     subjectPage.numberSubjectPerPage = subjectPerPage;
 
     PTRSUBJECT pageResult = nullptr;
@@ -326,7 +326,7 @@ SubjectPage ManageSubject::getSubjectPerPage(int pageNumber)
 
     // Tính toán chỉ số bắt đầu và kết thúc
     int startIndex = (pageNumber - 1) * subjectPerPage;
-    int endIndex = min(startIndex + subjectPerPage, totalPages);
+    int endIndex = min(startIndex + subjectPerPage, totalSubject);
     int count = 0;
     getPageSubject(pageResult, subjectList, count, startIndex, endIndex);
 
@@ -341,23 +341,29 @@ SubjectPage ManageSubject::getSubjectPerPage(int pageNumber)
 SubjectPage ManageSubject::searchSubjects(string keyword, int page)
 {
 
-    ManageSubject subjectList;
+    ManageSubject manageSubject;
     if (keyword == "") {
-        return subjectList.getSubjectPerPage(page);
+        return manageSubject.getSubjectPerPage(page);
     }
     int countSubject = 0;
-    
+    manageSubject.reset();
     // Duyệt cây AVL gốc và thêm các môn học khớp từ khóa vào cây tạm
-    collectMatchingSubjects(this->subjectList, subjectList.subjectList, keyword);
+    collectMatchingSubjects(this->subjectList, manageSubject.subjectList, keyword);
 
     // Trả về danh sách phân trang từ cây tạm
-    return subjectList.getSubjectPerPage(page);
+    return manageSubject.getSubjectPerPage(page);
 }
 
 void ManageSubject::reset() {
     deleteTree(subjectList);
     subjectList = nullptr; // Đặt cây về trạng thái rỗng
 }
+
+void ManageSubject::deleteSubject(string code) {
+    subjectList = deleteNode(subjectList, code);
+    saveToFile();
+}
+
 
 // ----------------------- PRIVATE METHOD --------------------------//
 // Hàm giúp tạo SubjectNode mới
@@ -464,9 +470,9 @@ void ManageSubject::getPageSubject(PTRSUBJECT& result, PTRSUBJECT root, int& cou
 
     getPageSubject(result, root->left, count, startIndex, endIndex);
 
-    if (count >= startIndex && count < endIndex) {
+    if (count >= startIndex && count <= endIndex) {
         // Chỉ thêm node vào kết quả nếu trong khoảng
-        insertSubjectToTree(result, root->info.subjectName, root->info.subjectCode);
+        insertSubjectToTree(result, root->info.subjectCode, root->info.subjectName);
     }
 
     count++; 
@@ -494,11 +500,12 @@ void ManageSubject::collectMatchingSubjects(PTRSUBJECT root, PTRSUBJECT& tempTre
     // Kiểm tra nếu khớp từ khóa trong tên hoặc mã môn học
     if (root->info.subjectName.find(keyword) != string::npos ||
         string(root->info.subjectCode).find(keyword) != string::npos) {
-        insertSubjectToTree(tempTree, root->info.subjectName, root->info.subjectCode);
+        insertSubjectToTree(tempTree, root->info.subjectCode, root->info.subjectName);
     }
 
     collectMatchingSubjects(root->right, tempTree, keyword);
 }
+
 
 
 ///////////////////////////////////////////////////////
@@ -574,12 +581,19 @@ int getHeight(PTRSUBJECT node) {
     return (node == nullptr) ? 0 : node->height;
 }
 
+// Cập nhật chiều cao của một nút
+void updateHeight(PTRSUBJECT node) {
+    if (node) {
+        node->height = 1 + std::max(getHeight(node->left), getHeight(node->right));
+    }
+}
+
 int getBalance(PTRSUBJECT node) {
     return (node == nullptr) ? 0 : getHeight(node->left) - getHeight(node->right);
 }
 
 // Hàm chèn môn học vào cây nhị phân cân bằng
-void insertSubjectToTree(PTRSUBJECT root, string subjectCode, string subjectName) {
+void insertSubjectToTree(PTRSUBJECT& root, string subjectCode, string subjectName) {
     Subject newSubject;
     strcpy_s(newSubject.subjectCode, subjectCode.c_str());
     newSubject.subjectName = subjectName;
@@ -605,4 +619,76 @@ void printSubjectInAVL(PTRSUBJECT root) {
     printSubjectInAVL(root->left);
     cout << "Subject Code: " << root->info.subjectCode << ", Subject Name: " << root->info.subjectName << endl;
     printSubjectInAVL(root->right);
+}
+
+// Tìm nút có giá trị nhỏ nhất trong cây con
+PTRSUBJECT getMinValueNode(PTRSUBJECT node) {
+    PTRSUBJECT current = node;
+    while (current->left != nullptr)
+        current = current->left;
+    return current;
+}
+
+// Hàm xóa nút theo key
+PTRSUBJECT deleteNode(PTRSUBJECT root, string code) {
+    if (!root) return nullptr;
+
+    // Tìm nút cần xóa
+    if (code < (string) root->info.subjectCode) {
+        root->left = deleteNode(root->left, code);
+    }
+    else if (code > (string) root->info.subjectCode) {
+        root->right = deleteNode(root->right, code);
+    }
+    else {
+        // Nút có một hoặc không có con
+        if (!root->left || !root->right) {
+            PTRSUBJECT temp = root->left ? root->left : root->right;
+
+            // Không có con
+            if (!temp) {
+                temp = root;
+                root = nullptr;
+            }
+            else {
+                // Có một con
+                *root = *temp;
+            }
+
+            delete temp;
+        }
+        else {
+            // Nút có hai con
+            PTRSUBJECT temp = getMinValueNode(root->right);
+            root->info = temp->info; // Copy thông tin
+            root->right = deleteNode(root->right, code);
+        }
+    }
+
+    // Nếu cây chỉ có một nút và bị xóa
+    if (!root) return root;
+
+    // Cập nhật chiều cao và cân bằng lại
+    updateHeight(root);
+
+    int balance = getBalance(root);
+
+    // Trường hợp mất cân bằng
+    if (balance > 1 && getBalance(root->left) >= 0)
+        return rotateRight(root);
+
+    if (balance > 1 && getBalance(root->left) < 0) {
+        root->left = rotateLeft(root->left);
+        return rotateRight(root);
+    }
+
+    if (balance < -1 && getBalance(root->right) <= 0)
+        return rotateLeft(root);
+
+    if (balance < -1 && getBalance(root->right) > 0) {
+        root->right = rotateRight(root->right);
+        return rotateLeft(root);
+    }
+
+    return root;
 }

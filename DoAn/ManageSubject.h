@@ -53,7 +53,7 @@ public:
     PTRSUBJECT getListSubject();
 
     // Thêm môn học mới
-    bool addSubject(const char* code, const string& name);
+    bool addSubject(const string code, const string name);
 
     // Tìm kiếm môn học theo mã môn học
     PTRSUBJECT getSubject(const char* code);
@@ -86,6 +86,8 @@ public:
 
     void getPageSubject(PTRSUBJECT& result, PTRSUBJECT root, int& count, int startIndex, int endIndex);
 
+    void deleteSubject(string code);
+
     void reset();
 };
 
@@ -95,10 +97,16 @@ int getBalance(PTRSUBJECT node);
 
 int getHeight(PTRSUBJECT node);
 
+void updateHeight(PTRSUBJECT node);
+
 PTRSUBJECT rotateRight(PTRSUBJECT z);
 
 PTRSUBJECT rotateLeft(PTRSUBJECT z);
 
-void insertSubjectToTree(PTRSUBJECT root, string subjectCode, string subjectName);
+void insertSubjectToTree(PTRSUBJECT& root, string subjectCode, string subjectName);
 
 void printSubjectInAVL(PTRSUBJECT root);
+
+PTRSUBJECT getMinValueNode(PTRSUBJECT node);
+
+PTRSUBJECT deleteNode(PTRSUBJECT root, string code);

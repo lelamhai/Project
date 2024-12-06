@@ -67,12 +67,34 @@ void DungTest::main()
      cout << "Hoc sinh tim thay ten: " << studentFound.firstName << endl;
 
      */
+    // Khai báo quản lý môn học
     ManageSubject subject;
-    SubjectPage a = subject.searchSubjects("", 1);
-    subject.printAllSubjects();
+    // Tìm môn học theo từ khóa và trang, nếu để từ khóa trống thì sẽ lấy hết
+    //struct SubjectPage {
+    //    PTRSUBJECT subjects = new SubjectNode;
+    //    int currentPage; // trang hiện tại
+    //    int numberSubjectPerPage; // tổng số trên 1 trang
+    //    int totalPage; // tổng số trang
+    //    int totalSubject; // tổng số
+    //    int startIndex; // Số thứ tự bắt đầu của trang đó
+    //    int endIndex; // số kết thúc của trang đó
+    //};
+    SubjectPage a = subject.searchSubjects("Ha", 1);
     printSubjectInAVL(a.subjects);
+    subject.printAllSubjects();
+    // Hàm thêm môn học mới đầu vào subjectCode, subjectName
+    subject.deleteSubject("LS");
+    subject.printAllSubjects();
 
+    // Cách duyệt cây
+    /*void printSubjectInAVL(PTRSUBJECT root) {
+        if (!root) return;
+        printSubjectInAVL(root->left);
+        cout << "Subject Code: " << root->info.subjectCode << ", Subject Name: " << root->info.subjectName << endl; (Thao tác gì thì thêm vào giữa chỗ này)
+        printSubjectInAVL(root->right);
+    }*/
 
+        
 
 
 

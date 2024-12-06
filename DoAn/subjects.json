@@ -1,6 +1,26 @@
 {
     "subjects": [
         {
+            "questions": [],
+            "subjectCode": "HDH",
+            "subjectName": "He dieu hanh"
+        },
+        {
+            "questions": [],
+            "subjectCode": "CSDLNC",
+            "subjectName": "Co so du lieu nang cao"
+        },
+        {
+            "questions": [],
+            "subjectCode": "CNTT",
+            "subjectName": "Cong nghe thong tin"
+        },
+        {
+            "questions": [],
+            "subjectCode": "ANM",
+            "subjectName": "An ninh mang"
+        },
+        {
             "questions": [
                 {
                     "answer": 66,
@@ -79,6 +99,71 @@
             "subjectName": "co so du lieu"
         },
         {
+            "questions": [],
+            "subjectCode": "CTDL",
+            "subjectName": "Cau truc du lieu"
+        },
+        {
+            "questions": [],
+            "subjectCode": "CSLT",
+            "subjectName": "Co so lap trinh"
+        },
+        {
+            "questions": [],
+            "subjectCode": "GTS",
+            "subjectName": "Giao trinh so"
+        },
+        {
+            "questions": [],
+            "subjectCode": "QTMH",
+            "subjectName": "Quan tri mang va he thong"
+        },
+        {
+            "questions": [],
+            "subjectCode": "LTHDT",
+            "subjectName": "Lap trinh huong doi tuong"
+        },
+        {
+            "questions": [],
+            "subjectCode": "LTHC",
+            "subjectName": "Lap trinh ham chay"
+        },
+        {
+            "questions": [],
+            "subjectCode": "KTMT",
+            "subjectName": "Kien truc may tinh"
+        },
+        {
+            "questions": [],
+            "subjectCode": "LTHC",
+            "subjectName": "Lap trinh ham chay"
+        },
+        {
+            "questions": [],
+            "subjectCode": "PTTKHT",
+            "subjectName": "Phan tich thiet ke he thong"
+        },
+        {
+            "questions": [],
+            "subjectCode": "MTH",
+            "subjectName": "Mathematics for CS"
+        },
+        {
+            "questions": [],
+            "subjectCode": "QTDT",
+            "subjectName": "Quan tri du an cong nghe thong tin"
+        },
+        {
+            "questions": [],
+            "subjectCode": "TKW",
+            "subjectName": "Thiet ke web"
+        },
+        {
+            "questions": [],
+            "subjectCode": "THNN",
+            "subjectName": "Thuong mai dien tu"
+        },
+        {
             "questions": [
                 {
                     "answer": 66,
@@ -134,7 +219,7 @@
                     "optionD": "quang 4",
                     "questionId": 125
                 },
-		{
+                {
                     "answer": 66,
                     "content": "Con tho la gi?",
                     "optionA": "tho 1",
@@ -143,7 +228,7 @@
                     "optionD": "tho 4",
                     "questionId": 125
                 },
-		{
+                {
                     "answer": 66,
                     "content": "Con ho la gi?",
                     "optionA": "ho 1",
@@ -152,7 +237,7 @@
                     "optionD": "ho 4",
                     "questionId": 125
                 },
-		{
+                {
                     "answer": 66,
                     "content": "Con rong la gi?",
                     "optionA": "rong 1",
@@ -173,6 +258,16 @@
             ],
             "subjectCode": "VL",
             "subjectName": "vatly"
+        },
+        {
+            "questions": [],
+            "subjectCode": "TTNT",
+            "subjectName": "Tri tue nhan tao"
+        },
+        {
+            "questions": [],
+            "subjectCode": "XLAT",
+            "subjectName": "Xu ly anh so"
         }
     ]
 }
