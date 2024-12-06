@@ -150,33 +150,33 @@ void ContentExecute::executeExam()
 			if (indexQuestion > 0)
 			{
 				indexQuestion--;
-				/*if (listResults[indexAnswer] == ' ')
+				if (listResults[indexQuestion] == ' ')
 				{
 					indexAnswer = -1;
 				}
 
-				if (listResults[indexAnswer] == 'A')
+				if (listResults[indexQuestion] == 'A')
 				{
 					indexAnswer = 0;
 				}
 
-				if (listResults[indexAnswer] == 'B')
+				if (listResults[indexQuestion] == 'B')
 				{
 					indexAnswer = 1;
 				}
 
-				if (listResults[indexAnswer] == 'C')
+				if (listResults[indexQuestion] == 'C')
 				{
 					indexAnswer = 2;
 				}
 
-				if (listResults[indexAnswer] == 'D')
+				if (listResults[indexQuestion] == 'D')
 				{
 					indexAnswer = 3;
-				}*/
-				indexAnswer = -1;
+				}
+
+				//indexAnswer = -1;
 				cleanQuestion();
-				contentY = 4;
 				isLoadQuestion = true;
 				Sleep(100);
 			}
@@ -187,34 +187,32 @@ void ContentExecute::executeExam()
 			if (indexQuestion < countQuestion - 1)
 			{
 				indexQuestion++;
-				/*if (listResults[indexAnswer] == ' ')
+				if (listResults[indexQuestion] == ' ')
 				{
 					indexAnswer = -1;
 				}
 
-				if (listResults[indexAnswer] == 'A')
+				if (listResults[indexQuestion] == 'A')
 				{
 					indexAnswer = 0;
 				}
-				
-				if (listResults[indexAnswer] == 'B')
+
+				if (listResults[indexQuestion] == 'B')
 				{
 					indexAnswer = 1;
 				}
 
-				if (listResults[indexAnswer] == 'C')
+				if (listResults[indexQuestion] == 'C')
 				{
 					indexAnswer = 2;
 				}
 
-				if (listResults[indexAnswer] == 'D')
+				if (listResults[indexQuestion] == 'D')
 				{
 					indexAnswer = 3;
-				}*/
-				
-				indexAnswer = -1;
+				}
+
 				cleanQuestion();
-				contentY = 4;
 				isLoadQuestion = true;
 				Sleep(100);
 			}
@@ -248,7 +246,7 @@ void ContentExecute::executeExam()
 				c = 'D';
 			}
 
-			listResults[indexAnswer] = c;
+			listResults[indexQuestion] = c;
 			displayResultQuestion(indexQuestion, indexAnswer);
 			Sleep(100);
 			isLoadQuestion = true;
@@ -256,6 +254,31 @@ void ContentExecute::executeExam()
 			{
 				cleanQuestion();
 				indexQuestion++;
+				
+				if (listResults[indexQuestion] == ' ')
+				{
+					indexAnswer = -1;
+				}
+
+				if (listResults[indexQuestion] == 'A')
+				{
+					indexAnswer = 0;
+				}
+
+				if (listResults[indexQuestion] == 'B')
+				{
+					indexAnswer = 1;
+				}
+
+				if (listResults[indexQuestion] == 'C')
+				{
+					indexAnswer = 2;
+				}
+
+				if (listResults[indexQuestion] == 'D')
+				{
+					indexAnswer = 3;
+				}
 			}
 		}
 
@@ -312,7 +335,7 @@ void ContentExecute::loadDisplayResult()
 void ContentExecute::displayResultQuestion(int indexQuestion, int indexAnswer)
 {
 	listText[indexQuestion].display();
-	cout << listResults[indexAnswer];
+	cout << listResults[indexQuestion];
 }
 
 
