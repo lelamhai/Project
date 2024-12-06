@@ -277,6 +277,17 @@ void ContentExecute::executeExam()
 			}
 		}
 
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		{
+			PopupNotification n;
+			int x = getCenterX(COLUMN_CENTER, 50);
+			n.setPosition(DISTANCE_SIDEBAR + MARGIN + x, 17);
+			n.open();
+			n.handle();
+			n.close();
+		}
+		Sleep(150);
+
 		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
 		{
 			PopupFinishExam p;

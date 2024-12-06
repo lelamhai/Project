@@ -1,7 +1,7 @@
 #pragma once
 #include "Popup.h"
 
-class PopupTutorial:public Popup
+class PopupTutorial : public Popup
 {
 private:
 	int moveMenu = 0;

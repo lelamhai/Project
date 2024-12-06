@@ -11,6 +11,7 @@
 #include "mywindows.h"
 
 #include "PopupFinishExam.h"
+#include "PopupNotification.h"
 #include "Text.h"
 #include "InputField.h"
 #include "Content.h"

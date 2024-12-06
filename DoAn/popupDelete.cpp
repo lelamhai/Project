@@ -10,8 +10,8 @@ PopupDelete::~PopupDelete()
 
 void PopupDelete::open()
 {
-	this->setTitle("Ban co muon xoa du lieu nay khong?");
-	this->content();
+	setTitle("Ban co muon xoa du lieu nay khong?");
+	content();
 	createButtonNo();
 	createButtonYes();
 }

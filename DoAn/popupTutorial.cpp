@@ -37,8 +37,8 @@ void PopupTutorial::content()
 
 void PopupTutorial::open()
 {
-	this->setTitle("Ban co muon xoa du lieu nay khong?");
-	this->content();
+	setTitle("Ban co muon xoa du lieu nay khong?");
+	content();
 	createButtonEnter();
 }
 

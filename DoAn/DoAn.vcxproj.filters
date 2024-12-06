@@ -255,6 +255,9 @@
     <ClCompile Include="popupFinishExam.cpp">
       <Filter>Source Files\GUI\Popups</Filter>
     </ClCompile>
+    <ClCompile Include="popupNotification.cpp">
+      <Filter>Source Files\GUI\Popups</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -393,6 +396,9 @@
       <Filter>Header Files\GUI\Contents</Filter>
     </ClInclude>
     <ClInclude Include="PopupFinishExam.h">
+      <Filter>Header Files\GUI\Popups</Filter>
+    </ClInclude>
+    <ClInclude Include="PopupNotification.h">
       <Filter>Header Files\GUI\Popups</Filter>
     </ClInclude>
   </ItemGroup>
