@@ -22,6 +22,8 @@ using namespace std;
 class ContentExecute : public Content
 {
 private:
+	ManageExam exam;
+
 	string classCode;
 	int countQuestion;
 	int time;
@@ -32,7 +34,7 @@ private:
 	
 	DWORD ID = 0;
 	HANDLE hThread;
-	ManageExam exam;
+	static bool isEnd;
 
 public:
 	void displayContent() override;

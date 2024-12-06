@@ -1,5 +1,6 @@
 #include "ContentExecute.h"
 int ContentExecute::timeExecute = 0;
+bool ContentExecute::isEnd = false;
 
 ContentExecute::ContentExecute()
 {
@@ -118,6 +119,11 @@ void ContentExecute::executeExam()
 	loadQuestion(indexQuestion, indexAnswer, randomQuestionList);
 	while (true)
 	{
+		if (isEnd)
+		{
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_UP))
 		{
 			if (indexAnswer > 0)
@@ -286,7 +292,6 @@ void ContentExecute::executeExam()
 			n.handle();
 			n.close();
 		}
-		Sleep(150);
 
 		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
 		{
@@ -308,10 +313,9 @@ void ContentExecute::executeExam()
 		if (isLoadQuestion)
 		{
 			loadQuestion(indexQuestion, indexAnswer, randomQuestionList);
-
 			isLoadQuestion = false;
-			Sleep(150);
 		}
+		Sleep(150);
 	}
 }
 
@@ -437,6 +441,8 @@ DWORD WINAPI ContentExecute::countdown(LPVOID lpParam)
 		this_thread::sleep_for(chrono::seconds(1));
 		total_seconds--;
 	}
+	isEnd = true;
+
 	return 0;
 }
 
