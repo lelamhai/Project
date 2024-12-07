@@ -8,7 +8,28 @@ ManageScore::~ManageScore()
 {
 }
 
-scoreToPrintList ManageScore::getScoreOfClass(const char* classCode, const char* subjectCode) {
+int ManageScore::setInputPrintScore(const char* classCode, const char* subjectCode) {
+    // trả về -2 nếu mã lớp không tồn tại
+    ManageClass manageClass;
+    int check = manageClass.findClass(classCode);//hàm trả về -1 nếu không tìm thấy mã lớp
+    if (check == -1) {
+        return -2;
+    }
+
+    // trả về -1 nếu mã môn không tồn tại
+    ManageSubject manageSubject;
+    PTRSUBJECT subject = manageSubject.getSubject(subjectCode);
+    if (subject == nullptr) {
+        return -1;
+    }
+
+    // trả về 1 nếu input hợp lệ
+    strcpy_s(this->classCode, sizeof(this->classCode), classCode);
+    strcpy_s(this->subjectCode, sizeof(this->subjectCode), subjectCode);
+    return 1; 
+}
+
+scoreToPrintList ManageScore::getScoreOfClass() {
     // Lấy ra danh sách sinh viên của một lớp
     ManageClass manageClass;
     Classroom class1 = manageClass.findClassByCode(classCode);
@@ -29,17 +50,19 @@ scoreToPrintList ManageScore::getScoreOfClass(const char* classCode, const char*
     strcpy_s(scoreListToPrint.subjectCode, sizeof(scoreListToPrint.subjectCode), subjectCode);
 
     // duyệt qua từng phần tử của studentList để lưu vào array điểm
-    PTRSTUDENT p = studentList;
+    PTRSTUDENT p = studentList; // con trỏ duyệt sinh viên
     Student currStudent;
     PTRSCORE q = nullptr; // con trỏ duyệt để tìm điểm của môn học
     for (int i = 0; i < countStudent; i++) {
         currStudent = p->info;
         
-        scoreListToPrint.array[i] = new scoreToPrint;
+        scoreListToPrint.array[i] = new scoreToPrint;// cấp phát bộ nhớ mỗi node điểm
+        scoreToPrint* prt = scoreListToPrint.array[i];
 
-        strcpy_s(scoreListToPrint.array[i]->studentCode, sizeof(scoreListToPrint.array[i]->studentCode), currStudent.studentCode);
-        strcpy_s(scoreListToPrint.array[i]->firstName, sizeof(scoreListToPrint.array[i]->firstName), currStudent.firstName);
-        strcpy_s(scoreListToPrint.array[i]->lastName, sizeof(scoreListToPrint.array[i]->lastName), currStudent.lastName);
+        strcpy_s(prt->studentCode, sizeof(prt->studentCode), currStudent.studentCode);
+        strcpy_s(prt->firstName, sizeof(prt->firstName), currStudent.firstName);
+        strcpy_s(prt->lastName, sizeof(prt->lastName), currStudent.lastName);
+        prt->gender=currStudent.gender;
         
         // duyet qua list score cua mot sinh vien va tim diem cua mon hoc
         q = currStudent.scoreList;
@@ -57,9 +80,40 @@ scoreToPrintList ManageScore::getScoreOfClass(const char* classCode, const char*
     return scoreListToPrint;
 }
 
-//ScorePage ManageScore::getSocrePerPage(int pageNumber){
+//ScorePage ManageScore::getScorePerPage(int pageNumber) {
+//    ScorePage scorePage;
+//    int scorePerPage = 13;
+//    int totalScore = countStudent;
+//    int totalPages = (totalScore + scorePerPage - 1) / scorePerPage;
+//    scorePage.currentPage = pageNumber;
+//    scorePage.totalPage = totalPages;
+//    scorePage.totalScore = totalScore;
+//    scorePage.numberScorePerPage = scorePerPage;
 //
+//    ClassList pageResult;  // Tạo đối tượng kết quả trả về
+//
+//    // Kiểm tra nếu trang không hợp lệ
+//    if (pageNumber < 1 || pageNumber > totalPages) {
+//        //cout << "Trang " << pageNumber << " không tồn tại!" << endl;
+//        return scorePage;
+//    }
+//
+//    // Tính toán chỉ số bắt đầu và kết thúc
+//    int startIndex = (pageNumber - 1) * scorePerPage;
+//    int endIndex = min(startIndex + classesPerPage, totalClasses);
+//
+//    // Thêm các lớp thuộc trang vào kết quả trả về
+//    for (int i = startIndex; i < endIndex; i++) {
+//        pageResult.classes[pageResult.countClass++] = classes[i];
+//    }
+//
+//    scorePage.startIndex = startIndex;
+//    scorePage.endIndex = endIndex;
+//    scorePage.printList = pageResult;
+//
+//    return scorePage;  // Trả về danh sách lớp của trang đã chọn
 //}
+
 
 
 bool updateScoreToList(PTRSCORE& scoreList,string subjectCode, float score)

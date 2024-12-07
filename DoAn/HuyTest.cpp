@@ -15,11 +15,18 @@ HuyTest::~HuyTest()
 void HuyTest::main() {
 	/*---------------------------THỰC HIỆN IN BẢNG ĐIỂM -------------------------------------------------------*/
 	ManageScore manangeScore;
-	scoreToPrintList scorePrint = manangeScore.getScoreOfClass("C001", "VL");
+	int checkInput = manangeScore.setInputPrintScore("C001", "VL"); // =1 hợp lệ; -1 sai môn; -2 sai lớp
+	cout << "Kiem tra: " << checkInput << endl;
+	
+	scoreToPrintList scorePrint = manangeScore.getScoreOfClass();
 	int n = scorePrint.countStudent;
 	
 	for (int i = 0; i < n; i++) {
-		cout << "MSSV: " << scorePrint.array[i]->studentCode << "    Diem: " << scorePrint.array[i]->score << endl;
+		scoreToPrint* p = scorePrint.array[i];
+		cout << "MSSV: " << p->studentCode << "   "
+			 << "Ten: " << p->firstName << " " << p->lastName << "   "
+			 << "Gioi tinh: " << p->gender << "   "
+			 << "Diem: " << p->score << endl;
 	}
 
 

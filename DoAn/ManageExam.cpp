@@ -205,16 +205,16 @@ float ManageExam::roundNumber(float number, int n) {
 }
 
 int ManageExam::checkInputExam(const char* subjectCode, const int numberQuestion) {
-    ManageSubject manageSubject1;
+    ManageSubject manageSubject;
 
     // trả về false nếu mã môn không tồn tại
-    PTRSUBJECT subject = manageSubject1.getSubject(subjectCode);
+    PTRSUBJECT subject = manageSubject.getSubject(subjectCode);
     if (subject == nullptr) {
         return -1;
     }
 
     // trả về false số câu hỏi nhập không hợp lệ
-    int totalQuestion = manageSubject1.countQuestionsInSubject(subjectCode);
+    int totalQuestion = manageSubject.countQuestionsInSubject(subjectCode);
     if (numberQuestion<0 || numberQuestion > totalQuestion) {
         return -2;
     }
