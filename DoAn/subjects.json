@@ -18,7 +18,7 @@
         {
             "questions": [],
             "subjectCode": "ANM",
-            "subjectName": "An ninh mang"
+            "subjectName": "An ninh mang - Update"
         },
         {
             "questions": [
@@ -246,7 +246,7 @@
                     "optionD": "rong 4",
                     "questionId": 125
                 },
- 		{
+                {
                     "answer": 66,
                     "content": "Con muoi la gi?",
                     "optionA": "muoi 1",
@@ -255,7 +255,7 @@
                     "optionD": "muoi 4",
                     "questionId": 125
                 },
-		{
+                {
                     "answer": 66,
                     "content": "Con ga la gi?",
                     "optionA": "ga 1",
@@ -264,7 +264,7 @@
                     "optionD": "ga 4",
                     "questionId": 125
                 },
-		{
+                {
                     "answer": 66,
                     "content": "Con bo la gi?",
                     "optionA": "bo 1",

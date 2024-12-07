@@ -35,6 +35,16 @@ bool ManageSubject::addSubject(const string code, const string name) {
     return true;
 }
 
+// Edit một môn học theo mã
+bool ManageSubject::editSubject(const string code, const string subjectName)
+{
+    PTRSUBJECT subjectFound = searchSubject(subjectList, code.c_str());
+    if (subjectFound == nullptr) return false;
+    subjectFound->info.subjectName = subjectName;
+    saveToFile();
+    return true;
+}
+
 // Tìm kiếm môn học theo mã môn học
 PTRSUBJECT ManageSubject::getSubject(const char* code) {
     return searchSubject(subjectList, code);

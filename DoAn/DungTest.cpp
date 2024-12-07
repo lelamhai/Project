@@ -83,7 +83,7 @@ void DungTest::main()
     printSubjectInAVL(a.subjects);
     subject.printAllSubjects();
     // Hàm thêm môn học mới đầu vào subjectCode, subjectName
-    subject.deleteSubject("LS");
+    subject.editSubject("ANM", "An ninh mang - Update");
     subject.printAllSubjects();
 
     // Cách duyệt cây

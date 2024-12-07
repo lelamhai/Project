@@ -55,6 +55,9 @@ public:
     // Thêm môn học mới
     bool addSubject(const string code, const string name);
 
+    // Chỉnh sửa một môn học
+    bool editSubject(const string code, const string subjectName);
+
     // Tìm kiếm môn học theo mã môn học
     PTRSUBJECT getSubject(const char* code);
 
