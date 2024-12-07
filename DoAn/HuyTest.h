@@ -6,6 +6,7 @@
 #include "ManageQuestion.h"
 #include "ManageSubject.h"
 #include "ManageExam.h"
+#include "ManageScore.h"
 
 #include <iostream>
 using namespace std;

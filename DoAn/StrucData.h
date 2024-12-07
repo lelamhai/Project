@@ -99,3 +99,17 @@ struct resultList {
 	int countCorrect; //đếm số câu hỏi đúng
 	float score;
 };
+
+struct scoreToPrint {
+	char studentCode[15];
+	char firstName[30];
+	char lastName[30];
+	float score;
+};
+const int MAX_SCORE_SUBJECT_PER_CLASS = 100;
+struct scoreToPrintList {
+	char subjectCode[15];
+	char classCode[15];
+	scoreToPrint* array[MAX_SCORE_SUBJECT_PER_CLASS];
+	int countStudent;
+};

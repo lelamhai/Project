@@ -13,75 +13,84 @@ HuyTest::~HuyTest()
 
 
 void HuyTest::main() {
+	/*---------------------------THỰC HIỆN IN BẢNG ĐIỂM -------------------------------------------------------*/
+	ManageScore manangeScore;
+	scoreToPrintList scorePrint = manangeScore.getScoreOfClass("C001", "VL");
+	int n = scorePrint.countStudent;
 	
+	for (int i = 0; i < n; i++) {
+		cout << "MSSV: " << scorePrint.array[i]->studentCode << "    Diem: " << scorePrint.array[i]->score << endl;
+	}
+
+
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R1 ---------------------------------------------*/
-	// KHỞI TẠO
-	mutex mtx; // Tạo mutex cho đồng bộ hóa
-	ManageExam exam1;
-	
-	//char subjectCode_input[15];	 //mã môn muốn thi
-	//char studentCode[15];		 // mã sinh viên
-	int numberQuestion_input = 7;    //số câu hỏi muốn thi
-	int timeForExam_min_input = 1;   //số phút muốn thi
+	//// KHỞI TẠO
+	//mutex mtx; // Tạo mutex cho đồng bộ hóa
+	//ManageExam exam1;
+	//
+	////char subjectCode_input[15];	 //mã môn muốn thi
+	////char studentCode[15];		 // mã sinh viên
+	//int numberQuestion_input = 7;    //số câu hỏi muốn thi
+	//int timeForExam_min_input = 1;   //số phút muốn thi
 
-	ManageExam::checkInputExam("CSDL", 7);
-	//// NHẬP THÔNG TIN INPUT ĐỂ THI
-	//cin.getline(subjectCode_input, 15);
-	//cin.getline(studentCode, 15);
-	//cin >> numberQuestion_input;
-	//cin >> timeForExam_min_input;
+	//ManageExam::checkInputExam("CSDL", 7);
+	////// NHẬP THÔNG TIN INPUT ĐỂ THI
+	////cin.getline(subjectCode_input, 15);
+	////cin.getline(studentCode, 15);
+	////cin >> numberQuestion_input;
+	////cin >> timeForExam_min_input;
 
-	// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
-	bool isCorrectInput = false;
-	//isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
-	isCorrectInput = exam1.setInputExam("CSDL", "12rfh", numberQuestion_input, timeForExam_min_input);
+	//// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
+	//bool isCorrectInput = false;
+	////isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
+	//isCorrectInput = exam1.setInputExam("CSDL", "12rfh", numberQuestion_input, timeForExam_min_input);
 
-	if (!isCorrectInput) {
-		cout << "Du lieu nhap khong hop le ! " << endl;
-	}
+	//if (!isCorrectInput) {
+	//	cout << "Du lieu nhap khong hop le ! " << endl;
+	//}
 
-	// TRẢ VỀ TÊN MÔN HỌC
-	string subjectName = exam1.getSubjectName();
-	cout << "Ten mon hoc: " << subjectName << endl;
+	//// TRẢ VỀ TÊN MÔN HỌC
+	//string subjectName = exam1.getSubjectName();
+	//cout << "Ten mon hoc: " << subjectName << endl;
 
-	// LẤY LIST CÁC CÂU HỎI NGẪU NHIÊN
-	Question* randomQuestionList = exam1.getRandomQuestion();
-	
-	// demo in ra thông tin câu hỏi
-	for (int i = 0; i < numberQuestion_input; i++) {
-		cout << randomQuestionList[i].content << endl;
-		cout << randomQuestionList[i].optionA << endl;
-		cout << randomQuestionList[i].optionB << endl;
-		cout << randomQuestionList[i].optionC << endl;
-		cout << randomQuestionList[i].optionD << endl;
-	}
-	
+	//// LẤY LIST CÁC CÂU HỎI NGẪU NHIÊN
+	//Question* randomQuestionList = exam1.getRandomQuestion();
+	//
+	//// demo in ra thông tin câu hỏi
+	//for (int i = 0; i < numberQuestion_input; i++) {
+	//	cout << randomQuestionList[i].content << endl;
+	//	cout << randomQuestionList[i].optionA << endl;
+	//	cout << randomQuestionList[i].optionB << endl;
+	//	cout << randomQuestionList[i].optionC << endl;
+	//	cout << randomQuestionList[i].optionD << endl;
+	//}
+	//
 
-	// TRUYỀN KẾT QUẢ ĐÃ THI XUỐNG BACK END SAU KHI KẾT THÚC BÀI TI
-	char answeredList[MAX_NUMBER_QUESTION] = {'D','D','D','C',' ','A','B' }; // dòng này đê giả lập danh sách câu trả lời
-	for (int i=0; i < numberQuestion_input; i++){
-		exam1.setAnswer(i, answeredList[i]);
-	}
+	//// TRUYỀN KẾT QUẢ ĐÃ THI XUỐNG BACK END SAU KHI KẾT THÚC BÀI TI
+	//char answeredList[MAX_NUMBER_QUESTION] = {'D','D','D','C',' ','A','B' }; // dòng này đê giả lập danh sách câu trả lời
+	//for (int i=0; i < numberQuestion_input; i++){
+	//	exam1.setAnswer(i, answeredList[i]);
+	//}
 
-	// LẤY KẾT QUẢ THI ̃& ĐIỂM SAU KHI THI XONG
-	resultList result = exam1.getAnsweredList();
+	//// LẤY KẾT QUẢ THI ̃& ĐIỂM SAU KHI THI XONG
+	//resultList result = exam1.getAnsweredList();
 
-	// demo in ra kết quả thi cho từng câu
-	cout << "\nKet qua thi la:" << endl;
-	for (int i = 0; i < numberQuestion_input; i++) {
-		answer* p = result.answerList[i];
-		cout << "Cau " << i + 1 << ": " << (p->chosenAnswer == p->correctAnswer ? "Dung" : "Sai")
-			<< " - Da chon " << p->chosenAnswer
-			<< " - Dap an la " << p->correctAnswer << endl;
-	}
-	
-	// demo in ra số câu trả lời đúng
-	int countCorrectAnswer = result.countCorrect;
-	printf("Dung %d/%d cau\n", countCorrectAnswer, numberQuestion_input);
-	
-	// demo in ra điểm số
-	float scoreExam = result.score;
-	printf("Diem so: %.1f\n", scoreExam);
+	//// demo in ra kết quả thi cho từng câu
+	//cout << "\nKet qua thi la:" << endl;
+	//for (int i = 0; i < numberQuestion_input; i++) {
+	//	answer* p = result.answerList[i];
+	//	cout << "Cau " << i + 1 << ": " << (p->chosenAnswer == p->correctAnswer ? "Dung" : "Sai")
+	//		<< " - Da chon " << p->chosenAnswer
+	//		<< " - Dap an la " << p->correctAnswer << endl;
+	//}
+	//
+	//// demo in ra số câu trả lời đúng
+	//int countCorrectAnswer = result.countCorrect;
+	//printf("Dung %d/%d cau\n", countCorrectAnswer, numberQuestion_input);
+	//
+	//// demo in ra điểm số
+	//float scoreExam = result.score;
+	//printf("Diem so: %.1f\n", scoreExam);
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R0 ---------------------------------------------*/
 	// KHỞI TẠO
