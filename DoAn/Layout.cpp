@@ -47,7 +47,6 @@ void Layout::templateMenu()
         menu = {
             "Gioi Thieu",
             "Lop",
-            "Sinh Vien",
             "Mon Hoc",
             "Thi",
             "In Diem",
@@ -175,16 +174,6 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 Singleton::getInstance()->moveMenu = 0;
             }
 
-            if (choice == STUDENT)
-            {
-                showCur(0);
-                cleanContent();
-                ContentStudent* s = new ContentStudent();
-                s->displayContent();
-                delete s;
-                Singleton::getInstance()->moveMenu = 0;
-            }
-
             if (choice == SUBJECT)
             {
                 showCur(0);
@@ -215,7 +204,7 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 Singleton::getInstance()->moveMenu = 0;
             }
 
-            if (choice == 6)
+            if (choice == 5)
             {
                 showCur(0);
                 cleanContent();

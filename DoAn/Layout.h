@@ -29,10 +29,9 @@ enum StateContent
 {
     ABOUT       = 0,
     CLASSROOM   = 1,
-    STUDENT     = 2,
-    SUBJECT     = 3,
-    EXAM        = 4,
-    FILTERPOINT = 5,
+    SUBJECT     = 2,
+    EXAM        = 3,
+    FILTERPOINT = 4,
 
     EXIT        = -1
 };

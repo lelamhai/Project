@@ -133,6 +133,16 @@ void ContentSubject::handle()
 {
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		{
+			cleanContent();
+			ContentQuestion q;
+			q.displayContent();
+			q.handle();
+			cleanContent();
+			displayContent();
+		}
+
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
 			if (Singleton::getInstance()->moveMenu != 0)

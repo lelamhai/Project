@@ -5,6 +5,7 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 
+#include "ContentQuestion.h"
 #include "Singleton.h"
 #include "Content.h"
 #include <conio.h>
