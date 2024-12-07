@@ -81,7 +81,8 @@ void ContentDetailClassroom::drawClassroom()
 	cout << char(180);
 
 	y = posXRight + 2;
-	posXMessage = y;
+	posYMessage = y;
+	text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 
 	y = y + 2;
 	int infoX = getCenterX(COLUMN_RIGHT, 10);
@@ -198,13 +199,13 @@ void ContentDetailClassroom::handle()
 			showCur(1);
 			createData();
 			cleanInput();
-			cleanMessage(posXMessage);
+			cleanMessage(posYMessage);
 			break;
 		case ContentDetailClassroom::C_EDIT:
 			showCur(1);
 			editData();
 			cleanInput();
-			cleanMessage(posXMessage);
+			cleanMessage(posYMessage);
 			break;
 		case ContentDetailClassroom::C_SEARCH:
 			showCur(1);
@@ -740,22 +741,22 @@ void ContentDetailClassroom::createData()
 			bool result = test.addStudentToClass(classCode, listInput[0].getText(), listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
 			if (result)
 			{
-				cleanMessage(posXMessage);
+				cleanMessage(posYMessage);
 				loadData();
 				text.setContent("Them sinh vien thanh cong!");
-				int textPosX = getCenterX(40, text.getLenString());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, 26 + 2);
-				text.display();
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
 			}
 			else
 			{
-				cleanMessage(posXMessage);
-
+				cleanMessage(posYMessage);
 				text.setContent("Them sinh vien that bai!");
-				int textPosX = getCenterX(40, text.getLenString());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, 26 + 2);
-				text.display();
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
 			}
+			text.display();
 			stateInput = FORM_CODE;
 		}
 	}
@@ -1037,21 +1038,22 @@ void ContentDetailClassroom::editData()
 			bool result = test.editStudentInClass(classCode,studentCode, listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
 			if (result)
 			{
-				cleanMessage(posXMessage);
+				cleanMessage(posYMessage);
 				loadData();
 				text.setContent("Cap nhat thong tin thanh cong!");
-				int textPosX = getCenterX(40, text.getLenString());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, 26 + 2);
-				text.display();
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
 			}
 			else
 			{
-				cleanMessage(posXMessage);
+				cleanMessage(posYMessage);
 				text.setContent("Cap nhat thong tin that bai!");
-				int textPosX = getCenterX(40, text.getLenString());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, 26 + 2);
-				text.display();
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
 			}
+			text.display();
 			stateInput = FORM_LAST;
 		}
 	}

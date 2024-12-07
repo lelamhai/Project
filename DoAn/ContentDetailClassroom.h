@@ -72,7 +72,7 @@ private:
 		inputStudentPassword
 	};
 
-	int posXMessage = 0;
+	int posYMessage = 0;
 	string classCode;
 	string studentCode;
 	int pageNumber = 1;

@@ -63,7 +63,7 @@ private:
 	Text text;
 	int moveMenu = 0;
 
-	int posXMessage = 0;
+	int posYMessage = 0;
 	string classCode;
 	int pageNumber = 1;
 	int hover = 0;

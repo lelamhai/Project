@@ -56,9 +56,8 @@ void ContentClassroom::drawClassroom()
 	cout << char(180);
 
 	y = y + (2 * 3) - 1;
-	posXMessage = y;
-	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
-	cout << y;*/
+	posYMessage = y;
+	text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
 
 	y = y + 2;
 	int infoX = getCenterX(COLUMN_RIGHT, 10);
@@ -171,14 +170,14 @@ void ContentClassroom::handle()
 			showCur(1);
 			createData();
 			cleanInput();
-			cleanMessage(posXMessage);
+			cleanMessage(posYMessage);
 			break;
 
 		case C_EDIT:
 			showCur(1);
 			editData();
 			cleanInput();
-			cleanMessage(posXMessage);
+			cleanMessage(posYMessage);
 			break;
 
 		case C_SEARCH:
@@ -498,19 +497,19 @@ void ContentClassroom::createData()
 			{
 				cleanTable();
 				loadData();
-				cleanMessage(posXMessage);
+				cleanMessage(posYMessage);
 				text.setContent("Them lop thanh cong!");
-
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posXMessage);
+				text.updatePositionX(textPosX);
 			}
 			else 
 			{
-				cleanMessage(posXMessage);
+				cleanMessage(posYMessage);
 				text.setContent("Them lop that bai!");
-
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posXMessage);
+				text.updatePositionX(textPosX);
 			}
 
 			text.display();
@@ -615,28 +614,24 @@ void ContentClassroom::editData()
 		{
 			bool result = nl.editClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
 			
-			string blankFillText;
-			blankFillText.resize(36, ' ');
-			int x = getCenterX(40, 36);
-			setColorText(ColorCode_Back);
-			gotoXY(34 + 100 + 30 + x, 19);
-			cout << blankFillText;
-			
 			if (result)
 			{
-				gotoXY(0, 0);
 				cleanTable();
 				loadData();
+				cleanMessage(posYMessage);
 				text.setContent("Cap nhat thong tin thanh cong!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+
 			}
 			else {
-				gotoXY(0, 0);
+				cleanMessage(posYMessage);
 				text.setContent("Cap nhat thong tin that bai!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
 			}
-
-			int textPosX = getCenterX(40, text.getLenString());
-
-			gotoXY(34 + 100 + 30 + textPosX, 19);
 			text.display();
 			stateInput = FORM_NAME;
 		}

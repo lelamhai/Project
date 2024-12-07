@@ -14,6 +14,11 @@ void Text::setPosition(int posX, int posY)
 	this->y = posY;
 }
 
+void Text::updatePositionX(int posX)
+{
+	this->x += posX;
+}
+
 void Text::updatePositionY(int posY)
 {
 	this->y += posY;
