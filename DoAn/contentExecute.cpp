@@ -348,13 +348,56 @@ void ContentExecute::loadQuestion(int indexQuestion, int indexAnswer, Question* 
 
 void ContentExecute::loadDisplayChoice()
 {
+	bool reset = true;
+	int distance = 12;
+	int step = 0;
 	int resultY = 1;
 	for (int j = 0; j < countQuestion; j++)
 	{
 		string content = "Cau " + to_string(j+1) + ": ";
-		listText[j].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7, DISTANCE_HEADER + PADDING + PADDING + resultY + (j * 3));
+
+		if (reset)
+		{
+			resultY = 1;
+			step = 0;
+			reset = false;
+		}
+
+		if (j <= 9)
+		{
+			listText[j].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7, DISTANCE_HEADER + PADDING + PADDING + resultY + (step * 3));
+			if (j == 9)
+			{
+				reset = true;
+			}
+		}
+
+		if (j > 9 && j <= 19)
+		{
+			listText[j].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7 + distance, DISTANCE_HEADER + PADDING + PADDING + resultY + (step * 3));
+			if (j == 19)
+			{
+				reset = true;
+			}
+		}
+
+		if (j > 19 && j <= 29)
+		{
+			listText[j].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7 + distance + distance, DISTANCE_HEADER + PADDING + PADDING + resultY + (step * 3));
+			if (j == 29)
+			{
+				reset = true;
+			}
+		}
+
+		if (j > 29)
+		{
+			listText[j].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7 + distance + distance + distance, DISTANCE_HEADER + PADDING + PADDING + resultY + (step * 3));
+		}
+
 		listText[j].setContent(content);
 		listText[j].display();
+		step++;
 	}
 }
 

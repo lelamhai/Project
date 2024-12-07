@@ -246,6 +246,33 @@
                     "optionD": "rong 4",
                     "questionId": 125
                 },
+ 		{
+                    "answer": 66,
+                    "content": "Con muoi la gi?",
+                    "optionA": "muoi 1",
+                    "optionB": "muoi 2",
+                    "optionC": "muoi 3",
+                    "optionD": "muoi 4",
+                    "questionId": 125
+                },
+		{
+                    "answer": 66,
+                    "content": "Con ga la gi?",
+                    "optionA": "ga 1",
+                    "optionB": "ga 2",
+                    "optionC": "ga 3",
+                    "optionD": "ga 4",
+                    "questionId": 125
+                },
+		{
+                    "answer": 66,
+                    "content": "Con bo la gi?",
+                    "optionA": "bo 1",
+                    "optionB": "bo 2",
+                    "optionC": "bo 3",
+                    "optionD": "bo 4",
+                    "questionId": 125
+                },
                 {
                     "answer": 68,
                     "content": "dong dien xoay chieu ",

@@ -406,6 +406,7 @@ void ContentClassroom::createData()
 		if (stateInput == FORM_CODE)
 		{
 			listInput[0].setMenu(moveMenu);
+			listInput[0].useSpace = true;
 			listInput[0].handleInput();
 			moveMenu = listInput[0].getMenu();
 
