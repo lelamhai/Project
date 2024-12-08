@@ -24,30 +24,28 @@ int ManageScore::setInputPrintScore(const char* classCode, const char* subjectCo
     }
 
     // trả về 1 nếu input hợp lệ
-    strcpy_s(this->classCode, sizeof(this->classCode), classCode);
-    strcpy_s(this->subjectCode, sizeof(this->subjectCode), subjectCode);
+    strcpy_s(listToPrint.classCode, sizeof(listToPrint.classCode), classCode);
+    strcpy_s(listToPrint.subjectCode, sizeof(listToPrint.subjectCode), subjectCode);
+    
+    getScoreOfClass(); // gọi hàm để thực hiện tạo danh sách điểm theo môn cho một lớp
+
     return 1; 
 }
 
 scoreToPrintList ManageScore::getScoreOfClass() {
     // Lấy ra danh sách sinh viên của một lớp
     ManageClass manageClass;
-    Classroom class1 = manageClass.findClassByCode(classCode);
+    Classroom class1 = manageClass.findClassByCode(listToPrint.classCode);
     PTRSTUDENT studentList = class1.studentList;
 
     // Đếm số sinh viên trong lớp
     int countStudent = 0;
     PTRSTUDENT temp = studentList;
     while (temp != nullptr) {
-        countStudent ++;
+        countStudent++;
         temp = temp->next;
     }
-
-    // sao chep thong tin qua array diem
-    scoreToPrintList scoreListToPrint;
-    scoreListToPrint.countStudent = countStudent;
-    strcpy_s(scoreListToPrint.classCode, sizeof(scoreListToPrint.classCode), classCode);
-    strcpy_s(scoreListToPrint.subjectCode, sizeof(scoreListToPrint.subjectCode), subjectCode);
+    listToPrint.countStudent = countStudent;
 
     // duyệt qua từng phần tử của studentList để lưu vào array điểm
     PTRSTUDENT p = studentList; // con trỏ duyệt sinh viên
@@ -56,8 +54,8 @@ scoreToPrintList ManageScore::getScoreOfClass() {
     for (int i = 0; i < countStudent; i++) {
         currStudent = p->info;
         
-        scoreListToPrint.array[i] = new scoreToPrint;// cấp phát bộ nhớ mỗi node điểm
-        scoreToPrint* prt = scoreListToPrint.array[i];
+        listToPrint.array[i] = new scoreToPrint;// cấp phát bộ nhớ mỗi node điểm
+        scoreToPrint* prt = listToPrint.array[i];
 
         strcpy_s(prt->studentCode, sizeof(prt->studentCode), currStudent.studentCode);
         strcpy_s(prt->firstName, sizeof(prt->firstName), currStudent.firstName);
@@ -66,10 +64,10 @@ scoreToPrintList ManageScore::getScoreOfClass() {
         
         // duyet qua list score cua mot sinh vien va tim diem cua mon hoc
         q = currStudent.scoreList;
-        scoreListToPrint.array[i]->score = -1; // SV chưa thi môn này
+        listToPrint.array[i]->score = -1; // SV chưa thi môn này
         while (q != nullptr) {
-            if (strcmp(q->info.subjectCode, subjectCode) == 0) {
-                scoreListToPrint.array[i]->score = q->info.diem;
+            if (strcmp(q->info.subjectCode, listToPrint.subjectCode) == 0) {
+                listToPrint.array[i]->score = q->info.diem;
                 break;
             }
             q = q->next;
@@ -77,42 +75,51 @@ scoreToPrintList ManageScore::getScoreOfClass() {
         p = p->next; // chuyen con tro qua SV tiep theo
     }
 
-    return scoreListToPrint;
+    return listToPrint;
 }
 
-//ScorePage ManageScore::getScorePerPage(int pageNumber) {
-//    ScorePage scorePage;
-//    int scorePerPage = 13;
-//    int totalScore = countStudent;
-//    int totalPages = (totalScore + scorePerPage - 1) / scorePerPage;
-//    scorePage.currentPage = pageNumber;
-//    scorePage.totalPage = totalPages;
-//    scorePage.totalScore = totalScore;
-//    scorePage.numberScorePerPage = scorePerPage;
-//
-//    ClassList pageResult;  // Tạo đối tượng kết quả trả về
-//
-//    // Kiểm tra nếu trang không hợp lệ
-//    if (pageNumber < 1 || pageNumber > totalPages) {
-//        //cout << "Trang " << pageNumber << " không tồn tại!" << endl;
-//        return scorePage;
-//    }
-//
-//    // Tính toán chỉ số bắt đầu và kết thúc
-//    int startIndex = (pageNumber - 1) * scorePerPage;
-//    int endIndex = min(startIndex + classesPerPage, totalClasses);
-//
-//    // Thêm các lớp thuộc trang vào kết quả trả về
-//    for (int i = startIndex; i < endIndex; i++) {
-//        pageResult.classes[pageResult.countClass++] = classes[i];
-//    }
-//
-//    scorePage.startIndex = startIndex;
-//    scorePage.endIndex = endIndex;
-//    scorePage.printList = pageResult;
-//
-//    return scorePage;  // Trả về danh sách lớp của trang đã chọn
-//}
+scoreToPrintList ManageScore::getScoreAllPage(){
+    return listToPrint;
+}
+
+ScorePage ManageScore::getScorePerPage(int pageNumber) {
+    ScorePage scorePage;
+    int scorePerPage = 13;
+    int totalScore = listToPrint.countStudent;
+    int totalPages = (totalScore + scorePerPage - 1) / scorePerPage;
+    scorePage.currentPage = pageNumber;
+    scorePage.totalPage = totalPages;
+    scorePage.totalScore = totalScore;
+    scorePage.numberScorePerPage = scorePerPage;
+
+    // Kiểm tra nếu trang không hợp lệ
+    if (pageNumber < 1 || pageNumber > totalPages) {
+        cout << "Trang " << pageNumber << " không tồn tại!" << endl;
+        return scorePage;
+    }
+
+    // Tính toán chỉ số bắt đầu và kết thúc
+    int startIndex = (pageNumber - 1) * scorePerPage;
+    int endIndex = min(startIndex + scorePerPage, totalScore);
+
+    // Thêm các lớp thuộc trang vào kết quả trả về
+    for (int i = startIndex; i < endIndex; i++) {
+        scorePage.printList.array[i - startIndex] = new scoreToPrint;
+        scoreToPrint* p = scorePage.printList.array[i-startIndex];
+        scoreToPrint* q = listToPrint.array[i];
+
+        strcpy_s(p->studentCode, sizeof(p->studentCode), q->studentCode);
+        strcpy_s(p->firstName, sizeof(p->firstName), q->firstName);
+        strcpy_s(p->lastName, sizeof(p->lastName), q->lastName);
+        p->gender = q->gender;
+        p->score = q->score;
+    }
+
+    scorePage.startIndex = startIndex;
+    scorePage.endIndex = endIndex;
+
+    return scorePage;  // Trả về danh sách lớp của trang đã chọn
+}
 
 
 

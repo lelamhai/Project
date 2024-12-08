@@ -31,16 +31,21 @@ class ManageScore
 {
 private:
 	PTRSCORE scoreList;
-	char subjectCode[15];
-	char classCode[15];
+
+	scoreToPrintList listToPrint;
 
 public:
 	ManageScore();
 	~ManageScore();
 
 	int setInputPrintScore(const char* subjectCode, const char* classCode); 
+	
 	scoreToPrintList getScoreOfClass();
-	//ScorePage getScorePerPage(int pageNumber);
+
+	scoreToPrintList getScoreAllPage();
+
+	ScorePage getScorePerPage(int pageNumber);
+
 };
 
 bool updateScoreToList(PTRSCORE& scoreList, string subjectCode, float score);

@@ -14,19 +14,39 @@ HuyTest::~HuyTest()
 
 void HuyTest::main() {
 	/*---------------------------THỰC HIỆN IN BẢNG ĐIỂM -------------------------------------------------------*/
+	// PHẦN KHAI BÁO INPUT
 	ManageScore manangeScore;
 	int checkInput = manangeScore.setInputPrintScore("C001", "VL"); // =1 hợp lệ; -1 sai môn; -2 sai lớp
-	cout << "Kiem tra: " << checkInput << endl;
 	
-	scoreToPrintList scorePrint = manangeScore.getScoreOfClass();
-	int n = scorePrint.countStudent;
-	
+	// demo in để kiểm tra code
+	cout << "Kiem tra trang thai input: " << checkInput << endl; 
+
+	// IN TẤT CẢ ĐIỂM CỦA LỚP
+	scoreToPrintList scoreList = manangeScore.getScoreAllPage();
+	int n = scoreList.countStudent;
+
+	// demo in để kiểm tra code
 	for (int i = 0; i < n; i++) {
-		scoreToPrint* p = scorePrint.array[i];
+		scoreToPrint* p = scoreList.array[i];
 		cout << "MSSV: " << p->studentCode << "   "
 			 << "Ten: " << p->firstName << " " << p->lastName << "   "
 			 << "Gioi tinh: " << p->gender << "   "
 			 << "Diem: " << p->score << endl;
+	}
+
+	// IN RA ĐIỂM TỪNG TRANG
+	int pageNumber = 3;
+	ScorePage scorePage1 = manangeScore.getScorePerPage(pageNumber);
+	
+	// demo in để kiểm tra code
+	cout << "TRANG " << pageNumber << endl;
+	int noScoreThisPage = scorePage1.endIndex - scorePage1.startIndex;
+	for (int i = 0; i < noScoreThisPage; i++) {
+		scoreToPrint* p = scorePage1.printList.array[i];
+		cout << "MSSV: " << p->studentCode << "   "
+			<< "Ten: " << p->firstName << " " << p->lastName << "   "
+			<< "Gioi tinh: " << p->gender << "   "
+			<< "Diem: " << p->score << endl;
 	}
 
 
