@@ -18,7 +18,7 @@
         {
             "questions": [],
             "subjectCode": "ANM",
-            "subjectName": "An ninh mang - Update"
+            "subjectName": "An ninh mang - Updateee"
         },
         {
             "questions": [
@@ -115,8 +115,8 @@
         },
         {
             "questions": [],
-            "subjectCode": "QTMH",
-            "subjectName": "Quan tri mang va he thong"
+            "subjectCode": "PTTKHT",
+            "subjectName": "Phan tich thiet ke he thong"
         },
         {
             "questions": [],
@@ -140,23 +140,28 @@
         },
         {
             "questions": [],
-            "subjectCode": "PTTKHT",
-            "subjectName": "Phan tich thiet ke he thong"
-        },
-        {
-            "questions": [],
             "subjectCode": "MTH",
             "subjectName": "Mathematics for CS"
         },
         {
             "questions": [],
-            "subjectCode": "QTDT",
-            "subjectName": "Quan tri du an cong nghe thong tin"
+            "subjectCode": "MN",
+            "subjectName": "Mon hoc"
         },
         {
             "questions": [],
             "subjectCode": "TKW",
             "subjectName": "Thiet ke web"
+        },
+        {
+            "questions": [],
+            "subjectCode": "QTMH",
+            "subjectName": "Quan tri mang va he thong"
+        },
+        {
+            "questions": [],
+            "subjectCode": "QTDT",
+            "subjectName": "Quan tri du an cong nghe thong tin"
         },
         {
             "questions": [],

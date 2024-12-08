@@ -102,10 +102,6 @@ void ManageSubject::saveToFile() {
     if (file.is_open()) {
         file << j.dump(4);  // Lưu với định dạng đẹp (indent = 4)
         file.close();
-        cout << "Data saved successfully in JSON format." << endl;
-    }
-    else {
-        cout << "Unable to open file for saving." << endl;
     }
 }
 
@@ -148,7 +144,6 @@ void ManageSubject::loadFromFile() {
     ifstream file("subjects.json");
 
     if (!file.is_open()) {
-        cout << "Unable to open file for loading." << endl;
         return;
     }
 

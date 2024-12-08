@@ -1,2 +1,9 @@
-﻿  main.cpp
+﻿  ManageSubject.cpp
+D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(300,17): warning C4566: character represented by universal-character-name '\u1EA5' cannot be represented in the current code page (1252)
+D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(300,17): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(306,17): warning C4566: character represented by universal-character-name '\u1ED1' cannot be represented in the current code page (1252)
+D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(306,17): warning C4566: character represented by universal-character-name '\u01B0' cannot be represented in the current code page (1252)
+D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(306,17): warning C4566: character represented by universal-character-name '\u1EE3' cannot be represented in the current code page (1252)
+D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(306,17): warning C4566: character represented by universal-character-name '\u1ECF' cannot be represented in the current code page (1252)
+D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(306,17): warning C4566: character represented by universal-character-name '\u1ED5' cannot be represented in the current code page (1252)
   DoAn.vcxproj -> D:\Code\PTIT\CTDL & GT\Project\x64\Debug\DoAn.exe
