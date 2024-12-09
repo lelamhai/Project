@@ -62,7 +62,15 @@ public:
     PTRSUBJECT getSubject(const char* code);
 
     // Thêm câu hỏi vào môn học
-    bool addQuestion(const char* subjectCode, const string& content, const string& optionA, const string& optionB, const string& optionC, const string& optionD, char answer);
+    bool addQuestionInSubject(const char* subjectCode, const string& content, const string& optionA, const string& optionB, const string& optionC, const string& optionD, char answer);
+
+    // Chỉnh sửa câu hỏi trong môn học
+    bool editQuestionInSubject(const string subjectCode, int questionId, const string content, const string optionA, const string optionB, const string optionC, const string optionD, const char answer);
+
+    // Xóa 1 câu hỏi
+    bool deleteQuestionInSubject(const string subjectCode, int questionId);
+
+    PTRQUESTION searchQuestionInSubject(const string subjectCode, const string keyword, int pageNumber);
 
     // In danh sách tất cả các môn học
     void printAllSubjects();

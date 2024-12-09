@@ -85,7 +85,6 @@ void DungTest::main()
     
     // Hàm thêm mới môn học
     subject.addSubject("MN", "Mon hoc");
-
     // Hàm load dữ liệu lên để edit (input là subject code)
     PTRSUBJECT subjectFound = subject.getSubject("MN");
     cout << "Mon hoc tim thay: " << subjectFound->info.subjectName << endl;
@@ -95,13 +94,15 @@ void DungTest::main()
     // Hàm xóa môn học
     //subject.deleteSubject("MN");
     subject.printAllSubjects();
+   
 
     // Cách duyệt cây 
-    // Input là PTRSUBJECT a =  subject.getSubjectList();
+    // PTRSUBJECT a =  subject.getListSubject();
     /*void printSubjectInAVL(PTRSUBJECT root) { root là phần tử trong class ManageSubject
         if (!root) return;
         printSubjectInAVL(root->left);
         cout << "Subject Code: " << root->info.subjectCode << ", Subject Name: " << root->info.subjectName << endl; (Thao tác gì thì thêm vào giữa chỗ này)
+        cout << "So cau hoi " << getCountQuestionInList(root->info.listQuestion) << endl;
         printSubjectInAVL(root->right);
     }*/
 

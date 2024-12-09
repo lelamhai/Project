@@ -391,3 +391,8 @@ int getCountQuestionInList(PTRQUESTION questionList) {
 	}
 	return count;
 }
+
+QuestionPage getQuestionPerPage(PTRQUESTION questionList, int page)
+{
+	return QuestionPage();
+}

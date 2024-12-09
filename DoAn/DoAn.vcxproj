@@ -127,8 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="button.cpp" />
-    <ClCompile Include="buttonEnter.cpp" />
     <ClCompile Include="ClassroomSevice.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="configApp.cpp" />
@@ -178,8 +176,6 @@
     <ClCompile Include="windows.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Button.h" />
-    <ClInclude Include="ButtonEnter.h" />
     <ClInclude Include="Classroom.h" />
     <ClInclude Include="configApp.h" />
     <ClInclude Include="Content.h" />

@@ -4,6 +4,15 @@
 using namespace std;
 const string SOURCE_QUESTION = "QuestionData.json";
 
+struct QuestionPage {
+	PTRQUESTION questionList = new NodeQuestion;
+	int currentPage; // trang hiện tại
+	int numberQuestionPerPage; // tổng số question trên 1 trang
+	int totalPage; // tổng số trang
+	int totalQuestions; // tổng số class
+	int startIndex; // Số thứ tự bắt đầu của trang đó
+	int endIndex; // số kết thúc của trang đó
+};
 
 class ManageQuestion
 {
@@ -61,6 +70,8 @@ public:
 int generateUniqueQuestionId(PTRQUESTION listQuestion);
 
 int getCountQuestionInList(PTRQUESTION questionList);
+
+QuestionPage getQuestionPerPage(PTRQUESTION questionList, int page);
 
 
 

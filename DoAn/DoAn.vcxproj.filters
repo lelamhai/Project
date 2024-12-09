@@ -150,12 +150,6 @@
     <ClCompile Include="Layout.cpp">
       <Filter>Source Files\GUI\Pages</Filter>
     </ClCompile>
-    <ClCompile Include="button.cpp">
-      <Filter>Source Files\GUI\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="buttonEnter.cpp">
-      <Filter>Source Files\GUI\UI</Filter>
-    </ClCompile>
     <ClCompile Include="InputField.h">
       <Filter>Header Files\GUI\UI</Filter>
     </ClCompile>
@@ -292,12 +286,6 @@
     </ClInclude>
     <ClInclude Include="Page.h">
       <Filter>Header Files\GUI\Pages</Filter>
-    </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Header Files\GUI\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="ButtonEnter.h">
-      <Filter>Header Files\GUI\UI</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Header Files\GUI\UI</Filter>

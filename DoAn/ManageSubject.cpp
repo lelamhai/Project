@@ -51,7 +51,7 @@ PTRSUBJECT ManageSubject::getSubject(const char* code) {
 }
 
 // Thêm câu hỏi vào môn học
-bool ManageSubject::addQuestion(const char* subjectCode, const string& content,
+bool ManageSubject::addQuestionInSubject(const char* subjectCode, const string& content,
     const string& optionA, const string& optionB,
     const string& optionC, const string& optionD, char answer) {
 
@@ -66,6 +66,67 @@ bool ManageSubject::addQuestion(const char* subjectCode, const string& content,
     }
     return false;
 }
+
+bool ManageSubject::editQuestionInSubject(const string subjectCode, int questionId, const string content, const string optionA, const string optionB, const string optionC, const string optionD, const char answer)
+{
+    PTRSUBJECT subjectFound = getSubject(subjectCode.c_str());
+    if (subjectFound == nullptr) return false;
+
+    PTRQUESTION questionList = subjectFound->info.listQuestion;
+    while (questionList != nullptr) {
+        if (questionList->info.questionId == questionId) {
+            questionList->info.content = content;
+            questionList->info.optionA = optionA;
+            questionList->info.optionB = optionB;
+            questionList->info.optionC = optionC;
+            questionList->info.optionD = optionD;
+            questionList->info.answer = answer;
+            saveToFile();
+            return true;
+        }
+        questionList = questionList->next;
+    }
+    return false;
+}
+
+bool ManageSubject::deleteQuestionInSubject(const string subjectCode, int questionId)
+{
+    PTRSUBJECT subjectFound = getSubject(subjectCode.c_str());
+    if (subjectFound == nullptr) return false;
+
+    PTRQUESTION questionList = subjectFound->info.listQuestion;
+    if (questionList == nullptr) return false;
+
+    if (questionList->info.questionId == questionId) {
+        PTRQUESTION temp = questionList;
+        questionList = questionList->next;
+        delete temp;
+        saveToFile();
+        return true;
+    }
+
+    PTRQUESTION prev = questionList;
+    PTRQUESTION curr = questionList->next;
+    while (curr != nullptr) {
+        if (curr->info.questionId == questionId) {
+            prev->next = curr->next;
+            delete curr;
+            saveToFile();
+            return true;
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+
+    return false;
+}
+
+PTRQUESTION ManageSubject::searchQuestionInSubject(const string subjectCode, const string keyword, int pageNumber)
+{
+    return nullptr;
+}
+
+
 
 // In danh sách tất cả các môn học
 void ManageSubject::printAllSubjects() {
@@ -443,6 +504,7 @@ void ManageSubject::printSubjects(PTRSUBJECT root) {
     if (!root) return;
     printSubjects(root->left);
     cout << "Subject Code: " << root->info.subjectCode << ", Subject Name: " << root->info.subjectName << endl;
+    cout << "So cau hoi " << getCountQuestionInList(root->info.listQuestion) << endl;
     printSubjects(root->right);
 }
 
