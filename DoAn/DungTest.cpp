@@ -95,20 +95,19 @@ void DungTest::main()
     // Hàm xóa môn học
     //subject.deleteSubject("MN");
     //subject.printAllSubjects();
-   
 
     QuestionPage page = subject.searchQuestionInSubject("CSDL", "hay", 1);
     //printQuestionsInList(page.questionList);
-
+    
     // Cách duyệt cây 
     // PTRSUBJECT a =  subject.getListSubject();
-    /*void printSubjectInAVL(PTRSUBJECT root) { root là phần tử trong class ManageSubject
-        if (!root) return;
-        printSubjectInAVL(root->left);
-        cout << "Subject Code: " << root->info.subjectCode << ", Subject Name: " << root->info.subjectName << endl; (Thao tác gì thì thêm vào giữa chỗ này)
-        cout << "So cau hoi " << getCountQuestionInList(root->info.listQuestion) << endl;
-        printSubjectInAVL(root->right);
-    }*/
+    //void printSubjectInAVL(PTRSUBJECT root) { //root là phần tử trong class ManageSubject
+    //    if (!root) return;
+    //    printSubjectInAVL(root->left);
+    //    cout << "Subject Code: " << root->info.subjectCode << ", Subject Name: " << root->info.subjectName << endl; (Thao tác gì thì thêm vào giữa chỗ này)
+    //    cout << "So cau hoi " << subject.countQuestionsInSubject(root->info.subjectCode); << endl;
+    //    printSubjectInAVL(root->right);
+    //}
 
         
 
