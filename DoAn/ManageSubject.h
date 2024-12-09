@@ -122,3 +122,5 @@ void printSubjectInAVL(PTRSUBJECT root);
 PTRSUBJECT getMinValueNode(PTRSUBJECT node);
 
 PTRSUBJECT deleteNode(PTRSUBJECT root, string code);
+
+int countSubjectsInList(PTRSUBJECT root);

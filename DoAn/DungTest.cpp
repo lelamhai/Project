@@ -79,9 +79,10 @@ void DungTest::main()
     //    int startIndex; // Số thứ tự bắt đầu của trang đó
     //    int endIndex; // số kết thúc của trang đó
     //};
-    SubjectPage a = subject.searchSubjects("Ha", 1);
+    SubjectPage a = subject.searchSubjects("", 1);
+    cout << "Tong so bao nhieu " << countSubjectsInList(a.subjects) << endl;
     printSubjectInAVL(a.subjects);
-    subject.printAllSubjects();
+    //subject.printAllSubjects();
     
     // Hàm thêm mới môn học
     subject.addSubject("MN", "Mon hoc");
@@ -93,11 +94,11 @@ void DungTest::main()
 
     // Hàm xóa môn học
     //subject.deleteSubject("MN");
-    subject.printAllSubjects();
+    //subject.printAllSubjects();
    
 
     QuestionPage page = subject.searchQuestionInSubject("CSDL", "hay", 1);
-    printQuestionsInList(page.questionList);
+    //printQuestionsInList(page.questionList);
 
     // Cách duyệt cây 
     // PTRSUBJECT a =  subject.getListSubject();

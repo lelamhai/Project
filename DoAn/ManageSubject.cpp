@@ -556,7 +556,7 @@ void ManageSubject::getPageSubject(PTRSUBJECT& result, PTRSUBJECT root, int& cou
 
     getPageSubject(result, root->left, count, startIndex, endIndex);
 
-    if (count >= startIndex && count <= endIndex) {
+    if (count >= startIndex && count < endIndex) {
         // Chỉ thêm node vào kết quả nếu trong khoảng
         insertSubjectToTree(result, root->info.subjectCode, root->info.subjectName);
     }
@@ -776,4 +776,10 @@ PTRSUBJECT deleteNode(PTRSUBJECT root, string code) {
     }
 
     return root;
+}
+
+int countSubjectsInList(PTRSUBJECT root) {
+    // Đếm tổng số môn học
+    if (!root) return 0;
+    return 1 + countSubjectsInList(root->left) + countSubjectsInList(root->right);
 }
