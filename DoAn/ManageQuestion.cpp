@@ -394,5 +394,71 @@ int getCountQuestionInList(PTRQUESTION questionList) {
 
 QuestionPage getQuestionPerPage(PTRQUESTION questionList, int page)
 {
-	return QuestionPage();
+	QuestionPage questionPage;
+	questionPage.questionList = nullptr;
+	int questionPerPage = 13;
+	questionPage.totalPage = 0;
+	questionPage.totalQuestions = 0;
+	if (questionList == nullptr) return questionPage;
+	int totalQuestions = getCountQuestionInList(questionList);
+	int totalPages = (totalQuestions + questionPerPage - 1) / questionPerPage;
+	questionPage.currentPage = page;
+	questionPage.totalPage = totalPages;
+	questionPage.totalQuestions = totalQuestions;
+	questionPage.numberQuestionPerPage = questionPerPage;
+
+	PTRQUESTION pageResult = nullptr;
+	
+	if (page < 1 || page > totalPages) {
+		return questionPage;
+	}
+
+	// Tính toán chỉ số bắt đầu và kết thúc
+	int startIndex = (page - 1) * questionPerPage;
+	int endIndex = min(startIndex + questionPerPage, totalQuestions);
+	int count = 0;
+
+	while (questionList != nullptr) {
+		if (count >= startIndex && count < endIndex) {
+			addQuestionToList(pageResult, questionList->info);
+		}
+		if (count >= endIndex) {
+			break;
+		}
+		count++;
+		questionList = questionList->next;
+	}
+
+	questionPage.startIndex = startIndex;
+	questionPage.endIndex = endIndex;
+	questionPage.questionList = pageResult;
+
+	return questionPage;
+}
+
+bool addQuestionToList(PTRQUESTION& questionList, Question question1) {
+	PTRQUESTION tmpQuestion = new NodeQuestion;
+	tmpQuestion->info = question1;
+	tmpQuestion->next = nullptr;
+	if (questionList == nullptr) {
+		questionList = tmpQuestion;
+	}
+	else {
+		tmpQuestion->next = questionList;
+		questionList = tmpQuestion;
+	}
+	return true;
+}
+
+void printQuestionsInList(PTRQUESTION questionList)
+{
+	PTRQUESTION temp = questionList;
+	while (temp != nullptr) {
+		cout << temp->info.questionId << " - " << temp->info.content << endl;
+		cout << "A. " << temp->info.optionA << endl;
+		cout << "B. " << temp->info.optionB << endl;
+		cout << "C. " << temp->info.optionC << endl;
+		cout << "D. " << temp->info.optionD << endl;
+		temp = temp->next;
+	}
 }

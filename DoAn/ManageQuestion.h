@@ -73,6 +73,10 @@ int getCountQuestionInList(PTRQUESTION questionList);
 
 QuestionPage getQuestionPerPage(PTRQUESTION questionList, int page);
 
+bool addQuestionToList(PTRQUESTION& questionList, Question question1);
+
+void printQuestionsInList(PTRQUESTION questionList);
+
 
 
 

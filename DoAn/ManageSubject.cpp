@@ -121,11 +121,30 @@ bool ManageSubject::deleteQuestionInSubject(const string subjectCode, int questi
     return false;
 }
 
-PTRQUESTION ManageSubject::searchQuestionInSubject(const string subjectCode, const string keyword, int pageNumber)
+QuestionPage ManageSubject::searchQuestionInSubject(const string subjectCode, const string keyword, int pageNumber)
 {
-    return nullptr;
-}
+    QuestionPage result;
+    result.questionList = nullptr;
+    PTRSUBJECT foundSubject = getSubject(subjectCode.c_str());
+    if (foundSubject == nullptr) return result;
+    if (keyword == "") {
+        return getQuestionPerPage(foundSubject->info.listQuestion, pageNumber);
+    }
 
+    PTRQUESTION resultList = nullptr;
+    PTRQUESTION startList = foundSubject->info.listQuestion;
+
+    while (startList != nullptr) {
+        string questionIdStr = to_string(startList->info.questionId);
+        string questionContent = startList->info.content;
+        if (containString(questionIdStr, keyword) || containString(questionContent, keyword)) {
+            addQuestionToList(resultList, startList->info);
+        }
+        startList = startList->next;
+    }
+
+    return getQuestionPerPage(resultList, pageNumber);
+}
 
 
 // In danh sách tất cả các môn học
@@ -565,8 +584,7 @@ void ManageSubject::collectMatchingSubjects(PTRSUBJECT root, PTRSUBJECT& tempTre
     collectMatchingSubjects(root->left, tempTree, keyword);
 
     // Kiểm tra nếu khớp từ khóa trong tên hoặc mã môn học
-    if (root->info.subjectName.find(keyword) != string::npos ||
-        string(root->info.subjectCode).find(keyword) != string::npos) {
+    if (containString(root->info.subjectName, keyword) || containString(root->info.subjectCode, keyword)) {
         insertSubjectToTree(tempTree, root->info.subjectCode, root->info.subjectName);
     }
 

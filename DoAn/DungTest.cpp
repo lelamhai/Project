@@ -86,7 +86,7 @@ void DungTest::main()
     // Hàm thêm mới môn học
     subject.addSubject("MN", "Mon hoc");
     // Hàm load dữ liệu lên để edit (input là subject code)
-    PTRSUBJECT subjectFound = subject.getSubject("MN");
+    PTRSUBJECT subjectFound = subject.getSubject("CSDL");
     cout << "Mon hoc tim thay: " << subjectFound->info.subjectName << endl;
     // Hàm thêm môn học mới đầu vào subjectCode, subjectName
     subject.editSubject("ANM", "An ninh mang - Updateee");
@@ -95,6 +95,9 @@ void DungTest::main()
     //subject.deleteSubject("MN");
     subject.printAllSubjects();
    
+
+    QuestionPage page = subject.searchQuestionInSubject("CSDL", "hay", 1);
+    printQuestionsInList(page.questionList);
 
     // Cách duyệt cây 
     // PTRSUBJECT a =  subject.getListSubject();

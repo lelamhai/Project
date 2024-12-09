@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "StrucData.h"
 #include "ManageQuestion.h"
+#include "ManageClass.h"
 #include <fstream> 
 
 struct SubjectPage {
@@ -70,7 +71,7 @@ public:
     // Xóa 1 câu hỏi
     bool deleteQuestionInSubject(const string subjectCode, int questionId);
 
-    PTRQUESTION searchQuestionInSubject(const string subjectCode, const string keyword, int pageNumber);
+    QuestionPage searchQuestionInSubject(const string subjectCode, const string keyword, int pageNumber);
 
     // In danh sách tất cả các môn học
     void printAllSubjects();
