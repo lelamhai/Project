@@ -83,6 +83,7 @@ scoreToPrintList ManageScore::getScoreAllPage(){
 }
 
 ScorePage ManageScore::getScorePerPage(int pageNumber) {
+    scoreToPrintList* listSoucre = &listToPrint;
     ScorePage scorePage;
     int scorePerPage = 13;
     int totalScore = listToPrint.countStudent;
@@ -102,17 +103,12 @@ ScorePage ManageScore::getScorePerPage(int pageNumber) {
     int startIndex = (pageNumber - 1) * scorePerPage;
     int endIndex = min(startIndex + scorePerPage, totalScore);
 
-    // Thêm các lớp thuộc trang vào kết quả trả về
+    // Thêm các lớp thuộc trang vào kết quả trả về 
     for (int i = startIndex; i < endIndex; i++) {
-        scorePage.printList.array[i - startIndex] = new scoreToPrint;
-        scoreToPrint* p = scorePage.printList.array[i-startIndex];
-        scoreToPrint* q = listToPrint.array[i];
+        scoreToPrintList* p = &scorePage.printList;
+        scoreToPrint* q = listSoucre->array[i];
 
-        strcpy_s(p->studentCode, sizeof(p->studentCode), q->studentCode);
-        strcpy_s(p->firstName, sizeof(p->firstName), q->firstName);
-        strcpy_s(p->lastName, sizeof(p->lastName), q->lastName);
-        p->gender = q->gender;
-        p->score = q->score;
+        copyScoreToList(p, q, i - startIndex); // copy điểm từ list tổng sang list phân trang
     }
 
     scorePage.startIndex = startIndex;
@@ -121,7 +117,81 @@ ScorePage ManageScore::getScorePerPage(int pageNumber) {
     return scorePage;  // Trả về danh sách lớp của trang đã chọn
 }
 
+ScorePage ManageScore::getScorePerPage(scoreToPrintList* listSoucre, int pageNumber) {
+    ScorePage scorePage;
+    int scorePerPage = 13;
+    int totalScore = listSoucre->countStudent;
+    
+    int totalPages = (totalScore + scorePerPage - 1) / scorePerPage;
+    scorePage.currentPage = pageNumber;
+    scorePage.totalPage = totalPages;
+    scorePage.totalScore = totalScore;
+    scorePage.numberScorePerPage = scorePerPage;
 
+    // Kiểm tra nếu trang không hợp lệ
+    if (pageNumber < 1 || pageNumber > totalPages) {
+        cout << "Trang " << pageNumber << " không tồn tại!" << endl;
+        return scorePage;
+    }
+
+    // Tính toán chỉ số bắt đầu và kết thúc
+    int startIndex = (pageNumber - 1) * scorePerPage;
+    int endIndex = min(startIndex + scorePerPage, totalScore);
+
+    // Thêm các lớp thuộc trang vào kết quả trả về 
+    for (int i = startIndex; i < endIndex; i++) {
+        scoreToPrintList* p = &scorePage.printList;
+        scoreToPrint* q = listSoucre->array[i];
+
+        copyScoreToList(p, q, i - startIndex); // copy điểm từ list tổng sang list phân trang
+    }
+
+    scorePage.startIndex = startIndex;
+    scorePage.endIndex = endIndex;
+
+    return scorePage;  // Trả về danh sách lớp của trang đã chọn
+}
+
+bool ManageScore::copyScoreToList(scoreToPrintList* list, scoreToPrint* scoreToCopy, int index) {
+    list->array[index] = new scoreToPrint;
+    scoreToPrint* p = list->array[index];
+ 
+    strcpy_s(p->studentCode, sizeof(p->studentCode), scoreToCopy->studentCode);
+    strcpy_s(p->firstName, sizeof(p->firstName), scoreToCopy->firstName);
+    strcpy_s(p->lastName, sizeof(p->lastName), scoreToCopy->lastName);
+    p->gender = scoreToCopy->gender;
+    p->score = scoreToCopy->score;
+
+    list->countStudent++;
+
+    return true;
+}
+
+ScorePage ManageScore::searchStudentScore(string keyWord, int pageNumber) {
+    ScorePage resultPage;
+    scoreToPrintList* p;
+    p = &resultPage.printList;
+
+    if (keyWord == "") {
+        resultPage = getScorePerPage(pageNumber);
+        return resultPage;
+    }
+
+    int countStd = listToPrint.countStudent;
+    int indexToCopy = 0;
+    for (int i = 0; i < countStd; i++) {
+        scoreToPrint* q = listToPrint.array[i];
+        string fullName = string(q->firstName) + " " + string(q->lastName);
+        if (containString(fullName, keyWord) || containString(q->studentCode, keyWord)) {
+            copyScoreToList(p, q, indexToCopy);
+            indexToCopy++;
+        }
+    }
+    //resultPage.totalScore = indexToCopy;
+   
+    resultPage = getScorePerPage(p, pageNumber);
+    return resultPage; 
+}
 
 bool updateScoreToList(PTRSCORE& scoreList,string subjectCode, float score)
 {

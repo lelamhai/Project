@@ -35,7 +35,7 @@ void HuyTest::main() {
 	}
 
 	// IN RA ĐIỂM TỪNG TRANG
-	int pageNumber = 3;
+	int pageNumber = 1;
 	ScorePage scorePage1 = manangeScore.getScorePerPage(pageNumber);
 	
 	// demo in để kiểm tra code
@@ -43,6 +43,21 @@ void HuyTest::main() {
 	int noScoreThisPage = scorePage1.endIndex - scorePage1.startIndex;
 	for (int i = 0; i < noScoreThisPage; i++) {
 		scoreToPrint* p = scorePage1.printList.array[i];
+		cout << "MSSV: " << p->studentCode << "   "
+			<< "Ten: " << p->firstName << " " << p->lastName << "   "
+			<< "Gioi tinh: " << p->gender << "   "
+			<< "Diem: " << p->score << endl;
+	}
+
+	// IN RA ĐIỂM TỪNG TRANG
+	int pageNumber2 = 3;
+	ScorePage scorePage2 = manangeScore.searchStudentScore("frh", pageNumber2);
+	
+	// demo in để kiểm tra code
+	cout << "TRANG " << pageNumber2 << endl;
+	int noScoreThisPage2 = scorePage2.endIndex - scorePage2.startIndex;
+	for (int i = 0; i < noScoreThisPage2; i++) {
+		scoreToPrint* p = scorePage2.printList.array[i];
 		cout << "MSSV: " << p->studentCode << "   "
 			<< "Ten: " << p->firstName << " " << p->lastName << "   "
 			<< "Gioi tinh: " << p->gender << "   "
