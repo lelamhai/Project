@@ -7,6 +7,8 @@
 
 #include "ManageSubject.h"
 
+#include "InputField.h"
+#include "Text.h"
 #include "ContentQuestion.h"
 #include "Singleton.h"
 #include "Content.h"
@@ -17,9 +19,36 @@ using namespace std;
 class ContentSubject : public Content
 {
 private:
+	enum StateSubject
+	{
+		C_SELECT = 0, // F1
+		C_CREATE = 1, // Ins
+		C_EDIT = 2, // F2
+		C_SEARCH = 3, // F3
+		C_DELETE = 4, // Del
+		C_DETAIL = 5,
+
+		C_EXIT = -1
+	};
+	StateSubject currentSubject;
+
+	enum SelectInput
+	{
+		FORM_CODE = 0,
+		FORM_NAME = 1,
+		FORM_ENTER = 2,
+		FORM_EXIT = 3
+	};
+	SelectInput stateInput;
+	Text text;
+
+
+
 	ManageSubject subject;
+	vector<InputField> listInput;
 	int indexTree = 0;
 
+	int posYMessage = 0;
 	int pageNumber = 1;
 	int hover = 0;
 	int lastHover = -1;

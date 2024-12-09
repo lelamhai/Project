@@ -23,6 +23,8 @@ void ContentSubject::drawContent()
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + posXInfo, DISTANCE_HEADER + PADDING * 2);
 	cout << "Thong Tin";
 
+	listInput.push_back(InputField());
+	listInput.push_back(InputField());
 	string titleInput[] = {
 		"Ma Mon Hoc",
 		"Ten Mon Hoc"
@@ -33,9 +35,11 @@ void ContentSubject::drawContent()
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
 		cout << titleInput[i];
-		box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2 + 15, y + (i * 3) - 1, 20, 2);
-	}
 
+		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2 + 15, y + (i * 3) - 1);
+		listInput[i].setFrame(WIDTH_INPUT, HEIGHT_INPUT);
+		listInput[i].drawBox();
+	}
 	
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 16);
@@ -45,8 +49,9 @@ void ContentSubject::drawContent()
 	cout << char(180);
 
 	y = y + (2 * 3) - 1;
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
-	cout << "Message";
+	posYMessage = y;
+	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
+	cout << "Message";*/
 
 	y = y + 2;
 	int infoX = getCenterX(COLUMN_RIGHT, 10);
@@ -126,6 +131,7 @@ void ContentSubject::displayContent()
 {
 	drawContent();
 	girdTitle();
+	currentSubject = C_CREATE;
 	handle();
 }
 
@@ -133,7 +139,31 @@ void ContentSubject::handle()
 {
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		switch (currentSubject)
+		{
+		case ContentSubject::C_SELECT:
+			showCur(0);
+			selectData();
+			break;
+		case ContentSubject::C_CREATE:
+			showCur(1);
+			createData();
+			break;
+		case ContentSubject::C_EDIT:
+			break;
+		case ContentSubject::C_SEARCH:
+			break;
+		case ContentSubject::C_DELETE:
+			break;
+		case ContentSubject::C_DETAIL:
+			break;
+		case ContentSubject::C_EXIT:
+			break;
+		default:
+			break;
+		}
+
+		/*if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
 			cleanContent();
 			ContentQuestion q;
@@ -149,10 +179,7 @@ void ContentSubject::handle()
 			{
 				return;
 			}
-		}
-		selectData();
-
-		Sleep(100);
+		}*/
 	}
 }
 
@@ -255,7 +282,127 @@ void ContentSubject::deleteData()
 
 void ContentSubject::createData()
 {
+	stateInput = FORM_CODE;
+	while (true)
+	{
+		if (stateInput == FORM_CODE)
+		{
+			listInput[0].useSpace = true;
+			listInput[0].handleInput();
 
+			switch (listInput[0].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_NAME;
+				break;
+
+			case F1:
+				currentSubject = C_SELECT;
+				return;
+
+			case F3:
+				currentSubject = C_SEARCH;
+				return;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentSubject = C_EXIT;
+					return;
+				}
+				break;
+
+			case DOWN:
+			case UP:
+				stateInput = FORM_NAME;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_NAME)
+		{
+			listInput[1].handleInput();
+
+			switch (listInput[1].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_CODE;
+				break;
+
+			case F1:
+				currentSubject = C_SELECT;
+				return;
+
+			case F3:
+				currentSubject = C_SEARCH;
+				return;
+
+			case DOWN:
+			case UP:
+				stateInput = FORM_CODE;
+				break;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentSubject = C_EXIT;
+					return;
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ENTER)
+		{
+			//bool result = nl.addClass(listInput[0].getText().c_str(), listInput[1].getText());
+			bool result = subject.addSubject(listInput[0].getText(), listInput[1].getText());
+			if (result)
+			{
+				SubjectPage a = subject.searchSubjects(textSearch, 2);
+				cleanTable();
+				loadDataTree(a.subjects);
+				cleanMessage(posYMessage);
+				text.setContent("Them lop thanh cong!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+			}
+			else
+			{
+				cleanMessage(posYMessage);
+				text.setContent("Them lop that bai!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+			}
+
+			text.display();
+			//stateInput = FORM_CODE;
+			currentSubject = C_SELECT;
+			return;
+		}
+
+		if (stateInput == FORM_EXIT)
+		{
+			return;
+		}
+	}
 }
 
 void ContentSubject::editData()
