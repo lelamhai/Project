@@ -131,7 +131,7 @@ void ContentSubject::displayContent()
 {
 	drawContent();
 	girdTitle();
-	currentSubject = C_CREATE;
+	currentSubject = C_SELECT;
 	handle();
 }
 
@@ -370,11 +370,10 @@ void ContentSubject::createData()
 
 		if (stateInput == FORM_ENTER)
 		{
-			//bool result = nl.addClass(listInput[0].getText().c_str(), listInput[1].getText());
 			bool result = subject.addSubject(listInput[0].getText(), listInput[1].getText());
 			if (result)
 			{
-				SubjectPage a = subject.searchSubjects(textSearch, 2);
+				SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
 				cleanTable();
 				loadDataTree(a.subjects);
 				cleanMessage(posYMessage);
@@ -393,8 +392,7 @@ void ContentSubject::createData()
 			}
 
 			text.display();
-			//stateInput = FORM_CODE;
-			currentSubject = C_SELECT;
+			stateInput = FORM_CODE;
 			return;
 		}
 
