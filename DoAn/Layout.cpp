@@ -49,7 +49,7 @@ void Layout::templateMenu()
             "Lop",
             "Mon Hoc",
             "Thi",
-            "In Diem",
+            "Xem Diem",
             "Dang Xuat",
             "Thoat"
         };

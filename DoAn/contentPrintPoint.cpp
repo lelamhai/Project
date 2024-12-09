@@ -72,7 +72,7 @@ void ContentPrintPoint::girdTitle()
 	cout << char(180);
 
 	string title[] = {
-		"Ma Sinh Vien",
+		"MSSV",
 		"Ho",
 		"Ten",
 		"Phai",

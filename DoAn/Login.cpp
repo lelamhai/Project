@@ -127,7 +127,6 @@ void Login::formLogin()
 
 		case LOGIN_ENTER:
 			result = classList.logIn(inputUserName.getText().c_str(), inputPassword.getText().c_str());
-
 			if (result)
 			{
 				return;
@@ -135,7 +134,7 @@ void Login::formLogin()
 			else {
 
 				int x = getCenterX(getConsoleWidth(), 22);
-				gotoXY(x, 13 + 3 + 2);
+				text.setPosition(x, 13 + 3 + 2);
 				text.display();
 				stateLoginInput = LOGIN_USERNAME;
 			}
