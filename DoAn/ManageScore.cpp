@@ -1,11 +1,14 @@
 #include "ManageScore.h"
 
-ManageScore::ManageScore()
-{
+ManageScore::ManageScore() {
+
 }
 
-ManageScore::~ManageScore()
-{
+ManageScore::~ManageScore(){
+    // giải phóng bộ nhớ cho listToPrint
+    for (int i = 0; i < listToPrint.countStudent; i++) {
+        delete listToPrint.array[i];
+    }
 }
 
 int ManageScore::setInputPrintScore(const char* classCode, const char* subjectCode) {
@@ -23,12 +26,10 @@ int ManageScore::setInputPrintScore(const char* classCode, const char* subjectCo
         return -1;
     }
 
-    // trả về 1 nếu input hợp lệ
+    // xử lý dữ liệu và trả về 1 nếu input hợp lệ
     strcpy_s(listToPrint.classCode, sizeof(listToPrint.classCode), classCode);
     strcpy_s(listToPrint.subjectCode, sizeof(listToPrint.subjectCode), subjectCode);
-    
-    getScoreOfClass(); // gọi hàm để thực hiện tạo danh sách điểm theo môn cho một lớp
-
+    getScoreOfClass(); // gọi hàm để thực hiện tạo danh sách điểm theo môn cho một lớp;
     return 1; 
 }
 
@@ -82,41 +83,6 @@ scoreToPrintList ManageScore::getScoreAllPage(){
     return listToPrint;
 }
 
-ScorePage ManageScore::getScorePerPage(int pageNumber) {
-    scoreToPrintList* listSoucre = &listToPrint;
-    ScorePage scorePage;
-    int scorePerPage = 13;
-    int totalScore = listToPrint.countStudent;
-    int totalPages = (totalScore + scorePerPage - 1) / scorePerPage;
-    scorePage.currentPage = pageNumber;
-    scorePage.totalPage = totalPages;
-    scorePage.totalScore = totalScore;
-    scorePage.numberScorePerPage = scorePerPage;
-
-    // Kiểm tra nếu trang không hợp lệ
-    if (pageNumber < 1 || pageNumber > totalPages) {
-        cout << "Trang " << pageNumber << " không tồn tại!" << endl;
-        return scorePage;
-    }
-
-    // Tính toán chỉ số bắt đầu và kết thúc
-    int startIndex = (pageNumber - 1) * scorePerPage;
-    int endIndex = min(startIndex + scorePerPage, totalScore);
-
-    // Thêm các lớp thuộc trang vào kết quả trả về 
-    for (int i = startIndex; i < endIndex; i++) {
-        scoreToPrintList* p = &scorePage.printList;
-        scoreToPrint* q = listSoucre->array[i];
-
-        copyScoreToList(p, q, i - startIndex); // copy điểm từ list tổng sang list phân trang
-    }
-
-    scorePage.startIndex = startIndex;
-    scorePage.endIndex = endIndex;
-
-    return scorePage;  // Trả về danh sách lớp của trang đã chọn
-}
-
 ScorePage ManageScore::getScorePerPage(scoreToPrintList* listSoucre, int pageNumber) {
     ScorePage scorePage;
     int scorePerPage = 13;
@@ -152,6 +118,14 @@ ScorePage ManageScore::getScorePerPage(scoreToPrintList* listSoucre, int pageNum
     return scorePage;  // Trả về danh sách lớp của trang đã chọn
 }
 
+ScorePage ManageScore::getScorePerPage(int pageNumber) {
+    ScorePage scorePage;
+    scoreToPrintList* p = &listToPrint;
+
+    scorePage = getScorePerPage(p, pageNumber); // phân trang từ danh sách điểm listToPrint của class
+    return scorePage;
+}
+
 bool ManageScore::copyScoreToList(scoreToPrintList* list, scoreToPrint* scoreToCopy, int index) {
     list->array[index] = new scoreToPrint;
     scoreToPrint* p = list->array[index];
@@ -173,7 +147,7 @@ ScorePage ManageScore::searchStudentScore(string keyWord, int pageNumber) {
     p = &resultPage.printList;
 
     if (keyWord == "") {
-        resultPage = getScorePerPage(pageNumber);
+        resultPage = getScorePerPage(p, pageNumber);
         return resultPage;
     }
 
@@ -187,11 +161,19 @@ ScorePage ManageScore::searchStudentScore(string keyWord, int pageNumber) {
             indexToCopy++;
         }
     }
-    //resultPage.totalScore = indexToCopy;
    
     resultPage = getScorePerPage(p, pageNumber);
     return resultPage; 
 }
+
+void ManageScore::deallocateScorePage(ScorePage &page) {
+    scoreToPrintList* p = &page.printList;
+
+    for (int i = 0; i < p->countStudent; i++) {
+        delete p->array[i];
+    }
+}
+
 
 bool updateScoreToList(PTRSCORE& scoreList,string subjectCode, float score)
 {

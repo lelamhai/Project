@@ -49,9 +49,9 @@ void HuyTest::main() {
 			<< "Diem: " << p->score << endl;
 	}
 
-	// IN RA ĐIỂM TỪNG TRANG
-	int pageNumber2 = 3;
-	ScorePage scorePage2 = manangeScore.searchStudentScore("frh", pageNumber2);
+	// IN RA ĐIỂM ĐƯỢC SEARCH
+	int pageNumber2 = 1;
+	ScorePage scorePage2 = manangeScore.searchStudentScore("th", pageNumber2);
 	
 	// demo in để kiểm tra code
 	cout << "TRANG " << pageNumber2 << endl;
@@ -63,7 +63,10 @@ void HuyTest::main() {
 			<< "Gioi tinh: " << p->gender << "   "
 			<< "Diem: " << p->score << endl;
 	}
-
+	
+	// GIẢI PHÓNG BỘ NHỚ CÁC TRANG ĐIỂM ĐÃ TẠO
+	ManageScore::deallocateScorePage(scorePage1);
+	ManageScore::deallocateScorePage(scorePage2);
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R1 ---------------------------------------------*/
 	//// KHỞI TẠO

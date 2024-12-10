@@ -44,12 +44,15 @@ public:
 
 	scoreToPrintList getScoreAllPage();
 
-	ScorePage getScorePerPage(int pageNumber);
-	ScorePage getScorePerPage(scoreToPrintList* listSoucre, int pageNumber);
+	ScorePage getScorePerPage(scoreToPrintList* listSoucre, int pageNumber); // phân trang score từ sourcelist bất kỳ
+
+	ScorePage getScorePerPage(int pageNumber); // phân trang score từ scoreList của class
 
 	bool copyScoreToList(scoreToPrintList* list, scoreToPrint* scoreToCopy, int index);
 
 	ScorePage searchStudentScore(string keyWord, int pageNumber);
+
+	static void deallocateScorePage (ScorePage & page); // giải phóng bộ nhớ ScorePage
 };
 
 bool updateScoreToList(PTRSCORE& scoreList, string subjectCode, float score);
