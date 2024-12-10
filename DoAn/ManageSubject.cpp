@@ -444,9 +444,11 @@ void ManageSubject::reset() {
     subjectList = nullptr; // Đặt cây về trạng thái rỗng
 }
 
-void ManageSubject::deleteSubject(string code) {
-    subjectList = deleteNode(subjectList, code);
+bool ManageSubject::deleteSubject(string code) {
+    bool isDeleted = deleteNode(subjectList, code);
+    if (!isDeleted) return false;
     saveToFile();
+    return true;
 }
 
 
@@ -714,69 +716,72 @@ PTRSUBJECT getMinValueNode(PTRSUBJECT node) {
     return current;
 }
 
-// Hàm xóa nút theo key
-PTRSUBJECT deleteNode(PTRSUBJECT root, string code) {
-    if (!root) return nullptr;
+// Hàm xóa nút theo code
+bool deleteNode(PTRSUBJECT& root, string code) {
+    if (!root) return false; // Không tìm thấy nút để xóa
 
-    // Tìm nút cần xóa
-    if (code < (string) root->info.subjectCode) {
-        root->left = deleteNode(root->left, code);
+    if (code < (string)root->info.subjectCode) {
+        return deleteNode(root->left, code);
     }
-    else if (code > (string) root->info.subjectCode) {
-        root->right = deleteNode(root->right, code);
+    else if (code > (string)root->info.subjectCode) {
+        return deleteNode(root->right, code);
     }
     else {
-        // Nút có một hoặc không có con
+        // Nút cần xóa được tìm thấy  
+        if (getCountQuestionInList(root->info.listQuestion) > 0) {
+            // Có câu hỏi thì không thể xóa
+            return false;
+        }
+
         if (!root->left || !root->right) {
             PTRSUBJECT temp = root->left ? root->left : root->right;
 
-            // Không có con
             if (!temp) {
-                temp = root;
+                // Không có con
+                delete root;
                 root = nullptr;
             }
             else {
                 // Có một con
                 *root = *temp;
+                delete temp;
             }
-
-            delete temp;
         }
         else {
-            // Nút có hai con
+            // Có hai con
             PTRSUBJECT temp = getMinValueNode(root->right);
             root->info = temp->info; // Copy thông tin
-            root->right = deleteNode(root->right, code);
+            deleteNode(root->right, temp->info.subjectCode);
         }
+
+        // Cân bằng lại cây
+        if (root) {
+            updateHeight(root);
+
+            int balance = getBalance(root);
+
+            // Cân bằng cây
+            if (balance > 1 && getBalance(root->left) >= 0)
+                root = rotateRight(root);
+
+            if (balance > 1 && getBalance(root->left) < 0) {
+                root->left = rotateLeft(root->left);
+                root = rotateRight(root);
+            }
+
+            if (balance < -1 && getBalance(root->right) <= 0)
+                root = rotateLeft(root);
+
+            if (balance < -1 && getBalance(root->right) > 0) {
+                root->right = rotateRight(root->right);
+                root = rotateLeft(root);
+            }
+        }
+
+        return true; // Xóa thành công
     }
-
-    // Nếu cây chỉ có một nút và bị xóa
-    if (!root) return root;
-
-    // Cập nhật chiều cao và cân bằng lại
-    updateHeight(root);
-
-    int balance = getBalance(root);
-
-    // Trường hợp mất cân bằng
-    if (balance > 1 && getBalance(root->left) >= 0)
-        return rotateRight(root);
-
-    if (balance > 1 && getBalance(root->left) < 0) {
-        root->left = rotateLeft(root->left);
-        return rotateRight(root);
-    }
-
-    if (balance < -1 && getBalance(root->right) <= 0)
-        return rotateLeft(root);
-
-    if (balance < -1 && getBalance(root->right) > 0) {
-        root->right = rotateRight(root->right);
-        return rotateLeft(root);
-    }
-
-    return root;
 }
+
 
 int countSubjectsInList(PTRSUBJECT root) {
     // Đếm tổng số môn học

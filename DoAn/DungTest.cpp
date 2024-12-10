@@ -93,7 +93,8 @@ void DungTest::main()
     subject.editSubject("ANM", "An ninh mang - Updateee");
 
     // Hàm xóa môn học
-    //subject.deleteSubject("MN");
+    bool isDeleted = subject.deleteSubject("MTH");
+    cout << "Xoa thanh cong " << isDeleted << endl;
     //subject.printAllSubjects();
 
     QuestionPage page = subject.searchQuestionInSubject("CSDL", "hay", 1);

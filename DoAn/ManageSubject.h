@@ -98,7 +98,7 @@ public:
 
     void getPageSubject(PTRSUBJECT& result, PTRSUBJECT root, int& count, int startIndex, int endIndex);
 
-    void deleteSubject(string code);
+    bool deleteSubject(string code);
 
     void reset();
 };
@@ -121,6 +121,6 @@ void printSubjectInAVL(PTRSUBJECT root);
 
 PTRSUBJECT getMinValueNode(PTRSUBJECT node);
 
-PTRSUBJECT deleteNode(PTRSUBJECT root, string code);
+bool deleteNode(PTRSUBJECT& root, string code);
 
 int countSubjectsInList(PTRSUBJECT root);
