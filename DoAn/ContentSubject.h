@@ -41,6 +41,14 @@ private:
 		FORM_EXIT = 3
 	};
 	SelectInput stateInput;
+
+	enum SearchInput
+	{
+		SEARCH_INPUT = 0,
+		SEARCH_F1 = 1,
+		SEARCH_EXIT = -1
+	};
+	SearchInput stateSearchInput;
 	Text text;
 
 
@@ -67,6 +75,7 @@ public:
 	void editData();
 	void findData();
 	void loadDataTree(PTRSUBJECT root);
+	void pagging();
 
 	ContentSubject();
 	~ContentSubject();

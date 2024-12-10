@@ -154,12 +154,16 @@ void ContentSubject::handle()
 			editData();
 			break;
 		case ContentSubject::C_SEARCH:
+			showCur(1);
+			findData();
 			break;
 		case ContentSubject::C_DELETE:
 			showCur(0);
 			deleteData();
 			break;
 		case ContentSubject::C_DETAIL:
+			showCur(1);
+			findData();
 			break;
 		case ContentSubject::C_EXIT:
 			break;
@@ -269,6 +273,12 @@ void ContentSubject::selectData()
 			Sleep(150);
 		}
 
+		if (GetAsyncKeyState(VK_DELETE) & 0x0001)
+		{
+			currentSubject = C_DELETE;
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_F2) & 0x0001)
 		{
 			if (a.totalSubject <= 0)
@@ -281,9 +291,10 @@ void ContentSubject::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_DELETE) & 0x0001)
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
 		{
-			currentSubject = C_DELETE;
+			currentSubject = C_SEARCH;
+			Sleep(150);
 			return;
 		}
 
@@ -292,10 +303,9 @@ void ContentSubject::selectData()
 			indexTree = 0;
 			a = subject.searchSubjects(textSearch, pageNumber);
 			loadDataTree(a.subjects);
+			pagging();
 			lastHover = hover;
 		}
-
-
 	}
 }
 
@@ -528,7 +538,99 @@ void ContentSubject::editData()
 
 void ContentSubject::findData()
 {
+	SubjectPage a;
+	int cursorPosition = textSearch.length();
+	stateSearchInput = SEARCH_INPUT;
+	while (true)
+	{
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 6 + textSearch.length(), DISTANCE_HEADER + 2);
+		if (GetAsyncKeyState(VK_F1) & 0x0001)
+		{
+			currentSubject = C_SELECT;
+			return;
+		}
 
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		{
+			currentSubject = C_CREATE;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				currentSubject = C_EXIT;
+				return;
+			}
+		}
+
+		char s = _getch();
+		int key = keySpecial(s);
+		switch (s)
+		{
+		case BACKSPACE:
+			if (textSearch.length() <= 0 || cursorPosition <= 0)
+			{
+				break;
+			}
+
+			if (cursorPosition == textSearch.length())
+			{
+				textSearch.erase(textSearch.length() - 1, 1);
+				cursorPosition--;
+				cout << "\b \b";
+			}
+			else {
+				textSearch.erase(--cursorPosition, 1);
+				gotoXY(whereX() - 1, whereY());
+				for (int i = cursorPosition; i < textSearch.length(); i++)
+				{
+					cout << textSearch[i];
+				}
+				gotoXY(whereX(), whereY());
+				cout << " ";
+				gotoXY(whereX() - 1 - (textSearch.length() - cursorPosition), whereY());
+			}
+			indexTree = 0;
+			cleanTable();
+			a = subject.searchSubjects(textSearch, pageNumber);
+			loadDataTree(a.subjects);
+			pagging();
+			break;
+
+		default:
+			if (textSearch.length() > 14)
+			{
+				break;
+			}
+
+			if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+			{
+				showCur(1);
+
+				textSearch.insert(textSearch.begin() + cursorPosition, s);
+				cursorPosition++;
+				cout << s;
+
+				if (cursorPosition != textSearch.length())
+				{
+					for (int i = cursorPosition; i <= textSearch.length(); i++)
+					{
+						cout << textSearch[i];
+					}
+					gotoXY(whereX() - (textSearch.length() - cursorPosition), whereY());
+				}
+
+				indexTree = 0;
+				cleanTable();
+				a = subject.searchSubjects(textSearch, pageNumber);
+				loadDataTree(a.subjects);
+				pagging();
+			}
+			break;
+		}
+	}
 }
 
 void ContentSubject::loadDataTree(PTRSUBJECT root)
@@ -557,4 +659,23 @@ void ContentSubject::loadDataTree(PTRSUBJECT root)
 	setColorText(ColorCode_White);
 	indexTree++;
 	loadDataTree(root->right);
+}
+
+void ContentSubject::pagging()
+{
+	SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
+
+	string blankFillText;
+	blankFillText.resize(10, ' ');
+
+	int currentPage = 0;
+	if (a.totalSubject > 0)
+	{
+		currentPage = pageNumber;
+	}
+
+	setColorText(ColorCode_DarkWhite);
+	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(a.totalPage);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 8, 10 + 28 + 5);
+	cout << pageTitle;
 }
