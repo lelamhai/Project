@@ -159,30 +159,399 @@ void ContentFilterPoint::content()
 	drawContent();
 	girdTitle();
 	//currentClassroom = C_SELECT;
+	loadDataClassroom();
+	loadDataSubject();
 	handle();
 }
 
 void ContentFilterPoint::handle()
 {
+	_getch();
+}
+
+void ContentFilterPoint::selectClassroom()
+{
+	ClassPage page;
+
+	if (textSearch != "")
+	{
+		page = nl.searchClass(textSearch, pageNumber);
+	}
+	else
+	{
+		page = nl.getClassPerPage(pageNumber);
+	}
+
+	int start = 0;
+	int end = pageNumber * page.numberClassPerPage;
+
+	if (pageNumber * page.numberClassPerPage < page.totalClass)
+	{
+		end = page.numberClassPerPage - 1;
+	}
+	else {
+		end = (page.numberClassPerPage - (end - page.totalClass)) - 1;
+	}
+
+	int lastHover = -1;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_RETURN))
+		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
-			cleanContent();
-			ContentPrintPoint p;
-			p.displayContent();
-			p.handle();
-			cleanContent();
-			content();
+			if (start < hover)
+			{
+				hover -= 1;
+			}
+			else {
+				hover = 0;
+			}
+			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
 		{
-			if (Singleton::getInstance()->moveMenu != 0)
+			if (end > hover)
 			{
-				return;
+				hover += 1;
 			}
+			else {
+				hover = end;
+			}
+			Sleep(150);
 		}
-		Sleep(100);
+
+		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
+		{
+			if (pageNumber > 1)
+			{
+				hover = 0;
+				cleanTable();
+				pageNumber--;
+				end = pageNumber * page.numberClassPerPage;
+				if (pageNumber * page.numberClassPerPage < page.totalClass)
+				{
+					end = page.numberClassPerPage - 1;
+				}
+				else {
+					end = (page.numberClassPerPage - (end - page.totalClass)) - 1;
+				}
+				lastHover = -1;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
+		{
+			if (pageNumber < page.totalPage)
+			{
+				cleanTable();
+				pageNumber++;
+
+				end = pageNumber * page.numberClassPerPage;
+				if (pageNumber * page.numberClassPerPage < page.totalClass)
+				{
+					end = page.numberClassPerPage - 1;
+				}
+				else {
+					end = (page.numberClassPerPage - (end - page.totalClass)) - 1;
+				}
+				hover = 0;
+				lastHover = -1;
+			}
+			Sleep(150);
+		}
+
+		if (lastHover != hover)
+		{
+			if (textSearch != "")
+			{
+				page = nl.searchClass(textSearch, pageNumber);
+			}
+			else
+			{
+				page = nl.getClassPerPage(pageNumber);
+			}
+
+			for (int i = 0; i < page.classList.countClass; i++)
+			{
+				setColorText(ColorCode_DarkWhite);
+				if (hover == i)
+				{
+					setColorText(ColorCode_DarkGreen);
+					classCode = page.classList.classes[i]->classCode; // Get ClassCode for edit and delete
+				}
+
+				int classX = getCenterX(27, strlen(page.classList.classes[i]->classCode));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + classX, DISTANCE_HEADER + 8 + (2 * i));
+				cout << page.classList.classes[i]->classCode;
+
+				int nameX = getCenterX(27, page.classList.classes[i]->className.length());
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 27 + nameX, DISTANCE_HEADER + 8 + (2 * i));
+				cout << page.classList.classes[i]->className;
+
+				setColorText(ColorCode_DarkWhite);
+			}
+			lastHover = hover;
+			paggingClassroom();
+		}
 	}
+}
+
+void ContentFilterPoint::selectSubject()
+{
+
+	SubjectPage a = subject.searchSubjects(textSearchSubject, pageNumberSubject);
+	int start = 0;
+
+	int end = pageNumberSubject * a.numberSubjectPerPage;
+	if (pageNumberSubject * a.numberSubjectPerPage < a.totalSubject)
+	{
+		end = a.numberSubjectPerPage - 1;
+	}
+	else {
+		end = (a.numberSubjectPerPage - (end - a.totalSubject)) - 1;
+	}
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_UP) & 0x0001)
+		{
+			if (start < hoverSubject)
+			{
+				hoverSubject -= 1;
+			}
+			else {
+				hoverSubject = 0;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
+		{
+			if (end > hoverSubject)
+			{
+				hoverSubject += 1;
+			}
+			else {
+				hoverSubject = end;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
+		{
+			if (pageNumberSubject > 1)
+			{
+				cleanTable();
+				hoverSubject = 0;
+				pageNumberSubject--;
+				indexTree = 0;
+				end = pageNumberSubject * a.numberSubjectPerPage;
+				if (pageNumberSubject * a.numberSubjectPerPage < a.totalSubject)
+				{
+					end = a.numberSubjectPerPage - 1;
+				}
+				else {
+					end = (a.numberSubjectPerPage - (end - a.totalSubject)) - 1;
+				}
+				lastHoverSubject = -1;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
+		{
+			if (pageNumberSubject < a.totalPage)
+			{
+				cleanTable();
+				hoverSubject = 0;
+				pageNumberSubject++;
+				indexTree = 0;
+				end = pageNumberSubject * a.numberSubjectPerPage;
+				if (pageNumberSubject * a.numberSubjectPerPage < a.totalSubject)
+				{
+					end = a.numberSubjectPerPage - 1;
+				}
+				else {
+					end = (a.numberSubjectPerPage - (end - a.totalSubject)) - 1;
+				}
+				lastHoverSubject = -1;
+			}
+			Sleep(150);
+		}
+
+		/*if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		{
+			currentExam = C_CREATE;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
+		{
+			currentExam = C_SEARCH;
+			Sleep(150);
+			return;
+		}*/
+
+		if (hoverSubject != lastHoverSubject)
+		{
+			indexTree = 0;
+			a = subject.searchSubjects(textSearchSubject, pageNumberSubject);
+			loadDataTree(a.subjects);
+			paggingSubject();
+			lastHoverSubject = hoverSubject;
+		}
+	}
+}
+
+void ContentFilterPoint::loadDataClassroom()
+{
+	ClassPage page;
+
+	if (textSearch != "")
+	{
+		page = nl.searchClass(textSearch, pageNumber);
+	}
+	else
+	{
+		page = nl.getClassPerPage(pageNumber);
+	}
+
+	int start = 0;
+	int end = pageNumber * page.numberClassPerPage;
+
+	if (pageNumber * page.numberClassPerPage < page.totalClass)
+	{
+		end = page.numberClassPerPage - 1;
+	}
+	else {
+		end = (page.numberClassPerPage - (end - page.totalClass)) - 1;
+	}
+
+	if (textSearch != "")
+	{
+		page = nl.searchClass(textSearch, pageNumber);
+	}
+	else
+	{
+		page = nl.getClassPerPage(pageNumber);
+	}
+
+	for (int i = 0; i < page.classList.countClass; i++)
+	{
+		int classX = getCenterX(27, strlen(page.classList.classes[i]->classCode));
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + classX, DISTANCE_HEADER + 8 + (2 * i));
+		cout << page.classList.classes[i]->classCode;
+
+		int nameX = getCenterX(27, page.classList.classes[i]->className.length());
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 27 + nameX, DISTANCE_HEADER + 8 + (2 * i));
+		cout << page.classList.classes[i]->className;
+
+		setColorText(ColorCode_DarkWhite);
+	}
+	paggingClassroom();
+}
+
+void ContentFilterPoint::loadDataSubject()
+{
+	SubjectPage a = subject.searchSubjects(textSearchSubject, pageNumberSubject);
+	int start = 0;
+
+	int end = pageNumberSubject * a.numberSubjectPerPage;
+	if (pageNumberSubject * a.numberSubjectPerPage < a.totalSubject)
+	{
+		end = a.numberSubjectPerPage - 1;
+	}
+	else {
+		end = (a.numberSubjectPerPage - (end - a.totalSubject)) - 1;
+	}
+
+	a = subject.searchSubjects(textSearchSubject, pageNumberSubject);
+	loadDataTree(a.subjects);
+	paggingSubject();
+}
+
+void ContentFilterPoint::findDataClassroom()
+{
+
+}
+
+void ContentFilterPoint::findDataSubject()
+{
+
+}
+
+void ContentFilterPoint::loadDataTree(PTRSUBJECT root)
+{
+	if (!root) return;
+	loadDataTree(root->left);
+
+	setColorText(ColorCode_White);
+	if (hoverSubject == indexTree)
+	{
+		setColorText(ColorCode_DarkGreen);
+	}
+	int codeX = getCenterX(27, strlen(root->info.subjectCode));
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + width + 10 + codeX, DISTANCE_HEADER + 8 + (indexTree * 2));
+	cout << root->info.subjectCode;
+
+	int nameX = getCenterX(27, root->info.subjectName.length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + width + 27 + 10 + nameX, DISTANCE_HEADER + 8 + (indexTree * 2));
+	cout << root->info.subjectName;
+
+	/*int countX = getCenterX(40, getCountQuestionInList(root->info.listQuestion));
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + countX + 40 + 40, DISTANCE_HEADER + 8 + (indexTree * 2));
+	cout << subject.countQuestionsInSubject(root->info.subjectCode);*/
+
+	setColorText(ColorCode_White);
+	indexTree++;
+	loadDataTree(root->right);
+}
+
+void ContentFilterPoint::paggingSubject()
+{
+	SubjectPage a = subject.searchSubjects(textSearchSubject, pageNumberSubject);
+
+	string blankFillText;
+	blankFillText.resize(10, ' ');
+
+	int currentPage = 0;
+	if (a.totalSubject > 0)
+	{
+		currentPage = pageNumberSubject;
+	}
+
+	setColorText(ColorCode_DarkWhite);
+	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(a.totalPage);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 8, DISTANCE_HEADER + ROW_CENTER + 5);
+	cout << pageTitle;
+}
+
+void ContentFilterPoint::paggingClassroom()
+{
+	ClassPage page;
+
+	if (textSearch != "")
+	{
+		page = nl.searchClass(textSearch, pageNumber);
+	}
+	else
+	{
+		page = nl.getClassPerPage(pageNumber);
+	}
+
+
+	string blankFillText;
+	blankFillText.resize(10, ' ');
+
+	int currentPage = 0;
+	if (page.totalClass > 0)
+	{
+		currentPage = pageNumber;
+	}
+
+	setColorText(ColorCode_DarkWhite);
+	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(page.totalPage);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + width - 8, DISTANCE_HEADER + ROW_CENTER + 5);
+	cout << pageTitle;
 }
