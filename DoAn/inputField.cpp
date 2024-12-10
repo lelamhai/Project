@@ -356,6 +356,7 @@ void InputField::setText(string value)
 
 void InputField::display()
 {
+	gotoXY(x + 1, y + 1);
 	cout << inputString;
 }
 

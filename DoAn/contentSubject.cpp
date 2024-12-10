@@ -150,6 +150,8 @@ void ContentSubject::handle()
 			createData();
 			break;
 		case ContentSubject::C_EDIT:
+			showCur(1);
+			editData();
 			break;
 		case ContentSubject::C_SEARCH:
 			break;
@@ -265,6 +267,18 @@ void ContentSubject::selectData()
 			Sleep(150);
 		}
 
+		if (GetAsyncKeyState(VK_F2) & 0x0001)
+		{
+			if (a.totalSubject <= 0)
+			{
+				continue;
+			}
+
+			currentSubject = C_EDIT;
+			Sleep(150);
+			return;
+		}
+
 		if (hover != lastHover)
 		{
 			indexTree = 0;
@@ -318,6 +332,9 @@ void ContentSubject::createData()
 				break;
 
 			case DOWN:
+				stateInput = FORM_NAME;
+				break;
+
 			case UP:
 				stateInput = FORM_NAME;
 				break;
@@ -351,6 +368,9 @@ void ContentSubject::createData()
 				return;
 
 			case DOWN:
+				stateInput = FORM_CODE;
+				break;
+
 			case UP:
 				stateInput = FORM_CODE;
 				break;
@@ -375,8 +395,8 @@ void ContentSubject::createData()
 			{
 				SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
 				cleanTable();
-				loadDataTree(a.subjects);
 				cleanMessage(posYMessage);
+				loadDataTree(a.subjects);
 				text.setContent("Them lop thanh cong!");
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
@@ -405,7 +425,79 @@ void ContentSubject::createData()
 
 void ContentSubject::editData()
 {
+	PTRSUBJECT subjectFound = subject.getSubject(subjectCode.c_str());
+	listInput[0].setText(subjectCode);
+	listInput[1].setText(subjectFound->info.subjectName);
 
+	for (int i = 0; i < listInput.size(); i++)
+	{
+		listInput[i].display();
+	}
+
+	stateInput = FORM_NAME;
+	while (true)
+	{
+		if (stateInput == FORM_NAME)
+		{
+			listInput[1].handleInput();
+			switch (listInput[1].getEndKey())
+			{
+			case ENTER:
+				if (listInput[1].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				break;
+
+			case F1:
+				currentSubject = C_SELECT;
+				return;
+
+			case F3:
+				currentSubject = C_SEARCH;
+				return;
+
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentSubject = C_EXIT;
+					return;
+				}
+				break;
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ENTER)
+		{
+			bool result = subject.editSubject(subjectCode, listInput[1].getText());
+			if (result)
+			{
+				indexTree = 0;
+				SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
+				cleanTable();
+				cleanMessage(posYMessage);
+				loadDataTree(a.subjects);
+				text.setContent("Cap nhat thong tin thanh cong!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+
+			}
+			else {
+				cleanMessage(posYMessage);
+				text.setContent("Cap nhat thong tin that bai!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+			}
+			text.display();
+			stateInput = FORM_NAME;
+		}
+	}
 }
 
 void ContentSubject::findData()
@@ -422,6 +514,7 @@ void ContentSubject::loadDataTree(PTRSUBJECT root)
 	if (hover == indexTree)
 	{
 		setColorText(ColorCode_DarkGreen);
+		subjectCode = root->info.subjectCode;// Get subject Code for edit and delete
 	}
 	int codeX = getCenterX(40, strlen(root->info.subjectCode));
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + codeX, DISTANCE_HEADER + 8 + (indexTree * 2));
@@ -433,7 +526,7 @@ void ContentSubject::loadDataTree(PTRSUBJECT root)
 
 	int countX = getCenterX(40, getCountQuestionInList(root->info.listQuestion));
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + countX  + 40 + 40, DISTANCE_HEADER + 8 + (indexTree * 2));
-	cout << getCountQuestionInList(root->info.listQuestion);
+	cout << subject.countQuestionsInSubject(root->info.subjectCode);
 
 	setColorText(ColorCode_White);
 	indexTree++;

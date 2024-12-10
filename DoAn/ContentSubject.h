@@ -48,6 +48,7 @@ private:
 	vector<InputField> listInput;
 	int indexTree = 0;
 
+	string subjectCode;
 	int posYMessage = 0;
 	int pageNumber = 1;
 	int hover = 0;
