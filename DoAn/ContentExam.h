@@ -37,6 +37,15 @@ private:
 	};
 	SelectInput stateInput;
 
+	enum SearchInput
+	{
+		SEARCH_INPUT = 0,
+		SEARCH_F1 = 1,
+		SEARCH_EXIT = -1
+	};
+	SearchInput stateSearchInput;
+
+
 	ManageSubject subject;
 
 	InputField inputExamCode;

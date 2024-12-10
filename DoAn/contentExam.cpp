@@ -155,6 +155,8 @@ void ContentExam::handle()
 		case ContentExam::C_EDIT:
 			break;
 		case ContentExam::C_SEARCH:
+			showCur(1);
+			findData();
 			break;
 		case ContentExam::C_DELETE:
 			break;
@@ -248,6 +250,13 @@ void ContentExam::selectData()
 				lastHover = -1;
 			}
 			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
+		{
+			currentExam = C_SEARCH;
+			Sleep(150);
+			return;
 		}
 
 		if (hover != lastHover)
@@ -405,7 +414,99 @@ void ContentExam::createData()
 
 void ContentExam::findData()
 {
+	SubjectPage a;
+	int cursorPosition = textSearch.length();
+	stateSearchInput = SEARCH_INPUT;
+	while (true)
+	{
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 6 + textSearch.length(), DISTANCE_HEADER + 2);
+		if (GetAsyncKeyState(VK_F1) & 0x0001)
+		{
+			currentExam = C_SELECT;
+			return;
+		}
 
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		{
+			currentExam = C_CREATE;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				currentExam = C_EXIT;
+				return;
+			}
+		}
+
+		char s = _getch();
+		int key = keySpecial(s);
+		switch (s)
+		{
+		case BACKSPACE:
+			if (textSearch.length() <= 0 || cursorPosition <= 0)
+			{
+				break;
+			}
+
+			if (cursorPosition == textSearch.length())
+			{
+				textSearch.erase(textSearch.length() - 1, 1);
+				cursorPosition--;
+				cout << "\b \b";
+			}
+			else {
+				textSearch.erase(--cursorPosition, 1);
+				gotoXY(whereX() - 1, whereY());
+				for (int i = cursorPosition; i < textSearch.length(); i++)
+				{
+					cout << textSearch[i];
+				}
+				gotoXY(whereX(), whereY());
+				cout << " ";
+				gotoXY(whereX() - 1 - (textSearch.length() - cursorPosition), whereY());
+			}
+			indexTree = 0;
+			cleanTable();
+			a = subject.searchSubjects(textSearch, pageNumber);
+			loadDataTree(a.subjects);
+			pagging();
+			break;
+
+		default:
+			if (textSearch.length() > 14)
+			{
+				break;
+			}
+
+			if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+			{
+				showCur(1);
+
+				textSearch.insert(textSearch.begin() + cursorPosition, s);
+				cursorPosition++;
+				cout << s;
+
+				if (cursorPosition != textSearch.length())
+				{
+					for (int i = cursorPosition; i <= textSearch.length(); i++)
+					{
+						cout << textSearch[i];
+					}
+					gotoXY(whereX() - (textSearch.length() - cursorPosition), whereY());
+				}
+
+				indexTree = 0;
+				cleanTable();
+				a = subject.searchSubjects(textSearch, pageNumber);
+				loadDataTree(a.subjects);
+				pagging();
+			}
+			break;
+		}
+	}
 }
 
 void ContentExam::pagging()
