@@ -156,6 +156,8 @@ void ContentSubject::handle()
 		case ContentSubject::C_SEARCH:
 			break;
 		case ContentSubject::C_DELETE:
+			showCur(0);
+			deleteData();
 			break;
 		case ContentSubject::C_DETAIL:
 			break;
@@ -279,6 +281,12 @@ void ContentSubject::selectData()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_DELETE) & 0x0001)
+		{
+			currentSubject = C_DELETE;
+			return;
+		}
+
 		if (hover != lastHover)
 		{
 			indexTree = 0;
@@ -286,12 +294,30 @@ void ContentSubject::selectData()
 			loadDataTree(a.subjects);
 			lastHover = hover;
 		}
+
+
 	}
 }
 
 void ContentSubject::deleteData()
 {
+	int deletePosX = getCenterX(COLUMN_CENTER, 50);
+	PopupDelete pDelete;
+	pDelete.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
+	pDelete.open();
+	pDelete.handle();
 
+	if (pDelete.getResult())
+	{
+		indexTree = 0;
+		hover = 0;
+		subject.deleteSubject(subjectCode.c_str());
+		SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
+		loadDataTree(a.subjects);
+	}
+	pDelete.close();
+
+	currentSubject = C_SELECT;
 }
 
 void ContentSubject::createData()
