@@ -2,6 +2,8 @@
 #include "configApp.h"
 #include "ManageExam.h"
 
+#include "ManageSubject.h"
+
 #include "InputField.h"
 #include "Content.h"
 #include "ContentExecute.h"
@@ -35,6 +37,7 @@ private:
 	};
 	SelectInput stateInput;
 
+	ManageSubject subject;
 
 	InputField inputExamCode;
 	InputField inputCount;
@@ -45,9 +48,15 @@ private:
 		inputCount,
 		inputMinute
 	};
+
+	int indexTree = 0;
 	int moveMenu = 0;
 	int posXMessage = 0;
+	int pageNumber = 1;
+	int hover = 0;
+	int lastHover = -1;
 	string textSearch = "";
+
 public:
 	void displayContent() override;
 	void drawExam();
@@ -56,6 +65,9 @@ public:
 	void handle();
 	void selectData();
 	void createData();
+	void findData();
+	void loadDataTree(PTRSUBJECT root);
+	void pagging();
 
 	ContentExam();
 	~ContentExam();

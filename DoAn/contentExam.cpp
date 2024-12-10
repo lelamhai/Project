@@ -31,7 +31,7 @@ void ContentExam::drawExam()
 
 
 	string titleInput[] = {
-		"Ma Mon",
+		"Ma Mon Hoc",
 		"So Cau Hoi",
 		"So Phut"
 	};
@@ -44,16 +44,9 @@ void ContentExam::drawExam()
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
 		cout << titleInput[i];
 
-
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1);
 		listInput[i].drawBox();
 	}
-	/*listInput[0].setText("VL");
-	listInput[0].display();
-	listInput[1].setText("10");
-	listInput[1].display();
-	listInput[2].setText("1");
-	listInput[2].display();*/
 
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
@@ -120,16 +113,21 @@ void ContentExam::girdContent()
 
 	string title[] = {
 		"Ma Mon Hoc",
-		"Ten Mon Hoc"
+		"Ten Mon Hoc",
+		"Cau Hoi"
 	};
 
-	int maMHX = getCenterX(60, title[0].length());
+	int maMHX = getCenterX(40, title[0].length());
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + maMHX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[0];
 
-	int nameX = getCenterX(60, title[1].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 60 + nameX, DISTANCE_HEADER + MARGIN - 1);
+	int nameX = getCenterX(40, title[1].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + nameX, DISTANCE_HEADER + MARGIN - 1);
 	cout << title[1];
+
+	int countX = getCenterX(40, title[2].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + 40 + countX, DISTANCE_HEADER + MARGIN - 1);
+	cout << title[2];
 }
 
 void ContentExam::content()
@@ -142,23 +140,125 @@ void ContentExam::content()
 
 void ContentExam::handle()
 {
-	/*while (true)
+	while (true)
 	{
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		switch (currentExam)
 		{
-			if (Singleton::getInstance()->moveMenu != 0)
-			{
-				return;
-			}
+		case ContentExam::C_SELECT:
+			showCur(0);
+			selectData();
+			break;
+		case ContentExam::C_CREATE:
+			showCur(1);
+			createData();
+			break;
+		case ContentExam::C_EDIT:
+			break;
+		case ContentExam::C_SEARCH:
+			break;
+		case ContentExam::C_DELETE:
+			break;
+		case ContentExam::C_DETAIL:
+			break;
+		case ContentExam::C_EXIT:
+			break;
+		default:
+			break;
 		}
-		Sleep(100);
-	}*/
-	createData();
+	}
 }
 
 void ContentExam::selectData()
 {
-	
+	SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
+	int start = 0;
+
+	int end = pageNumber * a.numberSubjectPerPage;
+	if (pageNumber * a.numberSubjectPerPage < a.totalSubject)
+	{
+		end = a.numberSubjectPerPage - 1;
+	}
+	else {
+		end = (a.numberSubjectPerPage - (end - a.totalSubject)) - 1;
+	}
+
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_UP) & 0x0001)
+		{
+			if (start < hover)
+			{
+				hover -= 1;
+			}
+			else {
+				hover = 0;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
+		{
+			if (end > hover)
+			{
+				hover += 1;
+			}
+			else {
+				hover = end;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
+		{
+			if (pageNumber > 1)
+			{
+				cleanTable();
+				hover = 0;
+				pageNumber--;
+				indexTree = 0;
+				end = pageNumber * a.numberSubjectPerPage;
+				if (pageNumber * a.numberSubjectPerPage < a.totalSubject)
+				{
+					end = a.numberSubjectPerPage - 1;
+				}
+				else {
+					end = (a.numberSubjectPerPage - (end - a.totalSubject)) - 1;
+				}
+				lastHover = -1;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
+		{
+			if (pageNumber < a.totalPage)
+			{
+				cleanTable();
+				hover = 0;
+				pageNumber++;
+				indexTree = 0;
+				end = pageNumber * a.numberSubjectPerPage;
+				if (pageNumber * a.numberSubjectPerPage < a.totalSubject)
+				{
+					end = a.numberSubjectPerPage - 1;
+				}
+				else {
+					end = (a.numberSubjectPerPage - (end - a.totalSubject)) - 1;
+				}
+				lastHover = -1;
+			}
+			Sleep(150);
+		}
+
+		if (hover != lastHover)
+		{
+			indexTree = 0;
+			a = subject.searchSubjects(textSearch, pageNumber);
+			loadDataTree(a.subjects);
+			pagging();
+			lastHover = hover;
+		}
+	}
 }
 
 void ContentExam::createData()
@@ -301,4 +401,55 @@ void ContentExam::createData()
 			stateInput = FORM_CODE;
 		}
 	}
+}
+
+void ContentExam::findData()
+{
+
+}
+
+void ContentExam::pagging()
+{
+	SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
+
+	string blankFillText;
+	blankFillText.resize(10, ' ');
+
+	int currentPage = 0;
+	if (a.totalSubject > 0)
+	{
+		currentPage = pageNumber;
+	}
+
+	setColorText(ColorCode_DarkWhite);
+	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(a.totalPage);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 8, 10 + 28 + 5);
+	cout << pageTitle;
+}
+
+void ContentExam::loadDataTree(PTRSUBJECT root)
+{
+	if (!root) return;
+	loadDataTree(root->left);
+
+	setColorText(ColorCode_White);
+	if (hover == indexTree)
+	{
+		setColorText(ColorCode_DarkGreen);
+	}
+	int codeX = getCenterX(40, strlen(root->info.subjectCode));
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + codeX, DISTANCE_HEADER + 8 + (indexTree * 2));
+	cout << root->info.subjectCode;
+
+	int nameX = getCenterX(40, root->info.subjectName.length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + nameX + 40, DISTANCE_HEADER + 8 + (indexTree * 2));
+	cout << root->info.subjectName;
+
+	int countX = getCenterX(40, getCountQuestionInList(root->info.listQuestion));
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + countX + 40 + 40, DISTANCE_HEADER + 8 + (indexTree * 2));
+	cout << subject.countQuestionsInSubject(root->info.subjectCode);
+
+	setColorText(ColorCode_White);
+	indexTree++;
+	loadDataTree(root->right);
 }
