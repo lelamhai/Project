@@ -273,6 +273,13 @@ void ContentSubject::selectData()
 			Sleep(150);
 		}
 
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		{
+			currentSubject = C_CREATE;
+			Sleep(150);
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_DELETE) & 0x0001)
 		{
 			currentSubject = C_DELETE;
@@ -429,6 +436,7 @@ void ContentSubject::createData()
 			bool result = subject.addSubject(listInput[0].getText(), listInput[1].getText());
 			if (result)
 			{
+				indexTree = 0;
 				SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
 				cleanTable();
 				cleanMessage(posYMessage);

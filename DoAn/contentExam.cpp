@@ -252,6 +252,13 @@ void ContentExam::selectData()
 			Sleep(150);
 		}
 
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		{
+			currentExam = C_CREATE;
+			Sleep(150);
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_F3) & 0x0001)
 		{
 			currentExam = C_SEARCH;
