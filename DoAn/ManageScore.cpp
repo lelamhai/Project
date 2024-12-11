@@ -147,7 +147,8 @@ ScorePage ManageScore::searchStudentScore(string keyWord, int pageNumber) {
     p = &resultPage.printList;
 
     if (keyWord == "") {
-        resultPage = getScorePerPage(p, pageNumber);
+        scoreToPrintList* listptr = &listToPrint;
+        resultPage = getScorePerPage(listptr, pageNumber);
         return resultPage;
     }
 

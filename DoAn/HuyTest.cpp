@@ -51,7 +51,7 @@ void HuyTest::main() {
 
 	// IN RA ĐIỂM ĐƯỢC SEARCH
 	int pageNumber2 = 1;
-	ScorePage scorePage2 = manangeScore.searchStudentScore("th", pageNumber2);
+	ScorePage scorePage2 = manangeScore.searchStudentScore("", pageNumber2);
 	
 	// demo in để kiểm tra code
 	cout << "TRANG " << pageNumber2 << endl;
