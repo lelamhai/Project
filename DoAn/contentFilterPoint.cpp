@@ -182,12 +182,14 @@ void ContentFilterPoint::handle()
 			selectSubject();
 			break;
 
-		case ContentFilterPoint::C_SEARCHSUBJECT:
-
+		case ContentFilterPoint::C_SEARCHCLASSROOM:
+			showCur(1);
+			findDataClassroom();
 			break;
 
-		case ContentFilterPoint::C_SEARCHCLASSROOM:
-
+		case ContentFilterPoint::C_SEARCHSUBJECT:
+			showCur(1);
+			findDataSubject();
 			break;
 
 		case ContentFilterPoint::C_CREATE:
@@ -235,6 +237,14 @@ void ContentFilterPoint::createData()
 				currentFilter = C_SELECTSUBJECT;
 				return;
 
+			case F3:
+				currentFilter = C_SEARCHCLASSROOM;
+				return;
+
+			case F4:
+				currentFilter = C_SEARCHSUBJECT;
+				return;
+
 			case DOWN:
 				stateInput = FORM_SUBJECT;
 				break;
@@ -269,6 +279,14 @@ void ContentFilterPoint::createData()
 
 			case F2:
 				currentFilter = C_SELECTSUBJECT;
+				return;
+
+			case F3:
+				currentFilter = C_SEARCHCLASSROOM;
+				return;
+
+			case F4:
+				currentFilter = C_SEARCHSUBJECT;
 				return;
 
 			case DOWN:
@@ -424,6 +442,12 @@ void ContentFilterPoint::selectClassroom()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
+		{
+			currentFilter = C_SEARCHCLASSROOM;
+			Sleep(150);
+			return;
+		}
 
 		if (lastHover != hover)
 		{
@@ -464,7 +488,6 @@ void ContentFilterPoint::selectClassroom()
 
 void ContentFilterPoint::selectSubject()
 {
-
 	SubjectPage a = subject.searchSubjects(textSearchSubject, pageNumberSubject);
 	int start = 0;
 
@@ -638,12 +661,189 @@ void ContentFilterPoint::loadDataSubject()
 
 void ContentFilterPoint::findDataClassroom()
 {
+	int cursorPosition = textSearch.length();
+	stateSearchInput = SEARCH_INPUT;
+	while (true)
+	{
+		if (stateSearchInput == SEARCH_INPUT)
+		{
+			gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + width - WIDTH_INPUT + textSearch.length(), 10);
+			if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+			{
+				currentFilter = C_CREATE;
+				Sleep(150);
+				return;
+			}
 
+			if (GetAsyncKeyState(VK_F1) & 0x0001)
+			{
+				currentFilter = C_SELECTCLASSROOM;
+				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_F2) & 0x0001)
+			{
+				currentFilter = C_SELECTSUBJECT;
+				Sleep(150);
+				return;
+			}
+			
+
+			char s = _getch();
+			int key = keySpecial(s);
+			switch (s)
+			{
+			case BACKSPACE:
+				if (textSearch.length() <= 0 || cursorPosition <= 0)
+				{
+					break;
+				}
+
+				if (cursorPosition == textSearch.length())
+				{
+					textSearch.erase(textSearch.length() - 1, 1);
+					cursorPosition--;
+					cout << "\b \b";
+				}
+				else {
+					textSearch.erase(--cursorPosition, 1);
+					gotoXY(whereX() - 1, whereY());
+					for (int i = cursorPosition; i < textSearch.length(); i++)
+					{
+						cout << textSearch[i];
+					}
+					gotoXY(whereX(), whereY());
+					cout << " ";
+					gotoXY(whereX() - 1 - (textSearch.length() - cursorPosition), whereY());
+				}
+				loadDataClassroom();
+				paggingClassroom();
+				break;
+
+			default:
+				if (textSearch.length() > 14)
+				{
+					break;
+				}
+
+				if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+				{
+					showCur(1);
+
+					textSearch.insert(textSearch.begin() + cursorPosition, s);
+					cursorPosition++;
+					cout << s;
+
+					if (cursorPosition != textSearch.length())
+					{
+						for (int i = cursorPosition; i <= textSearch.length(); i++)
+						{
+							cout << textSearch[i];
+						}
+						gotoXY(whereX() - (textSearch.length() - cursorPosition), whereY());
+					}
+					loadDataClassroom();
+					paggingClassroom();
+				}
+				break;
+			}
+		}
+	}
 }
 
 void ContentFilterPoint::findDataSubject()
 {
+	SubjectPage a;
+	int cursorPosition = textSearch.length();
+	stateSearchInput = SEARCH_INPUT;
+	while (true)
+	{
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING - WIDTH_INPUT + textSearch.length(), DISTANCE_HEADER + 2);
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		{
+			currentFilter = C_CREATE;
+			return;
+		}
+		
+		if (GetAsyncKeyState(VK_F1) & 0x0001)
+		{
+			currentFilter = C_SELECTCLASSROOM;
+			return;
+		}
 
+		if (GetAsyncKeyState(VK_F2) & 0x0001)
+		{
+			currentFilter = C_SELECTSUBJECT;
+			return;
+		}
+
+		char s = _getch();
+		int key = keySpecial(s);
+		switch (s)
+		{
+		case BACKSPACE:
+			if (textSearch.length() <= 0 || cursorPosition <= 0)
+			{
+				break;
+			}
+
+			if (cursorPosition == textSearch.length())
+			{
+				textSearch.erase(textSearch.length() - 1, 1);
+				cursorPosition--;
+				cout << "\b \b";
+			}
+			else {
+				textSearch.erase(--cursorPosition, 1);
+				gotoXY(whereX() - 1, whereY());
+				for (int i = cursorPosition; i < textSearch.length(); i++)
+				{
+					cout << textSearch[i];
+				}
+				gotoXY(whereX(), whereY());
+				cout << " ";
+				gotoXY(whereX() - 1 - (textSearch.length() - cursorPosition), whereY());
+			}
+			indexTree = 0;
+			clean(width + 10);
+			a = subject.searchSubjects(textSearch, pageNumber);
+			loadDataTree(a.subjects);
+			paggingSubject();
+			break;
+
+		default:
+			if (textSearch.length() > 14)
+			{
+				break;
+			}
+
+			if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+			{
+				showCur(1);
+
+				textSearch.insert(textSearch.begin() + cursorPosition, s);
+				cursorPosition++;
+				cout << s;
+
+				if (cursorPosition != textSearch.length())
+				{
+					for (int i = cursorPosition; i <= textSearch.length(); i++)
+					{
+						cout << textSearch[i];
+					}
+					gotoXY(whereX() - (textSearch.length() - cursorPosition), whereY());
+				}
+
+				indexTree = 0;
+				clean(width + 10);
+				a = subject.searchSubjects(textSearch, pageNumber);
+				loadDataTree(a.subjects);
+				paggingSubject();
+			}
+			break;
+		}
+	}
 }
 
 void ContentFilterPoint::loadDataTree(PTRSUBJECT root)

@@ -42,6 +42,14 @@ private:
 	};
 	SelectInput stateInput;
 
+	enum SearchInput
+	{
+		SEARCH_INPUT = 0,
+		SEARCH_F1 = 1,
+		SEARCH_EXIT = 2
+	};
+	SearchInput stateSearchInput;
+
 	Text text;
 
 	InputField inputClassroomCode;
