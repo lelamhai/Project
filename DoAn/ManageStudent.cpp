@@ -313,6 +313,7 @@ bool deleteStudentInList(PTRSTUDENT& studentList, const char* studentCode) {
     if (studentList == nullptr) return false;
     if (strcmp(studentList->info.studentCode, studentCode) == 0) {
         PTRSTUDENT temp = studentList;
+        if (temp->info.scoreList != nullptr) return false;
         studentList = studentList->next;
         delete temp;
         return true;
@@ -320,15 +321,17 @@ bool deleteStudentInList(PTRSTUDENT& studentList, const char* studentCode) {
 
     PTRSTUDENT prev = studentList;
     PTRSTUDENT curr = studentList->next;
-    while (curr != nullptr && strcmp(curr->info.studentCode, studentCode) != 0) {
+    while (curr != nullptr) {
+        if (strcmp(curr->info.studentCode, studentCode) == 0) {
+            if (curr->info.scoreList != nullptr) return false;
+            prev->next = curr->next;
+            delete curr;
+            return true;
+        }
         prev = curr;
         curr = curr->next;
     }
-    if (curr != nullptr) {
-        prev->next = curr->next;
-        delete curr;
-        return true;
-    }
+    
     return false;
 }
 

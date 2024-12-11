@@ -114,7 +114,11 @@ bool ManageClass::editClass(const char* classCode, const string className) {
 
 bool ManageClass::deleteClass(const char* classCode) {
 	int index = findClass(classCode);
+    
 	if (index != -1) {
+        // Có sinh viên trong lớp thì không cho xóa
+        int numberStudentInClass = getCountStudentOfList(classes[index]->studentList);
+        if (numberStudentInClass > 0) return false;
 		delete classes[index];
 		for (int i = index; i < countClass - 1; i++) {
 			classes[i] = classes[i + 1];
