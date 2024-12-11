@@ -23,10 +23,10 @@ class ContentFilterPoint : public Content
 private:
 	enum StateFilter
 	{
-		C_SELECTSUBJECT = 0,
-		C_SELECTCLASSROOM = 1,
-		C_SEARCHSUBJECT = 2,
-		C_SEARCHCLASSROOM = 3,
+		C_SELECTCLASSROOM = 0,
+		C_SELECTSUBJECT = 1,
+		C_SEARCHCLASSROOM = 2,
+		C_SEARCHSUBJECT = 3,
 		C_CREATE = 4,
 
 		C_EXIT = -1
@@ -89,7 +89,7 @@ public:
 	void paggingSubject();
 	void loadDataSubject();
 
-
+	void clean(int x);
 	void loadDataTree(PTRSUBJECT root);
 	ContentFilterPoint();
 	~ContentFilterPoint();

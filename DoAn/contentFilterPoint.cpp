@@ -114,6 +114,7 @@ void ContentFilterPoint::drawContent()
 	cout << char(180);
 	setColorText(ColorCode_DarkWhite);
 }
+
 void ContentFilterPoint::girdTitle()
 {
 	// Classs
@@ -171,12 +172,14 @@ void ContentFilterPoint::handle()
 	{
 		switch (currentFilter)
 		{
-		case ContentFilterPoint::C_SELECTSUBJECT:
-
+		case ContentFilterPoint::C_SELECTCLASSROOM:
+			showCur(0);
+			selectClassroom();
 			break;
 
-		case ContentFilterPoint::C_SELECTCLASSROOM:
-
+		case ContentFilterPoint::C_SELECTSUBJECT:
+			showCur(0);
+			selectSubject();
 			break;
 
 		case ContentFilterPoint::C_SEARCHSUBJECT:
@@ -223,7 +226,15 @@ void ContentFilterPoint::createData()
 				}
 				stateInput = FORM_SUBJECT;
 				break;
-			
+
+			case F1:
+				currentFilter = C_SELECTCLASSROOM;
+				return;
+
+			case F2:
+				currentFilter = C_SELECTSUBJECT;
+				return;
+
 			case DOWN:
 				stateInput = FORM_SUBJECT;
 				break;
@@ -251,6 +262,14 @@ void ContentFilterPoint::createData()
 				}
 				stateInput = FORM_CLASSROOM;
 				break;
+
+			case F1:
+				currentFilter = C_SELECTCLASSROOM;
+				return;
+
+			case F2:
+				currentFilter = C_SELECTSUBJECT;
+				return;
 
 			case DOWN:
 				stateInput = FORM_CLASSROOM;
@@ -354,8 +373,7 @@ void ContentFilterPoint::selectClassroom()
 		{
 			if (pageNumber > 1)
 			{
-				hover = 0;
-				cleanTable();
+				clean(0);
 				pageNumber--;
 				end = pageNumber * page.numberClassPerPage;
 				if (pageNumber * page.numberClassPerPage < page.totalClass)
@@ -365,6 +383,7 @@ void ContentFilterPoint::selectClassroom()
 				else {
 					end = (page.numberClassPerPage - (end - page.totalClass)) - 1;
 				}
+				hover = 0;
 				lastHover = -1;
 			}
 			Sleep(150);
@@ -374,7 +393,7 @@ void ContentFilterPoint::selectClassroom()
 		{
 			if (pageNumber < page.totalPage)
 			{
-				cleanTable();
+				clean(0);
 				pageNumber++;
 
 				end = pageNumber * page.numberClassPerPage;
@@ -390,6 +409,21 @@ void ContentFilterPoint::selectClassroom()
 			}
 			Sleep(150);
 		}
+
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		{
+			currentFilter = C_CREATE;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F2) & 0x0001)
+		{
+			currentFilter = C_SELECTSUBJECT;
+			Sleep(150);
+			return;
+		}
+
 
 		if (lastHover != hover)
 		{
@@ -422,6 +456,7 @@ void ContentFilterPoint::selectClassroom()
 				setColorText(ColorCode_DarkWhite);
 			}
 			lastHover = hover;
+
 			paggingClassroom();
 		}
 	}
@@ -471,7 +506,7 @@ void ContentFilterPoint::selectSubject()
 		{
 			if (pageNumberSubject > 1)
 			{
-				cleanTable();
+				clean(width + 10);
 				hoverSubject = 0;
 				pageNumberSubject--;
 				indexTree = 0;
@@ -492,7 +527,7 @@ void ContentFilterPoint::selectSubject()
 		{
 			if (pageNumberSubject < a.totalPage)
 			{
-				cleanTable();
+				clean(width + 10);
 				hoverSubject = 0;
 				pageNumberSubject++;
 				indexTree = 0;
@@ -509,19 +544,19 @@ void ContentFilterPoint::selectSubject()
 			Sleep(150);
 		}
 
-		/*if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+		if (GetAsyncKeyState(VK_INSERT) & 0x0001)
 		{
-			currentExam = C_CREATE;
+			currentFilter = C_CREATE;
 			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_F3) & 0x0001)
+		if (GetAsyncKeyState(VK_F1) & 0x0001)
 		{
-			currentExam = C_SEARCH;
+			currentFilter = C_SELECTCLASSROOM;
 			Sleep(150);
 			return;
-		}*/
+		}
 
 		if (hoverSubject != lastHoverSubject)
 		{
@@ -684,4 +719,18 @@ void ContentFilterPoint::paggingClassroom()
 	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(page.totalPage);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + width - 8, DISTANCE_HEADER + ROW_CENTER + 5);
 	cout << pageTitle;
+}
+
+void ContentFilterPoint::clean(int x)
+{
+	int posX = DISTANCE_SIDEBAR + 7 + x;
+	int posY = DISTANCE_HEADER + 7;
+
+	string blankFill;
+	blankFill.resize(width - 1, ' ');
+	for (int i = 0; i < 27; i++)
+	{
+		gotoXY(posX, posY + i);
+		cout << blankFill;
+	}
 }

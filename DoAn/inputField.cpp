@@ -73,6 +73,13 @@ void InputField::handleInput()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_F4) & 0x0001)
+		{
+			keyInput = F4;
+			Sleep(150);
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
 			keyInput = UP;
