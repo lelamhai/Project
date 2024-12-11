@@ -66,6 +66,7 @@ void ContentFilterPoint::drawContent()
 
 	y = y + (2 * 3) - 1;
 	posXMessage = y;
+	text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
 	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
 	cout << y;*/
 
@@ -158,15 +159,144 @@ void ContentFilterPoint::content()
 {
 	drawContent();
 	girdTitle();
-	//currentClassroom = C_SELECT;
 	loadDataClassroom();
 	loadDataSubject();
+	currentFilter = C_CREATE;
 	handle();
 }
 
 void ContentFilterPoint::handle()
 {
-	_getch();
+	while (true)
+	{
+		switch (currentFilter)
+		{
+		case ContentFilterPoint::C_SELECTSUBJECT:
+
+			break;
+
+		case ContentFilterPoint::C_SELECTCLASSROOM:
+
+			break;
+
+		case ContentFilterPoint::C_SEARCHSUBJECT:
+
+			break;
+
+		case ContentFilterPoint::C_SEARCHCLASSROOM:
+
+			break;
+
+		case ContentFilterPoint::C_CREATE:
+			showCur(1);
+			createData();
+			break;
+
+		case ContentFilterPoint::C_EXIT:
+
+			break;
+
+		default:
+			break;
+		}
+	}
+}
+
+void ContentFilterPoint::createData()
+{
+	stateInput = FORM_CLASSROOM;
+	while (true)
+	{
+		if (stateInput == FORM_CLASSROOM)
+		{
+			listInput[0].useSpace = true;
+			listInput[0].handleInput();
+			moveMenu = listInput[0].getMenu();
+
+			switch (listInput[0].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_SUBJECT;
+				break;
+			
+			case DOWN:
+				stateInput = FORM_SUBJECT;
+				break;
+			case UP:
+				stateInput = FORM_SUBJECT;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_SUBJECT)
+		{
+			listInput[1].useSpace = true;
+			listInput[1].handleInput();
+
+			switch (listInput[1].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_CLASSROOM;
+				break;
+
+			case DOWN:
+				stateInput = FORM_CLASSROOM;
+				break;
+
+			case UP:
+				stateInput = FORM_CLASSROOM;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ENTER)
+		{
+			bool result = nl.addClass(listInput[0].getText().c_str(), listInput[1].getText());
+
+			/*if (result)
+			{
+				cleanTable();
+				loadData();
+				cleanMessage(posYMessage);
+				text.setContent("Them lop thanh cong!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+			}
+			else
+			{
+				cleanMessage(posYMessage);
+				text.setContent("Them lop that bai!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+			}*/
+
+			text.display();
+			stateInput = FORM_CLASSROOM;
+		}
+
+		if (stateInput == FORM_EXIT)
+		{
+			return;
+		}
+	}
 }
 
 void ContentFilterPoint::selectClassroom()

@@ -8,6 +8,11 @@ InputField::~InputField()
 {
 }
 
+void InputField::setLen(int length)
+{
+	this->len = length;
+}
+
 void InputField::setPosition(int posX, int posY)
 {
 	this->x = posX;
@@ -296,7 +301,7 @@ void InputField::handleInput()
 			break;
 
 		default:
-			if (inputString.length() > 13)
+			if (inputString.length() > len)
 			{
 				break;
 			}

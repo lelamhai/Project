@@ -9,6 +9,7 @@
 #include "ManageClass.h"
 #include "ManageStudent.h"
 
+#include "Text.h"
 #include "ContentPrintPoint.h"
 #include "Singleton.h"
 #include "InputField.h"
@@ -20,6 +21,29 @@ using namespace std;
 class ContentFilterPoint : public Content
 {
 private:
+	enum StateFilter
+	{
+		C_SELECTSUBJECT = 0,
+		C_SELECTCLASSROOM = 1,
+		C_SEARCHSUBJECT = 2,
+		C_SEARCHCLASSROOM = 3,
+		C_CREATE = 4,
+
+		C_EXIT = -1
+	};
+	StateFilter currentFilter;
+
+	enum SelectInput
+	{
+		FORM_CLASSROOM = 0,
+		FORM_SUBJECT = 1,
+		FORM_ENTER = 2,
+		FORM_EXIT = 3
+	};
+	SelectInput stateInput;
+
+	Text text;
+
 	InputField inputClassroomCode;
 	InputField inputSubjectCode;
 
@@ -53,12 +77,12 @@ public:
 	void girdTitle();
 	void handle();
 
-	
+	void createData();
+
 	void selectClassroom();
 	void findDataClassroom();
 	void paggingClassroom();
 	void loadDataClassroom();
-
 
 	void selectSubject();
 	void findDataSubject();
