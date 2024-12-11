@@ -2,11 +2,21 @@
 
 ContentPrintPoint::ContentPrintPoint()
 {
-	int checkInput = manangeScore.setInputPrintScore("C001", "VL");
+	
 }
 
 ContentPrintPoint::~ContentPrintPoint()
 {
+}
+void ContentPrintPoint::init(string subjectCode, string classCode)
+{
+	//int checkInput = manangeScore.setInputPrintScore("C001", "VL");
+	int checkInput = manangeScore.setInputPrintScore(subjectCode.c_str(), classCode.c_str());
+	listText.push_back(Text());
+	listText.push_back(Text());
+
+	listText[0].setContent(subjectCode);
+	listText[1].setContent(classCode);
 }
 
 void ContentPrintPoint::displayContent()
@@ -25,16 +35,47 @@ void ContentPrintPoint::drawContent()
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + titlePoint, DISTANCE_HEADER + PADDING + PADDING);
 	cout << "BANG DIEM";
 
-	/*gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + 3);
-	cout << "Lop: D23";*/
 
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 20, DISTANCE_HEADER + 3);
-	cout << "Lop: D23      Mon: Ly";
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT - 4, DISTANCE_HEADER + PADDING + PADDING);
+	cout << "Tim";
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT, DISTANCE_HEADER + PADDING, WIDTH_INPUT, HEIGHT_INPUT);
+
+	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 20, DISTANCE_HEADER + 3);
+	cout << "Lop: D23      Mon: Ly";*/
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING + 3, COLUMN_CENTER, ROW_CENTER);
 
-	int y = DISTANCE_HEADER + PADDING ;
-	int tutorialY = y;
+
+
+	int posXInfo = getCenterX(COLUMN_RIGHT, 9);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + posXInfo, DISTANCE_HEADER + PADDING * 2);
+	cout << "Thong Tin";
+
+	string titleInput[] = {
+		"Ten Lop: ",
+		"Ten Mon: "
+	};
+
+	int y = DISTANCE_HEADER + PADDING + 4;
+	for (int i = 0; i < 2; i++)
+	{
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 2));
+		cout << titleInput[i];
+
+		listText[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3 + 9, y + (i * 2));
+		listText[i].display();
+	}
+
+	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 8);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
+	cout << char(195);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
+	cout << char(180);
+
+
+	int tutorialY = DISTANCE_HEADER + PADDING + 10;
 	tutorialY += 1;
+
 	int titleTutorial = getCenterX(COLUMN_RIGHT, 9);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + titleTutorial, tutorialY);
 	cout << "Huong Dan";
@@ -45,17 +86,21 @@ void ContentPrintPoint::drawContent()
 		"",
 		"Phim Len|Xuong: Chon Du Lieu",
 		"",
-		"Phim Trai|Phai: Xem Trang Sau|Truoc"
+		"Phim Trai|Phai: Xem Trang Sau|Truoc",
+		"",
+		"* Xem Lai Ket Qua Thi",
+		"  F1->Phim Len|Xuong->Enter"
+
 	};
 
-	int contentY = tutorialY + 1;
-	for (int i = 0; i < 5; i++)
+	int contentY = tutorialY + 2;
+	for (int i = 0; i < 8; i++)
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
 	}
 	setColorText(ColorCode_DarkYellow);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT, 8);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY - 2, COLUMN_RIGHT, 13);
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY, COLUMN_RIGHT);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY);
 	cout << char(195);
@@ -105,7 +150,7 @@ void ContentPrintPoint::content()
 {
 	drawContent();
 	girdTitle();
-	//currentClassroom = C_SELECT;
+	currentPrint = C_SELECT;
 	handle();
 }
 
@@ -113,24 +158,269 @@ void ContentPrintPoint::handle()
 {
 	while (true)
 	{
-		selectData();
-		_getch();
-
-		/*if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+		switch (currentPrint)
 		{
-			return;
-		}*/
+		case ContentPrintPoint::C_SELECT:
+			showCur(0);
+			selectData();
+			break;
+		case ContentPrintPoint::C_CREATE:
+			break;
+
+		case ContentPrintPoint::C_EDIT:
+			break;
+
+		case ContentPrintPoint::C_SEARCH:
+			showCur(1);
+			findData();
+			break;
+
+		case ContentPrintPoint::C_DELETE:
+			break;
+
+		case ContentPrintPoint::C_DETAIL:
+			break;
+
+		case ContentPrintPoint::C_EXIT:
+			break;
+
+		default:
+			break;
+		}
 	}
 }
 
 void ContentPrintPoint::selectData()
 {
-	ScorePage page = manangeScore.searchStudentScore(textSearch, pageNumber);
+	page = manangeScore.searchStudentScore(textSearch, pageNumber);
+
+	int start = 0;
+	int end = pageNumber * page.numberScorePerPage;
+
+	if (pageNumber * page.numberScorePerPage < page.totalScore)
+	{
+		end = page.numberScorePerPage - 1;
+	}
+	else {
+		end = (page.numberScorePerPage - (end - page.totalScore)) - 1;
+	}
+
+	int lastHover = -1;
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_UP) & 0x0001)
+		{
+			if (start < hover)
+			{
+				hover -= 1;
+			}
+			else {
+				hover = 0;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
+		{
+			if (end > hover)
+			{
+				hover += 1;
+			}
+			else {
+				hover = end;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
+		{
+			if (pageNumber > 1)
+			{
+				hover = 0;
+				cleanTable();
+				pageNumber--;
+				end = pageNumber * page.numberScorePerPage;
+				if (pageNumber * page.numberScorePerPage < page.totalScore)
+				{
+					end = page.numberScorePerPage - 1;
+				}
+				else {
+					end = (page.numberScorePerPage - (end - page.totalScore)) - 1;
+				}
+				lastHover = -1;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
+		{
+			if (pageNumber < page.totalPage)
+			{
+				cleanTable();
+				pageNumber++;
+
+				end = pageNumber * page.numberScorePerPage;
+				if (pageNumber * page.numberScorePerPage < page.totalScore)
+				{
+					end = page.numberScorePerPage - 1;
+				}
+				else {
+					end = (page.numberScorePerPage - (end - page.totalScore)) - 1;
+				}
+				hover = 0;
+				lastHover = -1;
+			}
+			Sleep(150);
+		}
+
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
+		{
+			currentPrint = C_SEARCH;
+			Sleep(150);
+			return;
+		}
+
+		if (lastHover != hover)
+		{
+			int noScoreThisPage = page.endIndex - page.startIndex;
+			int n = noScoreThisPage;
+
+			for (int i = 0; i < n; i++) 
+			{
+				setColorText(ColorCode_DarkWhite);
+				if (hover == i)
+				{
+					setColorText(ColorCode_DarkGreen);
+				}
+
+				scoreToPrint* p = page.printList.array[i];
+				int maStudent = getCenterX(24, strlen(p->studentCode));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + maStudent, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+				cout << p->studentCode;
+
+				int lastName = getCenterX(24, strlen(p->lastName));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + lastName, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+				cout << p->lastName;
+
+				int firstName = getCenterX(24, strlen(p->firstName));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + firstName, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+				cout << p->firstName;
+
+				int sex = getCenterX(24, 3);
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + sex, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+				string gender = "Nam";
+				if (p->gender == 'F')
+				{
+					gender = "Nu";
+				}
+				cout << gender;
+
+				int point = getCenterX(24, 8);
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + 24 + point, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+
+				if (p->score == -1)
+				{
+					cout << "Chua Thi";
+				}
+				else {
+					cout << "  " << p->score;
+				}
+			}
+			pagging();
+			lastHover = hover;
+		}
+	}
+}
+
+void ContentPrintPoint::findData()
+{
+	int cursorPosition = textSearch.length();
+	stateSearchInput = SEARCH_INPUT;
+	while (true)
+	{
+		if (stateSearchInput == SEARCH_INPUT)
+		{
+			gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT + 1 + textSearch.length(), DISTANCE_HEADER + PADDING + 1);
+
+			if (GetAsyncKeyState(VK_F1) & 0x0001)
+			{
+				currentPrint = C_SELECT;
+				Sleep(150);
+				return;
+			}
+
+			char s = _getch();
+			int key = keySpecial(s);
+			switch (s)
+			{
+			case BACKSPACE:
+				if (textSearch.length() <= 0 || cursorPosition <= 0)
+				{
+					break;
+				}
+
+				if (cursorPosition == textSearch.length())
+				{
+					textSearch.erase(textSearch.length() - 1, 1);
+					cursorPosition--;
+					cout << "\b \b";
+				}
+				else {
+					textSearch.erase(--cursorPosition, 1);
+					gotoXY(whereX() - 1, whereY());
+					for (int i = cursorPosition; i < textSearch.length(); i++)
+					{
+						cout << textSearch[i];
+					}
+					gotoXY(whereX(), whereY());
+					cout << " ";
+					gotoXY(whereX() - 1 - (textSearch.length() - cursorPosition), whereY());
+				}
+				loadData();
+				pagging();
+				break;
+
+			default:
+				if (textSearch.length() > 14)
+				{
+					break;
+				}
+
+				if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+				{
+					showCur(1);
+
+					textSearch.insert(textSearch.begin() + cursorPosition, s);
+					cursorPosition++;
+					cout << s;
+
+					if (cursorPosition != textSearch.length())
+					{
+						for (int i = cursorPosition; i <= textSearch.length(); i++)
+						{
+							cout << textSearch[i];
+						}
+						gotoXY(whereX() - (textSearch.length() - cursorPosition), whereY());
+					}
+					loadData();
+					pagging();
+				}
+				break;
+			}
+		}
+	}
+}
+
+void ContentPrintPoint::loadData()
+{
+	page = manangeScore.searchStudentScore(textSearch, pageNumber);
 	int noScoreThisPage = page.endIndex - page.startIndex;
 	int n = noScoreThisPage;
 
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
+	{
 		scoreToPrint* p = page.printList.array[i];
+
 		int maStudent = getCenterX(24, strlen(p->studentCode));
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + maStudent, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
 		cout << p->studentCode;
@@ -154,7 +444,7 @@ void ContentPrintPoint::selectData()
 
 		int point = getCenterX(24, 8);
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + 24 + point, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
-		
+
 		if (p->score == -1)
 		{
 			cout << "Chua Thi";
