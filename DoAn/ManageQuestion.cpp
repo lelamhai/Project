@@ -349,36 +349,11 @@ PTRQUESTION ManageQuestion::getQuestionList() {
 	return questionList;
 }
 
-
-
-
-
 int generateUniqueQuestionId(PTRQUESTION questionList) {
-	 //Sử dụng random để tạo số ngẫu nhiên
-	random_device rd;
-	mt19937 gen(rd());
-	uniform_int_distribution<> dis(1, 10000); // Sinh số trong khoảng 1 - 10000
-
-	int newId;
-	bool isUnique;
-
-	//PTRQUESTION current = questionList;
-	do {
-		newId = dis(gen);  // Sinh ra một questionId mới
-		isUnique = true;
-
-		// Kiểm tra xem questionId này có trùng với bất kỳ câu hỏi nào đã tồn tại không
-		PTRQUESTION current = questionList;
-		while (current != nullptr) {
-			if (current->info.questionId == newId) {
-				isUnique = false;
-				break;
-			}
-			current = current->next;
-		}
-	} while (!isUnique);  // Lặp lại nếu questionId không duy nhất
-
-	return newId;
+	RandomID rd;
+	int randomNumber = rd.getRandomId();
+	rd.~RandomID();
+	return randomNumber;
 }
 
 int getCountQuestionInList(PTRQUESTION questionList) {

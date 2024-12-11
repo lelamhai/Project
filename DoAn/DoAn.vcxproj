@@ -161,6 +161,7 @@
     <ClCompile Include="popupFinishExam.cpp" />
     <ClCompile Include="popupNotification.cpp" />
     <ClCompile Include="popupTutorial.cpp" />
+    <ClCompile Include="RandomID.cpp" />
     <ClCompile Include="sidebar.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="keyboard.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="PopupFinishExam.h" />
     <ClInclude Include="PopupNotification.h" />
     <ClInclude Include="PopupTutorial.h" />
+    <ClInclude Include="RandomID.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="ManageExam.h" />
     <ClInclude Include="Student.h" />

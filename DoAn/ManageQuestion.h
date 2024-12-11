@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "StrucData.h"
 #include <fstream>
+#include "RandomID.h"
 using namespace std;
 const string SOURCE_QUESTION = "QuestionData.json";
 

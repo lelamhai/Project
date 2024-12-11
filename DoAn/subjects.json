@@ -2,11 +2,6 @@
     "subjects": [
         {
             "questions": [],
-            "subjectCode": "LTHDT",
-            "subjectName": "Lap trinh huong doi tuong"
-        },
-        {
-            "questions": [],
             "subjectCode": "HDH",
             "subjectName": "He dieu hanh"
         },
@@ -98,6 +93,15 @@
                     "optionC": " = 3 ",
                     "optionD": " = 4 ",
                     "questionId": 8321
+                },
+                {
+                    "answer": 65,
+                    "content": "hello",
+                    "optionA": "5",
+                    "optionB": "10",
+                    "optionC": "15",
+                    "optionD": "20",
+                    "questionId": 27007
                 }
             ],
             "subjectCode": "CSDL",
@@ -120,6 +124,16 @@
         },
         {
             "questions": [],
+            "subjectCode": "PTTKHT",
+            "subjectName": "Phan tich thiet ke he thong"
+        },
+        {
+            "questions": [],
+            "subjectCode": "LTHDT",
+            "subjectName": "Lap trinh huong doi tuong"
+        },
+        {
+            "questions": [],
             "subjectCode": "LTHC",
             "subjectName": "Lap trinh ham chay"
         },
@@ -132,16 +146,6 @@
             "questions": [],
             "subjectCode": "LTHC",
             "subjectName": "Lap trinh ham chay"
-        },
-        {
-            "questions": [],
-            "subjectCode": "QTMH",
-            "subjectName": "Quan tri mang va he thong"
-        },
-        {
-            "questions": [],
-            "subjectCode": "PTTKHT",
-            "subjectName": "Phan tich thiet ke he thong"
         },
         {
             "questions": [
@@ -228,13 +232,18 @@
         },
         {
             "questions": [],
-            "subjectCode": "QTDT",
-            "subjectName": "Quan tri du an cong nghe thong tin"
+            "subjectCode": "TKW",
+            "subjectName": "Thiet ke web"
         },
         {
             "questions": [],
-            "subjectCode": "TKW",
-            "subjectName": "Thiet ke web"
+            "subjectCode": "QTMH",
+            "subjectName": "Quan tri mang va he thong"
+        },
+        {
+            "questions": [],
+            "subjectCode": "QTDT",
+            "subjectName": "Quan tri du an cong nghe thong tin"
         },
         {
             "questions": [],

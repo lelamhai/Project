@@ -109,6 +109,12 @@
     <Filter Include="Source Files\DATA\Score">
       <UniqueIdentifier>{b3a71ed6-1a7d-438a-97a5-4229076df177}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DATA\Random">
+      <UniqueIdentifier>{91cef183-67f4-4748-87ac-6659a250425b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DATA\Random">
+      <UniqueIdentifier>{2134ba0e-ec52-444d-a0b9-e45e3bea1d13}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -252,6 +258,9 @@
     <ClCompile Include="popupNotification.cpp">
       <Filter>Source Files\GUI\Popups</Filter>
     </ClCompile>
+    <ClCompile Include="RandomID.cpp">
+      <Filter>Source Files\DATA\Random</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -388,6 +397,9 @@
     </ClInclude>
     <ClInclude Include="PopupNotification.h">
       <Filter>Header Files\GUI\Popups</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomID.h">
+      <Filter>Header Files\DATA\Random</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

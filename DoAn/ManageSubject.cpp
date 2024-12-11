@@ -495,6 +495,7 @@ void ManageSubject::addQuestionToSubject(PTRSUBJECT subjectNode, const string& c
     // Tạo câu hỏi mới
     PTRQUESTION newQuestion = new NodeQuestion;
     // Sinh tự động questionId
+
     newQuestion->info.questionId = generateUniqueQuestionId(subjectNode->info.listQuestion);
 
     newQuestion->info.content = content;
