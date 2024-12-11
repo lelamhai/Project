@@ -2,6 +2,7 @@
 
 ContentPrintPoint::ContentPrintPoint()
 {
+	int checkInput = manangeScore.setInputPrintScore("C001", "VL");
 }
 
 ContentPrintPoint::~ContentPrintPoint()
@@ -112,9 +113,73 @@ void ContentPrintPoint::handle()
 {
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+		selectData();
+		_getch();
+
+		/*if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
 		{
 			return;
+		}*/
+	}
+}
+
+void ContentPrintPoint::selectData()
+{
+	ScorePage page = manangeScore.searchStudentScore(textSearch, pageNumber);
+	int noScoreThisPage = page.endIndex - page.startIndex;
+	int n = noScoreThisPage;
+
+	for (int i = 0; i < n; i++) {
+		scoreToPrint* p = page.printList.array[i];
+		int maStudent = getCenterX(24, strlen(p->studentCode));
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + maStudent, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+		cout << p->studentCode;
+
+		int lastName = getCenterX(24, strlen(p->lastName));
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + lastName, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+		cout << p->lastName;
+
+		int firstName = getCenterX(24, strlen(p->firstName));
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + firstName, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+		cout << p->firstName;
+
+		int sex = getCenterX(24, 3);
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + sex, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+		string gender = "Nam";
+		if (p->gender == 'F')
+		{
+			gender = "Nu";
+		}
+		cout << sex;
+
+		int point = getCenterX(24, 8);
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + 24 + point, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
+		
+		if (p->score == -1)
+		{
+			cout << "Chua Thi";
+		}
+		else {
+			cout << "  " << p->score;
 		}
 	}
+	pagging();
+}
+
+void ContentPrintPoint::pagging()
+{
+	ScorePage page = manangeScore.searchStudentScore(textSearch, pageNumber);
+	string blankFillText;
+	blankFillText.resize(10, ' ');
+
+	int currentPage = 0;
+	if (page.totalScore > 0)
+	{
+		currentPage = pageNumber;
+	}
+
+	setColorText(ColorCode_DarkWhite);
+	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(page.totalPage);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 8, 10 + 28 + 5);
+	cout << pageTitle;
 }

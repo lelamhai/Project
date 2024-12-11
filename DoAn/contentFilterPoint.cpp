@@ -304,29 +304,11 @@ void ContentFilterPoint::createData()
 
 		if (stateInput == FORM_ENTER)
 		{
-			bool result = nl.addClass(listInput[0].getText().c_str(), listInput[1].getText());
-
-			/*if (result)
-			{
-				cleanTable();
-				loadData();
-				cleanMessage(posYMessage);
-				text.setContent("Them lop thanh cong!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
-			}
-			else
-			{
-				cleanMessage(posYMessage);
-				text.setContent("Them lop that bai!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
-			}*/
-
-			text.display();
-			stateInput = FORM_CLASSROOM;
+			cleanContent();
+			ContentPrintPoint p;
+			p.displayContent();
+			p.handle();
+			cleanContent();
 		}
 
 		if (stateInput == FORM_EXIT)
