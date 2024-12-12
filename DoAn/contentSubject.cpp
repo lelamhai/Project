@@ -166,7 +166,7 @@ void ContentSubject::handle()
 			findData();
 			break;
 		case ContentSubject::C_EXIT:
-			break;
+			return;
 		default:
 			break;
 		}
@@ -207,6 +207,15 @@ void ContentSubject::selectData()
 
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				currentSubject = C_EXIT;
+				return;
+			}
+		}
+
 		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
 			if (start < hover)
