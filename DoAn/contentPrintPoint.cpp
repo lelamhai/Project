@@ -282,6 +282,7 @@ void ContentPrintPoint::selectData()
 
 		if (lastHover != hover)
 		{
+			page = manangeScore.searchStudentScore(textSearch, pageNumber);
 			int noScoreThisPage = page.endIndex - page.startIndex;
 			int n = noScoreThisPage;
 
