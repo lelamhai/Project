@@ -15,8 +15,8 @@ void ContentPrintPoint::init(string subjectCode, string classCode)
 	listText.push_back(Text());
 	listText.push_back(Text());
 
-	listText[0].setContent(subjectCode);
-	listText[1].setContent(classCode);
+	listText[0].setContent(manangeScore.getClassName());
+	listText[1].setContent(manangeScore.getSubjectName());
 }
 
 void ContentPrintPoint::displayContent()
