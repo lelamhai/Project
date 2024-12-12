@@ -227,7 +227,7 @@ void ContentClassroom::selectData()
 	int lastHover = -1;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_UP) & 0x0001)
+		if (GetAsyncKeyState(VK_UP) & 0x8000)
 		{
 			if (start < hover)
 			{
@@ -239,7 +239,7 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
+		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 		{
 			if (end > hover)
 			{
@@ -251,7 +251,7 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
+		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
 		{
 			if (pageNumber > 1)
 			{
@@ -271,7 +271,7 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
+		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
 		{
 			if (pageNumber < page.totalPage)
 			{
