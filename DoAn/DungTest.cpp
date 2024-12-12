@@ -13,7 +13,8 @@ void DungTest::main()
 {
 
     // Khai báo quản lý môn học
-    // ManageSubject subject;
+     ManageSubject subject;
+     PTRSUBJECT a = subject.getSubject("CSDL");
     // Tìm môn học theo từ khóa và trang, nếu để từ khóa trống thì sẽ lấy hết
     //struct SubjectPage {
     //    PTRSUBJECT subjects = new SubjectNode;

@@ -509,15 +509,12 @@ void ManageSubject::addQuestionToSubject(PTRSUBJECT subjectNode, const string& c
     //newQuestion->next = subjectNode->info.listQuestion;
     //subjectNode->info.listQuestion = newQuestion;
     if (subjectNode->info.listQuestion == nullptr) {
-        newQuestion->next = nullptr;
         subjectNode->info.listQuestion = newQuestion;
-        return;
+    } 
+    else {
+        newQuestion->next = subjectNode->info.listQuestion;
+        subjectNode->info.listQuestion = newQuestion;
     }
-    PTRQUESTION p = subjectNode->info.listQuestion;
-    while (p->next != nullptr) {
-        p = p->next;
-    }
-    p->next = newQuestion;
     return;
 }
 
