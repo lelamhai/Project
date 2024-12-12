@@ -163,7 +163,7 @@ void ContentExam::handle()
 		case ContentExam::C_DETAIL:
 			break;
 		case ContentExam::C_EXIT:
-			break;
+			return;
 		default:
 			break;
 		}
@@ -264,6 +264,15 @@ void ContentExam::selectData()
 			currentExam = C_SEARCH;
 			Sleep(150);
 			return;
+		}
+
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				currentExam = C_EXIT;
+				return;
+			}
 		}
 
 		if (hover != lastHover)
