@@ -33,6 +33,22 @@ int ManageScore::setInputPrintScore(const char* classCode, const char* subjectCo
     return 1; 
 }
 
+string ManageScore::getClassName() {
+    ManageClass manageClass;
+    Classroom class1 = manageClass.findClassByCode(listToPrint.classCode);
+    return class1.className;
+}
+
+string ManageScore::getSubjectName() {
+    ManageSubject manageSubject;
+    PTRSUBJECT p = manageSubject.getSubject(listToPrint.subjectCode);
+    
+    if (p == nullptr) {
+        return "";
+    }
+    return p->info.subjectName;
+}
+
 scoreToPrintList ManageScore::getScoreOfClass() {
     // Lấy ra danh sách sinh viên của một lớp
     ManageClass manageClass;

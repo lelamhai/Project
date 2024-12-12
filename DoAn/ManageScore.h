@@ -40,6 +40,10 @@ public:
 
 	int setInputPrintScore(const char* subjectCode, const char* classCode);
 
+	string getClassName();
+
+	string getSubjectName();
+
 	scoreToPrintList getScoreOfClass();
 
 	scoreToPrintList getScoreAllPage();

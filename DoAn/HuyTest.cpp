@@ -16,10 +16,14 @@ void HuyTest::main() {
 	/*---------------------------THỰC HIỆN IN BẢNG ĐIỂM -------------------------------------------------------*/
 	// PHẦN KHAI BÁO INPUT
 	ManageScore manangeScore;
-	int checkInput = manangeScore.setInputPrintScore("C014", "VL"); // =1 hợp lệ; -1 sai môn; -2 sai lớp
+	int checkInput = manangeScore.setInputPrintScore("C001", "VL"); // =1 hợp lệ; -1 sai môn; -2 sai lớp
 	
 	// demo in để kiểm tra code
 	cout << "Kiem tra trang thai input: " << checkInput << endl; 
+
+	// PHẦN HIỂN THỊ TÊN MÔN HỌC, TÊN LỚP
+	cout << manangeScore.getClassName() << endl;
+	cout << manangeScore.getSubjectName() << endl;
 
 	// IN TẤT CẢ ĐIỂM CỦA LỚP
 	scoreToPrintList scoreList = manangeScore.getScoreAllPage();
