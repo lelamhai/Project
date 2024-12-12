@@ -97,6 +97,8 @@ ScorePage ManageScore::getScorePerPage(scoreToPrintList* listSoucre, int pageNum
     // Kiểm tra nếu trang không hợp lệ
     if (pageNumber < 1 || pageNumber > totalPages) {
         cout << "Trang " << pageNumber << " không tồn tại!" << endl;
+        scorePage.startIndex = 0;
+        scorePage.endIndex = 0;
         return scorePage;
     }
 

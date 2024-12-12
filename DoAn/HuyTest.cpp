@@ -16,7 +16,7 @@ void HuyTest::main() {
 	/*---------------------------THỰC HIỆN IN BẢNG ĐIỂM -------------------------------------------------------*/
 	// PHẦN KHAI BÁO INPUT
 	ManageScore manangeScore;
-	int checkInput = manangeScore.setInputPrintScore("C001", "VL"); // =1 hợp lệ; -1 sai môn; -2 sai lớp
+	int checkInput = manangeScore.setInputPrintScore("C014", "VL"); // =1 hợp lệ; -1 sai môn; -2 sai lớp
 	
 	// demo in để kiểm tra code
 	cout << "Kiem tra trang thai input: " << checkInput << endl; 
@@ -67,6 +67,8 @@ void HuyTest::main() {
 	// GIẢI PHÓNG BỘ NHỚ CÁC TRANG ĐIỂM ĐÃ TẠO
 	ManageScore::deallocateScorePage(scorePage1);
 	ManageScore::deallocateScorePage(scorePage2);
+
+	cout << "Test crack" << endl;
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R1 ---------------------------------------------*/
 	//// KHỞI TẠO
