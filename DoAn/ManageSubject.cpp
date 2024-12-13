@@ -101,6 +101,7 @@ bool ManageSubject::deleteQuestionInSubject(const string subjectCode, int questi
         PTRQUESTION temp = questionList;
         questionList = questionList->next;
         delete temp;
+        subjectFound->info.listQuestion = questionList;
         saveToFile();
         return true;
     }
@@ -124,6 +125,12 @@ bool ManageSubject::deleteQuestionInSubject(const string subjectCode, int questi
 QuestionPage ManageSubject::searchQuestionInSubject(const string subjectCode, const string keyword, int pageNumber)
 {
     QuestionPage result;
+    result.numberQuestionPerPage = 13;
+    result.totalPage = 0;
+    result.totalQuestions = 0;
+    result.startIndex = 0;
+    result.endIndex = 0;
+    result.currentPage = 0;
     result.questionList = nullptr;
     PTRSUBJECT foundSubject = getSubject(subjectCode.c_str());
     if (foundSubject == nullptr) return result;
@@ -144,6 +151,28 @@ QuestionPage ManageSubject::searchQuestionInSubject(const string subjectCode, co
     }
 
     return getQuestionPerPage(resultList, pageNumber);
+}
+
+Question ManageSubject::getQuestionBySubjectCodeAndId(const string subjectCode, int questionId)
+{
+    Question result;
+    PTRSUBJECT subjectFound = getSubject(subjectCode.c_str());
+    if (subjectFound == nullptr) return result;
+    PTRQUESTION questionList = subjectFound->info.listQuestion;
+    while (questionList != nullptr) {
+        if (questionList->info.questionId == questionId) {
+            result.questionId = questionId;
+            result.content = questionList->info.content;
+            result.optionA = questionList->info.optionA;
+            result.optionB = questionList->info.optionB;
+            result.optionC = questionList->info.optionC;
+            result.optionD = questionList->info.optionD;
+            result.answer = questionList->info.answer;
+            break;
+        }
+        questionList = questionList->next;
+    }
+    return result;
 }
 
 

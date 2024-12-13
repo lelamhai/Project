@@ -73,6 +73,9 @@ public:
 
     QuestionPage searchQuestionInSubject(const string subjectCode, const string keyword, int pageNumber);
 
+    // Hàm lấy ra thông tin câu hỏi 
+    Question getQuestionBySubjectCodeAndId(const string subjectCode, int questionId);
+
     // In danh sách tất cả các môn học
     void printAllSubjects();
 
