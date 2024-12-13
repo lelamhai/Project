@@ -7,6 +7,7 @@
 
 #include "ManageSubject.h"
 
+#include "ContentQuestion.h"
 #include "PopupDelete.h"
 #include "InputField.h"
 #include "Text.h"

@@ -376,16 +376,16 @@ void ContentClassroom::selectData()
 				}
 
 				int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
-				gotoXY(34 + 3 + classX, 10 + 2 + 1 + 3 + (2 * i));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + classX, DISTANCE_HEADER + 8 + (2 * i));
 				cout << page.classList.classes[i]->classCode;
 
 				int nameX = getCenterX(40, page.classList.classes[i]->className.length());
-				gotoXY(34 + 3 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + nameX, DISTANCE_HEADER + 8 + (2 * i));
 				cout << page.classList.classes[i]->className;
 
 				string countStr = to_string(getCountStudentOfList(page.classList.classes[i]->studentList));
 				int countX = getCenterX(40, countStr.length());
-				gotoXY(34 + 3 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + 40 + countX, DISTANCE_HEADER + 8 + (2 * i));
 				cout << countStr;
 				setColorText(ColorCode_DarkWhite);
 			}
