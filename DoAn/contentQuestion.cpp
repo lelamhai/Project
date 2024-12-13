@@ -399,6 +399,7 @@ void ContentQuestion::selectData()
 				i++;
 			}
 			lastHover = hover;
+			pagging();
 		}
 	}
 }
@@ -425,7 +426,21 @@ void ContentQuestion::findData()
 
 void ContentQuestion::pagging()
 {
+	page = subject.searchQuestionInSubject(subjectCode, textSearch, pageNumber);
 
+	string blankFillText;
+	blankFillText.resize(10, ' ');
+
+	int currentPage = 0;
+	if (page.totalQuestions > 0)
+	{
+		currentPage = pageNumber;
+	}
+
+	setColorText(ColorCode_DarkWhite);
+	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(page.totalPage);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 8, 10 + 28 + 5);
+	cout << pageTitle;
 }
 
 void ContentQuestion::loadData()
