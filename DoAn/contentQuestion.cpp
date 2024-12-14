@@ -1067,7 +1067,97 @@ void ContentQuestion::editData()
 
 void ContentQuestion::findData()
 {
+	int cursorPosition = textSearch.length();
+	stateSearchInput = SEARCH_INPUT;
+	while (true)
+	{
+		if (stateSearchInput == SEARCH_INPUT)
+		{
+			gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT + 1 + textSearch.length(), DISTANCE_HEADER + PADDING + 1);
 
+			if (GetAsyncKeyState(VK_F1) & 0x0001)
+			{
+				currentQuestion = C_SELECT;
+				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_INSERT) & 0x0001)
+			{
+				currentQuestion = C_CREATE;
+				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_TAB) & 0x8000)
+			{
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentQuestion = C_EXIT;
+					return;
+				}
+			}
+
+			char s = _getch();
+			int key = keySpecial(s);
+			switch (s)
+			{
+			case BACKSPACE:
+				if (textSearch.length() <= 0 || cursorPosition <= 0)
+				{
+					break;
+				}
+
+				if (cursorPosition == textSearch.length())
+				{
+					textSearch.erase(textSearch.length() - 1, 1);
+					cursorPosition--;
+					cout << "\b \b";
+				}
+				else {
+					textSearch.erase(--cursorPosition, 1);
+					gotoXY(whereX() - 1, whereY());
+					for (int i = cursorPosition; i < textSearch.length(); i++)
+					{
+						cout << textSearch[i];
+					}
+					gotoXY(whereX(), whereY());
+					cout << " ";
+					gotoXY(whereX() - 1 - (textSearch.length() - cursorPosition), whereY());
+				}
+				loadData();
+				pagging();
+				break;
+
+			default:
+				if (textSearch.length() > 14)
+				{
+					break;
+				}
+
+				if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+				{
+					showCur(1);
+
+					textSearch.insert(textSearch.begin() + cursorPosition, s);
+					cursorPosition++;
+					cout << s;
+
+					if (cursorPosition != textSearch.length())
+					{
+						for (int i = cursorPosition; i <= textSearch.length(); i++)
+						{
+							cout << textSearch[i];
+						}
+						gotoXY(whereX() - (textSearch.length() - cursorPosition), whereY());
+					}
+					loadData();
+					pagging();
+				}
+				break;
+			}
+		}
+	}
 }
 
 void ContentQuestion::pagging()
@@ -1137,7 +1227,6 @@ void ContentQuestion::loadData()
 	}
 	pagging();
 }
-
 
 void ContentQuestion::showTitleQuestion()
 {
