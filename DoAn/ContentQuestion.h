@@ -7,6 +7,7 @@
 #include "ManageSubject.h"
 #include "Singleton.h"
 #include "Content.h"
+#include "Text.h"
 #include "InputField.h"
 
 #include <string>
@@ -30,8 +31,20 @@ private:
 	};
 	StateQuestion currentQuestion;
 
-	string subjectCode;
+	enum SelectInput
+	{
+		FORM_ContentMain	= 0,
+		FORM_ContentA		= 1,
+		FORM_ContentB		= 2,
+		FORM_ContentC		= 3,
+		FORM_ContentD		= 4,
+		FORM_ContentAnswer	= 5,
+		FORM_ENTER			= 6,
+		FORM_EXIT			= -1
+	};
+	SelectInput stateInput;
 
+	string subjectCode;
 	ManageSubject subject;
 	QuestionPage page;
 
@@ -50,7 +63,9 @@ private:
 		inputContentD,
 		inputAnswer
 	};
-	int posXMessage = 0;
+	Text text;
+
+	int posYMessage = 0;
 	int pageNumber = 1;
 	int hover = 0;
 	string textSearch = "";
