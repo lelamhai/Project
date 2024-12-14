@@ -219,23 +219,6 @@ void ContentQuestion::handle()
 			break;
 		}
 	}
-
-	/*while (true)
-	{
-		if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
-		{
-			return;
-		}
-
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
-		{
-			if (Singleton::getInstance()->moveMenu != 0)
-			{
-				return;
-			}
-		}
-		Sleep(100);
-	}*/
 }
 
 void ContentQuestion::selectData()
@@ -256,6 +239,12 @@ void ContentQuestion::selectData()
 	int lastHover = -1;
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+		{
+			currentQuestion = C_EXIT;
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
 			if (Singleton::getInstance()->moveMenu != 0)
