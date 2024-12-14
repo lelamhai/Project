@@ -6,6 +6,8 @@
 
 #include "ManageSubject.h"
 #include "Singleton.h"
+
+#include "PopupDelete.h"
 #include "Content.h"
 #include "Text.h"
 #include "InputField.h"
@@ -20,14 +22,14 @@ class ContentQuestion : public Content
 private:
 	enum StateQuestion
 	{
-		C_SELECT = 0, // F1
-		C_CREATE = 1, // Ins
-		C_EDIT = 2, // F2
-		C_SEARCH = 3, // F3
-		C_DELETE = 4, // Del
-		C_DETAIL = 5,
+		C_SELECT	= 0, // F1
+		C_CREATE	= 1, // Ins
+		C_EDIT		= 2, // F2
+		C_SEARCH	= 3, // F3
+		C_DELETE	= 4, // Del
+		C_DETAIL	= 5,
 
-		C_EXIT = -1
+		C_EXIT		= -1
 	};
 	StateQuestion currentQuestion;
 

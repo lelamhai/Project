@@ -200,9 +200,13 @@ void ContentQuestion::handle()
 			break;
 
 		case ContentQuestion::C_SEARCH:
+			showCur(1);
+			findData();
 			break;
 
 		case ContentQuestion::C_DELETE:
+			showCur(0);
+			deleteData();
 			break;
 
 		/*case ContentQuestion::C_DETAIL:
@@ -411,7 +415,30 @@ void ContentQuestion::selectData()
 
 void ContentQuestion::deleteData()
 {
+	int deletePosX = getCenterX(COLUMN_CENTER, 50);
+	PopupDelete pDelete;
+	pDelete.setPosition(deletePosX + 30, 17);
+	pDelete.open();
+	pDelete.handle();
 
+	if (pDelete.getMenu() != 0)
+	{
+		currentQuestion = C_EXIT;
+		return;
+	}
+
+	if (pDelete.getResult())
+	{
+		bool result = subject.deleteQuestionInSubject(subjectCode, id);
+		if (result)
+		{
+			hover = 0;
+		}
+	}
+	pDelete.close();
+
+	currentQuestion = C_SELECT;
+	return;
 }
 
 void ContentQuestion::createData()
