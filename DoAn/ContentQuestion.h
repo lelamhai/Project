@@ -45,6 +45,7 @@ private:
 	SelectInput stateInput;
 
 	string subjectCode;
+	int id;
 	ManageSubject subject;
 	QuestionPage page;
 

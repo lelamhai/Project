@@ -195,6 +195,8 @@ void ContentQuestion::handle()
 			break;
 
 		case ContentQuestion::C_EDIT:
+			showCur(1);
+			editData();
 			break;
 
 		case ContentQuestion::C_SEARCH:
@@ -203,8 +205,8 @@ void ContentQuestion::handle()
 		case ContentQuestion::C_DELETE:
 			break;
 
-		case ContentQuestion::C_DETAIL:
-			break;
+		/*case ContentQuestion::C_DETAIL:
+			break;*/
 
 		case ContentQuestion::C_EXIT:
 			return;
@@ -367,6 +369,7 @@ void ContentQuestion::selectData()
 				if (hover == i)
 				{
 					setColorText(ColorCode_DarkGreen);
+					id = questionList->info.questionId;
 				}
 
 				int idX = getCenterX(10, to_string(questionList->info.questionId).length());
@@ -716,7 +719,323 @@ void ContentQuestion::createData()
 
 void ContentQuestion::editData()
 {
+	Question questionFound = subject.getQuestionBySubjectCodeAndId(subjectCode, id);
+	listInput[0].setText(questionFound.content);
+	listInput[0].display();
 
+	listInput[1].setText(questionFound.optionA);
+	listInput[1].display();
+
+	listInput[2].setText(questionFound.optionB);
+	listInput[2].display();
+
+	listInput[3].setText(questionFound.optionC);
+	listInput[3].display();
+
+	listInput[4].setText(questionFound.optionD);
+	listInput[4].display();
+
+	string str(1, questionFound.answer);
+	listInput[5].setText(str);
+	listInput[5].display();
+
+	while (true)
+	{
+		if (stateInput == FORM_ContentMain)
+		{
+			listInput[0].handleInput();
+
+			switch (listInput[0].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
+					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_ContentA;
+				break;
+
+			case F1:
+				currentQuestion = C_SELECT;
+				return;
+
+			case F3:
+				currentQuestion = C_SEARCH;
+				return;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentQuestion = C_EXIT;
+					return;
+				}
+				break;
+
+			case DOWN:
+				stateInput = FORM_ContentA;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ContentA)
+		{
+			listInput[1].handleInput();
+			switch (listInput[1].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
+					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_ContentB;
+				break;
+
+			case F1:
+				currentQuestion = C_SELECT;
+				return;
+
+			case F3:
+				currentQuestion = C_SEARCH;
+				return;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentQuestion = C_EXIT;
+					return;
+				}
+				break;
+
+			case UP:
+				stateInput = FORM_ContentMain;
+				break;
+
+			case DOWN:
+				stateInput = FORM_ContentB;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ContentB)
+		{
+			listInput[2].handleInput();
+
+			switch (listInput[2].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
+					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_ContentC;
+				break;
+
+			case F1:
+				currentQuestion = C_SELECT;
+				return;
+
+			case F3:
+				currentQuestion = C_SEARCH;
+				return;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentQuestion = C_EXIT;
+					return;
+				}
+				break;
+
+			case UP:
+				stateInput = FORM_ContentA;
+				break;
+
+			case DOWN:
+				stateInput = FORM_ContentC;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ContentC)
+		{
+			listInput[3].handleInput();
+
+			switch (listInput[3].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
+					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_ContentD;
+				break;
+
+			case F1:
+				currentQuestion = C_SELECT;
+				return;
+
+			case F3:
+				currentQuestion = C_SEARCH;
+				return;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentQuestion = C_EXIT;
+					return;
+				}
+				break;
+
+			case UP:
+				stateInput = FORM_ContentB;
+				break;
+
+			case DOWN:
+				stateInput = FORM_ContentD;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ContentD)
+		{
+			listInput[4].handleInput();
+			switch (listInput[4].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
+					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_ContentAnswer;
+				break;
+
+			case F1:
+				currentQuestion = C_SELECT;
+				return;
+
+			case F3:
+				currentQuestion = C_SEARCH;
+				return;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentQuestion = C_EXIT;
+					return;
+				}
+				break;
+
+			case UP:
+				stateInput = FORM_ContentC;
+				break;
+
+			case DOWN:
+				stateInput = FORM_ContentAnswer;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ContentAnswer)
+		{
+			listInput[5].handleInput();
+
+			switch (listInput[5].getEndKey())
+			{
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
+					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
+				{
+					stateInput = FORM_ENTER;
+					continue;
+				}
+				stateInput = FORM_ContentMain;
+				break;
+
+			case F1:
+				currentQuestion = C_SELECT;
+				return;
+
+			case F3:
+				currentQuestion = C_SEARCH;
+				return;
+
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentQuestion = C_EXIT;
+					return;
+				}
+				break;
+
+			case UP:
+				stateInput = FORM_ContentD;
+				break;
+
+			case DOWN:
+				stateInput = FORM_ContentMain;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateInput == FORM_ENTER)
+		{
+			bool result = subject.editQuestionInSubject(subjectCode.c_str(), id, listInput[0].getText(), listInput[1].getText(), listInput[2].getText(), listInput[3].getText(), listInput[4].getText(), listInput[5].getText()[0]);
+			if (result)
+			{
+				cleanTable();
+				loadData();
+				cleanMessage(posYMessage);
+				text.setContent("Them lop thanh cong!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+			}
+			else
+			{
+				cleanMessage(posYMessage);
+				text.setContent("Them lop that bai!");
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+			}
+
+			text.display();
+			stateInput = FORM_ContentMain;
+		}
+
+		if (stateInput == FORM_EXIT)
+		{
+			return;
+		}
+	}
 }
 
 void ContentQuestion::findData()
