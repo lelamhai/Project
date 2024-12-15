@@ -21,7 +21,6 @@ using namespace std;
 
 class ContentClassroom : public Content
 {
-
 private:
 	enum StateClassroom
 	{

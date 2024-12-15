@@ -191,7 +191,8 @@ void ContentQuestion::handle()
 
 		case ContentQuestion::C_CREATE:
 			showCur(1);
-			createData();
+
+			//createData();
 			break;
 
 		case ContentQuestion::C_EDIT:
