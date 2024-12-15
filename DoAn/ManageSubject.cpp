@@ -239,6 +239,7 @@ void ManageSubject::saveSubjectToJson(PTRSUBJECT node, json& j) {
         questionData["optionC"] = questionPtr->info.optionC;
         questionData["optionD"] = questionPtr->info.optionD;
         questionData["answer"] = questionPtr->info.answer;
+        questionData["isInExam"] = questionPtr->info.isInExam;
 
         subjectData["questions"][questionIndex++] = questionData;
         questionPtr = questionPtr->next;
@@ -296,6 +297,11 @@ void ManageSubject::loadFromFile() {
                     //    newQuestion.answer = questionData["answer"].get<string>()[0];
                     //}
                     newQuestion.answer = questionData["answer"].get<char>();
+
+                    // Kiểm tra và lấy isInExam
+                    if (questionData.contains("isInExam") && questionData["isInExam"].is_boolean()) {
+                        newQuestion.isInExam = questionData["isInExam"].get<bool>();
+                    }
 
                     // Chèn câu hỏi vào danh sách câu hỏi của môn học
                     PTRQUESTION questionNode = new NodeQuestion;
