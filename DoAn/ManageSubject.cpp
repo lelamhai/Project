@@ -620,6 +620,15 @@ void ManageSubject::collectMatchingSubjects(PTRSUBJECT root, PTRSUBJECT& tempTre
     collectMatchingSubjects(root->right, tempTree, keyword);
 }
 
+string ManageSubject::getSubjectNameFromCode(const char* subjectCode) {
+    ManageSubject manageSubject;
+    PTRSUBJECT subject = manageSubject.getSubject(subjectCode);
+    if (subject == nullptr) {
+        return "";
+    }
+    return subject->info.subjectName;
+}
+
 
 
 ///////////////////////////////////////////////////////

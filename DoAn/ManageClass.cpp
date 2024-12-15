@@ -317,6 +317,7 @@ StudentPage ManageClass::searchStudentInCLass(const string classCode, string key
     return getStudentPerPage(resultList, page);
 }
 
+
 //StudentPage ManageClass::getListScoreByClassAndSubject(const string classCode, const string subjectCode, int page)
 //{
 //    StudentPage getPage = searchStudentInCLass(classCode, "", 1);
@@ -452,6 +453,25 @@ bool ManageClass::addScoreToStudent(const string studentCode, const string subje
     return false;
 }
 
+string ManageClass::getStudentNameFromCode(const char* studentCode) {
+    Student studentFound;
+    ManageClass manageClass;
+    int totalClass = manageClass.countClass;
+
+    for (int i = 0; i < totalClass; i++) {
+        Classroom* classPtr = manageClass.classes[i];
+        PTRSTUDENT p = classPtr->studentList;
+        while (p != nullptr) {
+            if (strcmp(p->info.studentCode, studentCode) == 0) {
+
+                return string(p->info.firstName) + " " + string(p->info.lastName);
+            }
+            p = p->next;
+        }        
+    }
+
+    return "";
+}
 
 void printClassPage(ClassPage classPage)
 {

@@ -10,7 +10,12 @@
                     "gender": 70,
                     "lastName": "123",
                     "password": "123",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 29.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "12rfhdah"
                 },
                 {
@@ -39,7 +44,16 @@
                     "gender": 70,
                     "lastName": "123",
                     "password": "123",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 14.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 57.0,
+                            "subjectCode": "CSDL"
+                        }
+                    ],
                     "studentCode": "12rfh"
                 },
                 {
@@ -68,11 +82,29 @@
                     "studentCode": "12"
                 },
                 {
+                    "firstName": "Hai",
+                    "gender": 77,
+                    "lastName": "Le Lam",
+                    "password": "123456",
+                    "scores": [
+                        {
+                            "score": 81.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
+                    "studentCode": "123456"
+                },
+                {
                     "firstName": "d",
                     "gender": 77,
                     "lastName": "dsfsd",
                     "password": "1234",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 29.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "1234562"
                 },
                 {
@@ -88,7 +120,12 @@
                     "gender": 77,
                     "lastName": "d",
                     "password": "1234",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 14.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "sd"
                 },
                 {
@@ -96,7 +133,12 @@
                     "gender": 77,
                     "lastName": "lvt",
                     "password": "123",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 14.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "hsj"
                 },
                 {
@@ -104,7 +146,12 @@
                     "gender": 70,
                     "lastName": "123",
                     "password": "123",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 14.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "12336143112354"
                 },
                 {
@@ -112,7 +159,16 @@
                     "gender": 70,
                     "lastName": "123",
                     "password": "123",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 71.0,
+                            "subjectCode": "CSDL"
+                        },
+                        {
+                            "score": 29.0,
+                            "subjectCode": "VL"
+                        }
+                    ],
                     "studentCode": "123361431123"
                 },
                 {
@@ -144,7 +200,12 @@
                     "gender": 70,
                     "lastName": "123",
                     "password": "123",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 43.0,
+                            "subjectCode": "CSDL"
+                        }
+                    ],
                     "studentCode": "1233"
                 },
                 {

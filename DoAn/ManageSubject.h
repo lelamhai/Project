@@ -104,6 +104,8 @@ public:
     bool deleteSubject(string code);
 
     void reset();
+
+    static string getSubjectNameFromCode(const char* subjectCode);
 };
 
 PTRSUBJECT insertBalance(PTRSUBJECT root, PTRSUBJECT newNode);

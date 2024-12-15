@@ -3,6 +3,8 @@
 #include "ManageClass.h"
 
 const int MAX_STUDENT_PER_CLASS = 100;
+const string EXAM_RESULT_FILE_NAME = "ExamResult.json";
+
 struct scoreToPrint {
 	char studentCode[15];
 	char firstName[30];
@@ -55,6 +57,10 @@ public:
 	bool copyScoreToList(scoreToPrintList* list, scoreToPrint* scoreToCopy, int index);
 
 	ScorePage searchStudentScore(string keyWord, int pageNumber);
+
+	static resultList* loadResultFromFile(const char* subjectCode, const char* studentCode);
+
+	static void deallocateResulList(resultList* rs);
 
 	static void deallocateScorePage (ScorePage & page); // giải phóng bộ nhớ ScorePage
 };

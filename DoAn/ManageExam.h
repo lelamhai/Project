@@ -80,6 +80,8 @@ public:
 
 	tm getTimeEnd(tm timeStartExam); // hàm trả về đối tượng lưu thời gian kết thúc thi
 
+	void saveResultToFile();
+
 	static float roundNumber(float number, int n);
 
 	static int checkInputExam(const char* subjectCode, const int numberQuestion);
