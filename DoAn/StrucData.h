@@ -22,6 +22,7 @@ struct Question {
 	string optionC;
 	string optionD;
 	char answer;
+	bool isInExam = false;
 };
 
 struct NodeQuestion {
@@ -38,7 +39,6 @@ struct Subject {
 };
 
 struct SubjectNode {
-	int key; 
 	Subject info;
 	int height;
 	SubjectNode* left;
