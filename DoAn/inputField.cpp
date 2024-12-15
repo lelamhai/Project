@@ -49,7 +49,7 @@ void InputField::clean()
 void InputField::handleInput()
 {
 	cursorPosition = inputString.length();
-	gotoXY(x + 1 + cursorPosition, y + 1);
+	gotoXY(x + 2 + cursorPosition, y + 1);
 	while (true)
 	{
 		if (GetAsyncKeyState(VK_F1) & 0x0001)
