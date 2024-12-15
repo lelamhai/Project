@@ -148,7 +148,7 @@ void ContentClassroom::handle()
 		if (currentClassroom == C_DETAIL)
 		{
 			cleanContent();
-			ContentDetailClassroom* detail = new ContentDetailClassroom();
+			ContentStudent* detail = new ContentStudent();
 			detail->setClassCode(classCode);
 			detail->content();
 			delete detail;

@@ -3,7 +3,7 @@
 #include "ManageStudent.h"
 #include "configApp.h"
 #include "Content.h"
-#include "ContentDetailClassroom.h"
+#include "ContentStudent.h"
 
 #include "mycolor.h"
 #include "mydraw.h"
