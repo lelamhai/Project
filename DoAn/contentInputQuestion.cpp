@@ -60,11 +60,13 @@ void ContentInputQuestion::drawClassroom()
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING, DISTANCE_HEADER + 6 + (y * i));
 		listInput[i].setFrame(168, HEIGHT_INPUT);
 		listInput[i].drawBox();
+		listInput[i].setLen(164);
 	}
 
 	listInput[5].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING + 7, lastY - 1);
 	listInput[5].setFrame(4, HEIGHT_INPUT);
 	listInput[5].drawBox();
+	listInput[5].setLen(0);
 
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING + 15, lastY);
 	setColorText(ColorCode_Yellow);
@@ -127,6 +129,10 @@ void ContentInputQuestion::handle()
 					return;
 				}
 				break;*/
+
+			case UP:
+				stateInput = FORM_ContentAnswer;
+				break;
 
 			case DOWN:
 				stateInput = FORM_ContentA;

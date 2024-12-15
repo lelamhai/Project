@@ -191,8 +191,7 @@ void ContentQuestion::handle()
 
 		case ContentQuestion::C_CREATE:
 			showCur(1);
-
-			//createData();
+			createData();
 			break;
 
 		case ContentQuestion::C_EDIT:
@@ -433,7 +432,11 @@ void ContentQuestion::deleteData()
 
 void ContentQuestion::createData()
 {
-	stateInput = FORM_ContentMain;
+	cleanContent();
+	ContentInputQuestion q;
+	q.init(subjectCode);
+	q.displayContent();
+	/*stateInput = FORM_ContentMain;
 	while (true)
 	{
 		if (stateInput == FORM_ContentMain)
@@ -731,7 +734,7 @@ void ContentQuestion::createData()
 		{
 			return;
 		}
-	}
+	}*/
 }
 
 void ContentQuestion::editData()
