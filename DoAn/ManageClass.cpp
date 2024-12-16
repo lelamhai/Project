@@ -473,6 +473,34 @@ string ManageClass::getStudentNameFromCode(const char* studentCode) {
     return "";
 }
 
+bool ManageClass::isFirstExam(const char* studentCode, const char* sujectCode) {
+    Student studentFound;
+    ManageClass manageClass;
+    int totalClass = manageClass.countClass;
+
+    for (int i = 0; i < totalClass; i++) {
+        Classroom* classPtr = manageClass.classes[i];
+        PTRSTUDENT p = classPtr->studentList;
+        while (p != nullptr) {
+            if (strcmp(p->info.studentCode, studentCode) == 0) {
+                PTRSCORE q = p->info.scoreList;
+                if (q == nullptr) {
+                    return true; // nếu dữ liệu socre rỗng --> SV chưa thi môn nào
+                }
+                while (q != nullptr) {
+                    if (strcmp(q->info.subjectCode, sujectCode) == 0) {
+                        return false; // sinh vien đã thi môn này trước đó rồi
+                    }
+                    q = q->next; // trỏ qua score tiếp theo
+                }
+            }
+            p = p->next; // trỏ qua student tiếp theo
+        }
+    }
+
+    return true;
+}
+
 void printClassPage(ClassPage classPage)
 {
     cout << "Trang " << classPage.currentPage << "/" << classPage.totalPage<<endl;

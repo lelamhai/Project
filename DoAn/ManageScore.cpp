@@ -230,6 +230,12 @@ resultList* ManageScore::loadResultFromFile(const char* subjectCode, const char*
     return nullptr;
 }
 
+Question ManageScore::getQuestionBySubjectCodeAndId(const string subjectCode, int questionId) {
+    ManageSubject manageSubject;
+    Question q = manageSubject.getQuestionBySubjectCodeAndId(subjectCode, questionId);
+    return q;
+}
+
 void ManageScore::deallocateResulList(resultList* rs) {
     for (int i = 0; i < rs->totalQuestion; i++) {
         delete rs->answerList[i];

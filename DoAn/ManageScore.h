@@ -60,6 +60,8 @@ public:
 
 	static resultList* loadResultFromFile(const char* subjectCode, const char* studentCode);
 
+	static Question getQuestionBySubjectCodeAndId(const string subjectCode, int questionId);
+
 	static void deallocateResulList(resultList* rs);
 
 	static void deallocateScorePage (ScorePage & page); // giải phóng bộ nhớ ScorePage

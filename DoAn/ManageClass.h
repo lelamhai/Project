@@ -99,6 +99,8 @@ public:
 
 	static string getStudentNameFromCode(const char* studentCode);
 
+	static bool isFirstExam(const char* studentCode, const char* sujectCode);
+
 };
 
 void printClassPage(ClassPage classPage);

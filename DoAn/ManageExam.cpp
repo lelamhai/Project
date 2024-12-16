@@ -262,46 +262,6 @@ void ManageExam::saveResultToFile() {
     }
 }
 
-
-
-//void ManageExam::saveResultToFile() {
-//    json j;
-//
-//    // Lưu các thông tin cơ bản
-//    j["studentCode"] = answerRecord.studentCode;
-//    j["subjectCode"] = answerRecord.subjectCode;
-//    j["totalQuestion"] = answerRecord.totalQuestion;
-//    j["countCorrect"] = answerRecord.countCorrect;
-//    j["score"] = answerRecord.score;
-//
-//    // Khởi tạo mảng cho danh sách câu trả lời
-//    j["Answered"] = json::array();
-//
-//    // Lưu từng câu trả lời
-//    for (int i = 0; i < answerRecord.totalQuestion; i++) {
-//        answer*  p = answerRecord.answerList[i];
-//        
-//        if (p != nullptr) {
-//            json Answered;
-//            Answered["questionId"] = p->questionId;
-//            Answered["chosenAnswer"] = p->chosenAnswer;
-//            Answered["correctAnswer"] = p->correctAnswer;  // Mảng sinh viên
-//
-//            j["Answered"].push_back(Answered); // Thêm câu trả lời vào mảng
-//        }
-//    }
-//
-//    ofstream file("ExamResult.json");
-//    if (file.is_open()) {
-//        file << j.dump(4);  // Lưu file với định dạng JSON, thụt đầu dòng 4 spaces
-//        file.close();
-//    }
-//}
-
-
-
-
-
 float ManageExam::roundNumber(float number, int n) {
     float x = pow(10.0f, n);
     return round(number * x) / x;
@@ -310,18 +270,25 @@ float ManageExam::roundNumber(float number, int n) {
 int ManageExam::checkInputExam(const char* subjectCode, const int numberQuestion) {
     ManageSubject manageSubject;
 
-    // trả về false nếu mã môn không tồn tại
+    // trả về -1 nếu mã môn không tồn tại
     PTRSUBJECT subject = manageSubject.getSubject(subjectCode);
     if (subject == nullptr) {
         return -1;
     }
 
-    // trả về false số câu hỏi nhập không hợp lệ
+    // trả về -2 số câu hỏi nhập không hợp lệ
     int totalQuestion = manageSubject.countQuestionsInSubject(subjectCode);
     if (numberQuestion<0 || numberQuestion > totalQuestion) {
         return -2;
     }
     
+    // trả về -3 nếu sinh viên này đã thi môn đó trước rồi
+    bool isFirstExam = ManageClass::isFirstExam("studentcode 11", subjectCode);
+    if (isFirstExam){
+        return -3;
+    }
+    
+    // trả về 1 nếu input cho exam hơp lệ
     return 1;
 
 }

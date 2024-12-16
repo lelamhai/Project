@@ -91,10 +91,19 @@ void HuyTest::main() {
 		cout << "So cau dung: " << rs->countCorrect << endl;
 		cout << "Diem so: " << rs->score << endl;
 
+		// in ra nội dung từng câu hỏi
+		Question q;
+
 		for (int i = 0; i < totalQuestion; i++) {
 			answer* p = rs->answerList[i];
+			q = ManageScore::getQuestionBySubjectCodeAndId(rs->subjectCode, p->questionId);
 
-			cout << "Cau " << i + 1 << ": "
+			cout << "Cau " << i + 1 << ": "<< q.content << endl
+				<< q.optionA << endl
+				<< q.optionB << endl
+				<< q.optionC << endl
+				<< q.optionD << endl
+
 				<< "Da chon " << p->chosenAnswer << " --- "
 				<< "Dap an " << p->correctAnswer << endl;
 		}
@@ -128,7 +137,7 @@ void HuyTest::main() {
 
 	// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
 	bool isCorrectInput = false;
-	isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
+	//isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
 	isCorrectInput = exam1.setInputExam("CSDL", "1233", numberQuestion_input, timeForExam_min_input);
 
 	if (!isCorrectInput) {
