@@ -7,6 +7,7 @@
 
 #include "ManageScore.h"
 
+#include "ContentHistoryExam.h"
 #include "Text.h"
 #include "InputField.h"
 #include "Content.h"
@@ -46,6 +47,7 @@ private:
 	int pageNumber = 1;
 	string textSearch = "";
 	string currentSubjectCode;
+	string currentStudent;
 	int hover = 0;
 
 public:

@@ -328,7 +328,6 @@ void ContentFilterPoint::createData()
 			ContentPrintPoint p;
 			p.init(listInput[0].getText(), listInput[1].getText());
 			p.displayContent();
-			p.handle();
 			cleanContent();
 		}
 

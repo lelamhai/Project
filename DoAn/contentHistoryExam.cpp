@@ -102,10 +102,10 @@ void ContentHistoryExam::loadResult()
 	int totalQuestion = rs->totalQuestion;
 	for (int j = 0; j < totalQuestion; j++)
 	{
+		answer* p = rs->answerList[j];
+
 		listText.push_back(Text());
 		listResults.push_back(' ');
-
-		answer* p = rs->answerList[j];
 		string content = "Cau " + to_string(j + 1) + ": " + p->chosenAnswer;
 
 		if (reset)

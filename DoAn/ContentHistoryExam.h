@@ -19,7 +19,6 @@ class ContentHistoryExam : public Content
 private:
 	string subjectCode;
 	string studentCode;
-
 	vector<Text> listText;
 	vector<char> listResults;
 	resultList* rs;
