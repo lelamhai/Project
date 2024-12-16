@@ -152,7 +152,6 @@ QuestionPage ManageSubject::searchQuestionInSubject(const string subjectCode, co
         }
         startList = startList->next;
     }
-
     return getQuestionPerPage(resultList, pageNumber);
 }
 

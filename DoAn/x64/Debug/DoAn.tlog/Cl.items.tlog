@@ -1,49 +1,49 @@
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ClassroomSevice.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\ClassroomSevice.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\color.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\color.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\configApp.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\configApp.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\content.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\content.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentAbout.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentAbout.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentClassroom.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentStudent.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentExam.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentExam.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentExecute.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentExecute.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentFilterPoint.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentInputQuestion.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentPrintPoint.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentQuestion.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentHistoryExam.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentHistoryExam.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\contentSubject.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ContentSubject.h;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\ContentSubject.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\DungTest.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\DungTest.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\HuyTest.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\HuyTest.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\LoadingData.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\LoadingData.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\LoginData.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\LoginData.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageClass.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\ManageClass.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageQuestion.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\ManageQuestion.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageScore.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\ManageScore.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageStudent.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\ManageStudent.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\ManageSubject.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\popupDelete.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\popupDelete.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\draw.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\draw.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\footer.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\footer.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\inputField.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\inputField.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\InputField.h;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\InputField.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\page.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\page.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\popup.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\popup.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\popupFinishExam.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\popupFinishExam.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\popupNotification.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\popupNotification.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\popupTutorial.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\popupTutorial.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\RandomID.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\RandomID.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\sidebar.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\sidebar.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\header.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\header.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\keyboard.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\keyboard.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\loading.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\loading.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\login.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\login.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\main.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\main.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\Layout.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\Layout.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\singleton.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\singleton.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\ManageExam.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\ManageExam.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\StudentList.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\StudentList.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\StudentService.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\StudentService.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\text.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\text.obj
-D:\Code\PTIT\CTDL & GT\Project\DoAn\windows.cpp;D:\Code\PTIT\CTDL & GT\Project\DoAn\x64\Debug\windows.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ClassroomSevice.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ClassroomSevice.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\color.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\color.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\configApp.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\configApp.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\content.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\content.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentAbout.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentAbout.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentClassroom.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentStudent.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentExam.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentExecute.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentFilterPoint.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentInputQuestion.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentInputQuestion.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentPrintPoint.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentQuestion.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentHistoryExam.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentHistoryExam.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\contentSubject.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ContentSubject.h;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ContentSubject.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\DungTest.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\DungTest.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\HuyTest.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\HuyTest.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\LoadingData.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\LoadingData.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\LoginData.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\LoginData.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageClass.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ManageClass.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageQuestion.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ManageQuestion.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageScore.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ManageScore.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageStudent.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ManageStudent.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageSubject.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ManageSubject.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popupDelete.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popupDelete.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\draw.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\draw.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\footer.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\footer.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\inputField.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\InputField.h;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\InputField.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\page.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\page.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popup.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popup.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popupFinishExam.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popupFinishExam.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popupNotification.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popupNotification.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popupTutorial.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popupTutorial.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\RandomID.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\RandomID.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\sidebar.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\sidebar.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\header.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\header.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\keyboard.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\keyboard.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\loading.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\loading.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\login.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\login.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\main.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\main.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\Layout.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\Layout.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\singleton.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\singleton.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageExam.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ManageExam.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\StudentList.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\StudentList.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\StudentService.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\StudentService.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\text.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\text.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\windows.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\windows.obj

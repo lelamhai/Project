@@ -78,6 +78,9 @@ bool addQuestionToList(PTRQUESTION& questionList, Question question1);
 
 void printQuestionsInList(PTRQUESTION questionList);
 
+PTRQUESTION reverseQuestionList(PTRQUESTION questionList);
+
+
 
 
 
