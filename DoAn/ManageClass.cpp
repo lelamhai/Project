@@ -464,7 +464,7 @@ string ManageClass::getStudentNameFromCode(const char* studentCode) {
         while (p != nullptr) {
             if (strcmp(p->info.studentCode, studentCode) == 0) {
 
-                return string(p->info.firstName) + " " + string(p->info.lastName);
+                return string(p->info.lastName) + " " + string(p->info.firstName);
             }
             p = p->next;
         }        
