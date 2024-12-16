@@ -268,6 +268,10 @@ float ManageExam::roundNumber(float number, int n) {
 }
 
 int ManageExam::checkInputExam(const char* subjectCode, const int numberQuestion) {
+    return 100;
+}
+
+int ManageExam::checkInputExam1(const char* studentCode, const char* subjectCode, const int numberQuestion) {
     ManageSubject manageSubject;
 
     // trả về -1 nếu mã môn không tồn tại
@@ -276,18 +280,18 @@ int ManageExam::checkInputExam(const char* subjectCode, const int numberQuestion
         return -1;
     }
 
+    // trả về -3 nếu sinh viên này đã thi môn đó trước rồi
+    bool isFirstExam = ManageClass::isFirstExam(studentCode, subjectCode);
+    if (!isFirstExam) {
+        return -3;
+    }
+
     // trả về -2 số câu hỏi nhập không hợp lệ
     int totalQuestion = manageSubject.countQuestionsInSubject(subjectCode);
     if (numberQuestion<0 || numberQuestion > totalQuestion) {
         return -2;
     }
-    
-    // trả về -3 nếu sinh viên này đã thi môn đó trước rồi
-    bool isFirstExam = ManageClass::isFirstExam("studentcode 11", subjectCode);
-    if (isFirstExam){
-        return -3;
-    }
-    
+
     // trả về 1 nếu input cho exam hơp lệ
     return 1;
 

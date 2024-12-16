@@ -13,6 +13,7 @@ HuyTest::~HuyTest()
 
 
 void HuyTest::main() {
+
 	/*---------------------------THỰC HIỆN IN BẢNG ĐIỂM -------------------------------------------------------*/
 	// PHẦN KHAI BÁO INPUT
 	/*ManageScore manangeScore;
@@ -76,7 +77,7 @@ void HuyTest::main() {
 
 	/*---------------------------IN RA CHI TIẾT KẾT QUẢ ĐÃ THI MÔN HỌC CỦA MỘT SINH VIÊN ---------------------------------------------*/
 	
-	resultList*  rs = ManageScore::loadResultFromFile("CSDL", "1233"); // tìm kết quả thi của một sinh viên từ data base
+	/*resultList* rs = ManageScore::loadResultFromFile("CSDL", "1233"); // tìm kết quả thi của một sinh viên từ data base
 	
 	// demo in ra các thông tin kết quả thi
 	if (rs == nullptr) {
@@ -119,6 +120,10 @@ void HuyTest::main() {
 
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R1 ---------------------------------------------*/
+	
+	int check = ManageExam::checkInputExam1("hsj","VL",3);
+	// trả ve 1 nếu dữ liệu hợp lệ, =-1 nếu mã môn không tồn tại, =-3 nếu sinh viên đã thi môn này trước đó rổi, =-2 nếu số câu hỏi không hợp lệ, 
+	cout << "Kiem tra = " << check << endl;
 	// KHỞI TẠO
 	/*mutex mtx; // Tạo mutex cho đồng bộ hóa
 	ManageExam exam1;

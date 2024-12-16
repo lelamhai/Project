@@ -86,6 +86,8 @@ public:
 
 	static int checkInputExam(const char* subjectCode, const int numberQuestion);
 
+	static int checkInputExam1(const char* studentCode, const char* subjectCode, const int numberQuestion);
+
 };
 
 
