@@ -8,104 +8,157 @@ ContentHistoryExam::~ContentHistoryExam()
 {
 }
 
+void ContentHistoryExam::displayContent()
+{
+	setColorText(ColorCode_DarkWhite);
+	content();
+}
+
+void ContentHistoryExam::init(string subject, string student)
+{
+	subjectCode = subject;
+	studentCode = student;
+}
+
 void ContentHistoryExam::drawContent()
 {
-	// Search
-	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING + PADDING);
-	cout << "Tim";
-	box(DISTANCE_SIDEBAR + MARGIN + 4, DISTANCE_HEADER + PADDING, 20, 2);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING, DISTANCE_HEADER + PADDING + PADDING);
+	cout << "ESC: Tro Lai";
+	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING, WIDTH_INPUT - 5, HEIGHT_INPUT);
 
-	// Gird Data
-	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING * 4, COLUMN_CENTER, ROW_CENTER);
+	/*int titleTime = getCenterX(COLUMN_CENTER, 26);
+	gotoXY(DISTANCE_SIDEBAR + titleTime, DISTANCE_HEADER + PADDING + PADDING);
+	cout << "Thoi Gian Lam Bai: " << time << " Phut";*/
 
-	// Tutorial
-	int posXT = getCenterX(COLUMN_RIGHT, 9);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + posXT, DISTANCE_HEADER + PADDING * 2);
-	cout << "Huong Dan";
+	string titleCountQuestion = "So Cau Hoi: ";
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - to_string(rs->totalQuestion).length() - titleCountQuestion.length(), DISTANCE_HEADER + PADDING);
+	cout << titleCountQuestion;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - to_string(rs->totalQuestion).length(), DISTANCE_HEADER + PADDING);
+	cout << rs->totalQuestion;
 
-	string note[] = {
-		"F1: Chon Du Lieu Trong Bang",
-		"F3: Tim Kiem Lop",
-		"Phim Len|Xuong: Chon Du Lieu",
-		"Phim Trai|Phai: Xem Trang Sau|Truoc"
-	};
+	string titleName = "Ten: ";
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - ManageClass::getStudentNameFromCode(rs->studentCode).length() - titleName.length(), DISTANCE_HEADER + PADDING + PADDING);
+	cout << titleName;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - ManageClass::getStudentNameFromCode(rs->studentCode).length(), DISTANCE_HEADER + PADDING + PADDING);
+	cout << ManageClass::getStudentNameFromCode(rs->studentCode);
 
-	int y = DISTANCE_HEADER + PADDING + 4;
-	for (int i = 0; i < 4; i++)
-	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING *2, y + (i * 2));
-		cout << note[i];
-	}
+	string titleMSSV = "MSSV: ";
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - strlen(rs->studentCode) - titleMSSV.length(), DISTANCE_HEADER + PADDING + PADDING + PADDING);
+	cout << titleMSSV;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - strlen(rs->studentCode), DISTANCE_HEADER + PADDING + PADDING + PADDING);
+	cout << rs->studentCode;
 
+	string titleSubject = "Mon: ";
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - ManageSubject::getSubjectNameFromCode(rs->subjectCode).length() - titleSubject.length(), DISTANCE_HEADER + PADDING + PADDING + PADDING + PADDING);
+	cout << titleSubject;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - ManageSubject::getSubjectNameFromCode(rs->subjectCode).length(), DISTANCE_HEADER + PADDING + PADDING + PADDING + PADDING);
+	cout << ManageSubject::getSubjectNameFromCode(rs->subjectCode);
+
+	lineY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER, ROW_CENTER + 7);
+
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER);
+	cout << char(194);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + ROW_CENTER + 7);
+	cout << char(193);
+
+
+	int titleAnswer = getCenterX(COLUMN_RIGHT + 8, 14);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + titleAnswer, DISTANCE_HEADER + PADDING);
+	cout << "Dap An Da Chon";
+
+	lineXDot(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, 41, COLUMN_RIGHT + MARGIN);
+
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + 2, 43);
+	cout<<"Diem: " << rs->score;
+
+
+	// Bottom
+	int tutorialY = 43;
 	setColorText(ColorCode_DarkYellow);
-	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
-
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 12);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
-	cout << char(195);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
-	cout << char(180);
+	gotoXY(DISTANCE_SIDEBAR + MARGIN, tutorialY);
+	cout << "Phim Trai|Phai: Chon Cau Sau|Truoc";
 	setColorText(ColorCode_DarkWhite);
 }
 
-void ContentHistoryExam::girdTitle()
+void ContentHistoryExam::content()
 {
-	lineX(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN, COLUMN_CENTER);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN);
-	cout << char(195);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER, DISTANCE_HEADER + MARGIN);
-	cout << char(180);
-
-	string title[] = {
-		"MSSV",
-		"Ho Va Ten",
-		"Phai",
-		"Ma Lop",
-		"Ten Lop",
-		"Mon Hoc",
-		"Diem"
-	};
-
-	int mssvX = getCenterX(17, title[0].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + mssvX, DISTANCE_HEADER + MARGIN - 1);
-	cout << title[0];
-
-	int fullnameX = getCenterX(17, title[1].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + fullnameX, DISTANCE_HEADER + MARGIN - 1);
-	cout << title[1];
-
-	int sexX = getCenterX(17, title[2].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + sexX, DISTANCE_HEADER + MARGIN - 1);
-	cout << title[2];
-
-	int codeX = getCenterX(17, title[3].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + 17 + codeX, DISTANCE_HEADER + MARGIN - 1);
-	cout << title[3];
-
-	int classX = getCenterX(17, title[4].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + 17 + 17 + classX, DISTANCE_HEADER + MARGIN - 1);
-	cout << title[4];
-
-	int subjectX = getCenterX(17, title[5].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + 17 + 17 + 17 + subjectX, DISTANCE_HEADER + MARGIN - 1);
-	cout << title[5];
-
-	int pointX = getCenterX(17, title[6].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 17 + 17 + 17 + 17 + 17 + 17 + pointX, DISTANCE_HEADER + MARGIN - 1);
-	cout << title[6];
+	rs = ManageScore::loadResultFromFile(subjectCode.c_str(), studentCode.c_str());
+	drawContent();
+	loadResult();
+	handle();
 }
 
-void ContentHistoryExam::displayContent()
+void ContentHistoryExam::loadQuestion()
 {
-	drawContent();
-	girdTitle();
-	handle();
+
+}
+
+void ContentHistoryExam::loadResult()
+{
+	bool reset = true;
+	int distance = 12;
+	int step = 0;
+	int resultY = 1;
+	int totalQuestion = rs->totalQuestion;
+	for (int j = 0; j < totalQuestion; j++)
+	{
+		listText.push_back(Text());
+		listResults.push_back(' ');
+
+		answer* p = rs->answerList[j];
+		string content = "Cau " + to_string(j + 1) + ": " + p->chosenAnswer;
+
+		if (reset)
+		{
+			resultY = 1;
+			step = 0;
+			reset = false;
+		}
+
+		if (j <= 9)
+		{
+			listText[j].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7, DISTANCE_HEADER + PADDING + PADDING + resultY + (step * 3));
+			if (j == 9)
+			{
+				reset = true;
+			}
+		}
+
+		if (j > 9 && j <= 19)
+		{
+			listText[j].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7 + distance, DISTANCE_HEADER + PADDING + PADDING + resultY + (step * 3));
+			if (j == 19)
+			{
+				reset = true;
+			}
+		}
+
+		if (j > 19 && j <= 29)
+		{
+			listText[j].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7 + distance + distance, DISTANCE_HEADER + PADDING + PADDING + resultY + (step * 3));
+			if (j == 29)
+			{
+				reset = true;
+			}
+		}
+
+		if (j > 29)
+		{
+			listText[j].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + PADDING + 7 + distance + distance + distance, DISTANCE_HEADER + PADDING + PADDING + resultY + (step * 3));
+		}
+		listText[j].setContent(content);
+		listText[j].display();
+
+		listText[j].updatePositionY(1);
+		listText[j].setContent("Dap an: ");
+		listText[j].display();
+		cout << p->correctAnswer;
+		step++;
+	}
 }
 
 void ContentHistoryExam::handle()
 {
-
-	setColorText(ColorCode_DarkWhite);
 	while (true)
 	{
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
