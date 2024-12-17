@@ -18,7 +18,9 @@ void ContentAbout::displayContent()
 void ContentAbout::title()
 {
 	gotoXY(34, 10);
+	setColorText(ColorCode_Green);
 	cout << "Gioi Thieu";
+	setColorText(ColorCode_White);
 }
 
 void ContentAbout::content()
@@ -54,13 +56,24 @@ void ContentAbout::content()
 	for (int i = 0; i < 3; i++)
 	{
 		gotoXY(34, posYMenu + i * 2);
+		setColorText(ColorCode_White);
+		if (i == 0)
+		{
+			setColorText(ColorCode_Green);
+		}
 		cout << tutorialMenu[i];
 	}
+	
 
 	int posYKey = 27;
 	for (int i = 0; i < 9; i++)
 	{
 		gotoXY(34, posYKey + i * 2);
+		setColorText(ColorCode_White);
+		if (i == 0)
+		{
+			setColorText(ColorCode_Green);
+		}
 		cout << hotKey[i];
 	}
 	

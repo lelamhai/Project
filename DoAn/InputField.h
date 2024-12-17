@@ -20,8 +20,9 @@ private:
 	int cursorPosition = 0;
 public:
 	bool useHide = false;
-	bool useSpace = false;
+	bool notUseSpace = false;
 	bool useGender = false;
+	bool notUseNum = false;
 
 	void setLen(int length);
 	void setPosition(int posX, int posY);
@@ -33,9 +34,8 @@ public:
 	void handleInput();
 	void display();
 	KeyState getEndKey();
-	void setMenu(int move);
 	void clean();
-	int getMenu();
+	
 	InputField();
 	~InputField();
 };

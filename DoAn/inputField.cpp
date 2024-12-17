@@ -49,7 +49,7 @@ void InputField::clean()
 void InputField::handleInput()
 {
 	cursorPosition = inputString.length();
-	gotoXY(x + 2 + cursorPosition, y + 1);
+	gotoXY(x + 1 + cursorPosition, y + 1);
 	while (true)
 	{
 		if (GetAsyncKeyState(VK_F1) & 0x0001)
@@ -182,6 +182,13 @@ void InputField::handleInput()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		{
+			keyInput = ESC;
+			Sleep(150);
+			return;
+		}
+
 		
 
 		char s = _getch();
@@ -260,7 +267,7 @@ void InputField::handleInput()
 				continue;
 			}
 
-			if (useSpace)
+			if (notUseSpace)
 			{
 				continue;
 			}
@@ -321,8 +328,17 @@ void InputField::handleInput()
 					upper = s - ('a' - 'A');
 				}
 
-				if (s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+				if (s >= 'A' && s <= 'Z')
 				{
+					upper = s;
+				}
+
+				if (s >= '0' && s <= '9')
+				{
+					if (notUseNum)
+					{
+						break;
+					}
 					upper = s;
 				}
 
@@ -370,14 +386,4 @@ void InputField::display()
 {
 	gotoXY(x + 1, y + 1);
 	cout << inputString;
-}
-
-void InputField::setMenu(int move)
-{
-	this->moveMenu = move;
-}
-
-int InputField::getMenu()
-{
-	return this->moveMenu;
 }

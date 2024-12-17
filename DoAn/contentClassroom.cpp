@@ -40,6 +40,8 @@ void ContentClassroom::drawClassroom()
 
 	for (int i = 0; i < 2; i++)
 	{
+		listInput.push_back(InputField());
+
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
 		cout << titleInput[i];
 
@@ -339,14 +341,20 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
 		{
+			if (isLoadFirst)
+			{
+				isLoadFirst = false;
+				continue;
+			}
+
 			currentClassroom = C_DETAIL;
 			Sleep(150);
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		if (GetAsyncKeyState(VK_TAB))
 		{
 			if (Singleton::getInstance()->moveMenu != 0)
 			{
@@ -398,16 +406,16 @@ void ContentClassroom::selectData()
 void ContentClassroom::createData()
 {
 	ManageClass nl;
+	listInput[0].setText("");
+	listInput[1].setText("");
 
 	stateInput = FORM_CODE;
 	while (true)
 	{
 		if (stateInput == FORM_CODE)
 		{
-			listInput[0].setMenu(moveMenu);
-			listInput[0].useSpace = true;
+			listInput[0].notUseSpace = true;
 			listInput[0].handleInput();
-			moveMenu = listInput[0].getMenu();
 
 			switch (listInput[0].getEndKey())
 			{
@@ -448,9 +456,7 @@ void ContentClassroom::createData()
 
 		if (stateInput == FORM_NAME)
 		{
-			listInput[1].setMenu(moveMenu);
 			listInput[1].handleInput();
-			moveMenu = listInput[1].getMenu();
 
 			switch (listInput[1].getEndKey())
 			{
@@ -498,7 +504,7 @@ void ContentClassroom::createData()
 				cleanTable();
 				loadData();
 				cleanMessage(posYMessage);
-				text.setContent("Them lop thanh cong!");
+				text.setContent(INSERT_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -506,7 +512,7 @@ void ContentClassroom::createData()
 			else 
 			{
 				cleanMessage(posYMessage);
-				text.setContent("Them lop that bai!");
+				text.setContent("Ma Lop Bi Trung!");
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -554,35 +560,29 @@ void ContentClassroom::deleteData()
 
 void ContentClassroom::editData()
 {
-	ManageClass nl;
+	listInput[0].setText("");
+	listInput[1].setText("");
 
-	Text text;
-	InputField inputClassroomCode;
-	InputField inputClassroomName;
+	ManageClass nl;
 
 	// Display data
 	Classroom cl = nl.findClassByCode(classCode.c_str());
-	inputClassroomCode.setText(classCode);
-	inputClassroomName.setText(cl.className);
-
-	int createPosX = 34 + 100 + 30 + 4 + 8 + 2;
-	gotoXY(createPosX, 12 + 1 + 1);
-	inputClassroomCode.display();
+	listInput[0].setText(classCode);
+	listInput[0].display();
+	listInput[1].setText(cl.className);
+	listInput[1].display();
 
 	stateInput = FORM_NAME;
 	while (true)
 	{
 		if (stateInput == FORM_NAME)
 		{
-			gotoXY(createPosX, 12 + 1 + 3 + 1);
-			inputClassroomName.display();
-			inputClassroomName.handleInput();
-			moveMenu = inputClassroomName.getMenu();
+			listInput[1].handleInput();
 
-			switch (inputClassroomName.getEndKey())
+			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
-				if (inputClassroomName.getText() != "")
+				if (listInput[1].getText() != "")
 				{
 					stateInput = FORM_ENTER;
 					continue;
@@ -612,14 +612,14 @@ void ContentClassroom::editData()
 
 		if (stateInput == FORM_ENTER)
 		{
-			bool result = nl.editClass(inputClassroomCode.getText().c_str(), inputClassroomName.getText());
+			bool result = nl.editClass(listInput[0].getText().c_str(), listInput[1].getText());
 			
 			if (result)
 			{
 				cleanTable();
 				loadData();
 				cleanMessage(posYMessage);
-				text.setContent("Cap nhat thong tin thanh cong!");
+				text.setContent(UPDATE_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -627,7 +627,7 @@ void ContentClassroom::editData()
 			}
 			else {
 				cleanMessage(posYMessage);
-				text.setContent("Cap nhat thong tin that bai!");
+				text.setContent(UPDATE_FAIL);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -785,16 +785,16 @@ void ContentClassroom::loadData()
 		}
 
 		int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
-		gotoXY(34 + 3 + classX, 10 + 2 + 1 + 3 + (2 * i));
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + classX, 10 + 2 + 1 + 3 + (2 * i));
 		cout << page.classList.classes[i]->classCode;
 
 		int nameX = getCenterX(40, page.classList.classes[i]->className.length());
-		gotoXY(34 + 3 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
 		cout << page.classList.classes[i]->className;
 
 		string countStr = to_string(getCountStudentOfList(page.classList.classes[i]->studentList));
 		int countX = getCenterX(40, countStr.length());
-		gotoXY(34 + 3 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
 		cout << countStr;
 		setColorText(ColorCode_DarkWhite);
 	}

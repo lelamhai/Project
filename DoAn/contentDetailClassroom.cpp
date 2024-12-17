@@ -1,20 +1,20 @@
-#include "ContentStudent.h"
+#include "ContentDetailClassroom.h"
 
-ContentStudent::ContentStudent()
+ContentDetailClassroom::ContentDetailClassroom()
 {
 }
 
-ContentStudent::~ContentStudent()
+ContentDetailClassroom::~ContentDetailClassroom()
 {
 }
 
-void ContentStudent::displayContent()
+void ContentDetailClassroom::displayContent()
 {
 	setColorText(ColorCode_DarkWhite);
 	content();
 }
 
-void ContentStudent::drawClassroom()
+void ContentDetailClassroom::drawClassroom()
 {
 	// Search
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING, DISTANCE_HEADER + PADDING + PADDING);
@@ -123,7 +123,7 @@ void ContentStudent::drawClassroom()
 	setColorText(ColorCode_DarkWhite);
 }
 
-void ContentStudent::girdContent()
+void ContentDetailClassroom::girdContent()
 {
 	lineX(34 + 2, 10 + 2 + 2, 120);
 	gotoXY(34 + 2, 10 + 2 + 2);
@@ -160,12 +160,12 @@ void ContentStudent::girdContent()
 	cout << title[4];
 }
 
-void ContentStudent::setClassCode(string classCode)
+void ContentDetailClassroom::setClassCode(string classCode)
 {
 	this->classCode = classCode;
 }
 
-void ContentStudent::content()
+void ContentDetailClassroom::content()
 {
 	cleanContent();
 	drawClassroom();
@@ -174,7 +174,7 @@ void ContentStudent::content()
 	handle();
 }
 
-void ContentStudent::handle()
+void ContentDetailClassroom::handle()
 {
 	while (true)
 	{
@@ -191,33 +191,33 @@ void ContentStudent::handle()
 
 		switch (currentDetailClassroom)
 		{
-		case ContentStudent::C_SELECT:
+		case ContentDetailClassroom::C_SELECT:
 			showCur(0);
 			selectData();
 			break;
-		case ContentStudent::C_CREATE:
+		case ContentDetailClassroom::C_CREATE:
 			showCur(1);
 			createData();
 			cleanInput();
 			cleanMessage(posYMessage);
 			break;
-		case ContentStudent::C_EDIT:
+		case ContentDetailClassroom::C_EDIT:
 			showCur(1);
 			editData();
 			cleanInput();
 			cleanMessage(posYMessage);
 			break;
-		case ContentStudent::C_SEARCH:
+		case ContentDetailClassroom::C_SEARCH:
 			showCur(1);
 			findData();
 			break;
-		case ContentStudent::C_DELETE:
+		case ContentDetailClassroom::C_DELETE:
 			showCur(0);
 			deleteData();
 			break;
-		case ContentStudent::C_DETAIL:
+		case ContentDetailClassroom::C_DETAIL:
 			break;
-		case ContentStudent::C_EXIT:
+		case ContentDetailClassroom::C_EXIT:
 			return;
 		default:
 			break;
@@ -226,7 +226,7 @@ void ContentStudent::handle()
 	}
 }
 
-void ContentStudent::selectData()
+void ContentDetailClassroom::selectData()
 {
 	ManageClass test;
 	StudentPage studentPage;
@@ -456,7 +456,7 @@ void ContentStudent::selectData()
 	}
 }
 
-void ContentStudent::createData()
+void ContentDetailClassroom::createData()
 {
 	string gender = "Nam";
 	ManageClass test;
@@ -466,7 +466,9 @@ void ContentStudent::createData()
 	{
 		if (stateInput == FORM_CODE)
 		{
+			listInput[0].setMenu(moveMenu);
 			listInput[0].handleInput();
+			moveMenu = listInput[0].getMenu();
 			switch (listInput[0].getEndKey())
 			{
 			case ENTER:
@@ -517,7 +519,9 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_LAST)
 		{
+			listInput[1].setMenu(moveMenu);
 			listInput[1].handleInput();
+			moveMenu = listInput[1].getMenu();
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -560,7 +564,9 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_FIRST)
 		{
+			listInput[2].setMenu(moveMenu);
 			listInput[2].handleInput();
+			moveMenu = listInput[2].getMenu();
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -610,7 +616,9 @@ void ContentStudent::createData()
 				listInput[3].display();
 			}
 			listInput[3].useGender = true;
+			listInput[3].setMenu(moveMenu);
 			listInput[3].handleInput();
+			moveMenu = listInput[3].getMenu();
 			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
@@ -677,6 +685,7 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_PASSWORD)
 		{
+			listInput[4].setMenu(moveMenu);
 			listInput[4].handleInput();
 			switch (listInput[4].getEndKey())
 			{
@@ -753,7 +762,7 @@ void ContentStudent::createData()
 	}
 }
 
-void ContentStudent::deleteData()
+void ContentDetailClassroom::deleteData()
 {
 	int deletePosX = getCenterX(COLUMN_CENTER, 50);
 	PopupDelete pDelete;
@@ -782,7 +791,7 @@ void ContentStudent::deleteData()
 	return;
 }
 
-void ContentStudent::editData()
+void ContentDetailClassroom::editData()
 {
 	ManageClass test;
 	Student studentFound = test.findStudentByCode(studentCode, classCode);
@@ -810,7 +819,9 @@ void ContentStudent::editData()
 	{
 		if (stateInput == FORM_LAST)
 		{
+			listInput[1].setMenu(moveMenu);
 			listInput[1].handleInput();
+			moveMenu = listInput[1].getMenu();
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -849,7 +860,9 @@ void ContentStudent::editData()
 
 		if (stateInput == FORM_FIRST)
 		{
+			listInput[2].setMenu(moveMenu);
 			listInput[2].handleInput();
+			moveMenu = listInput[2].getMenu();
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -899,7 +912,9 @@ void ContentStudent::editData()
 				listInput[3].display();
 			}
 			listInput[3].useGender = true;
+			listInput[3].setMenu(moveMenu);
 			listInput[3].handleInput();
+			moveMenu = listInput[3].getMenu();
 			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
@@ -966,7 +981,9 @@ void ContentStudent::editData()
 
 		if (stateInput == FORM_PASSWORD)
 		{
+			listInput[4].setMenu(moveMenu);
 			listInput[4].handleInput();
+			moveMenu = listInput[4].getMenu();
 			switch (listInput[4].getEndKey())
 			{
 			case ENTER:
@@ -1042,7 +1059,7 @@ void ContentStudent::editData()
 	}
 }
 
-void ContentStudent::findData()
+void ContentDetailClassroom::findData()
 {
 	int cursorPosition = textSearch.length();
 	stateSearchInput = SEARCH_INPUT;
@@ -1151,7 +1168,7 @@ void ContentStudent::findData()
 	}
 }
 
-void ContentStudent::loadData()
+void ContentDetailClassroom::loadData()
 {
 	cleanTable();
 	ManageClass test;
@@ -1202,7 +1219,7 @@ void ContentStudent::loadData()
 	}
 }
 
-void ContentStudent::pagging()
+void ContentDetailClassroom::pagging()
 {
 	ManageClass test;
 	StudentPage studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
@@ -1223,7 +1240,7 @@ void ContentStudent::pagging()
 	cout << pageTitle;
 }
 
-void ContentStudent::cleanInput()
+void ContentDetailClassroom::cleanInput()
 {
 	for (int i = 0; i < 5; i++)
 	{
@@ -1231,7 +1248,7 @@ void ContentStudent::cleanInput()
 	}
 }
 
-void ContentStudent::showTitleStudent()
+void ContentDetailClassroom::showTitleStudent()
 {
 	ManageClass test;
 	Classroom classFound = test.findClassByCode(classCode.c_str());
@@ -1239,14 +1256,14 @@ void ContentStudent::showTitleStudent()
 	int total = test.getCountSudentOfClass(classCode.c_str());
 
 	string count = to_string(total);
-	string title = "Lop: " + className;
+	string title = "Lop:" + className + " - Sinh Vien:" + count;
 
-	int titlePosX = getCenterX(COLUMN_CENTER, title.length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN +titlePosX, 10);
+	int titlePosX = getCenterX(getConsoleWidth(), title.length());
+	gotoXY(titlePosX - 12, 10);
 	cout << title;
 }
 
-void ContentStudent::showTutorial()
+void ContentDetailClassroom::showTutorial()
 {
 	int posX = getCenterX(120, 50);
 	PopupTutorial pTutorial;

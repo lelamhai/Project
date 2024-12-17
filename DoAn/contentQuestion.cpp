@@ -19,7 +19,7 @@ void ContentQuestion::init(string code)
 	this->subjectCode = code;
 }
 
-void ContentQuestion::drawClassroom()
+void ContentQuestion::drawContent()
 {
 	// Search
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING, DISTANCE_HEADER + PADDING + PADDING);
@@ -47,51 +47,8 @@ void ContentQuestion::drawClassroom()
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING * 4, COLUMN_CENTER, ROW_CENTER);
 
 	// Info
-	int posXInfo = getCenterX(COLUMN_RIGHT, 9);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + posXInfo, DISTANCE_HEADER + PADDING * 2);
-	cout << "Thong Tin";
-
-
-	string titleInput[] = {
-		"Noi Dung Chinh",
-		"Noi Dung A",
-		"Noi Dung B",
-		"Noi Dung C",
-		"Noi Dung D",
-		"Dap An"
-	};
-
-	int posXRight = 0;
-	int y = DISTANCE_HEADER + PADDING + 4;
-	for (int i = 0; i <6; i++)
-	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
-		cout << titleInput[i];
-
-
-		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 17, y + (i * 3) - 1);
-		listInput[i].drawBox();
-		posXRight = y + (i * 3);
-	}
-
-	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 26);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
-	cout << char(195);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
-	cout << char(180);
-
-	y = posXRight + 2;
-	posYMessage = y;
-
-	y = y + 2;
-	int infoX = getCenterX(COLUMN_RIGHT, 10);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + infoX, y, 10, 2);
-	int enterX = getCenterX(COLUMN_RIGHT, 5);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + enterX, y + 1);
-	cout << "Enter";
-
-	y = y + 5 + 1;
+	int y = DISTANCE_HEADER + PADDING;
+	
 	// Tutorial
 	int tutorialY = y;
 	tutorialY += 1;
@@ -101,18 +58,27 @@ void ContentQuestion::drawClassroom()
 	tutorialY += 1;
 
 	string note[] = {
-		"F12: Xem Huong Dan Chi Tiet",
-		"ESC: Tro Lai"
+		"F1: Chon Du Lieu Trong Bang",
+		"F3: Tim Kiem Cau Hoi",
+		"Ins: Them Cau Hoi",
+		"ESC: Tro Lai",
+		"Phim Len|Xuong: Chon Du Lieu",
+		"Phim Trai|Phai: Xem Trang Sau|Truoc",
+		" ",
+		"* Chinh Sua Cau Hoi",
+		"   F1->Len|Xuong->F2",
+		"* Xoa Cau Hoi",
+		"   F1->Len|Xuong->Del->Trai|Phai"
 	};
 
 	int contentY = tutorialY + 1;
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 11; i++)
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
 	}
 	setColorText(ColorCode_DarkYellow);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT,5);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT, 15);
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY, COLUMN_RIGHT);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY);
 	cout << char(195);
@@ -172,7 +138,7 @@ void ContentQuestion::girdContent()
 
 void ContentQuestion::content()
 {
-	drawClassroom();
+	drawContent();
 	girdContent();
 	currentQuestion = C_SELECT;
 	handle();
@@ -434,331 +400,27 @@ void ContentQuestion::createData()
 {
 	cleanContent();
 	ContentInputQuestion q;
+	q.setStateInputQuestion(q.C_CREATE);
 	q.init(subjectCode);
 	q.displayContent();
 	cleanContent();
-	currentQuestion == C_SELECT;
+	currentQuestion = C_SELECT;
+	drawContent();
+	girdContent();
 }
 
 void ContentQuestion::editData()
 {
-	Question questionFound = subject.getQuestionBySubjectCodeAndId(subjectCode, id);
-	listInput[0].setText(questionFound.content);
-	listInput[0].display();
-
-	listInput[1].setText(questionFound.optionA);
-	listInput[1].display();
-
-	listInput[2].setText(questionFound.optionB);
-	listInput[2].display();
-
-	listInput[3].setText(questionFound.optionC);
-	listInput[3].display();
-
-	listInput[4].setText(questionFound.optionD);
-	listInput[4].display();
-
-	string str(1, questionFound.answer);
-	listInput[5].setText(str);
-	listInput[5].display();
-
-	while (true)
-	{
-		if (stateInput == FORM_ContentMain)
-		{
-			listInput[0].handleInput();
-
-			switch (listInput[0].getEndKey())
-			{
-			case ENTER:
-				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
-					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
-				{
-					stateInput = FORM_ENTER;
-					continue;
-				}
-				stateInput = FORM_ContentA;
-				break;
-
-			case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;
-
-			case DOWN:
-				stateInput = FORM_ContentA;
-				break;
-
-			default:
-				break;
-			}
-		}
-
-		if (stateInput == FORM_ContentA)
-		{
-			listInput[1].handleInput();
-			switch (listInput[1].getEndKey())
-			{
-			case ENTER:
-				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
-					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
-				{
-					stateInput = FORM_ENTER;
-					continue;
-				}
-				stateInput = FORM_ContentB;
-				break;
-
-			case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;
-
-			case UP:
-				stateInput = FORM_ContentMain;
-				break;
-
-			case DOWN:
-				stateInput = FORM_ContentB;
-				break;
-
-			default:
-				break;
-			}
-		}
-
-		if (stateInput == FORM_ContentB)
-		{
-			listInput[2].handleInput();
-
-			switch (listInput[2].getEndKey())
-			{
-			case ENTER:
-				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
-					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
-				{
-					stateInput = FORM_ENTER;
-					continue;
-				}
-				stateInput = FORM_ContentC;
-				break;
-
-			case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;
-
-			case UP:
-				stateInput = FORM_ContentA;
-				break;
-
-			case DOWN:
-				stateInput = FORM_ContentC;
-				break;
-
-			default:
-				break;
-			}
-		}
-
-		if (stateInput == FORM_ContentC)
-		{
-			listInput[3].handleInput();
-
-			switch (listInput[3].getEndKey())
-			{
-			case ENTER:
-				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
-					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
-				{
-					stateInput = FORM_ENTER;
-					continue;
-				}
-				stateInput = FORM_ContentD;
-				break;
-
-			case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;
-
-			case UP:
-				stateInput = FORM_ContentB;
-				break;
-
-			case DOWN:
-				stateInput = FORM_ContentD;
-				break;
-
-			default:
-				break;
-			}
-		}
-
-		if (stateInput == FORM_ContentD)
-		{
-			listInput[4].handleInput();
-			switch (listInput[4].getEndKey())
-			{
-			case ENTER:
-				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
-					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
-				{
-					stateInput = FORM_ENTER;
-					continue;
-				}
-				stateInput = FORM_ContentAnswer;
-				break;
-
-			case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;
-
-			case UP:
-				stateInput = FORM_ContentC;
-				break;
-
-			case DOWN:
-				stateInput = FORM_ContentAnswer;
-				break;
-
-			default:
-				break;
-			}
-		}
-
-		if (stateInput == FORM_ContentAnswer)
-		{
-			listInput[5].handleInput();
-
-			switch (listInput[5].getEndKey())
-			{
-			case ENTER:
-				if (listInput[0].getText() != "" && listInput[1].getText() != "" && listInput[2].getText() != ""
-					&& listInput[3].getText() != "" && listInput[4].getText() != "" && listInput[5].getText() != "")
-				{
-					stateInput = FORM_ENTER;
-					continue;
-				}
-				stateInput = FORM_ContentMain;
-				break;
-
-			case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;
-
-			case UP:
-				stateInput = FORM_ContentD;
-				break;
-
-			case DOWN:
-				stateInput = FORM_ContentMain;
-				break;
-
-			default:
-				break;
-			}
-		}
-
-		if (stateInput == FORM_ENTER)
-		{
-			bool result = subject.editQuestionInSubject(subjectCode.c_str(), id, listInput[0].getText(), listInput[1].getText(), listInput[2].getText(), listInput[3].getText(), listInput[4].getText(), listInput[5].getText()[0]);
-			if (result)
-			{
-				cleanTable();
-				loadData();
-				cleanMessage(posYMessage);
-				text.setContent("Them lop thanh cong!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
-			}
-			else
-			{
-				cleanMessage(posYMessage);
-				text.setContent("Them lop that bai!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
-			}
-
-			text.display();
-			stateInput = FORM_ContentMain;
-		}
-
-		if (stateInput == FORM_EXIT)
-		{
-			return;
-		}
-	}
+	cleanContent();
+	ContentInputQuestion q;
+	q.setStateInputQuestion(q.C_EDIT);
+	q.init(subjectCode);
+	q.setIdQuestion(id);
+	q.displayContent();
+	cleanContent();
+	currentQuestion = C_SELECT;
+	drawContent();
+	girdContent();
 }
 
 void ContentQuestion::findData()

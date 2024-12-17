@@ -94,7 +94,7 @@ void Login::formLogin()
 		{
 		case LOGIN_USERNAME:
 			gotoXY(posX + inputUserName.getText().length(), posY); 
-			inputUserName.useSpace = true;
+			inputUserName.notUseSpace = true;
 			inputUserName.handleInput();
 
 			if (inputUserName.getEndKey()== ENTER)
@@ -105,14 +105,13 @@ void Login::formLogin()
 					break;
 				}
 			}
-
 			stateLoginInput = LOGIN_PASSWORD;
 			break;
 
 		case LOGIN_PASSWORD:
 			gotoXY(posX + inputPassword.getText().length(), posY+3);
 			inputPassword.useHide = true;
-			inputPassword.useSpace = true;
+			inputPassword.notUseSpace = true;
 			inputPassword.handleInput();
 			if (inputPassword.getEndKey() == ENTER)
 			{
@@ -143,6 +142,5 @@ void Login::formLogin()
 		default:
 			break;
 		}
-
 	}
 }

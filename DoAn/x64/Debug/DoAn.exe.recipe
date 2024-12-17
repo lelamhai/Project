@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
+      <FullPath>D:\HOC HANH\PTIT\CTDL\Project\x64\Debug\DoAn.exe</FullPath>
+=======
       <FullPath>D:\Code\PTIT\CTDL &amp; GT\Do An\Project\x64\Debug\DoAn.exe</FullPath>
+>>>>>>> 3b158f2a21c85c6925277ba259a060c9d5e6c7af
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

@@ -220,7 +220,7 @@ void ContentFilterPoint::createData()
 	{
 		if (stateInput == FORM_CLASSROOM)
 		{
-			listInput[0].useSpace = true;
+			listInput[0].notUseSpace = true;
 			listInput[0].handleInput();
 
 			switch (listInput[0].getEndKey())
@@ -272,7 +272,7 @@ void ContentFilterPoint::createData()
 
 		if (stateInput == FORM_SUBJECT)
 		{
-			listInput[1].useSpace = true;
+			listInput[1].notUseSpace = true;
 			listInput[1].handleInput();
 
 			switch (listInput[1].getEndKey())
