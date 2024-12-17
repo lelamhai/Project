@@ -372,7 +372,7 @@ void ContentSubject::createData()
 	{
 		if (stateInput == FORM_CODE)
 		{
-			listInput[0].useSpace = true;
+			listInput[0].notUseSpace = true;
 			listInput[0].handleInput();
 
 			switch (listInput[0].getEndKey())

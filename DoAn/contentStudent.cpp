@@ -1256,10 +1256,10 @@ void ContentStudent::showTitleStudent()
 	int total = test.getCountSudentOfClass(classCode.c_str());
 
 	string count = to_string(total);
-	string title = "Lop:" + className + " - Sinh Vien:" + count;
+	string title = "Lop: " + className;
 
-	int titlePosX = getCenterX(getConsoleWidth(), title.length());
-	gotoXY(titlePosX - 12, 10);
+	int titlePosX = getCenterX(COLUMN_CENTER, title.length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN +titlePosX, 10);
 	cout << title;
 }
 

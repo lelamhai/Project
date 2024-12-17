@@ -267,7 +267,7 @@ void InputField::handleInput()
 				continue;
 			}
 
-			if (useSpace)
+			if (notUseSpace)
 			{
 				continue;
 			}
@@ -328,8 +328,17 @@ void InputField::handleInput()
 					upper = s - ('a' - 'A');
 				}
 
-				if (s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
+				if (s >= 'A' && s <= 'Z')
 				{
+					upper = s;
+				}
+
+				if (s >= '0' && s <= '9')
+				{
+					if (notUseNum)
+					{
+						break;
+					}
 					upper = s;
 				}
 
