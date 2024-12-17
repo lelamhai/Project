@@ -1,3 +1,53 @@
+<<<<<<< HEAD
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\ClassroomSevice.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\ClassroomSevice.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\color.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\color.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\configApp.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\configApp.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\content.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\content.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentAbout.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentAbout.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentClassroom.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentClassroom.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentDetailClassroom.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentDetailClassroom.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentExam.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentExam.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentExecute.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentExecute.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentFilterPoint.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentFilterPoint.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentPrintPoint.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentPrintPoint.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentQuestion.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentQuestion.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentStudent.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentStudent.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\contentSubject.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\contentSubject.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\ContentSubject.h;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\ContentSubject.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\DungTest.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\DungTest.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\HuyTest.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\HuyTest.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\LoadingData.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\LoadingData.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\LoginData.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\LoginData.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\ManageClass.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\ManageClass.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\ManageQuestion.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\ManageQuestion.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\ManageScore.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\ManageScore.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\ManageStudent.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\ManageStudent.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\ManageSubject.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\ManageSubject.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\popupDelete.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\popupDelete.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\draw.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\draw.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\footer.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\footer.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\inputField.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\inputField.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\InputField.h;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\InputField.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\page.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\page.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\popup.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\popup.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\popupFinishExam.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\popupFinishExam.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\popupNotification.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\popupNotification.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\popupTutorial.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\popupTutorial.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\RandomID.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\RandomID.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\sidebar.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\sidebar.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\header.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\header.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\keyboard.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\keyboard.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\loading.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\loading.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\login.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\login.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\main.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\main.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\Layout.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\Layout.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\singleton.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\singleton.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\ManageExam.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\ManageExam.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\StudentList.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\StudentList.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\StudentService.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\StudentService.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\text.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\text.obj
+D:\HOC HANH\PTIT\CTDL\Project\DoAn\windows.cpp;D:\HOC HANH\PTIT\CTDL\Project\DoAn\x64\Debug\windows.obj
+=======
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ClassroomSevice.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ClassroomSevice.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\color.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\color.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\configApp.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\configApp.obj
@@ -47,3 +97,4 @@ D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\StudentList.cpp;D:\Code\PTIT\CTDL & GT
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\StudentService.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\StudentService.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\text.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\text.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\windows.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\windows.obj
+>>>>>>> 3b158f2a21c85c6925277ba259a060c9d5e6c7af
