@@ -86,7 +86,7 @@ private:
 public:
 	void displayContent() override;
 	void init(string subjectCode);
-	void drawClassroom();
+	void drawContent();
 	void girdContent();
 	void content();
 	void handle();

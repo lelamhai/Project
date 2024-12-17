@@ -19,7 +19,7 @@ void ContentQuestion::init(string code)
 	this->subjectCode = code;
 }
 
-void ContentQuestion::drawClassroom()
+void ContentQuestion::drawContent()
 {
 	// Search
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING, DISTANCE_HEADER + PADDING + PADDING);
@@ -47,51 +47,8 @@ void ContentQuestion::drawClassroom()
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING * 4, COLUMN_CENTER, ROW_CENTER);
 
 	// Info
-	int posXInfo = getCenterX(COLUMN_RIGHT, 9);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + posXInfo, DISTANCE_HEADER + PADDING * 2);
-	cout << "Thong Tin";
-
-
-	string titleInput[] = {
-		"Noi Dung Chinh",
-		"Noi Dung A",
-		"Noi Dung B",
-		"Noi Dung C",
-		"Noi Dung D",
-		"Dap An"
-	};
-
-	int posXRight = 0;
-	int y = DISTANCE_HEADER + PADDING + 4;
-	for (int i = 0; i <6; i++)
-	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
-		cout << titleInput[i];
-
-
-		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 17, y + (i * 3) - 1);
-		listInput[i].drawBox();
-		posXRight = y + (i * 3);
-	}
-
-	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 26);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
-	cout << char(195);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
-	cout << char(180);
-
-	y = posXRight + 2;
-	posYMessage = y;
-
-	y = y + 2;
-	int infoX = getCenterX(COLUMN_RIGHT, 10);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + infoX, y, 10, 2);
-	int enterX = getCenterX(COLUMN_RIGHT, 5);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + enterX, y + 1);
-	cout << "Enter";
-
-	y = y + 5 + 1;
+	int y = DISTANCE_HEADER + PADDING;
+	
 	// Tutorial
 	int tutorialY = y;
 	tutorialY += 1;
@@ -101,18 +58,27 @@ void ContentQuestion::drawClassroom()
 	tutorialY += 1;
 
 	string note[] = {
-		"F12: Xem Huong Dan Chi Tiet",
-		"ESC: Tro Lai"
+		"F1: Chon Du Lieu Trong Bang",
+		"F3: Tim Kiem Cau Hoi",
+		"Ins: Them Cau Hoi",
+		"ESC: Tro Lai",
+		"Phim Len|Xuong: Chon Du Lieu",
+		"Phim Trai|Phai: Xem Trang Sau|Truoc",
+		" ",
+		"* Chinh Sua Cau Hoi",
+		"   F1->Len|Xuong->F2",
+		"* Xoa Cau Hoi",
+		"   F1->Len|Xuong->Del->Trai|Phai"
 	};
 
 	int contentY = tutorialY + 1;
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 11; i++)
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
 	}
 	setColorText(ColorCode_DarkYellow);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT,5);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT, 15);
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY, COLUMN_RIGHT);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY);
 	cout << char(195);
@@ -172,7 +138,7 @@ void ContentQuestion::girdContent()
 
 void ContentQuestion::content()
 {
-	drawClassroom();
+	drawContent();
 	girdContent();
 	currentQuestion = C_SELECT;
 	handle();
