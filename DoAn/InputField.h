@@ -34,9 +34,8 @@ public:
 	void handleInput();
 	void display();
 	KeyState getEndKey();
-	void setMenu(int move);
 	void clean();
-	int getMenu();
+	
 	InputField();
 	~InputField();
 };

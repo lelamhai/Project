@@ -387,13 +387,3 @@ void InputField::display()
 	gotoXY(x + 1, y + 1);
 	cout << inputString;
 }
-
-void InputField::setMenu(int move)
-{
-	this->moveMenu = move;
-}
-
-int InputField::getMenu()
-{
-	return this->moveMenu;
-}

@@ -54,15 +54,9 @@ private:
 	};
 	SearchInput stateSearchInput;
 
-	InputField inputClassroomCode;
-	InputField inputClassroomName;
-
-	InputField listInput[2] = {
-		inputClassroomCode,
-		inputClassroomName
-	};
+	vector<InputField> listInput;
+	
 	Text text;
-	int moveMenu = 0;
 
 	int posYMessage = 0;
 	string classCode;

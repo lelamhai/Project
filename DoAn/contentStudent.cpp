@@ -466,9 +466,7 @@ void ContentStudent::createData()
 	{
 		if (stateInput == FORM_CODE)
 		{
-			listInput[0].setMenu(moveMenu);
 			listInput[0].handleInput();
-			moveMenu = listInput[0].getMenu();
 			switch (listInput[0].getEndKey())
 			{
 			case ENTER:
@@ -519,9 +517,7 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_LAST)
 		{
-			listInput[1].setMenu(moveMenu);
 			listInput[1].handleInput();
-			moveMenu = listInput[1].getMenu();
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -564,9 +560,7 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_FIRST)
 		{
-			listInput[2].setMenu(moveMenu);
 			listInput[2].handleInput();
-			moveMenu = listInput[2].getMenu();
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -616,9 +610,7 @@ void ContentStudent::createData()
 				listInput[3].display();
 			}
 			listInput[3].useGender = true;
-			listInput[3].setMenu(moveMenu);
 			listInput[3].handleInput();
-			moveMenu = listInput[3].getMenu();
 			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
@@ -685,7 +677,6 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_PASSWORD)
 		{
-			listInput[4].setMenu(moveMenu);
 			listInput[4].handleInput();
 			switch (listInput[4].getEndKey())
 			{
@@ -819,9 +810,7 @@ void ContentStudent::editData()
 	{
 		if (stateInput == FORM_LAST)
 		{
-			listInput[1].setMenu(moveMenu);
 			listInput[1].handleInput();
-			moveMenu = listInput[1].getMenu();
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -860,9 +849,7 @@ void ContentStudent::editData()
 
 		if (stateInput == FORM_FIRST)
 		{
-			listInput[2].setMenu(moveMenu);
 			listInput[2].handleInput();
-			moveMenu = listInput[2].getMenu();
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -912,9 +899,7 @@ void ContentStudent::editData()
 				listInput[3].display();
 			}
 			listInput[3].useGender = true;
-			listInput[3].setMenu(moveMenu);
 			listInput[3].handleInput();
-			moveMenu = listInput[3].getMenu();
 			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
@@ -981,9 +966,7 @@ void ContentStudent::editData()
 
 		if (stateInput == FORM_PASSWORD)
 		{
-			listInput[4].setMenu(moveMenu);
 			listInput[4].handleInput();
-			moveMenu = listInput[4].getMenu();
 			switch (listInput[4].getEndKey())
 			{
 			case ENTER:

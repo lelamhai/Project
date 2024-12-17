@@ -294,9 +294,7 @@ void ContentExam::createData()
 	{
 		if (stateInput == FORM_CODE)
 		{
-			listInput[0].setMenu(moveMenu);
 			listInput[0].handleInput();
-			moveMenu = listInput[0].getMenu();
 
 			switch (listInput[0].getEndKey())
 			{
@@ -328,9 +326,7 @@ void ContentExam::createData()
 
 		if (stateInput == FORM_COUNT)
 		{
-			listInput[1].setMenu(moveMenu);
 			listInput[1].handleInput();
-			moveMenu = listInput[1].getMenu();
 
 			switch (listInput[1].getEndKey())
 			{
@@ -366,9 +362,7 @@ void ContentExam::createData()
 
 		if (stateInput == FORM_MINUTE)
 		{
-			listInput[2].setMenu(moveMenu);
 			listInput[2].handleInput();
-			moveMenu = listInput[2].getMenu();
 
 			switch (listInput[2].getEndKey())
 			{
