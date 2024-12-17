@@ -75,9 +75,9 @@ void HuyTest::main() {
 
 	cout << "Test crack" << endl;
 
-	/*---------------------------IN RA CHI TIẾT KẾT QUẢ ĐÃ THI MÔN HỌC CỦA MỘT SINH VIÊN ---------------------------------------------*/
+	/*---------------------------IN RA LỊCH SỬ KẾT QUẢ ĐÃ THI MÔN HỌC CỦA MỘT SINH VIÊN ---------------------------------------------*/
 	
-	/*resultList* rs = ManageScore::loadResultFromFile("CSDL", "1233"); // tìm kết quả thi của một sinh viên từ data base
+	resultList* rs = ManageScore::loadResultFromFile("CSDL", "12rfh"); // tìm kết quả thi của một sinh viên từ data base
 	
 	// demo in ra các thông tin kết quả thi
 	if (rs == nullptr) {
@@ -93,27 +93,19 @@ void HuyTest::main() {
 		cout << "Diem so: " << rs->score << endl;
 
 		// in ra nội dung từng câu hỏi
-		Question q;
-
 		for (int i = 0; i < totalQuestion; i++) {
 			answer* p = rs->answerList[i];
-			q = ManageScore::getQuestionBySubjectCodeAndId(rs->subjectCode, p->questionId);
 
-			cout << "Cau " << i + 1 << ": "<< q.content << endl
-				<< q.optionA << endl
-				<< q.optionB << endl
-				<< q.optionC << endl
-				<< q.optionD << endl
+			//cout << p->questionId << " / " << p->questionInfo.questionId << endl;;
+			cout << "Cau " << i + 1 << ": "<< p->questionInfo.content << endl
+				<< p->questionInfo.optionA << endl
+				<< p->questionInfo.optionB << endl
+				<< p->questionInfo.optionC << endl
+				<< p->questionInfo.optionD << endl
 
 				<< "Da chon " << p->chosenAnswer << " --- "
 				<< "Dap an " << p->correctAnswer << endl;
 		}
-
-		tm time1; // đối tượng lưu thời gian
-		localtime_s(&time1, &rs->timeExam);  // Chuyển đổi time sang kiểu time_t để hiển thị
-		cout << "Thoi gian da ket thuc thi: " << time1.tm_mday << "/" << time1.tm_mon + 1 << "/" << time1.tm_year + 1900 << "  "
-			<< time1.tm_hour << ":" << time1.tm_min << ":" << time1.tm_sec << endl;
-
 	}
 
 	ManageScore::deallocateResulList(rs); // giải phóng bộ nhớ nếu chuyển trang khác, không dùng nữa
@@ -121,9 +113,9 @@ void HuyTest::main() {
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R1 ---------------------------------------------*/
 	
-	int check = ManageExam::checkInputExam1("hsj","VL",3);
+	//int check = ManageExam::checkInputExam1("hsj","VL",3);
 	// trả ve 1 nếu dữ liệu hợp lệ, =-1 nếu mã môn không tồn tại, =-3 nếu sinh viên đã thi môn này trước đó rổi, =-2 nếu số câu hỏi không hợp lệ, 
-	cout << "Kiem tra = " << check << endl;
+	//cout << "Kiem tra = " << check << endl;
 	// KHỞI TẠO
 	/*mutex mtx; // Tạo mutex cho đồng bộ hóa
 	ManageExam exam1;

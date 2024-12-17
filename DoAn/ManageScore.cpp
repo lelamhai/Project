@@ -186,6 +186,7 @@ ScorePage ManageScore::searchStudentScore(string keyWord, int pageNumber) {
 }
 
 resultList* ManageScore::loadResultFromFile(const char* subjectCode, const char* studentCode) {
+    ManageSubject manageSubject;
     resultList* result = new resultList;
     result->studentCode = studentCode;
     result->subjectCode = subjectCode;
@@ -205,20 +206,29 @@ resultList* ManageScore::loadResultFromFile(const char* subjectCode, const char*
     inputFile.close();
 
     // Duyệt qua các phần tử trong JSON
+    int index = 0;
+    answer* p;
+
     for (const auto& answerRecordData : j) {
         if (answerRecordData["studentCode"] == studentCode && answerRecordData["subjectCode"] == subjectCode) {
             result->totalQuestion = answerRecordData["totalQuestion"].get<int>();
             result->countCorrect = answerRecordData["countCorrect"].get<int>();
             result->score = answerRecordData["score"].get<float>() / 10; // chia 10 vì lúc lưu đã *10
-            result->timeExam = answerRecordData["timeExam"].get<time_t>(); // Lấy thời gian làm bài
+            //result->timeExam = answerRecordData["timeExam"].get<time_t>(); // Lấy thời gian làm bài
 
             // Lấy danh sách câu trả lời
-            int index = 0;
+            index = 0;
+
             for (const auto& answered : answerRecordData["Answered"]) {
                 result->answerList[index] = new answer;
-                result->answerList[index]->questionId = answered["questionId"].get<int>();
-                result->answerList[index]->chosenAnswer = answered["chosenAnswer"].get<std::string>()[0];
-                result->answerList[index]->correctAnswer = answered["correctAnswer"].get<std::string>()[0];
+                p = result->answerList[index];
+
+                p->questionId = answered["questionId"].get<int>();
+                p->chosenAnswer = answered["chosenAnswer"].get<std::string>()[0];
+                p->correctAnswer = answered["correctAnswer"].get<std::string>()[0];
+                
+                p->questionInfo = manageSubject.getQuestionBySubjectCodeAndId(subjectCode, p->questionId);
+               
                 index++;
             }
             return result; // Trả về kết quả tìm thấy

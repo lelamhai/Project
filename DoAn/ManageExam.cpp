@@ -168,7 +168,7 @@ void ManageExam::toCalculateResult() {
 
     score = (float)correctAnswer * 10 / numberQuestion;
     answerRecord.score = roundNumber(score, 1); // làm tròn điểm đến 1 số thập phân
-    answerRecord.timeExam = time(0); // Gán thời gian hiện tại
+    //answerRecord.timeExam = time(0); // Gán thời gian hiện tại
 
     // Ghi điểm vào file data
     ManageClass tempClass;
@@ -238,7 +238,7 @@ void ManageExam::saveResultToFile() {
     newAnswer["totalQuestion"] = answerRecord.totalQuestion;
     newAnswer["countCorrect"] = answerRecord.countCorrect;
     newAnswer["score"] = answerRecord.score * 10; // *10 để xử lý lưu chẵn số float
-    newAnswer["timeExam"] = answerRecord.timeExam;  // Thời gian từ struct
+    //newAnswer["timeExam"] = answerRecord.timeExam;  // Thời gian từ struct
 
     newAnswer["Answered"] = json::array();
     for (int i = 0; i < answerRecord.totalQuestion; i++) {

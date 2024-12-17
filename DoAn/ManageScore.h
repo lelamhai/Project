@@ -3,7 +3,7 @@
 #include "ManageClass.h"
 
 const int MAX_STUDENT_PER_CLASS = 100;
-const string EXAM_RESULT_FILE_NAME = "ExamResult.json";
+const string EXAM_RESULT_FILE_NAME = "examResult.json";
 
 struct scoreToPrint {
 	char studentCode[15];

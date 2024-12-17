@@ -91,6 +91,7 @@ struct answer {
 	int questionId;
 	char chosenAnswer;
 	char correctAnswer;
+	Question questionInfo;
 };
 struct resultList {
 	const char* studentCode;
@@ -99,6 +100,6 @@ struct resultList {
 	int totalQuestion;
 	int countCorrect; //đếm số câu hỏi đúng
 	float score;
-	time_t timeExam;
+	//time_t timeExam;
 };
 
