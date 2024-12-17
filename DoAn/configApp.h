@@ -22,6 +22,15 @@
 #define WIDTH_CONTENT  172
 #define HEIGHT_CONTENT  36
 
+#define YES "Co"
+#define NO "Khong"
+#define INSERT_FINISH "Them Thong Tin Thanh Cong!"
+#define UPDATE_FINISH "Cap Nhat Thong Tin Thanh Cong!"
+#define UPDATE_FAIL "Cap Nhat Thong Tin That Bai!"
+#define NOTIFICATION_DELETE "Ban Co Muon Xoa Du Lieu Nay Khong?"
+
+
+
 void init();
 void cleanContent();
 void cleanTable();

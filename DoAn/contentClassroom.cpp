@@ -498,7 +498,7 @@ void ContentClassroom::createData()
 				cleanTable();
 				loadData();
 				cleanMessage(posYMessage);
-				text.setContent("Them lop thanh cong!");
+				text.setContent(INSERT_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -506,7 +506,7 @@ void ContentClassroom::createData()
 			else 
 			{
 				cleanMessage(posYMessage);
-				text.setContent("Them lop that bai!");
+				text.setContent("Ma Lop Bi Trung!");
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -619,7 +619,7 @@ void ContentClassroom::editData()
 				cleanTable();
 				loadData();
 				cleanMessage(posYMessage);
-				text.setContent("Cap nhat thong tin thanh cong!");
+				text.setContent(UPDATE_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -627,7 +627,7 @@ void ContentClassroom::editData()
 			}
 			else {
 				cleanMessage(posYMessage);
-				text.setContent("Cap nhat thong tin that bai!");
+				text.setContent(UPDATE_FAIL);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
