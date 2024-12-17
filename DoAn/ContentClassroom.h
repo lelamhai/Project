@@ -22,6 +22,8 @@ using namespace std;
 class ContentClassroom : public Content
 {
 private:
+	bool isLoadFirst = true;
+
 	enum StateClassroom
 	{
 		C_SELECT	= 0, // F1
