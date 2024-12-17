@@ -148,7 +148,7 @@ void ContentClassroom::handle()
 		if (currentClassroom == C_DETAIL)
 		{
 			cleanContent();
-			ContentDetailClassroom* detail = new ContentDetailClassroom();
+			ContentStudent* detail = new ContentStudent();
 			detail->setClassCode(classCode);
 			detail->content();
 			delete detail;
@@ -227,7 +227,7 @@ void ContentClassroom::selectData()
 	int lastHover = -1;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_UP) & 0x0001)
+		if (GetAsyncKeyState(VK_UP) & 0x8000)
 		{
 			if (start < hover)
 			{
@@ -239,7 +239,7 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
+		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 		{
 			if (end > hover)
 			{
@@ -251,7 +251,7 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
+		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
 		{
 			if (pageNumber > 1)
 			{
@@ -271,7 +271,7 @@ void ContentClassroom::selectData()
 			Sleep(150);
 		}
 
-		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
+		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
 		{
 			if (pageNumber < page.totalPage)
 			{
@@ -339,7 +339,7 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
 			currentClassroom = C_DETAIL;
 			Sleep(150);
@@ -376,16 +376,16 @@ void ContentClassroom::selectData()
 				}
 
 				int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
-				gotoXY(34 + 3 + classX, 10 + 2 + 1 + 3 + (2 * i));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + classX, DISTANCE_HEADER + 8 + (2 * i));
 				cout << page.classList.classes[i]->classCode;
 
 				int nameX = getCenterX(40, page.classList.classes[i]->className.length());
-				gotoXY(34 + 3 + 40 + nameX, 10 + 2 + 1 + 3 + (2 * i));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + nameX, DISTANCE_HEADER + 8 + (2 * i));
 				cout << page.classList.classes[i]->className;
 
 				string countStr = to_string(getCountStudentOfList(page.classList.classes[i]->studentList));
 				int countX = getCenterX(40, countStr.length());
-				gotoXY(34 + 3 + 40 + 40 + countX, 10 + 2 + 1 + 3 + (2 * i));
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 40 + 40 + countX, DISTANCE_HEADER + 8 + (2 * i));
 				cout << countStr;
 				setColorText(ColorCode_DarkWhite);
 			}
@@ -498,7 +498,7 @@ void ContentClassroom::createData()
 				cleanTable();
 				loadData();
 				cleanMessage(posYMessage);
-				text.setContent("Them lop thanh cong!");
+				text.setContent(INSERT_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -506,7 +506,7 @@ void ContentClassroom::createData()
 			else 
 			{
 				cleanMessage(posYMessage);
-				text.setContent("Them lop that bai!");
+				text.setContent("Ma Lop Bi Trung!");
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -619,7 +619,7 @@ void ContentClassroom::editData()
 				cleanTable();
 				loadData();
 				cleanMessage(posYMessage);
-				text.setContent("Cap nhat thong tin thanh cong!");
+				text.setContent(UPDATE_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -627,7 +627,7 @@ void ContentClassroom::editData()
 			}
 			else {
 				cleanMessage(posYMessage);
-				text.setContent("Cap nhat thong tin that bai!");
+				text.setContent(UPDATE_FAIL);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);

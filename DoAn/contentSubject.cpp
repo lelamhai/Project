@@ -139,6 +139,20 @@ void ContentSubject::handle()
 {
 	while (true)
 	{
+		if (currentSubject == C_DETAIL)
+		{
+			cleanContent();
+			ContentQuestion* detail = new ContentQuestion();
+			detail->init(subjectCode);
+			detail->content();
+			delete detail;
+			cleanContent();
+			/*drawSubject();
+			girdContent();*/
+			currentSubject = C_EXIT;
+			Singleton::getInstance()->moveMenu = 0;
+		}
+
 		switch (currentSubject)
 		{
 		case ContentSubject::C_SELECT:
@@ -161,12 +175,10 @@ void ContentSubject::handle()
 			showCur(0);
 			deleteData();
 			break;
-		case ContentSubject::C_DETAIL:
-			showCur(1);
-			findData();
-			break;
+	/*	case ContentSubject::C_DETAIL:
+			break;*/
 		case ContentSubject::C_EXIT:
-			break;
+			return;
 		default:
 			break;
 		}
@@ -207,6 +219,15 @@ void ContentSubject::selectData()
 
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				currentSubject = C_EXIT;
+				return;
+			}
+		}
+
 		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
 			if (start < hover)
@@ -301,6 +322,13 @@ void ContentSubject::selectData()
 		if (GetAsyncKeyState(VK_F3) & 0x0001)
 		{
 			currentSubject = C_SEARCH;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		{
+			currentSubject = C_DETAIL;
 			Sleep(150);
 			return;
 		}

@@ -22,6 +22,7 @@ struct Question {
 	string optionC;
 	string optionD;
 	char answer;
+	bool isInExam = false;
 };
 
 struct NodeQuestion {
@@ -38,7 +39,6 @@ struct Subject {
 };
 
 struct SubjectNode {
-	int key; 
 	Subject info;
 	int height;
 	SubjectNode* left;
@@ -93,10 +93,12 @@ struct answer {
 	char correctAnswer;
 };
 struct resultList {
-	char studentCode[15];
-	char* subjectCode;
+	const char* studentCode;
+	const char* subjectCode;
 	answer* answerList[MAX_NUMBER_QUESTION];
+	int totalQuestion;
 	int countCorrect; //đếm số câu hỏi đúng
 	float score;
+	time_t timeExam;
 };
 

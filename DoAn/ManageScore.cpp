@@ -33,6 +33,22 @@ int ManageScore::setInputPrintScore(const char* classCode, const char* subjectCo
     return 1; 
 }
 
+string ManageScore::getClassName() {
+    ManageClass manageClass;
+    Classroom class1 = manageClass.findClassByCode(listToPrint.classCode);
+    return class1.className;
+}
+
+string ManageScore::getSubjectName() {
+    ManageSubject manageSubject;
+    PTRSUBJECT p = manageSubject.getSubject(listToPrint.subjectCode);
+    
+    if (p == nullptr) {
+        return "";
+    }
+    return p->info.subjectName;
+}
+
 scoreToPrintList ManageScore::getScoreOfClass() {
     // Lấy ra danh sách sinh viên của một lớp
     ManageClass manageClass;
@@ -96,7 +112,9 @@ ScorePage ManageScore::getScorePerPage(scoreToPrintList* listSoucre, int pageNum
 
     // Kiểm tra nếu trang không hợp lệ
     if (pageNumber < 1 || pageNumber > totalPages) {
-        cout << "Trang " << pageNumber << " không tồn tại!" << endl;
+        //cout << "Trang " << pageNumber << " không tồn tại!" << endl;
+        scorePage.startIndex = 0;
+        scorePage.endIndex = 0;
         return scorePage;
     }
 
@@ -166,6 +184,65 @@ ScorePage ManageScore::searchStudentScore(string keyWord, int pageNumber) {
     resultPage = getScorePerPage(p, pageNumber);
     return resultPage; 
 }
+
+resultList* ManageScore::loadResultFromFile(const char* subjectCode, const char* studentCode) {
+    resultList* result = new resultList;
+    result->studentCode = studentCode;
+    result->subjectCode = subjectCode;
+    result->totalQuestion = 0;
+    result->countCorrect = 0;
+    result->score = 0;
+
+    // Đọc dữ liệu từ file JSON
+    std::ifstream inputFile(EXAM_RESULT_FILE_NAME);
+    if (!inputFile.is_open()) {
+        cout << "Không thể mở file" << EXAM_RESULT_FILE_NAME << endl;
+        return nullptr;
+    }
+
+    json j;
+    inputFile >> j; // Đọc JSON từ file
+    inputFile.close();
+
+    // Duyệt qua các phần tử trong JSON
+    for (const auto& answerRecordData : j) {
+        if (answerRecordData["studentCode"] == studentCode && answerRecordData["subjectCode"] == subjectCode) {
+            result->totalQuestion = answerRecordData["totalQuestion"].get<int>();
+            result->countCorrect = answerRecordData["countCorrect"].get<int>();
+            result->score = answerRecordData["score"].get<float>() / 10; // chia 10 vì lúc lưu đã *10
+            result->timeExam = answerRecordData["timeExam"].get<time_t>(); // Lấy thời gian làm bài
+
+            // Lấy danh sách câu trả lời
+            int index = 0;
+            for (const auto& answered : answerRecordData["Answered"]) {
+                result->answerList[index] = new answer;
+                result->answerList[index]->questionId = answered["questionId"].get<int>();
+                result->answerList[index]->chosenAnswer = answered["chosenAnswer"].get<std::string>()[0];
+                result->answerList[index]->correctAnswer = answered["correctAnswer"].get<std::string>()[0];
+                index++;
+            }
+            return result; // Trả về kết quả tìm thấy
+        }
+    }
+
+    // Nếu không tìm thấy, giải phóng bộ nhớ và trả về nullptr
+    delete result;
+    return nullptr;
+}
+
+Question ManageScore::getQuestionBySubjectCodeAndId(const string subjectCode, int questionId) {
+    ManageSubject manageSubject;
+    Question q = manageSubject.getQuestionBySubjectCodeAndId(subjectCode, questionId);
+    return q;
+}
+
+void ManageScore::deallocateResulList(resultList* rs) {
+    for (int i = 0; i < rs->totalQuestion; i++) {
+        delete rs->answerList[i];
+    }
+    delete rs;
+}
+
 
 void ManageScore::deallocateScorePage(ScorePage &page) {
     scoreToPrintList* p = &page.printList;

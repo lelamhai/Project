@@ -182,6 +182,13 @@ void InputField::handleInput()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		{
+			keyInput = ESC;
+			Sleep(150);
+			return;
+		}
+
 		
 
 		char s = _getch();

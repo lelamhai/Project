@@ -11,50 +11,55 @@ DungTest::~DungTest()
 
 void DungTest::main()
 {
+	ManageSubject subject;
+	
+	// 1. get subject name input "SUBJECT CODE"
+	string subjectName = subject.getSubject("CSDL")->info.subjectName;
 
-    // Khai báo quản lý môn học
-     ManageSubject subject;
-     PTRSUBJECT a = subject.getSubject("CSDL");
-    // Tìm môn học theo từ khóa và trang, nếu để từ khóa trống thì sẽ lấy hết
-    //struct SubjectPage {
-    //    PTRSUBJECT subjects = new SubjectNode;
-    //    int currentPage; // trang hiện tại
-    //    int numberSubjectPerPage; // tổng số trên 1 trang
-    //    int totalPage; // tổng số trang
-    //    int totalSubject; // tổng số
-    //    int startIndex; // Số thứ tự bắt đầu của trang đó
-    //    int endIndex; // số kết thúc của trang đó
-    //};
-    //SubjectPage a = subject.searchSubjects("", 1);
-    //cout << "Tong so bao nhieu " << countSubjectsInList(a.subjects) << endl;
-    //printSubjectInAVL(a.subjects);
-    ////subject.printAllSubjects();
-    //
-    //// Hàm thêm mới môn học
-    //subject.addSubject("MN", "Mon hoc");
-    //// Hàm load dữ liệu lên để edit (input là subject code)
-    //PTRSUBJECT subjectFound = subject.getSubject("CSDL");
-    //cout << "Mon hoc tim thay: " << subjectFound->info.subjectName << endl;
-    //// Hàm thêm môn học mới đầu vào subjectCode, subjectName
-    //subject.editSubject("ANM", "An ninh mang - Updateee");
+	// 2. get number question INPUT SUBJECT CODE
+	int numberQuestion = subject.countQuestionsInSubject("CSDL");
 
-    //// Hàm xóa môn học
-    //bool isDeleted = subject.deleteSubject("MTH");
-    //cout << "Xoa thanh cong " << isDeleted << endl;
-    ////subject.printAllSubjects();
+	// 3. Load all data, input (subject code, "", 1);
+	QuestionPage questionPage = subject.searchQuestionInSubject("CSDL", "", 1);
 
-    //QuestionPage page = subject.searchQuestionInSubject("CSDL", "hay", 1);
-    //printQuestionsInList(page.questionList);
-    
-    // Cách duyệt cây 
-    // PTRSUBJECT a =  subject.getListSubject();
-    //void printSubjectInAVL(PTRSUBJECT root) { //root là phần tử trong class ManageSubject
-    //    if (!root) return;
-    //    printSubjectInAVL(root->left);
-    //    cout << "Subject Code: " << root->info.subjectCode << ", Subject Name: " << root->info.subjectName << endl; (Thao tác gì thì thêm vào giữa chỗ này)
-    //    cout << "So cau hoi " << subject.countQuestionsInSubject(root->info.subjectCode); << endl;
-    //    printSubjectInAVL(root->right);
-    //}
+	// 4. Tu ket qua lay ra duoc danh sach cau hoi
+	PTRQUESTION questionList = questionPage.questionList;
+	
+	// 5. duyet du lieu de load ra
+	while (questionList != nullptr) {
+		int maCauHoi = questionList->info.questionId;
+		string noiDungCauHoi = questionList->info.content;
+		string dapAnA = questionList->info.optionA;
+		string dapAnB = questionList->info.optionB;
+		string dapAnC = questionList->info.optionC;
+		string dapAnD = questionList->info.optionD;
+		char dapAnDung = questionList->info.answer;
+		questionList = questionList->next;
+	}
+
+	// Cac tham so khac trong question Page
+	//struct QuestionPage {
+	//	PTRQUESTION questionList = new NodeQuestion;
+	//	int currentPage; // trang hiện tại
+	//	int numberQuestionPerPage; // tổng số question trên 1 trang
+	//	int totalPage; // tổng số trang
+	//	int totalQuestions; // tổng số class
+	//	int startIndex; // Số thứ tự bắt đầu của trang đó
+	//	int endIndex; // số kết thúc của trang đó
+	//};
+
+	// 6. Hàm lấy câu hỏi ra để edit
+	// Question questionFound = subject.getQuestionBySubjectCodeAndId("CSDL", 5731);
+
+	// 7. Hàm thêm mới câu hỏi
+	// bool isAdd = subject.addQuestionInSubject("CSDL", "CAU HOI", "DAP AN A", "DAP AN B", "DAP AN C", "DAP AN D", 'A');
+	
+	// 8. Hàm chỉnh sửa câu hỏi
+	// bool isEdit = subject.editQuestionInSubject("CSDL", 18044, "CAU HOI - Update", "DAP AN A", "DAP AN B", "DAP AN C", "DAP AN D", 'A');
+	
+	// 9. Hàm xóa 1 câu hỏi
+	// bool isDeleted = subject.deleteQuestionInSubject("CSDL", 893); // Mã môn, // Câu hỏi ID
+	
 
 }
 	

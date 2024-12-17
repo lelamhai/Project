@@ -8,15 +8,16 @@ ContentPrintPoint::ContentPrintPoint()
 ContentPrintPoint::~ContentPrintPoint()
 {
 }
-void ContentPrintPoint::init(string subjectCode, string classCode)
+void ContentPrintPoint::init(string classCode, string subjectCode)
 {
-	//int checkInput = manangeScore.setInputPrintScore("C001", "VL");
-	int checkInput = manangeScore.setInputPrintScore(subjectCode.c_str(), classCode.c_str());
+	currentSubjectCode = subjectCode;
+
+	int checkInput = manangeScore.setInputPrintScore(classCode.c_str(), subjectCode.c_str());
 	listText.push_back(Text());
 	listText.push_back(Text());
 
-	listText[0].setContent(subjectCode);
-	listText[1].setContent(classCode);
+	listText[0].setContent(manangeScore.getClassName());
+	listText[1].setContent(manangeScore.getSubjectName());
 }
 
 void ContentPrintPoint::displayContent()
@@ -280,20 +281,31 @@ void ContentPrintPoint::selectData()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		{
+			cleanContent();
+			ContentHistoryExam h;
+			h.init(currentSubjectCode, currentStudent);
+			h.displayContent();
+		}
+
 		if (lastHover != hover)
 		{
+			page = manangeScore.searchStudentScore(textSearch, pageNumber);
 			int noScoreThisPage = page.endIndex - page.startIndex;
 			int n = noScoreThisPage;
 
 			for (int i = 0; i < n; i++) 
 			{
+				scoreToPrint* p = page.printList.array[i];
 				setColorText(ColorCode_DarkWhite);
 				if (hover == i)
 				{
 					setColorText(ColorCode_DarkGreen);
+					currentStudent = p->studentCode;
 				}
 
-				scoreToPrint* p = page.printList.array[i];
+				
 				int maStudent = getCenterX(24, strlen(p->studentCode));
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + maStudent, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
 				cout << p->studentCode;

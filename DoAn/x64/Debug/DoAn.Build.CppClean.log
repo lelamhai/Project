@@ -1,59 +1,60 @@
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\vc143.pdb
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\vc143.idb
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\manageclass.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\logindata.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\loadingdata.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\huytest.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\dungtest.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentsubject.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentstudent.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentquestion.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentprintpoint.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentfilterpoint.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentexecute.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentexam.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentdetailclassroom.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentclassroom.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\contentabout.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\content.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\configapp.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\color.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\classroomsevice.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\login.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\loading.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\keyboard.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\header.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\sidebar.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\randomid.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\popuptutorial.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\popupnotification.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\popupfinishexam.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\popup.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\page.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\inputfield.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\footer.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\draw.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\popupdelete.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\managesubject.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\managestudent.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\managescore.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\managequestion.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\windows.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\text.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\studentservice.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\studentlist.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\manageexam.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\singleton.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\layout.obj
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\main.obj
-d:\code\ptit\ctdl & gt\project\x64\debug\doan.exe
-d:\code\ptit\ctdl & gt\project\x64\debug\doan.pdb
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\doan.ilk
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\doan.tlog\cl.command.1.tlog
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\doan.tlog\cl.items.tlog
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\doan.tlog\cl.read.1.tlog
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\doan.tlog\cl.write.1.tlog
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\doan.tlog\link.command.1.tlog
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\doan.tlog\link.read.1.tlog
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\doan.tlog\link.secondary.1.tlog
-d:\code\ptit\ctdl & gt\project\doan\x64\debug\doan.tlog\link.write.1.tlog
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\vc143.pdb
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\vc143.idb
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\logindata.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\loadingdata.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\huytest.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\dungtest.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentsubject.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contenthistoryexam.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentquestion.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentprintpoint.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentinputquestion.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentfilterpoint.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentexecute.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentexam.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentstudent.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentclassroom.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\contentabout.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\content.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\configapp.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\color.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\classroomsevice.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\loading.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\keyboard.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\header.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\sidebar.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\randomid.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\popuptutorial.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\popupnotification.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\popupfinishexam.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\popup.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\page.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\inputfield.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\footer.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\draw.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\popupdelete.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\managesubject.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\managestudent.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\managescore.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\managequestion.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\manageclass.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\windows.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\text.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\studentservice.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\studentlist.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\manageexam.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\singleton.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\layout.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\main.obj
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\login.obj
+d:\code\ptit\ctdl & gt\do an\project\x64\debug\doan.exe
+d:\code\ptit\ctdl & gt\do an\project\x64\debug\doan.pdb
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.ilk
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\cl.command.1.tlog
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\cl.items.tlog
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\cl.read.1.tlog
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\cl.write.1.tlog
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.command.1.tlog
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.read.1.tlog
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.secondary.1.tlog
+d:\code\ptit\ctdl & gt\do an\project\doan\x64\debug\doan.tlog\link.write.1.tlog

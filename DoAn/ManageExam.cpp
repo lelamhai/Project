@@ -161,13 +161,21 @@ void ManageExam::toCalculateResult() {
         }
         index++;
     }
+    answerRecord.totalQuestion = numberQuestion;
     answerRecord.countCorrect = correctAnswer;
+    answerRecord.studentCode = studentCode;
+    answerRecord.subjectCode = subjectCode;
+
     score = (float)correctAnswer * 10 / numberQuestion;
     answerRecord.score = roundNumber(score, 1); // làm tròn điểm đến 1 số thập phân
-    
+    answerRecord.timeExam = time(0); // Gán thời gian hiện tại
+
     // Ghi điểm vào file data
     ManageClass tempClass;
     tempClass.addScoreToStudent(studentCode, subjectCode, answerRecord.score);
+    
+    // ghi record chi tiết thi vào data
+    saveResultToFile();
 }
 
 int ManageExam::countCorrectAnswer() {
@@ -199,26 +207,92 @@ tm ManageExam::getTimeEnd(tm timeStart) {
     return timeEnd;
 }
 
+void ManageExam::saveResultToFile() {
+    json j;
+
+    // Đọc dữ liệu cũ từ file JSON nếu tồn tại
+    ifstream inputFile(EXAM_RESULT_FILE_NAME);
+    if (inputFile.is_open()) {
+        inputFile >> j;  // Đọc dữ liệu JSON hiện có
+        inputFile.close();
+    }
+
+    // Nếu file rỗng, tạo mảng mới
+    if (j.is_null() || !j.is_array()) {
+        j = json::array();
+    }
+
+    // Kiểm tra xem sinh viên đã thi môn đó chưa
+    for (const auto& answerRecordData : j) {
+        if (answerRecordData["studentCode"] == answerRecord.studentCode &&
+            answerRecordData["subjectCode"] == answerRecord.subjectCode) {
+            //cout << "sinh vien da thi mon nay, khong luu du lieu thanh cong" << endl;
+            return;  // Khong lưu dữ liệu nếu sinh viên đã thi môn đó rồi
+        }
+    }
+
+    // Tạo một đối tượng JSON mới từ `answerRecord`
+    json newAnswer;
+    newAnswer["studentCode"] = answerRecord.studentCode;
+    newAnswer["subjectCode"] = answerRecord.subjectCode;
+    newAnswer["totalQuestion"] = answerRecord.totalQuestion;
+    newAnswer["countCorrect"] = answerRecord.countCorrect;
+    newAnswer["score"] = answerRecord.score * 10; // *10 để xử lý lưu chẵn số float
+    newAnswer["timeExam"] = answerRecord.timeExam;  // Thời gian từ struct
+
+    newAnswer["Answered"] = json::array();
+    for (int i = 0; i < answerRecord.totalQuestion; i++) {
+        answer* p = answerRecord.answerList[i];
+        if (p != nullptr) {
+            json answered;
+            answered["questionId"] = p->questionId;
+            answered["chosenAnswer"] = string(1, p->chosenAnswer);  // Chuyển char thành string
+            answered["correctAnswer"] = string(1, p->correctAnswer);
+
+            newAnswer["Answered"].push_back(answered);
+        }
+    }
+    j.push_back(newAnswer);// Thêm dữ liệu mới vào mảng JSON hiện tại
+
+    // Ghi lại dữ liệu vào file
+    ofstream outputFile(EXAM_RESULT_FILE_NAME);
+    if (outputFile.is_open()) {
+        outputFile << j.dump(4);  // Ghi JSON với thụt đầu dòng 4 spaces
+        outputFile.close();
+    }
+}
+
 float ManageExam::roundNumber(float number, int n) {
     float x = pow(10.0f, n);
     return round(number * x) / x;
 }
 
 int ManageExam::checkInputExam(const char* subjectCode, const int numberQuestion) {
+    return 100;
+}
+
+int ManageExam::checkInputExam1(const char* studentCode, const char* subjectCode, const int numberQuestion) {
     ManageSubject manageSubject;
 
-    // trả về false nếu mã môn không tồn tại
+    // trả về -1 nếu mã môn không tồn tại
     PTRSUBJECT subject = manageSubject.getSubject(subjectCode);
     if (subject == nullptr) {
         return -1;
     }
 
-    // trả về false số câu hỏi nhập không hợp lệ
+    // trả về -3 nếu sinh viên này đã thi môn đó trước rồi
+    bool isFirstExam = ManageClass::isFirstExam(studentCode, subjectCode);
+    if (!isFirstExam) {
+        return -3;
+    }
+
+    // trả về -2 số câu hỏi nhập không hợp lệ
     int totalQuestion = manageSubject.countQuestionsInSubject(subjectCode);
     if (numberQuestion<0 || numberQuestion > totalQuestion) {
         return -2;
     }
-    
+
+    // trả về 1 nếu input cho exam hơp lệ
     return 1;
 
 }

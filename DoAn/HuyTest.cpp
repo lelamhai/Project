@@ -13,13 +13,18 @@ HuyTest::~HuyTest()
 
 
 void HuyTest::main() {
+
 	/*---------------------------THỰC HIỆN IN BẢNG ĐIỂM -------------------------------------------------------*/
 	// PHẦN KHAI BÁO INPUT
-	ManageScore manangeScore;
+	/*ManageScore manangeScore;
 	int checkInput = manangeScore.setInputPrintScore("C001", "VL"); // =1 hợp lệ; -1 sai môn; -2 sai lớp
 	
 	// demo in để kiểm tra code
 	cout << "Kiem tra trang thai input: " << checkInput << endl; 
+
+	// PHẦN HIỂN THỊ TÊN MÔN HỌC, TÊN LỚP
+	cout << manangeScore.getClassName() << endl;
+	cout << manangeScore.getSubjectName() << endl;
 
 	// IN TẤT CẢ ĐIỂM CỦA LỚP
 	scoreToPrintList scoreList = manangeScore.getScoreAllPage();
@@ -68,74 +73,129 @@ void HuyTest::main() {
 	ManageScore::deallocateScorePage(scorePage1);
 	ManageScore::deallocateScorePage(scorePage2);
 
+	cout << "Test crack" << endl;
+
+	/*---------------------------IN RA CHI TIẾT KẾT QUẢ ĐÃ THI MÔN HỌC CỦA MỘT SINH VIÊN ---------------------------------------------*/
+	
+	/*resultList* rs = ManageScore::loadResultFromFile("CSDL", "1233"); // tìm kết quả thi của một sinh viên từ data base
+	
+	// demo in ra các thông tin kết quả thi
+	if (rs == nullptr) {
+		cout << "Không có dữ liệu. Sinh viên chưa thi môn này" << endl;
+	}
+	else {
+		cout << "Ten sinh vien: " << ManageClass::getStudentNameFromCode(rs->studentCode) << " --- "
+			 << "Mon hoc: " << ManageSubject::getSubjectNameFromCode(rs->subjectCode) << endl;
+
+		int totalQuestion = rs->totalQuestion;
+		cout << "Tong cau hoi: " << totalQuestion << endl;
+		cout << "So cau dung: " << rs->countCorrect << endl;
+		cout << "Diem so: " << rs->score << endl;
+
+		// in ra nội dung từng câu hỏi
+		Question q;
+
+		for (int i = 0; i < totalQuestion; i++) {
+			answer* p = rs->answerList[i];
+			q = ManageScore::getQuestionBySubjectCodeAndId(rs->subjectCode, p->questionId);
+
+			cout << "Cau " << i + 1 << ": "<< q.content << endl
+				<< q.optionA << endl
+				<< q.optionB << endl
+				<< q.optionC << endl
+				<< q.optionD << endl
+
+				<< "Da chon " << p->chosenAnswer << " --- "
+				<< "Dap an " << p->correctAnswer << endl;
+		}
+
+		tm time1; // đối tượng lưu thời gian
+		localtime_s(&time1, &rs->timeExam);  // Chuyển đổi time sang kiểu time_t để hiển thị
+		cout << "Thoi gian da ket thuc thi: " << time1.tm_mday << "/" << time1.tm_mon + 1 << "/" << time1.tm_year + 1900 << "  "
+			<< time1.tm_hour << ":" << time1.tm_min << ":" << time1.tm_sec << endl;
+
+	}
+
+	ManageScore::deallocateResulList(rs); // giải phóng bộ nhớ nếu chuyển trang khác, không dùng nữa
+
+
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R1 ---------------------------------------------*/
-	//// KHỞI TẠO
-	//mutex mtx; // Tạo mutex cho đồng bộ hóa
-	//ManageExam exam1;
-	//
-	////char subjectCode_input[15];	 //mã môn muốn thi
-	////char studentCode[15];		 // mã sinh viên
-	//int numberQuestion_input = 7;    //số câu hỏi muốn thi
-	//int timeForExam_min_input = 1;   //số phút muốn thi
+	
+	int check = ManageExam::checkInputExam1("hsj","VL",3);
+	// trả ve 1 nếu dữ liệu hợp lệ, =-1 nếu mã môn không tồn tại, =-3 nếu sinh viên đã thi môn này trước đó rổi, =-2 nếu số câu hỏi không hợp lệ, 
+	cout << "Kiem tra = " << check << endl;
+	// KHỞI TẠO
+	/*mutex mtx; // Tạo mutex cho đồng bộ hóa
+	ManageExam exam1;
+	
+	char subjectCode_input[15];	 //mã môn muốn thi
+	char studentCode[15];		 // mã sinh viên
+	int numberQuestion_input = 7;    //số câu hỏi muốn thi
+	int timeForExam_min_input = 1;   //số phút muốn thi
 
-	//ManageExam::checkInputExam("CSDL", 7);
-	////// NHẬP THÔNG TIN INPUT ĐỂ THI
-	////cin.getline(subjectCode_input, 15);
-	////cin.getline(studentCode, 15);
-	////cin >> numberQuestion_input;
-	////cin >> timeForExam_min_input;
+	ManageExam::checkInputExam("CSDL", 7);
+	// NHẬP THÔNG TIN INPUT ĐỂ THI
+	//cin.getline(subjectCode_input, 15);
+	//cin.getline(studentCode, 15);
+	//cin >> numberQuestion_input;
+	//cin >> timeForExam_min_input;
 
-	//// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
-	//bool isCorrectInput = false;
-	////isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
-	//isCorrectInput = exam1.setInputExam("CSDL", "12rfh", numberQuestion_input, timeForExam_min_input);
+	// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
+	bool isCorrectInput = false;
+	//isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
+	isCorrectInput = exam1.setInputExam("CSDL", "1233", numberQuestion_input, timeForExam_min_input);
 
-	//if (!isCorrectInput) {
-	//	cout << "Du lieu nhap khong hop le ! " << endl;
-	//}
+	if (!isCorrectInput) {
+		cout << "Du lieu nhap khong hop le ! " << endl;
+	}
 
-	//// TRẢ VỀ TÊN MÔN HỌC
-	//string subjectName = exam1.getSubjectName();
-	//cout << "Ten mon hoc: " << subjectName << endl;
+	// TRẢ VỀ TÊN MÔN HỌC
+	string subjectName = exam1.getSubjectName();
+	cout << "Ten mon hoc: " << subjectName << endl;
 
-	//// LẤY LIST CÁC CÂU HỎI NGẪU NHIÊN
-	//Question* randomQuestionList = exam1.getRandomQuestion();
-	//
-	//// demo in ra thông tin câu hỏi
-	//for (int i = 0; i < numberQuestion_input; i++) {
-	//	cout << randomQuestionList[i].content << endl;
-	//	cout << randomQuestionList[i].optionA << endl;
-	//	cout << randomQuestionList[i].optionB << endl;
-	//	cout << randomQuestionList[i].optionC << endl;
-	//	cout << randomQuestionList[i].optionD << endl;
-	//}
-	//
+	// LẤY LIST CÁC CÂU HỎI NGẪU NHIÊN
+	Question* randomQuestionList = exam1.getRandomQuestion();
+	
+	// demo in ra thông tin câu hỏi
+	for (int i = 0; i < numberQuestion_input; i++) {
+		cout << randomQuestionList[i].content << endl;
+		cout << randomQuestionList[i].optionA << endl;
+		cout << randomQuestionList[i].optionB << endl;
+		cout << randomQuestionList[i].optionC << endl;
+		cout << randomQuestionList[i].optionD << endl;
+	}
+	
 
-	//// TRUYỀN KẾT QUẢ ĐÃ THI XUỐNG BACK END SAU KHI KẾT THÚC BÀI TI
-	//char answeredList[MAX_NUMBER_QUESTION] = {'D','D','D','C',' ','A','B' }; // dòng này đê giả lập danh sách câu trả lời
-	//for (int i=0; i < numberQuestion_input; i++){
-	//	exam1.setAnswer(i, answeredList[i]);
-	//}
+	// TRUYỀN KẾT QUẢ ĐÃ THI XUỐNG BACK END SAU KHI KẾT THÚC BÀI TI
+	char answeredList[MAX_NUMBER_QUESTION] = {'D','D','D','C',' ','A','B' }; // dòng này đê giả lập danh sách câu trả lời
+	for (int i=0; i < numberQuestion_input; i++){
+		exam1.setAnswer(i, answeredList[i]);
+	}
 
-	//// LẤY KẾT QUẢ THI ̃& ĐIỂM SAU KHI THI XONG
-	//resultList result = exam1.getAnsweredList();
+	// LẤY KẾT QUẢ THI ̃& ĐIỂM SAU KHI THI XONG
+	resultList result = exam1.getAnsweredList();
 
-	//// demo in ra kết quả thi cho từng câu
-	//cout << "\nKet qua thi la:" << endl;
-	//for (int i = 0; i < numberQuestion_input; i++) {
-	//	answer* p = result.answerList[i];
-	//	cout << "Cau " << i + 1 << ": " << (p->chosenAnswer == p->correctAnswer ? "Dung" : "Sai")
-	//		<< " - Da chon " << p->chosenAnswer
-	//		<< " - Dap an la " << p->correctAnswer << endl;
-	//}
-	//
-	//// demo in ra số câu trả lời đúng
-	//int countCorrectAnswer = result.countCorrect;
-	//printf("Dung %d/%d cau\n", countCorrectAnswer, numberQuestion_input);
-	//
-	//// demo in ra điểm số
-	//float scoreExam = result.score;
-	//printf("Diem so: %.1f\n", scoreExam);
+	// demo in ra kết quả thi cho từng câu
+	cout << "\nKet qua thi la:" << endl;
+	for (int i = 0; i < numberQuestion_input; i++) {
+		answer* p = result.answerList[i];
+		cout << "Cau " << i + 1 << ": " << (p->chosenAnswer == p->correctAnswer ? "Dung" : "Sai")
+			<< " - Da chon " << p->chosenAnswer
+			<< " - Dap an la " << p->correctAnswer << endl;
+	}
+	
+	// demo in ra số câu trả lời đúng
+	int countCorrectAnswer = result.countCorrect;
+	printf("Dung %d/%d cau\n", countCorrectAnswer, numberQuestion_input);
+	
+	// demo in ra điểm số
+	float scoreExam = result.score;
+	printf("Diem so: %.1f\n", scoreExam);
+	//exam1.saveResultToFile();
+	cout << "save sucessfully" << endl;
+
+
+
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R0 ---------------------------------------------*/
 	// KHỞI TẠO

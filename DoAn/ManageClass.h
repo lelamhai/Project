@@ -97,6 +97,10 @@ public:
 	// Function add score for student at subject
 	bool addScoreToStudent(const string studentCode, const string subjectCode, float score);
 
+	static string getStudentNameFromCode(const char* studentCode);
+
+	static bool isFirstExam(const char* studentCode, const char* sujectCode);
+
 };
 
 void printClassPage(ClassPage classPage);

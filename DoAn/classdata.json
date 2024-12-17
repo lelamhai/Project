@@ -3,508 +3,2587 @@
     "classes": [
         {
             "classCode": "C001",
-            "className": "D23TXCN04-K",
+            "className": "D24TXCN01-K",
             "students": [
                 {
-                    "firstName": "213",
+                    "firstName": "Truong",
                     "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "12rfhdah"
-                },
-                {
-                    "firstName": "213",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [
-                        {
-                            "score": 14.0,
-                            "subjectCode": "VL"
-                        }
-                    ],
-                    "studentCode": "12rfhda"
-                },
-                {
-                    "firstName": "213",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "12rfhd"
-                },
-                {
-                    "firstName": "213",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "12rfh"
-                },
-                {
-                    "firstName": "213",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "12rf"
-                },
-                {
-                    "firstName": "213",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [
-                        {
-                            "score": 57.0,
-                            "subjectCode": "CSDL"
-                        },
-                        {
-                            "score": 43.0,
-                            "subjectCode": "VL"
-                        }
-                    ],
-                    "studentCode": "12"
-                },
-                {
-                    "firstName": "d",
-                    "gender": 77,
-                    "lastName": "dsfsd",
-                    "password": "1234",
-                    "scores": [],
-                    "studentCode": "1234562"
-                },
-                {
-                    "firstName": "d",
-                    "gender": 77,
-                    "lastName": "d",
-                    "password": "1234",
-                    "scores": [],
-                    "studentCode": "sd4"
-                },
-                {
-                    "firstName": "d",
-                    "gender": 77,
-                    "lastName": "d",
-                    "password": "1234",
-                    "scores": [],
-                    "studentCode": "sd"
-                },
-                {
-                    "firstName": "vjas",
-                    "gender": 77,
-                    "lastName": "lvt",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "hsj"
-                },
-                {
-                    "firstName": "123",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "12336143112354"
-                },
-                {
-                    "firstName": "123",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "123361431123"
-                },
-                {
-                    "firstName": "123",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "123361431"
-                },
-                {
-                    "firstName": "123",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "123361"
-                },
-                {
-                    "firstName": "123",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "12336"
-                },
-                {
-                    "firstName": "123",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "1233"
-                },
-                {
-                    "firstName": "123",
-                    "gender": 70,
-                    "lastName": "123",
-                    "password": "123",
-                    "scores": [],
-                    "studentCode": "123"
-                },
-                {
-                    "firstName": "aaaaa",
-                    "gender": 70,
-                    "lastName": "bbbbb",
+                    "lastName": "Thanh Huong",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "lehuyenthao"
+                    "studentCode": "K24DTCN021"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Dai",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN010"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Trong Long",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN025"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Viet Bach",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN002"
+                },
+                {
+                    "firstName": "Dao",
+                    "gender": 77,
+                    "lastName": "Van Huy",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN016"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Thi Ngoc Huyen",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN017"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Trong Hoang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN015"
+                },
+                {
+                    "firstName": "Hoang",
+                    "gender": 77,
+                    "lastName": "Viet Duc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN011"
+                },
+                {
+                    "firstName": "Thai",
+                    "gender": 77,
+                    "lastName": "Son Tung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN035"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Minh Tien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN030"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 70,
+                    "lastName": "Thi Lan Chi",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN006"
+                },
+                {
+                    "firstName": "Ta",
+                    "gender": 70,
+                    "lastName": "Thi Huong Lien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN023"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Tuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN032"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Ha Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN001"
+                },
+                {
+                    "firstName": "Tang",
+                    "gender": 77,
+                    "lastName": "Van Phuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN029"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Ky Hung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN018"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Quang Tuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN034"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 70,
+                    "lastName": "Ngoc Linh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN024"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Thi Hoa",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN014"
+                },
+                {
+                    "firstName": "Tong",
+                    "gender": 77,
+                    "lastName": "Phu Cuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN003"
+                },
+                {
+                    "firstName": "Do",
+                    "gender": 77,
+                    "lastName": "Van Duyen",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN049"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Le Manh Cuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN004"
+                },
+                {
+                    "firstName": "Doan",
+                    "gender": 77,
+                    "lastName": "Minh Dung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN007"
+                },
+                {
+                    "firstName": "Dao",
+                    "gender": 77,
+                    "lastName": "Xuan Dung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN008"
+                },
+                {
+                    "firstName": "Hoang",
+                    "gender": 77,
+                    "lastName": "Tien Duong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN009"
+                },
+                {
+                    "firstName": "Dong",
+                    "gender": 77,
+                    "lastName": "Van Hai",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN013"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thac Hung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN020"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Hoai Long",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN026"
                 },
                 {
                     "firstName": "Vu",
                     "gender": 77,
-                    "lastName": "Dung",
-                    "password": "12345",
-                    "scores": [],
-                    "studentCode": "K23DTCN299"
-                },
-                {
-                    "firstName": "Vu",
-                    "gender": 77,
-                    "lastName": "Dung",
-                    "password": "12345",
-                    "scores": [],
-                    "studentCode": "K23DTCN298"
-                },
-                {
-                    "firstName": "Vu",
-                    "gender": 77,
-                    "lastName": "Duy Dung",
-                    "password": "dungvd",
-                    "scores": [
-                        {
-                            "score": 8.0,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 8.0,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 0.0,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 1.399999976158142,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 4.300000190734863,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 2.9000000953674316,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 1.399999976158142,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 1.399999976158142,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 1.399999976158142,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 2.9000000953674316,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 5.699999809265137,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 2.9000000953674316,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 2.9000000953674316,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 2.0,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 0.0,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 4.0,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 2.0,
-                            "subjectCode": "CSDL"
-                        },
-                        {
-                            "score": 0.0,
-                            "subjectCode": "CSDL"
-                        },
-                        {
-                            "score": 1.7000000476837158,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 8.0,
-                            "subjectCode": "VL"
-                        }
-                    ],
-                    "studentCode": "K23DTCN269"
-                },
-                {
-                    "firstName": "Vu",
-                    "gender": 77,
-                    "lastName": "Duy Khoa",
-                    "password": "khoavd",
-                    "scores": [
-                        {
-                            "score": 0.0,
-                            "subjectCode": "VL"
-                        },
-                        {
-                            "score": 2.9000000953674316,
-                            "subjectCode": "VL"
-                        }
-                    ],
-                    "studentCode": "K23DTCN270"
-                },
-                {
-                    "firstName": "Bui",
-                    "gender": 77,
-                    "lastName": "ThiThanhNhan",
+                    "lastName": "Van Toan",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "K23DTCN273"
+                    "studentCode": "K24DTCN031"
                 },
                 {
-                    "firstName": "vu",
+                    "firstName": "Le",
                     "gender": 77,
-                    "lastName": "hihi",
-                    "password": "12345",
-                    "scores": [],
-                    "studentCode": "ahsdh"
-                },
-                {
-                    "firstName": "Hai 13",
-                    "gender": 77,
-                    "lastName": "Le Lam",
+                    "lastName": "Phu Tuan",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "K23DTCN3013"
+                    "studentCode": "K24DTCN033"
                 },
                 {
-                    "firstName": "Hai 12",
+                    "firstName": "Hoang",
                     "gender": 77,
-                    "lastName": "Le Lam",
+                    "lastName": "Van Tung",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "K23DTCN3012"
+                    "studentCode": "K24DTCN036"
                 },
                 {
-                    "firstName": "Hai 11",
+                    "firstName": "Le",
                     "gender": 77,
-                    "lastName": "Le Lam",
+                    "lastName": "Van Thieu",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "K23DTCN3011"
+                    "studentCode": "K24DTCN038"
                 },
                 {
-                    "firstName": "Hai 10",
+                    "firstName": "Pham",
                     "gender": 77,
-                    "lastName": "Le Lam",
+                    "lastName": "Dang Huy",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "K23DTCN3010"
+                    "studentCode": "K24DTCN061"
                 },
                 {
-                    "firstName": "Hai 9",
+                    "firstName": "Luu",
                     "gender": 77,
-                    "lastName": "Le Lam",
+                    "lastName": "Xuan Khanh",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "K23DTCN308"
+                    "studentCode": "K24DTCN063"
                 },
                 {
-                    "firstName": "Hai 8",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN308"
-                },
-                {
-                    "firstName": "Hai 7",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN307"
-                },
-                {
-                    "firstName": "Hai 6",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN306"
-                },
-                {
-                    "firstName": "Hai 5",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN305"
-                },
-                {
-                    "firstName": "Hai 4",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [
-                        {
-                            "score": 67.0,
-                            "subjectCode": "CSDL"
-                        },
-                        {
-                            "score": 20.0,
-                            "subjectCode": "VL"
-                        }
-                    ],
-                    "studentCode": "K23DTCN304"
-                },
-                {
-                    "firstName": "Hai 3",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN303"
-                },
-                {
-                    "firstName": "Hai 2",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN302"
-                },
-                {
-                    "firstName": "Hai 1",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN301"
-                },
-                {
-                    "firstName": "Hai",
-                    "gender": 77,
-                    "lastName": "Le Lam",
-                    "password": "123456",
-                    "scores": [],
-                    "studentCode": "K23DTCN300"
-                },
-                {
-                    "firstName": "aaaaaa",
+                    "firstName": "Dinh",
                     "gender": 70,
-                    "lastName": "bbbbbb",
+                    "lastName": "Thi Thu Phuong",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "lethanhtinh"
+                    "studentCode": "K24DTCN078"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Trong Thi",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN037"
+                },
+                {
+                    "firstName": "Phi",
+                    "gender": 77,
+                    "lastName": "Anh Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN136"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Quoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN153"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Minh Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN154"
                 }
             ]
         },
         {
             "classCode": "C002",
-            "className": "K23DTCN100-K",
+            "className": "D24TXCN02-K",
             "students": [
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Duc Trung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN095"
+                },
+                {
+                    "firstName": "Dang",
+                    "gender": 77,
+                    "lastName": "Dinh Quang Lam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN064"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thanh Luan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN071"
+                },
+                {
+                    "firstName": "Dang",
+                    "gender": 77,
+                    "lastName": "Nhat Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN043"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Quoc Cuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN045"
+                },
+                {
+                    "firstName": "Chu",
+                    "gender": 77,
+                    "lastName": "Chi Cuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN046"
+                },
                 {
                     "firstName": "Vu",
                     "gender": 77,
-                    "lastName": "Duy Dung",
+                    "lastName": "Duc Chien",
                     "password": "123456",
                     "scores": [],
-                    "studentCode": "admin"
+                    "studentCode": "K24DTCN047"
+                },
+                {
+                    "firstName": "Duong",
+                    "gender": 77,
+                    "lastName": "Quang Duy",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN048"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Doan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN051"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thanh Hai",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN052"
+                },
+                {
+                    "firstName": "Phan",
+                    "gender": 77,
+                    "lastName": "Lam Hai",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN053"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Huu Hoa",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN056"
+                },
+                {
+                    "firstName": "Luong",
+                    "gender": 77,
+                    "lastName": "Trung Hoang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN057"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Ngoc Huy",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN059"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "Van Huy",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN060"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Trong Khang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN062"
+                },
+                {
+                    "firstName": "Ta",
+                    "gender": 77,
+                    "lastName": "Hoang Long",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN068"
+                },
+                {
+                    "firstName": "Dao",
+                    "gender": 77,
+                    "lastName": "Xuan Loc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN069"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Van Luan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN070"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Vuong Manh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN073"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thanh Nam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN074"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Thanh Nam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN075"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thanh Phi",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN076"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thai Phong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN077"
+                },
+                {
+                    "firstName": "Dinh",
+                    "gender": 77,
+                    "lastName": "Van Quang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN080"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Phu Qui",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN081"
+                },
+                {
+                    "firstName": "Truong",
+                    "gender": 70,
+                    "lastName": "Thi Thuy Quynh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN083"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Phu Sang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN084"
+                },
+                {
+                    "firstName": "Cung",
+                    "gender": 77,
+                    "lastName": "Duy Thanh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN089"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Duc Thang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN090"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Vu Thang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN091"
+                },
+                {
+                    "firstName": "Ngo",
+                    "gender": 77,
+                    "lastName": "Gia Phu Trong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN093"
+                },
+                {
+                    "firstName": "Dam",
+                    "gender": 77,
+                    "lastName": "Cong Trung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K24DTCN094"
                 }
             ]
         },
         {
             "classCode": "C003",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D21TXCN01-B",
+            "students": [
+                {
+                    "firstName": "Hoang",
+                    "gender": 77,
+                    "lastName": "Van Hoa",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B17DCCN710"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Binh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN002"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Thanh Cong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN004"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "Tien Dat",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN005"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Quang Hung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN010"
+                },
+                {
+                    "firstName": "Hoang",
+                    "gender": 77,
+                    "lastName": "Van Hung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN011"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Xuan Huong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN012"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Gia Loc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN016"
+                },
+                {
+                    "firstName": "Lo",
+                    "gender": 77,
+                    "lastName": "Van Loi",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN017"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN018"
+                },
+                {
+                    "firstName": "Dinh",
+                    "gender": 77,
+                    "lastName": "Quang Nhiep",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN020"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Thi Lam Que",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN021"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Hoang Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN023"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Ngoc Tai Tam",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN025"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 70,
+                    "lastName": "Thi Thuy",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN028"
+                },
+                {
+                    "firstName": "Dam",
+                    "gender": 77,
+                    "lastName": "Quang Trung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN031"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Quang Tuyen",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN032"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Quyet Thang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTVT002"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 70,
+                    "lastName": "Thanh Loan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN015"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Tat Tien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B15DCCN554"
+                },
+                {
+                    "firstName": "Phi",
+                    "gender": 77,
+                    "lastName": "Anh Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN136"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Quoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN153"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Minh Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN154"
+                }
+            ]
         },
         {
             "classCode": "C004",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D21TXCN02-B",
+            "students": [
+                {
+                    "firstName": "Phan",
+                    "gender": 77,
+                    "lastName": "Hoang Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN033"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "Van Chung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN036"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Ba Cuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN037"
+                },
+                {
+                    "firstName": "Chu",
+                    "gender": 77,
+                    "lastName": "Thanh Dat",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN039"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "Ngoc Duc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN043"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Tri Dung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN044"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Trung Dung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN045"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Duc Hanh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN047"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Hiep",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN048"
+                },
+                {
+                    "firstName": "Do",
+                    "gender": 77,
+                    "lastName": "Minh Hieu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN050"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 70,
+                    "lastName": "Thi Kinh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN054"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Dinh Manh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN055"
+                },
+                {
+                    "firstName": "Dinh",
+                    "gender": 77,
+                    "lastName": "Tien Phi",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN058"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Tai",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN064"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Duc Trung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN066"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Minh Tu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN067"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "The Tuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN068"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Quang Tuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN069"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Manh Tuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN070"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Doan Tung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN071"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Dang Tung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN072"
+                },
+                {
+                    "firstName": "Ho",
+                    "gender": 77,
+                    "lastName": "Van Rin",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTVT004"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Gia Dai",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN038"
+                }
+            ]
         },
         {
             "classCode": "C005",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D21TXCN03-B",
+            "students": [
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "The Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN074"
+                },
+                {
+                    "firstName": "Duong",
+                    "gender": 77,
+                    "lastName": "Minh Chinh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN076"
+                },
+                {
+                    "firstName": "Cu",
+                    "gender": 77,
+                    "lastName": "Duc Dung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN077"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Tan Dat",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN078"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Xuan Hien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN082"
+                },
+                {
+                    "firstName": "Dinh",
+                    "gender": 77,
+                    "lastName": "Manh Hung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN086"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Van Kien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN090"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Thi Mo",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN094"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Cong Phu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN095"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Trung Qui",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN097"
+                },
+                {
+                    "firstName": "Vuong",
+                    "gender": 77,
+                    "lastName": "Ngoc Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN098"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "Manh Tuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN103"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Viet Dao",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTVT005"
+                },
+                {
+                    "firstName": "Phi",
+                    "gender": 77,
+                    "lastName": "Anh Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN136"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Quoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN153"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Minh Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN154"
+                }
+            ]
         },
         {
             "classCode": "C006",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D21TXCN04-B",
+            "students": [
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Hoang Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B18DCAT006"
+                },
+                {
+                    "firstName": "Luu",
+                    "gender": 77,
+                    "lastName": "Thanh Cong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN107"
+                },
+                {
+                    "firstName": "Do",
+                    "gender": 77,
+                    "lastName": "Van Chien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN108"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Van Cong Dat",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN109"
+                },
+                {
+                    "firstName": "Ha",
+                    "gender": 77,
+                    "lastName": "Minh Duc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN110"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Luan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN112"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Phuc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN113"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Hai Quan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN114"
+                },
+                {
+                    "firstName": "Ngo",
+                    "gender": 77,
+                    "lastName": "Van Quyet",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN115"
+                },
+                {
+                    "firstName": "Tao",
+                    "gender": 77,
+                    "lastName": "Van Tung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN117"
+                },
+                {
+                    "firstName": "Nong",
+                    "gender": 70,
+                    "lastName": "Thi Thuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN120"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Trieu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN121"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Giang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT060"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thanh Tung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTVT010"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Chien Thang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B19DCCN663"
+                },
+                {
+                    "firstName": "Dang",
+                    "gender": 77,
+                    "lastName": "Quoc Viet",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTVT012"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thi Thuy",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT065"
+                },
+                {
+                    "firstName": "Phi",
+                    "gender": 77,
+                    "lastName": "Anh Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN136"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Quoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN153"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Minh Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN154"
+                }
+            ]
         },
         {
             "classCode": "C007",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D21TXQT01-B",
+            "students": [
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Ngoc Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B18DTQT033"
+                },
+                {
+                    "firstName": "Phung",
+                    "gender": 77,
+                    "lastName": "Minh Chien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT001"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Manh Hung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT004"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Thi Thu Huong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT005"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 70,
+                    "lastName": "Thi Anh Ngoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT008"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Chi Nguyen",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT009"
+                },
+                {
+                    "firstName": "Tuong",
+                    "gender": 77,
+                    "lastName": "Thu Trang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT010"
+                },
+                {
+                    "firstName": "Duong",
+                    "gender": 77,
+                    "lastName": "Huyen Trang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT011"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Anh Tu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT012"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Manh Tuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT013"
+                },
+                {
+                    "firstName": "Phi",
+                    "gender": 77,
+                    "lastName": "Anh Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN136"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Quoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN153"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Minh Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN154"
+                }
+            ]
         },
         {
             "classCode": "C008",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D21TXQT02-B",
+            "students": [
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Lan Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT014"
+                },
+                {
+                    "firstName": "Lui",
+                    "gender": 77,
+                    "lastName": "Xuan Giang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT017"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Hau",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT020"
+                },
+                {
+                    "firstName": "Tieu",
+                    "gender": 70,
+                    "lastName": "Thi Hoang Lan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT023"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Thi Thuy Linh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT024"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Ngoc Mai",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT025"
+                },
+                {
+                    "firstName": "Be",
+                    "gender": 70,
+                    "lastName": "Thi Phuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT027"
+                },
+                {
+                    "firstName": "Ha",
+                    "gender": 70,
+                    "lastName": "Thi Quynh Trang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT029"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Hoang Khanh Trinh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT030"
+                },
+                {
+                    "firstName": "Phi",
+                    "gender": 77,
+                    "lastName": "Anh Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN136"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Quoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN153"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Minh Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN154"
+                }
+            ]
         },
         {
             "classCode": "C009",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D21TXQT03-B",
+            "students": [
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Trong Hieu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTCN083"
+                },
+                {
+                    "firstName": "Hoang",
+                    "gender": 70,
+                    "lastName": "Thi Cuc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT033"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Bich Diep",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT036"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Minh Duong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT037"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Duc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT039"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Trong Hoang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT041"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Linh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT046"
+                },
+                {
+                    "firstName": "Lo",
+                    "gender": 70,
+                    "lastName": "Thi Khanh Ly",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT047"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Quang Ngoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT048"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Thi Nhung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT050"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Thi Nhu Quynh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT051"
+                },
+                {
+                    "firstName": "Luong",
+                    "gender": 77,
+                    "lastName": "Van The",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT052"
+                },
+                {
+                    "firstName": "Dang",
+                    "gender": 77,
+                    "lastName": "Van Thuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT054"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Vuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT055"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Thi Yen",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT056"
+                },
+                {
+                    "firstName": "Phi",
+                    "gender": 77,
+                    "lastName": "Anh Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN136"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Quoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN153"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Minh Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN154"
+                }
+            ]
         },
         {
             "classCode": "C010",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D21TXQT04-B",
+            "students": [
+                {
+                    "firstName": "Luyen",
+                    "gender": 77,
+                    "lastName": "Duc Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT057"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 70,
+                    "lastName": "Thi Thanh Dung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT059"
+                },
+                {
+                    "firstName": "Hoang",
+                    "gender": 70,
+                    "lastName": "Thi Hai",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT061"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Duc Manh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT063"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 70,
+                    "lastName": "Phuong Nhi",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT064"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Trung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT067"
+                },
+                {
+                    "firstName": "Phan",
+                    "gender": 70,
+                    "lastName": "Thi Van",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B21DTQT069"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Binh Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B16DCQT096"
+                },
+                {
+                    "firstName": "Phi",
+                    "gender": 77,
+                    "lastName": "Anh Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN136"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Anh Quoc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN153"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Minh Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B24DTCN154"
+                }
+            ]
         },
         {
             "classCode": "C011",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D23TXCN03-B",
+            "students": [
+                {
+                    "firstName": "Vuong",
+                    "gender": 77,
+                    "lastName": "Thanh Cuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN062"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Dung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN064"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Hien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN066"
+                },
+                {
+                    "firstName": "Lo",
+                    "gender": 77,
+                    "lastName": "Van Hung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN068"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Duy Huynh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN069"
+                },
+                {
+                    "firstName": "Lo",
+                    "gender": 77,
+                    "lastName": "Van Hung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN070"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Huy Hoa Hung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN071"
+                },
+                {
+                    "firstName": "Tong",
+                    "gender": 77,
+                    "lastName": "Van Kiem",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN072"
+                },
+                {
+                    "firstName": "Po",
+                    "gender": 77,
+                    "lastName": "Van Khanh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN073"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 70,
+                    "lastName": "Thi Lan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN074"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Duc Long",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN075"
+                },
+                {
+                    "firstName": "Duong",
+                    "gender": 70,
+                    "lastName": "Hong Nhung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN079"
+                },
+                {
+                    "firstName": "Lai",
+                    "gender": 77,
+                    "lastName": "Van Quan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN081"
+                },
+                {
+                    "firstName": "Hoang",
+                    "gender": 77,
+                    "lastName": "Thanh Tin",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN083"
+                },
+                {
+                    "firstName": "Dieu",
+                    "gender": 77,
+                    "lastName": "Chinh Thao",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN084"
+                },
+                {
+                    "firstName": "Dam",
+                    "gender": 77,
+                    "lastName": "Vu Thuyet",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN085"
+                },
+                {
+                    "firstName": "Cao",
+                    "gender": 77,
+                    "lastName": "Xuan Viet",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN086"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Quang Long",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN129"
+                }
+            ]
         },
         {
             "classCode": "C012",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "className": "D23TXCN04-B",
+            "students": [
+                {
+                    "firstName": "Doan",
+                    "gender": 77,
+                    "lastName": "Ngoc Dinh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN117"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Xuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN145"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Ngoc Dien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN089"
+                },
+                {
+                    "firstName": "Trinh",
+                    "gender": 77,
+                    "lastName": "Huy Hoang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN091"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Quyet",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN104"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Sang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN105"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Dinh Van",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN109"
+                },
+                {
+                    "firstName": "Duong",
+                    "gender": 77,
+                    "lastName": "Cong Vu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN111"
+                },
+                {
+                    "firstName": "Do",
+                    "gender": 77,
+                    "lastName": "Minh Vu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN112"
+                },
+                {
+                    "firstName": "Dinh",
+                    "gender": 77,
+                    "lastName": "Tien An",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN114"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Cong Dang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN116"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Huong Giang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN118"
+                },
+                {
+                    "firstName": "Hoang",
+                    "gender": 77,
+                    "lastName": "Dinh Huong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN123"
+                },
+                {
+                    "firstName": "Luu",
+                    "gender": 77,
+                    "lastName": "Cung Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN135"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Dinh Tuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN138"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "The Dat",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN184"
+                },
+                {
+                    "firstName": "Trinh",
+                    "gender": 77,
+                    "lastName": "The Vu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN206"
+                },
+                {
+                    "firstName": "Ha",
+                    "gender": 77,
+                    "lastName": "Van Linh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN128"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Danh Tung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B23DTCN246"
+                }
+            ]
         },
         {
-            "classCode": "C012",
-            "className": "D23TXCN06-K Updated",
-            "students": []
+            "classCode": "C013",
+            "className": "D22TXCN01-K",
+            "students": [
+                {
+                    "firstName": "Phan",
+                    "gender": 77,
+                    "lastName": "Van Hoang Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN003"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Tuan Dat",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN004"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Quang Dat",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN006"
+                },
+                {
+                    "firstName": "Doan",
+                    "gender": 77,
+                    "lastName": "Van Hieu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN010"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Huy Hoang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN011"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Van Hoanh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN012"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Quoc Khanh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN017"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Cong Sánh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN023"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "An Tan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN024"
+                },
+                {
+                    "firstName": "Hoang",
+                    "gender": 77,
+                    "lastName": "Huy Toan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN027"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Truong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN035"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Trong Tuan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN036"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Van Truong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN032"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Nguyen Thanh Tung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN038"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Tung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN039"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Nguyen Quoc Vu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "K22DTCN041"
+                }
+            ]
         },
         {
             "classCode": "C014",
-            "className": "D23TXCN07-K",
-            "students": []
+            "className": "D22TXCN02-B",
+            "students": [
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Vu Ngoc Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN044"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Duc Dung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN047"
+                },
+                {
+                    "firstName": "Trinh",
+                    "gender": 77,
+                    "lastName": "Vu Tien Dat",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN049"
+                },
+                {
+                    "firstName": "Mong",
+                    "gender": 77,
+                    "lastName": "Van Do",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN051"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Viet Duc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN054"
+                },
+                {
+                    "firstName": "Mai",
+                    "gender": 77,
+                    "lastName": "Duc Hieu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN059"
+                },
+                {
+                    "firstName": "Dang",
+                    "gender": 77,
+                    "lastName": "Anh Hoang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN061"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Ngoc Huy",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN062"
+                },
+                {
+                    "firstName": "Luu",
+                    "gender": 77,
+                    "lastName": "Xuan Hoan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN060"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Hoang Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN065"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Minh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN066"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Truong Son",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN070"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Toan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN071"
+                },
+                {
+                    "firstName": "Ha",
+                    "gender": 77,
+                    "lastName": "Viet Thang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN074"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Minh Thuy",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN077"
+                },
+                {
+                    "firstName": "Dang",
+                    "gender": 77,
+                    "lastName": "Viet Trung",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN079"
+                },
+                {
+                    "firstName": "Duong",
+                    "gender": 77,
+                    "lastName": "Thi Thanh Vien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN080"
+                },
+                {
+                    "firstName": "Le",
+                    "gender": 77,
+                    "lastName": "Duc Vuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN082"
+                }
+            ]
+        },
+        {
+            "classCode": "C015",
+            "className": "D22TXCN03-B",
+            "students": [
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Hoang Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN086"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Nhat Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN087"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Tu Bien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN089"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Van Cuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN092"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "Huy Duc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN094"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thi Duyen",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN097"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thanh Ha",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN098"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Duc Hanh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN099"
+                },
+                {
+                    "firstName": "Doan",
+                    "gender": 77,
+                    "lastName": "Manh Quang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN109"
+                },
+                {
+                    "firstName": "Phan",
+                    "gender": 77,
+                    "lastName": "Dinh Than",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN112"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Hanh Thong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN119"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Toan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN121"
+                },
+                {
+                    "firstName": "Dinh",
+                    "gender": 77,
+                    "lastName": "Tuan Tu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN125"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Tuyen",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN127"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "Anh Viet",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN128"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Hoang Long",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN131"
+                }
+            ]
+        },
+        {
+            "classCode": "C015",
+            "className": "D22TXCN03-B",
+            "students": [
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Hoang Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN086"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Nhat Anh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN087"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Tu Bien",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN089"
+                },
+                {
+                    "firstName": "Tran",
+                    "gender": 77,
+                    "lastName": "Van Cuong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN092"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "Huy Duc",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN094"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thi Duyen",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN097"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Thanh Ha",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN098"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Duc Hanh",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN099"
+                },
+                {
+                    "firstName": "Doan",
+                    "gender": 77,
+                    "lastName": "Manh Quang",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN109"
+                },
+                {
+                    "firstName": "Phan",
+                    "gender": 77,
+                    "lastName": "Dinh Than",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN112"
+                },
+                {
+                    "firstName": "Pham",
+                    "gender": 77,
+                    "lastName": "Hanh Thong",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN119"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Toan",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN121"
+                },
+                {
+                    "firstName": "Dinh",
+                    "gender": 77,
+                    "lastName": "Tuan Tu",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN125"
+                },
+                {
+                    "firstName": "Nguyen",
+                    "gender": 77,
+                    "lastName": "Van Tuyen",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN127"
+                },
+                {
+                    "firstName": "Bui",
+                    "gender": 77,
+                    "lastName": "Anh Viet",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN128"
+                },
+                {
+                    "firstName": "Vu",
+                    "gender": 77,
+                    "lastName": "Hoang Long",
+                    "password": "123456",
+                    "scores": [],
+                    "studentCode": "B22DTCN131"
+                }
+            ]
         }
     ]
 }

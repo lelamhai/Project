@@ -406,7 +406,7 @@ QuestionPage getQuestionPerPage(PTRQUESTION questionList, int page)
 
 	questionPage.startIndex = startIndex;
 	questionPage.endIndex = endIndex;
-	questionPage.questionList = pageResult;
+	questionPage.questionList = reverseQuestionList(pageResult);
 
 	return questionPage;
 }
@@ -436,4 +436,24 @@ void printQuestionsInList(PTRQUESTION questionList)
 		cout << "D. " << temp->info.optionD << endl;
 		temp = temp->next;
 	}
+}
+
+PTRQUESTION reverseQuestionList(PTRQUESTION questionList)
+{
+	PTRQUESTION next = nullptr;
+	PTRQUESTION current = questionList;
+	PTRQUESTION prev = nullptr;
+	
+	while (current != nullptr) {
+		// Lưu node tiếp theo
+		next = current->next;
+
+		// Đảo ngược liên kết
+		current->next = prev;
+
+		// Tiến lên 1 bước
+		prev = current;
+		current = next;
+	}
+	return prev;
 }

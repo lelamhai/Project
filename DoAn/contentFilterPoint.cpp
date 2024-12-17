@@ -147,12 +147,12 @@ void ContentFilterPoint::girdTitle()
 		"Ten Mon"
 	};
 
-	int maSubject = getCenterX(27, titleSubject[0].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + width + maSubject, DISTANCE_HEADER + MARGIN - 1);
+	int maSubject = getCenterX(20, titleSubject[0].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN +PADDING + 10 + width + maSubject, DISTANCE_HEADER + MARGIN - 1);
 	cout << titleSubject[0];
 
-	int nameSubject = getCenterX(27, titleSubject[1].length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + width + 27 + nameSubject, DISTANCE_HEADER + MARGIN - 1);
+	int nameSubject = getCenterX(35, titleSubject[1].length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + width + 20 + nameSubject, DISTANCE_HEADER + MARGIN - 1);
 	cout << titleSubject[1];
 }
 
@@ -162,7 +162,7 @@ void ContentFilterPoint::content()
 	girdTitle();
 	loadDataClassroom();
 	loadDataSubject();
-	currentFilter = C_CREATE;
+	currentFilter = C_SELECTCLASSROOM;
 	handle();
 }
 
@@ -174,12 +174,19 @@ void ContentFilterPoint::handle()
 		{
 		case ContentFilterPoint::C_SELECTCLASSROOM:
 			showCur(0);
+			hover = 0;
 			selectClassroom();
+			hover = -1;
+			loadDataClassroom();
 			break;
 
 		case ContentFilterPoint::C_SELECTSUBJECT:
+			hoverSubject = 0;
 			showCur(0);
 			selectSubject();
+			hoverSubject = -1;
+			indexTree = 0;
+			loadDataSubject();
 			break;
 
 		case ContentFilterPoint::C_SEARCHCLASSROOM:
@@ -198,8 +205,7 @@ void ContentFilterPoint::handle()
 			break;
 
 		case ContentFilterPoint::C_EXIT:
-
-			break;
+			return;
 
 		default:
 			break;
@@ -216,7 +222,6 @@ void ContentFilterPoint::createData()
 		{
 			listInput[0].useSpace = true;
 			listInput[0].handleInput();
-			moveMenu = listInput[0].getMenu();
 
 			switch (listInput[0].getEndKey())
 			{
@@ -248,10 +253,18 @@ void ContentFilterPoint::createData()
 			case DOWN:
 				stateInput = FORM_SUBJECT;
 				break;
+
 			case UP:
 				stateInput = FORM_SUBJECT;
 				break;
 
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentFilter = C_EXIT;
+					return;
+				}
+				break;
 			default:
 				break;
 			}
@@ -297,6 +310,13 @@ void ContentFilterPoint::createData()
 				stateInput = FORM_CLASSROOM;
 				break;
 
+			case TAB:
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentFilter = C_EXIT;
+					return;
+				}
+				break;
 			default:
 				break;
 			}
@@ -308,7 +328,6 @@ void ContentFilterPoint::createData()
 			ContentPrintPoint p;
 			p.init(listInput[0].getText(), listInput[1].getText());
 			p.displayContent();
-			p.handle();
 			cleanContent();
 		}
 
@@ -346,6 +365,15 @@ void ContentFilterPoint::selectClassroom()
 	int lastHover = -1;
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				currentFilter = C_EXIT;
+				return;
+			}
+		}
+
 		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
 			if (start < hover)
@@ -432,6 +460,13 @@ void ContentFilterPoint::selectClassroom()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_F4) & 0x0001)
+		{
+			currentFilter = C_SEARCHSUBJECT;
+			Sleep(150);
+			return;
+		}
+
 		if (lastHover != hover)
 		{
 			if (textSearch != "")
@@ -484,6 +519,15 @@ void ContentFilterPoint::selectSubject()
 	}
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				currentFilter = C_EXIT;
+				return;
+			}
+		}
+
 		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
 			if (start < hoverSubject)
@@ -560,6 +604,20 @@ void ContentFilterPoint::selectSubject()
 		if (GetAsyncKeyState(VK_F1) & 0x0001)
 		{
 			currentFilter = C_SELECTCLASSROOM;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
+		{
+			currentFilter = C_SEARCHCLASSROOM;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F4) & 0x0001)
+		{
+			currentFilter = C_SEARCHSUBJECT;
 			Sleep(150);
 			return;
 		}
@@ -672,6 +730,12 @@ void ContentFilterPoint::findDataClassroom()
 				return;
 			}
 			
+			if (GetAsyncKeyState(VK_F4) & 0x0001)
+			{
+				currentFilter = C_SEARCHSUBJECT;
+				Sleep(150);
+				return;
+			}
 
 			char s = _getch();
 			int key = keySpecial(s);
@@ -700,6 +764,7 @@ void ContentFilterPoint::findDataClassroom()
 					cout << " ";
 					gotoXY(whereX() - 1 - (textSearch.length() - cursorPosition), whereY());
 				}
+				clean(0);
 				loadDataClassroom();
 				paggingClassroom();
 				break;
@@ -726,6 +791,7 @@ void ContentFilterPoint::findDataClassroom()
 						}
 						gotoXY(whereX() - (textSearch.length() - cursorPosition), whereY());
 					}
+					clean(0);
 					loadDataClassroom();
 					paggingClassroom();
 				}
@@ -758,6 +824,13 @@ void ContentFilterPoint::findDataSubject()
 		if (GetAsyncKeyState(VK_F2) & 0x0001)
 		{
 			currentFilter = C_SELECTSUBJECT;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_F3) & 0x0001)
+		{
+			currentFilter = C_SEARCHCLASSROOM;
+			Sleep(150);
 			return;
 		}
 
@@ -839,12 +912,12 @@ void ContentFilterPoint::loadDataTree(PTRSUBJECT root)
 	{
 		setColorText(ColorCode_DarkGreen);
 	}
-	int codeX = getCenterX(27, strlen(root->info.subjectCode));
+	int codeX = getCenterX(20, strlen(root->info.subjectCode));
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + width + 10 + codeX, DISTANCE_HEADER + 8 + (indexTree * 2));
 	cout << root->info.subjectCode;
 
-	int nameX = getCenterX(27, root->info.subjectName.length());
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + width + 27 + 10 + nameX, DISTANCE_HEADER + 8 + (indexTree * 2));
+	int nameX = getCenterX(35, root->info.subjectName.length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + width + 20 + 10 + nameX, DISTANCE_HEADER + 8 + (indexTree * 2));
 	cout << root->info.subjectName;
 
 	/*int countX = getCenterX(40, getCountQuestionInList(root->info.listQuestion));
