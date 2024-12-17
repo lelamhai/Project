@@ -16,18 +16,20 @@ void Sidebar()
 void TutorialMenu()
 {
 	string tutorialMenu[] = {
-		"PGUP|PGDN",
-		"Tab"
+		"* Huong Dan Su Dung Menu",
+		"",
+		"PGUP|PGDN: Di Chuyen Menu",
+		"Tab: Chon Menu"
 	};
 
 	int height = getConsoleHeight();
-	int posY = height - 8 * 2 + 6;
+	int posY = height - 8 * 2 + 3;
 
-	setColorText(ColorCode_DarkYellow);
-	gotoXY(1, posY);
-	cout << tutorialMenu[0];
-
-	gotoXY(24, posY);
-	cout << tutorialMenu[1];
-	setColorText(ColorCode_DarkWhite);
+	for (int i = 0; i < 4; i++)
+	{
+		setColorText(ColorCode_DarkYellow);
+		gotoXY(1, posY + i);
+		cout << tutorialMenu[i];
+	}
+	setColorText(ColorCode_White);
 }
