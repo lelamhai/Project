@@ -30,7 +30,7 @@ private:
 	ManageSubject subject;
 	QuestionPage page;
 	string subjectCode;
-
+	int idQuestion;
 
 	vector<InputField> listInput;
 	vector<Text> listTitle;
@@ -38,11 +38,28 @@ private:
 	Text text;
 
 public:
+	enum StateInputQuestion
+	{
+		C_SELECT = 0, // F1
+		C_CREATE = 1, // Ins
+		C_EDIT = 2, // F2
+		C_SEARCH = 3, // F3
+		C_DELETE = 4, // Del
+		C_DETAIL = 5,
+
+		C_EXIT = -1
+	};
+	StateInputQuestion currentInputQuestion;
+
 	void displayContent() override;
 	void init(string code);
-	void drawClassroom();
+	void drawContent();
 	void content();
 	void handle();
+	void setIdQuestion(int id);
+	void createData();
+	void editData();
+	void setStateInputQuestion(StateInputQuestion state);
 	ContentInputQuestion();
 	~ContentInputQuestion();
 };

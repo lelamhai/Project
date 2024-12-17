@@ -19,7 +19,7 @@
 #define COLUMN_RIGHT 40
 
 // Frame Content
-#define WIDTH_CONTENT  172
+#define WIDTH_CONTENT  178
 #define HEIGHT_CONTENT  36
 
 #define YES "Co"
