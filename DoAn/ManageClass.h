@@ -41,8 +41,13 @@ public:
 
 	Classroom findClassByCode(const char* classCode);
 
+	// Function check is class exist
+	bool isClassExist(const string classCode);
+
 	// Function get student by code
 	Student findStudentByCode(const string studentCode, const string classCode);
+
+	bool isStudentExist(const string studentCode);
 
 	// Function add class to classlist
 	// Input: classCode, className
