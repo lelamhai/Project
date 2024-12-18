@@ -174,6 +174,7 @@ void ManageExam::toCalculateResult() {
     ManageClass tempClass;
     tempClass.addScoreToStudent(studentCode, subjectCode, answerRecord.score);
     
+
     // ghi record chi tiết thi vào data
     saveResultToFile();
 }

@@ -97,11 +97,12 @@ void HuyTest::main() {
 			answer* p = rs->answerList[i];
 
 			//cout << p->questionId << " / " << p->questionInfo.questionId << endl;;
-			cout << "Cau " << i + 1 << ": "<< p->questionInfo.content << endl
-				<< p->questionInfo.optionA << endl
-				<< p->questionInfo.optionB << endl
-				<< p->questionInfo.optionC << endl
-				<< p->questionInfo.optionD << endl
+			cout << "Cau " << i + 1 << ": "
+				//<< p->questionInfo.content << endl
+				//<< p->questionInfo.optionA << endl
+				//<< p->questionInfo.optionB << endl
+				//<< p->questionInfo.optionC << endl
+				//<< p->questionInfo.optionD << endl
 
 				<< "Da chon " << p->chosenAnswer << " --- "
 				<< "Dap an " << p->correctAnswer << endl;
@@ -110,6 +111,15 @@ void HuyTest::main() {
 
 	ManageScore::deallocateResulList(rs); // giải phóng bộ nhớ nếu chuyển trang khác, không dùng nữa
 
+	// LẤY NỘI DUNG CÂU HỎI ĐÃ THI VÀ DEMO IN RA
+	questionRecordList q = ManageScore::getQuestionExamRecord("CSDL", "12rfh");
+	for (int i = 0; i < q.countQuestion; i++) {
+		cout << "Cau " << i + 1 << ": " << q.list[i].content << endl
+			<< q.list[i].optionA << endl
+			<< q.list[i].optionB << endl
+			<< q.list[i].optionC << endl
+			<< q.list[i].optionD << endl;
+	}
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R1 ---------------------------------------------*/
 	

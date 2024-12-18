@@ -240,11 +240,50 @@ resultList* ManageScore::loadResultFromFile(const char* subjectCode, const char*
     return nullptr;
 }
 
+questionRecordList ManageScore::getQuestionExamRecord(const char* subjectCode, const char* studentCode) {
+    ManageSubject manageSubject;
+
+    // Khởi tạo danh sách câu hỏi
+    questionRecordList p;
+
+    // Đọc dữ liệu từ file JSON
+    std::ifstream inputFile(EXAM_RESULT_FILE_NAME);
+    if (!inputFile.is_open()) {
+        //cout << "Không thể mở file " << endl;
+        return p;
+    }
+
+    json j;
+    inputFile >> j;
+    inputFile.close();
+
+    // Duyệt qua các phần tử trong JSON để tìm dữ liệu đã thi của sinh viên
+    int index = 0;
+    for (const auto& answerRecordData : j) {
+        if (answerRecordData["studentCode"] == studentCode && answerRecordData["subjectCode"] == subjectCode) {
+            // Lấy danh sách câu trả lời
+            for (const auto& answered : answerRecordData["Answered"]) {
+                int questionId = answered["questionId"].get<int>();
+                p.list[index] = manageSubject.getQuestionBySubjectCodeAndId(subjectCode, questionId);
+                p.countQuestion++;
+                index++;
+            }
+            return p; // Trả về kết quả tìm thấy
+        }
+    }
+    // Nếu không tìm thấy, trả về danh sách rỗng
+    return p;
+}
+
+
+
 Question ManageScore::getQuestionBySubjectCodeAndId(const string subjectCode, int questionId) {
     ManageSubject manageSubject;
     Question q = manageSubject.getQuestionBySubjectCodeAndId(subjectCode, questionId);
     return q;
 }
+
+
 
 void ManageScore::deallocateResulList(resultList* rs) {
     for (int i = 0; i < rs->totalQuestion; i++) {

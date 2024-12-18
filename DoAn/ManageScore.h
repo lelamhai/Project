@@ -4,6 +4,7 @@
 
 const int MAX_STUDENT_PER_CLASS = 100;
 const string EXAM_RESULT_FILE_NAME = "examResult.json";
+//Question historyAnswer[MAX_NUMBER_QUESTION];
 
 struct scoreToPrint {
 	char studentCode[15];
@@ -27,6 +28,11 @@ struct ScorePage {
 	int totalScore; // tổng số điểm
 	int startIndex; // Số thứ tự bắt đầu của trang đó
 	int endIndex; // số kết thúc của trang đó
+};
+
+struct questionRecordList {
+	Question list[MAX_NUMBER_QUESTION];
+	int countQuestion = 0;
 };
 
 
@@ -59,6 +65,8 @@ public:
 	ScorePage searchStudentScore(string keyWord, int pageNumber);
 
 	static resultList* loadResultFromFile(const char* subjectCode, const char* studentCode);
+	
+	static questionRecordList getQuestionExamRecord(const char* subjectCode, const char* studentCode);
 
 	static Question getQuestionBySubjectCodeAndId(const string subjectCode, int questionId);
 
