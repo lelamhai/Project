@@ -11,14 +11,18 @@ class Text
 {
 private:
 	int x = 0, y = 0;
+	int color = 15;
 	string content;
+
 public:
 	void setPosition(int posX, int posY);
 	void updatePositionX(int posX);
 	void updatePositionY(int posY);
-	void display();
 	void setContent(string newContent);
 	int getLenString();
+	void setColor(int color);
+	void display();
+	void clean();
 	Text();
 	~Text();
 };

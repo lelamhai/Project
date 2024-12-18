@@ -55,6 +55,7 @@ private:
 	};
 	SearchInput stateSearchInput;
 	vector<InputField> listInput;
+	vector<Text> listText;
 	Text text;
 
 	string classCode;
@@ -78,6 +79,7 @@ public:
 	void pagging();
 	void loadData();
 	void cleanInput();
+	bool checkInsert(string code);
 	ContentClassroom();
 	~ContentClassroom();
 };

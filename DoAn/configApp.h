@@ -5,7 +5,7 @@
 #include "mykeyboard.h"
 
 // Input
-#define MIN_LEN 7
+#define LENGTH_MIN_INPUT 7
 #define WIDTH_INPUT 20
 #define HEIGHT_INPUT 2
 #define LENGTH_INPUT 15
@@ -23,6 +23,7 @@
 #define WIDTH_CONTENT  178
 #define HEIGHT_CONTENT  36
 
+#define DEFAULT_NOTIFICATION "Vui Long Nhap 7-14 Ky Tu!"
 #define YES "Co"
 #define NO "Khong"
 #define INSERT_FINISH "Them Thong Tin Thanh Cong!"
