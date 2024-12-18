@@ -10,7 +10,6 @@ PopupNotification::~PopupNotification()
 
 void PopupNotification::open()
 {
-	setTitle("Nop bai thi truoc khi tro lai trang truoc");
 	content();
 	createButtonEnter();
 }
@@ -28,7 +27,7 @@ void PopupNotification::handle()
 {
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+		if (GetAsyncKeyState(VK_RETURN))
 		{
 			return;
 		}

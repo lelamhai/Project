@@ -63,25 +63,23 @@ void PopupDelete::handle()
 
 		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
 		{
-			moveMenu--;
 			Sleep(150);
 			continue;
 		}
 
 		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
 		{
-			moveMenu++;
 			Sleep(150);
 			continue;
 		}
 
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		/*if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
 			if (moveMenu != 0)
 			{
 				return;
 			}
-		}
+		}*/
 		Sleep(150);
 	}
 }
@@ -106,14 +104,4 @@ void PopupDelete::createButtonYes()
 bool PopupDelete::getResult()
 {
 	return result;
-}
-
-void PopupDelete::setMenu(int move)
-{
-	this->moveMenu = move;
-}
-
-int PopupDelete::getMenu()
-{
-	return this->moveMenu;
 }

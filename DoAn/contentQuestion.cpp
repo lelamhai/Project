@@ -376,11 +376,11 @@ void ContentQuestion::deleteData()
 	pDelete.open();
 	pDelete.handle();
 
-	if (pDelete.getMenu() != 0)
+	/*if (pDelete.getMenu() != 0)
 	{
 		currentQuestion = C_EXIT;
 		return;
-	}
+	}*/
 
 	if (pDelete.getResult())
 	{
