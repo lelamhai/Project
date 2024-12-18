@@ -62,6 +62,9 @@ public:
     // Tìm kiếm môn học theo mã môn học
     PTRSUBJECT getSubject(const char* code);
 
+    // Hàm tìm xem môn học có tồn tại theo mã môn
+    bool isSubjectExist(const string subjectCode);
+
     // Thêm câu hỏi vào môn học
     bool addQuestionInSubject(const char* subjectCode, const string& content, const string& optionA, const string& optionB, const string& optionC, const string& optionD, char answer);
 

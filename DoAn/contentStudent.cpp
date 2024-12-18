@@ -761,11 +761,11 @@ void ContentStudent::deleteData()
 	pDelete.open();
 	pDelete.handle();
 
-	if (pDelete.getMenu() != 0)
+	/*if (pDelete.getMenu() != 0)
 	{
 		currentDetailClassroom = C_EXIT;
 		return;
-	}
+	}*/
 
 	if (pDelete.getResult())
 	{

@@ -23,6 +23,12 @@ Classroom ManageClass::findClassByCode(const char* classCode)
     return classFound;
 }
 
+bool ManageClass::isClassExist(const string classCode)
+{
+    int positionClass = findClass(classCode.c_str());
+    return positionClass != -1;
+}
+
 Student ManageClass::findStudentByCode(const string studentCode, const string classCode)
 {
     Student studentFound;
@@ -39,6 +45,17 @@ Student ManageClass::findStudentByCode(const string studentCode, const string cl
         temp = temp->next;
     }
     return studentFound;
+}
+
+bool ManageClass::isStudentExist(const string studentCode)
+{
+    PTRSTUDENT studentFound = nullptr;
+    for (int i = 0; i < countClass; i++) {
+        studentFound = findStudentInList(classes[i]->studentList, studentCode.c_str());
+        if (studentFound != nullptr) break;
+
+    }
+    return studentFound != nullptr;
 }
 
 

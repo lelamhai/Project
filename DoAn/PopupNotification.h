@@ -4,6 +4,7 @@
 class PopupNotification:public Popup
 {
 private:
+	
 
 public:
 	void open();
@@ -12,7 +13,5 @@ public:
 	void close();
 	PopupNotification();
 	~PopupNotification();
-
-
 };
 

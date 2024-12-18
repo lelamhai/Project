@@ -11,31 +11,45 @@ DungTest::~DungTest()
 
 void DungTest::main()
 {
-	ManageSubject subject;
+	ManageSubject subjects;
+	ManageClass classes;
+
+	//1. Ham kiem tra xem mon hoc co ton tai
+	bool isSubjectExist = subjects.isSubjectExist("VL");
+	cout << "Mon hoc ton tai " << isSubjectExist << endl;
+
+	//2. Ham kiem tra xem lop co ton tai
+	bool isClassExist = classes.isClassExist("");
+	cout << "Lop hoc ton tai " << isClassExist << endl;
+
+	//3. Ham kiem tra xem hoc sinh da ton tai
+	bool isStudentExist = classes.isStudentExist("");
+	cout << "Hoc sinh ton tai " << isStudentExist << endl;
+
 	
-	// 1. get subject name input "SUBJECT CODE"
-	string subjectName = subject.getSubject("CSDL")->info.subjectName;
+	//// 1. get subject name input "SUBJECT CODE"
+	//string subjectName = subject.getSubject("CSDL")->info.subjectName;
 
-	// 2. get number question INPUT SUBJECT CODE
-	int numberQuestion = subject.countQuestionsInSubject("CSDL");
+	//// 2. get number question INPUT SUBJECT CODE
+	//int numberQuestion = subject.countQuestionsInSubject("CSDL");
 
-	// 3. Load all data, input (subject code, "", 1);
-	QuestionPage questionPage = subject.searchQuestionInSubject("CSDL", "", 1);
+	//// 3. Load all data, input (subject code, "", 1);
+	//QuestionPage questionPage = subject.searchQuestionInSubject("CSDL", "", 1);
 
-	// 4. Tu ket qua lay ra duoc danh sach cau hoi
-	PTRQUESTION questionList = questionPage.questionList;
-	
-	// 5. duyet du lieu de load ra
-	while (questionList != nullptr) {
-		int maCauHoi = questionList->info.questionId;
-		string noiDungCauHoi = questionList->info.content;
-		string dapAnA = questionList->info.optionA;
-		string dapAnB = questionList->info.optionB;
-		string dapAnC = questionList->info.optionC;
-		string dapAnD = questionList->info.optionD;
-		char dapAnDung = questionList->info.answer;
-		questionList = questionList->next;
-	}
+	//// 4. Tu ket qua lay ra duoc danh sach cau hoi
+	//PTRQUESTION questionList = questionPage.questionList;
+	//
+	//// 5. duyet du lieu de load ra
+	//while (questionList != nullptr) {
+	//	int maCauHoi = questionList->info.questionId;
+	//	string noiDungCauHoi = questionList->info.content;
+	//	string dapAnA = questionList->info.optionA;
+	//	string dapAnB = questionList->info.optionB;
+	//	string dapAnC = questionList->info.optionC;
+	//	string dapAnD = questionList->info.optionD;
+	//	char dapAnDung = questionList->info.answer;
+	//	questionList = questionList->next;
+	//}
 
 	// Cac tham so khac trong question Page
 	//struct QuestionPage {

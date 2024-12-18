@@ -381,6 +381,7 @@ void ContentClassroom::selectData()
 				{
 					setColorText(ColorCode_DarkGreen);
 					classCode = page.classList.classes[i]->classCode; // Get ClassCode for edit and delete
+					countClass = getCountStudentOfList(page.classList.classes[i]->studentList);
 				}
 
 				int classX = getCenterX(40, strlen(page.classList.classes[i]->classCode));
@@ -512,7 +513,7 @@ void ContentClassroom::createData()
 			else 
 			{
 				cleanMessage(posYMessage);
-				text.setContent("Ma Lop Bi Trung!");
+				text.setContent("Ma Lop Da Ton Tai!");
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -532,27 +533,34 @@ void ContentClassroom::createData()
 void ContentClassroom::deleteData()
 {
 	int deletePosX = getCenterX(COLUMN_CENTER, 50);
-	PopupDelete pDelete;
-	pDelete.setPosition(deletePosX + 30, 17);
-	pDelete.open();
-	pDelete.handle();
 
-	if (pDelete.getMenu() != 0)
+	if (countClass > 0)
 	{
-		currentClassroom = C_EXIT;
-		return;
+		PopupNotification pNotification;
+		pNotification.setTitle("Du lieu nay khong the xoa duoc!");
+		pNotification.setPosition(deletePosX + 30, 17);
+		pNotification.open();
+		pNotification.handle();
+		pNotification.close();
 	}
-
-	if (pDelete.getResult())
+	else 
 	{
-		ManageClass nl;
-		bool result = nl.deleteClass(classCode.c_str());
-		if (result)
+		PopupDelete pDelete;
+		pDelete.setPosition(deletePosX + 30, 17);
+		pDelete.open();
+		pDelete.handle();
+
+		if (pDelete.getResult())
 		{
-			hover = 0;
+			ManageClass nl;
+			bool result = nl.deleteClass(classCode.c_str());
+			if (result)
+			{
+				hover = 0;
+			}
 		}
+		pDelete.close();
 	}
-	pDelete.close();
 
 	currentClassroom = C_SELECT;
 	return;

@@ -50,6 +50,12 @@ PTRSUBJECT ManageSubject::getSubject(const char* code) {
     return searchSubject(subjectList, code);
 }
 
+bool ManageSubject::isSubjectExist(const string subjectCode)
+{
+    PTRSUBJECT subjectFound = getSubject(subjectCode.c_str());
+    return subjectFound != nullptr;
+}
+
 // Thêm câu hỏi vào môn học
 bool ManageSubject::addQuestionInSubject(const char* subjectCode, const string& content,
     const string& optionA, const string& optionB,

@@ -287,6 +287,7 @@ void ContentExecute::executeExam()
 			PopupNotification n;
 			int x = getCenterX(COLUMN_CENTER, 50);
 			n.setPosition(DISTANCE_SIDEBAR + MARGIN + x, 17);
+			n.setTitle("Nop bai thi truoc khi tro lai trang truoc");
 			n.open();
 			n.handle();
 			n.close();

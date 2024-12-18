@@ -11,6 +11,7 @@
 #include "mywindows.h"
 
 #include "PopupDelete.h"
+#include "PopupNotification.h"
 #include "InputField.h"
 #include "Text.h"
 
@@ -53,13 +54,13 @@ private:
 		SEARCH_EXIT		= 2
 	};
 	SearchInput stateSearchInput;
-
 	vector<InputField> listInput;
-	
 	Text text;
 
-	int posYMessage = 0;
 	string classCode;
+	int countClass = 0;
+
+	int posYMessage = 0;
 	int pageNumber = 1;
 	int hover = 0;
 	string textSearch = "";

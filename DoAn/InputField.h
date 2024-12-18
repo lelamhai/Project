@@ -13,7 +13,7 @@ class InputField
 private:
 	int x, y;
 	int w= WIDTH_INPUT, h = HEIGHT_INPUT;
-	int len = 13;
+	int maxLen = 13;
 	int moveMenu = 0;
 	string inputString;
 	KeyState keyInput;
@@ -22,7 +22,8 @@ public:
 	bool useHide = false;
 	bool notUseSpace = false;
 	bool useGender = false;
-	bool notUseNum = false;
+	bool useNum = false;
+	bool useAnswer = false;
 
 	void setLen(int length);
 	void setPosition(int posX, int posY);

@@ -5,6 +5,7 @@
 #include "mykeyboard.h"
 
 // Input
+#define MIN_LEN 7
 #define WIDTH_INPUT 20
 #define HEIGHT_INPUT 2
 #define LENGTH_INPUT 15
@@ -28,6 +29,7 @@
 #define UPDATE_FINISH "Cap Nhat Thong Tin Thanh Cong!"
 #define UPDATE_FAIL "Cap Nhat Thong Tin That Bai!"
 #define NOTIFICATION_DELETE "Ban Co Muon Xoa Du Lieu Nay Khong?"
+#define INPUT_MESSAGE "Do Dai It Nhat 7 Ky Tu"
 
 
 
