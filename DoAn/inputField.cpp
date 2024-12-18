@@ -48,6 +48,7 @@ void InputField::clean()
 
 void InputField::handleInput()
 {
+	int count;
 	cursorPosition = inputString.length();
 	gotoXY(x + 1 + cursorPosition, y + 1);
 	while (true)
@@ -214,14 +215,29 @@ void InputField::handleInput()
 			return;
 
 		case SPACEBAR:
-			if (useGender)
-			{
-				continue;
-			}
-
 			if (notUseSpace)
 			{
-				continue;
+				break;
+			}
+
+			if (useGender)
+			{
+				break;
+			}
+
+			if (inputString.length() == 0)
+			{
+				break;
+			}
+
+			if (inputString.length() > maxLen)
+			{
+				break;
+			}
+
+			if (inputString[cursorPosition - 1] == ' ')
+			{
+				break;
 			}
 
 			inputString.insert(inputString.begin() + cursorPosition, s);
