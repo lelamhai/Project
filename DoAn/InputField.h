@@ -23,6 +23,7 @@ public:
 	bool notUseSpace = false;
 	bool useGender = false;
 	bool useNum = false;
+	bool useAnswer = false;
 
 	void setLen(int length);
 	void setPosition(int posX, int posY);

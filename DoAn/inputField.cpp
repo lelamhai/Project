@@ -202,7 +202,6 @@ void InputField::handleInput()
 		default:
 			break;
 		}
-		
 
 		switch (s)
 		{
@@ -224,7 +223,6 @@ void InputField::handleInput()
 			{
 				continue;
 			}
-
 
 			inputString.insert(inputString.begin() + cursorPosition, s);
 			cursorPosition++;
@@ -274,18 +272,12 @@ void InputField::handleInput()
 				break;
 			}
 
-			if (!useNum && (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z'))
+			if (!useAnswer && !useNum && (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z'))
 			{
 				if (s >= 'a' && s <= 'z')
 				{
 					s = s - ('a' - 'A');
 				}
-
-				if (s >= 'A' && s <= 'Z')
-				{
-					s = s;
-				}
-
 				inputString.insert(inputString.begin() + cursorPosition, s);
 				cursorPosition++;
 				cout << s;
@@ -308,16 +300,35 @@ void InputField::handleInput()
 				break;
 			}
 
-			if (s >= '0' && s <= '9')
+			if (!useAnswer && s >= '0' && s <= '9')
 			{
-				if (s >= 'a' && s <= 'z')
+				inputString.insert(inputString.begin() + cursorPosition, s);
+				cursorPosition++;
+				cout << s;
+				if (useHide)
 				{
-					s = s - ('a' - 'A');
+					Sleep(150);
+					gotoXY(whereX() - 1, whereY());
+					cout << "*";
 				}
 
-				if (s >= 'A' && s <= 'Z')
+				if (cursorPosition != inputString.length())
 				{
-					s = s;
+					for (int i = cursorPosition; i <= inputString.length(); i++)
+					{
+						cout << inputString[i];
+					}
+					gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
+				}
+
+				break;
+			}
+
+			if (useAnswer && s >= 'a' && s <= 'd' || s >= 'A' && s <= 'D')
+			{
+				if (s >= 'a' && s <= 'd')
+				{
+					s = s - ('a' - 'A');
 				}
 
 				inputString.insert(inputString.begin() + cursorPosition, s);
