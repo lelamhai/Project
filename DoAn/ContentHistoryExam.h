@@ -19,6 +19,7 @@ class ContentHistoryExam : public Content
 private:
 	string subjectCode;
 	string studentCode;
+	int indexAnswer;
 	vector<Text> listText;
 	vector<char> listResults;
 	resultList* rs;
@@ -30,9 +31,10 @@ public:
 	void init(string subject, string student);
 	void content();
 	void drawContent();
-	void loadQuestion();
+	void loadQuestion(int indexQuestion, int indexAnswer, questionRecordList listQuestion);
 	void loadResult();
 	void handle();
+	void cleanQuestion();
 	ContentHistoryExam();
 	~ContentHistoryExam();
 

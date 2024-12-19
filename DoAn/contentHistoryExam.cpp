@@ -88,11 +88,6 @@ void ContentHistoryExam::content()
 	handle();
 }
 
-void ContentHistoryExam::loadQuestion()
-{
-
-}
-
 void ContentHistoryExam::loadResult()
 {
 	bool reset = true;
@@ -107,6 +102,37 @@ void ContentHistoryExam::loadResult()
 		listText.push_back(Text());
 		listResults.push_back(' ');
 		string content = "Cau " + to_string(j + 1) + ": " + p->chosenAnswer;
+
+		if (j==0)
+		{
+			if (p->chosenAnswer == ' ')
+			{
+				indexAnswer = -1;
+			}
+			else
+			{
+				if (p->chosenAnswer == 'A')
+				{
+					indexAnswer = 0;
+				}
+
+				if (p->chosenAnswer == 'B')
+				{
+					indexAnswer = 1;
+				}
+
+				if (p->chosenAnswer == 'C')
+				{
+					indexAnswer = 2;
+				}
+
+				if (p->chosenAnswer == 'D')
+				{
+					indexAnswer = 3;
+				}
+			}
+		}
+
 
 		if (reset)
 		{
@@ -159,6 +185,10 @@ void ContentHistoryExam::loadResult()
 
 void ContentHistoryExam::handle()
 {
+	questionRecordList q;
+	int countQuestion = rs->totalQuestion;
+	int indexQuestion = 0;
+	bool isLoadQuestion = true;
 	while (true)
 	{
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
@@ -168,6 +198,128 @@ void ContentHistoryExam::handle()
 				return;
 			}
 		}
-		Sleep(100);
+
+		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
+		{
+			if (indexQuestion > 0)
+			{
+				indexQuestion--;
+				answer* p = rs->answerList[indexQuestion];
+				if (p->chosenAnswer == ' ')
+				{
+					indexAnswer = -1;
+				}
+				else 
+				{
+					if (p->chosenAnswer == 'A')
+					{
+						indexAnswer = 0;
+					}
+
+					if (p->chosenAnswer == 'B')
+					{
+						indexAnswer = 1;
+					}
+
+					if (p->chosenAnswer == 'C')
+					{
+						indexAnswer = 2;
+					}
+
+					if (p->chosenAnswer == 'D')
+					{
+						indexAnswer = 3;
+					}
+				}
+				cleanQuestion();
+				isLoadQuestion = true;
+			}
+		}
+
+		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
+		{
+			if (indexQuestion < countQuestion - 1)
+			{
+				indexQuestion++;
+				answer* p = rs->answerList[indexQuestion];
+				if (p->chosenAnswer == ' ')
+				{
+					indexAnswer = -1;
+				}
+				else
+				{
+					if (p->chosenAnswer == 'A')
+					{
+						indexAnswer = 0;
+					}
+
+					if (p->chosenAnswer == 'B')
+					{
+						indexAnswer = 1;
+					}
+
+					if (p->chosenAnswer == 'C')
+					{
+						indexAnswer = 2;
+					}
+
+					if (p->chosenAnswer == 'D')
+					{
+						indexAnswer = 3;
+					}
+				}
+				cleanQuestion();
+				isLoadQuestion = true;
+			}
+		}
+
+		if (isLoadQuestion)
+		{
+			q = ManageScore::getQuestionExamRecord(subjectCode.c_str(), studentCode.c_str());
+			loadQuestion(indexQuestion, indexAnswer, q);
+			isLoadQuestion = false;
+		}
+	}
+}
+
+void ContentHistoryExam::loadQuestion(int indexQuestion, int indexAnswer, questionRecordList listQuestion)
+{
+	int contentY = 4;
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
+	setColorText(ColorCode_White);
+	cout << "Cau " << to_string(indexQuestion + 1) << ": " << listQuestion.list[indexQuestion].content;
+
+	string listOption[4] = {
+		"A) " + listQuestion.list[indexQuestion].optionA,
+		"B) " + listQuestion.list[indexQuestion].optionB,
+		"C) " + listQuestion.list[indexQuestion].optionC,
+		"D) " + listQuestion.list[indexQuestion].optionD
+	};
+
+	for (int i = 0; i < 4; i++)
+	{
+		contentY += 3;
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + PADDING + PADDING + contentY + 2);
+
+		if (indexAnswer == i)
+		{
+			setColorText(ColorCode_DarkGreen);
+		}
+		cout << listOption[i];
+		setColorText(ColorCode_White);
+	}
+}
+
+void ContentHistoryExam::cleanQuestion()
+{
+	int posX = DISTANCE_SIDEBAR + MARGIN + PADDING - 5;
+	int posY = DISTANCE_HEADER + PADDING + PADDING + 4;
+
+	string blankFill;
+	blankFill.resize(COLUMN_CENTER + 5, ' ');
+	for (int i = 0; i < 15; i++)
+	{
+		gotoXY(posX, posY + i);
+		cout << blankFill;
 	}
 }
