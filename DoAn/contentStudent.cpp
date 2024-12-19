@@ -56,25 +56,33 @@ void ContentStudent::drawClassroom()
 	};
 
 	int posXRight = 0;
-	int y = DISTANCE_HEADER + PADDING + 5;
+	int y = DISTANCE_HEADER + PADDING + 4;
 	for (int i = 0; i < 5; i++)
 	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
+		listInput.push_back(InputField());
+		listText.push_back(Text());
+
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 4));
 		cout << titleInput[i];
 
-
-		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1);
+		listInput[i].setMinLen(1);
+		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
-		posXRight = y + (i * 3);
+
+		listText[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y + (i * 4) + 2);
+		posXRight = y + (i * 4);
 	}
 
-	setColorText(ColorCode_DarkYellow);
+	listInput[0].setMinLen(LENGTH_MIN_CODE);
+	listInput[4].setMinLen(LENGTH_MIN_CODE);
+
+	/*setColorText(ColorCode_DarkYellow);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + WIDTH_INPUT + 16, 23);
 	cout << "+/-";
-	setColorText(ColorCode_White);
+	setColorText(ColorCode_White);*/
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 25);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 27);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
 	cout << char(195);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
@@ -82,16 +90,17 @@ void ContentStudent::drawClassroom()
 
 	y = posXRight + 2;
 	posYMessage = y;
-	text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+	/*textValidation.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);*/
+	text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage + 1);
 
 	y = y + 2;
-	int infoX = getCenterX(COLUMN_RIGHT, 10);
+	int infoX = getCenterX(COLUMN_RIGHT, 11);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + infoX, y, 10, 2);
 	int enterX = getCenterX(COLUMN_RIGHT, 5);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + enterX, y + 1);
 	cout << "Enter";
 
-	y = y + 5 + 1;
+	y = y + 5;
 	// Tutorial
 	int tutorialY = y;
 	tutorialY += 1;
@@ -103,18 +112,17 @@ void ContentStudent::drawClassroom()
 	string note[] = {
 		"F12: Xem Huong Dan Chi Tiet",
 		"Phim +: Nam",
-		"Phim -: Nu",
-		"ESC: Tro Lai"
+		"Phim -: Nu"
 	};
 
 	int contentY = tutorialY + 1;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
 	}
 	setColorText(ColorCode_DarkYellow);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT, 7);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT, 6);
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY, COLUMN_RIGHT);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY);
 	cout << char(195);
@@ -373,20 +381,6 @@ void ContentStudent::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
-		{
-			moveMenu--;
-			Sleep(150);
-			continue;
-		}
-
-		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
-		{
-			moveMenu++;
-			Sleep(150);
-			continue;
-		}
-
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
 			if (Singleton::getInstance()->moveMenu != 0)
@@ -458,6 +452,11 @@ void ContentStudent::selectData()
 
 void ContentStudent::createData()
 {
+	for (int i = 0; i < 5; i++)
+	{
+		listInput[i].setText("");
+	}
+
 	string gender = "Nam";
 	ManageClass test;
 	int i = 0;
@@ -466,7 +465,18 @@ void ContentStudent::createData()
 	{
 		if (stateInput == FORM_CODE)
 		{
+			listText[0].setContent(NOTIFICATION_CODE);
+			listText[0].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[0].getLenString());
+			listText[0].updatePositionX(textPosX);
+			listText[0].display();
+
 			listInput[0].handleInput();
+
+			listText[0].clean();
+			listText[0].updatePositionX(-textPosX);
+			listText[0].setContent("");
+
 			switch (listInput[0].getEndKey())
 			{
 			case ENTER:
@@ -486,16 +496,12 @@ void ContentStudent::createData()
 				currentDetailClassroom = C_SEARCH;
 				return;
 
-			case PGUP:
-				moveMenu--;
-				break;
-
-			case PGDN:
-				moveMenu++;
-				break;
+			case ESC:
+				currentDetailClassroom = C_EXIT;
+				return;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					return;
@@ -517,7 +523,18 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_LAST)
 		{
+			listText[1].setContent(NOTIFICATION_EMPTY);
+			listText[1].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[1].getLenString());
+			listText[1].updatePositionX(textPosX);
+			listText[1].display();
+
 			listInput[1].handleInput();
+
+			listText[1].clean();
+			listText[1].updatePositionX(-textPosX);
+			listText[1].setContent("");
+
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -546,7 +563,7 @@ void ContentStudent::createData()
 				break;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					return;
@@ -560,7 +577,17 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_FIRST)
 		{
+			listText[2].setContent(NOTIFICATION_EMPTY);
+			listText[2].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[2].getLenString());
+			listText[2].updatePositionX(textPosX);
+			listText[2].display();
+
 			listInput[2].handleInput();
+
+			listText[2].clean();
+			listText[2].updatePositionX(-textPosX);
+			listText[2].setContent("");
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -589,7 +616,7 @@ void ContentStudent::createData()
 				break;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					return;
@@ -603,6 +630,12 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_SEX)
 		{
+			listText[3].setContent("Vui Long Dung Phim + Hoac -");
+			listText[3].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[3].getLenString());
+			listText[3].updatePositionX(textPosX);
+			listText[3].display();
+
 			if (listInput[3].getText() == "")
 			{
 				listInput[3].focus();
@@ -611,6 +644,12 @@ void ContentStudent::createData()
 			}
 			listInput[3].useGender = true;
 			listInput[3].handleInput();
+
+			listText[3].clean();
+			listText[3].updatePositionX(-textPosX);
+			listText[3].setContent("");
+
+
 			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
@@ -639,31 +678,27 @@ void ContentStudent::createData()
 				break;
 
 			case ADD:
-				if (listInput[3].getText() !=  "Nam")
+				if (listInput[3].getText() == "Nu")
 				{
-					gotoXY(whereX() - 2, whereY());
-					cout << "  ";
-					gotoXY(whereX() - 2, whereY());
+					listInput[3].clean();
 					listInput[3].setText("Nam");
 					listInput[3].display();
 				}
+
 				
 				break;
 
 			case SUBTRACT:
-				if (listInput[3].getText() != "Nu")
+				if (listInput[3].getText() == "Nam")
 				{
-					gotoXY(whereX() - 3, whereY());
-					cout << "   ";
-					gotoXY(whereX() - 3, whereY());
+					listInput[3].clean();
 					listInput[3].setText("Nu");
 					listInput[3].display();
 				}
-				
 				break;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					return;
@@ -677,7 +712,17 @@ void ContentStudent::createData()
 
 		if (stateInput == FORM_PASSWORD)
 		{
+			listText[4].setContent(NOTIFICATION_CODE);
+			listText[4].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[4].getLenString());
+			listText[4].updatePositionX(textPosX);
+			listText[4].display();
+
 			listInput[4].handleInput();
+
+			listText[4].clean();
+			listText[4].updatePositionX(-textPosX);
+			listText[4].setContent("");
 			switch (listInput[4].getEndKey())
 			{
 			case ENTER:
@@ -706,7 +751,7 @@ void ContentStudent::createData()
 				break;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					return;
@@ -729,23 +774,42 @@ void ContentStudent::createData()
 				sex = 'F';
 			}
 
+			
+
 			bool result = test.addStudentToClass(classCode, listInput[0].getText(), listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
 			if (result)
 			{
-				cleanMessage(posYMessage);
+				int textPosX;
+				if (text.getLenString() != 0)
+				{
+					textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+					text.clean();
+					text.updatePositionX(-textPosX);
+					text.setContent("");
+				}
+				
+
 				loadData();
-				text.setContent("Them sinh vien thanh cong!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.setContent(INSERT_FINISH);
+				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
+				text.setColor(ColorCode_DarkGreen);
 			}
 			else
 			{
-				cleanMessage(posYMessage);
-				text.setContent("Them sinh vien that bai!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				int textPosX;
+				if (text.getLenString() != 0)
+				{
+					textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+					text.clean();
+					text.updatePositionX(-textPosX);
+					text.setContent("");
+				}
+
+				text.setContent("MSSV Da Ton Tai!");
+				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
+				text.setColor(ColorCode_DarkRed);
 			}
 			text.display();
 			stateInput = FORM_CODE;
@@ -810,7 +874,17 @@ void ContentStudent::editData()
 	{
 		if (stateInput == FORM_LAST)
 		{
+			listText[1].setContent(NOTIFICATION_EMPTY);
+			listText[1].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[1].getLenString());
+			listText[1].updatePositionX(textPosX);
+			listText[1].display();
+
 			listInput[1].handleInput();
+
+			listText[1].clean();
+			listText[1].updatePositionX(-textPosX);
+			listText[1].setContent("");
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -835,7 +909,7 @@ void ContentStudent::editData()
 				break;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					return;
@@ -849,7 +923,17 @@ void ContentStudent::editData()
 
 		if (stateInput == FORM_FIRST)
 		{
+			listText[2].setContent(NOTIFICATION_EMPTY);
+			listText[2].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[2].getLenString());
+			listText[2].updatePositionX(textPosX);
+			listText[2].display();
+
 			listInput[2].handleInput();
+
+			listText[2].clean();
+			listText[2].updatePositionX(-textPosX);
+			listText[2].setContent("");
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -878,7 +962,7 @@ void ContentStudent::editData()
 				break;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					return;
@@ -898,8 +982,19 @@ void ContentStudent::editData()
 				listInput[3].setText(gender);
 				listInput[3].display();
 			}
+
+			listText[3].setContent(NOTIFICATION_EMPTY);
+			listText[3].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[3].getLenString());
+			listText[3].updatePositionX(textPosX);
+			listText[3].display();
+
 			listInput[3].useGender = true;
 			listInput[3].handleInput();
+
+			listText[3].clean();
+			listText[3].updatePositionX(-textPosX);
+			listText[3].setContent("");
 			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
@@ -952,7 +1047,7 @@ void ContentStudent::editData()
 				break;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					return;
@@ -966,7 +1061,18 @@ void ContentStudent::editData()
 
 		if (stateInput == FORM_PASSWORD)
 		{
+			listText[4].setContent(NOTIFICATION_EMPTY);
+			listText[4].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[4].getLenString());
+			listText[4].updatePositionX(textPosX);
+			listText[4].display();
+
 			listInput[4].handleInput();
+
+			listText[4].clean();
+			listText[4].updatePositionX(-textPosX);
+			listText[4].setContent("");
+
 			switch (listInput[4].getEndKey())
 			{
 			case ENTER:
@@ -995,7 +1101,7 @@ void ContentStudent::editData()
 				break;
 
 			case TAB:
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					return;
@@ -1021,20 +1127,36 @@ void ContentStudent::editData()
 			bool result = test.editStudentInClass(classCode,studentCode, listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
 			if (result)
 			{
-				cleanMessage(posYMessage);
+				int textPosX;
+				if (text.getLenString() != 0)
+				{
+					textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+					text.clean();
+					text.updatePositionX(-textPosX);
+					text.setContent("");
+				}
+
 				loadData();
-				text.setContent("Cap nhat thong tin thanh cong!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.setContent(UPDATE_FINISH);
+				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
+				text.setColor(ColorCode_DarkGreen);
 			}
 			else
 			{
-				cleanMessage(posYMessage);
-				text.setContent("Cap nhat thong tin that bai!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				int textPosX;
+				if (text.getLenString() != 0)
+				{
+					textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+					text.clean();
+					text.updatePositionX(-textPosX);
+					text.setContent("");
+				}
+
+				text.setContent(UPDATE_FAIL);
+				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
+				text.setColor(ColorCode_DarkRed);
 			}
 			text.display();
 			stateInput = FORM_LAST;
@@ -1065,23 +1187,9 @@ void ContentStudent::findData()
 				return;
 			}
 
-			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
-			{
-				moveMenu--;
-				Sleep(150);
-				continue;
-			}
-
-			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
-			{
-				moveMenu++;
-				Sleep(150);
-				continue;
-			}
-
 			if (GetAsyncKeyState(VK_TAB) & 0x8000)
 			{
-				if (moveMenu != 0)
+				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentDetailClassroom = C_EXIT;
 					Sleep(150);
@@ -1228,7 +1336,20 @@ void ContentStudent::cleanInput()
 	for (int i = 0; i < 5; i++)
 	{
 		listInput[i].clean();
+
+		if (listText[i].getLenString() != 0)
+		{
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[i].getLenString());
+			listText[i].clean();
+			listText[i].updatePositionX(-textPosX);
+			listText[i].setContent("");
+		}
 	}
+
+	int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+	text.clean();
+	text.updatePositionX(-textPosX);
+	text.setContent("");
 }
 
 void ContentStudent::showTitleStudent()

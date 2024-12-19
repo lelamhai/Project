@@ -56,21 +56,9 @@ private:
 	};
 	SearchInput stateSearchInput;
 
-
-	InputField inputStudentCode;
-	InputField inputStudentLastName;
-	InputField inputStudentFirstName;
-	InputField inputStudentSex;
-	InputField inputStudentPassword;
+	vector<InputField> listInput;
+	vector<Text> listText;
 	Text text;
-
-	InputField listInput[5] = {
-		inputStudentCode,
-		inputStudentLastName,
-		inputStudentFirstName,
-		inputStudentSex,
-		inputStudentPassword
-	};
 
 	int posYMessage = 0;
 	string classCode;
@@ -78,7 +66,7 @@ private:
 	int pageNumber = 1;
 	int hover = 0;
 	string textSearch = "";
-	int moveMenu = 0;
+
 public:
 	void displayContent() override;
 	void content();

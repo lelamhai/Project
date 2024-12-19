@@ -46,7 +46,7 @@ void ContentClassroom::drawClassroom()
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 4));
 		cout << titleInput[i];
 
-		listInput[i].setMinLen(LENGTH_MIN_INPUT);
+		listInput[i].setMinLen(LENGTH_MIN_CODE);
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
 
@@ -92,7 +92,7 @@ void ContentClassroom::drawClassroom()
 		"* Xoa Lop",
 		"   F1->Len|Xuong->Del->Trai|Phai",
 		"* Xem Danh Sach Sinh Vien Cua Lop",
-		"   F1->Len|Xuong->Enter"
+		"   F1->Len|Xuong->Bam 2 Enter"
 	};
 
 	int contentY = tutorialY + 1;
@@ -418,7 +418,7 @@ void ContentClassroom::createData()
 	{
 		if (stateInput == FORM_CODE)
 		{
-			listText[0].setContent(DEFAULT_NOTIFICATION);
+			listText[0].setContent(NOTIFICATION_CODE);
 			listText[0].setColor(ColorCode_DarkYellow);
 			int textPosX = getCenterX(COLUMN_RIGHT, listText[0].getLenString());
 			listText[0].updatePositionX(textPosX);
@@ -470,7 +470,7 @@ void ContentClassroom::createData()
 
 		if (stateInput == FORM_NAME)
 		{
-			listText[1].setContent(DEFAULT_NOTIFICATION);
+			listText[1].setContent(NOTIFICATION_CODE);
 			listText[1].setColor(ColorCode_DarkYellow);
 			int textPosX = getCenterX(COLUMN_RIGHT, listText[1].getLenString());
 			listText[1].updatePositionX(textPosX);
@@ -611,7 +611,7 @@ void ContentClassroom::editData()
 	{
 		if (stateInput == FORM_NAME)
 		{
-			listText[1].setContent(DEFAULT_NOTIFICATION);
+			listText[1].setContent(NOTIFICATION_CODE);
 			listText[1].setColor(ColorCode_DarkYellow);
 			int textPosX = getCenterX(COLUMN_RIGHT, listText[1].getLenString());
 			listText[1].updatePositionX(textPosX);
@@ -859,6 +859,11 @@ void ContentClassroom::cleanInput()
 			listText[i].setContent("");
 		}
 	}
+
+	int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+	text.clean();
+	text.updatePositionX(-textPosX);
+	text.setContent("");
 }
 
 bool ContentClassroom::checkInsert(string code)
