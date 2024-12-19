@@ -14,10 +14,11 @@ private:
 	int x, y;
 	int w= WIDTH_INPUT, h = HEIGHT_INPUT;
 	int maxLen = 13;
-	int moveMenu = 0;
+	int minLen = 0;
 	string inputString;
 	KeyState keyInput;
 	int cursorPosition = 0;
+
 public:
 	bool useHide = false;
 	bool notUseSpace = false;
@@ -25,7 +26,8 @@ public:
 	bool useNum = false;
 	bool useAnswer = false;
 
-	void setLen(int length);
+	void setMaxLen(int length);
+	void setMinLen(int length);
 	void setPosition(int posX, int posY);
 	void setFrame(int width, int height);
 	void focus();

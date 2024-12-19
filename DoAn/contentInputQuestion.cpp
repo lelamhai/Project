@@ -70,13 +70,13 @@ void ContentInputQuestion::drawContent()
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING, DISTANCE_HEADER + 6 + (y * i));
 		listInput[i].setFrame(168, HEIGHT_INPUT);
 		listInput[i].drawBox();
-		listInput[i].setLen(164);
+		listInput[i].setMaxLen(164);
 	}
 
 	listInput[5].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING + 7, lastY - 1);
 	listInput[5].setFrame(4, HEIGHT_INPUT);
 	listInput[5].drawBox();
-	listInput[5].setLen(0);
+	listInput[5].setMaxLen(0);
 
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING + 15, lastY);
 	setColorText(ColorCode_Yellow);

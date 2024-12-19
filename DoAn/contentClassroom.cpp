@@ -46,7 +46,7 @@ void ContentClassroom::drawClassroom()
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 4));
 		cout << titleInput[i];
 
-		
+		listInput[i].setMinLen(LENGTH_MIN_INPUT);
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
 
@@ -409,7 +409,6 @@ void ContentClassroom::selectData()
 
 void ContentClassroom::createData()
 {
-	bool result;
 	ManageClass nl;
 	listInput[0].setText("");
 	listInput[1].setText("");
@@ -419,19 +418,11 @@ void ContentClassroom::createData()
 	{
 		if (stateInput == FORM_CODE)
 		{
-			if (listText[0].getLenString() != 0)
-			{
-				int textPosX = getCenterX(COLUMN_RIGHT, listText[0].getLenString());
-				listText[0].updatePositionX(-textPosX);
-				listText[0].setContent("");
-			}
-
 			listText[0].setContent(DEFAULT_NOTIFICATION);
+			listText[0].setColor(ColorCode_DarkYellow);
 			int textPosX = getCenterX(COLUMN_RIGHT, listText[0].getLenString());
 			listText[0].updatePositionX(textPosX);
-			listText[0].setColor(ColorCode_DarkYellow);
 			listText[0].display();
-
 
 			listInput[0].notUseSpace = true;
 			listInput[0].handleInput();
@@ -448,16 +439,6 @@ void ContentClassroom::createData()
 					stateInput = FORM_ENTER;
 					continue;
 				}
-				result = checkInsert(listInput[0].getText());
-				if (result)
-				{
-					listText[0].setContent("Ma Lop Da Ton Tai!");
-					int textPosX = getCenterX(COLUMN_RIGHT, listText[0].getLenString());
-					listText[0].updatePositionX(textPosX);
-					listText[0].setColor(ColorCode_DarkRed);
-					listText[0].display();
-				}
-
 				stateInput = FORM_NAME;
 				break;
 
@@ -479,20 +460,6 @@ void ContentClassroom::createData()
 
 			case DOWN:
 			case UP:
-				result = checkInsert(listInput[0].getText());
-				if (result)
-				{
-					listText[0].setContent("Ma Lop Da Ton Tai!");
-					int textPosX = getCenterX(COLUMN_RIGHT, listText[0].getLenString());
-					listText[0].updatePositionX(textPosX);
-					listText[0].setColor(ColorCode_DarkRed);
-					listText[0].display();
-				}
-
-				text.clean();
-				text.setContent("");
-				text.updatePositionX(-textPosX);
-
 				stateInput = FORM_NAME;
 				break;
 
@@ -504,15 +471,17 @@ void ContentClassroom::createData()
 		if (stateInput == FORM_NAME)
 		{
 			listText[1].setContent(DEFAULT_NOTIFICATION);
+			listText[1].setColor(ColorCode_DarkYellow);
 			int textPosX = getCenterX(COLUMN_RIGHT, listText[1].getLenString());
 			listText[1].updatePositionX(textPosX);
-			listText[1].setColor(ColorCode_DarkYellow);
 			listText[1].display();
 
+			listInput[1].notUseSpace = true;
 			listInput[1].handleInput();
+
 			listText[1].clean();
 			listText[1].updatePositionX(-textPosX);
-
+			listText[1].setContent("");
 
 			switch (listInput[1].getEndKey())
 			{
@@ -522,7 +491,6 @@ void ContentClassroom::createData()
 					stateInput = FORM_ENTER;
 					continue;
 				}
-				
 				stateInput = FORM_CODE;
 				break;
 
@@ -554,8 +522,8 @@ void ContentClassroom::createData()
 
 		if (stateInput == FORM_ENTER)
 		{
-			result = nl.addClass(listInput[0].getText().c_str(), listInput[1].getText());
-			
+			bool result = nl.addClass(listInput[0].getText().c_str(), listInput[1].getText());
+
 			if (result)
 			{
 				cleanTable();
@@ -565,22 +533,22 @@ void ContentClassroom::createData()
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
-				text.setColor(ColorCode_Green);
+				text.setColor(ColorCode_DarkGreen);
 			}
-			else 
+			else
 			{
 				cleanMessage(posYMessage);
 				text.setContent("Ma Lop Da Ton Tai!");
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX); 
+				text.updatePositionX(textPosX);
 				text.setColor(ColorCode_DarkRed);
 			}
 
 			text.display();
 			stateInput = FORM_CODE;
 		}
-	
+
 		if (stateInput == FORM_EXIT)
 		{
 			return;
@@ -643,7 +611,17 @@ void ContentClassroom::editData()
 	{
 		if (stateInput == FORM_NAME)
 		{
+			listText[1].setContent(DEFAULT_NOTIFICATION);
+			listText[1].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[1].getLenString());
+			listText[1].updatePositionX(textPosX);
+			listText[1].display();
+
 			listInput[1].handleInput();
+
+			listText[1].clean();
+			listText[1].updatePositionX(-textPosX);
+			listText[1].setContent("");
 
 			switch (listInput[1].getEndKey())
 			{
@@ -689,7 +667,7 @@ void ContentClassroom::editData()
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
-
+				text.setColor(ColorCode_DarkGreen);
 			}
 			else {
 				cleanMessage(posYMessage);
@@ -697,6 +675,7 @@ void ContentClassroom::editData()
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
+				text.setColor(ColorCode_DarkRed);
 			}
 			text.display();
 			stateInput = FORM_NAME;
@@ -871,6 +850,14 @@ void ContentClassroom::cleanInput()
 	for (int i = 0; i < 2; i++)
 	{
 		listInput[i].clean();
+
+		if (listText[i].getLenString() != 0)
+		{
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[i].getLenString());
+			listText[i].clean();
+			listText[i].updatePositionX(-textPosX);
+			listText[i].setContent("");
+		}
 	}
 }
 

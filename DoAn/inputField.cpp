@@ -8,9 +8,14 @@ InputField::~InputField()
 {
 }
 
-void InputField::setLen(int length)
+void InputField::setMaxLen(int length)
 {
 	this->maxLen = length;
+}
+
+void InputField::setMinLen(int length)
+{
+	this->minLen = length;
 }
 
 void InputField::setPosition(int posX, int posY)
@@ -83,6 +88,11 @@ void InputField::handleInput()
 
 		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
+			if (inputString.length() < minLen)
+			{
+				continue;
+			}
+
 			keyInput = UP;
 			Sleep(150);
 			return;
@@ -90,6 +100,11 @@ void InputField::handleInput()
 
 		if (GetAsyncKeyState(VK_DOWN) & 0x0001)
 		{
+			if (inputString.length() < minLen)
+			{
+				continue;
+			}
+
 			keyInput = DOWN;
 			Sleep(150);
 			return;
@@ -155,6 +170,11 @@ void InputField::handleInput()
 
 		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
 		{
+			if (inputString.length() < minLen)
+			{
+				continue;
+			}
+
 			keyInput = ENTER;
 			Sleep(150);
 			return;
@@ -162,7 +182,6 @@ void InputField::handleInput()
 
 		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
 		{
-			moveMenu--;
 			Sleep(150);
 			showCur(1);
 			return;
@@ -170,7 +189,6 @@ void InputField::handleInput()
 
 		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
 		{
-			moveMenu++;
 			Sleep(150);
 			showCur(1);
 			return;
