@@ -74,6 +74,7 @@ void ContentStudent::drawClassroom()
 	}
 
 	listInput[0].setMinLen(LENGTH_MIN_CODE);
+	
 	listInput[4].setMinLen(LENGTH_MIN_CODE);
 
 	/*setColorText(ColorCode_DarkYellow);
@@ -1023,27 +1024,21 @@ void ContentStudent::editData()
 				break;
 
 			case ADD:
-				if (listInput[3].getText() != "Nam")
+				if (listInput[3].getText() == "Nu")
 				{
-					gotoXY(whereX() - 2, whereY());
-					cout << "  ";
-					gotoXY(whereX() - 2, whereY());
+					listInput[3].clean();
 					listInput[3].setText("Nam");
 					listInput[3].display();
 				}
-
 				break;
 
 			case SUBTRACT:
-				if (listInput[3].getText() != "Nu")
+				if (listInput[3].getText() == "Nam")
 				{
-					gotoXY(whereX() - 3, whereY());
-					cout << "   ";
-					gotoXY(whereX() - 3, whereY());
+					listInput[3].clean();
 					listInput[3].setText("Nu");
 					listInput[3].display();
 				}
-
 				break;
 
 			case TAB:

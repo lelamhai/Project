@@ -301,6 +301,11 @@ void InputField::handleInput()
 			break;
 
 		default:
+			if (useGender)
+			{
+				break;
+			}
+
 			if (inputString.length() > maxLen)
 			{
 				break;
