@@ -76,7 +76,7 @@ void HuyTest::main() {
 	cout << "Test crack" << endl;
 
 	/*---------------------------IN RA LỊCH SỬ KẾT QUẢ ĐÃ THI MÔN HỌC CỦA MỘT SINH VIÊN ---------------------------------------------*/
-	
+	/*
 	resultList* rs = ManageScore::loadResultFromFile("CSDL", "12rfh"); // tìm kết quả thi của một sinh viên từ data base
 	
 	// demo in ra các thông tin kết quả thi
@@ -127,7 +127,7 @@ void HuyTest::main() {
 	// trả ve 1 nếu dữ liệu hợp lệ, =-1 nếu mã môn không tồn tại, =-3 nếu sinh viên đã thi môn này trước đó rổi, =-2 nếu số câu hỏi không hợp lệ, 
 	//cout << "Kiem tra = " << check << endl;
 	// KHỞI TẠO
-	/*mutex mtx; // Tạo mutex cho đồng bộ hóa
+	mutex mtx; // Tạo mutex cho đồng bộ hóa
 	ManageExam exam1;
 	
 	char subjectCode_input[15];	 //mã môn muốn thi
@@ -135,7 +135,7 @@ void HuyTest::main() {
 	int numberQuestion_input = 7;    //số câu hỏi muốn thi
 	int timeForExam_min_input = 1;   //số phút muốn thi
 
-	ManageExam::checkInputExam("CSDL", 7);
+	ManageExam::checkInputExam("MTH", 7);
 	// NHẬP THÔNG TIN INPUT ĐỂ THI
 	//cin.getline(subjectCode_input, 15);
 	//cin.getline(studentCode, 15);
@@ -145,7 +145,7 @@ void HuyTest::main() {
 	// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
 	bool isCorrectInput = false;
 	//isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
-	isCorrectInput = exam1.setInputExam("CSDL", "1233", numberQuestion_input, timeForExam_min_input);
+	isCorrectInput = exam1.setInputExam("MTH", "12rfhdah", numberQuestion_input, timeForExam_min_input);
 
 	if (!isCorrectInput) {
 		cout << "Du lieu nhap khong hop le ! " << endl;
@@ -160,7 +160,7 @@ void HuyTest::main() {
 	
 	// demo in ra thông tin câu hỏi
 	for (int i = 0; i < numberQuestion_input; i++) {
-		cout << randomQuestionList[i].content << endl;
+		cout << randomQuestionList[i].questionId << ": " << randomQuestionList[i].content << endl;
 		cout << randomQuestionList[i].optionA << endl;
 		cout << randomQuestionList[i].optionB << endl;
 		cout << randomQuestionList[i].optionC << endl;

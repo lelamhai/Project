@@ -1,23 +1,23 @@
 ﻿#include "ManageExam.h"
 
 ManageExam::ManageExam() {
-    isTimeUp = false;
-    isSubmitted = false;
+    //isTimeUp = false;
+    //isSubmitted = false;
 }
 
 ManageExam::~ManageExam() {
 
 }
 
-bool ManageExam::setTimeForExam(int timeForExam) {
-    if (timeForExam <= 0) {
-        return false;
-    }
-
-    this->timeForExam_min = timeForExam;
-    remainingTime_sec = timeForExam_min * 60;
-    return true;
-}
+//bool ManageExam::setTimeForExam(int timeForExam) {
+//    if (timeForExam <= 0) {
+//        return false;
+//    }
+//
+//    this->timeForExam_min = timeForExam;
+//    remainingTime_sec = timeForExam_min * 60;
+//    return true;
+//}
 
 bool ManageExam::setNumberQuestion(int numberQuestion) {
     ManageSubject subject;
@@ -58,8 +58,8 @@ bool ManageExam::setInputExam(const char* subjectCode, const char* studentCode ,
     this->subjectCode = subjectCode;
     this->studentCode = studentCode;
     this->numberQuestion = numberQuestion;
-    this->timeForExam_min = timeForExam;
-    remainingTime_sec = timeForExam_min * 60;
+    //this->timeForExam_min = timeForExam;
+    //remainingTime_sec = timeForExam_min * 60;
     return true;
 }
 
@@ -80,6 +80,7 @@ Question* ManageExam::getRandomQuestion() {
         answerRecord.answerList[i]->questionId = p->info.questionId;
         answerRecord.answerList[i]->correctAnswer = p->info.answer;
         
+        randomQuestionList[i].questionId = p->info.questionId;
         randomQuestionList[i].content = p->info.content;
         randomQuestionList[i].optionA = p->info.optionA;
         randomQuestionList[i].optionB = p->info.optionB;
@@ -97,27 +98,27 @@ Question* ManageExam::getRandomQuestion() {
     return randomQuestionList;
 }
 
-int ManageExam::getRemainingTime() {
-    return remainingTime_sec;
-}
-
-void ManageExam::changeRemainingTime(int t) {
-    remainingTime_sec += t;
-}
-
-bool ManageExam::getIsSubmitted() {
-    return isSubmitted;
-}
-void ManageExam::setSubmitted() {
-    isSubmitted = true;
-}
-
-bool ManageExam::getTimeUp() {
-    return isTimeUp;
-}
-void ManageExam::setTimeUp() {
-    isTimeUp = true;
-}
+//int ManageExam::getRemainingTime() {
+//    return remainingTime_sec;
+//}
+//
+//void ManageExam::changeRemainingTime(int t) {
+//    remainingTime_sec += t;
+//}
+//
+//bool ManageExam::getIsSubmitted() {
+//    return isSubmitted;
+//}
+//void ManageExam::setSubmitted() {
+//    isSubmitted = true;
+//}
+//
+//bool ManageExam::getTimeUp() {
+//    return isTimeUp;
+//}
+//void ManageExam::setTimeUp() {
+//    isTimeUp = true;
+//}
 
 
 Question ManageExam::getRandomedQuestionByIndex(int i) {
@@ -154,11 +155,14 @@ void ManageExam::toCalculateResult() {
     float score;
     answer* p;
     
+    ManageSubject manageSubject;
+
     for (int i = 0; i < numberQuestion; i++) {
         p = answerRecord.answerList[index];
         if (p->chosenAnswer == p->correctAnswer) {
             correctAnswer++;
         }
+        manageSubject.setIsInExamOfQuestion(subjectCode, p->questionId);
         index++;
     }
     answerRecord.totalQuestion = numberQuestion;
@@ -174,6 +178,8 @@ void ManageExam::toCalculateResult() {
     ManageClass tempClass;
     tempClass.addScoreToStudent(studentCode, subjectCode, answerRecord.score);
     
+    
+
 
     // ghi record chi tiết thi vào data
     saveResultToFile();
@@ -188,25 +194,25 @@ double ManageExam::getScore() {
 }
 
 
-tm ManageExam::getTimeStart() {
-    time_t currentTime = time(NULL); // lấy thời gian hiện tại gán vào biến (format giây)
-    tm timeStart;                // thời gian bắt thi format giây, giờ phút giây, ngày tháng năm
-    
-    localtime_s(&timeStart, &currentTime); // chuyển đối time dạng time_t thành kiểu tm
-
-    return timeStart;
-}
-
-tm ManageExam::getTimeEnd(tm timeStart) {
-    tm timeEnd;
-
-    time_t timeStart_t = mktime(&timeStart); //chuyển đổi time kiểu tm sang kiểu time_t
-    timeStart_t += timeForExam_min * 60; // cộng thêm thời gian thi vào thời gian bắt đầu
-    
-    localtime_s(&timeEnd, &timeStart_t); // chuyển đối time dạng time_t thành kiểu tm
-    
-    return timeEnd;
-}
+//tm ManageExam::getTimeStart() {
+//    time_t currentTime = time(NULL); // lấy thời gian hiện tại gán vào biến (format giây)
+//    tm timeStart;                // thời gian bắt thi format giây, giờ phút giây, ngày tháng năm
+//    
+//    localtime_s(&timeStart, &currentTime); // chuyển đối time dạng time_t thành kiểu tm
+//
+//    return timeStart;
+//}
+//
+//tm ManageExam::getTimeEnd(tm timeStart) {
+//    tm timeEnd;
+//
+//    time_t timeStart_t = mktime(&timeStart); //chuyển đổi time kiểu tm sang kiểu time_t
+//    timeStart_t += timeForExam_min * 60; // cộng thêm thời gian thi vào thời gian bắt đầu
+//    
+//    localtime_s(&timeEnd, &timeStart_t); // chuyển đối time dạng time_t thành kiểu tm
+//    
+//    return timeEnd;
+//}
 
 void ManageExam::saveResultToFile() {
     json j;

@@ -19,13 +19,13 @@ using namespace std;
 class ManageExam {
 private:
 	int numberQuestion;
-	int timeForExam_min;
+	//int timeForExam_min;
 	const char* subjectCode;
 	const char* studentCode;
   
-	bool isSubmitted; // trả về true khi người thi nhấn nộp bài, muốn kết thúc trước khi hết giờ
-	bool isTimeUp;
-	int remainingTime_sec; // thời gian còn lại bài thi tính bằng giây
+	//bool isSubmitted; // trả về true khi người thi nhấn nộp bài, muốn kết thúc trước khi hết giờ
+	//bool isTimeUp;
+	//int remainingTime_sec; // thời gian còn lại bài thi tính bằng giây
 
 	ManageSubject subjectList;
 	ManageQuestion questionList_Random;
@@ -37,7 +37,7 @@ public:
 	ManageExam();
 	~ManageExam();
 
-	bool setTimeForExam(int timeForExam); // hàm set thời gian thi
+	//bool setTimeForExam(int timeForExam); // hàm set thời gian thi
 
 	bool setNumberQuestion(int numberQuestion);
 	int getNumberQuestion();
@@ -48,15 +48,15 @@ public:
 
 	Question* getRandomQuestion(); // hàm tạo ra va trả về các câu hỏi random
 	
-	int getRemainingTime(); 
+	//int getRemainingTime(); 
 
-	void changeRemainingTime(int t); // hàm thay đổi thời gian còn lại
+	//void changeRemainingTime(int t); // hàm thay đổi thời gian còn lại
 
-	bool getIsSubmitted();
-	void setSubmitted();
+	//bool getIsSubmitted();
+	//void setSubmitted();
 
-	bool getTimeUp();
-	void setTimeUp();
+	//bool getTimeUp();
+	//void setTimeUp();
 
 
 

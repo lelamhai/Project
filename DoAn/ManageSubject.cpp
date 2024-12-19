@@ -183,6 +183,19 @@ Question ManageSubject::getQuestionBySubjectCodeAndId(const string subjectCode, 
     return result;
 }
 
+void ManageSubject::setIsInExamOfQuestion(const char* subjectCode, int questionId) {
+    PTRSUBJECT p =  getSubject(subjectCode);
+    
+    PTRQUESTION q = p->info.listQuestion;
+    while (q != nullptr) {
+        if (q->info.questionId == questionId) {
+            q->info.isInExam = true;
+            saveToFile();
+            return;
+        }
+        q = q->next;
+    }
+}
 
 // In danh sách tất cả các môn học
 void ManageSubject::printAllSubjects() {

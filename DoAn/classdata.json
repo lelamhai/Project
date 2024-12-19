@@ -10,7 +10,16 @@
                     "gender": 70,
                     "lastName": "123",
                     "password": "123",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 43.0,
+                            "subjectCode": "MTH"
+                        },
+                        {
+                            "score": 14.0,
+                            "subjectCode": "CSDL"
+                        }
+                    ],
                     "studentCode": "12rfhdah"
                 },
                 {
@@ -144,7 +153,16 @@
                     "gender": 70,
                     "lastName": "123",
                     "password": "123",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 29.0,
+                            "subjectCode": "VL"
+                        },
+                        {
+                            "score": 43.0,
+                            "subjectCode": "CSDL"
+                        }
+                    ],
                     "studentCode": "1233"
                 },
                 {

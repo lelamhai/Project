@@ -25,7 +25,7 @@
                 {
                     "answer": 66,
                     "content": "1*4= ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -35,7 +35,7 @@
                 {
                     "answer": 68,
                     "content": "tinh dien tich ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -45,7 +45,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -55,7 +55,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -65,7 +65,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -75,7 +75,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -85,7 +85,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -95,7 +95,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -105,7 +105,7 @@
                 {
                     "answer": 65,
                     "content": "hello",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "5",
                     "optionB": "10",
                     "optionC": "15",
@@ -133,8 +133,8 @@
         },
         {
             "questions": [],
-            "subjectCode": "PTTKHT",
-            "subjectName": "Phan tich thiet ke he thong"
+            "subjectCode": "QTMH",
+            "subjectName": "Quan tri mang va he thong"
         },
         {
             "questions": [],
@@ -157,11 +157,16 @@
             "subjectName": "Lap trinh ham chay"
         },
         {
+            "questions": [],
+            "subjectCode": "PTTKHT",
+            "subjectName": "Phan tich thiet ke he thong"
+        },
+        {
             "questions": [
                 {
                     "answer": 66,
                     "content": "1*4= ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -171,7 +176,7 @@
                 {
                     "answer": 68,
                     "content": "tinh dien tich ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -181,7 +186,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -191,7 +196,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -201,7 +206,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -211,7 +216,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -221,7 +226,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -231,7 +236,7 @@
                 {
                     "answer": 68,
                     "content": "hay lam ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": " = 1 ",
                     "optionB": " = 2 ",
                     "optionC": " = 3 ",
@@ -244,18 +249,13 @@
         },
         {
             "questions": [],
-            "subjectCode": "TKW",
-            "subjectName": "Thiet ke web"
-        },
-        {
-            "questions": [],
-            "subjectCode": "QTMH",
-            "subjectName": "Quan tri mang va he thong"
-        },
-        {
-            "questions": [],
             "subjectCode": "QTDT",
             "subjectName": "Quan tri du an cong nghe thong tin"
+        },
+        {
+            "questions": [],
+            "subjectCode": "TKW",
+            "subjectName": "Thiet ke web"
         },
         {
             "questions": [],
@@ -267,7 +267,7 @@
                 {
                     "answer": 66,
                     "content": "lanh la gi?",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "lanh 1",
                     "optionB": "lanh 2",
                     "optionC": "lanh 3",
@@ -277,7 +277,7 @@
                 {
                     "answer": 66,
                     "content": "Anh sang mat troi?",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "sang 1",
                     "optionB": "sang 2",
                     "optionC": "sang 3",
@@ -287,7 +287,7 @@
                 {
                     "answer": 66,
                     "content": "nhiet do la ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "nhiet 1",
                     "optionB": "nhiet 2",
                     "optionC": "nhiet 3",
@@ -297,7 +297,7 @@
                 {
                     "answer": 66,
                     "content": "Con cho mau gi?",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "cho 1",
                     "optionB": "cho 2",
                     "optionC": "cho 3",
@@ -307,7 +307,7 @@
                 {
                     "answer": 68,
                     "content": "dong dien xoay chieu ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "xoay 1",
                     "optionB": "xoay 2",
                     "optionC": "xoay 3",
@@ -317,7 +317,7 @@
                 {
                     "answer": 66,
                     "content": "do dai quang duong ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "quang 1",
                     "optionB": "quang 2",
                     "optionC": "quang 3",
@@ -407,7 +407,7 @@
                 {
                     "answer": 68,
                     "content": "dong dien xoay chieu ",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "Cuong do 1",
                     "optionB": "Cuong do 2",
                     "optionC": "Cuong do 3",

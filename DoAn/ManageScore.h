@@ -4,7 +4,6 @@
 
 const int MAX_STUDENT_PER_CLASS = 100;
 const string EXAM_RESULT_FILE_NAME = "examResult.json";
-//Question historyAnswer[MAX_NUMBER_QUESTION];
 
 struct scoreToPrint {
 	char studentCode[15];
