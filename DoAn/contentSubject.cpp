@@ -90,7 +90,7 @@ void ContentSubject::drawContent()
 		"* Xoa Mon Hoc",
 		"   F1->Len|Xuong->Del->Trai|Phai",
 		"* Xem Danh Sach Cau Hoi",
-		"   F1->Len|Xuong->Enter"
+		"   F1->Len|Xuong->Bam 2 Lan Enter"
 	};
 
 	int contentY = tutorialY + 1;

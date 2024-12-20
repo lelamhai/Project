@@ -519,6 +519,10 @@ void ContentStudent::createData()
 				stateInput = FORM_FIRST;
 				break;
 
+			case ESC:
+				currentDetailClassroom = C_EXIT;
+				return;
+
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
 				{
@@ -571,6 +575,10 @@ void ContentStudent::createData()
 			case DOWN:
 				stateInput = FORM_SEX;
 				break;
+
+			case ESC:
+				currentDetailClassroom = C_EXIT;
+				return;
 
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
@@ -633,6 +641,10 @@ void ContentStudent::createData()
 			case DOWN:
 				stateInput = FORM_PASSWORD;
 				break;
+
+			case ESC:
+				currentDetailClassroom = C_EXIT;
+				return;
 
 			case ADD:
 				if (listInput[3].getText() == "Nu")
@@ -706,6 +718,10 @@ void ContentStudent::createData()
 			case DOWN:
 				stateInput = FORM_CODE;
 				break;
+
+			case ESC:
+				currentDetailClassroom = C_EXIT;
+				return;
 
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
@@ -857,6 +873,10 @@ void ContentStudent::editData()
 				stateInput = FORM_FIRST;
 				break;
 
+			case ESC:
+				currentDetailClassroom = C_EXIT;
+				return;
+
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
 				{
@@ -902,6 +922,10 @@ void ContentStudent::editData()
 				currentDetailClassroom = C_SEARCH;
 				return;
 
+			case ESC:
+				currentDetailClassroom = C_EXIT;
+				return;
+
 			case UP:
 				stateInput = FORM_LAST;
 				break;
@@ -932,7 +956,7 @@ void ContentStudent::editData()
 				listInput[3].display();
 			}
 
-			listText[3].setContent(NOTIFICATION_EMPTY);
+			listText[3].setContent("Vui Long Dung Phim + Hoac -");
 			listText[3].setColor(ColorCode_DarkYellow);
 			int textPosX = getCenterX(COLUMN_RIGHT, listText[3].getLenString());
 			listText[3].updatePositionX(textPosX);
@@ -970,6 +994,10 @@ void ContentStudent::editData()
 			case DOWN:
 				stateInput = FORM_PASSWORD;
 				break;
+
+			case ESC:
+				currentDetailClassroom = C_EXIT;
+				return;
 
 			case ADD:
 				if (listInput[3].getText() == "Nu")
@@ -1042,6 +1070,10 @@ void ContentStudent::editData()
 			case DOWN:
 				stateInput = FORM_LAST;
 				break;
+
+			case ESC:
+				currentDetailClassroom = C_EXIT;
+				return;
 
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
@@ -1138,6 +1170,13 @@ void ContentStudent::findData()
 					Sleep(150);
 					return;
 				}
+			}
+
+			if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+			{
+				currentDetailClassroom = C_EXIT;
+				Sleep(150);
+				return;
 			}
 
 			char s = _getch();

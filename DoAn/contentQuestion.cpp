@@ -26,17 +26,6 @@ void ContentQuestion::drawContent()
 	cout << "ESC: Tro Lai";
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING, WIDTH_INPUT - 5, HEIGHT_INPUT);
 
-	/*ManageClass test;
-	Classroom classFound = test.findClassByCode(classCode.c_str());
-	string className = classFound.className;
-	int total = test.getCountSudentOfClass(classCode.c_str());
-
-	string count = to_string(total);
-	string title = "Lop:" + className + " - Sinh Vien:" + count;
-
-	int titlePosX = getCenterX(getConsoleWidth(), title.length());
-	gotoXY(titlePosX - 12, 10);
-	cout << title;*/
 	showTitleQuestion();
 
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT - 4, DISTANCE_HEADER + PADDING + PADDING);
@@ -376,12 +365,6 @@ void ContentQuestion::deleteData()
 	pDelete.open();
 	pDelete.handle();
 
-	/*if (pDelete.getMenu() != 0)
-	{
-		currentQuestion = C_EXIT;
-		return;
-	}*/
-
 	if (pDelete.getResult())
 	{
 		bool result = subject.deleteQuestionInSubject(subjectCode, id);
@@ -454,6 +437,12 @@ void ContentQuestion::findData()
 					currentQuestion = C_EXIT;
 					return;
 				}
+			}
+
+			if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+			{
+				currentQuestion = C_EXIT;
+				return;
 			}
 
 			char s = _getch();
@@ -588,16 +577,8 @@ void ContentQuestion::loadData()
 
 void ContentQuestion::showTitleQuestion()
 {
-	/*ManageClass test;
-	Classroom classFound = test.findClassByCode(classCode.c_str());
-	string className = classFound.className;
-	int total = test.getCountSudentOfClass(classCode.c_str());
-
-	string count = to_string(total);
-	string title = "Lop:" + className + " - Sinh Vien:" + count;*/
-
-	string title = "Mon: Ly - Cau Hoi: 67";
-	int titlePosX = getCenterX(getConsoleWidth(), title.length());
-	gotoXY(titlePosX - 12, 10);
+	string title = "Mon: " + subject.getSubject(subjectCode.c_str())->info.subjectName;
+	int titlePosX = getCenterX(COLUMN_CENTER, title.length());
+	gotoXY(DISTANCE_SIDEBAR + titlePosX, DISTANCE_HEADER + 2);
 	cout << title;
 }

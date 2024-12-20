@@ -92,7 +92,7 @@ void ContentClassroom::drawClassroom()
 		"* Xoa Lop",
 		"   F1->Len|Xuong->Del->Trai|Phai",
 		"* Xem Danh Sach Sinh Vien Cua Lop",
-		"   F1->Len|Xuong->Bam 2 Enter"
+		"   F1->Len|Xuong->Bam 2 Lan Enter"
 	};
 
 	int contentY = tutorialY + 1;
