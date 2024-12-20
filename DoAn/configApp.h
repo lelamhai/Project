@@ -5,7 +5,7 @@
 #include "mykeyboard.h"
 
 // Input
-#define DEFAULT_LENGTH_MIN 0
+#define LENGTH_MIN_DEFAULT 1
 #define LENGTH_MIN_CODE 7
 #define WIDTH_INPUT 20
 #define HEIGHT_INPUT 2

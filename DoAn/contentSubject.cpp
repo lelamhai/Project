@@ -23,23 +23,32 @@ void ContentSubject::drawContent()
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + posXInfo, DISTANCE_HEADER + PADDING * 2);
 	cout << "Thong Tin";
 
-	listInput.push_back(InputField());
-	listInput.push_back(InputField());
 	string titleInput[] = {
-		"Ma Mon Hoc",
-		"Ten Mon Hoc"
+		"Ma Mon",
+		"Ten Hoc"
 	};
 
-	int y = DISTANCE_HEADER + PADDING + 5;
+	int y = DISTANCE_HEADER + PADDING + 4;
 	for (int i = 0; i < 2; i++)
 	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
+		listInput.push_back(InputField());
+		listText.push_back(Text());
+
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 4));
 		cout << titleInput[i];
 
-		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2 + 15, y + (i * 3) - 1);
-		listInput[i].setFrame(WIDTH_INPUT, HEIGHT_INPUT);
+		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 11, y + (i * 4) - 1);
+		listInput[i].setFrame(WIDTH_INPUT + 6, HEIGHT_INPUT);
 		listInput[i].drawBox();
+
+		listText[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y + (i * 4) + 2);
 	}
+
+	listInput[0].setMinLen(LENGTH_MIN_DEFAULT);
+
+	listInput[1].setMaxLen(24);
+	listInput[1].setMinLen(LENGTH_MIN_CODE);
+
 	
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 16);
@@ -49,11 +58,11 @@ void ContentSubject::drawContent()
 	cout << char(180);
 
 	y = y + (2 * 3) - 1;
-	posYMessage = y;
+	posYMessage = y + 2;
 	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
 	cout << "Message";*/
 
-	y = y + 2;
+	y = y + 3;
 	int infoX = getCenterX(COLUMN_RIGHT, 10);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + infoX, y, 10, 2);
 	int enterX = getCenterX(COLUMN_RIGHT, 5);
@@ -147,8 +156,8 @@ void ContentSubject::handle()
 			detail->content();
 			delete detail;
 			cleanContent();
-			/*drawSubject();
-			girdContent();*/
+			drawContent();
+			girdTitle();
 			currentSubject = C_EXIT;
 			Singleton::getInstance()->moveMenu = 0;
 		}
@@ -162,10 +171,12 @@ void ContentSubject::handle()
 		case ContentSubject::C_CREATE:
 			showCur(1);
 			createData();
+			cleanInput();
 			break;
 		case ContentSubject::C_EDIT:
 			showCur(1);
 			editData();
+			cleanInput();
 			break;
 		case ContentSubject::C_SEARCH:
 			showCur(1);
@@ -175,31 +186,11 @@ void ContentSubject::handle()
 			showCur(0);
 			deleteData();
 			break;
-	/*	case ContentSubject::C_DETAIL:
-			break;*/
 		case ContentSubject::C_EXIT:
 			return;
 		default:
 			break;
 		}
-
-		/*if (GetAsyncKeyState(VK_RETURN) & 0x8000)
-		{
-			cleanContent();
-			ContentQuestion q;
-			q.displayContent();
-			q.handle();
-			cleanContent();
-			displayContent();
-		}
-
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
-		{
-			if (Singleton::getInstance()->moveMenu != 0)
-			{
-				return;
-			}
-		}*/
 	}
 }
 
@@ -328,6 +319,12 @@ void ContentSubject::selectData()
 
 		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
 		{
+			if (isLoadFirst)
+			{
+				isLoadFirst = false;
+				continue;
+			}
+
 			currentSubject = C_DETAIL;
 			Sleep(150);
 			return;
@@ -367,13 +364,25 @@ void ContentSubject::deleteData()
 
 void ContentSubject::createData()
 {
+	listInput[0].setText("");
+	listInput[1].setText("");
 	stateInput = FORM_CODE;
 	while (true)
 	{
 		if (stateInput == FORM_CODE)
 		{
+			listText[0].setContent(NOTIFICATION_CODE);
+			listText[0].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[0].getLenString());
+			listText[0].updatePositionX(textPosX);
+			listText[0].display();
+
 			listInput[0].notUseSpace = true;
 			listInput[0].handleInput();
+
+			listText[0].clean();
+			listText[0].updatePositionX(-textPosX);
+			listText[0].setContent("");
 
 			switch (listInput[0].getEndKey())
 			{
@@ -417,7 +426,17 @@ void ContentSubject::createData()
 
 		if (stateInput == FORM_NAME)
 		{
+			listText[1].setContent(NOTIFICATION_EMPTY);
+			listText[1].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[1].getLenString());
+			listText[1].updatePositionX(textPosX);
+			listText[1].display();
+
 			listInput[1].handleInput();
+
+			listText[1].clean();
+			listText[1].updatePositionX(-textPosX);
+			listText[1].setContent("");
 
 			switch (listInput[1].getEndKey())
 			{
@@ -467,25 +486,27 @@ void ContentSubject::createData()
 				indexTree = 0;
 				SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
 				cleanTable();
-				cleanMessage(posYMessage);
 				loadDataTree(a.subjects);
-				text.setContent("Them lop thanh cong!");
+				pagging();
+				text.clean();
+				text.setContent(INSERT_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
+				text.setColor(ColorCode_DarkGreen);
 			}
 			else
 			{
-				cleanMessage(posYMessage);
-				text.setContent("Them lop that bai!");
+				text.clean();
+				text.setContent("Ma Mon Hoc Da Ton Tai!");
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
+				text.setColor(ColorCode_DarkRed);
 			}
 
 			text.display();
 			stateInput = FORM_CODE;
-			return;
 		}
 
 		if (stateInput == FORM_EXIT)
@@ -714,4 +735,25 @@ void ContentSubject::pagging()
 	string pageTitle = "Trang " + to_string(currentPage) + '/' + to_string(a.totalPage);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - 8, 10 + 28 + 5);
 	cout << pageTitle;
+}
+
+void ContentSubject::cleanInput()
+{
+	for (int i = 0; i < 2; i++)
+	{
+		listInput[i].clean();
+
+		if (listText[i].getLenString() != 0)
+		{
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[i].getLenString());
+			listText[i].clean();
+			listText[i].updatePositionX(-textPosX);
+			listText[i].setContent("");
+		}
+	}
+
+	int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+	text.clean();
+	text.updatePositionX(-textPosX);
+	text.setContent("");
 }

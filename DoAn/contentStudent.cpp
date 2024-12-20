@@ -21,17 +21,6 @@ void ContentStudent::drawClassroom()
 	cout << "ESC: Tro Lai";
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING, WIDTH_INPUT - 5, HEIGHT_INPUT);
 
-	/*ManageClass test;
-	Classroom classFound = test.findClassByCode(classCode.c_str());
-	string className = classFound.className;
-	int total = test.getCountSudentOfClass(classCode.c_str());
-
-	string count = to_string(total);
-	string title = "Lop:" + className + " - Sinh Vien:" + count;
-
-	int titlePosX = getCenterX(getConsoleWidth(), title.length());
-	gotoXY(titlePosX - 12, 10);
-	cout << title;*/
 	showTitleStudent();
 
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT - 4, DISTANCE_HEADER + PADDING + PADDING);
@@ -65,7 +54,7 @@ void ContentStudent::drawClassroom()
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 4));
 		cout << titleInput[i];
 
-		listInput[i].setMinLen(1);
+		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
 
@@ -74,13 +63,7 @@ void ContentStudent::drawClassroom()
 	}
 
 	listInput[0].setMinLen(LENGTH_MIN_CODE);
-	
 	listInput[4].setMinLen(LENGTH_MIN_CODE);
-
-	/*setColorText(ColorCode_DarkYellow);
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + WIDTH_INPUT + 16, 23);
-	cout << "+/-";
-	setColorText(ColorCode_White);*/
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 27);
@@ -187,17 +170,6 @@ void ContentStudent::handle()
 {
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_F12) & 0x0001)
-		{
-			int posX = getCenterX(120, 50);
-			PopupTutorial pTutorial;
-			pTutorial.setFrame(50,19);
-			pTutorial.setPosition(posX + 30, 17);
-			pTutorial.open();
-			pTutorial.handle();
-			pTutorial.close();
-		}
-
 		switch (currentDetailClassroom)
 		{
 		case ContentStudent::C_SELECT:
@@ -208,13 +180,11 @@ void ContentStudent::handle()
 			showCur(1);
 			createData();
 			cleanInput();
-			cleanMessage(posYMessage);
 			break;
 		case ContentStudent::C_EDIT:
 			showCur(1);
 			editData();
 			cleanInput();
-			cleanMessage(posYMessage);
 			break;
 		case ContentStudent::C_SEARCH:
 			showCur(1);
@@ -239,15 +209,8 @@ void ContentStudent::selectData()
 {
 	ManageClass test;
 	StudentPage studentPage;
-	if (textSearch == "")
-	{
-		studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
-	}
-	else
-	{
-		studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
-	}
 
+	studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
 
 	int start = 0;
 	int end = pageNumber * studentPage.numberStudentPerPage;
@@ -391,10 +354,10 @@ void ContentStudent::selectData()
 			}
 		}
 
-		if (GetAsyncKeyState(VK_F12) & 0x0001)
+		if (GetAsyncKeyState(VK_F12) & 0x8000)
 		{
+			showCur(0);
 			showTutorial();
-			lastHover = -1;
 		}
 
 		if (lastHover != hover)
@@ -402,14 +365,7 @@ void ContentStudent::selectData()
 			int posX = 3;
 			int i = 0;
 
-			if (textSearch == "")
-			{
-				studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
-			}
-			else
-			{
-				studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
-			}
+			studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
 			PTRSTUDENT temp = studentPage.studentList;
 
 			while (temp != nullptr) 
@@ -775,8 +731,6 @@ void ContentStudent::createData()
 				sex = 'F';
 			}
 
-			
-
 			bool result = test.addStudentToClass(classCode, listInput[0].getText(), listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
 			if (result)
 			{
@@ -788,9 +742,9 @@ void ContentStudent::createData()
 					text.updatePositionX(-textPosX);
 					text.setContent("");
 				}
-				
 
 				loadData();
+				pagging();
 				text.setContent(INSERT_FINISH);
 				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -1259,14 +1213,7 @@ void ContentStudent::loadData()
 	cleanTable();
 	ManageClass test;
 	StudentPage studentPage;
-	if (textSearch == "")
-	{
-		studentPage = test.searchStudentInCLass(classCode, "", pageNumber);
-	}
-	else
-	{
-		studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
-	}
+	studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
 	PTRSTUDENT temp = studentPage.studentList;
 
 	int posX = 3;

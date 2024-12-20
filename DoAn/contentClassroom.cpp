@@ -175,14 +175,12 @@ void ContentClassroom::handle()
 			showCur(1);
 			createData();
 			cleanInput();
-			cleanMessage(posYMessage);
 			break;
 
 		case C_EDIT:
 			showCur(1);
 			editData();
 			cleanInput();
-			cleanMessage(posYMessage);
 			break;
 
 		case C_SEARCH:
@@ -208,15 +206,8 @@ void ContentClassroom::selectData()
 {
 	ManageClass nl;
 	ClassPage page;
-
-	if (textSearch != "")
-	{
-		page = nl.searchClass(textSearch, pageNumber);
-	}
-	else 
-	{
-		page = nl.getClassPerPage(pageNumber);
-	}
+	
+	page = nl.searchClass(textSearch, pageNumber);
 
 	int start = 0;
 	int end = pageNumber * page.numberClassPerPage;
@@ -330,7 +321,7 @@ void ContentClassroom::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_DELETE) & 0x0001)
+		if (GetAsyncKeyState(VK_DELETE) & 0x8000)
 		{
 			page = nl.getClassPerPage(1);
 
@@ -368,14 +359,7 @@ void ContentClassroom::selectData()
 
 		if (lastHover != hover)
 		{
-			if (textSearch != "")
-			{
-				page = nl.searchClass(textSearch, pageNumber);
-			}
-			else
-			{
-				page = nl.getClassPerPage(pageNumber);
-			}
+			page = nl.searchClass(textSearch, pageNumber);
 
 			for (int i = 0; i < page.classList.countClass; i++)
 			{
@@ -528,7 +512,8 @@ void ContentClassroom::createData()
 			{
 				cleanTable();
 				loadData();
-				cleanMessage(posYMessage);
+				pagging();
+				text.clean();
 				text.setContent(INSERT_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
@@ -537,7 +522,7 @@ void ContentClassroom::createData()
 			}
 			else
 			{
-				cleanMessage(posYMessage);
+				text.clean();
 				text.setContent("Ma Lop Da Ton Tai!");
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
@@ -782,16 +767,7 @@ void ContentClassroom::pagging()
 {
 	ManageClass nl;
 	ClassPage page;
-
-	if (textSearch != "")
-	{
-		page = nl.searchClass(textSearch, pageNumber);
-	}
-	else
-	{
-		page = nl.getClassPerPage(pageNumber);
-	}
-
+	page = nl.searchClass(textSearch, pageNumber);
 
 	string blankFillText;
 	blankFillText.resize(10, ' ');
@@ -813,13 +789,8 @@ void ContentClassroom::loadData()
 	cleanTable();
 	ManageClass nl;
 	ClassPage page;
-	if (textSearch != "")
-	{
-		page = nl.searchClass(textSearch, 1);
-	}
-	else {
-		page = nl.getClassPerPage(pageNumber);
-	}
+	
+	page = nl.searchClass(textSearch, pageNumber);
 
 	for (int i = 0; i < page.classList.countClass; i++)
 	{

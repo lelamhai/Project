@@ -21,6 +21,8 @@ using namespace std;
 class ContentSubject : public Content
 {
 private:
+	bool isLoadFirst = true;
+
 	enum StateSubject
 	{
 		C_SELECT = 0, // F1
@@ -50,12 +52,12 @@ private:
 		SEARCH_EXIT = -1
 	};
 	SearchInput stateSearchInput;
-	Text text;
-
-
 
 	ManageSubject subject;
 	vector<InputField> listInput;
+	vector<Text> listText;
+	Text text;
+
 	int indexTree = 0;
 
 	string subjectCode;
@@ -77,6 +79,7 @@ public:
 	void findData();
 	void loadDataTree(PTRSUBJECT root);
 	void pagging();
+	void cleanInput();
 
 	ContentSubject();
 	~ContentSubject();

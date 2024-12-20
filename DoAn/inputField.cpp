@@ -180,20 +180,6 @@ void InputField::handleInput()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
-		{
-			Sleep(150);
-			showCur(1);
-			return;
-		}
-
-		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
-		{
-			Sleep(150);
-			showCur(1);
-			return;
-		}
-
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
 		{
 			keyInput = TAB;
