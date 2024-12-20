@@ -207,7 +207,7 @@ void ContentSubject::selectData()
 	else {
 		end = (a.numberSubjectPerPage - (end - a.totalSubject)) - 1;
 	}
-
+	lastHover = -1;
 	while (true)
 	{
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
@@ -351,15 +351,16 @@ void ContentSubject::deleteData()
 
 	if (pDelete.getResult())
 	{
-		indexTree = 0;
-		hover = 0;
-		subject.deleteSubject(subjectCode.c_str());
-		SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
-		loadDataTree(a.subjects);
+		bool result = subject.deleteSubject(subjectCode.c_str());
+		if (result)
+		{
+			hover = 0;
+		}
 	}
+	
 	pDelete.close();
-
 	currentSubject = C_SELECT;
+	return;
 }
 
 void ContentSubject::createData()
