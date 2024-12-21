@@ -26,6 +26,9 @@ void DungTest::main()
 	bool isStudentExist = classes.isStudentExist("");
 	cout << "Hoc sinh ton tai " << isStudentExist << endl;
 
+	// 4. Ham kiem tra xem sinh vien co the xoa 
+	bool isStudentCanDelete = classes.isStudentCanDelete("K23DTCN273");
+	cout << "Hoc sinh co the xoa " << isStudentCanDelete << endl;
 	
 	//// 1. get subject name input "SUBJECT CODE"
 	//string subjectName = subject.getSubject("CSDL")->info.subjectName;

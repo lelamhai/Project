@@ -58,6 +58,18 @@ bool ManageClass::isStudentExist(const string studentCode)
     return studentFound != nullptr;
 }
 
+bool ManageClass::isStudentCanDelete(const string studentCode)
+{
+    PTRSTUDENT studentFound = nullptr;
+    for (int i = 0; i < countClass; i++) {
+        studentFound = findStudentInList(classes[i]->studentList, studentCode.c_str());
+        if (studentFound != nullptr) {
+            return studentFound->info.scoreList == nullptr;
+        }
+    }
+    return false;
+}
+
 
 ClassPage ManageClass::searchClass(string keyword, int page)
 {

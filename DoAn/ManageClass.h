@@ -47,7 +47,11 @@ public:
 	// Function get student by code
 	Student findStudentByCode(const string studentCode, const string classCode);
 
+	// Check student exist by studentcode
 	bool isStudentExist(const string studentCode);
+
+	// Check can delete student by studentCode
+	bool isStudentCanDelete(const string studentCode);
 
 	// Function add class to classlist
 	// Input: classCode, className
