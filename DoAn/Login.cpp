@@ -84,7 +84,8 @@ void Login::formLogin()
 	InputField inputUserName;
 	InputField inputPassword;
 	Text text;
-	text.setContent("Tai khoan khong dung!");
+	text.setColor(ColorCode_DarkRed);
+	text.setContent("Tai Khoan Khong Dung!");
 
 
 	Login::stateLoginInput = LOGIN_USERNAME;
