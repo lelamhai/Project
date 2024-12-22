@@ -325,6 +325,11 @@ void InputField::handleInput()
 				break;
 			}
 
+			if (notUseZero && s == '0')
+			{
+				break;
+			}
+
 			if (!useAnswer && s >= '0' && s <= '9')
 			{
 				inputString.insert(inputString.begin() + cursorPosition, s);

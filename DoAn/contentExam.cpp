@@ -14,7 +14,7 @@ void ContentExam::displayContent()
 	content();
 }
 
-void ContentExam::drawExam()
+void ContentExam::drawContent()
 {
 	// Search
 	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING + PADDING);
@@ -37,20 +37,38 @@ void ContentExam::drawExam()
 	};
 
 
-	int y = DISTANCE_HEADER + PADDING + 5;
+	int y = DISTANCE_HEADER + PADDING + 4;
 
 	for (int i = 0; i < 3; i++)
 	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
+		listInput.push_back(InputField());
+		listText.push_back(Text());
+
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 4));
 		cout << titleInput[i];
 
-		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1);
+		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
+		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
+
+		listText[i].setColor(ColorCode_DarkYellow);
+		listText[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y + (i * 4) + 2);
 	}
+
+	listInput[0].notUseSpace = true;
+	listText[0].setContent(NOTIFICATION_EMPTY);
+
+	listText[1].setContent("Vui Long Nhap So Cau!");
+	listInput[1].notUseZero = true;
+	listInput[1].useNum = true;
+
+	listText[2].setContent("Vui Long Nhap So Phut!");
+	listInput[2].notUseZero = true;
+	listInput[2].useNum = true;
 
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 18);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 19);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
 	cout << char(195);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
@@ -58,8 +76,12 @@ void ContentExam::drawExam()
 
 	y = y + (2 * 3) - 1;
 	
+	y = y + 6;
+	posYMessage = y;
+	text.setColor(ColorCode_DarkRed);
+	text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y);
 
-	y = y + 4;
+	y = y + 1;
 	int infoX = getCenterX(COLUMN_RIGHT, 10);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + infoX, y, 10, 2);
 	int enterX = getCenterX(COLUMN_RIGHT, 5);
@@ -77,24 +99,22 @@ void ContentExam::drawExam()
 
 	string note[] = {
 		"F1: Chon Du Lieu Trong Bang",
-		"",
 		"F3: Tim Mon",
-		"",
+		"Ins: Nhap Thong Tin",
 		"Enter: Thi",
 		"",
 		"Phim Len|Xuong: Chon Du Lieu",
-		"",
 		"Phim Trai|Phai: Xem Trang Sau|Truoc"
 	};
 
 	int contentY = tutorialY + 2;
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < 7; i++)
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
 	}
 	setColorText(ColorCode_DarkYellow);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT, 14);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y, COLUMN_RIGHT, 13);
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY, COLUMN_RIGHT);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, tutorialY);
 	cout << char(195);
@@ -103,7 +123,7 @@ void ContentExam::drawExam()
 	setColorText(ColorCode_DarkWhite);
 }
 
-void ContentExam::girdContent()
+void ContentExam::girdTitle()
 {
 	lineX(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN, COLUMN_CENTER);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN);
@@ -132,8 +152,8 @@ void ContentExam::girdContent()
 
 void ContentExam::content()
 {
-	drawExam();
-	girdContent();
+	drawContent();
+	girdTitle();
 	currentExam = C_SELECT;
 	handle();
 }
@@ -266,7 +286,7 @@ void ContentExam::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		if (GetAsyncKeyState(VK_TAB))
 		{
 			if (Singleton::getInstance()->moveMenu != 0)
 			{
@@ -288,13 +308,24 @@ void ContentExam::selectData()
 
 void ContentExam::createData()
 {
-	showCur(1);
+	listInput[0].setText("");
+	listInput[1].setText("");
+	listInput[2].setText("");
+
 	stateInput = FORM_CODE;
 	while (true)
 	{
 		if (stateInput == FORM_CODE)
 		{
+			listText[0].setContent(NOTIFICATION_EMPTY);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[0].getLenString());
+			listText[0].updatePositionX(textPosX);
+			listText[0].display();
+
 			listInput[0].handleInput();
+
+			listText[0].clean();
+			listText[0].updatePositionX(-textPosX);
 
 			switch (listInput[0].getEndKey())
 			{
@@ -307,12 +338,24 @@ void ContentExam::createData()
 				stateInput = FORM_COUNT;
 				break;
 
+			case F1:
+				currentExam = C_SELECT;
+				return;
+
+			case F3:
+				currentExam = C_SEARCH;
+				return;
+
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
 				{
 					currentExam = C_EXIT;
 					return;
 				}
+				break;
+
+			case UP:
+				stateInput = FORM_MINUTE;
 				break;
 
 			case DOWN:
@@ -326,8 +369,15 @@ void ContentExam::createData()
 
 		if (stateInput == FORM_COUNT)
 		{
+			listText[0].setContent("Vui Long Nhap Toi Da 40 Cau!");
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[1].getLenString());
+			listText[1].updatePositionX(textPosX);
+			listText[1].display();
+
 			listInput[1].handleInput();
 
+			listText[1].clean();
+			listText[1].updatePositionX(-textPosX);
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -338,6 +388,14 @@ void ContentExam::createData()
 				}
 				stateInput = FORM_MINUTE;
 				break;
+
+			case F1:
+				currentExam = C_SELECT;
+				return;
+
+			case F3:
+				currentExam = C_SEARCH;
+				return;
 
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
@@ -362,8 +420,15 @@ void ContentExam::createData()
 
 		if (stateInput == FORM_MINUTE)
 		{
+			listText[0].setContent("Vui Long Nhap Toi Da 180 Phut!");
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[2].getLenString());
+			listText[2].updatePositionX(textPosX);
+			listText[2].display();
+
 			listInput[2].handleInput();
 
+			listText[2].clean();
+			listText[2].updatePositionX(-textPosX);
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -374,6 +439,14 @@ void ContentExam::createData()
 				}
 				stateInput = FORM_COUNT;
 				break;
+
+			case F1:
+				currentExam = C_SELECT;
+				return;
+
+			case F3:
+				currentExam = C_SEARCH;
+				return;
 
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
@@ -398,11 +471,8 @@ void ContentExam::createData()
 
 		if (stateInput == FORM_ENTER)
 		{
-			//bool result = exam.setInputExam(listInput[0].getText().c_str(), Singleton::getInstance()->role.c_str(), stoi(listInput[1].getText()), stoi(listInput[2].getText()));
+			int result = ManageExam::checkInputExam1(Singleton::getInstance()->role.c_str(), listInput[0].getText().c_str(), stoi(listInput[1].getText()));
 
-			int result = ManageExam::checkInputExam(listInput[0].getText().c_str(), stoi(listInput[1].getText()));
-			//-1: Ma Mon Hoc
-			//-2: So cau vuot qua database
 			if (result == 1)
 			{
 				Singleton::getInstance()->isExecute = true;
@@ -416,8 +486,71 @@ void ContentExam::createData()
 				currentExam = C_SELECT;
 				return;
 			}
+			else 
+			{
+				if (result == -1)
+				{
+					if (text.getLenString() != 0)
+					{
+						text.clean();
+						text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, posYMessage);
+						text.setContent("");
+					}
+
+					text.setContent("Ma Mon Hoc Khong Dung!");
+					int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+					text.updatePositionX(textPosX);
+
+					text.display();
+					stateInput = FORM_CODE;
+				}
+
+				if (result == -2)
+				{
+					int cout = subject.countQuestionsInSubject(listInput[0].getText().c_str());
+					string mes;
+					if (cout == 0)
+					{
+						mes = "Chua Co Du Lieu Cau Hoi";
+					}
+					else 
+					{
+						mes = "Nhap Toi Da " + to_string(subject.countQuestionsInSubject(listInput[0].getText().c_str())) + " Cau Hoi";
+					}
+
+					if (text.getLenString() != 0)
+					{
+						text.clean();
+						text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, posYMessage);
+						text.setContent("");
+					}
+
+					text.setContent(mes);
+					int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+					text.updatePositionX(textPosX);
+
+					text.display();
+					stateInput = FORM_COUNT;
+				}
+
+				if (result == -3)
+				{
+					if (text.getLenString() != 0)
+					{
+						text.clean();
+						text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, posYMessage);
+						text.setContent("");
+					}
+
+					text.setContent("Sinh Vien Da Thi Mon Nay Roi!");
+					int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+					text.updatePositionX(textPosX);
+
+					text.display();
+					stateInput = FORM_MINUTE;
+				}
+			}
 			
-			stateInput = FORM_CODE;
 		}
 	}
 }
@@ -493,7 +626,10 @@ void ContentExam::findData()
 
 			if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 			{
-				showCur(1);
+				if (s >= 'a' && s <= 'z')
+				{
+					s = s - ('a' - 'A');
+				}
 
 				textSearch.insert(textSearch.begin() + cursorPosition, s);
 				cursorPosition++;

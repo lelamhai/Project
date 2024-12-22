@@ -48,19 +48,20 @@ private:
 
 	ManageSubject subject;
 
-	InputField inputExamCode;
-	InputField inputCount;
-	InputField inputMinute;
+	vector<InputField> listInput;
+	vector<Text> listText;
 
-	InputField listInput[3] = {
+	Text text;
+
+	/*InputField listInput[3] = {
 		inputExamCode,
 		inputCount,
 		inputMinute
-	};
+	};*/
 
 	int indexTree = 0;
 	int moveMenu = 0;
-	int posXMessage = 0;
+	int posYMessage = 0;
 	int pageNumber = 1;
 	int hover = 0;
 	int lastHover = -1;
@@ -68,8 +69,8 @@ private:
 
 public:
 	void displayContent() override;
-	void drawExam();
-	void girdContent();
+	void drawContent();
+	void girdTitle();
 	void content();
 	void handle();
 	void selectData();

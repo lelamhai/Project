@@ -24,6 +24,7 @@ public:
 	bool notUseSpace = false;
 	bool useGender = false;
 	bool useNum = false;
+	bool notUseZero = false;
 	bool useAnswer = false;
 
 	void setMaxLen(int length);
