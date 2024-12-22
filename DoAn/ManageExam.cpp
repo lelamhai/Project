@@ -74,6 +74,13 @@ Question* ManageExam::getRandomQuestion() {
         cout << "Danh sach cau hoi trong!" << endl;
     }
 
+    // gán các dữ liệu ban đầu cho mảng record
+    answerRecord.studentCode = studentCode;
+    answerRecord.subjectCode = subjectCode;
+    answerRecord.totalQuestion = numberQuestion;
+    answerRecord.countCorrect = 0;
+    answerRecord.score = 0.0;
+
     // Sao chép dữ liệu ID câu hỏi và câu trả lời qua mảng
     PTRQUESTION p = questionList_Random.getQuestionList();
     for (int i = 0; i < numberQuestion; i++) {
@@ -165,10 +172,10 @@ void ManageExam::toCalculateResult() {
         manageSubject.setIsInExamOfQuestion(subjectCode, p->questionId);
         index++;
     }
-    answerRecord.totalQuestion = numberQuestion;
+    //answerRecord.totalQuestion = numberQuestion;
     answerRecord.countCorrect = correctAnswer;
-    answerRecord.studentCode = studentCode;
-    answerRecord.subjectCode = subjectCode;
+   // answerRecord.studentCode = studentCode;
+    //answerRecord.subjectCode = subjectCode;
 
     score = (float)correctAnswer * 10 / numberQuestion;
     answerRecord.score = roundNumber(score, 1); // làm tròn điểm đến 1 số thập phân

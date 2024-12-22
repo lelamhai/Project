@@ -123,9 +123,9 @@ void HuyTest::main() {
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R1 ---------------------------------------------*/
 	
-	//int check = ManageExam::checkInputExam1("hsj","VL",3);
-	// trả ve 1 nếu dữ liệu hợp lệ, =-1 nếu mã môn không tồn tại, =-3 nếu sinh viên đã thi môn này trước đó rổi, =-2 nếu số câu hỏi không hợp lệ, 
-	//cout << "Kiem tra = " << check << endl;
+	int check = ManageExam::checkInputExam1("12rfhdah","MTH",3);
+	//trả ve 1 nếu dữ liệu hợp lệ, =-1 nếu mã môn không tồn tại, =-3 nếu sinh viên đã thi môn này trước đó rổi, =-2 nếu số câu hỏi không hợp lệ, 
+	cout << "Kiem tra = " << check << endl;
 	// KHỞI TẠO
 	mutex mtx; // Tạo mutex cho đồng bộ hóa
 	ManageExam exam1;
@@ -135,16 +135,10 @@ void HuyTest::main() {
 	int numberQuestion_input = 7;    //số câu hỏi muốn thi
 	int timeForExam_min_input = 1;   //số phút muốn thi
 
-	ManageExam::checkInputExam("MTH", 7);
-	// NHẬP THÔNG TIN INPUT ĐỂ THI
-	//cin.getline(subjectCode_input, 15);
-	//cin.getline(studentCode, 15);
-	//cin >> numberQuestion_input;
-	//cin >> timeForExam_min_input;
+	//ManageExam::checkInputExam("MTH", 7);
 
 	// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
 	bool isCorrectInput = false;
-	//isCorrectInput = exam1.setInputExam(subjectCode_input, studentCode, numberQuestion_input, timeForExam_min_input);
 	isCorrectInput = exam1.setInputExam("MTH", "12rfhdah", numberQuestion_input, timeForExam_min_input);
 
 	if (!isCorrectInput) {
@@ -166,13 +160,24 @@ void HuyTest::main() {
 		cout << randomQuestionList[i].optionC << endl;
 		cout << randomQuestionList[i].optionD << endl;
 	}
-	
+
+	// kiểm tra xem các ID random tạo ra có trùng lặp không
+	int isIdCorrect = 1;
+	for (int i = 0; i < numberQuestion_input; i++) {
+		for (int j = i+1; j < numberQuestion_input; j++) {
+			if (randomQuestionList[i].questionId == randomQuestionList[j].questionId) {
+				isIdCorrect = -1;
+			}
+		}
+	}
+	cout << "Ket qua kiem tra ID: "<< isIdCorrect << endl;
+
 
 	// TRUYỀN KẾT QUẢ ĐÃ THI XUỐNG BACK END SAU KHI KẾT THÚC BÀI TI
-	char answeredList[MAX_NUMBER_QUESTION] = {'D','D','D','C',' ','A','B' }; // dòng này đê giả lập danh sách câu trả lời
-	for (int i=0; i < numberQuestion_input; i++){
-		exam1.setAnswer(i, answeredList[i]);
-	}
+	//char answeredList[MAX_NUMBER_QUESTION] = {'D','D','D','C',' ','A','B' }; // dòng này đê giả lập danh sách câu trả lời
+	//for (int i=0; i < numberQuestion_input; i++){
+	//	exam1.setAnswer(i, answeredList[i]);
+	//}
 
 	// LẤY KẾT QUẢ THI ̃& ĐIỂM SAU KHI THI XONG
 	resultList result = exam1.getAnsweredList();
@@ -193,10 +198,7 @@ void HuyTest::main() {
 	// demo in ra điểm số
 	float scoreExam = result.score;
 	printf("Diem so: %.1f\n", scoreExam);
-	//exam1.saveResultToFile();
 	cout << "save sucessfully" << endl;
-
-
 
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R0 ---------------------------------------------*/

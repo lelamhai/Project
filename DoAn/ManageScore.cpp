@@ -227,7 +227,7 @@ resultList* ManageScore::loadResultFromFile(const char* subjectCode, const char*
                 p->chosenAnswer = answered["chosenAnswer"].get<std::string>()[0];
                 p->correctAnswer = answered["correctAnswer"].get<std::string>()[0];
                 
-                p->questionInfo = manageSubject.getQuestionBySubjectCodeAndId(subjectCode, p->questionId);
+                //p->questionInfo = manageSubject.getQuestionBySubjectCodeAndId(subjectCode, p->questionId);
                
                 index++;
             }
