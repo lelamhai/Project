@@ -34,6 +34,8 @@ private:
 
 	vector<InputField> listInput;
 	vector<Text> listTitle;
+	vector<Text> listValidation;
+
 	int posYMessage = 0;
 	Text text;
 

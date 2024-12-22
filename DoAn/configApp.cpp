@@ -43,3 +43,10 @@ void cleanMessage(int y)
         cout << blankFill;
     }
 }
+
+string truncateText(const string& text) {
+    if (text.length() > 16) {
+        return text.substr(0, 16) + "...";
+    }
+    return text;
+}

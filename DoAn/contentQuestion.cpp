@@ -178,6 +178,9 @@ void ContentQuestion::handle()
 
 void ContentQuestion::selectData()
 {
+	ManageSubject subject;
+	QuestionPage page;
+	string result;
 	page = subject.searchQuestionInSubject(subjectCode, textSearch, pageNumber);
 	
 	int start = 0;
@@ -324,25 +327,30 @@ void ContentQuestion::selectData()
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + idX, DISTANCE_HEADER + 8 + i *2);
 				cout << questionList->info.questionId;
 
-				int classX = getCenterX(sizeColumn, questionList->info.content.length());
+				int classX = getCenterX(sizeColumn, sizeColumn - 2);
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + classX, DISTANCE_HEADER + 8 + i * 2);
-				cout << questionList->info.content;
+				result = truncateText(questionList->info.content);
+				cout << result;
 
-				int lastX = getCenterX(sizeColumn, questionList->info.optionA.length());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + lastX, DISTANCE_HEADER + 8 + i * 2);
-				cout << questionList->info.optionA;
+				int lastX = getCenterX(sizeColumn, sizeColumn - 2);
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 2 + 10 + sizeColumn + lastX, DISTANCE_HEADER + 8 + i * 2);
+				result = truncateText(questionList->info.optionA);
+				cout << result;
 
-				int firstX = getCenterX(sizeColumn, questionList->info.optionB.length());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + firstX, DISTANCE_HEADER + 8 + i * 2);
-				cout << questionList->info.optionB;
+				int firstX = getCenterX(sizeColumn, sizeColumn - 2);
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 2 + 10 + sizeColumn + sizeColumn + firstX, DISTANCE_HEADER + 8 + i * 2);
+				result = truncateText(questionList->info.optionB);
+				cout << result;
+				
+				int sexX = getCenterX(sizeColumn, sizeColumn - 2);
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 2 + 10 + sizeColumn + sizeColumn + sizeColumn + sexX, DISTANCE_HEADER + 8 + i * 2);
+				result = truncateText(questionList->info.optionC);
+				cout << result;
 
-				int sexX = getCenterX(sizeColumn, questionList->info.optionC.length());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + sizeColumn + sexX, DISTANCE_HEADER + 8 + i * 2);
-				cout << questionList->info.optionC;
-
-				int passX = getCenterX(sizeColumn, questionList->info.optionD.length());
-				gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + sizeColumn + sizeColumn + passX, DISTANCE_HEADER + 8 + i * 2);
-				cout << questionList->info.optionD;
+				int passX = getCenterX(sizeColumn, sizeColumn - 2);
+				gotoXY(DISTANCE_SIDEBAR + MARGIN + 2 + 10 + sizeColumn + sizeColumn + sizeColumn + sizeColumn + passX, DISTANCE_HEADER + 8 + i * 2);
+				result = truncateText(questionList->info.optionD);
+				cout << result;
 
 				int passAX = getCenterX(10, 1);
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + sizeColumn + sizeColumn + sizeColumn + passAX, DISTANCE_HEADER + 8 + i * 2);
@@ -387,9 +395,9 @@ void ContentQuestion::createData()
 	q.init(subjectCode);
 	q.displayContent();
 	cleanContent();
-	currentQuestion = C_SELECT;
 	drawContent();
 	girdContent();
+	currentQuestion = C_SELECT;
 }
 
 void ContentQuestion::editData()
@@ -401,9 +409,9 @@ void ContentQuestion::editData()
 	q.setIdQuestion(id);
 	q.displayContent();
 	cleanContent();
-	currentQuestion = C_SELECT;
 	drawContent();
 	girdContent();
+	currentQuestion = C_SELECT;
 }
 
 void ContentQuestion::findData()
@@ -529,6 +537,7 @@ void ContentQuestion::pagging()
 void ContentQuestion::loadData()
 {
 	cleanTable();
+	string result;
 	page = subject.searchQuestionInSubject(subjectCode, textSearch, pageNumber);
 	PTRQUESTION questionList = page.questionList;
 	int sizeColumn = 20;
@@ -545,7 +554,32 @@ void ContentQuestion::loadData()
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + idX, DISTANCE_HEADER + 8 + i * 2);
 		cout << questionList->info.questionId;
 
-		int classX = getCenterX(sizeColumn, questionList->info.content.length());
+		int classX = getCenterX(sizeColumn, sizeColumn - 2);
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + classX, DISTANCE_HEADER + 8 + i * 2);
+		result = truncateText(questionList->info.content);
+		cout << result;
+
+		int lastX = getCenterX(sizeColumn, sizeColumn - 2);
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 2 + 10 + sizeColumn + lastX, DISTANCE_HEADER + 8 + i * 2);
+		result = truncateText(questionList->info.optionA);
+		cout << result;
+
+		int firstX = getCenterX(sizeColumn, sizeColumn - 2);
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 2 + 10 + sizeColumn + sizeColumn + firstX, DISTANCE_HEADER + 8 + i * 2);
+		result = truncateText(questionList->info.optionB);
+		cout << result;
+
+		int sexX = getCenterX(sizeColumn, sizeColumn - 2);
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 2 + 10 + sizeColumn + sizeColumn + sizeColumn + sexX, DISTANCE_HEADER + 8 + i * 2);
+		result = truncateText(questionList->info.optionC);
+		cout << result;
+
+		int passX = getCenterX(sizeColumn, sizeColumn - 2);
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 2 + 10 + sizeColumn + sizeColumn + sizeColumn + sizeColumn + passX, DISTANCE_HEADER + 8 + i * 2);
+		result = truncateText(questionList->info.optionD);
+		cout << result;
+
+		/*int classX = getCenterX(sizeColumn, questionList->info.content.length());
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + classX, DISTANCE_HEADER + 8 + i * 2);
 		cout << questionList->info.content;
 
@@ -563,7 +597,7 @@ void ContentQuestion::loadData()
 
 		int passX = getCenterX(sizeColumn, questionList->info.optionD.length());
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + sizeColumn + sizeColumn + passX, DISTANCE_HEADER + 8 + i * 2);
-		cout << questionList->info.optionD;
+		cout << questionList->info.optionD;*/
 
 		int passAX = getCenterX(10, 1);
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + sizeColumn + sizeColumn + sizeColumn + passAX, DISTANCE_HEADER + 8 + i * 2);

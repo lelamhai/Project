@@ -40,3 +40,4 @@ void init();
 void cleanContent();
 void cleanTable();
 void cleanMessage(int y);
+string truncateText(const string& text);

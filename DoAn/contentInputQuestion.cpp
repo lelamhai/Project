@@ -34,60 +34,70 @@ void ContentInputQuestion::drawContent()
 	cout << "ESC: Tro Lai";
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING, WIDTH_INPUT - 5, HEIGHT_INPUT);
 
-	string title = "Mon: Ly";
-	int titleContent = getCenterX(MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, title.length());
-	gotoXY(DISTANCE_SIDEBAR+titleContent, DISTANCE_HEADER + 2);
+	string title = "Mon: " + subject.getSubject(subjectCode.c_str())->info.subjectName;
+	int titleContent = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, title.length());
+	gotoXY(DISTANCE_SIDEBAR - MARGIN - MARGIN + titleContent, DISTANCE_HEADER + 2);
 	cout << title;
-	//box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + 4, COLUMN_CENTER + MARGIN + COLUMN_RIGHT + PADDING, ROW_CENTER + 2);
-
+	int y = 5;
+	int lastY = 0;
+	
 	for (int i = 0; i < 6; i++)
 	{
 		listTitle.push_back(Text());
+		listValidation.push_back(Text());
 		listInput.push_back(InputField());
-	}
 
-	int y = 5;
-	int lastY = 0;
-	listTitle[0].setContent("* Noi Dung Chinh");
-	listTitle[1].setContent("* Noi Dung A");
-	listTitle[2].setContent("* Noi Dung B");
-	listTitle[3].setContent("* Noi Dung C");
-	listTitle[4].setContent("* Noi Dung D");
-	listTitle[5].setContent("* Dap An");
+		listInput[i].setMaxLen(166);
+		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
+		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING, DISTANCE_HEADER + 6 + (y * i));
+		listInput[i].setFrame(168, HEIGHT_INPUT);
+		if (i < 5)
+		{
+			listInput[i].drawBox();
+		}
+		
 
-	for (int i = 0; i < 6; i++)
-	{
+		listTitle[i].setColor(ColorCode_DarkGreen);
 		listTitle[i].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING, DISTANCE_HEADER + 5 + (y * i));
 		
-		setColorText(ColorCode_DarkGreen);
-		listTitle[i].display();
-		setColorText(ColorCode_White);
+		listValidation[i].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING, DISTANCE_HEADER + 9 + (y * i));
+		listValidation[i].setContent(NOTIFICATION_EMPTY);
+		listValidation[i].setColor(ColorCode_DarkYellow);
+
 		lastY = DISTANCE_HEADER + 5 + (y * i);
 	}
 
-	for (int i = 0; i < 5; i++)
-	{
-		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING, DISTANCE_HEADER + 6 + (y * i));
-		listInput[i].setFrame(168, HEIGHT_INPUT);
-		listInput[i].drawBox();
-		listInput[i].setMaxLen(164);
-	}
-
-	listInput[5].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING + 7, lastY - 1);
+	listInput[5].useAnswer = true;
 	listInput[5].setFrame(4, HEIGHT_INPUT);
 	listInput[5].drawBox();
-	listInput[5].setMaxLen(0);
+	listInput[5].setMaxLen(LENGTH_MIN_DEFAULT-1);
 
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING + 15, lastY);
-	setColorText(ColorCode_Yellow);
+
+	listTitle[0].setContent("* Noi Dung Chinh");
+	listTitle[0].display();
+
+	listTitle[1].setContent("* Noi Dung A");
+	listTitle[1].display();
+
+	listTitle[2].setContent("* Noi Dung B");
+	listTitle[2].display();
+
+	listTitle[3].setContent("* Noi Dung C");
+	listTitle[3].display();
+
+	listTitle[4].setContent("* Noi Dung D");
+	listTitle[4].display();
+	
+	listTitle[5].setContent("* Dap An");
+	listTitle[5].display();
+
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING + 5, lastY + 2);
+	setColorText(ColorCode_DarkYellow);
 	cout << "(A, B, C, D)";
 	setColorText(ColorCode_White);
 
 	posYMessage = lastY + 2;
 	text.setPosition(DISTANCE_SIDEBAR + MARGIN, posYMessage);
-	/*text.setContent("lelamhai");
-	text.display();*/
-
 
 	string titleEnter = "Enter";
 	int titleEnterX = getCenterX(MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, title.length());
@@ -138,7 +148,9 @@ void ContentInputQuestion::createData()
 	{
 		if (stateInput == FORM_ContentMain)
 		{
+			listValidation[0].display();
 			listInput[0].handleInput();
+			listValidation[0].clean();
 
 			switch (listInput[0].getEndKey())
 			{
@@ -187,7 +199,9 @@ void ContentInputQuestion::createData()
 
 		if (stateInput == FORM_ContentA)
 		{
+			listValidation[1].display();
 			listInput[1].handleInput();
+			listValidation[1].clean();
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -234,8 +248,9 @@ void ContentInputQuestion::createData()
 
 		if (stateInput == FORM_ContentB)
 		{
+			listValidation[2].display();
 			listInput[2].handleInput();
-
+			listValidation[2].clean();
 			switch (listInput[2].getEndKey())
 			{
 			case ENTER:
@@ -281,8 +296,9 @@ void ContentInputQuestion::createData()
 
 		if (stateInput == FORM_ContentC)
 		{
+			listValidation[3].display();
 			listInput[3].handleInput();
-
+			listValidation[3].clean();
 			switch (listInput[3].getEndKey())
 			{
 			case ENTER:
@@ -329,7 +345,9 @@ void ContentInputQuestion::createData()
 
 		if (stateInput == FORM_ContentD)
 		{
+			listValidation[4].display();
 			listInput[4].handleInput();
+			listValidation[4].clean();
 			switch (listInput[4].getEndKey())
 			{
 			case ENTER:
@@ -375,8 +393,9 @@ void ContentInputQuestion::createData()
 
 		if (stateInput == FORM_ContentAnswer)
 		{
+			listValidation[5].display();
 			listInput[5].handleInput();
-
+			listValidation[5].clean();
 			switch (listInput[5].getEndKey())
 			{
 			case ENTER:
@@ -425,24 +444,23 @@ void ContentInputQuestion::createData()
 			bool result = subject.addQuestionInSubject(subjectCode.c_str(), listInput[0].getText(), listInput[1].getText(), listInput[2].getText(), listInput[3].getText(), listInput[4].getText(), listInput[5].getText()[0]);
 			if (result)
 			{
-				cleanMessage(posYMessage);
-				text.setContent("Them lop thanh cong!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				text.clean();
+				text.setContent(INSERT_FINISH);
+				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
+				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
+				text.setColor(ColorCode_DarkGreen);
 			}
 			else
 			{
-				cleanMessage(posYMessage);
-				text.setContent("Them lop that bai!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				text.clean();
+				text.setContent("Them Thong Tin That Bai!");
+				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
+				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
+				text.setColor(ColorCode_DarkRed);
 			}
 
 			text.display();
 			stateInput = FORM_ContentMain;
-
 		}
 
 		if (stateInput == FORM_EXIT)
@@ -478,7 +496,9 @@ void ContentInputQuestion::editData()
 	{
 		if (stateInput == FORM_ContentMain)
 		{
+			listValidation[0].display();
 			listInput[0].handleInput();
+			listValidation[0].clean();
 
 			switch (listInput[0].getEndKey())
 			{
@@ -521,7 +541,10 @@ void ContentInputQuestion::editData()
 
 		if (stateInput == FORM_ContentA)
 		{
+			listValidation[1].display();
 			listInput[1].handleInput();
+			listValidation[1].clean();
+
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -567,7 +590,9 @@ void ContentInputQuestion::editData()
 
 		if (stateInput == FORM_ContentB)
 		{
+			listValidation[2].display();
 			listInput[2].handleInput();
+			listValidation[2].clean();
 
 			switch (listInput[2].getEndKey())
 			{
@@ -614,7 +639,9 @@ void ContentInputQuestion::editData()
 
 		if (stateInput == FORM_ContentC)
 		{
+			listValidation[3].display();
 			listInput[3].handleInput();
+			listValidation[3].clean();
 
 			switch (listInput[3].getEndKey())
 			{
@@ -661,7 +688,9 @@ void ContentInputQuestion::editData()
 
 		if (stateInput == FORM_ContentD)
 		{
+			listValidation[4].display();
 			listInput[4].handleInput();
+			listValidation[4].clean();
 			switch (listInput[4].getEndKey())
 			{
 			case ENTER:
@@ -707,7 +736,9 @@ void ContentInputQuestion::editData()
 
 		if (stateInput == FORM_ContentAnswer)
 		{
+			listValidation[5].display();
 			listInput[5].handleInput();
+			listValidation[5].clean();
 
 			switch (listInput[5].getEndKey())
 			{
@@ -757,19 +788,19 @@ void ContentInputQuestion::editData()
 			bool result = subject.editQuestionInSubject(subjectCode.c_str(), idQuestion, listInput[0].getText(), listInput[1].getText(), listInput[2].getText(), listInput[3].getText(), listInput[4].getText(), listInput[5].getText()[0]);
 			if (result)
 			{
-				cleanMessage(posYMessage);
+				text.clean();
 				text.setContent(UPDATE_FINISH);
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
+				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
+				text.setColor(ColorCode_DarkGreen);
 			}
 			else
 			{
-				cleanMessage(posYMessage);
+				text.clean();
 				text.setContent(UPDATE_FAIL);
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
+				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
+				text.setColor(ColorCode_DarkRed);
 			}
 
 			text.display();
