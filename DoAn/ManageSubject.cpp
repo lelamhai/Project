@@ -95,6 +95,19 @@ bool ManageSubject::editQuestionInSubject(const string subjectCode, int question
     return false;
 }
 
+bool ManageSubject::isQuestionCanDelete(const string subjectCode, int questionId)
+{
+    PTRSUBJECT subjectFound = getSubject(subjectCode.c_str());
+    PTRQUESTION questionList = subjectFound->info.listQuestion;
+    while (questionList != nullptr) {
+        if (questionId == questionList->info.questionId) {
+            return questionList->info.isInExam == false;
+        }
+        questionList = questionList->next;
+    }
+    return false;
+}
+
 bool ManageSubject::deleteQuestionInSubject(const string subjectCode, int questionId)
 {
     PTRSUBJECT subjectFound = getSubject(subjectCode.c_str());
@@ -609,6 +622,13 @@ void ManageSubject::getPageSubject(PTRSUBJECT& result, PTRSUBJECT root, int& cou
     count++; 
 
     getPageSubject(result, root->right, count, startIndex, endIndex);
+}
+
+bool ManageSubject::isSubjectCanDelete(const string subjectCode)
+{
+    PTRSUBJECT subjectFound = getSubject(subjectCode.c_str());
+    if (subjectFound == nullptr) return false;
+    return subjectFound->info.listQuestion == nullptr;
 }
 
 void ManageSubject::deleteTree(PTRSUBJECT& root) {

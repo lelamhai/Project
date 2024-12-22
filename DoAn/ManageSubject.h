@@ -71,6 +71,9 @@ public:
     // Chỉnh sửa câu hỏi trong môn học
     bool editQuestionInSubject(const string subjectCode, int questionId, const string content, const string optionA, const string optionB, const string optionC, const string optionD, const char answer);
 
+    // Ham kiem tra xem co the xoa 1 cau hoi hay khong
+    bool isQuestionCanDelete(const string subjectCode, int questionId);
+
     // Xóa 1 câu hỏi
     bool deleteQuestionInSubject(const string subjectCode, int questionId);
 
@@ -105,6 +108,8 @@ public:
     SubjectPage searchSubjects(string keyword, int page);
 
     void getPageSubject(PTRSUBJECT& result, PTRSUBJECT root, int& count, int startIndex, int endIndex);
+
+    bool isSubjectCanDelete(const string subjectCode);
 
     bool deleteSubject(string code);
 

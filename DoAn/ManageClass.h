@@ -44,6 +44,9 @@ public:
 	// Function check is class exist
 	bool isClassExist(const string classCode);
 
+	// Funtion check is class can delete
+	bool isClassCanDelete(const string classCode);
+
 	// Function get student by code
 	Student findStudentByCode(const string studentCode, const string classCode);
 

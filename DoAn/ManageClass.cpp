@@ -29,6 +29,12 @@ bool ManageClass::isClassExist(const string classCode)
     return positionClass != -1;
 }
 
+bool ManageClass::isClassCanDelete(const string classCode)
+{
+    Classroom classFound = findClassByCode(classCode.c_str());
+    return classFound.studentList == nullptr && classFound.className != "";
+}
+
 Student ManageClass::findStudentByCode(const string studentCode, const string classCode)
 {
     Student studentFound;
