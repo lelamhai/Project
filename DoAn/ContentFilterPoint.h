@@ -51,14 +51,9 @@ private:
 	SearchInput stateSearchInput;
 
 	Text text;
-
-	InputField inputClassroomCode;
-	InputField inputSubjectCode;
-
-	InputField listInput[2] = {
-		inputClassroomCode,
-		inputSubjectCode
-	};
+	vector<InputField> listInput;
+	vector<Text> listValidation;
+	
 	//classroom
 	ManageClass nl;
 	string classCode;
@@ -75,7 +70,7 @@ private:
 	int indexTree = 0;
 
 	int width = 55;
-	int posXMessage = 0;
+	int posYMessage = 0;
 	int moveMenu = 0;
 
 public:

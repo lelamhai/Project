@@ -680,7 +680,10 @@ void ContentSubject::findData()
 
 			if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 			{
-				showCur(1);
+				if (s >= 'a' && s <= 'z')
+				{
+					s = s - ('a' - 'A');
+				}
 
 				textSearch.insert(textSearch.begin() + cursorPosition, s);
 				cursorPosition++;

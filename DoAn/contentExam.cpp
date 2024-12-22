@@ -497,7 +497,7 @@ void ContentExam::createData()
 						text.setContent("");
 					}
 
-					text.setContent("Ma Mon Hoc Khong Dung!");
+					text.setContent(SUBJECT_CODE);
 					int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 					text.updatePositionX(textPosX);
 

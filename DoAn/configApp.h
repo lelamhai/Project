@@ -33,6 +33,9 @@
 #define UPDATE_FAIL "Cap Nhat Thong Tin That Bai!"
 #define NOTIFICATION_DELETE "Ban Co Muon Xoa Du Lieu Nay Khong?"
 
+#define SUBJECT_CODE "Ma Mon Hoc Khong Ton Tai!"
+#define CLASSROOM_CODE "Ma Lop Khong Ton Tai!"
+
 
 
 void init();

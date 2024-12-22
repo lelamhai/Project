@@ -46,27 +46,34 @@ void ContentFilterPoint::drawContent()
 		"Ma Mon"
 	};
 
-	int y = DISTANCE_HEADER + PADDING + 5;
+	int y = DISTANCE_HEADER + PADDING + 4;
 	for (int i = 0; i < 2; i++)
 	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 3));
+		listInput.push_back(InputField());
+		listValidation.push_back(Text());
+
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 4));
 		cout << titleInput[i];
 
-
-		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 3) - 1);
+		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
+		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
+
+		listValidation[i].setColor(ColorCode_DarkYellow);
+		listValidation[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, y + (i * 4) + 2);
 	}
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 16);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 15);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
 	cout << char(195);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
 	cout << char(180);
 
-	y = y + (2 * 3) - 1;
-	posXMessage = y;
-	text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
+	y = y + (2 * 3);
+	posYMessage = y + 1;
+	text.setColor(ColorCode_DarkRed);
+	text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 	/*gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
 	cout << y;*/
 
@@ -220,9 +227,16 @@ void ContentFilterPoint::createData()
 	{
 		if (stateInput == FORM_CLASSROOM)
 		{
+			listValidation[0].setContent(NOTIFICATION_EMPTY);
+			int textPosX = getCenterX(COLUMN_RIGHT, listValidation[0].getLenString());
+			listValidation[0].updatePositionX(textPosX);
+			listValidation[0].display();
+
 			listInput[0].notUseSpace = true;
 			listInput[0].handleInput();
 
+			listValidation[0].clean();
+			listValidation[0].updatePositionX(-textPosX);
 			switch (listInput[0].getEndKey())
 			{
 			case ENTER:
@@ -272,8 +286,16 @@ void ContentFilterPoint::createData()
 
 		if (stateInput == FORM_SUBJECT)
 		{
+			listValidation[1].setContent(NOTIFICATION_EMPTY);
+			int textPosX = getCenterX(COLUMN_RIGHT, listValidation[1].getLenString());
+			listValidation[1].updatePositionX(textPosX);
+			listValidation[1].display();
+
 			listInput[1].notUseSpace = true;
 			listInput[1].handleInput();
+
+			listValidation[1].clean();
+			listValidation[1].updatePositionX(-textPosX);
 
 			switch (listInput[1].getEndKey())
 			{
@@ -324,6 +346,43 @@ void ContentFilterPoint::createData()
 
 		if (stateInput == FORM_ENTER)
 		{
+			if (text.getLenString() != 0)
+			{
+				text.clean();
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				text.setContent("");
+			}
+
+			bool isClassExist = nl.isClassExist(listInput[0].getText().c_str());
+			if (!isClassExist)
+			{
+				text.setContent(CLASSROOM_CODE);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+				text.display();
+
+				stateInput = FORM_CLASSROOM;
+				continue;
+			}
+
+			if (text.getLenString() != 0)
+			{
+				text.clean();
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				text.setContent("");
+			}
+			bool isSubjectExist = subject.isSubjectExist(listInput[1].getText().c_str());
+			if (!isSubjectExist)
+			{
+				text.setContent(SUBJECT_CODE);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+
+				text.display();
+				stateInput = FORM_SUBJECT;
+				continue;
+			}
+
 			cleanContent();
 			ContentPrintPoint p;
 			p.init(listInput[0].getText(), listInput[1].getText());
@@ -365,7 +424,7 @@ void ContentFilterPoint::selectClassroom()
 	int lastHover = -1;
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		if (GetAsyncKeyState(VK_TAB))
 		{
 			if (Singleton::getInstance()->moveMenu != 0)
 			{
@@ -519,7 +578,7 @@ void ContentFilterPoint::selectSubject()
 	}
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		if (GetAsyncKeyState(VK_TAB))
 		{
 			if (Singleton::getInstance()->moveMenu != 0)
 			{
@@ -777,7 +836,10 @@ void ContentFilterPoint::findDataClassroom()
 
 				if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 				{
-					showCur(1);
+					if (s >= 'a' && s <= 'z')
+					{
+						s = s - ('a' - 'A');
+					}
 
 					textSearch.insert(textSearch.begin() + cursorPosition, s);
 					cursorPosition++;
@@ -876,7 +938,10 @@ void ContentFilterPoint::findDataSubject()
 
 			if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 			{
-				showCur(1);
+				if (s >= 'a' && s <= 'z')
+				{
+					s = s - ('a' - 'A');
+				}
 
 				textSearch.insert(textSearch.begin() + cursorPosition, s);
 				cursorPosition++;
