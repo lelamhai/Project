@@ -102,23 +102,12 @@ bool ManageSubject::deleteQuestionInSubject(const string subjectCode, int questi
 
     PTRQUESTION questionList = subjectFound->info.listQuestion;
     if (questionList == nullptr) return false;
-
-    // Neu da o trong bai thi se khong cho xoa
-    if (questionList->info.isInExam) return false;
-
-    if (questionList->info.questionId == questionId) {
-        PTRQUESTION temp = questionList;
-        questionList = questionList->next;
-        delete temp;
-        subjectFound->info.listQuestion = questionList;
-        saveToFile();
-        return true;
-    }
-
+    
     PTRQUESTION prev = questionList;
     PTRQUESTION curr = questionList->next;
     while (curr != nullptr) {
         if (curr->info.questionId == questionId) {
+            if (curr->info.isInExam) return false;
             prev->next = curr->next;
             delete curr;
             saveToFile();

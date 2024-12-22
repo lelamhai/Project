@@ -29,6 +29,14 @@ void DungTest::main()
 	// 4. Ham kiem tra xem sinh vien co the xoa 
 	bool isStudentCanDelete = classes.isStudentCanDelete("K23DTCN273");
 	cout << "Hoc sinh co the xoa " << isStudentCanDelete << endl;
+
+	// 5. Ham xoa lop (ham nay la ham xoa luon)
+	bool isSubjectDeleted = subjects.deleteSubject("C001");
+	cout << "Lop da xoa thanh cong " << isSubjectDeleted << endl;
+
+	// 6. Ham xoa cau hoi (ham nay la ham xoa luon)
+	bool isQuestionDeleted = subjects.deleteQuestionInSubject("CSDL", 65098);
+	cout << "Cau hoi da xoa thanh cong " << isQuestionDeleted << endl;
 	
 	//// 1. get subject name input "SUBJECT CODE"
 	//string subjectName = subject.getSubject("CSDL")->info.subjectName;
