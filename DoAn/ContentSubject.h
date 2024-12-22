@@ -8,6 +8,7 @@
 #include "ManageSubject.h"
 
 #include "ContentQuestion.h"
+#include "PopupNotification.h"
 #include "PopupDelete.h"
 #include "InputField.h"
 #include "Text.h"
@@ -61,6 +62,8 @@ private:
 	int indexTree = 0;
 
 	string subjectCode;
+	int countQuestion;
+
 	int posYMessage = 0;
 	int pageNumber = 1;
 	int hover = 0;

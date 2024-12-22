@@ -579,26 +579,6 @@ void ContentQuestion::loadData()
 		result = truncateText(questionList->info.optionD);
 		cout << result;
 
-		/*int classX = getCenterX(sizeColumn, questionList->info.content.length());
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + classX, DISTANCE_HEADER + 8 + i * 2);
-		cout << questionList->info.content;
-
-		int lastX = getCenterX(sizeColumn, questionList->info.optionA.length());
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + lastX, DISTANCE_HEADER + 8 + i * 2);
-		cout << questionList->info.optionA;
-
-		int firstX = getCenterX(sizeColumn, questionList->info.optionB.length());
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + firstX, DISTANCE_HEADER + 8 + i * 2);
-		cout << questionList->info.optionB;
-
-		int sexX = getCenterX(sizeColumn, questionList->info.optionC.length());
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + sizeColumn + sexX, DISTANCE_HEADER + 8 + i * 2);
-		cout << questionList->info.optionC;
-
-		int passX = getCenterX(sizeColumn, questionList->info.optionD.length());
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + sizeColumn + sizeColumn + passX, DISTANCE_HEADER + 8 + i * 2);
-		cout << questionList->info.optionD;*/
-
 		int passAX = getCenterX(10, 1);
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + 10 + sizeColumn + sizeColumn + sizeColumn + sizeColumn + sizeColumn + passAX, DISTANCE_HEADER + 8 + i * 2);
 		cout << questionList->info.answer;

@@ -51,7 +51,7 @@ void ContentSubject::drawContent()
 
 	
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
-	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 16);
+	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 15);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + 3);
 	cout << char(195);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, DISTANCE_HEADER + 3);
@@ -344,21 +344,34 @@ void ContentSubject::selectData()
 void ContentSubject::deleteData()
 {
 	int deletePosX = getCenterX(COLUMN_CENTER, 50);
-	PopupDelete pDelete;
-	pDelete.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
-	pDelete.open();
-	pDelete.handle();
-
-	if (pDelete.getResult())
+	if (countQuestion > 0)
 	{
-		bool result = subject.deleteSubject(subjectCode.c_str());
-		if (result)
+		PopupNotification pNotification;
+		pNotification.setTitle("Du lieu nay khong the xoa duoc!");
+		pNotification.setPosition(deletePosX + 30, 17);
+		pNotification.open();
+		pNotification.handle();
+		pNotification.close();
+	}
+	else
+	{
+		PopupDelete pDelete;
+		pDelete.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
+		pDelete.open();
+		pDelete.handle();
+
+		if (pDelete.getResult())
 		{
-			hover = 0;
+			bool result = subject.deleteSubject(subjectCode.c_str());
+			if (result)
+			{
+				hover = 0;
+			}
 		}
+
+		pDelete.close();
 	}
 	
-	pDelete.close();
 	currentSubject = C_SELECT;
 	return;
 }
@@ -573,17 +586,17 @@ void ContentSubject::editData()
 				indexTree = 0;
 				SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
 				cleanTable();
-				cleanMessage(posYMessage);
+				text.clean();
 				loadDataTree(a.subjects);
-				text.setContent("Cap nhat thong tin thanh cong!");
+				text.setContent(UPDATE_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
 
 			}
 			else {
-				cleanMessage(posYMessage);
-				text.setContent("Cap nhat thong tin that bai!");
+				text.clean();
+				text.setContent(UPDATE_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -701,6 +714,7 @@ void ContentSubject::loadDataTree(PTRSUBJECT root)
 	{
 		setColorText(ColorCode_DarkGreen);
 		subjectCode = root->info.subjectCode;// Get subject Code for edit and delete
+		countQuestion = subject.countQuestionsInSubject(root->info.subjectCode);
 	}
 	int codeX = getCenterX(40, strlen(root->info.subjectCode));
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + codeX, DISTANCE_HEADER + 8 + (indexTree * 2));
