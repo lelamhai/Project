@@ -32,12 +32,10 @@
 #define UPDATE_FINISH "Cap Nhat Thong Tin Thanh Cong!"
 #define UPDATE_FAIL "Cap Nhat Thong Tin That Bai!"
 #define NOTIFICATION_DELETE "Ban Co Muon Xoa Du Lieu Nay Khong?"
-#define INPUT_MESSAGE "Do Dai It Nhat 7 Ky Tu"
 
 
 
 void init();
 void cleanContent();
 void cleanTable();
-void cleanMessage(int y);
 string truncateText(const string& text);

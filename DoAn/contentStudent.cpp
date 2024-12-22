@@ -790,22 +790,36 @@ void ContentStudent::createData()
 
 void ContentStudent::deleteData()
 {
+	ManageClass classes;
 	int deletePosX = getCenterX(COLUMN_CENTER, 50);
-	PopupDelete pDelete;
-	pDelete.setPosition(deletePosX + 30, 17);
-	pDelete.open();
-	pDelete.handle();
-
-	if (pDelete.getResult())
+	bool isStudentCanDelete = classes.isStudentCanDelete(studentCode.c_str());
+	if (!isStudentCanDelete)
 	{
-		ManageClass test;
-		bool result = test.deleteStudentInClass(classCode.c_str(), studentCode.c_str());//nl.deleteClass(classCode.c_str());
-		if (result)
-		{
-			hover = 0;
-		}
+		PopupNotification pNotification;
+		pNotification.setTitle("Du lieu nay khong the xoa duoc!");
+		pNotification.setPosition(deletePosX + 30, 17);
+		pNotification.open();
+		pNotification.handle();
+		pNotification.close();
 	}
-	pDelete.close();
+	else
+	{
+		PopupDelete pDelete;
+		pDelete.setPosition(deletePosX + 30, 17);
+		pDelete.open();
+		pDelete.handle();
+
+		if (pDelete.getResult())
+		{
+			ManageClass test;
+			bool result = test.deleteStudentInClass(classCode.c_str(), studentCode.c_str());//nl.deleteClass(classCode.c_str());
+			if (result)
+			{
+				hover = 0;
+			}
+		}
+		pDelete.close();
+	}
 
 	currentDetailClassroom = C_SELECT;
 	return;

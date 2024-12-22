@@ -33,17 +33,6 @@ void cleanTable()
     }
 }
 
-void cleanMessage(int y)
-{
-    string blankFill;
-    blankFill.resize(COLUMN_RIGHT - 1, ' ');
-    for (int i = 0; i < 1; i++)
-    {
-        gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y);
-        cout << blankFill;
-    }
-}
-
 string truncateText(const string& text) {
     if (text.length() > 16) {
         return text.substr(0, 16) + "...";

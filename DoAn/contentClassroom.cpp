@@ -14,7 +14,7 @@ void ContentClassroom::displayContent()
 	content();
 }
 
-void ContentClassroom::drawClassroom()
+void ContentClassroom::drawContent()
 {
 	// Search
 	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING + PADDING);
@@ -111,7 +111,7 @@ void ContentClassroom::drawClassroom()
 	setColorText(ColorCode_DarkWhite);
 }
 
-void ContentClassroom::girdContent()
+void ContentClassroom::girdTitle()
 {
 	lineX(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN, COLUMN_CENTER);
 	gotoXY(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + MARGIN);
@@ -140,8 +140,8 @@ void ContentClassroom::girdContent()
 
 void ContentClassroom::content()
 {
-	drawClassroom();
-	girdContent();
+	drawContent();
+	girdTitle();
 	currentClassroom = C_SELECT;
 	handle();
 }
@@ -158,8 +158,8 @@ void ContentClassroom::handle()
 			detail->content();
 			delete detail;
 			cleanContent();
-			drawClassroom();
-			girdContent();
+			drawContent();
+			girdTitle();
 			currentClassroom = C_EXIT;
 			Singleton::getInstance()->moveMenu = 0;
 		}
@@ -647,7 +647,7 @@ void ContentClassroom::editData()
 			{
 				cleanTable();
 				loadData();
-				cleanMessage(posYMessage);
+				text.clean();
 				text.setContent(UPDATE_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
@@ -655,7 +655,7 @@ void ContentClassroom::editData()
 				text.setColor(ColorCode_DarkGreen);
 			}
 			else {
-				cleanMessage(posYMessage);
+				text.clean();
 				text.setContent(UPDATE_FAIL);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());

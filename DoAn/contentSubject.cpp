@@ -592,6 +592,7 @@ void ContentSubject::editData()
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
+				text.setColor(ColorCode_DarkGreen);
 
 			}
 			else {
@@ -600,6 +601,7 @@ void ContentSubject::editData()
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
+				text.setColor(ColorCode_DarkRed);
 			}
 			text.display();
 			stateInput = FORM_NAME;

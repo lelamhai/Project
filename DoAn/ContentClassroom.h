@@ -10,6 +10,7 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 
+
 #include "PopupDelete.h"
 #include "PopupNotification.h"
 #include "InputField.h"
@@ -68,8 +69,8 @@ private:
 public:
 	void displayContent() override;
 	void content();
-	void drawClassroom();
-	void girdContent();
+	void drawContent();
+	void girdTitle();
 	void handle();
 	void selectData();
 	void deleteData();
