@@ -1,50 +1,50 @@
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ClassroomSevice.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\ClassroomSevice.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\color.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\color.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\configApp.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\configApp.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\content.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\content.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentAbout.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentAbout.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentClassroom.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentClassroom.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentStudent.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentStudent.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExam.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentExam.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentExecute.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentExecute.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentFilterPoint.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentFilterPoint.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentInputQuestion.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentInputQuestion.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentPrintPoint.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentPrintPoint.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentQuestion.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentQuestion.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentHistoryExam.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentHistoryExam.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\contentSubject.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\contentSubject.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ContentSubject.h;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\ContentSubject.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\DungTest.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\DungTest.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\HuyTest.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\HuyTest.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\LoadingData.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\LoadingData.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\LoginData.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\LoginData.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageClass.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\ManageClass.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageQuestion.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\ManageQuestion.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageScore.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\ManageScore.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageStudent.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\ManageStudent.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageSubject.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\ManageSubject.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\popupQuestion.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\popupQuestion.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\draw.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\draw.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\footer.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\footer.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\inputField.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\inputField.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\InputField.h;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\InputField.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\page.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\page.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\popup.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\popup.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\popupFinish.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\popupFinish.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\popupFinishExam.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\popupFinishExam.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\popupNotification.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\popupNotification.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\popupTutorial.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\popupTutorial.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\RandomID.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\RandomID.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\sidebar.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\sidebar.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\header.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\header.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\keyboard.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\keyboard.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\loading.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\loading.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\login.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\main.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\main.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\Layout.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\Layout.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\singleton.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\singleton.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageExam.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\ManageExam.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\StudentList.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\StudentList.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\StudentService.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\StudentService.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\text.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\text.obj
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\windows.cpp;C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\x64\Debug\windows.obj
+D:\3. Do An CSDL\Project\DoAn\ClassroomSevice.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\ClassroomSevice.obj
+D:\3. Do An CSDL\Project\DoAn\color.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\color.obj
+D:\3. Do An CSDL\Project\DoAn\configApp.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\configApp.obj
+D:\3. Do An CSDL\Project\DoAn\content.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\content.obj
+D:\3. Do An CSDL\Project\DoAn\contentAbout.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentAbout.obj
+D:\3. Do An CSDL\Project\DoAn\contentClassroom.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentClassroom.obj
+D:\3. Do An CSDL\Project\DoAn\contentStudent.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentStudent.obj
+D:\3. Do An CSDL\Project\DoAn\contentExam.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentExam.obj
+D:\3. Do An CSDL\Project\DoAn\contentExecute.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentExecute.obj
+D:\3. Do An CSDL\Project\DoAn\contentFilterPoint.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentFilterPoint.obj
+D:\3. Do An CSDL\Project\DoAn\contentInputQuestion.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentInputQuestion.obj
+D:\3. Do An CSDL\Project\DoAn\contentPrintPoint.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentPrintPoint.obj
+D:\3. Do An CSDL\Project\DoAn\contentQuestion.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentQuestion.obj
+D:\3. Do An CSDL\Project\DoAn\contentHistoryExam.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentHistoryExam.obj
+D:\3. Do An CSDL\Project\DoAn\contentSubject.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\contentSubject.obj
+D:\3. Do An CSDL\Project\DoAn\ContentSubject.h;D:\3. Do An CSDL\Project\DoAn\x64\Debug\ContentSubject.obj
+D:\3. Do An CSDL\Project\DoAn\DungTest.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\DungTest.obj
+D:\3. Do An CSDL\Project\DoAn\HuyTest.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\HuyTest.obj
+D:\3. Do An CSDL\Project\DoAn\LoadingData.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\LoadingData.obj
+D:\3. Do An CSDL\Project\DoAn\LoginData.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\LoginData.obj
+D:\3. Do An CSDL\Project\DoAn\ManageClass.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\ManageClass.obj
+D:\3. Do An CSDL\Project\DoAn\ManageQuestion.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\ManageQuestion.obj
+D:\3. Do An CSDL\Project\DoAn\ManageScore.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\ManageScore.obj
+D:\3. Do An CSDL\Project\DoAn\ManageStudent.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\ManageStudent.obj
+D:\3. Do An CSDL\Project\DoAn\ManageSubject.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\ManageSubject.obj
+D:\3. Do An CSDL\Project\DoAn\popupQuestion.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\popupQuestion.obj
+D:\3. Do An CSDL\Project\DoAn\draw.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\draw.obj
+D:\3. Do An CSDL\Project\DoAn\footer.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\footer.obj
+D:\3. Do An CSDL\Project\DoAn\inputField.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\inputField.obj
+D:\3. Do An CSDL\Project\DoAn\InputField.h;D:\3. Do An CSDL\Project\DoAn\x64\Debug\InputField.obj
+D:\3. Do An CSDL\Project\DoAn\page.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\page.obj
+D:\3. Do An CSDL\Project\DoAn\popup.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\popup.obj
+D:\3. Do An CSDL\Project\DoAn\popupFinish.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\popupFinish.obj
+D:\3. Do An CSDL\Project\DoAn\popupFinishExam.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\popupFinishExam.obj
+D:\3. Do An CSDL\Project\DoAn\popupNotification.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\popupNotification.obj
+D:\3. Do An CSDL\Project\DoAn\popupTutorial.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\popupTutorial.obj
+D:\3. Do An CSDL\Project\DoAn\RandomID.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\RandomID.obj
+D:\3. Do An CSDL\Project\DoAn\sidebar.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\sidebar.obj
+D:\3. Do An CSDL\Project\DoAn\header.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\header.obj
+D:\3. Do An CSDL\Project\DoAn\keyboard.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\keyboard.obj
+D:\3. Do An CSDL\Project\DoAn\loading.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\loading.obj
+D:\3. Do An CSDL\Project\DoAn\login.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\login.obj
+D:\3. Do An CSDL\Project\DoAn\main.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\main.obj
+D:\3. Do An CSDL\Project\DoAn\Layout.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\Layout.obj
+D:\3. Do An CSDL\Project\DoAn\singleton.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\singleton.obj
+D:\3. Do An CSDL\Project\DoAn\ManageExam.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\ManageExam.obj
+D:\3. Do An CSDL\Project\DoAn\StudentList.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\StudentList.obj
+D:\3. Do An CSDL\Project\DoAn\StudentService.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\StudentService.obj
+D:\3. Do An CSDL\Project\DoAn\text.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\text.obj
+D:\3. Do An CSDL\Project\DoAn\windows.cpp;D:\3. Do An CSDL\Project\DoAn\x64\Debug\windows.obj
