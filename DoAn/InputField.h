@@ -5,6 +5,7 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 #include <conio.h>
+#include <string>
 #include <iostream>
 using namespace std;
 

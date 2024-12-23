@@ -325,7 +325,7 @@ void InputField::handleInput()
 				break;
 			}
 
-			if (notUseZero && s == '0')
+			if (notUseZero && s == '0' && inputString.length() == 0)
 			{
 				break;
 			}
