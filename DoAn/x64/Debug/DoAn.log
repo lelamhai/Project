@@ -182,8 +182,8 @@ C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\ManageClass.cpp(330,1): w
   Compiling...
   loading.cpp
   login.cpp
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(119,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(135,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(97,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\login.cpp(113,16): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   main.cpp
   Layout.cpp
 C:\Users\ADMIN\Documents\PTIT\HK3\CTDL&GT\Project\DoAn\Layout.cpp(75,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data

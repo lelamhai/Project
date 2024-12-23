@@ -1,0 +1,536 @@
+{
+  "classCount": 14,
+  "classes": [
+    {
+      "classCode": "C001",
+      "className": "D23TXCN04-K",
+      "students": [
+        {
+          "firstName": "213",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [
+            {
+              "score": 29.0,
+              "subjectCode": "INT1336"
+            },
+            {
+              "score": 57.0,
+              "subjectCode": "INT13145"
+            },
+            {
+              "score": 43.0,
+              "subjectCode": "MTH"
+            },
+            {
+              "score": 71.0,
+              "subjectCode": "CSDL"
+            }
+          ],
+          "studentCode": "12rfhdah"
+        },
+        {
+          "firstName": "213",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [
+            {
+              "score": 14.0,
+              "subjectCode": "VL"
+            }
+          ],
+          "studentCode": "12rfhda"
+        },
+        {
+          "firstName": "213",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [],
+          "studentCode": "12rfhd"
+        },
+        {
+          "firstName": "213",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [],
+          "studentCode": "12rfh"
+        },
+        {
+          "firstName": "213",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [],
+          "studentCode": "12rf"
+        },
+        {
+          "firstName": "213",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [
+            {
+              "score": 57.0,
+              "subjectCode": "CSDL"
+            },
+            {
+              "score": 43.0,
+              "subjectCode": "VL"
+            }
+          ],
+          "studentCode": "12"
+        },
+        {
+          "firstName": "d",
+          "gender": 77,
+          "lastName": "dsfsd",
+          "password": "1234",
+          "scores": [],
+          "studentCode": "1234562"
+        },
+        {
+          "firstName": "d",
+          "gender": 77,
+          "lastName": "d",
+          "password": "1234",
+          "scores": [],
+          "studentCode": "sd4"
+        },
+        {
+          "firstName": "d",
+          "gender": 77,
+          "lastName": "d",
+          "password": "1234",
+          "scores": [],
+          "studentCode": "sd"
+        },
+        {
+          "firstName": "vjas",
+          "gender": 77,
+          "lastName": "lvt",
+          "password": "123",
+          "scores": [],
+          "studentCode": "hsj"
+        },
+        {
+          "firstName": "123",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [],
+          "studentCode": "12336143112354"
+        },
+        {
+          "firstName": "123",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [],
+          "studentCode": "123361431123"
+        },
+        {
+          "firstName": "123",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [],
+          "studentCode": "123361431"
+        },
+        {
+          "firstName": "123",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [],
+          "studentCode": "123361"
+        },
+        {
+          "firstName": "123",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [],
+          "studentCode": "12336"
+        },
+        {
+          "firstName": "123",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [
+            {
+              "score": 29.0,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 43.0,
+              "subjectCode": "CSDL"
+            }
+          ],
+          "studentCode": "1233"
+        },
+        {
+          "firstName": "123",
+          "gender": 70,
+          "lastName": "123",
+          "password": "123",
+          "scores": [],
+          "studentCode": "123"
+        },
+        {
+          "firstName": "aaaaa",
+          "gender": 70,
+          "lastName": "bbbbb",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "lehuyenthao"
+        },
+        {
+          "firstName": "Vu",
+          "gender": 77,
+          "lastName": "Dung",
+          "password": "12345",
+          "scores": [],
+          "studentCode": "K23DTCN299"
+        },
+        {
+          "firstName": "Vu",
+          "gender": 77,
+          "lastName": "Dung",
+          "password": "12345",
+          "scores": [],
+          "studentCode": "K23DTCN298"
+        },
+        {
+          "firstName": "Vu",
+          "gender": 77,
+          "lastName": "Duy Dung",
+          "password": "dungvd",
+          "scores": [
+            {
+              "score": 8.0,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 8.0,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 0.0,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 1.399999976158142,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 4.300000190734863,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 2.9000000953674316,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 1.399999976158142,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 1.399999976158142,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 1.399999976158142,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 2.9000000953674316,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 5.699999809265137,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 2.9000000953674316,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 2.9000000953674316,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 2.0,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 0.0,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 4.0,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 2.0,
+              "subjectCode": "CSDL"
+            },
+            {
+              "score": 0.0,
+              "subjectCode": "CSDL"
+            },
+            {
+              "score": 1.7000000476837158,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 8.0,
+              "subjectCode": "VL"
+            }
+          ],
+          "studentCode": "K23DTCN269"
+        },
+        {
+          "firstName": "Vu",
+          "gender": 77,
+          "lastName": "Duy Khoa",
+          "password": "khoavd",
+          "scores": [
+            {
+              "score": 0.0,
+              "subjectCode": "VL"
+            },
+            {
+              "score": 2.9000000953674316,
+              "subjectCode": "VL"
+            }
+          ],
+          "studentCode": "K23DTCN270"
+        },
+        {
+          "firstName": "Bui",
+          "gender": 77,
+          "lastName": "ThiThanhNhan",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN273"
+        },
+        {
+          "firstName": "vu",
+          "gender": 77,
+          "lastName": "hihi",
+          "password": "12345",
+          "scores": [],
+          "studentCode": "ahsdh"
+        },
+        {
+          "firstName": "Hai 13",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN3013"
+        },
+        {
+          "firstName": "Hai 12",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN3012"
+        },
+        {
+          "firstName": "Hai 11",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN3011"
+        },
+        {
+          "firstName": "Hai 10",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN3010"
+        },
+        {
+          "firstName": "Hai 9",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN308"
+        },
+        {
+          "firstName": "Hai 8",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN308"
+        },
+        {
+          "firstName": "Hai 7",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN307"
+        },
+        {
+          "firstName": "Hai 6",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN306"
+        },
+        {
+          "firstName": "Hai 5",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN305"
+        },
+        {
+          "firstName": "Hai 4",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [
+            {
+              "score": 67.0,
+              "subjectCode": "CSDL"
+            },
+            {
+              "score": 20.0,
+              "subjectCode": "VL"
+            }
+          ],
+          "studentCode": "K23DTCN304"
+        },
+        {
+          "firstName": "Hai 3",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN303"
+        },
+        {
+          "firstName": "Hai 2",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN302"
+        },
+        {
+          "firstName": "Hai 1",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN301"
+        },
+        {
+          "firstName": "Hai",
+          "gender": 77,
+          "lastName": "Le Lam",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "K23DTCN300"
+        },
+        {
+          "firstName": "aaaaaa",
+          "gender": 70,
+          "lastName": "bbbbbb",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "lethanhtinh"
+        }
+      ]
+    },
+    {
+      "classCode": "C002",
+      "className": "K23DTCN100-K",
+      "students": [
+        {
+          "firstName": "Vu",
+          "gender": 77,
+          "lastName": "Duy Dung",
+          "password": "123456",
+          "scores": [],
+          "studentCode": "admin"
+        }
+      ]
+    },
+    {
+      "classCode": "C003",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C004",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C005",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C006",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C007",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C008",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C009",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C010",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C011",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C012",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C012",
+      "className": "D23TXCN06-K Updated",
+      "students": []
+    },
+    {
+      "classCode": "C014",
+      "className": "D23TXCN07-K",
+      "students": []
+    }
+  ]
+}

@@ -418,13 +418,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="subjects.json">
+    <None Include="SubjectData.json">
       <Filter>Resource Files\Database</Filter>
     </None>
-    <None Include="ExamResult.json">
+    <None Include="ExamRecordData.json">
       <Filter>Resource Files\Database</Filter>
     </None>
-    <None Include="classdata.json">
+    <None Include="ClassData.json">
       <Filter>Resource Files\Database</Filter>
     </None>
   </ItemGroup>
