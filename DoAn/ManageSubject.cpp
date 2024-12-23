@@ -539,11 +539,19 @@ void ManageSubject::insertSubject(const Subject& subject) {
 
 // Hàm tìm kiếm môn học theo mã môn
 PTRSUBJECT ManageSubject::searchSubject(PTRSUBJECT root, const char* code) {
-    if (root == nullptr || strcmp(root->info.subjectCode, code) == 0)
-        return root;
-    if (strcmp(code, root->info.subjectCode) < 0)
-        return searchSubject(root->left, code);
-    return searchSubject(root->right, code);
+    PTRSUBJECT p;
+    p = root;
+    while (p != nullptr) {
+        int cmp = strcmp(code, p->info.subjectCode);
+        if (cmp == 0) return p;
+        else if (cmp < 0) {
+            p = p->left;
+        }
+        else {
+            p = p->right;
+        }
+    }
+    return nullptr;
 }
 
 // Hàm thêm câu hỏi vào môn học
@@ -578,11 +586,34 @@ void ManageSubject::addQuestionToSubject(PTRSUBJECT subjectNode, const string& c
 
 // Hàm in tất cả các môn học (traversal cây nhị phân)
 void ManageSubject::printSubjects(PTRSUBJECT root) {
+    const int STACKSIZE = 500;
+    PTRSUBJECT Stack[STACKSIZE];
+    int sp = -1; // Stack rong
+    PTRSUBJECT p = root;
+    while (p != nullptr) {
+        cout << "Subject Code: " << p->info.subjectCode << ", Subject Name: " << p->info.subjectName << endl;
+        cout << "So cau hoi " << getCountQuestionInList(p->info.listQuestion) << endl;
+
+        if (p->right != nullptr) {
+            Stack[++sp] = p->right;
+        }
+        if (p->left != nullptr) {
+            p = p->left;
+        }
+        else if (sp == -1) break;
+        else p = Stack[sp--];
+    }
+
+}
+
+// Hàm in tất cả các môn học (traversal cây nhị phân)
+void ManageSubject::printSubjectsD(PTRSUBJECT root) {
+
     if (!root) return;
-    printSubjects(root->left);
     cout << "Subject Code: " << root->info.subjectCode << ", Subject Name: " << root->info.subjectName << endl;
     cout << "So cau hoi " << getCountQuestionInList(root->info.listQuestion) << endl;
-    printSubjects(root->right);
+    printSubjectsD(root->left);
+    printSubjectsD(root->right);
 }
 
 // Hàm giải phóng bộ nhớ khi xóa môn học

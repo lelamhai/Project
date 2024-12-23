@@ -35,6 +35,8 @@ private:
     // Hàm in tất cả các môn học (traversal cây nhị phân)
     void printSubjects(PTRSUBJECT root);
 
+    void printSubjectsD(PTRSUBJECT root);
+
     // Hàm giải phóng bộ nhớ khi xóa môn học
     void deleteSubject(PTRSUBJECT root);
 
