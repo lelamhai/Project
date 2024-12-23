@@ -12,11 +12,19 @@
                     "password": "123",
                     "scores": [
                         {
+                            "score": 29.0,
+                            "subjectCode": "INT1336"
+                        },
+                        {
+                            "score": 57.0,
+                            "subjectCode": "INT13145"
+                        },
+                        {
                             "score": 43.0,
                             "subjectCode": "MTH"
                         },
                         {
-                            "score": 14.0,
+                            "score": 71.0,
                             "subjectCode": "CSDL"
                         }
                     ],

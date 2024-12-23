@@ -123,7 +123,7 @@ void HuyTest::main() {
 
 	/*---------------------------THỰC HIỆN THI TRẮC NGHIỆM VERSION R1 ---------------------------------------------*/
 	
-	int check = ManageExam::checkInputExam1("12rfhdah","MTH",3);
+	int check = ManageExam::checkInputExam1("12rfhdah","INT1336",3);
 	//trả ve 1 nếu dữ liệu hợp lệ, =-1 nếu mã môn không tồn tại, =-3 nếu sinh viên đã thi môn này trước đó rổi, =-2 nếu số câu hỏi không hợp lệ, 
 	cout << "Kiem tra = " << check << endl;
 	// KHỞI TẠO
@@ -139,7 +139,7 @@ void HuyTest::main() {
 
 	// KIỂM TRA INPUT VÀO CÓ HỢP LỆ ?
 	bool isCorrectInput = false;
-	isCorrectInput = exam1.setInputExam("MTH", "12rfhdah", numberQuestion_input, timeForExam_min_input);
+	isCorrectInput = exam1.setInputExam("INT1336", "12rfhdah", numberQuestion_input, timeForExam_min_input);
 
 	if (!isCorrectInput) {
 		cout << "Du lieu nhap khong hop le ! " << endl;
@@ -155,10 +155,10 @@ void HuyTest::main() {
 	// demo in ra thông tin câu hỏi
 	for (int i = 0; i < numberQuestion_input; i++) {
 		cout << randomQuestionList[i].questionId << ": " << randomQuestionList[i].content << endl;
-		cout << randomQuestionList[i].optionA << endl;
-		cout << randomQuestionList[i].optionB << endl;
-		cout << randomQuestionList[i].optionC << endl;
-		cout << randomQuestionList[i].optionD << endl;
+		cout << "A: " << randomQuestionList[i].optionA << endl;
+		cout << "B: " << randomQuestionList[i].optionB << endl;
+		cout << "C: " << randomQuestionList[i].optionC << endl;
+		cout << "D: " << randomQuestionList[i].optionD << endl;
 	}
 
 	// kiểm tra xem các ID random tạo ra có trùng lặp không
@@ -174,10 +174,10 @@ void HuyTest::main() {
 
 
 	// TRUYỀN KẾT QUẢ ĐÃ THI XUỐNG BACK END SAU KHI KẾT THÚC BÀI TI
-	//char answeredList[MAX_NUMBER_QUESTION] = {'D','D','D','C',' ','A','B' }; // dòng này đê giả lập danh sách câu trả lời
-	//for (int i=0; i < numberQuestion_input; i++){
-	//	exam1.setAnswer(i, answeredList[i]);
-	//}
+	char answeredList[MAX_NUMBER_QUESTION] = {'D','D','D','C',' ','A','B' }; // dòng này đê giả lập danh sách câu trả lời
+	for (int i=0; i < numberQuestion_input; i++){
+		exam1.setAnswer(i, answeredList[i]);
+	}
 
 	// LẤY KẾT QUẢ THI ̃& ĐIỂM SAU KHI THI XONG
 	resultList result = exam1.getAnsweredList();

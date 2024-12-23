@@ -105,28 +105,6 @@ Question* ManageExam::getRandomQuestion() {
     return randomQuestionList;
 }
 
-//int ManageExam::getRemainingTime() {
-//    return remainingTime_sec;
-//}
-//
-//void ManageExam::changeRemainingTime(int t) {
-//    remainingTime_sec += t;
-//}
-//
-//bool ManageExam::getIsSubmitted() {
-//    return isSubmitted;
-//}
-//void ManageExam::setSubmitted() {
-//    isSubmitted = true;
-//}
-//
-//bool ManageExam::getTimeUp() {
-//    return isTimeUp;
-//}
-//void ManageExam::setTimeUp() {
-//    isTimeUp = true;
-//}
-
 
 Question ManageExam::getRandomedQuestionByIndex(int i) {
     return questionList_Random.getQuestionByIndex(i); 
@@ -279,10 +257,6 @@ void ManageExam::saveResultToFile() {
 float ManageExam::roundNumber(float number, int n) {
     float x = pow(10.0f, n);
     return round(number * x) / x;
-}
-
-int ManageExam::checkInputExam(const char* subjectCode, const int numberQuestion) {
-    return 100;
 }
 
 int ManageExam::checkInputExam1(const char* studentCode, const char* subjectCode, const int numberQuestion) {

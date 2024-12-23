@@ -619,5 +619,93 @@
         "studentCode": "12rfhdah",
         "subjectCode": "MTH",
         "totalQuestion": 7
+    },
+    {
+        "Answered": [
+            {
+                "chosenAnswer": "D",
+                "correctAnswer": "B",
+                "questionId": 58124
+            },
+            {
+                "chosenAnswer": "D",
+                "correctAnswer": "C",
+                "questionId": 59283
+            },
+            {
+                "chosenAnswer": "D",
+                "correctAnswer": "C",
+                "questionId": 68249
+            },
+            {
+                "chosenAnswer": "C",
+                "correctAnswer": "C",
+                "questionId": 74129
+            },
+            {
+                "chosenAnswer": " ",
+                "correctAnswer": "B",
+                "questionId": 48129
+            },
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "B",
+                "questionId": 37481
+            },
+            {
+                "chosenAnswer": "B",
+                "correctAnswer": "C",
+                "questionId": 67284
+            }
+        ],
+        "countCorrect": 1,
+        "score": 14.0,
+        "studentCode": "12rfhdah",
+        "subjectCode": "INT13145",
+        "totalQuestion": 7
+    },
+    {
+        "Answered": [
+            {
+                "chosenAnswer": "D",
+                "correctAnswer": "C",
+                "questionId": 908673
+            },
+            {
+                "chosenAnswer": "D",
+                "correctAnswer": "A",
+                "questionId": 763481
+            },
+            {
+                "chosenAnswer": "D",
+                "correctAnswer": "C",
+                "questionId": 512980
+            },
+            {
+                "chosenAnswer": "C",
+                "correctAnswer": "C",
+                "questionId": 302895
+            },
+            {
+                "chosenAnswer": " ",
+                "correctAnswer": "B",
+                "questionId": 705822
+            },
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "C",
+                "questionId": 840327
+            },
+            {
+                "chosenAnswer": "B",
+                "correctAnswer": "B",
+                "questionId": 308946
+            }
+        ],
+        "countCorrect": 2,
+        "score": 29.0,
+        "studentCode": "12rfhdah",
+        "subjectCode": "INT1336",
+        "totalQuestion": 7
     }
 ]
