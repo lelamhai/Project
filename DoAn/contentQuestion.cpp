@@ -368,20 +368,33 @@ void ContentQuestion::selectData()
 void ContentQuestion::deleteData()
 {
 	int deletePosX = getCenterX(COLUMN_CENTER, 50);
-	PopupDelete pDelete;
-	pDelete.setPosition(deletePosX + 30, 17);
-	pDelete.open();
-	pDelete.handle();
 
-	if (pDelete.getResult())
+	bool isQuestionCanDelete = subject.isQuestionCanDelete(subjectCode, id);
+	if (!isQuestionCanDelete)
 	{
-		bool result = subject.deleteQuestionInSubject(subjectCode, id);
-		if (result)
-		{
-			hover = 0;
-		}
+		PopupNotification pNotification;
+		pNotification.setTitle("Du lieu nay khong the xoa duoc!");
+		pNotification.setPosition(deletePosX + 30, 17);
+		pNotification.open();
+		pNotification.handle();
+		pNotification.close();
 	}
-	pDelete.close();
+	else {
+		PopupDelete pDelete;
+		pDelete.setPosition(deletePosX + 30, 17);
+		pDelete.open();
+		pDelete.handle();
+
+		if (pDelete.getResult())
+		{
+			bool result = subject.deleteQuestionInSubject(subjectCode, id);
+			if (result)
+			{
+				hover = 0;
+			}
+		}
+		pDelete.close();
+	}
 
 	currentQuestion = C_SELECT;
 	return;
