@@ -21,7 +21,7 @@
 #define COLUMN_RIGHT 40
 
 // Frame Content
-#define WIDTH_CONTENT  178
+#define WIDTH_CONTENT  179
 #define HEIGHT_CONTENT  36
 
 #define NOTIFICATION_EMPTY "Vui Long Khong Bo Trong!" 

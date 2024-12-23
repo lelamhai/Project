@@ -302,7 +302,6 @@ void ContentExecute::executeExam()
 			p.handle();
 			if (p.getResult())
 			{
-				resultList result = exam.getAnsweredList();
 				SuspendThread(hThread);
 				p.close();
 				return;
@@ -422,10 +421,8 @@ void ContentExecute::finishExam()
 
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		if (GetAsyncKeyState(VK_ESCAPE))
 		{
-			gotoXY(0,0);
-			cout << "LLH";
 			return;
 		}
 	}

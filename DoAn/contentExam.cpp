@@ -162,6 +162,24 @@ void ContentExam::handle()
 {
 	while (true)
 	{
+		if (currentExam == C_DETAIL)
+		{
+			showCur(0);
+
+			Singleton::getInstance()->isExecute = true;
+			cleanContent();
+			ContentExecute* e = new ContentExecute();
+			e->initExecute(listInput[0].getText(), stoi(listInput[1].getText()), stoi(listInput[2].getText()));
+			e->displayContent();
+			delete e;
+			cleanContent();
+			drawContent();
+			girdTitle();
+			currentExam = C_EXIT;
+			Singleton::getInstance()->moveMenu = 0;
+			Singleton::getInstance()->isExecute = false;
+		}
+
 		switch (currentExam)
 		{
 		case ContentExam::C_SELECT:
@@ -180,8 +198,8 @@ void ContentExam::handle()
 			break;
 		case ContentExam::C_DELETE:
 			break;
-		case ContentExam::C_DETAIL:
-			break;
+	/*	case ContentExam::C_DETAIL:
+			break;*/
 		case ContentExam::C_EXIT:
 			return;
 		default:
@@ -475,15 +493,7 @@ void ContentExam::createData()
 
 			if (result == 1)
 			{
-				Singleton::getInstance()->isExecute = true;
-
-				cleanContent();
-				showCur(0);
-				ContentExecute* e = new ContentExecute();
-				e->initExecute(listInput[0].getText(), stoi(listInput[1].getText()), stoi(listInput[2].getText()));
-				e->displayContent();
-				delete e;
-				currentExam = C_SELECT;
+				currentExam = C_DETAIL;
 				return;
 			}
 			else 
@@ -542,7 +552,7 @@ void ContentExam::createData()
 						text.setContent("");
 					}
 
-					text.setContent("Sinh Vien Da Thi Mon Nay Roi!");
+					text.setContent("Mon Nay Da Thi Roi!");
 					int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 					text.updatePositionX(textPosX);
 
