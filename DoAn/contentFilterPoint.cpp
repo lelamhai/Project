@@ -177,6 +177,21 @@ void ContentFilterPoint::handle()
 {
 	while (true)
 	{
+		if (currentFilter == C_DETAIL)
+		{
+			cleanContent();
+			ContentPrintPoint* pp = new ContentPrintPoint();
+			pp->init(listInput[0].getText(), listInput[1].getText());
+			pp->displayContent();
+			delete pp;
+			cleanContent();
+			cleanContent();
+			drawContent();
+			girdTitle();
+			currentFilter = C_EXIT;
+			Singleton::getInstance()->moveMenu = 0;
+		}
+
 		switch (currentFilter)
 		{
 		case ContentFilterPoint::C_SELECTCLASSROOM:
@@ -210,6 +225,10 @@ void ContentFilterPoint::handle()
 			showCur(1);
 			createData();
 			break;
+
+		case ContentFilterPoint::C_DETAIL:
+			showCur(0);
+
 
 		case ContentFilterPoint::C_EXIT:
 			return;
@@ -382,12 +401,8 @@ void ContentFilterPoint::createData()
 				stateInput = FORM_SUBJECT;
 				continue;
 			}
-
-			cleanContent();
-			ContentPrintPoint p;
-			p.init(listInput[0].getText(), listInput[1].getText());
-			p.displayContent();
-			cleanContent();
+			currentFilter = C_DETAIL;
+			return;
 		}
 
 		if (stateInput == FORM_EXIT)
@@ -528,14 +543,7 @@ void ContentFilterPoint::selectClassroom()
 
 		if (lastHover != hover)
 		{
-			if (textSearch != "")
-			{
-				page = nl.searchClass(textSearch, pageNumber);
-			}
-			else
-			{
-				page = nl.getClassPerPage(pageNumber);
-			}
+			page = nl.searchClass(textSearch, pageNumber);
 
 			for (int i = 0; i < page.classList.countClass; i++)
 			{
@@ -695,16 +703,7 @@ void ContentFilterPoint::selectSubject()
 void ContentFilterPoint::loadDataClassroom()
 {
 	ClassPage page;
-
-	if (textSearch != "")
-	{
-		page = nl.searchClass(textSearch, pageNumber);
-	}
-	else
-	{
-		page = nl.getClassPerPage(pageNumber);
-	}
-
+	page = nl.searchClass(textSearch, pageNumber);
 	int start = 0;
 	int end = pageNumber * page.numberClassPerPage;
 

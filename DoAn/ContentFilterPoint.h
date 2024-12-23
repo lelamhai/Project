@@ -28,6 +28,7 @@ private:
 		C_SEARCHCLASSROOM = 2,
 		C_SEARCHSUBJECT = 3,
 		C_CREATE = 4,
+		C_DETAIL = 5,
 
 		C_EXIT = -1
 	};

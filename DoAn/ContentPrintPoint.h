@@ -31,7 +31,6 @@ private:
 		C_EXIT = -1
 	};
 	StatePrint currentPrint;
-	ScorePage page;
 
 	enum SearchInput
 	{
@@ -40,10 +39,13 @@ private:
 		SEARCH_EXIT = 2
 	};
 	SearchInput stateSearchInput;
-
 	vector<Text> listText;
 
+	ScorePage page;
 	ManageScore manangeScore;
+
+	int point;
+
 	int pageNumber = 1;
 	string textSearch = "";
 	string currentSubjectCode;

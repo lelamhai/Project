@@ -16,7 +16,10 @@ void ContentPrintPoint::init(string classCode, string subjectCode)
 	listText.push_back(Text());
 	listText.push_back(Text());
 
+	listText[0].setColor(ColorCode_DarkGreen);
 	listText[0].setContent(manangeScore.getClassName());
+
+	listText[1].setColor(ColorCode_DarkGreen);
 	listText[1].setContent(manangeScore.getSubjectName());
 }
 
@@ -183,7 +186,7 @@ void ContentPrintPoint::handle()
 			break;
 
 		case ContentPrintPoint::C_EXIT:
-			break;
+			return;
 
 		default:
 			break;
@@ -209,6 +212,12 @@ void ContentPrintPoint::selectData()
 	int lastHover = -1;
 	while (true)
 	{
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		{
+			currentPrint = C_EXIT;
+			return;
+		}
+
 		if (GetAsyncKeyState(VK_UP) & 0x0001)
 		{
 			if (start < hover)
@@ -283,10 +292,22 @@ void ContentPrintPoint::selectData()
 
 		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
 		{
-			cleanContent();
-			ContentHistoryExam h;
-			h.init(currentSubjectCode, currentStudent);
-			h.displayContent();
+			if (point > 0)
+			{
+				cleanContent();
+				ContentHistoryExam h;
+				h.init(currentSubjectCode, currentStudent);
+				h.displayContent();
+			}
+		}
+
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)
+		{
+			if (Singleton::getInstance()->moveMenu != 0)
+			{
+				currentPrint = C_EXIT;
+				return;
+			}
 		}
 
 		if (lastHover != hover)
@@ -303,6 +324,7 @@ void ContentPrintPoint::selectData()
 				{
 					setColorText(ColorCode_DarkGreen);
 					currentStudent = p->studentCode;
+					point = p->score;
 				}
 
 				
@@ -361,6 +383,23 @@ void ContentPrintPoint::findData()
 				return;
 			}
 
+			if (GetAsyncKeyState(VK_TAB) & 0x8000)
+			{
+				if (Singleton::getInstance()->moveMenu != 0)
+				{
+					currentPrint = C_EXIT;
+					Sleep(150);
+					return;
+				}
+			}
+
+			if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+			{
+				currentPrint = C_EXIT;
+				Sleep(150);
+				return;
+			}
+
 			char s = _getch();
 			int key = keySpecial(s);
 			switch (s)
@@ -400,8 +439,10 @@ void ContentPrintPoint::findData()
 
 				if (s >= 'a' && s <= 'z' || s >= 'A' && s <= 'Z' || s >= '0' && s <= '9')
 				{
-					showCur(1);
-
+					if (s >= 'a' && s <= 'z')
+					{
+						s = s - ('a' - 'A');
+					}
 					textSearch.insert(textSearch.begin() + cursorPosition, s);
 					cursorPosition++;
 					cout << s;
