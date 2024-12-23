@@ -368,9 +368,6 @@
     <ClInclude Include="ManageClass.h">
       <Filter>Header Files\BE\Classroom</Filter>
     </ClInclude>
-    <ClInclude Include="json.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ManageQuestion.h">
       <Filter>Header Files\BE\Question</Filter>
     </ClInclude>
@@ -415,6 +412,9 @@
     </ClInclude>
     <ClInclude Include="PopupFinish.h">
       <Filter>Header Files\FE\Popups</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
