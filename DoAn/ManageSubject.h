@@ -4,6 +4,8 @@
 #include "ManageClass.h"
 #include <fstream> 
 
+const string SUBJECT_FILE_NAME = "SubjectData.json";
+
 struct SubjectPage {
     PTRSUBJECT subjects = new SubjectNode;
     int currentPage; // trang hiện tại

@@ -229,9 +229,9 @@
     <ClInclude Include="Text.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="classdata.json" />
+    <None Include="ClassData.json" />
     <None Include="ExamResult.json" />
-    <None Include="subjects.json" />
+    <None Include="SubjectData.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,7 +8,7 @@
 #include "ManageSubject.h"
 #include "ManageScore.h"
 
-const string SOURCE_CLASS = "classdata.json";
+const string SOURCE_CLASS = "ClassData.json";
 
 struct ClassPage {
 	ClassList classList;

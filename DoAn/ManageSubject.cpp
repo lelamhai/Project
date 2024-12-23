@@ -242,7 +242,7 @@ void ManageSubject::saveToFile() {
     saveSubjectToJson(subjectList, j);
 
     // Ghi đối tượng JSON vào file
-    ofstream file("subjects.json");
+    ofstream file(SUBJECT_FILE_NAME);
     if (file.is_open()) {
         file << j.dump(4);  // Lưu với định dạng đẹp (indent = 4)
         file.close();
@@ -286,7 +286,7 @@ void ManageSubject::saveSubjectToJson(PTRSUBJECT node, json& j) {
 }
 
 void ManageSubject::loadFromFile() {
-    ifstream file("subjects.json");
+    ifstream file(SUBJECT_FILE_NAME);
 
     if (!file.is_open()) {
         return;
