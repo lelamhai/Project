@@ -13,107 +13,110 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\GUI">
+    <Filter Include="Source Files\FE">
       <UniqueIdentifier>{faa6c2b8-ca5d-4be6-808c-0c974b0fdca0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GUI\Contents">
+    <Filter Include="Source Files\FE\Contents">
       <UniqueIdentifier>{814952aa-5d1f-4298-9120-69464d51b9eb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GUI\Pages">
+    <Filter Include="Source Files\FE\Pages">
       <UniqueIdentifier>{26840765-75bf-4e35-900f-1fcd8df75408}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GUI\PageTemplate">
+    <Filter Include="Source Files\FE\PageTemplate">
       <UniqueIdentifier>{2673cbee-cc0e-4c4e-b7c7-f8c0edc5c966}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GUI\Systems">
+    <Filter Include="Source Files\FE\Systems">
       <UniqueIdentifier>{2ea8da64-217b-4fda-bac6-e835c9ab6203}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GUI\UI">
+    <Filter Include="Source Files\FE\UI">
       <UniqueIdentifier>{f045d796-550f-4f01-ab06-5f134c2882a8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GUI">
-      <UniqueIdentifier>{a3cfd49c-0086-44bd-98ce-13663cc608b4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\GUI\UI">
-      <UniqueIdentifier>{b11b96b4-c8a8-4b3e-9bb2-161045fb196b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\DATA">
-      <UniqueIdentifier>{b11a8910-1931-4956-9660-d66b7044fc16}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\DATA">
-      <UniqueIdentifier>{77a2f6a7-ec84-4652-8c1d-c07cd14ce6aa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\GUI\Systems">
-      <UniqueIdentifier>{8c6e37bb-089a-4653-87cd-40578e44d97d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\GUI\Pagetemplate">
-      <UniqueIdentifier>{5537b8c0-6080-4dc8-9d28-a98dc63b40fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\GUI\Pages">
-      <UniqueIdentifier>{c5f52a23-a6fa-4a81-b7c7-34ab2016b049}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\GUI\Contents">
-      <UniqueIdentifier>{5b17e81e-f78a-484a-8dd0-211c070d33d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\GUI\Popups">
+    <Filter Include="Source Files\FE\Popups">
       <UniqueIdentifier>{ce4779ad-09a9-497a-8aee-b7a2b96c609f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GUI\Popups">
+    <Filter Include="Header Files\FE">
+      <UniqueIdentifier>{a3cfd49c-0086-44bd-98ce-13663cc608b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FE\UI">
+      <UniqueIdentifier>{b11b96b4-c8a8-4b3e-9bb2-161045fb196b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FE\Systems">
+      <UniqueIdentifier>{8c6e37bb-089a-4653-87cd-40578e44d97d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FE\Pagetemplate">
+      <UniqueIdentifier>{5537b8c0-6080-4dc8-9d28-a98dc63b40fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FE\Pages">
+      <UniqueIdentifier>{c5f52a23-a6fa-4a81-b7c7-34ab2016b049}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FE\Contents">
+      <UniqueIdentifier>{5b17e81e-f78a-484a-8dd0-211c070d33d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FE\Popups">
       <UniqueIdentifier>{59264cf9-e22f-4552-9e64-656524f11bd3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\DATA\Pages">
+    <Filter Include="Header Files\BE">
+      <UniqueIdentifier>{b11a8910-1931-4956-9660-d66b7044fc16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BE\Pages">
       <UniqueIdentifier>{d37ce050-ed96-4972-83f0-d2c75fc63086}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\DATA\Student">
+    <Filter Include="Header Files\BE\Student">
       <UniqueIdentifier>{3e78d13a-9df4-4502-aa8e-d841f38f88c0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\DATA\MCQ">
+    <Filter Include="Header Files\BE\MCQ">
       <UniqueIdentifier>{2d7020b0-c018-4e7a-863f-a519e7803051}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\DATA\Classroom">
+    <Filter Include="Header Files\BE\Classroom">
       <UniqueIdentifier>{c484740d-9e74-4590-a437-5de7c76910be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DATA\MCQ">
-      <UniqueIdentifier>{bc475abf-cf13-4176-b674-9b0c3b4b0805}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\DATA\Student">
-      <UniqueIdentifier>{a07e405e-e868-4d71-a52b-3baded9f234c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\DATA\Classroom">
-      <UniqueIdentifier>{50a46e9a-85d5-429c-ae96-c2307f5c338a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\DATA\Pages">
-      <UniqueIdentifier>{4b3824ff-c703-497b-8fd9-8c5b7d753540}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\DATA\Main">
-      <UniqueIdentifier>{09aeca34-0907-4fd6-a624-fcce05c33886}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\DATA\Main">
+    <Filter Include="Header Files\BE\Main">
       <UniqueIdentifier>{aa9ca743-c022-4e3e-a88b-90db3055b6ee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\DATA\Question">
+    <Filter Include="Header Files\BE\Question">
       <UniqueIdentifier>{437b72d3-537e-4e2f-971f-8e16d516e116}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DATA\Question">
-      <UniqueIdentifier>{315882e5-f8ad-4821-94c5-67b54993e164}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\DATA\Subject">
+    <Filter Include="Header Files\BE\Subject">
       <UniqueIdentifier>{ee2de02e-3c7c-40a7-9d10-24a3db8efcff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DATA\Subject">
-      <UniqueIdentifier>{c6241ce7-08c7-46e6-9800-79a558d55105}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\DATA\Score">
+    <Filter Include="Header Files\BE\Score">
       <UniqueIdentifier>{49f4a09b-ccdc-4b3d-9c91-32d1fd606dda}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DATA\Score">
-      <UniqueIdentifier>{b3a71ed6-1a7d-438a-97a5-4229076df177}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\DATA\Random">
+    <Filter Include="Header Files\BE\Random">
       <UniqueIdentifier>{91cef183-67f4-4748-87ac-6659a250425b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DATA\Random">
+    <Filter Include="Source Files\BE">
+      <UniqueIdentifier>{77a2f6a7-ec84-4652-8c1d-c07cd14ce6aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BE\MCQ">
+      <UniqueIdentifier>{bc475abf-cf13-4176-b674-9b0c3b4b0805}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BE\Student">
+      <UniqueIdentifier>{a07e405e-e868-4d71-a52b-3baded9f234c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BE\Classroom">
+      <UniqueIdentifier>{50a46e9a-85d5-429c-ae96-c2307f5c338a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BE\Pages">
+      <UniqueIdentifier>{4b3824ff-c703-497b-8fd9-8c5b7d753540}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BE\Main">
+      <UniqueIdentifier>{09aeca34-0907-4fd6-a624-fcce05c33886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BE\Question">
+      <UniqueIdentifier>{315882e5-f8ad-4821-94c5-67b54993e164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BE\Subject">
+      <UniqueIdentifier>{c6241ce7-08c7-46e6-9800-79a558d55105}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BE\Score">
+      <UniqueIdentifier>{b3a71ed6-1a7d-438a-97a5-4229076df177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BE\Random">
       <UniqueIdentifier>{2134ba0e-ec52-444d-a0b9-e45e3bea1d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Database">
+      <UniqueIdentifier>{067dab02-aa58-420e-80aa-32127073f164}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -121,291 +124,308 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="color.cpp">
-      <Filter>Source Files\GUI\Systems</Filter>
+      <Filter>Source Files\FE\Systems</Filter>
     </ClCompile>
     <ClCompile Include="draw.cpp">
-      <Filter>Source Files\GUI\Systems</Filter>
+      <Filter>Source Files\FE\Systems</Filter>
     </ClCompile>
     <ClCompile Include="keyboard.cpp">
-      <Filter>Source Files\GUI\Systems</Filter>
+      <Filter>Source Files\FE\Systems</Filter>
     </ClCompile>
     <ClCompile Include="windows.cpp">
-      <Filter>Source Files\GUI\Systems</Filter>
+      <Filter>Source Files\FE\Systems</Filter>
     </ClCompile>
     <ClCompile Include="loading.cpp">
-      <Filter>Source Files\GUI\Pages</Filter>
+      <Filter>Source Files\FE\Pages</Filter>
     </ClCompile>
     <ClCompile Include="login.cpp">
-      <Filter>Source Files\GUI\Pages</Filter>
+      <Filter>Source Files\FE\Pages</Filter>
     </ClCompile>
     <ClCompile Include="header.cpp">
-      <Filter>Source Files\GUI\PageTemplate</Filter>
+      <Filter>Source Files\FE\PageTemplate</Filter>
     </ClCompile>
     <ClCompile Include="sidebar.cpp">
-      <Filter>Source Files\GUI\PageTemplate</Filter>
+      <Filter>Source Files\FE\PageTemplate</Filter>
     </ClCompile>
     <ClCompile Include="footer.cpp">
-      <Filter>Source Files\GUI\PageTemplate</Filter>
+      <Filter>Source Files\FE\PageTemplate</Filter>
     </ClCompile>
     <ClCompile Include="configApp.cpp">
-      <Filter>Source Files\GUI\Systems</Filter>
+      <Filter>Source Files\FE\Systems</Filter>
     </ClCompile>
     <ClCompile Include="page.cpp">
-      <Filter>Source Files\GUI\Pages</Filter>
+      <Filter>Source Files\FE\Pages</Filter>
     </ClCompile>
     <ClCompile Include="Layout.cpp">
-      <Filter>Source Files\GUI\Pages</Filter>
+      <Filter>Source Files\FE\Pages</Filter>
     </ClCompile>
     <ClCompile Include="InputField.h">
-      <Filter>Header Files\GUI\UI</Filter>
+      <Filter>Header Files\FE\UI</Filter>
     </ClCompile>
     <ClCompile Include="inputField.cpp">
-      <Filter>Source Files\GUI\UI</Filter>
+      <Filter>Source Files\FE\UI</Filter>
     </ClCompile>
     <ClCompile Include="text.cpp">
-      <Filter>Source Files\GUI\UI</Filter>
+      <Filter>Source Files\FE\UI</Filter>
     </ClCompile>
     <ClCompile Include="popup.cpp">
-      <Filter>Source Files\GUI\Popups</Filter>
+      <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
-    <ClCompile Include="popupDelete.cpp">
-      <Filter>Source Files\GUI\Popups</Filter>
+    <ClCompile Include="popupQuestion.cpp">
+      <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
     <ClCompile Include="ClassroomSevice.cpp">
-      <Filter>Source Files\DATA\Classroom</Filter>
+      <Filter>Source Files\BE\Classroom</Filter>
     </ClCompile>
     <ClCompile Include="StudentList.cpp">
-      <Filter>Source Files\DATA\Student</Filter>
+      <Filter>Source Files\BE\Student</Filter>
     </ClCompile>
     <ClCompile Include="StudentService.cpp">
-      <Filter>Source Files\DATA\Student</Filter>
+      <Filter>Source Files\BE\Student</Filter>
     </ClCompile>
     <ClCompile Include="LoadingData.cpp">
-      <Filter>Source Files\DATA\Pages</Filter>
+      <Filter>Source Files\BE\Pages</Filter>
     </ClCompile>
     <ClCompile Include="LoginData.cpp">
-      <Filter>Source Files\DATA\Pages</Filter>
+      <Filter>Source Files\BE\Pages</Filter>
     </ClCompile>
     <ClCompile Include="HuyTest.cpp">
-      <Filter>Source Files\DATA\Main</Filter>
+      <Filter>Source Files\BE\Main</Filter>
     </ClCompile>
     <ClCompile Include="DungTest.cpp">
-      <Filter>Source Files\DATA\Main</Filter>
+      <Filter>Source Files\BE\Main</Filter>
     </ClCompile>
     <ClCompile Include="ContentSubject.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="content.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="contentAbout.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="contentClassroom.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="contentExam.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="contentQuestion.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="contentHistoryExam.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="contentSubject.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="ManageClass.cpp">
-      <Filter>Source Files\DATA\Classroom</Filter>
+      <Filter>Source Files\BE\Classroom</Filter>
     </ClCompile>
     <ClCompile Include="ManageStudent.cpp">
-      <Filter>Source Files\DATA\Student</Filter>
+      <Filter>Source Files\BE\Student</Filter>
     </ClCompile>
     <ClCompile Include="ManageQuestion.cpp">
-      <Filter>Source Files\DATA\Question</Filter>
+      <Filter>Source Files\BE\Question</Filter>
     </ClCompile>
     <ClCompile Include="ManageSubject.cpp">
-      <Filter>Source Files\DATA\Subject</Filter>
+      <Filter>Source Files\BE\Subject</Filter>
     </ClCompile>
     <ClCompile Include="singleton.cpp">
-      <Filter>Source Files\GUI\Systems</Filter>
+      <Filter>Source Files\FE\Systems</Filter>
     </ClCompile>
     <ClCompile Include="contentStudent.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="popupTutorial.cpp">
-      <Filter>Source Files\GUI\Popups</Filter>
+      <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
     <ClCompile Include="ManageExam.cpp">
-      <Filter>Source Files\DATA\Pages</Filter>
+      <Filter>Source Files\BE\Pages</Filter>
     </ClCompile>
     <ClCompile Include="ManageScore.cpp">
-      <Filter>Source Files\DATA\Score</Filter>
+      <Filter>Source Files\BE\Score</Filter>
     </ClCompile>
     <ClCompile Include="contentExecute.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="contentPrintPoint.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="contentFilterPoint.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
     <ClCompile Include="popupFinishExam.cpp">
-      <Filter>Source Files\GUI\Popups</Filter>
+      <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
     <ClCompile Include="popupNotification.cpp">
-      <Filter>Source Files\GUI\Popups</Filter>
+      <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
     <ClCompile Include="RandomID.cpp">
-      <Filter>Source Files\DATA\Random</Filter>
+      <Filter>Source Files\BE\Random</Filter>
     </ClCompile>
     <ClCompile Include="contentInputQuestion.cpp">
-      <Filter>Source Files\GUI\Contents</Filter>
+      <Filter>Source Files\FE\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="popupFinish.cpp">
+      <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
-      <Filter>Header Files\GUI\Pages</Filter>
+      <Filter>Header Files\FE\Pages</Filter>
     </ClInclude>
     <ClInclude Include="Login.h">
-      <Filter>Header Files\GUI\Pages</Filter>
+      <Filter>Header Files\FE\Pages</Filter>
     </ClInclude>
     <ClInclude Include="mycolor.h">
-      <Filter>Header Files\GUI\Systems</Filter>
+      <Filter>Header Files\FE\Systems</Filter>
     </ClInclude>
     <ClInclude Include="mydraw.h">
-      <Filter>Header Files\GUI\Systems</Filter>
+      <Filter>Header Files\FE\Systems</Filter>
     </ClInclude>
     <ClInclude Include="mykeyboard.h">
-      <Filter>Header Files\GUI\Systems</Filter>
+      <Filter>Header Files\FE\Systems</Filter>
     </ClInclude>
     <ClInclude Include="mywindows.h">
-      <Filter>Header Files\GUI\Systems</Filter>
+      <Filter>Header Files\FE\Systems</Filter>
     </ClInclude>
     <ClInclude Include="Header.h">
-      <Filter>Header Files\GUI\Pagetemplate</Filter>
+      <Filter>Header Files\FE\Pagetemplate</Filter>
     </ClInclude>
     <ClInclude Include="Sidebar.h">
-      <Filter>Header Files\GUI\Pagetemplate</Filter>
+      <Filter>Header Files\FE\Pagetemplate</Filter>
     </ClInclude>
     <ClInclude Include="Footer.h">
-      <Filter>Header Files\GUI\Pagetemplate</Filter>
+      <Filter>Header Files\FE\Pagetemplate</Filter>
     </ClInclude>
     <ClInclude Include="configApp.h">
-      <Filter>Header Files\GUI\Systems</Filter>
+      <Filter>Header Files\FE\Systems</Filter>
     </ClInclude>
     <ClInclude Include="Page.h">
-      <Filter>Header Files\GUI\Pages</Filter>
+      <Filter>Header Files\FE\Pages</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
-      <Filter>Header Files\GUI\UI</Filter>
+      <Filter>Header Files\FE\UI</Filter>
     </ClInclude>
     <ClInclude Include="Layout.h">
-      <Filter>Header Files\GUI\Pages</Filter>
+      <Filter>Header Files\FE\Pages</Filter>
     </ClInclude>
     <ClInclude Include="Popup.h">
-      <Filter>Header Files\GUI\Popups</Filter>
+      <Filter>Header Files\FE\Popups</Filter>
     </ClInclude>
-    <ClInclude Include="PopupDelete.h">
-      <Filter>Header Files\GUI\Popups</Filter>
+    <ClInclude Include="PopupQuestion.h">
+      <Filter>Header Files\FE\Popups</Filter>
     </ClInclude>
     <ClInclude Include="StrucData.h">
-      <Filter>Header Files\DATA</Filter>
+      <Filter>Header Files\BE</Filter>
     </ClInclude>
     <ClInclude Include="LoginData.h">
-      <Filter>Header Files\DATA\Pages</Filter>
+      <Filter>Header Files\BE\Pages</Filter>
     </ClInclude>
     <ClInclude Include="LoadingData.h">
-      <Filter>Header Files\DATA\Pages</Filter>
+      <Filter>Header Files\BE\Pages</Filter>
     </ClInclude>
     <ClInclude Include="StudentList.h">
-      <Filter>Header Files\DATA\Student</Filter>
+      <Filter>Header Files\BE\Student</Filter>
     </ClInclude>
     <ClInclude Include="Classroom.h">
-      <Filter>Header Files\DATA\Classroom</Filter>
+      <Filter>Header Files\BE\Classroom</Filter>
     </ClInclude>
     <ClInclude Include="Student.h">
-      <Filter>Header Files\DATA\Student</Filter>
+      <Filter>Header Files\BE\Student</Filter>
     </ClInclude>
     <ClInclude Include="MCQ.h">
-      <Filter>Header Files\DATA\MCQ</Filter>
+      <Filter>Header Files\BE\MCQ</Filter>
     </ClInclude>
     <ClInclude Include="HuyTest.h">
-      <Filter>Header Files\DATA\Main</Filter>
+      <Filter>Header Files\BE\Main</Filter>
     </ClInclude>
     <ClInclude Include="DungTest.h">
-      <Filter>Header Files\DATA\Main</Filter>
+      <Filter>Header Files\BE\Main</Filter>
     </ClInclude>
     <ClInclude Include="ContentAbout.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="ContentClassroom.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="ContentHistoryExam.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="ContentQuestion.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="ContentExam.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="Content.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="ManageStudent.h">
-      <Filter>Header Files\DATA\Student</Filter>
+      <Filter>Header Files\BE\Student</Filter>
     </ClInclude>
     <ClInclude Include="ManageClass.h">
-      <Filter>Header Files\DATA\Classroom</Filter>
+      <Filter>Header Files\BE\Classroom</Filter>
     </ClInclude>
     <ClInclude Include="json.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ManageQuestion.h">
-      <Filter>Header Files\DATA\Question</Filter>
+      <Filter>Header Files\BE\Question</Filter>
     </ClInclude>
     <ClInclude Include="ManageSubject.h">
-      <Filter>Header Files\DATA\Subject</Filter>
+      <Filter>Header Files\BE\Subject</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
-      <Filter>Header Files\GUI\Systems</Filter>
+      <Filter>Header Files\FE\Systems</Filter>
     </ClInclude>
     <ClInclude Include="ContentStudent.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="PopupTutorial.h">
-      <Filter>Header Files\GUI\Popups</Filter>
+      <Filter>Header Files\FE\Popups</Filter>
     </ClInclude>
     <ClInclude Include="ManageExam.h">
-      <Filter>Header Files\DATA\Pages</Filter>
+      <Filter>Header Files\BE\Pages</Filter>
     </ClInclude>
     <ClInclude Include="ManageScore.h">
-      <Filter>Header Files\DATA\Score</Filter>
+      <Filter>Header Files\BE\Score</Filter>
     </ClInclude>
     <ClInclude Include="ContentExecute.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="ContentPrintPoint.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="ContentFilterPoint.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
     <ClInclude Include="PopupFinishExam.h">
-      <Filter>Header Files\GUI\Popups</Filter>
+      <Filter>Header Files\FE\Popups</Filter>
     </ClInclude>
     <ClInclude Include="PopupNotification.h">
-      <Filter>Header Files\GUI\Popups</Filter>
+      <Filter>Header Files\FE\Popups</Filter>
     </ClInclude>
     <ClInclude Include="RandomID.h">
-      <Filter>Header Files\DATA\Random</Filter>
+      <Filter>Header Files\BE\Random</Filter>
     </ClInclude>
     <ClInclude Include="ContentInputQuestion.h">
-      <Filter>Header Files\GUI\Contents</Filter>
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
+    <ClInclude Include="PopupFinish.h">
+      <Filter>Header Files\FE\Popups</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="subjects.json">
+      <Filter>Resource Files\Database</Filter>
+    </None>
+    <None Include="ExamResult.json">
+      <Filter>Resource Files\Database</Filter>
+    </None>
+    <None Include="classdata.json">
+      <Filter>Resource Files\Database</Filter>
+    </None>
   </ItemGroup>
 </Project>

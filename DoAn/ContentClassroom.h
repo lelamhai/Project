@@ -11,7 +11,7 @@
 #include "mywindows.h"
 
 
-#include "PopupDelete.h"
+#include "PopupQuestion.h"
 #include "PopupNotification.h"
 #include "InputField.h"
 #include "Text.h"

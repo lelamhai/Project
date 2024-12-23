@@ -152,13 +152,14 @@
     <ClCompile Include="ManageScore.cpp" />
     <ClCompile Include="ManageStudent.cpp" />
     <ClCompile Include="ManageSubject.cpp" />
-    <ClCompile Include="popupDelete.cpp" />
+    <ClCompile Include="popupQuestion.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
     <ClCompile Include="inputField.cpp" />
     <ClCompile Include="InputField.h" />
     <ClCompile Include="page.cpp" />
     <ClCompile Include="popup.cpp" />
+    <ClCompile Include="popupFinish.cpp" />
     <ClCompile Include="popupFinishExam.cpp" />
     <ClCompile Include="popupNotification.cpp" />
     <ClCompile Include="popupTutorial.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="ManageScore.h" />
     <ClInclude Include="ManageSubject.h" />
     <ClInclude Include="MCQ.h" />
+    <ClInclude Include="PopupFinish.h" />
     <ClInclude Include="PopupFinishExam.h" />
     <ClInclude Include="PopupNotification.h" />
     <ClInclude Include="PopupTutorial.h" />
@@ -219,12 +221,17 @@
     <ClInclude Include="Login.h" />
     <ClInclude Include="Page.h" />
     <ClInclude Include="Popup.h" />
-    <ClInclude Include="PopupDelete.h" />
+    <ClInclude Include="PopupQuestion.h" />
     <ClInclude Include="Sidebar.h" />
     <ClInclude Include="mywindows.h" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="StrucData.h" />
     <ClInclude Include="Text.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="classdata.json" />
+    <None Include="ExamResult.json" />
+    <None Include="subjects.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

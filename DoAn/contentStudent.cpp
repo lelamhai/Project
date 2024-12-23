@@ -804,7 +804,7 @@ void ContentStudent::deleteData()
 	}
 	else
 	{
-		PopupDelete pDelete;
+		PopupQuestion pDelete;
 		pDelete.setPosition(deletePosX + 30, 17);
 		pDelete.open();
 		pDelete.handle();
