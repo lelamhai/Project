@@ -204,19 +204,33 @@ void InputField::handleInput()
 		case RIGHT:
 			continue;
 
-		default:
-			break;
+		/*default:
+			break;*/
 		}
 
 		switch (s)
 		{
 		case ADD:
-			keyInput = ADD;
-			return;
+			if (useGender)
+			{
+				keyInput = ADD;
+				return;
+			}
+			inputString.insert(inputString.begin() + cursorPosition, s);
+			cursorPosition++;
+			cout << s;
+			break;
 
 		case SUBTRACT:
-			keyInput = SUBTRACT;
-			return;
+			if (useGender)
+			{
+				keyInput = SUBTRACT;
+				return;
+			}
+			inputString.insert(inputString.begin() + cursorPosition, s);
+			cursorPosition++;
+			cout << s;
+			break;
 
 		case SPACEBAR:
 			if (notUseSpace)
@@ -294,6 +308,30 @@ void InputField::handleInput()
 
 			if (inputString.length() > maxLen)
 			{
+				break;
+			}
+
+			if (useSpecial && (s == '!' || s == '@' || s == '#' || s == '$' || s == '%' || s == '^' || s == '&' || s == '*' ||  
+				s == '_' || s == '=' || s == '/' || s == '(' || s == ')'))
+			{
+				inputString.insert(inputString.begin() + cursorPosition, s);
+				cursorPosition++;
+				cout << s;
+				if (useHide)
+				{
+					Sleep(150);
+					gotoXY(whereX() - 1, whereY());
+					cout << "*";
+				}
+
+				if (cursorPosition != inputString.length())
+				{
+					for (int i = cursorPosition; i <= inputString.length(); i++)
+					{
+						cout << inputString[i];
+					}
+					gotoXY(whereX() - (inputString.length() - cursorPosition), whereY());
+				}
 				break;
 			}
 

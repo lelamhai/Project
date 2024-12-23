@@ -47,6 +47,7 @@ void ContentInputQuestion::drawContent()
 		listValidation.push_back(Text());
 		listInput.push_back(InputField());
 
+		listInput[i].useSpecial = true;
 		listInput[i].setMaxLen(166);
 		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING, DISTANCE_HEADER + 6 + (y * i));
@@ -88,6 +89,7 @@ void ContentInputQuestion::drawContent()
 	listTitle[4].setContent("* Noi Dung D");
 	listTitle[4].display();
 	
+	listInput[5].useSpecial = false;
 	listTitle[5].setContent("* Dap An");
 	listTitle[5].display();
 

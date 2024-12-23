@@ -27,6 +27,7 @@ public:
 	bool useNum = false;
 	bool notUseZero = false;
 	bool useAnswer = false;
+	bool useSpecial = false;
 
 	void setMaxLen(int length);
 	void setMinLen(int length);
