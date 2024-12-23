@@ -76,8 +76,8 @@ void HuyTest::main() {
 	cout << "Test crack" << endl;
 
 	/*---------------------------IN RA LỊCH SỬ KẾT QUẢ ĐÃ THI MÔN HỌC CỦA MỘT SINH VIÊN ---------------------------------------------*/
-	/*
-	resultList* rs = ManageScore::loadResultFromFile("CSDL", "12rfh"); // tìm kết quả thi của một sinh viên từ data base
+	
+	resultList* rs = ManageScore::loadResultFromFile("CSDL", "12rfhdah"); // tìm kết quả thi của một sinh viên từ data base
 	
 	// demo in ra các thông tin kết quả thi
 	if (rs == nullptr) {
@@ -112,7 +112,7 @@ void HuyTest::main() {
 	ManageScore::deallocateResulList(rs); // giải phóng bộ nhớ nếu chuyển trang khác, không dùng nữa
 
 	// LẤY NỘI DUNG CÂU HỎI ĐÃ THI VÀ DEMO IN RA
-	questionRecordList q = ManageScore::getQuestionExamRecord("CSDL", "12rfh");
+	questionRecordList q = ManageScore::getQuestionExamRecord("INT1336", "12rfhdah");
 	for (int i = 0; i < q.countQuestion; i++) {
 		cout << "Cau " << i + 1 << ": " << q.list[i].content << endl
 			<< q.list[i].optionA << endl

@@ -230,7 +230,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassData.json" />
-    <None Include="ExamResult.json" />
+    <None Include="ExamRecordData.json" />
     <None Include="SubjectData.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
