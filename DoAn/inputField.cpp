@@ -43,7 +43,7 @@ void InputField::focus()
 void InputField::clean()
 {
 	string blankFill;
-	blankFill.resize(WIDTH_INPUT - 1, ' ');
+	blankFill.resize(w - 1, ' ');
 	for (int i = 0; i < 1; i++)
 	{
 		gotoXY(x + 1, y + 1);
