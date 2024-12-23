@@ -368,8 +368,8 @@ void ContentQuestion::selectData()
 void ContentQuestion::deleteData()
 {
 	int deletePosX = getCenterX(COLUMN_CENTER, 50);
-
-	bool isQuestionCanDelete = subject.isQuestionCanDelete(subjectCode, id);
+	ManageSubject updatedSubject;
+	bool isQuestionCanDelete = updatedSubject.isQuestionCanDelete(subjectCode, id);
 	if (!isQuestionCanDelete)
 	{
 		PopupNotification pNotification;
@@ -387,7 +387,7 @@ void ContentQuestion::deleteData()
 
 		if (pDelete.getResult())
 		{
-			bool result = subject.deleteQuestionInSubject(subjectCode, id);
+			bool result = updatedSubject.deleteQuestionInSubject(subjectCode, id);
 			if (result)
 			{
 				hover = 0;

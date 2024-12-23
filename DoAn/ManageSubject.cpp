@@ -116,6 +116,17 @@ bool ManageSubject::deleteQuestionInSubject(const string subjectCode, int questi
     PTRQUESTION questionList = subjectFound->info.listQuestion;
     if (questionList == nullptr) return false;
     
+    // Kiểm tra và xóa câu hỏi đầu tiên nếu khớp
+    if (questionList->info.questionId == questionId) {
+        if (questionList->info.isInExam) return false;
+        PTRQUESTION temp = questionList;
+        questionList = questionList->next;
+        delete temp;
+        subjectFound->info.listQuestion = questionList;
+        saveToFile();
+        return true;
+    }
+
     PTRQUESTION prev = questionList;
     PTRQUESTION curr = questionList->next;
     while (curr != nullptr) {
@@ -123,6 +134,7 @@ bool ManageSubject::deleteQuestionInSubject(const string subjectCode, int questi
             if (curr->info.isInExam) return false;
             prev->next = curr->next;
             delete curr;
+            subjectFound->info.listQuestion = questionList;
             saveToFile();
             return true;
         }
@@ -555,7 +567,7 @@ PTRSUBJECT ManageSubject::searchSubject(PTRSUBJECT root, const char* code) {
 }
 
 // Hàm thêm câu hỏi vào môn học
-void ManageSubject::addQuestionToSubject(PTRSUBJECT subjectNode, const string& content,
+void ManageSubject::addQuestionToSubject(PTRSUBJECT& subjectNode, const string& content,
     const string& optionA, const string& optionB,
     const string& optionC, const string& optionD, char answer) {
     // Tạo câu hỏi mới

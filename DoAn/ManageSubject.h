@@ -28,7 +28,7 @@ private:
     PTRSUBJECT searchSubject(PTRSUBJECT root, const char* code);
 
     // Hàm thêm câu hỏi vào môn học
-    void addQuestionToSubject(PTRSUBJECT subjectNode, const string& content,
+    void addQuestionToSubject(PTRSUBJECT& subjectNode, const string& content,
         const string& optionA, const string& optionB,
         const string& optionC, const string& optionD, char answer);
 
