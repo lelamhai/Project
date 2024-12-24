@@ -14,6 +14,7 @@
 class ContentExam : public Content
 {
 private:
+	bool isLoadFirst = true;
 	enum StateExam
 	{
 		C_SELECT	= 0, // F1
@@ -47,17 +48,9 @@ private:
 
 
 	ManageSubject subject;
-
 	vector<InputField> listInput;
 	vector<Text> listText;
-
 	Text text;
-
-	/*InputField listInput[3] = {
-		inputExamCode,
-		inputCount,
-		inputMinute
-	};*/
 
 	int indexTree = 0;
 	int moveMenu = 0;

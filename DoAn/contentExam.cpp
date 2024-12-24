@@ -61,10 +61,14 @@ void ContentExam::drawContent()
 	listText[1].setContent("Vui Long Nhap So Cau!");
 	listInput[1].notUseZero = true;
 	listInput[1].useNum = true;
+	listInput[1].setText("5");
+	listInput[1].display();
 
 	listText[2].setContent("Vui Long Nhap So Phut!");
 	listInput[2].notUseZero = true;
 	listInput[2].useNum = true;
+	listInput[2].setText("5");
+	listInput[2].display();
 
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
@@ -100,7 +104,7 @@ void ContentExam::drawContent()
 	string note[] = {
 		"F1: Chon Du Lieu Trong Bang",
 		"F3: Tim Mon",
-		"Ins: Nhap Thong Tin",
+		"Ins: Chinh Sua Thong Tin",
 		"Enter: Thi",
 		"",
 		"Phim Len|Xuong: Chon Du Lieu",
@@ -178,6 +182,9 @@ void ContentExam::handle()
 			currentExam = C_EXIT;
 			Singleton::getInstance()->moveMenu = 0;
 			Singleton::getInstance()->isExecute = false;
+
+			lineX(0, DISTANCE_HEADER, getConsoleWidth());
+			lineX(0, getConsoleHeight() - DISTANCE_HEADER, getConsoleWidth());
 		}
 
 		switch (currentExam)
@@ -313,6 +320,20 @@ void ContentExam::selectData()
 			}
 		}
 
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		{
+			if (isLoadFirst)
+			{
+				int result = ManageExam::checkInputExam1(Singleton::getInstance()->role.c_str(), listInput[0].getText().c_str(), stoi(listInput[1].getText()));
+
+				if (result == 1)
+				{
+					currentExam = C_DETAIL;
+					return;
+				}
+			}
+		}
+
 		if (hover != lastHover)
 		{
 			indexTree = 0;
@@ -326,10 +347,6 @@ void ContentExam::selectData()
 
 void ContentExam::createData()
 {
-	listInput[0].setText("");
-	listInput[1].setText("");
-	listInput[2].setText("");
-
 	stateInput = FORM_CODE;
 	while (true)
 	{
@@ -424,7 +441,7 @@ void ContentExam::createData()
 				break;
 
 			case UP:
-				stateInput = FORM_CODE;
+				stateInput = FORM_MINUTE;
 				break;
 
 			case DOWN:
@@ -479,7 +496,7 @@ void ContentExam::createData()
 				break;
 
 			case DOWN:
-				stateInput = FORM_CODE;
+				stateInput = FORM_COUNT;
 				break;
 
 			default:
@@ -692,6 +709,8 @@ void ContentExam::loadDataTree(PTRSUBJECT root)
 	setColorText(ColorCode_White);
 	if (hover == indexTree)
 	{
+		listInput[0].setText(root->info.subjectCode);
+		listInput[0].display();
 		setColorText(ColorCode_DarkGreen);
 	}
 	int codeX = getCenterX(40, strlen(root->info.subjectCode));
