@@ -6,6 +6,7 @@
 
 #include "ManageSubject.h"
 
+#include "ToastMessage.h"
 #include "Content.h"
 #include "Text.h"
 #include "InputField.h"
@@ -62,6 +63,7 @@ public:
 	void createData();
 	void editData();
 	void setStateInputQuestion(StateInputQuestion state);
+	void cleanInput();
 	ContentInputQuestion();
 	~ContentInputQuestion();
 };

@@ -170,22 +170,6 @@ void ContentInputQuestion::createData()
 				stateInput = FORM_EXIT;
 				break;
 
-				/*case F1:
-					currentQuestion = C_SELECT;
-					return;
-
-				case F3:
-					currentQuestion = C_SEARCH;
-					return;
-
-				case TAB:
-					if (Singleton::getInstance()->moveMenu != 0)
-					{
-						currentQuestion = C_EXIT;
-						return;
-					}
-					break;*/
-
 			case UP:
 				stateInput = FORM_ContentAnswer;
 				break;
@@ -219,21 +203,6 @@ void ContentInputQuestion::createData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-				/*case F1:
-					currentQuestion = C_SELECT;
-					return;
-
-				case F3:
-					currentQuestion = C_SEARCH;
-					return;
-
-				case TAB:
-					if (Singleton::getInstance()->moveMenu != 0)
-					{
-						currentQuestion = C_EXIT;
-						return;
-					}
-					break;*/
 
 			case UP:
 				stateInput = FORM_ContentMain;
@@ -267,21 +236,6 @@ void ContentInputQuestion::createData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-				/*case F1:
-					currentQuestion = C_SELECT;
-					return;
-
-				case F3:
-					currentQuestion = C_SEARCH;
-					return;
-
-				case TAB:
-					if (Singleton::getInstance()->moveMenu != 0)
-					{
-						currentQuestion = C_EXIT;
-						return;
-					}
-					break;*/
 
 			case UP:
 				stateInput = FORM_ContentA;
@@ -316,21 +270,6 @@ void ContentInputQuestion::createData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-				/*case F1:
-					currentQuestion = C_SELECT;
-					return;
-
-				case F3:
-					currentQuestion = C_SEARCH;
-					return;
-
-				case TAB:
-					if (Singleton::getInstance()->moveMenu != 0)
-					{
-						currentQuestion = C_EXIT;
-						return;
-					}
-					break;*/
 
 			case UP:
 				stateInput = FORM_ContentB;
@@ -364,21 +303,6 @@ void ContentInputQuestion::createData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-				/*case F1:
-					currentQuestion = C_SELECT;
-					return;
-
-				case F3:
-					currentQuestion = C_SEARCH;
-					return;
-
-				case TAB:
-					if (Singleton::getInstance()->moveMenu != 0)
-					{
-						currentQuestion = C_EXIT;
-						return;
-					}
-					break;*/
 
 			case UP:
 				stateInput = FORM_ContentC;
@@ -412,21 +336,6 @@ void ContentInputQuestion::createData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-				/*case F1:
-					currentQuestion = C_SELECT;
-					return;
-
-				case F3:
-					currentQuestion = C_SEARCH;
-					return;*/
-
-					/*case TAB:
-						if (Singleton::getInstance()->moveMenu != 0)
-						{
-							currentQuestion = C_EXIT;
-							return;
-						}
-						break;*/
 
 			case UP:
 				stateInput = FORM_ContentD;
@@ -446,22 +355,27 @@ void ContentInputQuestion::createData()
 			bool result = subject.addQuestionInSubject(subjectCode.c_str(), listInput[0].getText(), listInput[1].getText(), listInput[2].getText(), listInput[3].getText(), listInput[4].getText(), listInput[5].getText()[0]);
 			if (result)
 			{
-				text.clean();
-				text.setContent(NOTIFICATION_INSERT_FINISH);
-				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
-				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
-				text.setColor(ColorCode_DarkGreen);
+				showCur(0);
+				int posX = getCenterX(COLUMN_CENTER, 50);
+				ToastMessage m;
+				m.setFrame(50, 5);
+				m.setTitle(NOTIFICATION_INSERT_FINISH);
+				m.setPosition(posX + 30, 17);
+				m.open();
+				m.close();
+				cleanInput();
+				cleanTable();
+				showCur(0);
+				drawContent();
 			}
 			else
 			{
-				text.clean();
 				text.setContent("Them Thong Tin That Bai!");
-				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
-				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkRed);
+				text.display();
 			}
-
-			text.display();
 			stateInput = FORM_ContentMain;
 		}
 
@@ -516,21 +430,6 @@ void ContentInputQuestion::editData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-			/*case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;*/
 
 			case DOWN:
 				stateInput = FORM_ContentA;
@@ -561,21 +460,6 @@ void ContentInputQuestion::editData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-			/*case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;*/
 
 			case UP:
 				stateInput = FORM_ContentMain;
@@ -610,21 +494,6 @@ void ContentInputQuestion::editData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-			/*case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;*/
 
 			case UP:
 				stateInput = FORM_ContentA;
@@ -659,21 +528,6 @@ void ContentInputQuestion::editData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-			/*case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;*/
 
 			case UP:
 				stateInput = FORM_ContentB;
@@ -707,21 +561,6 @@ void ContentInputQuestion::editData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-			/*case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;*/
 
 			case UP:
 				stateInput = FORM_ContentC;
@@ -756,21 +595,6 @@ void ContentInputQuestion::editData()
 			case ESC:
 				stateInput = FORM_EXIT;
 				break;
-			/*case F1:
-				currentQuestion = C_SELECT;
-				return;
-
-			case F3:
-				currentQuestion = C_SEARCH;
-				return;
-
-			case TAB:
-				if (Singleton::getInstance()->moveMenu != 0)
-				{
-					currentQuestion = C_EXIT;
-					return;
-				}
-				break;*/
 
 			case UP:
 				stateInput = FORM_ContentD;
@@ -792,16 +616,16 @@ void ContentInputQuestion::editData()
 			{
 				text.clean();
 				text.setContent(NOTIFICATION_UPDATE_FINISH);
-				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
-				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
+				int textPosX = getCenterX(COLUMN_CENTER + MARGIN + COLUMN_RIGHT, text.getLenString());
+				text.setPosition(DISTANCE_SIDEBAR + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkGreen);
 			}
 			else
 			{
 				text.clean();
 				text.setContent(NOTIFICATION_UPDATE_FAIL);
-				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
-				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
+				int textPosX = getCenterX(COLUMN_CENTER + MARGIN + COLUMN_RIGHT, text.getLenString());
+				text.setPosition(DISTANCE_SIDEBAR + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkRed);
 			}
 
@@ -814,4 +638,23 @@ void ContentInputQuestion::editData()
 			return;
 		}
 	}
+}
+
+void ContentInputQuestion::cleanInput()
+{
+	for (int i = 0; i < 6; i++)
+	{
+		listInput[i].clean();
+		listInput[i].setText("");
+
+		if (listValidation[i].getLenString() != 0)
+		{
+			int textPosX = getCenterX(COLUMN_RIGHT, listValidation[i].getLenString());
+			listValidation[i].clean();
+			listValidation[i].updatePositionX(-textPosX);
+			listValidation[i].setContent("");
+		}
+	}
+	text.clean();
+	text.setPosition(0, posYMessage);
 }
