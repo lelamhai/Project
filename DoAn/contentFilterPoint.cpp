@@ -198,17 +198,12 @@ void ContentFilterPoint::handle()
 			showCur(0);
 			hover = 0;
 			selectClassroom();
-			hover = -1;
-			loadDataClassroom();
 			break;
 
 		case ContentFilterPoint::C_SELECTSUBJECT:
 			hoverSubject = 0;
 			showCur(0);
 			selectSubject();
-			hoverSubject = -1;
-			indexTree = 0;
-			loadDataSubject();
 			break;
 
 		case ContentFilterPoint::C_SEARCHCLASSROOM:
@@ -416,14 +411,7 @@ void ContentFilterPoint::selectClassroom()
 {
 	ClassPage page;
 
-	if (textSearch != "")
-	{
-		page = nl.searchClass(textSearch, pageNumber);
-	}
-	else
-	{
-		page = nl.getClassPerPage(pageNumber);
-	}
+	page = nl.searchClass(textSearch, pageNumber);
 
 	int start = 0;
 	int end = pageNumber * page.numberClassPerPage;
@@ -541,6 +529,21 @@ void ContentFilterPoint::selectClassroom()
 			return;
 		}
 
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		{
+			if (isLoadFirst)
+			{
+				isLoadFirst = false;
+				continue;
+			}
+			
+			if (listInput[1].getText() != "")
+			{
+				currentFilter = C_DETAIL;
+				return;
+			}
+		}
+
 		if (lastHover != hover)
 		{
 			page = nl.searchClass(textSearch, pageNumber);
@@ -550,8 +553,9 @@ void ContentFilterPoint::selectClassroom()
 				setColorText(ColorCode_DarkWhite);
 				if (hover == i)
 				{
+					listInput[0].setText(page.classList.classes[i]->classCode);
+					listInput[0].display();
 					setColorText(ColorCode_DarkGreen);
-					classCode = page.classList.classes[i]->classCode; // Get ClassCode for edit and delete
 				}
 
 				int classX = getCenterX(27, strlen(page.classList.classes[i]->classCode));
@@ -687,6 +691,15 @@ void ContentFilterPoint::selectSubject()
 			currentFilter = C_SEARCHSUBJECT;
 			Sleep(150);
 			return;
+		}
+
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		{
+			if (listInput[0].getText() != "")
+			{
+				currentFilter = C_DETAIL;
+				return;
+			}
 		}
 
 		if (hoverSubject != lastHoverSubject)
@@ -974,6 +987,8 @@ void ContentFilterPoint::loadDataTree(PTRSUBJECT root)
 	setColorText(ColorCode_White);
 	if (hoverSubject == indexTree)
 	{
+		listInput[1].setText(root->info.subjectCode);
+		listInput[1].display();
 		setColorText(ColorCode_DarkGreen);
 	}
 	int codeX = getCenterX(20, strlen(root->info.subjectCode));
@@ -983,10 +998,6 @@ void ContentFilterPoint::loadDataTree(PTRSUBJECT root)
 	int nameX = getCenterX(35, root->info.subjectName.length());
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + width + 20 + 10 + nameX, DISTANCE_HEADER + 8 + (indexTree * 2));
 	cout << root->info.subjectName;
-
-	/*int countX = getCenterX(40, getCountQuestionInList(root->info.listQuestion));
-	gotoXY(DISTANCE_SIDEBAR + MARGIN + PADDING + countX + 40 + 40, DISTANCE_HEADER + 8 + (indexTree * 2));
-	cout << subject.countQuestionsInSubject(root->info.subjectCode);*/
 
 	setColorText(ColorCode_White);
 	indexTree++;

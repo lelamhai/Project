@@ -21,6 +21,7 @@ using namespace std;
 class ContentFilterPoint : public Content
 {
 private:
+	bool isLoadFirst = true;
 	enum StateFilter
 	{
 		C_SELECTCLASSROOM = 0,
