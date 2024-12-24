@@ -10,6 +10,7 @@
 #include "ContentQuestion.h"
 #include "PopupNotification.h"
 #include "PopupQuestion.h"
+#include "ToastMessage.h"
 #include "InputField.h"
 #include "Text.h"
 #include "ContentQuestion.h"

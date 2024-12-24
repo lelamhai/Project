@@ -29,9 +29,9 @@
 #define NO "Khong"
 #define NOTIFICATION_EMPTY "Vui Long Khong Bo Trong!" 
 #define NOTIFICATION_CODE "Vui Long Nhap It Nhat 7 Ky Tu!"
-#define NOTIFICATION_INSERT_FINISH "Them Thong Tin Thanh Cong!"
-#define NOTIFICATION_UPDATE_FINISH "Cap Nhat Thong Tin Thanh Cong!"
-#define NOTIFICATION_UPDATE_FAIL "Cap Nhat Thong Tin That Bai!"
+#define NOTIFICATION_INSERT_FINISH "Them Thong Tin Thanh Cong."
+#define NOTIFICATION_UPDATE_FINISH "Cap Nhat Thong Tin Thanh Cong."
+#define NOTIFICATION_UPDATE_FAIL "Cap Nhat Thong Tin That Bai."
 #define NOTIFICATION_DELETE "Ban Co Muon Xoa Du Lieu Nay Khong?"
 
 #define SUBJECT_CODE "Ma Mon Hoc Khong Ton Tai!"

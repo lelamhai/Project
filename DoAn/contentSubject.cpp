@@ -497,29 +497,32 @@ void ContentSubject::createData()
 			bool result = subject.addSubject(listInput[0].getText(), listInput[1].getText());
 			if (result)
 			{
+				showCur(0);
+				int posX = getCenterX(COLUMN_CENTER, 50);
+				ToastMessage m;
+				m.setFrame(50, 5);
+				m.setTitle(NOTIFICATION_INSERT_FINISH);
+				m.setPosition(posX + 30, 17);
+				m.open();
+				m.close();
 				indexTree = 0;
 				SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
+				cleanInput();
 				cleanTable();
+
 				loadDataTree(a.subjects);
 				pagging();
-				text.clean();
-				text.setContent(NOTIFICATION_INSERT_FINISH);
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
-				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
-				text.setColor(ColorCode_DarkGreen);
+				showCur(1);
 			}
 			else
 			{
-				text.clean();
 				text.setContent("Ma Mon Hoc Da Ton Tai!");
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkRed);
+				text.display();
 			}
 
-			text.display();
 			stateInput = FORM_CODE;
 		}
 
@@ -546,7 +549,17 @@ void ContentSubject::editData()
 	{
 		if (stateInput == FORM_NAME)
 		{
+			listText[1].setContent(NOTIFICATION_EMPTY);
+			listText[1].setColor(ColorCode_DarkYellow);
+			int textPosX = getCenterX(COLUMN_RIGHT, listText[1].getLenString());
+			listText[1].updatePositionX(textPosX);
+			listText[1].display();
+
 			listInput[1].handleInput();
+
+			listText[1].clean();
+			listText[1].updatePositionX(-textPosX);
+			listText[1].setContent("");
 			switch (listInput[1].getEndKey())
 			{
 			case ENTER:
@@ -588,19 +601,17 @@ void ContentSubject::editData()
 				cleanTable();
 				text.clean();
 				loadDataTree(a.subjects);
+
 				text.setContent(NOTIFICATION_UPDATE_FINISH);
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkGreen);
 
 			}
 			else {
-				text.clean();
-				text.setContent(NOTIFICATION_UPDATE_FINISH);
-				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
+				text.setContent(NOTIFICATION_UPDATE_FAIL);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkRed);
 			}
 			text.display();
@@ -762,6 +773,7 @@ void ContentSubject::cleanInput()
 	for (int i = 0; i < 2; i++)
 	{
 		listInput[i].clean();
+		listInput[i].setText("");
 
 		if (listText[i].getLenString() != 0)
 		{
@@ -771,9 +783,6 @@ void ContentSubject::cleanInput()
 			listText[i].setContent("");
 		}
 	}
-
-	int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 	text.clean();
-	text.updatePositionX(-textPosX);
-	text.setContent("");
+	text.setPosition(0, posYMessage);
 }
