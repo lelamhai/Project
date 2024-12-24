@@ -8,12 +8,11 @@ Login::~Login()
 }
 void Login::main()
 {
-	showCur(1);
 	HeaderLogin();
 	drawPage();
-	drawUserName();
-	drawPassword();
-	drawButton();
+	drawForm();
+	/*drawPassword();
+	drawButton();*/
 	formLogin();
 }
 void Login::HeaderLogin()
@@ -42,106 +41,144 @@ void Login::drawPage()
 	int width = getConsoleWidth();
 	int posX = getCenterX(width, 70);
 
-	box(posX, 10, 70, 14);
+	box(posX, 10, 70, 15);
 }
-void Login::drawUserName()
+void Login::drawForm()
 {
-	int width = getConsoleWidth();
-	int posX = getCenterX(width, 40);
-	gotoXY(posX, 13);
-	cout << "Tai Khoan";
+	int y = DISTANCE_HEADER + PADDING + 4;
+	int posX = getCenterX(getConsoleWidth(), 40);
+	int posYEnter;
 
-	box(posX+12, 12, 30, 2);
-}
-void Login::drawPassword()
-{
-	int width = getConsoleWidth();
-	int posX = getCenterX(width, 40);
-	gotoXY(posX, 12 + 4);
-	cout << "Mat Khau";
+	int posXValidation = getCenterX(getConsoleWidth(), 24);
+	string titleInput[] = {
+		"Tai Khoan",
+		"Mat Khau"
+	};
 
-	box(posX + 12, 11 + 4, 30, 2);
-}
-void Login::drawButton()
-{
-	int width = getConsoleWidth();
-	int posX = getCenterX(width, 10);
-	box(posX, 16 + 4, 10, 2);
+	for (int i = 0; i < 2; i++)
+	{
+		listInput.push_back(InputField());
+		listText.push_back(Text());
 
-	gotoXY(posX + 3, 17 + 4);
+		gotoXY(posX, y + (i * 4));
+		cout << titleInput[i];
+
+		listInput[i].notUseSpace = true;
+		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
+		listInput[i].setFrame(27, 2);
+		listInput[i].setPosition(posX + 13, y + (i * 4) - 1);
+		listInput[i].drawBox();
+
+		listText[i].setContent(NOTIFICATION_EMPTY);
+		listText[i].setPosition(posXValidation, y + (i * 4) + 2);
+		listText[i].setColor(ColorCode_DarkYellow);
+
+		posYEnter = y + (i * 4) + 2;
+	}
+
+	listInput[1].useHide = true;
+
+	posYEnter += 1;
+	int posXMes = getCenterX(getConsoleWidth(), 21);
+	text.setContent("Tai Khoan Khong Dung!");
+	text.setPosition(posXMes, posYEnter);
+	text.setColor(ColorCode_DarkRed);
+
+	posYEnter += 1;
+	int posXEnter = getCenterX(getConsoleWidth(), 10);
+	box(posXEnter, posYEnter, 10, 2);
+	gotoXY(posXEnter + 3, posYEnter + 1);
 	cout << "Enter";
 }
+
 void Login::formLogin()
 {
 	ManageClass classList;
 	bool result;
 
-	int width = getConsoleWidth();
-	int posX = getCenterX(width, 40);
-	posX = posX + 13 + 1;
-	int posY = 13;
-	
-	InputField inputUserName;
-	InputField inputPassword;
-	Text text;
-	text.setColor(ColorCode_DarkRed);
-	text.setContent("Tai Khoan Khong Dung!");
-
-
-	Login::stateLoginInput = LOGIN_USERNAME;
+	listInput[0].setText("");
+	listInput[1].setText("");
+	showCur(1);
 	while (true)
 	{
-		switch (stateLoginInput)
+		if (stateLoginInput == LOGIN_USERNAME)
 		{
-		case LOGIN_USERNAME:
-			gotoXY(posX + inputUserName.getText().length(), posY); 
-			inputUserName.notUseSpace = true;
-			inputUserName.handleInput();
+			listText[0].display();
 
-			if (inputUserName.getEndKey()== ENTER)
+			listInput[0].handleInput();
+
+			listText[0].clean();
+
+			switch (listInput[0].getEndKey())
 			{
-				if (inputUserName.getText() != "" && inputPassword.getText() != "")
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "")
 				{
 					stateLoginInput = LOGIN_ENTER;
-					break;
+					continue;
 				}
-			}
-			stateLoginInput = LOGIN_PASSWORD;
-			break;
+				stateLoginInput = LOGIN_PASSWORD;
+				break;
 
-		case LOGIN_PASSWORD:
-			gotoXY(posX + inputPassword.getText().length(), posY+3);
-			inputPassword.useHide = true;
-			inputPassword.notUseSpace = true;
-			inputPassword.handleInput();
-			if (inputPassword.getEndKey() == ENTER)
+			case DOWN:
+				stateLoginInput = LOGIN_PASSWORD;
+				break;
+
+			case UP:
+				stateLoginInput = LOGIN_PASSWORD;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateLoginInput == LOGIN_PASSWORD)
+		{
+			
+			listText[1].display();
+
+			listInput[1].handleInput();
+
+			listText[1].clean();
+
+			switch (listInput[1].getEndKey())
 			{
-				if (inputPassword.getText() != "" && inputUserName.getText() != "")
+			case ENTER:
+				if (listInput[0].getText() != "" && listInput[1].getText() != "")
 				{
 					stateLoginInput = LOGIN_ENTER;
-					break;
+					continue;
 				}
-			}
-			stateLoginInput = LOGIN_USERNAME;
-			break;
+				stateLoginInput = LOGIN_PASSWORD;
+				break;
 
-		case LOGIN_ENTER:
-			result = classList.logIn(inputUserName.getText().c_str(), inputPassword.getText().c_str());
+			case DOWN:
+				stateLoginInput = LOGIN_USERNAME;
+				break;
+
+			case UP:
+				stateLoginInput = LOGIN_USERNAME;
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (stateLoginInput == LOGIN_ENTER)
+		{
+			result = classList.logIn(listInput[0].getText().c_str(), listInput[1].getText().c_str());
 			if (result)
 			{
+				stateLoginInput = LOGIN_USERNAME;
 				return;
 			}
-			else {
-
-				int x = getCenterX(getConsoleWidth(), 22);
-				text.setPosition(x, 13 + 3 + 2);
+			else 
+			{
 				text.display();
 				stateLoginInput = LOGIN_USERNAME;
 			}
-			break;
-
-		default:
-			break;
 		}
 	}
 }

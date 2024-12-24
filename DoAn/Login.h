@@ -25,13 +25,19 @@ private:
 	};
 	SelectLoginInput stateLoginInput;
 
+	vector<InputField> listInput;
+	vector<Text> listText;
+	Text text;
+
+	int posYMessage = 0;
+
+
 public:
 	void main();
 	void HeaderLogin();
 	void drawPage();
-	void drawUserName();
-	void drawPassword();
-	void drawButton();
+	void drawForm();
+	
 	void formLogin();
 	Login();
 	~Login();
