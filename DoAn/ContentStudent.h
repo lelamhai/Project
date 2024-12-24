@@ -13,6 +13,7 @@
 #include "PopupNotification.h"
 #include "PopupQuestion.h"
 #include "PopupTutorial.h"
+#include "ToastMessage.h"
 #include "InputField.h"
 #include "Text.h"
 

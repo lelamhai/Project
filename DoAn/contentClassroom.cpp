@@ -499,11 +499,6 @@ void ContentClassroom::createData()
 
 			if (result)
 			{
-				text.clean();
-				cleanTable();
-				loadData();
-				pagging();
-
 				showCur(0);
 				int posX = getCenterX(COLUMN_CENTER, 50);
 				ToastMessage m;
@@ -512,8 +507,11 @@ void ContentClassroom::createData()
 				m.setPosition(posX + 30, 17);
 				m.open();
 				m.close();
-				loadData();
 				cleanInput();
+				cleanTable();
+
+				loadData();
+				pagging();
 				showCur(1);
 			}
 			else

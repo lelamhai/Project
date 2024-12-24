@@ -73,9 +73,7 @@ void ContentStudent::drawClassroom()
 	cout << char(180);
 
 	y = posXRight + 2;
-	posYMessage = y;
-	/*textValidation.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);*/
-	text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage + 1);
+	posYMessage = y + 1;
 
 	y = y + 2;
 	int infoX = getCenterX(COLUMN_RIGHT, 11);
@@ -750,39 +748,30 @@ void ContentStudent::createData()
 			bool result = test.addStudentToClass(classCode, listInput[0].getText(), listInput[2].getText(), listInput[1].getText(), sex, listInput[4].getText());
 			if (result)
 			{
-				int textPosX;
-				if (text.getLenString() != 0)
-				{
-					textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-					text.clean();
-					text.updatePositionX(-textPosX);
-					text.setContent("");
-				}
+				showCur(0);
+				int posX = getCenterX(COLUMN_CENTER, 50);
+				ToastMessage m;
+				m.setFrame(50, 5);
+				m.setTitle(NOTIFICATION_INSERT_FINISH);
+				m.setPosition(posX + 30, 17);
+				m.open();
+				m.close();
+				cleanInput();
+				cleanTable();
 
 				loadData();
 				pagging();
-				text.setContent(NOTIFICATION_INSERT_FINISH);
-				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
-				text.setColor(ColorCode_DarkGreen);
+				showCur(1);
 			}
 			else
 			{
-				int textPosX;
-				if (text.getLenString() != 0)
-				{
-					textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-					text.clean();
-					text.updatePositionX(-textPosX);
-					text.setContent("");
-				}
-
 				text.setContent("MSSV Da Ton Tai!");
-				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkRed);
+				text.display();
 			}
-			text.display();
+
 			stateInput = FORM_CODE;
 		}
 	}
@@ -1046,7 +1035,7 @@ void ContentStudent::editData()
 
 		if (stateInput == FORM_PASSWORD)
 		{
-			listText[4].setContent(NOTIFICATION_EMPTY);
+			listText[4].setContent(NOTIFICATION_CODE);
 			listText[4].setColor(ColorCode_DarkYellow);
 			int textPosX = getCenterX(COLUMN_RIGHT, listText[4].getLenString());
 			listText[4].updatePositionX(textPosX);
@@ -1128,23 +1117,14 @@ void ContentStudent::editData()
 				loadData();
 				text.setContent(NOTIFICATION_UPDATE_FINISH);
 				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkGreen);
 			}
 			else
 			{
-				int textPosX;
-				if (text.getLenString() != 0)
-				{
-					textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-					text.clean();
-					text.updatePositionX(-textPosX);
-					text.setContent("");
-				}
-
 				text.setContent(NOTIFICATION_UPDATE_FAIL);
-				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-				text.updatePositionX(textPosX);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkRed);
 			}
 			text.display();
@@ -1328,6 +1308,7 @@ void ContentStudent::cleanInput()
 	for (int i = 0; i < 5; i++)
 	{
 		listInput[i].clean();
+		listInput[i].setText("");
 
 		if (listText[i].getLenString() != 0)
 		{
@@ -1337,11 +1318,8 @@ void ContentStudent::cleanInput()
 			listText[i].setContent("");
 		}
 	}
-
-	int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 	text.clean();
-	text.updatePositionX(-textPosX);
-	text.setContent("");
+	text.setPosition(0, posYMessage);
 }
 
 void ContentStudent::showTitleStudent()
