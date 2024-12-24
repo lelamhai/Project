@@ -36,12 +36,12 @@ void PopupQuestion::handle()
 			setColorText(ColorCode_DarkGreen);
 			textbk(ColorCode_DarkCyan);
 			gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
-			cout << "Khong";
+			cout << NO;
 
 			setColorText(ColorCode_White);
 			textbk(ColorCode_DarkCyan);
 			gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
-			cout << "Co";
+			cout << YES;
 
 			result = false;
 		}
@@ -51,12 +51,12 @@ void PopupQuestion::handle()
 			setColorText(ColorCode_White);
 			textbk(ColorCode_DarkCyan);
 			gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
-			cout << "Khong";
+			cout << NO;
 
 			setColorText(ColorCode_DarkGreen);
 			textbk(ColorCode_DarkCyan);
 			gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
-			cout << "Co";
+			cout << YES;
 
 			result = true;
 		}
@@ -88,7 +88,7 @@ void PopupQuestion::createButtonNo()
 {
 	box(getPosX() + 50 / 2 - 10 - 5, getPosY() + getHeight() - 5, 10, 2);
 	gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
-	cout << "Khong";
+	cout << NO;
 }
 
 void PopupQuestion::createButtonYes()
@@ -98,7 +98,7 @@ void PopupQuestion::createButtonYes()
 	setColorText(ColorCode_DarkGreen);
 	textbk(ColorCode_DarkCyan);
 	gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
-	cout << "Co";
+	cout << YES;
 }
 
 bool PopupQuestion::getResult()

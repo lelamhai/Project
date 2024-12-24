@@ -22,12 +22,14 @@ private:
 
 public:
 	bool useHide = false;
-	bool notUseSpace = false;
 	bool useGender = false;
 	bool useNum = false;
-	bool notUseZero = false;
 	bool useAnswer = false;
 	bool useSpecial = false;
+	bool notUseZero = false;
+	bool notUseSpace = false;
+	bool notKeyArrow = false;
+
 
 	void setMaxLen(int length);
 	void setMinLen(int length);

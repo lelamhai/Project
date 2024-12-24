@@ -11,8 +11,6 @@ void Login::main()
 	HeaderLogin();
 	drawPage();
 	drawForm();
-	/*drawPassword();
-	drawButton();*/
 	formLogin();
 }
 void Login::HeaderLogin()
@@ -64,7 +62,7 @@ void Login::drawForm()
 		cout << titleInput[i];
 
 		listInput[i].notUseSpace = true;
-		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
+		listInput[i].setMinLen(LENGTH_MIN);
 		listInput[i].setFrame(27, 2);
 		listInput[i].setPosition(posX + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
@@ -75,7 +73,7 @@ void Login::drawForm()
 
 		posYEnter = y + (i * 4) + 2;
 	}
-
+	listInput[1].notKeyArrow = true;
 	listInput[1].useHide = true;
 
 	posYEnter += 1;

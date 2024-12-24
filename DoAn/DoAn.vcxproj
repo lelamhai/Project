@@ -159,7 +159,7 @@
     <ClCompile Include="InputField.h" />
     <ClCompile Include="page.cpp" />
     <ClCompile Include="popup.cpp" />
-    <ClCompile Include="popupFinish.cpp" />
+    <ClCompile Include="toastMessage.cpp" />
     <ClCompile Include="popupFinishExam.cpp" />
     <ClCompile Include="popupNotification.cpp" />
     <ClCompile Include="popupTutorial.cpp" />
@@ -202,7 +202,7 @@
     <ClInclude Include="ManageScore.h" />
     <ClInclude Include="ManageSubject.h" />
     <ClInclude Include="MCQ.h" />
-    <ClInclude Include="PopupFinish.h" />
+    <ClInclude Include="ToastMessage.h" />
     <ClInclude Include="PopupFinishExam.h" />
     <ClInclude Include="PopupNotification.h" />
     <ClInclude Include="PopupTutorial.h" />

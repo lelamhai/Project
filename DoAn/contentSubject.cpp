@@ -44,10 +44,10 @@ void ContentSubject::drawContent()
 		listText[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, y + (i * 4) + 2);
 	}
 
-	listInput[0].setMinLen(LENGTH_MIN_DEFAULT);
+	listInput[0].setMinLen(LENGTH_MIN);
 
 	listInput[1].setMaxLen(24);
-	listInput[1].setMinLen(LENGTH_MIN_CODE);
+	listInput[1].setMinLen(LENGTH_CODE);
 
 	
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
@@ -503,7 +503,7 @@ void ContentSubject::createData()
 				loadDataTree(a.subjects);
 				pagging();
 				text.clean();
-				text.setContent(INSERT_FINISH);
+				text.setContent(NOTIFICATION_INSERT_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -588,7 +588,7 @@ void ContentSubject::editData()
 				cleanTable();
 				text.clean();
 				loadDataTree(a.subjects);
-				text.setContent(UPDATE_FINISH);
+				text.setContent(NOTIFICATION_UPDATE_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
@@ -597,7 +597,7 @@ void ContentSubject::editData()
 			}
 			else {
 				text.clean();
-				text.setContent(UPDATE_FINISH);
+				text.setContent(NOTIFICATION_UPDATE_FINISH);
 				text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING, posYMessage);
 				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);

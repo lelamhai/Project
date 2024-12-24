@@ -112,6 +112,11 @@ void InputField::handleInput()
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
 		{
+			if (notKeyArrow)
+			{
+				continue;
+			}
+
 			if (useGender)
 			{
 				continue;
@@ -131,6 +136,11 @@ void InputField::handleInput()
 
 		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
 		{
+			if (notKeyArrow)
+			{
+				continue;
+			}
+
 			if (useGender)
 			{
 				continue;

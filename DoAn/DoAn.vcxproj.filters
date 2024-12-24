@@ -267,7 +267,7 @@
     <ClCompile Include="contentInputQuestion.cpp">
       <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
-    <ClCompile Include="popupFinish.cpp">
+    <ClCompile Include="toastMessage.cpp">
       <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
   </ItemGroup>
@@ -410,7 +410,7 @@
     <ClInclude Include="ContentInputQuestion.h">
       <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
-    <ClInclude Include="PopupFinish.h">
+    <ClInclude Include="ToastMessage.h">
       <Filter>Header Files\FE\Popups</Filter>
     </ClInclude>
     <ClInclude Include="json.hpp">

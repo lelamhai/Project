@@ -54,7 +54,7 @@ void ContentStudent::drawClassroom()
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 4));
 		cout << titleInput[i];
 
-		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
+		listInput[i].setMinLen(LENGTH_MIN);
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
 
@@ -62,8 +62,8 @@ void ContentStudent::drawClassroom()
 		posXRight = y + (i * 4);
 	}
 
-	listInput[0].setMinLen(LENGTH_MIN_CODE);
-	listInput[4].setMinLen(LENGTH_MIN_CODE);
+	listInput[0].setMinLen(LENGTH_CODE);
+	listInput[4].setMinLen(LENGTH_CODE);
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);
 	box(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING, COLUMN_RIGHT, 27);
@@ -761,7 +761,7 @@ void ContentStudent::createData()
 
 				loadData();
 				pagging();
-				text.setContent(INSERT_FINISH);
+				text.setContent(NOTIFICATION_INSERT_FINISH);
 				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
 				text.setColor(ColorCode_DarkGreen);
@@ -1126,7 +1126,7 @@ void ContentStudent::editData()
 				}
 
 				loadData();
-				text.setContent(UPDATE_FINISH);
+				text.setContent(NOTIFICATION_UPDATE_FINISH);
 				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
 				text.setColor(ColorCode_DarkGreen);
@@ -1142,7 +1142,7 @@ void ContentStudent::editData()
 					text.setContent("");
 				}
 
-				text.setContent(UPDATE_FAIL);
+				text.setContent(NOTIFICATION_UPDATE_FAIL);
 				textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
 				text.updatePositionX(textPosX);
 				text.setColor(ColorCode_DarkRed);

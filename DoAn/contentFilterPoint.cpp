@@ -55,7 +55,7 @@ void ContentFilterPoint::drawContent()
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 3, y + (i * 4));
 		cout << titleInput[i];
 
-		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
+		listInput[i].setMinLen(LENGTH_MIN);
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
 

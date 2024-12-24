@@ -41,19 +41,21 @@ void Text::setContent(string newContent)
 
 void Text::display()
 {
-	gotoXY(x,y);
 	setColorText(color);
+	gotoXY(x,y);
 	cout << content;
 	setColorText(ColorCode_White);
 }
 
 void Text::clean()
 {
+	setColorText(ColorCode_Back);
 	string blankFill;
-	blankFill.resize(content.length(), ' ');
+	blankFill.resize(content.length(), char(219));
 	for (int i = 0; i < 1; i++)
 	{
 		gotoXY(x, y);
 		cout << blankFill;
 	}
+	setColorText(ColorCode_White);
 }

@@ -57,11 +57,13 @@ void Popup::content()
 
 void Popup::clean()
 {
+	setColorText(ColorCode_Back);
 	string blankFill;
-	blankFill.resize(width, ' ');
+	blankFill.resize(width, char(219));
 	for (int i = 0; i < height; i++)
 	{
 		gotoXY(posX, posY + i);
 		cout << blankFill;
 	}
+	setColorText(ColorCode_White);
 }

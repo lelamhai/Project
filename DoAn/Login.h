@@ -29,9 +29,6 @@ private:
 	vector<Text> listText;
 	Text text;
 
-	int posYMessage = 0;
-
-
 public:
 	void main();
 	void HeaderLogin();

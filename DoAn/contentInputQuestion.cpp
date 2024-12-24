@@ -49,7 +49,7 @@ void ContentInputQuestion::drawContent()
 
 		listInput[i].useSpecial = true;
 		listInput[i].setMaxLen(166);
-		listInput[i].setMinLen(LENGTH_MIN_DEFAULT);
+		listInput[i].setMinLen(LENGTH_MIN);
 		listInput[i].setPosition(DISTANCE_SIDEBAR + MARGIN + PADDING + PADDING + PADDING, DISTANCE_HEADER + 6 + (y * i));
 		listInput[i].setFrame(168, HEIGHT_INPUT);
 		if (i < 5)
@@ -71,7 +71,7 @@ void ContentInputQuestion::drawContent()
 	listInput[5].useAnswer = true;
 	listInput[5].setFrame(4, HEIGHT_INPUT);
 	listInput[5].drawBox();
-	listInput[5].setMaxLen(LENGTH_MIN_DEFAULT-1);
+	listInput[5].setMaxLen(LENGTH_MIN-1);
 
 
 	listTitle[0].setContent("* Noi Dung Chinh");
@@ -447,7 +447,7 @@ void ContentInputQuestion::createData()
 			if (result)
 			{
 				text.clean();
-				text.setContent(INSERT_FINISH);
+				text.setContent(NOTIFICATION_INSERT_FINISH);
 				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
 				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkGreen);
@@ -791,7 +791,7 @@ void ContentInputQuestion::editData()
 			if (result)
 			{
 				text.clean();
-				text.setContent(UPDATE_FINISH);
+				text.setContent(NOTIFICATION_UPDATE_FINISH);
 				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
 				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkGreen);
@@ -799,7 +799,7 @@ void ContentInputQuestion::editData()
 			else
 			{
 				text.clean();
-				text.setContent(UPDATE_FAIL);
+				text.setContent(NOTIFICATION_UPDATE_FAIL);
 				int textPosX = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, text.getLenString());
 				text.setPosition(DISTANCE_SIDEBAR - MARGIN - MARGIN + textPosX, posYMessage);
 				text.setColor(ColorCode_DarkRed);
