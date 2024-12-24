@@ -263,7 +263,17 @@ void InputField::handleInput()
 				break;
 			}
 
+			if (cursorPosition <= 0)
+			{
+				break;
+			}
+
 			if (inputString[cursorPosition - 1] == ' ')
+			{
+				break;
+			}
+
+			if (inputString[cursorPosition - 1] != char(32) && inputString[cursorPosition] == char(32))
 			{
 				break;
 			}
