@@ -356,6 +356,7 @@ void ContentStudent::selectData()
 		{
 			showCur(0);
 			showTutorial();
+			loadData();
 		}
 
 		if (lastHover != hover)
