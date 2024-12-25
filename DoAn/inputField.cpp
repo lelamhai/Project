@@ -226,6 +226,10 @@ void InputField::handleInput()
 				keyInput = ADD;
 				return;
 			}
+			if (!useSpecial)
+			{
+				break;
+			}
 			inputString.insert(inputString.begin() + cursorPosition, s);
 			cursorPosition++;
 			cout << s;
@@ -236,6 +240,11 @@ void InputField::handleInput()
 			{
 				keyInput = SUBTRACT;
 				return;
+			}
+
+			if (!useSpecial)
+			{
+				break;
 			}
 			inputString.insert(inputString.begin() + cursorPosition, s);
 			cursorPosition++;
