@@ -96,18 +96,22 @@ void ContentFilterPoint::drawContent()
 
 	string note[] = {
 		"F1: Chon Bang Lop",
-		"",
 		"F2: Chon Bang Mon Hoc",
-		"",
+		"F3: Tim Theo Lop",
+		"F4: Tim Theo Mon Hoc",
 		"Ins: Nhap Du Lieu Loc",
-		"",
+		"Enter: Xem Bang Diem",
 		"Phim Len|Xuong: Chon Du Lieu",
+		"Phim Trai|Phai: Xem Trang Sau|Truoc",
 		"",
-		"Phim Trai|Phai: Xem Trang Sau|Truoc"
+		"* Xem Bang Diem",
+		"(Phai Co: Ma Lop Va Ma Mon Hoc)",
+		"- F1: Chon Ma Lop, F2: Chon Ma Mon",
+		"- Enter: Xem Bang Diem"
 	};
 
 	int contentY = tutorialY + 1;
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < 13; i++)
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
@@ -202,6 +206,7 @@ void ContentFilterPoint::handle()
 
 		case ContentFilterPoint::C_SELECTSUBJECT:
 			hoverSubject = 0;
+			lastHoverSubject = -1;
 			showCur(0);
 			selectSubject();
 			break;
@@ -409,6 +414,9 @@ void ContentFilterPoint::createData()
 
 void ContentFilterPoint::selectClassroom()
 {
+	listInput[0].clean();
+	listInput[0].setText("");
+
 	ClassPage page;
 
 	page = nl.searchClass(textSearch, pageNumber);
@@ -577,6 +585,9 @@ void ContentFilterPoint::selectClassroom()
 
 void ContentFilterPoint::selectSubject()
 {
+	listInput[1].clean();
+	listInput[1].setText("");
+
 	SubjectPage a = subject.searchSubjects(textSearchSubject, pageNumberSubject);
 	int start = 0;
 

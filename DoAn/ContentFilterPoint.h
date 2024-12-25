@@ -67,7 +67,7 @@ private:
 	ManageSubject subject;
 	string textSearchSubject = "";
 	int pageNumberSubject = 1;
-	int hoverSubject = -1;
+	int hoverSubject = 0;
 	int lastHoverSubject = -1;
 	int indexTree = 0;
 

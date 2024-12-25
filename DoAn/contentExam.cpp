@@ -191,6 +191,7 @@ void ContentExam::handle()
 		{
 		case ContentExam::C_SELECT:
 			showCur(0);
+			lastHover = -1;
 			selectData();
 			break;
 		case ContentExam::C_CREATE:
@@ -217,6 +218,9 @@ void ContentExam::handle()
 
 void ContentExam::selectData()
 {
+	listInput[0].clean();
+	listInput[0].setText("");
+
 	SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
 	int start = 0;
 
@@ -441,7 +445,7 @@ void ContentExam::createData()
 				break;
 
 			case UP:
-				stateInput = FORM_MINUTE;
+				stateInput = FORM_CODE;
 				break;
 
 			case DOWN:
@@ -496,7 +500,7 @@ void ContentExam::createData()
 				break;
 
 			case DOWN:
-				stateInput = FORM_COUNT;
+				stateInput = FORM_CODE;
 				break;
 
 			default:

@@ -20,8 +20,6 @@ void ContentExecute::initExecute(string classCode, int count, int time)
 	this->classCode = classCode;
 	this->countQuestion = count;
 	this->time = time;
-
-	/*this->timeExecute = time;*/
 }
 
 void ContentExecute::drawContent()

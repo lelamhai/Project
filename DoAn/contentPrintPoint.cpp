@@ -86,6 +86,8 @@ void ContentPrintPoint::drawContent()
 	tutorialY += 1;
 
 	string note[] = {
+		"F3: Tim Kiem Sinh Vien",
+		"",
 		"ESC: Tro Lai",
 		"",
 		"Phim Len|Xuong: Chon Du Lieu",
