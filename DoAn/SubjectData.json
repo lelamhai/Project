@@ -3,1254 +3,6 @@
         {
             "questions": [
                 {
-                    "answer": 67,
-                    "content": "LUC HAP DAN TAC DUNG NHU THE NAO LEN VAT",
-                    "isInExam": false,
-                    "optionA": "DAY VAT RA XA",
-                    "optionB": "KEO VAT LAI GAN",
-                    "optionC": "THAY DOI MAU SAC VAT",
-                    "optionD": "LAM MAT VAT",
-                    "questionId": 54213
-                },
-                {
-                    "answer": 66,
-                    "content": "KHI MOT VAT ROI TU DO, DONG NANG CUA NO THAY DOI NHU THE NAO",
-                    "isInExam": false,
-                    "optionA": "TANG LEN",
-                    "optionB": "GIAM XUONG",
-                    "optionC": "KHONG DOI",
-                    "optionD": "PHU THUOC VAO KHOI LUONG VAT",
-                    "questionId": 87459
-                },
-                {
-                    "answer": 66,
-                    "content": "DON VI DO KHOI LUONG TRONG HE DON VI QUOC TE LA GI",
-                    "isInExam": false,
-                    "optionA": "KILOGRAM",
-                    "optionB": "GRAM",
-                    "optionC": "NEWTON",
-                    "optionD": "MET",
-                    "questionId": 29534
-                },
-                {
-                    "answer": 66,
-                    "content": "NGUYEN LY BERNOUILLI PHAT BIEU RANG AP SUAT CUA CHAT LONG THAY DOI NHU THE NAO KHI TOC DO DONG CHAY TANG",
-                    "isInExam": false,
-                    "optionA": "AP SUAT GIAM KHI TOC DO DONG CHAY TANG",
-                    "optionB": "AP SUAT TANG KHI TOC DO DONG CHAY TANG",
-                    "optionC": "KHONG DOI",
-                    "optionD": "PHU THUOC VAO DO NHOT CUA CHAT LONG",
-                    "questionId": 78493
-                },
-                {
-                    "answer": 66,
-                    "content": "MOT VAT CO VAN TOC BAN DAU VA GIA TOC BANG KHONG, VAN TOC CUA VAT SE NHU THE NAO THEO THOI GIAN",
-                    "isInExam": false,
-                    "optionA": "TANG LEN",
-                    "optionB": "GIAM XUONG",
-                    "optionC": "KHONG DOI",
-                    "optionD": "PHU THUOC VAO LUC TAC DONG",
-                    "questionId": 45912
-                },
-                {
-                    "answer": 66,
-                    "content": "KHI MOT VAT ROI TU DO, LUC NAO LA TAC DUNG CHINH",
-                    "isInExam": false,
-                    "optionA": "LUC HAP DAN TRAI DAT",
-                    "optionB": "LUC MA SAT",
-                    "optionC": "LUC DAY TU MAT DAT",
-                    "optionD": "KHONG CO LUC NAO",
-                    "questionId": 73825
-                },
-                {
-                    "answer": 67,
-                    "content": "AP SUAT DUOC DINH NGHIA LA GI",
-                    "isInExam": false,
-                    "optionA": "LUC TAC DUNG TREN DON VI THE TICH",
-                    "optionB": "LUC TAC DUNG TREN DON VI DIEN TICH",
-                    "optionC": "LUC TAC DUNG TREN MOT VAT",
-                    "optionD": "LUC TAC DUNG TREN DON VI KHOI LUONG",
-                    "questionId": 31672
-                },
-                {
-                    "answer": 66,
-                    "content": "CONG SUAT DUOC DINH NGHIA LA GI",
-                    "isInExam": false,
-                    "optionA": "CONG THUC HIEN TRONG MOT DON VI THOI GIAN",
-                    "optionB": "NANG LUONG TIEU THU TRONG MOT DON VI THOI GIAN",
-                    "optionC": "LUC TAC DUNG TRONG MOT DON VI THOI GIAN",
-                    "optionD": "KHOI LUONG DI CHUYEN TRONG MOT DON VI THOI GIAN",
-                    "questionId": 69138
-                },
-                {
-                    "answer": 66,
-                    "content": "DAI LUONG NAO GIUP XAC DINH CHUYEN DONG THANG DEU CUA VAT",
-                    "isInExam": false,
-                    "optionA": "VAN TOC",
-                    "optionB": "GIA TOC",
-                    "optionC": "LUC",
-                    "optionD": "KHOI LUONG",
-                    "questionId": 92841
-                },
-                {
-                    "answer": 66,
-                    "content": "LUC NAO GIUP VAT CO THE NOI LEN MAT NUOC",
-                    "isInExam": false,
-                    "optionA": "LUC DAY ARCHIMEDES",
-                    "optionB": "LUC MA SAT",
-                    "optionC": "LUC HAP DAN TRAI DAT",
-                    "optionD": "LUC TU",
-                    "questionId": 58124
-                },
-                {
-                    "answer": 66,
-                    "content": "CHAT RAN CO DAC DIEM GI DAC TRUNG",
-                    "isInExam": false,
-                    "optionA": "CO HINH DANG CO DINH",
-                    "optionB": "KHONG CO HINH DANG CO DINH",
-                    "optionC": "DE BI BIEN DANG",
-                    "optionD": "CO THE CHAY THANH DONG",
-                    "questionId": 46271
-                },
-                {
-                    "answer": 67,
-                    "content": "KHI VAT CHUYEN DONG VOI VAN TOC KHONG DOI, TINH CHAT NAO DUY TRI CHUYEN DONG",
-                    "isInExam": false,
-                    "optionA": "LUC HUT",
-                    "optionB": "QUAN TINH",
-                    "optionC": "NANG LUONG",
-                    "optionD": "KHONG CO LUC NAO",
-                    "questionId": 38246
-                },
-                {
-                    "answer": 68,
-                    "content": "LUC MA SAT CO TAC DUNG GI",
-                    "isInExam": false,
-                    "optionA": "NGAN CAN CHUYEN DONG",
-                    "optionB": "LAM VAT TANG TOC",
-                    "optionC": "GIAM KHOI LUONG VAT",
-                    "optionD": "KHONG CO TAC DUNG",
-                    "questionId": 47916
-                },
-                {
-                    "answer": 66,
-                    "content": "DAI LUONG NANG LUONG DUOC DO BANG DON VI NAO",
-                    "isInExam": false,
-                    "optionA": "JOULE",
-                    "optionB": "WATT",
-                    "optionC": "NEWTON",
-                    "optionD": "METER",
-                    "questionId": 71539
-                },
-                {
-                    "answer": 67,
-                    "content": "VAN TOC LA DAI LUONG DUOC DINH NGHIA NHU THE NAO",
-                    "isInExam": false,
-                    "optionA": "QUANG DUONG CHIA THOI GIAN",
-                    "optionB": "QUANG DUONG NHAN VOI THOI GIAN",
-                    "optionC": "LUC NHAN VOI THOI GIAN",
-                    "optionD": "KHOI LUONG NHAN VOI THOI GIAN",
-                    "questionId": 84620
-                }
-            ],
-            "subjectCode": "BAS1224",
-            "subjectName": "VAT LY 1 VA THI NGHIEM"
-        },
-        {
-            "questions": [
-                {
-                    "answer": 66,
-                    "content": "PHEP NHAN GIUA HAI SO AM SE CHO KET QUA GI",
-                    "isInExam": false,
-                    "optionA": "SO DUONG",
-                    "optionB": "SO AM",
-                    "optionC": "SO KHONG",
-                    "optionD": "KHONG XAC DINH",
-                    "questionId": 48213
-                },
-                {
-                    "answer": 67,
-                    "content": "SO 0 LA SO NGUYEN THUOC TAP NAO",
-                    "isInExam": false,
-                    "optionA": "SO NGUYEN DUONG",
-                    "optionB": "SO NGUYEN KHONG DUONG",
-                    "optionC": "SO NGUYEN TO",
-                    "optionD": "SO NGUYEN AM",
-                    "questionId": 31984
-                },
-                {
-                    "answer": 66,
-                    "content": "TONG CUA HAI SO DOI LA GIA TRI GI",
-                    "isInExam": false,
-                    "optionA": "SO KHONG",
-                    "optionB": "SO DUONG",
-                    "optionC": "SO AM",
-                    "optionD": "KHONG XAC DINH",
-                    "questionId": 74291
-                },
-                {
-                    "answer": 68,
-                    "content": "DAU LA DANG TONG QUAT CUA PHUONG TRINH BAC NHAT",
-                    "isInExam": false,
-                    "optionA": "AX + B = 0",
-                    "optionB": "AX^2 + BX + C = 0",
-                    "optionC": "A^2 + BX + C = 0",
-                    "optionD": "AX + C = 0",
-                    "questionId": 56432
-                },
-                {
-                    "answer": 66,
-                    "content": "PHUONG TRINH BAC NHAT CO BAO NHIEU NGHIEM",
-                    "isInExam": false,
-                    "optionA": "MOT NGHIEM",
-                    "optionB": "HAI NGHIEM",
-                    "optionC": "KHONG CO NGHIEM",
-                    "optionD": "VO SO NGHIEM",
-                    "questionId": 78451
-                },
-                {
-                    "answer": 67,
-                    "content": "PHUONG TRINH BAC HAI CO NGHIEM KHI DAU",
-                    "isInExam": false,
-                    "optionA": "DELTA > 0",
-                    "optionB": "DELTA = 0",
-                    "optionC": "DELTA >= 0",
-                    "optionD": "DELTA < 0",
-                    "questionId": 62489
-                },
-                {
-                    "answer": 68,
-                    "content": "KET QUA CUA PHUONG TRINH X + 5 = 10 LA GI",
-                    "isInExam": false,
-                    "optionA": "X = 5",
-                    "optionB": "X = 10",
-                    "optionC": "X = -5",
-                    "optionD": "X = 0",
-                    "questionId": 71658
-                },
-                {
-                    "answer": 66,
-                    "content": "KET QUA CUA PHEP NHAN MA TRAN LAY THEO DONG VA COT DUOC GOI LA GI",
-                    "isInExam": false,
-                    "optionA": "TICH MA TRAN",
-                    "optionB": "HANG MA TRAN",
-                    "optionC": "DONG MA TRAN",
-                    "optionD": "COT MA TRAN",
-                    "questionId": 85249
-                },
-                {
-                    "answer": 67,
-                    "content": "KHI GIA TRI CUA MA TRAN LA ZERO, MA TRAN DUOC GOI LA GI",
-                    "isInExam": false,
-                    "optionA": "MA TRAN KHONG",
-                    "optionB": "MA TRAN DON VI",
-                    "optionC": "MA TRAN DONG NHAT",
-                    "optionD": "KHONG TON TAI",
-                    "questionId": 61423
-                },
-                {
-                    "answer": 68,
-                    "content": "DINH LY NHO NHAT CHO PHEP TINH HANG CUA MA TRAN",
-                    "isInExam": false,
-                    "optionA": "DINH LY LAPLACE",
-                    "optionB": "DINH LY GAUSS",
-                    "optionC": "DINH LY FERMAT",
-                    "optionD": "DINH LY LAGRANGE",
-                    "questionId": 79418
-                },
-                {
-                    "answer": 66,
-                    "content": "PHUONG TRINH DANG Y = MX + C DUOC GOI LA GI",
-                    "isInExam": false,
-                    "optionA": "PHUONG TRINH DUONG THANG",
-                    "optionB": "PHUONG TRINH PARABOL",
-                    "optionC": "PHUONG TRINH BAC HAI",
-                    "optionD": "PHUONG TRINH BAC BA",
-                    "questionId": 28419
-                },
-                {
-                    "answer": 67,
-                    "content": "TRONG TAP HOP Z, PHEP CONG VA NHAN CO TINH CHAT GI",
-                    "isInExam": false,
-                    "optionA": "TUONG HO",
-                    "optionB": "GIAO HOAN",
-                    "optionC": "HOP NHAT",
-                    "optionD": "KHONG CO TINH CHAT NAO",
-                    "questionId": 46258
-                },
-                {
-                    "answer": 66,
-                    "content": "TRONG TAP SO THUC, CAN BAC HAI CHI DUOC DUNG CHO SO GI",
-                    "isInExam": false,
-                    "optionA": "SO KHONG AM",
-                    "optionB": "SO NGUYEN DUONG",
-                    "optionC": "SO NGUYEN TO",
-                    "optionD": "SO CHAN",
-                    "questionId": 63971
-                },
-                {
-                    "answer": 67,
-                    "content": "SO NAO LA SO NGUYEN TO TRONG CAC SO DUOI DAY",
-                    "isInExam": false,
-                    "optionA": "12",
-                    "optionB": "17",
-                    "optionC": "20",
-                    "optionD": "25",
-                    "questionId": 85124
-                },
-                {
-                    "answer": 68,
-                    "content": "PHEP CHIA KHONG HOAN TOAN GIUA HAI SO NGUYEN SE CHO KET QUA LA GI",
-                    "isInExam": false,
-                    "optionA": "THUONG",
-                    "optionB": "SO DU",
-                    "optionC": "SO NGUYEN",
-                    "optionD": "KHONG CO KET QUA",
-                    "questionId": 91743
-                }
-            ],
-            "subjectCode": "BAS1201",
-            "subjectName": "DAI SO"
-        },
-        {
-            "questions": [
-                {
-                    "answer": 66,
-                    "content": "TRIET HOC LA GI",
-                    "isInExam": false,
-                    "optionA": "KHOA HOC VE NHUNG QUY LUAT CHUNG NHAT CUA TU NHIEN",
-                    "optionB": "KHOA HOC NGHIEN CUU TU DUY",
-                    "optionC": "KHOA HOC NGHIEN CUU VE XU THE XA HOI",
-                    "optionD": "KHOA HOC VE CON NGUOI",
-                    "questionId": 84327
-                },
-                {
-                    "answer": 67,
-                    "content": "THEO TRIET HOC MAC LENIN, VAT CHAT DUOC HIEU LA GI",
-                    "isInExam": false,
-                    "optionA": "HINH THUC TON TAI KHONG GIAN VA THOI GIAN",
-                    "optionB": "THUC TAI KHACH QUAN DUOC PHAN ANH VA TON TAI KHI KHONG LE PHU THUOC VAO Y THUC",
-                    "optionC": "TAT CA NHUNG GIA TRI CA NHAN VA XA HOI",
-                    "optionD": "TOAN BO NHUNG HINH THUC TON TAI CUA TINH THAN",
-                    "questionId": 98243
-                },
-                {
-                    "answer": 66,
-                    "content": "QUY LUAT PHU DINH CUA PHU DINH GIAI THICH DIEU GI",
-                    "isInExam": false,
-                    "optionA": "SU PHAT TRIEN THONG QUA CAC GIAI DOAN KHAC NHAU",
-                    "optionB": "SU PHA HUY HOAN TOAN CUA DOI TUONG",
-                    "optionC": "SU TON TAI DONG THOI CUA HAI DOI TUONG DOI LAP",
-                    "optionD": "KHONG CO PHU DINH TRONG QUA TRINH PHAT TRIEN",
-                    "questionId": 75349
-                },
-                {
-                    "answer": 67,
-                    "content": "TRONG CAC PHAM TRU SAU, DAU LA PHAM TRU CO BAN NHAT CUA TRIET HOC",
-                    "isInExam": false,
-                    "optionA": "NGUYEN NHAN",
-                    "optionB": "VAT CHAT VA Y THUC",
-                    "optionC": "KET QUA",
-                    "optionD": "QUY LUAT",
-                    "questionId": 94328
-                },
-                {
-                    "answer": 68,
-                    "content": "QUY LUAT DUNG DE GIAI THICH NGUYEN NHAN VA KET QUA GOI LA GI",
-                    "isInExam": false,
-                    "optionA": "QUY LUAT CAI CHET",
-                    "optionB": "QUY LUAT PHU DINH CUA PHU DINH",
-                    "optionC": "QUY LUAT NHAN QUA",
-                    "optionD": "QUY LUAT MOI QUAN HE",
-                    "questionId": 67342
-                },
-                {
-                    "answer": 66,
-                    "content": "DAU LA NGUYEN TAC CO BAN CUA PHUONG PHAP LUAN BIEN CHUNG",
-                    "isInExam": false,
-                    "optionA": "NGUYEN TAC KHACH QUAN",
-                    "optionB": "NGUYEN TAC TON TRONG",
-                    "optionC": "NGUYEN TAC THAY DOI",
-                    "optionD": "NGUYEN TAC PHAT TRIEN",
-                    "questionId": 23789
-                },
-                {
-                    "answer": 67,
-                    "content": "QUAN DIEM NAO DUOI DAY THE HIEN CAU NOI NOI TIENG CUA LE NIN: TRIET HOC KHONG CO GI KHAC NGOAI CAU TRA LOI CHO CAU HOI",
-                    "isInExam": false,
-                    "optionA": "VAT CHAT CO PHU THUOC Y THUC",
-                    "optionB": "MOI QUAN HE GIUA VAT CHAT VA Y THUC",
-                    "optionC": "VAT CHAT LA Y CHI TINH THAN",
-                    "optionD": "MOI SU TON TAI PHU THUOC HOAN TOAN VAO CON NGUOI",
-                    "questionId": 19453
-                },
-                {
-                    "answer": 68,
-                    "content": "QUY LUAT PHAT TRIEN DUOC NGHIEN CUU TRONG TRUONG PHAI TRIET HOC NAO",
-                    "isInExam": false,
-                    "optionA": "CHU NGHIA DUY VAT",
-                    "optionB": "CHU NGHIA DUY TAM",
-                    "optionC": "CHU NGHIA HINH THAI",
-                    "optionD": "CHU NGHIA MAC LENIN",
-                    "questionId": 92743
-                },
-                {
-                    "answer": 66,
-                    "content": "VAT CHAT TON TAI TRONG DANG NAO",
-                    "isInExam": false,
-                    "optionA": "KHONG GIAN VA THOI GIAN",
-                    "optionB": "DUOI DANG HINH THUC CHUNG",
-                    "optionC": "DUOI DANG TUONG DOI",
-                    "optionD": "KHONG CO DANG NAO",
-                    "questionId": 82345
-                },
-                {
-                    "answer": 67,
-                    "content": "QUAN DIEM DUY VAT KHAC QUAN DIEM DUY TAM O DIEM NAO",
-                    "isInExam": false,
-                    "optionA": "VAT CHAT QUYET DINH Y THUC",
-                    "optionB": "VAT CHAT VA Y THUC CO MOI QUAN HE CAN BANG",
-                    "optionC": "Y THUC QUYET DINH VAT CHAT",
-                    "optionD": "KHONG TON TAI MOI QUAN HE GIUA VAT CHAT VA Y THUC",
-                    "questionId": 29183
-                },
-                {
-                    "answer": 68,
-                    "content": "QUY LUAT MOI QUAN HE PHU THUOC TRUC TIEP VAO DIEU GI",
-                    "isInExam": false,
-                    "optionA": "TAT CA CAC YEU TO BEN NGOAI",
-                    "optionB": "MOI QUAN HE NOI TAI",
-                    "optionC": "Y THUC",
-                    "optionD": "VAT CHAT",
-                    "questionId": 43791
-                },
-                {
-                    "answer": 66,
-                    "content": "KHANG DINH NAO LA CHUAN NHAT THEO CHU NGHIA DUY VAT BIEN CHUNG",
-                    "isInExam": false,
-                    "optionA": "VAT CHAT QUYET DINH Y THUC",
-                    "optionB": "VAT CHAT VA Y THUC CAN DOI",
-                    "optionC": "Y THUC QUYET DINH VAT CHAT",
-                    "optionD": "VAT CHAT VA Y THUC KHONG LIEN QUAN",
-                    "questionId": 71934
-                },
-                {
-                    "answer": 67,
-                    "content": "QUAN DIEM MAC LENIN VE VAN DE HINH THAI Y THUC THE HIEN DIEU GI",
-                    "isInExam": false,
-                    "optionA": "MOI QUAN HE KHACH QUAN GIUA VAT CHAT VA Y THUC",
-                    "optionB": "MOI QUAN HE TRUU TUONG GIUA Y CHI CA NHAN",
-                    "optionC": "CHU Y THUC DOI LAP VAT CHAT",
-                    "optionD": "VAT CHAT CHI TON TAI KHI Y THUC TON TAI",
-                    "questionId": 39458
-                },
-                {
-                    "answer": 68,
-                    "content": "THEO LE NIN, MOI TON TAI VAT CHAT PHU THUOC VAO DIEU GI",
-                    "isInExam": false,
-                    "optionA": "Y THUC KHACH QUAN",
-                    "optionB": "DUC TIN CON NGUOI",
-                    "optionC": "MOI QUAN HE CONG DONG",
-                    "optionD": "KHONG PHU THUOC VAO Y THUC",
-                    "questionId": 29384
-                },
-                {
-                    "answer": 66,
-                    "content": "QUY LUAT VAT CHAT BIEN DOI TON TAI THEO NGUYEN TAC NAO",
-                    "isInExam": false,
-                    "optionA": "KHACH QUAN",
-                    "optionB": "MOI QUAN HE KHACH QUAN",
-                    "optionC": "KHONG CO TON TAI",
-                    "optionD": "TON TAI TAM THOI",
-                    "questionId": 18234
-                }
-            ],
-            "subjectCode": "BAS1150",
-            "subjectName": "TRIET HOC MAC LENIN"
-        },
-        {
-            "questions": [
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: SHE _____ TO SCHOOL YESTERDAY",
-                    "isInExam": false,
-                    "optionA": "GOES",
-                    "optionB": "WENT",
-                    "optionC": "GOING",
-                    "optionD": "GONE",
-                    "questionId": 74684
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: I _____ WATCHING TV WHEN HE ARRIVED",
-                    "isInExam": false,
-                    "optionA": "WAS",
-                    "optionB": "WERE",
-                    "optionC": "AM",
-                    "optionD": "IS",
-                    "questionId": 32511
-                },
-                {
-                    "answer": 67,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: HE HAS BEEN WORKING HERE _____ THREE YEARS",
-                    "isInExam": false,
-                    "optionA": "SINCE",
-                    "optionB": "FOR",
-                    "optionC": "BY",
-                    "optionD": "IN",
-                    "questionId": 19438
-                },
-                {
-                    "answer": 68,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THE SUN RISES _____ THE EAST",
-                    "isInExam": false,
-                    "optionA": "ON",
-                    "optionB": "AT",
-                    "optionC": "IN",
-                    "optionD": "TO",
-                    "questionId": 15556
-                },
-                {
-                    "answer": 68,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: IF I _____ YOU, I WOULD ACCEPT THE OFFER",
-                    "isInExam": false,
-                    "optionA": "AM",
-                    "optionB": "WAS",
-                    "optionC": "WERE",
-                    "optionD": "BE",
-                    "questionId": 73955
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THEY _____ TO THE PARTY LAST NIGHT",
-                    "isInExam": false,
-                    "optionA": "GO",
-                    "optionB": "WENT",
-                    "optionC": "WILL GO",
-                    "optionD": "ARE GOING",
-                    "questionId": 98623
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THIS IS THE HOUSE _____ HE LIVES",
-                    "isInExam": false,
-                    "optionA": "WHERE",
-                    "optionB": "THAT",
-                    "optionC": "WHICH",
-                    "optionD": "WHEN",
-                    "questionId": 51688
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: SHE HAS BEEN WORKING HERE _____ SHE GRADUATED",
-                    "isInExam": false,
-                    "optionA": "SINCE",
-                    "optionB": "FOR",
-                    "optionC": "BY",
-                    "optionD": "IN",
-                    "questionId": 79820
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THE BOOK _____ I BOUGHT YESTERDAY IS VERY INTERESTING",
-                    "isInExam": false,
-                    "optionA": "THAT",
-                    "optionB": "WHICH",
-                    "optionC": "WHO",
-                    "optionD": "WHEN",
-                    "questionId": 38842
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: HE _____ A STUDENT LAST YEAR",
-                    "isInExam": false,
-                    "optionA": "IS",
-                    "optionB": "WAS",
-                    "optionC": "WERE",
-                    "optionD": "HAS BEEN",
-                    "questionId": 81003
-                },
-                {
-                    "answer": 67,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THEY _____ THIS MOVIE TWICE ALREADY",
-                    "isInExam": false,
-                    "optionA": "WATCH",
-                    "optionB": "HAVE WATCHED",
-                    "optionC": "WATCHED",
-                    "optionD": "WATCHING",
-                    "questionId": 81249
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: SHE _____ TO VISIT HER GRANDPARENTS NEXT WEEK",
-                    "isInExam": false,
-                    "optionA": "WILL GO",
-                    "optionB": "GOES",
-                    "optionC": "GOING",
-                    "optionD": "GONE",
-                    "questionId": 19384
-                },
-                {
-                    "answer": 67,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: HE _____ A BOOK WHEN THE PHONE RANG",
-                    "isInExam": false,
-                    "optionA": "READ",
-                    "optionB": "WAS READING",
-                    "optionC": "READS",
-                    "optionD": "HAS READ",
-                    "questionId": 24135
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THE CAT _____ UNDER THE TABLE",
-                    "isInExam": false,
-                    "optionA": "SLEEPS",
-                    "optionB": "IS SLEEPING",
-                    "optionC": "WAS SLEEPING",
-                    "optionD": "SLEEPING",
-                    "questionId": 36541
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: WE _____ DINNER AT 7 PM EVERY DAY",
-                    "isInExam": false,
-                    "optionA": "EAT",
-                    "optionB": "ATE",
-                    "optionC": "EATING",
-                    "optionD": "HAVE EATEN",
-                    "questionId": 87412
-                }
-            ],
-            "subjectCode": "BAS1141",
-            "subjectName": "TIENG ANH A11"
-        },
-        {
-            "questions": [
-                {
-                    "answer": 67,
-                    "content": "THOI GIAN THUC DAN PHAP TIEN HANH KHAI THAC THUOC DIA LAN THU NHAT O VIET NAM NHU THE NAO?",
-                    "isInExam": false,
-                    "optionA": "1858 1884",
-                    "optionB": "1884 1896",
-                    "optionC": "1896 1913",
-                    "optionD": "1914 1918",
-                    "questionId": 857321
-                },
-                {
-                    "answer": 67,
-                    "content": "TRONG DOT KHAI THAC THUOC DIA LAN THU NHAT CUA THUC DAN PHAP O NUOC TA CO GIAI CAP MOI NAO DUOC HINH THANH?",
-                    "isInExam": false,
-                    "optionA": "GIAI CAP TU SAN",
-                    "optionB": "GIAI CAP TU SAN VA CONG NHAN",
-                    "optionC": "GIAI CAP CONG NHAN",
-                    "optionD": "GIAI CAP TIEU TU SAN",
-                    "questionId": 432158
-                },
-                {
-                    "answer": 66,
-                    "content": "TRUOC CHIEN TRANH THE GIOI THU NHAT, O VIET NAM CO NHUNG GIAI CAP NAO?",
-                    "isInExam": false,
-                    "optionA": "DIA CHU PHONG KIEN VA NONG DAN",
-                    "optionB": "DIA CHU PHONG KIEN, NONG DAN, TU SAN, TIEU TU SAN VA CONG NHAN",
-                    "optionC": "DIA CHU PHONG KIEN, NONG DAN VA CONG NHAN",
-                    "optionD": "DIA CHU PHONG KIEN, NONG DAN VA TIEU TU SAN",
-                    "questionId": 924367
-                },
-                {
-                    "answer": 66,
-                    "content": "DUOI CHE DO THUC DAN PHONG KIEN, GIAI CAP NONG DAN VIET NAM CO YEU CAU BUC THIET NHAT LA GI?",
-                    "isInExam": false,
-                    "optionA": "DOC LAP DAN TOC",
-                    "optionB": "RUONG DAT",
-                    "optionC": "QUYEN BINH DANG NAM, NU",
-                    "optionD": "DUOC GIAM TO, GIAM TUC",
-                    "questionId": 987654
-                },
-                {
-                    "answer": 68,
-                    "content": "DAC DIEM RA DOI CUA GIAI CAP CONG NGHIEP VIET NAM NHU THE NAO?",
-                    "isInExam": false,
-                    "optionA": "RA DOI TRUOC GIAI CAP TU SAN, TRONG CUOC KHAI THAC THUOC DIA LAN THU NHAT CUA THUC DAN PHAP",
-                    "optionB": "PHAN LON XUAT THAN TU NONG DAN",
-                    "optionC": "CHIU SU AP BUC VA BOC LOT CUA DE QUOC, PHONG KIEN VA TU SAN DAN AP",
-                    "optionD": "CA A, B VA C",
-                    "questionId": 876543
-                },
-                {
-                    "answer": 67,
-                    "content": "NHUNG GIAI CAP BI TRI O VIET NAM DUOI CHE DO THUC DIA CUA DE QUOC PHAP LA:",
-                    "isInExam": false,
-                    "optionA": "CONG NHAN VA NONG DAN",
-                    "optionB": "CONG NHAN, NONG DAN, TIEU TU SAN",
-                    "optionC": "CONG NHAN, NONG DAN, TIEU TU SAN, TU SAN DAN TOC",
-                    "optionD": "CONG NHAN, NONG DAN, TIEU TU SAN, TU SAN DAN TOC, GIA CHU VA NHO",
-                    "questionId": 765432
-                },
-                {
-                    "answer": 66,
-                    "content": "KHI NAO PHONG TRAO CONG NGHIEP VIET NAM HOAN TOAN TRO THANH MOT PHONG TRA GIAI?",
-                    "isInExam": false,
-                    "optionA": "NAM 1920 (TO CHUC CONG HOI O SAI GON DUOC THANH LAP)",
-                    "optionB": "NAM 1925 (CUC BAI CONG BA SON)",
-                    "optionC": "NAM 1929 (SU RA DOI TO CHUC CONG SAN)",
-                    "optionD": "NAM 1930 (DANG CONG SAN VIET NAM RA DOI)",
-                    "questionId": 654321
-                },
-                {
-                    "answer": 68,
-                    "content": "NGUYEN AI QUOC LUA CHON CON DUONG GIAI PHONG DAN TOC THEO HUONG CHINH TRI VO SAN VAO THOI GIAN NAO?",
-                    "isInExam": false,
-                    "optionA": "1917",
-                    "optionB": "1918",
-                    "optionC": "1919",
-                    "optionD": "1920",
-                    "questionId": 827543
-                },
-                {
-                    "answer": 67,
-                    "content": "BAO DOI SONG CONG NHAN LA CUA TO CHUC NAO?",
-                    "isInExam": false,
-                    "optionA": "DANG XA HOI PHAP",
-                    "optionB": "DANG CONG SAN PHAP",
-                    "optionC": "TONG LIEN DOAN LAO DONG PHAP",
-                    "optionD": "HOI LIEN HIEP THUOC DIA",
-                    "questionId": 945762
-                },
-                {
-                    "answer": 66,
-                    "content": "HOI LIEN HIEP THUOC DIA DUOC THANH LAP VAO NAM NAO?",
-                    "isInExam": false,
-                    "optionA": "1920",
-                    "optionB": "1921",
-                    "optionC": "1923",
-                    "optionD": "1924",
-                    "questionId": 635428
-                },
-                {
-                    "answer": 67,
-                    "content": "HOI VIET NAM CACH MANG THANH NIEN THUC HIEN CHU TRUONG 'VO SAN HOA' KHI NAO?",
-                    "isInExam": false,
-                    "optionA": "CUOI NAM 1926 DAU NAM 1927",
-                    "optionB": "CUOI NAM 1927 DAU NAM 1928",
-                    "optionC": "CUOI NAM 1928 DAU NAM 1929",
-                    "optionD": "CUOI NAM 1929 DAU NAM 1930",
-                    "questionId": 593204
-                },
-                {
-                    "answer": 68,
-                    "content": "TEN CHINH THUC CUA TO CHUC NAY DUOC DAT TAI DAI HOI LAN THU NHAT O QUANG CHAU (THANG 5-1929) LA GI?",
-                    "isInExam": false,
-                    "optionA": "VIET NAM THANH NIEN CACH MANG DONG CHI HOI",
-                    "optionB": "HOI VIET NAM CACH MANG DONG MINH",
-                    "optionC": "HOI VIET NAM DOC LAP DONG MINH",
-                    "optionD": "HOI VIET NAM CACH MANG THANH NIEN",
-                    "questionId": 718305
-                },
-                {
-                    "answer": 66,
-                    "content": "VIET NAM QUOC DAN DANG DUOC THANH LAP VAO THOI GIAN NAO?",
-                    "isInExam": false,
-                    "optionA": "THANG 12 NAM 1927",
-                    "optionB": "THANG 11 NAM 1926",
-                    "optionC": "THANG 8 NAM 1925",
-                    "optionD": "THANG 7 NAM 1925",
-                    "questionId": 615796
-                },
-                {
-                    "answer": 66,
-                    "content": "TO CHUC CONG SAN NAO RA DOI DAU TIEN O VIET NAM?",
-                    "isInExam": false,
-                    "optionA": "HOI VIET NAM CACH MANG THANH NIEN",
-                    "optionB": "DONG DUONG CONG SAN DANG",
-                    "optionC": "AN NAM CONG SAN DANG",
-                    "optionD": "DONG DUONG CONG SAN LIEN DOAN",
-                    "questionId": 814365
-                },
-                {
-                    "answer": 67,
-                    "content": "AI LA NGUOI DA THAM GIA SANG LAP VIET NAM QUOC DAN DANG 1927?",
-                    "isInExam": false,
-                    "optionA": "TON QUANG PHIET",
-                    "optionB": "TRAN HUY LIEU",
-                    "optionC": "PHAM TUAN TAI",
-                    "optionD": "NGUYEN THAI HOC",
-                    "questionId": 827306
-                }
-            ],
-            "subjectCode": "BAS1153",
-            "subjectName": "TU TUONG HO CHI MINH"
-        },
-        {
-            "questions": [
-                {
-                    "answer": 66,
-                    "content": "DAO HAM CUA HAM SO Y = X^2 LA GI",
-                    "isInExam": false,
-                    "optionA": "2X",
-                    "optionB": "X^2",
-                    "optionC": "1",
-                    "optionD": "0",
-                    "questionId": 63478
-                },
-                {
-                    "answer": 67,
-                    "content": "TICH PHAN CUA HAM SO Y = X LA GI",
-                    "isInExam": false,
-                    "optionA": "X^2 + C",
-                    "optionB": "X^2/2 + C",
-                    "optionC": "2X + C",
-                    "optionD": "X + C",
-                    "questionId": 85429
-                },
-                {
-                    "answer": 66,
-                    "content": "HAM SO NHO NHAT TAI MOT DIEM DUOC GOI LA GI",
-                    "isInExam": false,
-                    "optionA": "CUC TIEU",
-                    "optionB": "CUC DAI",
-                    "optionC": "GIA TRI LON NHAT",
-                    "optionD": "GIA TRI KHONG DOI",
-                    "questionId": 97438
-                },
-                {
-                    "answer": 68,
-                    "content": "DAU LA DAO HAM BAC HAI CUA HAM SO Y = X^3",
-                    "isInExam": false,
-                    "optionA": "6X",
-                    "optionB": "3X^2",
-                    "optionC": "X^3",
-                    "optionD": "0",
-                    "questionId": 29173
-                },
-                {
-                    "answer": 66,
-                    "content": "TICH PHAN TU 0 DEN 1 CUA HAM SO Y = 1 LA GI",
-                    "isInExam": false,
-                    "optionA": "1",
-                    "optionB": "0",
-                    "optionC": "2",
-                    "optionD": "-1",
-                    "questionId": 46218
-                },
-                {
-                    "answer": 67,
-                    "content": "DAO HAM CUA HAM SO SIN(X) LA GI",
-                    "isInExam": false,
-                    "optionA": "COS(X)",
-                    "optionB": "-SIN(X)",
-                    "optionC": "-COS(X)",
-                    "optionD": "SIN(X)",
-                    "questionId": 79341
-                },
-                {
-                    "answer": 66,
-                    "content": "TICH PHAN CUA HAM SO Y = 1/X LA GI",
-                    "isInExam": false,
-                    "optionA": "LN|X| + C",
-                    "optionB": "X + C",
-                    "optionC": "1 + C",
-                    "optionD": "X^2/2 + C",
-                    "questionId": 57839
-                },
-                {
-                    "answer": 68,
-                    "content": "TICH PHAN TU 0 DEN 2 CUA HAM SO Y = X LA GI",
-                    "isInExam": false,
-                    "optionA": "2",
-                    "optionB": "4",
-                    "optionC": "4 + C",
-                    "optionD": "2 + C",
-                    "questionId": 89642
-                },
-                {
-                    "answer": 66,
-                    "content": "DAO HAM CUA E^X LA GI",
-                    "isInExam": false,
-                    "optionA": "E^X",
-                    "optionB": "E^(X^2)",
-                    "optionC": "1/E^X",
-                    "optionD": "X*E^X",
-                    "questionId": 39184
-                },
-                {
-                    "answer": 67,
-                    "content": "DAO HAM BAC HAI CUA HAM SO Y = X^2 LA GI",
-                    "isInExam": false,
-                    "optionA": "2",
-                    "optionB": "X^2",
-                    "optionC": "0",
-                    "optionD": "4X",
-                    "questionId": 47219
-                },
-                {
-                    "answer": 68,
-                    "content": "HAM SO Y = SIN(X) CO GIA TRI NHO NHAT O DAU TRONG MOT CHU KY",
-                    "isInExam": false,
-                    "optionA": "X = PI/2",
-                    "optionB": "X = 3PI/2",
-                    "optionC": "X = 0",
-                    "optionD": "X = PI",
-                    "questionId": 81934
-                },
-                {
-                    "answer": 66,
-                    "content": "DAO HAM CUA HAM SO Y = LN(X) LA GI",
-                    "isInExam": false,
-                    "optionA": "1/X",
-                    "optionB": "LN(X) + C",
-                    "optionC": "E^X",
-                    "optionD": "0",
-                    "questionId": 64329
-                },
-                {
-                    "answer": 67,
-                    "content": "HAM SO NAO CO DAO HAM BANG 0 O MOI DIEM",
-                    "isInExam": false,
-                    "optionA": "HAM HANG",
-                    "optionB": "HAM BAC NHAT",
-                    "optionC": "HAM LOGARIT",
-                    "optionD": "HAM MUI TEN",
-                    "questionId": 59412
-                },
-                {
-                    "answer": 66,
-                    "content": "GIA TRI CUC DAI CUA Y = -X^2 + 4X LA BAO NHIEU",
-                    "isInExam": false,
-                    "optionA": "4",
-                    "optionB": "2",
-                    "optionC": "0",
-                    "optionD": "-2",
-                    "questionId": 75148
-                },
-                {
-                    "answer": 67,
-                    "content": "TICH PHAN NAO LA NGHICH DAO CUA DAO HAM",
-                    "isInExam": false,
-                    "optionA": "PHAI LA DAI LUONG NGUYEN HAM",
-                    "optionB": "KHONG CO",
-                    "optionC": "DAO HAM BAC N",
-                    "optionD": "HAM LON NHAT",
-                    "questionId": 91287
-                }
-            ],
-            "subjectCode": "BAS1204",
-            "subjectName": "GIAI TICH 2"
-        },
-        {
-            "questions": [
-                {
-                    "answer": 66,
-                    "content": "DAO HAM CUA HAM SO Y = X^3 LA GI",
-                    "isInExam": false,
-                    "optionA": "3X^2",
-                    "optionB": "X^2",
-                    "optionC": "3X",
-                    "optionD": "X^3",
-                    "questionId": 73245
-                },
-                {
-                    "answer": 67,
-                    "content": "DAO HAM CUA HAM SO Y = SIN(X) LA GI",
-                    "isInExam": false,
-                    "optionA": "COS(X)",
-                    "optionB": "-SIN(X)",
-                    "optionC": "-COS(X)",
-                    "optionD": "SIN(X)",
-                    "questionId": 21834
-                },
-                {
-                    "answer": 66,
-                    "content": "DAO HAM CUA HAM SO Y = E^X LA GI",
-                    "isInExam": false,
-                    "optionA": "E^X",
-                    "optionB": "1/E^X",
-                    "optionC": "X*E^X",
-                    "optionD": "E^(X^2)",
-                    "questionId": 51688
-                },
-                {
-                    "answer": 68,
-                    "content": "DAO HAM CUA HAM SO Y = LN(X) LA GI",
-                    "isInExam": false,
-                    "optionA": "1/X",
-                    "optionB": "LN(X)",
-                    "optionC": "E^X",
-                    "optionD": "0",
-                    "questionId": 48213
-                },
-                {
-                    "answer": 66,
-                    "content": "DAO HAM CUA HAM SO Y = COS(X) LA GI",
-                    "isInExam": false,
-                    "optionA": "-SIN(X)",
-                    "optionB": "COS(X)",
-                    "optionC": "SIN(X)",
-                    "optionD": "-COS(X)",
-                    "questionId": 81459
-                },
-                {
-                    "answer": 67,
-                    "content": "HAM SO NAO CO DAO HAM BANG 0",
-                    "isInExam": false,
-                    "optionA": "HAM HANG",
-                    "optionB": "HAM BAC NHAT",
-                    "optionC": "HAM BAC HAI",
-                    "optionD": "HAM BAC BA",
-                    "questionId": 76984
-                },
-                {
-                    "answer": 68,
-                    "content": "HAM SO NAO DUOC GOI LA HANG SO",
-                    "isInExam": false,
-                    "optionA": "HAM KHONG DOI",
-                    "optionB": "HAM BAC NHAT",
-                    "optionC": "HAM COS(X)",
-                    "optionD": "HAM SIN(X)",
-                    "questionId": 34218
-                },
-                {
-                    "answer": 66,
-                    "content": "TICH PHAN CUA HAM SO Y = 1 LA GI",
-                    "isInExam": false,
-                    "optionA": "X + C",
-                    "optionB": "1/X",
-                    "optionC": "LN(X)",
-                    "optionD": "E^X",
-                    "questionId": 92841
-                },
-                {
-                    "answer": 67,
-                    "content": "DAO HAM BAC HAI CUA HAM SO Y = X^2 LA GI",
-                    "isInExam": false,
-                    "optionA": "2",
-                    "optionB": "X",
-                    "optionC": "X^2",
-                    "optionD": "0",
-                    "questionId": 92745
-                },
-                {
-                    "answer": 66,
-                    "content": "HAM SO Y = X^2 CO GIA TRI LON NHAT O DAU TRONG TAP XAC DINH [0, 2]",
-                    "isInExam": false,
-                    "optionA": "X = 2",
-                    "optionB": "X = 1",
-                    "optionC": "X = 0",
-                    "optionD": "KHONG CO GIA TRI LON NHAT",
-                    "questionId": 57493
-                },
-                {
-                    "answer": 68,
-                    "content": "DAO HAM CUA HAM SO Y = 1/X LA GI",
-                    "isInExam": false,
-                    "optionA": "-1/X^2",
-                    "optionB": "1/X",
-                    "optionC": "-X",
-                    "optionD": "X",
-                    "questionId": 91652
-                },
-                {
-                    "answer": 67,
-                    "content": "TICH PHAN CUA HAM SO Y = X LA GI",
-                    "isInExam": false,
-                    "optionA": "X^2/2 + C",
-                    "optionB": "X^2 + C",
-                    "optionC": "2X + C",
-                    "optionD": "LN|X| + C",
-                    "questionId": 75231
-                },
-                {
-                    "answer": 66,
-                    "content": "HAM SO Y = SIN(X) CO GIA TRI NHO NHAT O DAU TRONG MOT CHU KY",
-                    "isInExam": false,
-                    "optionA": "X = 3PI/2",
-                    "optionB": "X = PI/2",
-                    "optionC": "X = 0",
-                    "optionD": "X = PI",
-                    "questionId": 26478
-                },
-                {
-                    "answer": 68,
-                    "content": "DAO HAM CUA HAM SO Y = X^4 LA GI",
-                    "isInExam": false,
-                    "optionA": "4X^3",
-                    "optionB": "4X^4",
-                    "optionC": "X^3",
-                    "optionD": "X^4",
-                    "questionId": 19824
-                },
-                {
-                    "answer": 66,
-                    "content": "TICH PHAN CUA HAM SO Y = E^X LA GI",
-                    "isInExam": false,
-                    "optionA": "E^X + C",
-                    "optionB": "E^(X^2) + C",
-                    "optionC": "X*E^X + C",
-                    "optionD": "1/E^X + C",
-                    "questionId": 57138
-                }
-            ],
-            "subjectCode": "BAS1203",
-            "subjectName": "GIAI TICH 1"
-        },
-        {
-            "questions": [
-                {
-                    "answer": 66,
-                    "content": "DAU KHONG PHAI LA MOT TRONG CAC YEU CAU GIAO DIEN NGUOI DUNG CUA MOT HE THONG LMS DIEN HINH?",
-                    "isInExam": false,
-                    "optionA": "HO TRO CHUC NANG TRO GIUP VA HUONG DAN TRUC TUYEN",
-                    "optionB": "KHONG CHO PHEP THIET LAP NHIEU GIAO DIEN RIENG BIET CHO CAC NHOM NGUOI DUNG KHAC NHAU",
-                    "optionC": "CO KHA NANG TUY CHINH VA THAN THIEN NGUOI DUNG",
-                    "optionD": "HO TRO GIAO DIEN NGUOI DUNG TREN CO SO TRINH DUYET WEB",
-                    "questionId": 60104
-                },
-                {
-                    "answer": 68,
-                    "content": "HOP THU DIEN TU CUA CHUONG TRINH E LEARNING.PTITHCM.EDU.VN DUOC XAY DUNG DUA TREN HOP THU DIEN TU NAO DUOI DAY?",
-                    "isInExam": false,
-                    "optionA": "YAHOO MAIL",
-                    "optionB": "ZING MAIL",
-                    "optionC": "EMAIL MARKETING",
-                    "optionD": "GOOGLE MAIL",
-                    "questionId": 76999
-                },
-                {
-                    "answer": 68,
-                    "content": "DOI VOI CAC LOP HOC E LEARNING, KHANG DINH NAO DUOI DAY LA DUNG?",
-                    "isInExam": false,
-                    "optionA": "SINH VIEN CO THE LAM CAC BAI TAP VE NHA TINH DIEM BAT CU LUC NAO",
-                    "optionB": "SINH VIEN CO THE LAM CAC BAI TAP VE NHA TINH DIEM MA KHONG BI GIOI HAN THOI GIAN LAM BAI",
-                    "optionC": "SINH VIEN CHI CO THE LAM CAC BAI LUYEN TAP TRAC NGHIEM KHONG TINH DIEM TOI DA LA 10 LAN",
-                    "optionD": "SINH VIEN CO THE LAM CAC BAI LUYEN TAP TRAC NGHIEM KHONG TINH DIEM BAT CU LUC NAO",
-                    "questionId": 24234
-                },
-                {
-                    "answer": 68,
-                    "content": "DAU KHONG LA MUC DICH KHI PHO BIEN MUC TIEU HOC TAP TRONG E-LEARNING?",
-                    "isInExam": false,
-                    "optionA": "TAP TRUNG VAO NHUNG PHAN CUA NOI DUNG BAI HOC",
-                    "optionB": "MO TA CHI TIET KET QUA MA NGUOI DAY MUON BAN PHAI HUONG TOI SAU TUNG BAI HOC",
-                    "optionC": "MO TA CHINH XAC NHUNG GI BAN PHAI DAT DUOC SAU KHI HOAN THANH LOP HOC",
-                    "optionD": "DE BAN BIET DUOC GIANG VIEN NAO SE GIANG DAY",
-                    "questionId": 82184
-                },
-                {
-                    "answer": 66,
-                    "content": "LMS LA VIET TAT CUA CUM TU TIENG ANH NAO?",
-                    "isInExam": false,
-                    "optionA": "LEARNING MODEL SITE",
-                    "optionB": "LEARNING MANAGEMENT SYSTEM",
-                    "optionC": "LEARNING MODEL SHARABLE",
-                    "optionD": "LEARNING MANAGEMENT SITE",
-                    "questionId": 28023
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON PHAT BIEU SAI?",
-                    "isInExam": false,
-                    "optionA": "LMS LA MOT HE THONG DICH VU QUAN LY VIEC PHAN PHOI VA TIM KIEM NOI DUNG HOC TAP CHO NGUOI HOC",
-                    "optionB": "LCMS KHONG CHO PHEP NGUOI DUNG TAO RA VA SU DUNG LAI NHUNG DON VI NOI DUNG NHO TRONG KHO DU LIEU TRUNG TAM",
-                    "optionC": "LCMS LA MOT HE THONG QUAN LY NOI DUNG HOC TAP",
-                    "optionD": "LMS LAY THONG TIN VE VI TRI CUA KHOA HOC TU LCMS VA VE CAC HOAT DONG CUA SINH VIEN TU LCMS",
-                    "questionId": 99316
-                },
-                {
-                    "answer": 65,
-                    "content": "KHI NOI VE CAC CHUAN VA DAC TA CHO HE THONG E-LEARNING, CO 2 PHAT BIEU NHU SAU: PB1: CAC CHUAN VA DAC TA LA THANH PHAN KET NOI TAT CA CAC THANH PHAN CUA HE THONG E-LEARNING. PB2: CAC CHUAN CHO PHEP GHEP CAC KHOA HOC TAO BOI CAC CONG CU KHAC NHAU BOI CAC NHA SAN XUAT KHAC NHAU THANH CAC GOI NOI DUNG DUOC GOI LA CAC CHUAN METADATA. HOI KHANG DINH NAO SAU DAY LA DUNG?",
-                    "isInExam": false,
-                    "optionA": "PB1 DUNG, PB2 SAI",
-                    "optionB": "PB1 DUNG, PB2 DUNG",
-                    "optionC": "PB1 SAI, PB2 SAI",
-                    "optionD": "PB1 SAI, PB2 DUNG",
-                    "questionId": 90649
-                },
-                {
-                    "answer": 68,
-                    "content": "THEO SLOAN CONSORTIUM LOP HOC NAO DUOI DAY LA LOP HOC TRUYEN THONG?",
-                    "isInExam": false,
-                    "optionA": "KET HOP GIUA CONG NGHE INTERNET VA TRUYEN THONG. SINH VIEN VA THAY CO NHUNG GAP GO, TRAO DOI TREN INTERNET VA CO CA NHUNG BUOI GAP TRUC TIEP",
-                    "optionB": "TAT CA NOI DUNG TREN INTERNET; KHONG CO GAP TRUC TIEP",
-                    "optionC": "SU DUNG INTERNET DE DANG TAI CAC HOC LIEU NHU DE CUONG; BAI TAP; BAI GIANG. SINH VIEN VA THAY GAP GO TRUC TIEP (MAT GIAP MAT)",
-                    "optionD": "KHONG CO NOI DUNG DUOC TRUYEN TAI BANG CONG NGHE INTERNET",
-                    "questionId": 1002
-                },
-                {
-                    "answer": 65,
-                    "content": "QUY TRINH SINH VIEN HOC TAP TREN HE THONG E LEARNING KHONG BAO GOM BUOC NAO?",
-                    "isInExam": false,
-                    "optionA": "HOC TAP",
-                    "optionB": "GAP GO GIAO VIEN",
-                    "optionC": "TIM HIEU THONG TIN LOP HOC",
-                    "optionD": "DANG KY HOC TAP",
-                    "questionId": 71234
-                },
-                {
-                    "answer": 66,
-                    "content": "DAU LA DAC DIEM CUA E-LEARNING?",
-                    "isInExam": false,
-                    "optionA": "SINH VIEN VA GIANG VIEN THUONG XUYEN GAP MAT TRUC TIEP O LOP HOC",
-                    "optionB": "TIEN TRINH HOC DUOC THEO DOI CHAT CHE VA CUNG CAP CONG CU TU DANH GIA",
-                    "optionC": "NOI DUNG KHOA HOC KHONG DUOC CAP NHAT",
-                    "optionD": "HOC KHONG CO SU HOP TAC, PHOI HOP",
-                    "questionId": 74532
-                },
-                {
-                    "answer": 67,
-                    "content": "TRONG QUA TRINH TRAO DOI VA GIAI DAP THAC MAC, YEU TO NAO KHONG PHAI LA UU DIEM KHI SU DUNG DIEN DAN?",
-                    "isInExam": false,
-                    "optionA": "BAN CO THE DAT CAU HOI BAT CU KHI NAO",
-                    "optionB": "BAN CO THE DAT CAU HOI DU BAN DANG O DAU MIEN LA BAN CO THE TRUY CAP INTERNET",
-                    "optionC": "BAN KHONG CO DUOC CAU TRA LOI NGAY TUC KHAC",
-                    "optionD": "CAU HOI CUA BAN SE DUOC CAU TRA LOI CUA NHIEU NGUOI",
-                    "questionId": 77654
-                },
-                {
-                    "answer": 68,
-                    "content": "TRONG MO HINH HE THONG E LEARNING KHONG BAO GOM THANH PHAN NAO?",
-                    "isInExam": false,
-                    "optionA": "HA TANG TRUYEN THONG VA MANG",
-                    "optionB": "DOI NGU KY SU CONG NGHE THONG TIN",
-                    "optionC": "HA TANG PHAN MEM",
-                    "optionD": "NOI DUNG DAO TAO",
-                    "questionId": 81923
-                },
-                {
-                    "answer": 66,
-                    "content": "DE CO KET QUA HOC TAP TOT TRONG MOI TRUONG E LEARNING, HOC VIEN CAN CO KY NANG GI?",
-                    "isInExam": false,
-                    "optionA": "KY NANG GHI CHEP",
-                    "optionB": "KY NANG SU DUNG INTERNET VA CAC TIEN ICH",
-                    "optionC": "KY NANG GIAO TIEP, UNG XU LINH HOAT",
-                    "optionD": "KY NANG TRINH BAY, THUYET TRINH",
-                    "questionId": 85643
-                },
-                {
-                    "answer": 67,
-                    "content": "HOC TAP TRONG MOI TRUONG ELEARNING, TINH TU GIAC CUA NGUOI HOC DUOC THE HIEN THONG QUA HOAT DONG?",
-                    "isInExam": false,
-                    "optionA": "TAP TRUNG LAM TAT CA CAC BAI TAP, NHIEM VU TAI MOT THOI DIEM DUY NHAT",
-                    "optionB": "DANG KY HOC TAP DUNG HAN",
-                    "optionC": "TU HOC, TU KIEM TRA VA DANH GIA DUOC KIEN THUC CUA MINH",
-                    "optionD": "THAM GIA THI VA NOP HOC PHI DUNG HAN",
-                    "questionId": 73245
-                },
-                {
-                    "answer": 66,
-                    "content": "THEO QUY DINH DOI VOI BAI KIEM TRA TRAC NGHIEM TREN HE THONG E LEARNING, NGUOI HOC CO THE THUC HIEN BAO NHIEU LAN?",
-                    "isInExam": false,
-                    "optionA": "KHONG QUY DINH SO LAN, NGUOI HOC CHI CO THE LUYEN TAP TRONG THOI GIAN QUY DINH CUA MON HOC VA SE TINH DIEM CAO NHAT TRONG SO LAN THUC HIEN",
-                    "optionB": "1 LAN DUY NHAT VA TINH DIEM GIUA KY",
-                    "optionC": "KHONG QUY DINH SO LAN VA NGUOI HOC CO THE THUC HIEN BAT KY THOI GIAN NAO TUY Y",
-                    "optionD": "TOI DA 3 LAN VA TINH DIEM CAO NHAT",
-                    "questionId": 83921
-                }
-            ],
-            "subjectCode": "INT11176",
-            "subjectName": "NHAP MON ELEARNING"
-        },
-        {
-            "questions": [
-                {
                     "answer": 66,
                     "content": "LY THUYET THONG TIN LA GI",
                     "isInExam": false,
@@ -1408,313 +160,157 @@
             "questions": [
                 {
                     "answer": 66,
-                    "content": "QUANG HOC NGHIEN CUU VE DAI LUONG NAO",
+                    "content": "CPU DUOC VIET TAT TU CUM TU NAO",
                     "isInExam": false,
-                    "optionA": "ANH SANG",
-                    "optionB": "AM THANH",
-                    "optionC": "NHIET",
-                    "optionD": "DIEN",
-                    "questionId": 94125
+                    "optionA": "CENTRAL PROCESSING UNIT",
+                    "optionB": "CONTROL PROCESSING UNIT",
+                    "optionC": "COMPUTER PROCESSING UNIT",
+                    "optionD": "COMPLEX PROCESSING UNIT",
+                    "questionId": 56172
                 },
                 {
                     "answer": 67,
-                    "content": "HAT NAO DUOC XEM LA KHONG MANG DIEN TICH",
+                    "content": "RAM DUOC SU DUNG DE LAM GI",
                     "isInExam": false,
-                    "optionA": "PROTON",
-                    "optionB": "NEUTRON",
-                    "optionC": "ELECTRON",
-                    "optionD": "PHOTON",
-                    "questionId": 85472
-                },
-                {
-                    "answer": 68,
-                    "content": "TINH CHAT QUAN TRONG CUA SONG DIEN TU LA GI",
-                    "isInExam": false,
-                    "optionA": "CO TAN SO",
-                    "optionB": "CO THE TICH",
-                    "optionC": "CO BIEN DO",
-                    "optionD": "CO DIEN TICH",
-                    "questionId": 72984
+                    "optionA": "LUU TRU DU LIEU TAM THOI",
+                    "optionB": "LUU TRU DU LIEU DAU DAI",
+                    "optionC": "CHUYEN DOI DU LIEU",
+                    "optionD": "LUU TRU HINH ANH",
+                    "questionId": 67284
                 },
                 {
                     "answer": 66,
-                    "content": "TAN SO CUA SONG AM DUOC DO BANG DON VI NAO",
+                    "content": "THANH PHAN CHINH CUA CPU LA GI",
+                    "isInExam": false,
+                    "optionA": "ALU VA CU",
+                    "optionB": "RAM VA ROM",
+                    "optionC": "MAINBOARD",
+                    "optionD": "CHIPSET",
+                    "questionId": 48129
+                },
+                {
+                    "answer": 68,
+                    "content": "ALU DUOC VIET TAT TU CUM TU NAO",
+                    "isInExam": false,
+                    "optionA": "ARITHMETIC LOGIC UNIT",
+                    "optionB": "ARRAY LOGIC UNIT",
+                    "optionC": "ANALOG LOGIC UNIT",
+                    "optionD": "ADVANCED LOGIC UNIT",
+                    "questionId": 69234
+                },
+                {
+                    "answer": 66,
+                    "content": "ROM CO DAC DIEM NAO",
+                    "isInExam": false,
+                    "optionA": "CHI DOC",
+                    "optionB": "CHI GHI",
+                    "optionC": "DOC VA GHI",
+                    "optionD": "KHONG SU DUNG DUOC",
+                    "questionId": 58124
+                },
+                {
+                    "answer": 67,
+                    "content": "THANH PHAN NAO QUAN TRONG NHAT TRONG BO XU LY TRUNG TAM",
+                    "isInExam": false,
+                    "optionA": "ALU",
+                    "optionB": "CU",
+                    "optionC": "REGISTER",
+                    "optionD": "CACHE",
+                    "questionId": 74129
+                },
+                {
+                    "answer": 68,
+                    "content": "KHENH DU LIEU TRONG HE THONG GOI LA GI",
+                    "isInExam": false,
+                    "optionA": "DATA BUS",
+                    "optionB": "CONTROL BUS",
+                    "optionC": "ADDRESS BUS",
+                    "optionD": "SYSTEM BUS",
+                    "questionId": 38194
+                },
+                {
+                    "answer": 66,
+                    "content": "MO HINH MAY TINH PHO BIEN HIEN NAY LA GI",
+                    "isInExam": false,
+                    "optionA": "MO HINH VON NEUMANN",
+                    "optionB": "MO HINH BATCH PROCESSING",
+                    "optionC": "MO HINH CLIENT SERVER",
+                    "optionD": "MO HINH PARALLEL PROCESSING",
+                    "questionId": 47293
+                },
+                {
+                    "answer": 67,
+                    "content": "QUAN HE GIUA RAM VA ROM LA GI",
+                    "isInExam": false,
+                    "optionA": "RAM DOC VA GHI, ROM CHI DOC",
+                    "optionB": "RAM CHI DOC, ROM DOC VA GHI",
+                    "optionC": "CA RAM VA ROM DEU CHI DOC",
+                    "optionD": "CA RAM VA ROM DEU DOC VA GHI",
+                    "questionId": 59283
+                },
+                {
+                    "answer": 68,
+                    "content": "CHUC NANG CHINH CUA CU TRONG CPU LA GI",
+                    "isInExam": false,
+                    "optionA": "DIEU KHIEN CAC HOAT DONG",
+                    "optionB": "THUC HIEN CAC PHEP TINH TOAN",
+                    "optionC": "LUU TRU DU LIEU TAM THOI",
+                    "optionD": "DOC VA GHI DU LIEU",
+                    "questionId": 81947
+                },
+                {
+                    "answer": 66,
+                    "content": "BO NHO DEM (CACHE MEMORY) DUOC SU DUNG DE LAM GI",
+                    "isInExam": false,
+                    "optionA": "TANG TOC DO TRUY XUAT DU LIEU",
+                    "optionB": "LUU TRU DU LIEU THOI GIAN DAU",
+                    "optionC": "DOC DU LIEU QUA MANG",
+                    "optionD": "CHUYEN DOI DIA CHI",
+                    "questionId": 28319
+                },
+                {
+                    "answer": 67,
+                    "content": "CLOCK SPEED CUA CPU DUOC DO BANG DON VI NAO",
                     "isInExam": false,
                     "optionA": "HERTZ",
-                    "optionB": "NEWTON",
-                    "optionC": "WATT",
-                    "optionD": "JOULE",
-                    "questionId": 81563
-                },
-                {
-                    "answer": 67,
-                    "content": "ANH SANG LA SONG GIAO THOA CUA DAI LUONG NAO",
-                    "isInExam": false,
-                    "optionA": "DIEN VA TU TRUONG",
-                    "optionB": "KHONG KHI VA NUOC",
-                    "optionC": "AP SUAT VA MA SAT",
-                    "optionD": "LUC VA GIA TOC",
-                    "questionId": 49281
-                },
-                {
-                    "answer": 66,
-                    "content": "NHIET DO TUYET DOI DUOC TINH TU THANG DO NAO",
-                    "isInExam": false,
-                    "optionA": "KELVIN",
-                    "optionB": "CELSIUS",
-                    "optionC": "FAHRENHEIT",
-                    "optionD": "RANKINE",
-                    "questionId": 32859
+                    "optionB": "BIT",
+                    "optionC": "BYTE",
+                    "optionD": "SECOND",
+                    "questionId": 91428
                 },
                 {
                     "answer": 68,
-                    "content": "KHONG KHI TRONG CHAT KHI CO TINH CHAT GI",
+                    "content": "THANH GHI (REGISTER) DUOC DUNG DE LAM GI",
                     "isInExam": false,
-                    "optionA": "CO BIEN DANG",
-                    "optionB": "CO THE TICH CO DINH",
-                    "optionC": "CO DIEN TICH",
-                    "optionD": "CO KHOI LUONG",
-                    "questionId": 41782
+                    "optionA": "LUU TRU DU LIEU TAM THOI TRONG QUA TRINH XU LY",
+                    "optionB": "LUU TRU DU LIEU DAU DAI",
+                    "optionC": "KET NOI CAC THANH PHAN CUA CPU",
+                    "optionD": "DIEU KHIEN CAC HOAT DONG CUA CPU",
+                    "questionId": 47129
                 },
                 {
                     "answer": 66,
-                    "content": "LUC VAN DUNG TRONG CO HOC LUONG TU LA GI",
+                    "content": "HE THONG BUS BAO GOM NHUNG LOAI NAO",
                     "isInExam": false,
-                    "optionA": "LUC HUT TRAI DAT",
-                    "optionB": "LUC HAP DAN",
-                    "optionC": "LUC TUONG TAC YEUNG",
-                    "optionD": "LUC TUONG TAC MANH",
-                    "questionId": 75621
+                    "optionA": "DATA BUS, CONTROL BUS, ADDRESS BUS",
+                    "optionB": "INPUT BUS, OUTPUT BUS, DATA BUS",
+                    "optionC": "SYSTEM BUS, MEMORY BUS, IO BUS",
+                    "optionD": "ADDRESS BUS, CONTROL BUS, MEMORY BUS",
+                    "questionId": 37481
                 },
                 {
                     "answer": 67,
-                    "content": "DONG DIEN CO TINH CHAT GI DAC TRUNG",
+                    "content": "SO LENH TRONG CPU PHU THUOC VAO DAU",
                     "isInExam": false,
-                    "optionA": "LUC VA CHUYEN DONG",
-                    "optionB": "SU PHAN CUC",
-                    "optionC": "DIEN TICH",
-                    "optionD": "HUONG DIEN",
-                    "questionId": 54862
-                },
-                {
-                    "answer": 68,
-                    "content": "DIEU KIEN DE ANH SANG XAY RA KHUYET TAT LA GI",
-                    "isInExam": false,
-                    "optionA": "VAN TOC CHUYEN DONG",
-                    "optionB": "GOC PHAN XA",
-                    "optionC": "GOC KHUC XA",
-                    "optionD": "BIEN DO ANH SANG",
-                    "questionId": 67491
-                },
-                {
-                    "answer": 66,
-                    "content": "CHAT TU KHAC VOI CHAT DIEN O TINH CHAT NAO",
-                    "isInExam": false,
-                    "optionA": "HINH DANG",
-                    "optionB": "KHOI LUONG",
-                    "optionC": "DIEN TICH",
-                    "optionD": "DO TU NHAP",
-                    "questionId": 31978
-                },
-                {
-                    "answer": 67,
-                    "content": "LUONG TU PHOTON MANG NANG LUONG DUOC GOI LA GI",
-                    "isInExam": false,
-                    "optionA": "HAT DIEN",
-                    "optionB": "HAT SONG",
-                    "optionC": "HAT QUANG",
-                    "optionD": "HAT HAP DAN",
-                    "questionId": 49123
-                },
-                {
-                    "answer": 66,
-                    "content": "KHI SONG AM GIAO THOA, DAU LA DAI LUONG KHONG BI THAY DOI",
-                    "isInExam": false,
-                    "optionA": "BIEN DO",
-                    "optionB": "TAN SO",
-                    "optionC": "THE TICH",
-                    "optionD": "AP SUAT",
-                    "questionId": 72849
-                },
-                {
-                    "answer": 67,
-                    "content": "TINH CHAT QUAN TRONG CUA SONG TUONG TAC LA GI",
-                    "isInExam": false,
-                    "optionA": "CO DIEN TICH",
-                    "optionB": "CO HUONG",
-                    "optionC": "CO BIEN DO",
-                    "optionD": "CO VAN TOC",
-                    "questionId": 91836
-                },
-                {
-                    "answer": 68,
-                    "content": "THANH PHAN NAO QUAN TRONG NHAT TRONG HE QUANG HOC",
-                    "isInExam": false,
-                    "optionA": "GOC PHAN XA",
-                    "optionB": "GOC KHUC XA",
-                    "optionC": "DIEM TIEU CUC",
-                    "optionD": "DONG DIEN TU",
-                    "questionId": 64738
+                    "optionA": "THIET KE CUA CPU",
+                    "optionB": "KICH THUOC RAM",
+                    "optionC": "KICH THUOC ROM",
+                    "optionD": "HE THONG BUS",
+                    "questionId": 68249
                 }
             ],
-            "subjectCode": "BAS1227",
-            "subjectName": "VAT LY 3 VA THI NGHIEM"
-        },
-        {
-            "questions": [
-                {
-                    "answer": 66,
-                    "content": "HE THONG SO HOAT DONG DUA TREN DAU",
-                    "isInExam": false,
-                    "optionA": "TIN HIEU SO",
-                    "optionB": "TIN HIEU TUONG TU",
-                    "optionC": "TIN HIEU GIAI TUYEN",
-                    "optionD": "TIN HIEU CHUYEN DOI",
-                    "questionId": 21487
-                },
-                {
-                    "answer": 67,
-                    "content": "TRONG KY THUAT SO, BIT DUOC HIEU LA GI",
-                    "isInExam": false,
-                    "optionA": "DON VI LUU TRU",
-                    "optionB": "DON VI DU LIEU NHO NHAT",
-                    "optionC": "DON VI BO NHO",
-                    "optionD": "DON VI XU LY",
-                    "questionId": 37492
-                },
-                {
-                    "answer": 66,
-                    "content": "PHAN BIEU LUYEN KY GIUA SO VA MA LA GI",
-                    "isInExam": false,
-                    "optionA": "TIN HIEU SO CO DAU HAI TRANG THAI 0 VA 1",
-                    "optionB": "TIN HIEU MA LA TIN HIEU TUONG TU",
-                    "optionC": "TIN HIEU MA KHONG CHUYEN DOI",
-                    "optionD": "TIN HIEU TUONG TU LA TIN HIEU CHUYEN DOI SO",
-                    "questionId": 94385
-                },
-                {
-                    "answer": 68,
-                    "content": "HE CO SO 2 BAO GOM NHUNG KI HIEU NAO",
-                    "isInExam": false,
-                    "optionA": "0 VA 1",
-                    "optionB": "0, 1, 2",
-                    "optionC": "1, 2, 3",
-                    "optionD": "0, 1, 2, 3",
-                    "questionId": 46298
-                },
-                {
-                    "answer": 66,
-                    "content": "GIA TRI LOGIC 1 TRONG KY THUAT SO DUOC HIEU LA",
-                    "isInExam": false,
-                    "optionA": "TIN HIEU CAO",
-                    "optionB": "TIN HIEU THAP",
-                    "optionC": "TIN HIEU AM",
-                    "optionD": "KHONG CO TIN HIEU",
-                    "questionId": 58321
-                },
-                {
-                    "answer": 67,
-                    "content": "HE DECIMAL LA HE THONG NAO",
-                    "isInExam": false,
-                    "optionA": "HE CO SO 10",
-                    "optionB": "HE CO SO 8",
-                    "optionC": "HE CO SO 2",
-                    "optionD": "HE CO SO 16",
-                    "questionId": 47136
-                },
-                {
-                    "answer": 66,
-                    "content": "GIA TRI LOGIC 0 TRONG KY THUAT SO DUOC HIEU LA",
-                    "isInExam": false,
-                    "optionA": "TIN HIEU THAP",
-                    "optionB": "TIN HIEU CAO",
-                    "optionC": "TIN HIEU AM",
-                    "optionD": "KHONG CO TIN HIEU",
-                    "questionId": 21834
-                },
-                {
-                    "answer": 68,
-                    "content": "PHAN TU CO BAN NHAT TRONG MACH KY THUAT SO LA GI",
-                    "isInExam": false,
-                    "optionA": "CUA LOGIC",
-                    "optionB": "BOSCH",
-                    "optionC": "SO CHUYEN MACH",
-                    "optionD": "TAN SO LOGIC",
-                    "questionId": 82947
-                },
-                {
-                    "answer": 67,
-                    "content": "CONG LOGIC DUOC SU DUNG DE LAM GI",
-                    "isInExam": false,
-                    "optionA": "GIAI MA TIN HIEU",
-                    "optionB": "THUC HIEN CAC PHEP TOAN CO BAN",
-                    "optionC": "LUU TRU DU LIEU",
-                    "optionD": "CHUYEN DOI DU LIEU",
-                    "questionId": 49132
-                },
-                {
-                    "answer": 66,
-                    "content": "CHON CONG LOGIC NAO CO DAU RA LUON TRAI NGUOC DAU VAO",
-                    "isInExam": false,
-                    "optionA": "CONG NOT",
-                    "optionB": "CONG AND",
-                    "optionC": "CONG OR",
-                    "optionD": "CONG XOR",
-                    "questionId": 71843
-                },
-                {
-                    "answer": 68,
-                    "content": "TIN HIEU KY THUAT SO KHAC TIN HIEU TUONG TU O DAU",
-                    "isInExam": false,
-                    "optionA": "TIN HIEU CO CAC TRANG THAI ROI RAC",
-                    "optionB": "TIN HIEU BIEN DOI THEO THOI GIAN LIEN TUC",
-                    "optionC": "TIN HIEU DUOC CHUYEN DOI TUONG TU",
-                    "optionD": "TIN HIEU KHONG CO TRANG THAI",
-                    "questionId": 49327
-                },
-                {
-                    "answer": 66,
-                    "content": "CONG AND CO DAU RA BANG 1 KHI NAO",
-                    "isInExam": false,
-                    "optionA": "TAT CA DAU VAO DEU BANG 1",
-                    "optionB": "MOI DAU VAO BANG 0",
-                    "optionC": "CHI CO MOT DAU VAO BANG 1",
-                    "optionD": "TAT CA DAU VAO DEU BANG 0",
-                    "questionId": 69238
-                },
-                {
-                    "answer": 67,
-                    "content": "CONG OR CO DAU RA BANG 1 KHI NAO",
-                    "isInExam": false,
-                    "optionA": "CHI CAN MOT DAU VAO BANG 1",
-                    "optionB": "TAT CA DAU VAO BANG 0",
-                    "optionC": "TAT CA DAU VAO BANG 1",
-                    "optionD": "MOI DAU VAO DEU BANG 0",
-                    "questionId": 52834
-                },
-                {
-                    "answer": 66,
-                    "content": "CHUYEN DOI HE CO SO 2 THANH HE CO SO 10 DUOC GOI LA GI",
-                    "isInExam": false,
-                    "optionA": "GIA TRI TUONG UNG",
-                    "optionB": "TIN HIEU CHUYEN DOI",
-                    "optionC": "TIN HIEU QUAN HE",
-                    "optionD": "SO LIEU TUONG THICH",
-                    "questionId": 81937
-                },
-                {
-                    "answer": 68,
-                    "content": "PHAN TU NHO NHAT DE XAY DUNG MACH LOGIC LA GI",
-                    "isInExam": false,
-                    "optionA": "TRANSISTOR",
-                    "optionB": "DIOD",
-                    "optionC": "TAN SO",
-                    "optionD": "CHUYEN MACH",
-                    "questionId": 61847
-                }
-            ],
-            "subjectCode": "ELE1433",
-            "subjectName": "KY THUAT SO"
+            "subjectCode": "INT13145",
+            "subjectName": "KIEN TRUC MAY TINH"
         },
         {
             "questions": [
@@ -1876,164 +472,320 @@
             "questions": [
                 {
                     "answer": 66,
-                    "content": "CPU DUOC VIET TAT TU CUM TU NAO",
-                    "isInExam": true,
-                    "optionA": "CENTRAL PROCESSING UNIT",
-                    "optionB": "CONTROL PROCESSING UNIT",
-                    "optionC": "COMPUTER PROCESSING UNIT",
-                    "optionD": "COMPLEX PROCESSING UNIT",
-                    "questionId": 56172
-                },
-                {
-                    "answer": 67,
-                    "content": "RAM DUOC SU DUNG DE LAM GI",
-                    "isInExam": true,
-                    "optionA": "LUU TRU DU LIEU TAM THOI",
-                    "optionB": "LUU TRU DU LIEU DAU DAI",
-                    "optionC": "CHUYEN DOI DU LIEU",
-                    "optionD": "LUU TRU HINH ANH",
-                    "questionId": 67284
-                },
-                {
-                    "answer": 66,
-                    "content": "THANH PHAN CHINH CUA CPU LA GI",
-                    "isInExam": true,
-                    "optionA": "ALU VA CU",
-                    "optionB": "RAM VA ROM",
-                    "optionC": "MAINBOARD",
-                    "optionD": "CHIPSET",
-                    "questionId": 48129
+                    "content": "DAU KHONG PHAI LA MOT TRONG CAC YEU CAU GIAO DIEN NGUOI DUNG CUA MOT HE THONG LMS DIEN HINH?",
+                    "isInExam": false,
+                    "optionA": "HO TRO CHUC NANG TRO GIUP VA HUONG DAN TRUC TUYEN",
+                    "optionB": "KHONG CHO PHEP THIET LAP NHIEU GIAO DIEN RIENG BIET CHO CAC NHOM NGUOI DUNG KHAC NHAU",
+                    "optionC": "CO KHA NANG TUY CHINH VA THAN THIEN NGUOI DUNG",
+                    "optionD": "HO TRO GIAO DIEN NGUOI DUNG TREN CO SO TRINH DUYET WEB",
+                    "questionId": 60104
                 },
                 {
                     "answer": 68,
-                    "content": "ALU DUOC VIET TAT TU CUM TU NAO",
-                    "isInExam": true,
-                    "optionA": "ARITHMETIC LOGIC UNIT",
-                    "optionB": "ARRAY LOGIC UNIT",
-                    "optionC": "ANALOG LOGIC UNIT",
-                    "optionD": "ADVANCED LOGIC UNIT",
-                    "questionId": 69234
-                },
-                {
-                    "answer": 66,
-                    "content": "ROM CO DAC DIEM NAO",
-                    "isInExam": true,
-                    "optionA": "CHI DOC",
-                    "optionB": "CHI GHI",
-                    "optionC": "DOC VA GHI",
-                    "optionD": "KHONG SU DUNG DUOC",
-                    "questionId": 58124
-                },
-                {
-                    "answer": 67,
-                    "content": "THANH PHAN NAO QUAN TRONG NHAT TRONG BO XU LY TRUNG TAM",
-                    "isInExam": true,
-                    "optionA": "ALU",
-                    "optionB": "CU",
-                    "optionC": "REGISTER",
-                    "optionD": "CACHE",
-                    "questionId": 74129
+                    "content": "HOP THU DIEN TU CUA CHUONG TRINH E LEARNING.PTITHCM.EDU.VN DUOC XAY DUNG DUA TREN HOP THU DIEN TU NAO DUOI DAY?",
+                    "isInExam": false,
+                    "optionA": "YAHOO MAIL",
+                    "optionB": "ZING MAIL",
+                    "optionC": "EMAIL MARKETING",
+                    "optionD": "GOOGLE MAIL",
+                    "questionId": 76999
                 },
                 {
                     "answer": 68,
-                    "content": "KHENH DU LIEU TRONG HE THONG GOI LA GI",
-                    "isInExam": true,
-                    "optionA": "DATA BUS",
-                    "optionB": "CONTROL BUS",
-                    "optionC": "ADDRESS BUS",
-                    "optionD": "SYSTEM BUS",
-                    "questionId": 38194
-                },
-                {
-                    "answer": 66,
-                    "content": "MO HINH MAY TINH PHO BIEN HIEN NAY LA GI",
-                    "isInExam": true,
-                    "optionA": "MO HINH VON NEUMANN",
-                    "optionB": "MO HINH BATCH PROCESSING",
-                    "optionC": "MO HINH CLIENT SERVER",
-                    "optionD": "MO HINH PARALLEL PROCESSING",
-                    "questionId": 47293
-                },
-                {
-                    "answer": 67,
-                    "content": "QUAN HE GIUA RAM VA ROM LA GI",
-                    "isInExam": true,
-                    "optionA": "RAM DOC VA GHI, ROM CHI DOC",
-                    "optionB": "RAM CHI DOC, ROM DOC VA GHI",
-                    "optionC": "CA RAM VA ROM DEU CHI DOC",
-                    "optionD": "CA RAM VA ROM DEU DOC VA GHI",
-                    "questionId": 59283
+                    "content": "DOI VOI CAC LOP HOC E LEARNING, KHANG DINH NAO DUOI DAY LA DUNG?",
+                    "isInExam": false,
+                    "optionA": "SINH VIEN CO THE LAM CAC BAI TAP VE NHA TINH DIEM BAT CU LUC NAO",
+                    "optionB": "SINH VIEN CO THE LAM CAC BAI TAP VE NHA TINH DIEM MA KHONG BI GIOI HAN THOI GIAN LAM BAI",
+                    "optionC": "SINH VIEN CHI CO THE LAM CAC BAI LUYEN TAP TRAC NGHIEM KHONG TINH DIEM TOI DA LA 10 LAN",
+                    "optionD": "SINH VIEN CO THE LAM CAC BAI LUYEN TAP TRAC NGHIEM KHONG TINH DIEM BAT CU LUC NAO",
+                    "questionId": 24234
                 },
                 {
                     "answer": 68,
-                    "content": "CHUC NANG CHINH CUA CU TRONG CPU LA GI",
-                    "isInExam": true,
-                    "optionA": "DIEU KHIEN CAC HOAT DONG",
-                    "optionB": "THUC HIEN CAC PHEP TINH TOAN",
-                    "optionC": "LUU TRU DU LIEU TAM THOI",
-                    "optionD": "DOC VA GHI DU LIEU",
-                    "questionId": 81947
+                    "content": "DAU KHONG LA MUC DICH KHI PHO BIEN MUC TIEU HOC TAP TRONG E-LEARNING?",
+                    "isInExam": false,
+                    "optionA": "TAP TRUNG VAO NHUNG PHAN CUA NOI DUNG BAI HOC",
+                    "optionB": "MO TA CHI TIET KET QUA MA NGUOI DAY MUON BAN PHAI HUONG TOI SAU TUNG BAI HOC",
+                    "optionC": "MO TA CHINH XAC NHUNG GI BAN PHAI DAT DUOC SAU KHI HOAN THANH LOP HOC",
+                    "optionD": "DE BAN BIET DUOC GIANG VIEN NAO SE GIANG DAY",
+                    "questionId": 82184
                 },
                 {
                     "answer": 66,
-                    "content": "BO NHO DEM (CACHE MEMORY) DUOC SU DUNG DE LAM GI",
-                    "isInExam": true,
-                    "optionA": "TANG TOC DO TRUY XUAT DU LIEU",
-                    "optionB": "LUU TRU DU LIEU THOI GIAN DAU",
-                    "optionC": "DOC DU LIEU QUA MANG",
-                    "optionD": "CHUYEN DOI DIA CHI",
-                    "questionId": 28319
+                    "content": "LMS LA VIET TAT CUA CUM TU TIENG ANH NAO?",
+                    "isInExam": false,
+                    "optionA": "LEARNING MODEL SITE",
+                    "optionB": "LEARNING MANAGEMENT SYSTEM",
+                    "optionC": "LEARNING MODEL SHARABLE",
+                    "optionD": "LEARNING MANAGEMENT SITE",
+                    "questionId": 28023
                 },
                 {
-                    "answer": 67,
-                    "content": "CLOCK SPEED CUA CPU DUOC DO BANG DON VI NAO",
-                    "isInExam": true,
-                    "optionA": "HERTZ",
-                    "optionB": "BIT",
-                    "optionC": "BYTE",
-                    "optionD": "SECOND",
-                    "questionId": 91428
+                    "answer": 66,
+                    "content": "CHON PHAT BIEU SAI?",
+                    "isInExam": false,
+                    "optionA": "LMS LA MOT HE THONG DICH VU QUAN LY VIEC PHAN PHOI VA TIM KIEM NOI DUNG HOC TAP CHO NGUOI HOC",
+                    "optionB": "LCMS KHONG CHO PHEP NGUOI DUNG TAO RA VA SU DUNG LAI NHUNG DON VI NOI DUNG NHO TRONG KHO DU LIEU TRUNG TAM",
+                    "optionC": "LCMS LA MOT HE THONG QUAN LY NOI DUNG HOC TAP",
+                    "optionD": "LMS LAY THONG TIN VE VI TRI CUA KHOA HOC TU LCMS VA VE CAC HOAT DONG CUA SINH VIEN TU LCMS",
+                    "questionId": 99316
+                },
+                {
+                    "answer": 65,
+                    "content": "KHI NOI VE CAC CHUAN VA DAC TA CHO HE THONG E-LEARNING, CO 2 PHAT BIEU NHU SAU: PB1: CAC CHUAN VA DAC TA LA THANH PHAN KET NOI TAT CA CAC THANH PHAN CUA HE THONG E-LEARNING. PB2: CAC CHUAN CHO PHEP GHEP CAC KHOA HOC TAO BOI CAC CONG CU KHAC NHAU BOI CAC NHA SAN XUAT KHAC NHAU THANH CAC GOI NOI DUNG DUOC GOI LA CAC CHUAN METADATA. HOI KHANG DINH NAO SAU DAY LA DUNG?",
+                    "isInExam": false,
+                    "optionA": "PB1 DUNG, PB2 SAI",
+                    "optionB": "PB1 DUNG, PB2 DUNG",
+                    "optionC": "PB1 SAI, PB2 SAI",
+                    "optionD": "PB1 SAI, PB2 DUNG",
+                    "questionId": 90649
                 },
                 {
                     "answer": 68,
-                    "content": "THANH GHI (REGISTER) DUOC DUNG DE LAM GI",
-                    "isInExam": true,
-                    "optionA": "LUU TRU DU LIEU TAM THOI TRONG QUA TRINH XU LY",
-                    "optionB": "LUU TRU DU LIEU DAU DAI",
-                    "optionC": "KET NOI CAC THANH PHAN CUA CPU",
-                    "optionD": "DIEU KHIEN CAC HOAT DONG CUA CPU",
-                    "questionId": 47129
+                    "content": "THEO SLOAN CONSORTIUM LOP HOC NAO DUOI DAY LA LOP HOC TRUYEN THONG?",
+                    "isInExam": false,
+                    "optionA": "KET HOP GIUA CONG NGHE INTERNET VA TRUYEN THONG. SINH VIEN VA THAY CO NHUNG GAP GO, TRAO DOI TREN INTERNET VA CO CA NHUNG BUOI GAP TRUC TIEP",
+                    "optionB": "TAT CA NOI DUNG TREN INTERNET; KHONG CO GAP TRUC TIEP",
+                    "optionC": "SU DUNG INTERNET DE DANG TAI CAC HOC LIEU NHU DE CUONG; BAI TAP; BAI GIANG. SINH VIEN VA THAY GAP GO TRUC TIEP (MAT GIAP MAT)",
+                    "optionD": "KHONG CO NOI DUNG DUOC TRUYEN TAI BANG CONG NGHE INTERNET",
+                    "questionId": 1002
+                },
+                {
+                    "answer": 65,
+                    "content": "QUY TRINH SINH VIEN HOC TAP TREN HE THONG E LEARNING KHONG BAO GOM BUOC NAO?",
+                    "isInExam": false,
+                    "optionA": "HOC TAP",
+                    "optionB": "GAP GO GIAO VIEN",
+                    "optionC": "TIM HIEU THONG TIN LOP HOC",
+                    "optionD": "DANG KY HOC TAP",
+                    "questionId": 71234
                 },
                 {
                     "answer": 66,
-                    "content": "HE THONG BUS BAO GOM NHUNG LOAI NAO",
-                    "isInExam": true,
-                    "optionA": "DATA BUS, CONTROL BUS, ADDRESS BUS",
-                    "optionB": "INPUT BUS, OUTPUT BUS, DATA BUS",
-                    "optionC": "SYSTEM BUS, MEMORY BUS, IO BUS",
-                    "optionD": "ADDRESS BUS, CONTROL BUS, MEMORY BUS",
-                    "questionId": 37481
+                    "content": "DAU LA DAC DIEM CUA E-LEARNING?",
+                    "isInExam": false,
+                    "optionA": "SINH VIEN VA GIANG VIEN THUONG XUYEN GAP MAT TRUC TIEP O LOP HOC",
+                    "optionB": "TIEN TRINH HOC DUOC THEO DOI CHAT CHE VA CUNG CAP CONG CU TU DANH GIA",
+                    "optionC": "NOI DUNG KHOA HOC KHONG DUOC CAP NHAT",
+                    "optionD": "HOC KHONG CO SU HOP TAC, PHOI HOP",
+                    "questionId": 74532
                 },
                 {
                     "answer": 67,
-                    "content": "SO LENH TRONG CPU PHU THUOC VAO DAU",
-                    "isInExam": true,
-                    "optionA": "THIET KE CUA CPU",
-                    "optionB": "KICH THUOC RAM",
-                    "optionC": "KICH THUOC ROM",
-                    "optionD": "HE THONG BUS",
-                    "questionId": 68249
+                    "content": "TRONG QUA TRINH TRAO DOI VA GIAI DAP THAC MAC, YEU TO NAO KHONG PHAI LA UU DIEM KHI SU DUNG DIEN DAN?",
+                    "isInExam": false,
+                    "optionA": "BAN CO THE DAT CAU HOI BAT CU KHI NAO",
+                    "optionB": "BAN CO THE DAT CAU HOI DU BAN DANG O DAU MIEN LA BAN CO THE TRUY CAP INTERNET",
+                    "optionC": "BAN KHONG CO DUOC CAU TRA LOI NGAY TUC KHAC",
+                    "optionD": "CAU HOI CUA BAN SE DUOC CAU TRA LOI CUA NHIEU NGUOI",
+                    "questionId": 77654
+                },
+                {
+                    "answer": 68,
+                    "content": "TRONG MO HINH HE THONG E LEARNING KHONG BAO GOM THANH PHAN NAO?",
+                    "isInExam": false,
+                    "optionA": "HA TANG TRUYEN THONG VA MANG",
+                    "optionB": "DOI NGU KY SU CONG NGHE THONG TIN",
+                    "optionC": "HA TANG PHAN MEM",
+                    "optionD": "NOI DUNG DAO TAO",
+                    "questionId": 81923
+                },
+                {
+                    "answer": 66,
+                    "content": "DE CO KET QUA HOC TAP TOT TRONG MOI TRUONG E LEARNING, HOC VIEN CAN CO KY NANG GI?",
+                    "isInExam": false,
+                    "optionA": "KY NANG GHI CHEP",
+                    "optionB": "KY NANG SU DUNG INTERNET VA CAC TIEN ICH",
+                    "optionC": "KY NANG GIAO TIEP, UNG XU LINH HOAT",
+                    "optionD": "KY NANG TRINH BAY, THUYET TRINH",
+                    "questionId": 85643
+                },
+                {
+                    "answer": 67,
+                    "content": "HOC TAP TRONG MOI TRUONG ELEARNING, TINH TU GIAC CUA NGUOI HOC DUOC THE HIEN THONG QUA HOAT DONG?",
+                    "isInExam": false,
+                    "optionA": "TAP TRUNG LAM TAT CA CAC BAI TAP, NHIEM VU TAI MOT THOI DIEM DUY NHAT",
+                    "optionB": "DANG KY HOC TAP DUNG HAN",
+                    "optionC": "TU HOC, TU KIEM TRA VA DANH GIA DUOC KIEN THUC CUA MINH",
+                    "optionD": "THAM GIA THI VA NOP HOC PHI DUNG HAN",
+                    "questionId": 73245
+                },
+                {
+                    "answer": 66,
+                    "content": "THEO QUY DINH DOI VOI BAI KIEM TRA TRAC NGHIEM TREN HE THONG E LEARNING, NGUOI HOC CO THE THUC HIEN BAO NHIEU LAN?",
+                    "isInExam": false,
+                    "optionA": "KHONG QUY DINH SO LAN, NGUOI HOC CHI CO THE LUYEN TAP TRONG THOI GIAN QUY DINH CUA MON HOC VA SE TINH DIEM CAO NHAT TRONG SO LAN THUC HIEN",
+                    "optionB": "1 LAN DUY NHAT VA TINH DIEM GIUA KY",
+                    "optionC": "KHONG QUY DINH SO LAN VA NGUOI HOC CO THE THUC HIEN BAT KY THOI GIAN NAO TUY Y",
+                    "optionD": "TOI DA 3 LAN VA TINH DIEM CAO NHAT",
+                    "questionId": 83921
                 }
             ],
-            "subjectCode": "INT13145",
-            "subjectName": "KIEN TRUC MAY TINH"
+            "subjectCode": "INT11176",
+            "subjectName": "NHAP MON ELEARNING"
+        },
+        {
+            "questions": [
+                {
+                    "answer": 66,
+                    "content": "HE THONG SO HOAT DONG DUA TREN DAU",
+                    "isInExam": false,
+                    "optionA": "TIN HIEU SO",
+                    "optionB": "TIN HIEU TUONG TU",
+                    "optionC": "TIN HIEU GIAI TUYEN",
+                    "optionD": "TIN HIEU CHUYEN DOI",
+                    "questionId": 21487
+                },
+                {
+                    "answer": 67,
+                    "content": "TRONG KY THUAT SO, BIT DUOC HIEU LA GI",
+                    "isInExam": false,
+                    "optionA": "DON VI LUU TRU",
+                    "optionB": "DON VI DU LIEU NHO NHAT",
+                    "optionC": "DON VI BO NHO",
+                    "optionD": "DON VI XU LY",
+                    "questionId": 37492
+                },
+                {
+                    "answer": 66,
+                    "content": "PHAN BIEU LUYEN KY GIUA SO VA MA LA GI",
+                    "isInExam": false,
+                    "optionA": "TIN HIEU SO CO DAU HAI TRANG THAI 0 VA 1",
+                    "optionB": "TIN HIEU MA LA TIN HIEU TUONG TU",
+                    "optionC": "TIN HIEU MA KHONG CHUYEN DOI",
+                    "optionD": "TIN HIEU TUONG TU LA TIN HIEU CHUYEN DOI SO",
+                    "questionId": 94385
+                },
+                {
+                    "answer": 68,
+                    "content": "HE CO SO 2 BAO GOM NHUNG KI HIEU NAO",
+                    "isInExam": false,
+                    "optionA": "0 VA 1",
+                    "optionB": "0, 1, 2",
+                    "optionC": "1, 2, 3",
+                    "optionD": "0, 1, 2, 3",
+                    "questionId": 46298
+                },
+                {
+                    "answer": 66,
+                    "content": "GIA TRI LOGIC 1 TRONG KY THUAT SO DUOC HIEU LA",
+                    "isInExam": false,
+                    "optionA": "TIN HIEU CAO",
+                    "optionB": "TIN HIEU THAP",
+                    "optionC": "TIN HIEU AM",
+                    "optionD": "KHONG CO TIN HIEU",
+                    "questionId": 58321
+                },
+                {
+                    "answer": 67,
+                    "content": "HE DECIMAL LA HE THONG NAO",
+                    "isInExam": false,
+                    "optionA": "HE CO SO 10",
+                    "optionB": "HE CO SO 8",
+                    "optionC": "HE CO SO 2",
+                    "optionD": "HE CO SO 16",
+                    "questionId": 47136
+                },
+                {
+                    "answer": 66,
+                    "content": "GIA TRI LOGIC 0 TRONG KY THUAT SO DUOC HIEU LA",
+                    "isInExam": false,
+                    "optionA": "TIN HIEU THAP",
+                    "optionB": "TIN HIEU CAO",
+                    "optionC": "TIN HIEU AM",
+                    "optionD": "KHONG CO TIN HIEU",
+                    "questionId": 21834
+                },
+                {
+                    "answer": 68,
+                    "content": "PHAN TU CO BAN NHAT TRONG MACH KY THUAT SO LA GI",
+                    "isInExam": false,
+                    "optionA": "CUA LOGIC",
+                    "optionB": "BOSCH",
+                    "optionC": "SO CHUYEN MACH",
+                    "optionD": "TAN SO LOGIC",
+                    "questionId": 82947
+                },
+                {
+                    "answer": 67,
+                    "content": "CONG LOGIC DUOC SU DUNG DE LAM GI",
+                    "isInExam": false,
+                    "optionA": "GIAI MA TIN HIEU",
+                    "optionB": "THUC HIEN CAC PHEP TOAN CO BAN",
+                    "optionC": "LUU TRU DU LIEU",
+                    "optionD": "CHUYEN DOI DU LIEU",
+                    "questionId": 49132
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON CONG LOGIC NAO CO DAU RA LUON TRAI NGUOC DAU VAO",
+                    "isInExam": false,
+                    "optionA": "CONG NOT",
+                    "optionB": "CONG AND",
+                    "optionC": "CONG OR",
+                    "optionD": "CONG XOR",
+                    "questionId": 71843
+                },
+                {
+                    "answer": 68,
+                    "content": "TIN HIEU KY THUAT SO KHAC TIN HIEU TUONG TU O DAU",
+                    "isInExam": false,
+                    "optionA": "TIN HIEU CO CAC TRANG THAI ROI RAC",
+                    "optionB": "TIN HIEU BIEN DOI THEO THOI GIAN LIEN TUC",
+                    "optionC": "TIN HIEU DUOC CHUYEN DOI TUONG TU",
+                    "optionD": "TIN HIEU KHONG CO TRANG THAI",
+                    "questionId": 49327
+                },
+                {
+                    "answer": 66,
+                    "content": "CONG AND CO DAU RA BANG 1 KHI NAO",
+                    "isInExam": false,
+                    "optionA": "TAT CA DAU VAO DEU BANG 1",
+                    "optionB": "MOI DAU VAO BANG 0",
+                    "optionC": "CHI CO MOT DAU VAO BANG 1",
+                    "optionD": "TAT CA DAU VAO DEU BANG 0",
+                    "questionId": 69238
+                },
+                {
+                    "answer": 67,
+                    "content": "CONG OR CO DAU RA BANG 1 KHI NAO",
+                    "isInExam": false,
+                    "optionA": "CHI CAN MOT DAU VAO BANG 1",
+                    "optionB": "TAT CA DAU VAO BANG 0",
+                    "optionC": "TAT CA DAU VAO BANG 1",
+                    "optionD": "MOI DAU VAO DEU BANG 0",
+                    "questionId": 52834
+                },
+                {
+                    "answer": 66,
+                    "content": "CHUYEN DOI HE CO SO 2 THANH HE CO SO 10 DUOC GOI LA GI",
+                    "isInExam": false,
+                    "optionA": "GIA TRI TUONG UNG",
+                    "optionB": "TIN HIEU CHUYEN DOI",
+                    "optionC": "TIN HIEU QUAN HE",
+                    "optionD": "SO LIEU TUONG THICH",
+                    "questionId": 81937
+                },
+                {
+                    "answer": 68,
+                    "content": "PHAN TU NHO NHAT DE XAY DUNG MACH LOGIC LA GI",
+                    "isInExam": false,
+                    "optionA": "TRANSISTOR",
+                    "optionB": "DIOD",
+                    "optionC": "TAN SO",
+                    "optionD": "CHUYEN MACH",
+                    "questionId": 61847
+                }
+            ],
+            "subjectCode": "ELE1433",
+            "subjectName": "KY THUAT SO"
         },
         {
             "questions": [
                 {
                     "answer": 65,
                     "content": "THIET BI HUB THONG THUONG NAM O TANG NAO CUA MO HINH OSI?",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "TANG 1",
                     "optionB": "TANG 2",
                     "optionC": "TANG 3",
@@ -2043,7 +795,7 @@
                 {
                     "answer": 66,
                     "content": "THIET BI SWITCH THONG THUONG NAM O TANG NAO CUA MO HINH OSI?",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "TANG 1",
                     "optionB": "TANG 2",
                     "optionC": "TANG 3",
@@ -2063,7 +815,7 @@
                 {
                     "answer": 67,
                     "content": "THIET BI ROUTER THONG THUONG NAM O TANG NAO MO HINH OSI?",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "TANG 1",
                     "optionB": "TANG 2",
                     "optionC": "TU TANG 3 TROI LEN",
@@ -2073,7 +825,7 @@
                 {
                     "answer": 65,
                     "content": "THIET BI HUB CO BAO NHIEU COLLISION DOMAIN?",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "1",
                     "optionB": "2",
                     "optionC": "3",
@@ -2083,7 +835,7 @@
                 {
                     "answer": 66,
                     "content": "THIET BI SWITCH CO BAO NHIEU COLLISION DOMAIN?",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "1 COLLISION",
                     "optionB": "2 COLLISION",
                     "optionC": "1 COLLISION/PORT",
@@ -2093,7 +845,7 @@
                 {
                     "answer": 67,
                     "content": "THIET BI SWITCH CO BAO NHIEU BROADCAST DOMAIN?",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "1",
                     "optionB": "2",
                     "optionC": "3",
@@ -2113,7 +865,7 @@
                 {
                     "answer": 67,
                     "content": "CAP UTP CO THE KET NOI TOI DA BAO NHIEU MET?",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "10",
                     "optionB": "20",
                     "optionC": "100",
@@ -2123,7 +875,7 @@
                 {
                     "answer": 67,
                     "content": "CAP QUANG CO THE KET NOI TOI DA BAO NHIEU MET?",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "1000",
                     "optionB": "2000",
                     "optionC": "LON HON 1000",
@@ -2133,7 +885,7 @@
                 {
                     "answer": 65,
                     "content": "DE NOI ROUTER VA MAY TINH TA PHAI BAM CAP KIEU NAO?",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "THANG",
                     "optionB": "CHEO",
                     "optionC": "KIEU NAO CUNG DUOC",
@@ -2143,7 +895,7 @@
                 {
                     "answer": 65,
                     "content": "THIET BI REPEATER XU LY O:",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "TANG 1: VAT LY",
                     "optionB": "TANG 2: DATA LINK",
                     "optionC": "TANG 3: NETWORK",
@@ -2163,7 +915,7 @@
                 {
                     "answer": 66,
                     "content": "KHOANG CACH TOI DA CHO CAP UTP LA:",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "185M",
                     "optionB": "100M",
                     "optionC": "150M",
@@ -2173,7 +925,7 @@
                 {
                     "answer": 67,
                     "content": "KHI SU DUNG MANG MAY TINH TA SE DUOC CAC LOI ICH:",
-                    "isInExam": true,
+                    "isInExam": false,
                     "optionA": "CHIA SE TAI NGUYEN (O CUNG, CO SO DU LIEU, MAY IN, CAC PHAN MIEN TICH, ...)",
                     "optionB": "QUAN LY TAP TRUNG, BAO MAT VA BACKUP TOT",
                     "optionC": "SU DUNG CAC DICH VU MANG",
@@ -2183,6 +935,162 @@
             ],
             "subjectCode": "INT1336",
             "subjectName": "MANG MAY TINH"
+        },
+        {
+            "questions": [
+                {
+                    "answer": 67,
+                    "content": "THOI GIAN THUC DAN PHAP TIEN HANH KHAI THAC THUOC DIA LAN THU NHAT O VIET NAM NHU THE NAO?",
+                    "isInExam": false,
+                    "optionA": "1858 1884",
+                    "optionB": "1884 1896",
+                    "optionC": "1896 1913",
+                    "optionD": "1914 1918",
+                    "questionId": 857321
+                },
+                {
+                    "answer": 67,
+                    "content": "TRONG DOT KHAI THAC THUOC DIA LAN THU NHAT CUA THUC DAN PHAP O NUOC TA CO GIAI CAP MOI NAO DUOC HINH THANH?",
+                    "isInExam": false,
+                    "optionA": "GIAI CAP TU SAN",
+                    "optionB": "GIAI CAP TU SAN VA CONG NHAN",
+                    "optionC": "GIAI CAP CONG NHAN",
+                    "optionD": "GIAI CAP TIEU TU SAN",
+                    "questionId": 432158
+                },
+                {
+                    "answer": 66,
+                    "content": "TRUOC CHIEN TRANH THE GIOI THU NHAT, O VIET NAM CO NHUNG GIAI CAP NAO?",
+                    "isInExam": false,
+                    "optionA": "DIA CHU PHONG KIEN VA NONG DAN",
+                    "optionB": "DIA CHU PHONG KIEN, NONG DAN, TU SAN, TIEU TU SAN VA CONG NHAN",
+                    "optionC": "DIA CHU PHONG KIEN, NONG DAN VA CONG NHAN",
+                    "optionD": "DIA CHU PHONG KIEN, NONG DAN VA TIEU TU SAN",
+                    "questionId": 924367
+                },
+                {
+                    "answer": 66,
+                    "content": "DUOI CHE DO THUC DAN PHONG KIEN, GIAI CAP NONG DAN VIET NAM CO YEU CAU BUC THIET NHAT LA GI?",
+                    "isInExam": false,
+                    "optionA": "DOC LAP DAN TOC",
+                    "optionB": "RUONG DAT",
+                    "optionC": "QUYEN BINH DANG NAM, NU",
+                    "optionD": "DUOC GIAM TO, GIAM TUC",
+                    "questionId": 987654
+                },
+                {
+                    "answer": 68,
+                    "content": "DAC DIEM RA DOI CUA GIAI CAP CONG NGHIEP VIET NAM NHU THE NAO?",
+                    "isInExam": false,
+                    "optionA": "RA DOI TRUOC GIAI CAP TU SAN, TRONG CUOC KHAI THAC THUOC DIA LAN THU NHAT CUA THUC DAN PHAP",
+                    "optionB": "PHAN LON XUAT THAN TU NONG DAN",
+                    "optionC": "CHIU SU AP BUC VA BOC LOT CUA DE QUOC, PHONG KIEN VA TU SAN DAN AP",
+                    "optionD": "CA A, B VA C",
+                    "questionId": 876543
+                },
+                {
+                    "answer": 67,
+                    "content": "NHUNG GIAI CAP BI TRI O VIET NAM DUOI CHE DO THUC DIA CUA DE QUOC PHAP LA:",
+                    "isInExam": false,
+                    "optionA": "CONG NHAN VA NONG DAN",
+                    "optionB": "CONG NHAN, NONG DAN, TIEU TU SAN",
+                    "optionC": "CONG NHAN, NONG DAN, TIEU TU SAN, TU SAN DAN TOC",
+                    "optionD": "CONG NHAN, NONG DAN, TIEU TU SAN, TU SAN DAN TOC, GIA CHU VA NHO",
+                    "questionId": 765432
+                },
+                {
+                    "answer": 66,
+                    "content": "KHI NAO PHONG TRAO CONG NGHIEP VIET NAM HOAN TOAN TRO THANH MOT PHONG TRA GIAI?",
+                    "isInExam": false,
+                    "optionA": "NAM 1920 (TO CHUC CONG HOI O SAI GON DUOC THANH LAP)",
+                    "optionB": "NAM 1925 (CUC BAI CONG BA SON)",
+                    "optionC": "NAM 1929 (SU RA DOI TO CHUC CONG SAN)",
+                    "optionD": "NAM 1930 (DANG CONG SAN VIET NAM RA DOI)",
+                    "questionId": 654321
+                },
+                {
+                    "answer": 68,
+                    "content": "NGUYEN AI QUOC LUA CHON CON DUONG GIAI PHONG DAN TOC THEO HUONG CHINH TRI VO SAN VAO THOI GIAN NAO?",
+                    "isInExam": false,
+                    "optionA": "1917",
+                    "optionB": "1918",
+                    "optionC": "1919",
+                    "optionD": "1920",
+                    "questionId": 827543
+                },
+                {
+                    "answer": 67,
+                    "content": "BAO DOI SONG CONG NHAN LA CUA TO CHUC NAO?",
+                    "isInExam": false,
+                    "optionA": "DANG XA HOI PHAP",
+                    "optionB": "DANG CONG SAN PHAP",
+                    "optionC": "TONG LIEN DOAN LAO DONG PHAP",
+                    "optionD": "HOI LIEN HIEP THUOC DIA",
+                    "questionId": 945762
+                },
+                {
+                    "answer": 66,
+                    "content": "HOI LIEN HIEP THUOC DIA DUOC THANH LAP VAO NAM NAO?",
+                    "isInExam": false,
+                    "optionA": "1920",
+                    "optionB": "1921",
+                    "optionC": "1923",
+                    "optionD": "1924",
+                    "questionId": 635428
+                },
+                {
+                    "answer": 67,
+                    "content": "HOI VIET NAM CACH MANG THANH NIEN THUC HIEN CHU TRUONG 'VO SAN HOA' KHI NAO?",
+                    "isInExam": false,
+                    "optionA": "CUOI NAM 1926 DAU NAM 1927",
+                    "optionB": "CUOI NAM 1927 DAU NAM 1928",
+                    "optionC": "CUOI NAM 1928 DAU NAM 1929",
+                    "optionD": "CUOI NAM 1929 DAU NAM 1930",
+                    "questionId": 593204
+                },
+                {
+                    "answer": 68,
+                    "content": "TEN CHINH THUC CUA TO CHUC NAY DUOC DAT TAI DAI HOI LAN THU NHAT O QUANG CHAU (THANG 5-1929) LA GI?",
+                    "isInExam": false,
+                    "optionA": "VIET NAM THANH NIEN CACH MANG DONG CHI HOI",
+                    "optionB": "HOI VIET NAM CACH MANG DONG MINH",
+                    "optionC": "HOI VIET NAM DOC LAP DONG MINH",
+                    "optionD": "HOI VIET NAM CACH MANG THANH NIEN",
+                    "questionId": 718305
+                },
+                {
+                    "answer": 66,
+                    "content": "VIET NAM QUOC DAN DANG DUOC THANH LAP VAO THOI GIAN NAO?",
+                    "isInExam": false,
+                    "optionA": "THANG 12 NAM 1927",
+                    "optionB": "THANG 11 NAM 1926",
+                    "optionC": "THANG 8 NAM 1925",
+                    "optionD": "THANG 7 NAM 1925",
+                    "questionId": 615796
+                },
+                {
+                    "answer": 66,
+                    "content": "TO CHUC CONG SAN NAO RA DOI DAU TIEN O VIET NAM?",
+                    "isInExam": false,
+                    "optionA": "HOI VIET NAM CACH MANG THANH NIEN",
+                    "optionB": "DONG DUONG CONG SAN DANG",
+                    "optionC": "AN NAM CONG SAN DANG",
+                    "optionD": "DONG DUONG CONG SAN LIEN DOAN",
+                    "questionId": 814365
+                },
+                {
+                    "answer": 67,
+                    "content": "AI LA NGUOI DA THAM GIA SANG LAP VIET NAM QUOC DAN DANG 1927?",
+                    "isInExam": false,
+                    "optionA": "TON QUANG PHIET",
+                    "optionB": "TRAN HUY LIEU",
+                    "optionC": "PHAM TUAN TAI",
+                    "optionD": "NGUYEN THAI HOC",
+                    "questionId": 827306
+                }
+            ],
+            "subjectCode": "BAS1153",
+            "subjectName": "TU TUONG HO CHI MINH"
         },
         {
             "questions": [
@@ -2339,6 +1247,1098 @@
             ],
             "subjectCode": "SKD1102",
             "subjectName": "KY NANG LAM VIEC NHOM"
+        },
+        {
+            "questions": [
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: SHE _____ TO SCHOOL YESTERDAY",
+                    "isInExam": false,
+                    "optionA": "GOES",
+                    "optionB": "WENT",
+                    "optionC": "GOING",
+                    "optionD": "GONE",
+                    "questionId": 74684
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: I _____ WATCHING TV WHEN HE ARRIVED",
+                    "isInExam": false,
+                    "optionA": "WAS",
+                    "optionB": "WERE",
+                    "optionC": "AM",
+                    "optionD": "IS",
+                    "questionId": 32511
+                },
+                {
+                    "answer": 67,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: HE HAS BEEN WORKING HERE _____ THREE YEARS",
+                    "isInExam": false,
+                    "optionA": "SINCE",
+                    "optionB": "FOR",
+                    "optionC": "BY",
+                    "optionD": "IN",
+                    "questionId": 19438
+                },
+                {
+                    "answer": 68,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THE SUN RISES _____ THE EAST",
+                    "isInExam": false,
+                    "optionA": "ON",
+                    "optionB": "AT",
+                    "optionC": "IN",
+                    "optionD": "TO",
+                    "questionId": 15556
+                },
+                {
+                    "answer": 68,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: IF I _____ YOU, I WOULD ACCEPT THE OFFER",
+                    "isInExam": false,
+                    "optionA": "AM",
+                    "optionB": "WAS",
+                    "optionC": "WERE",
+                    "optionD": "BE",
+                    "questionId": 73955
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THEY _____ TO THE PARTY LAST NIGHT",
+                    "isInExam": false,
+                    "optionA": "GO",
+                    "optionB": "WENT",
+                    "optionC": "WILL GO",
+                    "optionD": "ARE GOING",
+                    "questionId": 98623
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THIS IS THE HOUSE _____ HE LIVES",
+                    "isInExam": false,
+                    "optionA": "WHERE",
+                    "optionB": "THAT",
+                    "optionC": "WHICH",
+                    "optionD": "WHEN",
+                    "questionId": 51688
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: SHE HAS BEEN WORKING HERE _____ SHE GRADUATED",
+                    "isInExam": false,
+                    "optionA": "SINCE",
+                    "optionB": "FOR",
+                    "optionC": "BY",
+                    "optionD": "IN",
+                    "questionId": 79820
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THE BOOK _____ I BOUGHT YESTERDAY IS VERY INTERESTING",
+                    "isInExam": false,
+                    "optionA": "THAT",
+                    "optionB": "WHICH",
+                    "optionC": "WHO",
+                    "optionD": "WHEN",
+                    "questionId": 38842
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: HE _____ A STUDENT LAST YEAR",
+                    "isInExam": false,
+                    "optionA": "IS",
+                    "optionB": "WAS",
+                    "optionC": "WERE",
+                    "optionD": "HAS BEEN",
+                    "questionId": 81003
+                },
+                {
+                    "answer": 67,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THEY _____ THIS MOVIE TWICE ALREADY",
+                    "isInExam": false,
+                    "optionA": "WATCH",
+                    "optionB": "HAVE WATCHED",
+                    "optionC": "WATCHED",
+                    "optionD": "WATCHING",
+                    "questionId": 81249
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: SHE _____ TO VISIT HER GRANDPARENTS NEXT WEEK",
+                    "isInExam": false,
+                    "optionA": "WILL GO",
+                    "optionB": "GOES",
+                    "optionC": "GOING",
+                    "optionD": "GONE",
+                    "questionId": 19384
+                },
+                {
+                    "answer": 67,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: HE _____ A BOOK WHEN THE PHONE RANG",
+                    "isInExam": false,
+                    "optionA": "READ",
+                    "optionB": "WAS READING",
+                    "optionC": "READS",
+                    "optionD": "HAS READ",
+                    "questionId": 24135
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: THE CAT _____ UNDER THE TABLE",
+                    "isInExam": false,
+                    "optionA": "SLEEPS",
+                    "optionB": "IS SLEEPING",
+                    "optionC": "WAS SLEEPING",
+                    "optionD": "SLEEPING",
+                    "questionId": 36541
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON TU DUNG DE DIEN VAO CHO TRONG: WE _____ DINNER AT 7 PM EVERY DAY",
+                    "isInExam": false,
+                    "optionA": "EAT",
+                    "optionB": "ATE",
+                    "optionC": "EATING",
+                    "optionD": "HAVE EATEN",
+                    "questionId": 87412
+                }
+            ],
+            "subjectCode": "BAS1141",
+            "subjectName": "TIENG ANH A11"
+        },
+        {
+            "questions": [
+                {
+                    "answer": 67,
+                    "content": "LUC HAP DAN TAC DUNG NHU THE NAO LEN VAT",
+                    "isInExam": false,
+                    "optionA": "DAY VAT RA XA",
+                    "optionB": "KEO VAT LAI GAN",
+                    "optionC": "THAY DOI MAU SAC VAT",
+                    "optionD": "LAM MAT VAT",
+                    "questionId": 54213
+                },
+                {
+                    "answer": 66,
+                    "content": "KHI MOT VAT ROI TU DO, DONG NANG CUA NO THAY DOI NHU THE NAO",
+                    "isInExam": false,
+                    "optionA": "TANG LEN",
+                    "optionB": "GIAM XUONG",
+                    "optionC": "KHONG DOI",
+                    "optionD": "PHU THUOC VAO KHOI LUONG VAT",
+                    "questionId": 87459
+                },
+                {
+                    "answer": 66,
+                    "content": "DON VI DO KHOI LUONG TRONG HE DON VI QUOC TE LA GI",
+                    "isInExam": false,
+                    "optionA": "KILOGRAM",
+                    "optionB": "GRAM",
+                    "optionC": "NEWTON",
+                    "optionD": "MET",
+                    "questionId": 29534
+                },
+                {
+                    "answer": 66,
+                    "content": "NGUYEN LY BERNOUILLI PHAT BIEU RANG AP SUAT CUA CHAT LONG THAY DOI NHU THE NAO KHI TOC DO DONG CHAY TANG",
+                    "isInExam": false,
+                    "optionA": "AP SUAT GIAM KHI TOC DO DONG CHAY TANG",
+                    "optionB": "AP SUAT TANG KHI TOC DO DONG CHAY TANG",
+                    "optionC": "KHONG DOI",
+                    "optionD": "PHU THUOC VAO DO NHOT CUA CHAT LONG",
+                    "questionId": 78493
+                },
+                {
+                    "answer": 66,
+                    "content": "MOT VAT CO VAN TOC BAN DAU VA GIA TOC BANG KHONG, VAN TOC CUA VAT SE NHU THE NAO THEO THOI GIAN",
+                    "isInExam": false,
+                    "optionA": "TANG LEN",
+                    "optionB": "GIAM XUONG",
+                    "optionC": "KHONG DOI",
+                    "optionD": "PHU THUOC VAO LUC TAC DONG",
+                    "questionId": 45912
+                },
+                {
+                    "answer": 66,
+                    "content": "KHI MOT VAT ROI TU DO, LUC NAO LA TAC DUNG CHINH",
+                    "isInExam": false,
+                    "optionA": "LUC HAP DAN TRAI DAT",
+                    "optionB": "LUC MA SAT",
+                    "optionC": "LUC DAY TU MAT DAT",
+                    "optionD": "KHONG CO LUC NAO",
+                    "questionId": 73825
+                },
+                {
+                    "answer": 67,
+                    "content": "AP SUAT DUOC DINH NGHIA LA GI",
+                    "isInExam": false,
+                    "optionA": "LUC TAC DUNG TREN DON VI THE TICH",
+                    "optionB": "LUC TAC DUNG TREN DON VI DIEN TICH",
+                    "optionC": "LUC TAC DUNG TREN MOT VAT",
+                    "optionD": "LUC TAC DUNG TREN DON VI KHOI LUONG",
+                    "questionId": 31672
+                },
+                {
+                    "answer": 66,
+                    "content": "CONG SUAT DUOC DINH NGHIA LA GI",
+                    "isInExam": false,
+                    "optionA": "CONG THUC HIEN TRONG MOT DON VI THOI GIAN",
+                    "optionB": "NANG LUONG TIEU THU TRONG MOT DON VI THOI GIAN",
+                    "optionC": "LUC TAC DUNG TRONG MOT DON VI THOI GIAN",
+                    "optionD": "KHOI LUONG DI CHUYEN TRONG MOT DON VI THOI GIAN",
+                    "questionId": 69138
+                },
+                {
+                    "answer": 66,
+                    "content": "DAI LUONG NAO GIUP XAC DINH CHUYEN DONG THANG DEU CUA VAT",
+                    "isInExam": false,
+                    "optionA": "VAN TOC",
+                    "optionB": "GIA TOC",
+                    "optionC": "LUC",
+                    "optionD": "KHOI LUONG",
+                    "questionId": 92841
+                },
+                {
+                    "answer": 66,
+                    "content": "LUC NAO GIUP VAT CO THE NOI LEN MAT NUOC",
+                    "isInExam": false,
+                    "optionA": "LUC DAY ARCHIMEDES",
+                    "optionB": "LUC MA SAT",
+                    "optionC": "LUC HAP DAN TRAI DAT",
+                    "optionD": "LUC TU",
+                    "questionId": 58124
+                },
+                {
+                    "answer": 66,
+                    "content": "CHAT RAN CO DAC DIEM GI DAC TRUNG",
+                    "isInExam": false,
+                    "optionA": "CO HINH DANG CO DINH",
+                    "optionB": "KHONG CO HINH DANG CO DINH",
+                    "optionC": "DE BI BIEN DANG",
+                    "optionD": "CO THE CHAY THANH DONG",
+                    "questionId": 46271
+                },
+                {
+                    "answer": 67,
+                    "content": "KHI VAT CHUYEN DONG VOI VAN TOC KHONG DOI, TINH CHAT NAO DUY TRI CHUYEN DONG",
+                    "isInExam": false,
+                    "optionA": "LUC HUT",
+                    "optionB": "QUAN TINH",
+                    "optionC": "NANG LUONG",
+                    "optionD": "KHONG CO LUC NAO",
+                    "questionId": 38246
+                },
+                {
+                    "answer": 68,
+                    "content": "LUC MA SAT CO TAC DUNG GI",
+                    "isInExam": false,
+                    "optionA": "NGAN CAN CHUYEN DONG",
+                    "optionB": "LAM VAT TANG TOC",
+                    "optionC": "GIAM KHOI LUONG VAT",
+                    "optionD": "KHONG CO TAC DUNG",
+                    "questionId": 47916
+                },
+                {
+                    "answer": 66,
+                    "content": "DAI LUONG NANG LUONG DUOC DO BANG DON VI NAO",
+                    "isInExam": false,
+                    "optionA": "JOULE",
+                    "optionB": "WATT",
+                    "optionC": "NEWTON",
+                    "optionD": "METER",
+                    "questionId": 71539
+                },
+                {
+                    "answer": 67,
+                    "content": "VAN TOC LA DAI LUONG DUOC DINH NGHIA NHU THE NAO",
+                    "isInExam": false,
+                    "optionA": "QUANG DUONG CHIA THOI GIAN",
+                    "optionB": "QUANG DUONG NHAN VOI THOI GIAN",
+                    "optionC": "LUC NHAN VOI THOI GIAN",
+                    "optionD": "KHOI LUONG NHAN VOI THOI GIAN",
+                    "questionId": 84620
+                }
+            ],
+            "subjectCode": "BAS1224",
+            "subjectName": "VAT LY 1 VA THI NGHIEM"
+        },
+        {
+            "questions": [
+                {
+                    "answer": 66,
+                    "content": "QUANG HOC NGHIEN CUU VE DAI LUONG NAO",
+                    "isInExam": false,
+                    "optionA": "ANH SANG",
+                    "optionB": "AM THANH",
+                    "optionC": "NHIET",
+                    "optionD": "DIEN",
+                    "questionId": 94125
+                },
+                {
+                    "answer": 67,
+                    "content": "HAT NAO DUOC XEM LA KHONG MANG DIEN TICH",
+                    "isInExam": false,
+                    "optionA": "PROTON",
+                    "optionB": "NEUTRON",
+                    "optionC": "ELECTRON",
+                    "optionD": "PHOTON",
+                    "questionId": 85472
+                },
+                {
+                    "answer": 68,
+                    "content": "TINH CHAT QUAN TRONG CUA SONG DIEN TU LA GI",
+                    "isInExam": false,
+                    "optionA": "CO TAN SO",
+                    "optionB": "CO THE TICH",
+                    "optionC": "CO BIEN DO",
+                    "optionD": "CO DIEN TICH",
+                    "questionId": 72984
+                },
+                {
+                    "answer": 66,
+                    "content": "TAN SO CUA SONG AM DUOC DO BANG DON VI NAO",
+                    "isInExam": false,
+                    "optionA": "HERTZ",
+                    "optionB": "NEWTON",
+                    "optionC": "WATT",
+                    "optionD": "JOULE",
+                    "questionId": 81563
+                },
+                {
+                    "answer": 67,
+                    "content": "ANH SANG LA SONG GIAO THOA CUA DAI LUONG NAO",
+                    "isInExam": false,
+                    "optionA": "DIEN VA TU TRUONG",
+                    "optionB": "KHONG KHI VA NUOC",
+                    "optionC": "AP SUAT VA MA SAT",
+                    "optionD": "LUC VA GIA TOC",
+                    "questionId": 49281
+                },
+                {
+                    "answer": 66,
+                    "content": "NHIET DO TUYET DOI DUOC TINH TU THANG DO NAO",
+                    "isInExam": false,
+                    "optionA": "KELVIN",
+                    "optionB": "CELSIUS",
+                    "optionC": "FAHRENHEIT",
+                    "optionD": "RANKINE",
+                    "questionId": 32859
+                },
+                {
+                    "answer": 68,
+                    "content": "KHONG KHI TRONG CHAT KHI CO TINH CHAT GI",
+                    "isInExam": false,
+                    "optionA": "CO BIEN DANG",
+                    "optionB": "CO THE TICH CO DINH",
+                    "optionC": "CO DIEN TICH",
+                    "optionD": "CO KHOI LUONG",
+                    "questionId": 41782
+                },
+                {
+                    "answer": 66,
+                    "content": "LUC VAN DUNG TRONG CO HOC LUONG TU LA GI",
+                    "isInExam": false,
+                    "optionA": "LUC HUT TRAI DAT",
+                    "optionB": "LUC HAP DAN",
+                    "optionC": "LUC TUONG TAC YEUNG",
+                    "optionD": "LUC TUONG TAC MANH",
+                    "questionId": 75621
+                },
+                {
+                    "answer": 67,
+                    "content": "DONG DIEN CO TINH CHAT GI DAC TRUNG",
+                    "isInExam": false,
+                    "optionA": "LUC VA CHUYEN DONG",
+                    "optionB": "SU PHAN CUC",
+                    "optionC": "DIEN TICH",
+                    "optionD": "HUONG DIEN",
+                    "questionId": 54862
+                },
+                {
+                    "answer": 68,
+                    "content": "DIEU KIEN DE ANH SANG XAY RA KHUYET TAT LA GI",
+                    "isInExam": false,
+                    "optionA": "VAN TOC CHUYEN DONG",
+                    "optionB": "GOC PHAN XA",
+                    "optionC": "GOC KHUC XA",
+                    "optionD": "BIEN DO ANH SANG",
+                    "questionId": 67491
+                },
+                {
+                    "answer": 66,
+                    "content": "CHAT TU KHAC VOI CHAT DIEN O TINH CHAT NAO",
+                    "isInExam": false,
+                    "optionA": "HINH DANG",
+                    "optionB": "KHOI LUONG",
+                    "optionC": "DIEN TICH",
+                    "optionD": "DO TU NHAP",
+                    "questionId": 31978
+                },
+                {
+                    "answer": 67,
+                    "content": "LUONG TU PHOTON MANG NANG LUONG DUOC GOI LA GI",
+                    "isInExam": false,
+                    "optionA": "HAT DIEN",
+                    "optionB": "HAT SONG",
+                    "optionC": "HAT QUANG",
+                    "optionD": "HAT HAP DAN",
+                    "questionId": 49123
+                },
+                {
+                    "answer": 66,
+                    "content": "KHI SONG AM GIAO THOA, DAU LA DAI LUONG KHONG BI THAY DOI",
+                    "isInExam": false,
+                    "optionA": "BIEN DO",
+                    "optionB": "TAN SO",
+                    "optionC": "THE TICH",
+                    "optionD": "AP SUAT",
+                    "questionId": 72849
+                },
+                {
+                    "answer": 67,
+                    "content": "TINH CHAT QUAN TRONG CUA SONG TUONG TAC LA GI",
+                    "isInExam": false,
+                    "optionA": "CO DIEN TICH",
+                    "optionB": "CO HUONG",
+                    "optionC": "CO BIEN DO",
+                    "optionD": "CO VAN TOC",
+                    "questionId": 91836
+                },
+                {
+                    "answer": 68,
+                    "content": "THANH PHAN NAO QUAN TRONG NHAT TRONG HE QUANG HOC",
+                    "isInExam": false,
+                    "optionA": "GOC PHAN XA",
+                    "optionB": "GOC KHUC XA",
+                    "optionC": "DIEM TIEU CUC",
+                    "optionD": "DONG DIEN TU",
+                    "questionId": 64738
+                }
+            ],
+            "subjectCode": "BAS1227",
+            "subjectName": "VAT LY 3 VA THI NGHIEM"
+        },
+        {
+            "questions": [
+                {
+                    "answer": 66,
+                    "content": "PHEP NHAN GIUA HAI SO AM SE CHO KET QUA GI",
+                    "isInExam": false,
+                    "optionA": "SO DUONG",
+                    "optionB": "SO AM",
+                    "optionC": "SO KHONG",
+                    "optionD": "KHONG XAC DINH",
+                    "questionId": 48213
+                },
+                {
+                    "answer": 67,
+                    "content": "SO 0 LA SO NGUYEN THUOC TAP NAO",
+                    "isInExam": false,
+                    "optionA": "SO NGUYEN DUONG",
+                    "optionB": "SO NGUYEN KHONG DUONG",
+                    "optionC": "SO NGUYEN TO",
+                    "optionD": "SO NGUYEN AM",
+                    "questionId": 31984
+                },
+                {
+                    "answer": 66,
+                    "content": "TONG CUA HAI SO DOI LA GIA TRI GI",
+                    "isInExam": false,
+                    "optionA": "SO KHONG",
+                    "optionB": "SO DUONG",
+                    "optionC": "SO AM",
+                    "optionD": "KHONG XAC DINH",
+                    "questionId": 74291
+                },
+                {
+                    "answer": 68,
+                    "content": "DAU LA DANG TONG QUAT CUA PHUONG TRINH BAC NHAT",
+                    "isInExam": false,
+                    "optionA": "AX + B = 0",
+                    "optionB": "AX^2 + BX + C = 0",
+                    "optionC": "A^2 + BX + C = 0",
+                    "optionD": "AX + C = 0",
+                    "questionId": 56432
+                },
+                {
+                    "answer": 66,
+                    "content": "PHUONG TRINH BAC NHAT CO BAO NHIEU NGHIEM",
+                    "isInExam": false,
+                    "optionA": "MOT NGHIEM",
+                    "optionB": "HAI NGHIEM",
+                    "optionC": "KHONG CO NGHIEM",
+                    "optionD": "VO SO NGHIEM",
+                    "questionId": 78451
+                },
+                {
+                    "answer": 67,
+                    "content": "PHUONG TRINH BAC HAI CO NGHIEM KHI DAU",
+                    "isInExam": false,
+                    "optionA": "DELTA > 0",
+                    "optionB": "DELTA = 0",
+                    "optionC": "DELTA >= 0",
+                    "optionD": "DELTA < 0",
+                    "questionId": 62489
+                },
+                {
+                    "answer": 68,
+                    "content": "KET QUA CUA PHUONG TRINH X + 5 = 10 LA GI",
+                    "isInExam": false,
+                    "optionA": "X = 5",
+                    "optionB": "X = 10",
+                    "optionC": "X = -5",
+                    "optionD": "X = 0",
+                    "questionId": 71658
+                },
+                {
+                    "answer": 66,
+                    "content": "KET QUA CUA PHEP NHAN MA TRAN LAY THEO DONG VA COT DUOC GOI LA GI",
+                    "isInExam": false,
+                    "optionA": "TICH MA TRAN",
+                    "optionB": "HANG MA TRAN",
+                    "optionC": "DONG MA TRAN",
+                    "optionD": "COT MA TRAN",
+                    "questionId": 85249
+                },
+                {
+                    "answer": 67,
+                    "content": "KHI GIA TRI CUA MA TRAN LA ZERO, MA TRAN DUOC GOI LA GI",
+                    "isInExam": false,
+                    "optionA": "MA TRAN KHONG",
+                    "optionB": "MA TRAN DON VI",
+                    "optionC": "MA TRAN DONG NHAT",
+                    "optionD": "KHONG TON TAI",
+                    "questionId": 61423
+                },
+                {
+                    "answer": 68,
+                    "content": "DINH LY NHO NHAT CHO PHEP TINH HANG CUA MA TRAN",
+                    "isInExam": false,
+                    "optionA": "DINH LY LAPLACE",
+                    "optionB": "DINH LY GAUSS",
+                    "optionC": "DINH LY FERMAT",
+                    "optionD": "DINH LY LAGRANGE",
+                    "questionId": 79418
+                },
+                {
+                    "answer": 66,
+                    "content": "PHUONG TRINH DANG Y = MX + C DUOC GOI LA GI",
+                    "isInExam": false,
+                    "optionA": "PHUONG TRINH DUONG THANG",
+                    "optionB": "PHUONG TRINH PARABOL",
+                    "optionC": "PHUONG TRINH BAC HAI",
+                    "optionD": "PHUONG TRINH BAC BA",
+                    "questionId": 28419
+                },
+                {
+                    "answer": 67,
+                    "content": "TRONG TAP HOP Z, PHEP CONG VA NHAN CO TINH CHAT GI",
+                    "isInExam": false,
+                    "optionA": "TUONG HO",
+                    "optionB": "GIAO HOAN",
+                    "optionC": "HOP NHAT",
+                    "optionD": "KHONG CO TINH CHAT NAO",
+                    "questionId": 46258
+                },
+                {
+                    "answer": 66,
+                    "content": "TRONG TAP SO THUC, CAN BAC HAI CHI DUOC DUNG CHO SO GI",
+                    "isInExam": false,
+                    "optionA": "SO KHONG AM",
+                    "optionB": "SO NGUYEN DUONG",
+                    "optionC": "SO NGUYEN TO",
+                    "optionD": "SO CHAN",
+                    "questionId": 63971
+                },
+                {
+                    "answer": 67,
+                    "content": "SO NAO LA SO NGUYEN TO TRONG CAC SO DUOI DAY",
+                    "isInExam": false,
+                    "optionA": "12",
+                    "optionB": "17",
+                    "optionC": "20",
+                    "optionD": "25",
+                    "questionId": 85124
+                },
+                {
+                    "answer": 68,
+                    "content": "PHEP CHIA KHONG HOAN TOAN GIUA HAI SO NGUYEN SE CHO KET QUA LA GI",
+                    "isInExam": false,
+                    "optionA": "THUONG",
+                    "optionB": "SO DU",
+                    "optionC": "SO NGUYEN",
+                    "optionD": "KHONG CO KET QUA",
+                    "questionId": 91743
+                }
+            ],
+            "subjectCode": "BAS1201",
+            "subjectName": "DAI SO"
+        },
+        {
+            "questions": [
+                {
+                    "answer": 66,
+                    "content": "DAO HAM CUA HAM SO Y = X^3 LA GI",
+                    "isInExam": false,
+                    "optionA": "3X^2",
+                    "optionB": "X^2",
+                    "optionC": "3X",
+                    "optionD": "X^3",
+                    "questionId": 73245
+                },
+                {
+                    "answer": 67,
+                    "content": "DAO HAM CUA HAM SO Y = SIN(X) LA GI",
+                    "isInExam": false,
+                    "optionA": "COS(X)",
+                    "optionB": "-SIN(X)",
+                    "optionC": "-COS(X)",
+                    "optionD": "SIN(X)",
+                    "questionId": 21834
+                },
+                {
+                    "answer": 66,
+                    "content": "DAO HAM CUA HAM SO Y = E^X LA GI",
+                    "isInExam": false,
+                    "optionA": "E^X",
+                    "optionB": "1/E^X",
+                    "optionC": "X*E^X",
+                    "optionD": "E^(X^2)",
+                    "questionId": 51688
+                },
+                {
+                    "answer": 68,
+                    "content": "DAO HAM CUA HAM SO Y = LN(X) LA GI",
+                    "isInExam": false,
+                    "optionA": "1/X",
+                    "optionB": "LN(X)",
+                    "optionC": "E^X",
+                    "optionD": "0",
+                    "questionId": 48213
+                },
+                {
+                    "answer": 66,
+                    "content": "DAO HAM CUA HAM SO Y = COS(X) LA GI",
+                    "isInExam": false,
+                    "optionA": "-SIN(X)",
+                    "optionB": "COS(X)",
+                    "optionC": "SIN(X)",
+                    "optionD": "-COS(X)",
+                    "questionId": 81459
+                },
+                {
+                    "answer": 67,
+                    "content": "HAM SO NAO CO DAO HAM BANG 0",
+                    "isInExam": false,
+                    "optionA": "HAM HANG",
+                    "optionB": "HAM BAC NHAT",
+                    "optionC": "HAM BAC HAI",
+                    "optionD": "HAM BAC BA",
+                    "questionId": 76984
+                },
+                {
+                    "answer": 68,
+                    "content": "HAM SO NAO DUOC GOI LA HANG SO",
+                    "isInExam": false,
+                    "optionA": "HAM KHONG DOI",
+                    "optionB": "HAM BAC NHAT",
+                    "optionC": "HAM COS(X)",
+                    "optionD": "HAM SIN(X)",
+                    "questionId": 34218
+                },
+                {
+                    "answer": 66,
+                    "content": "TICH PHAN CUA HAM SO Y = 1 LA GI",
+                    "isInExam": false,
+                    "optionA": "X + C",
+                    "optionB": "1/X",
+                    "optionC": "LN(X)",
+                    "optionD": "E^X",
+                    "questionId": 92841
+                },
+                {
+                    "answer": 67,
+                    "content": "DAO HAM BAC HAI CUA HAM SO Y = X^2 LA GI",
+                    "isInExam": false,
+                    "optionA": "2",
+                    "optionB": "X",
+                    "optionC": "X^2",
+                    "optionD": "0",
+                    "questionId": 92745
+                },
+                {
+                    "answer": 66,
+                    "content": "HAM SO Y = X^2 CO GIA TRI LON NHAT O DAU TRONG TAP XAC DINH [0, 2]",
+                    "isInExam": false,
+                    "optionA": "X = 2",
+                    "optionB": "X = 1",
+                    "optionC": "X = 0",
+                    "optionD": "KHONG CO GIA TRI LON NHAT",
+                    "questionId": 57493
+                },
+                {
+                    "answer": 68,
+                    "content": "DAO HAM CUA HAM SO Y = 1/X LA GI",
+                    "isInExam": false,
+                    "optionA": "-1/X^2",
+                    "optionB": "1/X",
+                    "optionC": "-X",
+                    "optionD": "X",
+                    "questionId": 91652
+                },
+                {
+                    "answer": 67,
+                    "content": "TICH PHAN CUA HAM SO Y = X LA GI",
+                    "isInExam": false,
+                    "optionA": "X^2/2 + C",
+                    "optionB": "X^2 + C",
+                    "optionC": "2X + C",
+                    "optionD": "LN|X| + C",
+                    "questionId": 75231
+                },
+                {
+                    "answer": 66,
+                    "content": "HAM SO Y = SIN(X) CO GIA TRI NHO NHAT O DAU TRONG MOT CHU KY",
+                    "isInExam": false,
+                    "optionA": "X = 3PI/2",
+                    "optionB": "X = PI/2",
+                    "optionC": "X = 0",
+                    "optionD": "X = PI",
+                    "questionId": 26478
+                },
+                {
+                    "answer": 68,
+                    "content": "DAO HAM CUA HAM SO Y = X^4 LA GI",
+                    "isInExam": false,
+                    "optionA": "4X^3",
+                    "optionB": "4X^4",
+                    "optionC": "X^3",
+                    "optionD": "X^4",
+                    "questionId": 19824
+                },
+                {
+                    "answer": 66,
+                    "content": "TICH PHAN CUA HAM SO Y = E^X LA GI",
+                    "isInExam": false,
+                    "optionA": "E^X + C",
+                    "optionB": "E^(X^2) + C",
+                    "optionC": "X*E^X + C",
+                    "optionD": "1/E^X + C",
+                    "questionId": 57138
+                }
+            ],
+            "subjectCode": "BAS1203",
+            "subjectName": "GIAI TICH 1"
+        },
+        {
+            "questions": [
+                {
+                    "answer": 66,
+                    "content": "DAO HAM CUA HAM SO Y = X^2 LA GI",
+                    "isInExam": false,
+                    "optionA": "2X",
+                    "optionB": "X^2",
+                    "optionC": "1",
+                    "optionD": "0",
+                    "questionId": 63478
+                },
+                {
+                    "answer": 67,
+                    "content": "TICH PHAN CUA HAM SO Y = X LA GI",
+                    "isInExam": false,
+                    "optionA": "X^2 + C",
+                    "optionB": "X^2/2 + C",
+                    "optionC": "2X + C",
+                    "optionD": "X + C",
+                    "questionId": 85429
+                },
+                {
+                    "answer": 66,
+                    "content": "HAM SO NHO NHAT TAI MOT DIEM DUOC GOI LA GI",
+                    "isInExam": false,
+                    "optionA": "CUC TIEU",
+                    "optionB": "CUC DAI",
+                    "optionC": "GIA TRI LON NHAT",
+                    "optionD": "GIA TRI KHONG DOI",
+                    "questionId": 97438
+                },
+                {
+                    "answer": 68,
+                    "content": "DAU LA DAO HAM BAC HAI CUA HAM SO Y = X^3",
+                    "isInExam": false,
+                    "optionA": "6X",
+                    "optionB": "3X^2",
+                    "optionC": "X^3",
+                    "optionD": "0",
+                    "questionId": 29173
+                },
+                {
+                    "answer": 66,
+                    "content": "TICH PHAN TU 0 DEN 1 CUA HAM SO Y = 1 LA GI",
+                    "isInExam": false,
+                    "optionA": "1",
+                    "optionB": "0",
+                    "optionC": "2",
+                    "optionD": "-1",
+                    "questionId": 46218
+                },
+                {
+                    "answer": 67,
+                    "content": "DAO HAM CUA HAM SO SIN(X) LA GI",
+                    "isInExam": false,
+                    "optionA": "COS(X)",
+                    "optionB": "-SIN(X)",
+                    "optionC": "-COS(X)",
+                    "optionD": "SIN(X)",
+                    "questionId": 79341
+                },
+                {
+                    "answer": 66,
+                    "content": "TICH PHAN CUA HAM SO Y = 1/X LA GI",
+                    "isInExam": false,
+                    "optionA": "LN|X| + C",
+                    "optionB": "X + C",
+                    "optionC": "1 + C",
+                    "optionD": "X^2/2 + C",
+                    "questionId": 57839
+                },
+                {
+                    "answer": 68,
+                    "content": "TICH PHAN TU 0 DEN 2 CUA HAM SO Y = X LA GI",
+                    "isInExam": false,
+                    "optionA": "2",
+                    "optionB": "4",
+                    "optionC": "4 + C",
+                    "optionD": "2 + C",
+                    "questionId": 89642
+                },
+                {
+                    "answer": 66,
+                    "content": "DAO HAM CUA E^X LA GI",
+                    "isInExam": false,
+                    "optionA": "E^X",
+                    "optionB": "E^(X^2)",
+                    "optionC": "1/E^X",
+                    "optionD": "X*E^X",
+                    "questionId": 39184
+                },
+                {
+                    "answer": 67,
+                    "content": "DAO HAM BAC HAI CUA HAM SO Y = X^2 LA GI",
+                    "isInExam": false,
+                    "optionA": "2",
+                    "optionB": "X^2",
+                    "optionC": "0",
+                    "optionD": "4X",
+                    "questionId": 47219
+                },
+                {
+                    "answer": 68,
+                    "content": "HAM SO Y = SIN(X) CO GIA TRI NHO NHAT O DAU TRONG MOT CHU KY",
+                    "isInExam": false,
+                    "optionA": "X = PI/2",
+                    "optionB": "X = 3PI/2",
+                    "optionC": "X = 0",
+                    "optionD": "X = PI",
+                    "questionId": 81934
+                },
+                {
+                    "answer": 66,
+                    "content": "DAO HAM CUA HAM SO Y = LN(X) LA GI",
+                    "isInExam": false,
+                    "optionA": "1/X",
+                    "optionB": "LN(X) + C",
+                    "optionC": "E^X",
+                    "optionD": "0",
+                    "questionId": 64329
+                },
+                {
+                    "answer": 67,
+                    "content": "HAM SO NAO CO DAO HAM BANG 0 O MOI DIEM",
+                    "isInExam": false,
+                    "optionA": "HAM HANG",
+                    "optionB": "HAM BAC NHAT",
+                    "optionC": "HAM LOGARIT",
+                    "optionD": "HAM MUI TEN",
+                    "questionId": 59412
+                },
+                {
+                    "answer": 66,
+                    "content": "GIA TRI CUC DAI CUA Y = -X^2 + 4X LA BAO NHIEU",
+                    "isInExam": false,
+                    "optionA": "4",
+                    "optionB": "2",
+                    "optionC": "0",
+                    "optionD": "-2",
+                    "questionId": 75148
+                },
+                {
+                    "answer": 67,
+                    "content": "TICH PHAN NAO LA NGHICH DAO CUA DAO HAM",
+                    "isInExam": false,
+                    "optionA": "PHAI LA DAI LUONG NGUYEN HAM",
+                    "optionB": "KHONG CO",
+                    "optionC": "DAO HAM BAC N",
+                    "optionD": "HAM LON NHAT",
+                    "questionId": 91287
+                }
+            ],
+            "subjectCode": "BAS1204",
+            "subjectName": "GIAI TICH 2"
+        },
+        {
+            "questions": [
+                {
+                    "answer": 66,
+                    "content": "TRIET HOC LA GI",
+                    "isInExam": false,
+                    "optionA": "KHOA HOC VE NHUNG QUY LUAT CHUNG NHAT CUA TU NHIEN",
+                    "optionB": "KHOA HOC NGHIEN CUU TU DUY",
+                    "optionC": "KHOA HOC NGHIEN CUU VE XU THE XA HOI",
+                    "optionD": "KHOA HOC VE CON NGUOI",
+                    "questionId": 84327
+                },
+                {
+                    "answer": 67,
+                    "content": "THEO TRIET HOC MAC LENIN, VAT CHAT DUOC HIEU LA GI",
+                    "isInExam": false,
+                    "optionA": "HINH THUC TON TAI KHONG GIAN VA THOI GIAN",
+                    "optionB": "THUC TAI KHACH QUAN DUOC PHAN ANH VA TON TAI KHI KHONG LE PHU THUOC VAO Y THUC",
+                    "optionC": "TAT CA NHUNG GIA TRI CA NHAN VA XA HOI",
+                    "optionD": "TOAN BO NHUNG HINH THUC TON TAI CUA TINH THAN",
+                    "questionId": 98243
+                },
+                {
+                    "answer": 66,
+                    "content": "QUY LUAT PHU DINH CUA PHU DINH GIAI THICH DIEU GI",
+                    "isInExam": false,
+                    "optionA": "SU PHAT TRIEN THONG QUA CAC GIAI DOAN KHAC NHAU",
+                    "optionB": "SU PHA HUY HOAN TOAN CUA DOI TUONG",
+                    "optionC": "SU TON TAI DONG THOI CUA HAI DOI TUONG DOI LAP",
+                    "optionD": "KHONG CO PHU DINH TRONG QUA TRINH PHAT TRIEN",
+                    "questionId": 75349
+                },
+                {
+                    "answer": 67,
+                    "content": "TRONG CAC PHAM TRU SAU, DAU LA PHAM TRU CO BAN NHAT CUA TRIET HOC",
+                    "isInExam": false,
+                    "optionA": "NGUYEN NHAN",
+                    "optionB": "VAT CHAT VA Y THUC",
+                    "optionC": "KET QUA",
+                    "optionD": "QUY LUAT",
+                    "questionId": 94328
+                },
+                {
+                    "answer": 68,
+                    "content": "QUY LUAT DUNG DE GIAI THICH NGUYEN NHAN VA KET QUA GOI LA GI",
+                    "isInExam": false,
+                    "optionA": "QUY LUAT CAI CHET",
+                    "optionB": "QUY LUAT PHU DINH CUA PHU DINH",
+                    "optionC": "QUY LUAT NHAN QUA",
+                    "optionD": "QUY LUAT MOI QUAN HE",
+                    "questionId": 67342
+                },
+                {
+                    "answer": 66,
+                    "content": "DAU LA NGUYEN TAC CO BAN CUA PHUONG PHAP LUAN BIEN CHUNG",
+                    "isInExam": false,
+                    "optionA": "NGUYEN TAC KHACH QUAN",
+                    "optionB": "NGUYEN TAC TON TRONG",
+                    "optionC": "NGUYEN TAC THAY DOI",
+                    "optionD": "NGUYEN TAC PHAT TRIEN",
+                    "questionId": 23789
+                },
+                {
+                    "answer": 67,
+                    "content": "QUAN DIEM NAO DUOI DAY THE HIEN CAU NOI NOI TIENG CUA LE NIN: TRIET HOC KHONG CO GI KHAC NGOAI CAU TRA LOI CHO CAU HOI",
+                    "isInExam": false,
+                    "optionA": "VAT CHAT CO PHU THUOC Y THUC",
+                    "optionB": "MOI QUAN HE GIUA VAT CHAT VA Y THUC",
+                    "optionC": "VAT CHAT LA Y CHI TINH THAN",
+                    "optionD": "MOI SU TON TAI PHU THUOC HOAN TOAN VAO CON NGUOI",
+                    "questionId": 19453
+                },
+                {
+                    "answer": 68,
+                    "content": "QUY LUAT PHAT TRIEN DUOC NGHIEN CUU TRONG TRUONG PHAI TRIET HOC NAO",
+                    "isInExam": false,
+                    "optionA": "CHU NGHIA DUY VAT",
+                    "optionB": "CHU NGHIA DUY TAM",
+                    "optionC": "CHU NGHIA HINH THAI",
+                    "optionD": "CHU NGHIA MAC LENIN",
+                    "questionId": 92743
+                },
+                {
+                    "answer": 66,
+                    "content": "VAT CHAT TON TAI TRONG DANG NAO",
+                    "isInExam": false,
+                    "optionA": "KHONG GIAN VA THOI GIAN",
+                    "optionB": "DUOI DANG HINH THUC CHUNG",
+                    "optionC": "DUOI DANG TUONG DOI",
+                    "optionD": "KHONG CO DANG NAO",
+                    "questionId": 82345
+                },
+                {
+                    "answer": 67,
+                    "content": "QUAN DIEM DUY VAT KHAC QUAN DIEM DUY TAM O DIEM NAO",
+                    "isInExam": false,
+                    "optionA": "VAT CHAT QUYET DINH Y THUC",
+                    "optionB": "VAT CHAT VA Y THUC CO MOI QUAN HE CAN BANG",
+                    "optionC": "Y THUC QUYET DINH VAT CHAT",
+                    "optionD": "KHONG TON TAI MOI QUAN HE GIUA VAT CHAT VA Y THUC",
+                    "questionId": 29183
+                },
+                {
+                    "answer": 68,
+                    "content": "QUY LUAT MOI QUAN HE PHU THUOC TRUC TIEP VAO DIEU GI",
+                    "isInExam": false,
+                    "optionA": "TAT CA CAC YEU TO BEN NGOAI",
+                    "optionB": "MOI QUAN HE NOI TAI",
+                    "optionC": "Y THUC",
+                    "optionD": "VAT CHAT",
+                    "questionId": 43791
+                },
+                {
+                    "answer": 66,
+                    "content": "KHANG DINH NAO LA CHUAN NHAT THEO CHU NGHIA DUY VAT BIEN CHUNG",
+                    "isInExam": false,
+                    "optionA": "VAT CHAT QUYET DINH Y THUC",
+                    "optionB": "VAT CHAT VA Y THUC CAN DOI",
+                    "optionC": "Y THUC QUYET DINH VAT CHAT",
+                    "optionD": "VAT CHAT VA Y THUC KHONG LIEN QUAN",
+                    "questionId": 71934
+                },
+                {
+                    "answer": 67,
+                    "content": "QUAN DIEM MAC LENIN VE VAN DE HINH THAI Y THUC THE HIEN DIEU GI",
+                    "isInExam": false,
+                    "optionA": "MOI QUAN HE KHACH QUAN GIUA VAT CHAT VA Y THUC",
+                    "optionB": "MOI QUAN HE TRUU TUONG GIUA Y CHI CA NHAN",
+                    "optionC": "CHU Y THUC DOI LAP VAT CHAT",
+                    "optionD": "VAT CHAT CHI TON TAI KHI Y THUC TON TAI",
+                    "questionId": 39458
+                },
+                {
+                    "answer": 68,
+                    "content": "THEO LE NIN, MOI TON TAI VAT CHAT PHU THUOC VAO DIEU GI",
+                    "isInExam": false,
+                    "optionA": "Y THUC KHACH QUAN",
+                    "optionB": "DUC TIN CON NGUOI",
+                    "optionC": "MOI QUAN HE CONG DONG",
+                    "optionD": "KHONG PHU THUOC VAO Y THUC",
+                    "questionId": 29384
+                },
+                {
+                    "answer": 66,
+                    "content": "QUY LUAT VAT CHAT BIEN DOI TON TAI THEO NGUYEN TAC NAO",
+                    "isInExam": false,
+                    "optionA": "KHACH QUAN",
+                    "optionB": "MOI QUAN HE KHACH QUAN",
+                    "optionC": "KHONG CO TON TAI",
+                    "optionD": "TON TAI TAM THOI",
+                    "questionId": 18234
+                }
+            ],
+            "subjectCode": "BAS1150",
+            "subjectName": "TRIET HOC MAC LENIN"
         }
     ]
 }
