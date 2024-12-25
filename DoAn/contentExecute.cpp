@@ -32,6 +32,13 @@ void ContentExecute::drawContent()
 	gotoXY(DISTANCE_SIDEBAR + titleTime, DISTANCE_HEADER + PADDING + PADDING);
 	cout << "Thoi Gian Lam Bai: " << time << " Phut";
 
+	string formatTime = "(Gio:Phut)";
+	int posXTime = getCenterX(COLUMN_CENTER, formatTime.length());
+	setColorText(ColorCode_Yellow);
+	gotoXY(DISTANCE_SIDEBAR + posXTime + formatTime.length() - 1, DISTANCE_HEADER + PADDING + PADDING + PADDING + PADDING + PADDING);
+	cout << formatTime;
+	setColorText(ColorCode_White);
+
 	gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - to_string(countQuestion).length() - 12, DISTANCE_HEADER + PADDING);
 	cout << "So Cau Hoi: ";
 
@@ -452,35 +459,31 @@ void ContentExecute::loadResultExam()
 
 DWORD WINAPI ContentExecute::countdown(LPVOID lpParam)
 {
-	int total_seconds = time * 60;
-
-	while (total_seconds >= 0) {
-		int hours = total_seconds / 3600;
-		int minutes = (total_seconds % 3600) / 60;
-		int seconds = total_seconds % 60;
-
-		int titleTime = getCenterX(COLUMN_CENTER, 2);
+	int titleTime = getCenterX(COLUMN_CENTER, 5);
+	while (time > 0) {
+		int displayHours = time / 60;
+		int displayMinutes = time % 60;
+		
 		gotoXY(DISTANCE_SIDEBAR + titleTime, DISTANCE_HEADER + PADDING + PADDING + 3);
 		setColorText(ColorCode_DarkGreen);
-		if (hours < 10) 
+		if (displayHours < 10)
 			cout << "0";
-		cout << hours << ":";
+		cout << displayHours << ":";
 
-		if (minutes < 10) 
+		if (displayMinutes < 10)
 			cout << "0";
-		cout << minutes << ":";
-
-		if (seconds < 10) 
-			cout << "0";
-		cout << seconds << "\r";
+		cout << displayMinutes << "\r";
 		cout.flush();
 		setColorText(ColorCode_DarkWhite);
 
-		this_thread::sleep_for(chrono::seconds(1));
-		total_seconds--;
+		this_thread::sleep_for(chrono::minutes(1));
+		time--;
 	}
-	isEnd = true;
+	setColorText(ColorCode_DarkRed);
+	gotoXY(DISTANCE_SIDEBAR + titleTime, DISTANCE_HEADER + PADDING + PADDING + 3);
+	cout << "00:00";
 
+	isEnd = true;
 	return 0;
 }
 
