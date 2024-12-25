@@ -781,7 +781,7 @@
         },
         {
             "classCode": "C004",
-            "className": "D21TXCN02-B",
+            "className": "D21TXCN02B",
             "students": [
                 {
                     "firstName": "PHAN",
@@ -971,7 +971,7 @@
         },
         {
             "classCode": "C005",
-            "className": "D21TXCN03-B",
+            "className": "D21TXCN03B",
             "students": [
                 {
                     "firstName": "NGUYEN",
@@ -1105,7 +1105,7 @@
         },
         {
             "classCode": "C006",
-            "className": "D21TXCN04-B",
+            "className": "D21TXCN04B",
             "students": [
                 {
                     "firstName": "NGUYEN",
@@ -1271,7 +1271,7 @@
         },
         {
             "classCode": "C007",
-            "className": "D21TXQT01-B",
+            "className": "D21TXQT01B",
             "students": [
                 {
                     "firstName": "PHAM",
@@ -1381,7 +1381,7 @@
         },
         {
             "classCode": "C008",
-            "className": "D21TXQT02-B",
+            "className": "D21TXQT02B",
             "students": [
                 {
                     "firstName": "TRAN",
@@ -1483,7 +1483,7 @@
         },
         {
             "classCode": "C009",
-            "className": "D21TXQT03-B",
+            "className": "D21TXQT03B",
             "students": [
                 {
                     "firstName": "VU",
@@ -1633,7 +1633,7 @@
         },
         {
             "classCode": "C010",
-            "className": "D21TXQT04-B",
+            "className": "D21TXQT04B",
             "students": [
                 {
                     "firstName": "LUYEN",
@@ -1727,7 +1727,7 @@
         },
         {
             "classCode": "C011",
-            "className": "D23TXCN03-B",
+            "className": "D23TXCN03B",
             "students": [
                 {
                     "firstName": "VUONG",
@@ -1877,7 +1877,7 @@
         },
         {
             "classCode": "C012",
-            "className": "D23TXCN04-B",
+            "className": "D23TXCN04B",
             "students": [
                 {
                     "firstName": "DOAN",
@@ -2035,7 +2035,7 @@
         },
         {
             "classCode": "C013",
-            "className": "D22TXCN01-K",
+            "className": "D22TXCN01K",
             "students": [
                 {
                     "firstName": "PHAN",
@@ -2169,7 +2169,7 @@
         },
         {
             "classCode": "C014",
-            "className": "D22TXCN02-B",
+            "className": "D22TXCN02B",
             "students": [
                 {
                     "firstName": "NGUYEN",
@@ -2319,7 +2319,7 @@
         },
         {
             "classCode": "C015",
-            "className": "D22TXCN03-B",
+            "className": "D22TXCN03B",
             "students": [
                 {
                     "firstName": "NGUYEN",
