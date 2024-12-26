@@ -531,13 +531,14 @@ void ManageSubject::insertSubjectHelper(PTRSUBJECT& subjectList, const Subject& 
     if (subjectList == nullptr) {
         subjectList = new SubjectNode;
         subjectList->info = subject;
-        subjectList->left = subjectList->right = nullptr;
+        subjectList->left = nullptr;
+        subjectList->right = nullptr;
         subjectList->height = 1;
     }
-    else if (subject.subjectCode < subjectList->info.subjectCode) {
+    else if ((string) subject.subjectCode < (string) subjectList->info.subjectCode) {
         insertSubjectHelper(subjectList->left, subject);
     }
-    else {
+    else if((string) subject.subjectCode > (string) subjectList->info.subjectCode) {
         insertSubjectHelper(subjectList->right, subject);
     }
 }
