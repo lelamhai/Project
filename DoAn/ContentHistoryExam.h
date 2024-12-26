@@ -17,6 +17,8 @@ using namespace std;
 class ContentHistoryExam : public Content
 {
 private:
+	int stageExit;
+
 	string subjectCode;
 	string studentCode;
 	int indexAnswer;
@@ -35,6 +37,7 @@ public:
 	void loadResult();
 	void handle();
 	void cleanQuestion();
+	int getExitHistory();
 	ContentHistoryExam();
 	~ContentHistoryExam();
 

@@ -100,7 +100,7 @@ void ContentFilterPoint::drawContent()
 		"F3: Tim Theo Lop",
 		"F4: Tim Theo Mon Hoc",
 		"Ins: Nhap Du Lieu Loc",
-		"Enter: Xem Bang Diem",
+		"Enter: Bam 2 Lan Xem Bang Diem",
 		"Phim Len|Xuong: Chon Du Lieu",
 		"Phim Trai|Phai: Xem Trang Sau|Truoc",
 		"",

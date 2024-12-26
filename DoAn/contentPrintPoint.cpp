@@ -90,6 +90,8 @@ void ContentPrintPoint::drawContent()
 		"",
 		"ESC: Tro Lai",
 		"",
+		"Enter: Xem Lai Bai Thi",
+		"",
 		"Phim Len|Xuong: Chon Du Lieu",
 		"",
 		"Phim Trai|Phai: Xem Trang Sau|Truoc",
@@ -100,7 +102,7 @@ void ContentPrintPoint::drawContent()
 	};
 
 	int contentY = tutorialY + 2;
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN + PADDING * 2, contentY + (i * 1));
 		cout << note[i];
@@ -164,6 +166,35 @@ void ContentPrintPoint::handle()
 {
 	while (true)
 	{
+		if (currentPrint == C_DETAIL)
+		{
+			cleanContent();
+			ContentHistoryExam* h = new ContentHistoryExam();
+			h->init(currentSubjectCode, currentStudent);
+			h->displayContent();
+			int result = h->getExitHistory();
+			if (result == 1)
+			{
+				currentPrint = C_SELECT;
+			}
+			else
+			{
+				currentPrint = C_EXIT;
+			}
+			delete h;
+			cleanContent();
+			drawContent();
+			girdTitle();
+			Singleton::getInstance()->moveMenu = 0;
+
+			lineX(0, DISTANCE_HEADER, getConsoleWidth());
+			lineX(0, getConsoleHeight() - DISTANCE_HEADER, getConsoleWidth());
+			gotoXY(DISTANCE_SIDEBAR, getConsoleHeight() - DISTANCE_HEADER);
+			cout << char(193);
+			gotoXY(DISTANCE_SIDEBAR, DISTANCE_HEADER);
+			cout << char(194);
+		}
+
 		switch (currentPrint)
 		{
 		case ContentPrintPoint::C_SELECT:
@@ -292,14 +323,12 @@ void ContentPrintPoint::selectData()
 			return;
 		}
 
-		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
+		if (GetAsyncKeyState(VK_RETURN))
 		{
 			if (point > 0)
 			{
-				cleanContent();
-				ContentHistoryExam h;
-				h.init(currentSubjectCode, currentStudent);
-				h.displayContent();
+				currentPrint = C_DETAIL;
+				return;
 			}
 		}
 

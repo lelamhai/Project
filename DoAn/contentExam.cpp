@@ -185,6 +185,10 @@ void ContentExam::handle()
 
 			lineX(0, DISTANCE_HEADER, getConsoleWidth());
 			lineX(0, getConsoleHeight() - DISTANCE_HEADER, getConsoleWidth());
+			gotoXY(DISTANCE_SIDEBAR, getConsoleHeight() - DISTANCE_HEADER);
+			cout << char(193);
+			gotoXY(DISTANCE_SIDEBAR, DISTANCE_HEADER);
+			cout << char(194);
 		}
 
 		switch (currentExam)
@@ -221,6 +225,7 @@ void ContentExam::selectData()
 	listInput[0].clean();
 	listInput[0].setText("");
 
+	ManageSubject subject;
 	SubjectPage a = subject.searchSubjects(textSearch, pageNumber);
 	int start = 0;
 
@@ -334,6 +339,49 @@ void ContentExam::selectData()
 				{
 					currentExam = C_DETAIL;
 					return;
+				}
+
+				if (result == -2)
+				{
+					int cout = subject.countQuestionsInSubject(listInput[0].getText().c_str());
+					string mes;
+					if (cout == 0)
+					{
+						mes = "Chua Co Du Lieu Cau Hoi";
+					}
+					else
+					{
+						mes = "Nhap Toi Da " + to_string(subject.countQuestionsInSubject(listInput[0].getText().c_str())) + " Cau Hoi";
+					}
+
+					if (text.getLenString() != 0)
+					{
+						text.clean();
+						text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, posYMessage);
+						text.setContent("");
+					}
+
+					text.setContent(mes);
+					int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+					text.updatePositionX(textPosX);
+
+					text.display();
+				}
+
+				if (result == -3)
+				{
+					if (text.getLenString() != 0)
+					{
+						text.clean();
+						text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, posYMessage);
+						text.setContent("");
+					}
+
+					text.setContent("Mon Nay Da Thi Roi!");
+					int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+					text.updatePositionX(textPosX);
+
+					text.display();
 				}
 			}
 		}

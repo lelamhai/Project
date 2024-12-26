@@ -195,6 +195,7 @@ void ContentHistoryExam::handle()
 		{
 			if (Singleton::getInstance()->moveMenu != 0)
 			{
+				stageExit = 0;
 				return;
 			}
 		}
@@ -273,6 +274,12 @@ void ContentHistoryExam::handle()
 			}
 		}
 
+		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
+		{
+			stageExit = 1;
+			return;
+		}
+
 		if (isLoadQuestion)
 		{
 			q = ManageScore::getQuestionExamRecord(subjectCode.c_str(), studentCode.c_str());
@@ -322,4 +329,9 @@ void ContentHistoryExam::cleanQuestion()
 		gotoXY(posX, posY + i);
 		cout << blankFill;
 	}
+}
+
+int ContentHistoryExam::getExitHistory()
+{
+	return stageExit;
 }
