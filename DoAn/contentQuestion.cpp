@@ -391,6 +391,7 @@ void ContentQuestion::deleteData()
 			if (result)
 			{
 				hover = 0;
+				cleanTable();
 			}
 		}
 		pDelete.close();

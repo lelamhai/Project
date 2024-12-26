@@ -28,6 +28,11 @@ int Popup::getHeight()
 	return this->height;
 }
 
+void Popup::setColorBG(int color)
+{
+	this->color = color;
+}
+
 void Popup::setPosition(int x, int y)
 {
 	posX = x;
@@ -47,11 +52,13 @@ void Popup::setTitle(string title)
 
 void Popup::content()
 {
+	setColorText(color);
 	drawColorBg(width, height, posX, posY);
 
 	int posX = getCenterX(getWidth(), title.length());
 	gotoXY(getPosX() + posX, getPosY() + 2);
-	textbk(ColorCode_DarkCyan);
+	setColorText(ColorCode_White);
+	textbk(color);
 	cout << title;
 }
 

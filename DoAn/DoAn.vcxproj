@@ -160,7 +160,6 @@
     <ClCompile Include="page.cpp" />
     <ClCompile Include="popup.cpp" />
     <ClCompile Include="toastMessage.cpp" />
-    <ClCompile Include="popupFinishExam.cpp" />
     <ClCompile Include="popupNotification.cpp" />
     <ClCompile Include="popupTutorial.cpp" />
     <ClCompile Include="RandomID.cpp" />
@@ -203,7 +202,6 @@
     <ClInclude Include="ManageSubject.h" />
     <ClInclude Include="MCQ.h" />
     <ClInclude Include="ToastMessage.h" />
-    <ClInclude Include="PopupFinishExam.h" />
     <ClInclude Include="PopupNotification.h" />
     <ClInclude Include="PopupTutorial.h" />
     <ClInclude Include="RandomID.h" />

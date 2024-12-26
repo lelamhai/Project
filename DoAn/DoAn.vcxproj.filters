@@ -255,9 +255,6 @@
     <ClCompile Include="contentFilterPoint.cpp">
       <Filter>Source Files\FE\Contents</Filter>
     </ClCompile>
-    <ClCompile Include="popupFinishExam.cpp">
-      <Filter>Source Files\FE\Popups</Filter>
-    </ClCompile>
     <ClCompile Include="popupNotification.cpp">
       <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
@@ -397,9 +394,6 @@
     </ClInclude>
     <ClInclude Include="ContentFilterPoint.h">
       <Filter>Header Files\FE\Contents</Filter>
-    </ClInclude>
-    <ClInclude Include="PopupFinishExam.h">
-      <Filter>Header Files\FE\Popups</Filter>
     </ClInclude>
     <ClInclude Include="PopupNotification.h">
       <Filter>Header Files\FE\Popups</Filter>

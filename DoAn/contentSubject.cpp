@@ -366,6 +366,7 @@ void ContentSubject::deleteData()
 			if (result)
 			{
 				hover = 0;
+				cleanTable();
 			}
 		}
 

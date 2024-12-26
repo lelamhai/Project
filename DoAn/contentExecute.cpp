@@ -296,22 +296,29 @@ void ContentExecute::executeExam()
 			n.open();
 			n.handle();
 			n.close();
+
+			isLoadQuestion = true;
 		}
 
-		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
+		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 		{
-			PopupFinishExam p;
+			int deletePosX = getCenterX(COLUMN_CENTER, 50);
+			PopupQuestion* p = new PopupQuestion();
+			p->setTitle("Ban co muon nop bai thi khong?");
 			int x = getCenterX(COLUMN_CENTER, 50);
-			p.setPosition(DISTANCE_SIDEBAR+MARGIN+x, 17);
-			p.open();
-			p.handle();
-			if (p.getResult())
+			p->setPosition(deletePosX + 30, 17);
+			p->open();
+			p->handle();
+			if (p->getResult())
 			{
 				SuspendThread(hThread);
-				p.close();
+				p->close();
 				return;
 			}
-			p.close();
+			p->close();
+			delete p;
+
+			isLoadQuestion = true;
 		}
 
 		if (isLoadQuestion)

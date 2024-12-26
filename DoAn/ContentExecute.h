@@ -10,7 +10,7 @@
 #include "mykeyboard.h"
 #include "mywindows.h"
 
-#include "PopupFinishExam.h"
+#include "PopupQuestion.h"
 #include "PopupNotification.h"
 #include "Text.h"
 #include "InputField.h"
