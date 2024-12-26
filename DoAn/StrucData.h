@@ -40,7 +40,6 @@ struct Subject {
 
 struct SubjectNode {
 	Subject info;
-	int height;
 	SubjectNode* left;
 	SubjectNode* right;
 };

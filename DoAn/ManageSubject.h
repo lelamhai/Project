@@ -124,17 +124,6 @@ public:
     static string getSubjectNameFromCode(const char* subjectCode);
 };
 
-PTRSUBJECT insertBalance(PTRSUBJECT root, PTRSUBJECT newNode);
-
-int getBalance(PTRSUBJECT node);
-
-int getHeight(PTRSUBJECT node);
-
-void updateHeight(PTRSUBJECT node);
-
-PTRSUBJECT rotateRight(PTRSUBJECT z);
-
-PTRSUBJECT rotateLeft(PTRSUBJECT z);
 
 void insertSubjectToTree(PTRSUBJECT& root, string subjectCode, string subjectName);
 

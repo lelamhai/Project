@@ -521,7 +521,6 @@ PTRSUBJECT ManageSubject::createSubjectNode(const char* code, const string& name
     strcpy_s(newNode->info.subjectCode, code);
     newNode->info.subjectName = name;
     newNode->left = newNode->right = nullptr;
-    newNode->height = 1;  // Khởi tạo chiều cao của cây nhị phân
     newNode->info.listQuestion = nullptr; // Danh sách câu hỏi bắt đầu là trống
     return newNode;
 }
@@ -531,14 +530,12 @@ void ManageSubject::insertSubjectHelper(PTRSUBJECT& subjectList, const Subject& 
     if (subjectList == nullptr) {
         subjectList = new SubjectNode;
         subjectList->info = subject;
-        subjectList->left = nullptr;
-        subjectList->right = nullptr;
-        subjectList->height = 1;
+        subjectList->left = subjectList->right = nullptr;
     }
     else if ((string) subject.subjectCode < (string) subjectList->info.subjectCode) {
         insertSubjectHelper(subjectList->left, subject);
     }
-    else if((string) subject.subjectCode > (string) subjectList->info.subjectCode) {
+    else if ((string)subject.subjectCode > (string)subjectList->info.subjectCode) {
         insertSubjectHelper(subjectList->right, subject);
     }
 }
@@ -708,91 +705,6 @@ string ManageSubject::getSubjectNameFromCode(const char* subjectCode) {
 }
 
 
-
-///////////////////////////////////////////////////////
-
-PTRSUBJECT insertBalance(PTRSUBJECT root, PTRSUBJECT newNode) {
-    if (root == nullptr) return newNode;
-
-    if (strcmp(newNode->info.subjectCode, root->info.subjectCode) < 0) {
-        root->left = insertBalance(root->left, newNode);
-    }
-    else {
-        root->right = insertBalance(root->right, newNode);
-    }
-
-    // Cập nhật chiều cao của cây
-    root->height = 1 + max(getHeight(root->left), getHeight(root->right));
-
-    // Cân bằng cây nếu cần
-    int balance = getBalance(root);
-
-    // Xoay trái nếu cần
-    if (balance > 1 && strcmp(newNode->info.subjectCode, root->left->info.subjectCode) < 0) {
-        return rotateRight(root);
-    }
-
-    // Xoay phải nếu cần
-    if (balance < -1 && strcmp(newNode->info.subjectCode, root->right->info.subjectCode) > 0) {
-        return rotateLeft(root);
-    }
-
-    // Xoay trái-phải
-    if (balance > 1 && strcmp(newNode->info.subjectCode, root->left->info.subjectCode) > 0) {
-        root->left = rotateLeft(root->left);
-        return rotateRight(root);
-    }
-
-    // Xoay phải-trái
-    if (balance < -1 && strcmp(newNode->info.subjectCode, root->right->info.subjectCode) < 0) {
-        root->right = rotateRight(root->right);
-        return rotateLeft(root);
-    }
-
-    return root;
-}
-
-PTRSUBJECT rotateLeft(PTRSUBJECT z) {
-    PTRSUBJECT y = z->right;
-    PTRSUBJECT T2 = y->left;
-
-    y->left = z;
-    z->right = T2;
-
-    z->height = max(getHeight(z->left), getHeight(z->right)) + 1;
-    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
-
-    return y;
-}
-
-PTRSUBJECT rotateRight(PTRSUBJECT z) {
-    PTRSUBJECT y = z->left;
-    PTRSUBJECT T3 = y->right;
-
-    y->right = z;
-    z->left = T3;
-
-    z->height = max(getHeight(z->left), getHeight(z->right)) + 1;
-    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
-
-    return y;
-}
-
-int getHeight(PTRSUBJECT node) {
-    return (node == nullptr) ? 0 : node->height;
-}
-
-// Cập nhật chiều cao của một nút
-void updateHeight(PTRSUBJECT node) {
-    if (node) {
-        node->height = 1 + std::max(getHeight(node->left), getHeight(node->right));
-    }
-}
-
-int getBalance(PTRSUBJECT node) {
-    return (node == nullptr) ? 0 : getHeight(node->left) - getHeight(node->right);
-}
-
 // Hàm chèn môn học vào cây nhị phân cân bằng
 void insertSubjectToTree(PTRSUBJECT& root, string subjectCode, string subjectName) {
 
@@ -802,12 +714,11 @@ void insertSubjectToTree(PTRSUBJECT& root, string subjectCode, string subjectNam
         root->info.subjectName = subjectName;
         root->info.listQuestion = nullptr;
         root->left = root->right = nullptr;
-        root->height = 1;
     }
-    else if (subjectCode < root->info.subjectCode) {
+    else if (subjectCode < (string)root->info.subjectCode) {
         insertSubjectToTree(root->left, subjectCode, subjectName);
     }
-    else {
+    else if(subjectCode > (string)root->info.subjectCode) {
         insertSubjectToTree(root->right, subjectCode, subjectName);
     }
 }

@@ -44,9 +44,9 @@ void DungTest::main()
 
 	//subjects.printAllSubjects();
 	
-	bool isdeleted = subjects.deleteSubject("SDFFSGDF");
+	//bool isdeleted = subjects.deleteSubject("DFSADFSADDSAF");
 
-	PTRSUBJECT a = subjects.getSubject("SDFFSGDFS");
+	//PTRSUBJECT a = subjects.getSubject("DFSADFSADDSAF");
 
 	subjects.printAllSubjects();
 	
