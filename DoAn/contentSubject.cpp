@@ -355,7 +355,7 @@ void ContentSubject::deleteData()
 	}
 	else
 	{
-		PopupQuestion pDelete;
+		PopupComfirm pDelete;
 		pDelete.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
 		pDelete.open();
 		pDelete.handle();

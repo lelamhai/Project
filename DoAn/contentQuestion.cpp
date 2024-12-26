@@ -380,7 +380,7 @@ void ContentQuestion::deleteData()
 		pNotification.close();
 	}
 	else {
-		PopupQuestion pDelete;
+		PopupComfirm pDelete;
 		pDelete.setPosition(deletePosX + 30, 17);
 		pDelete.open();
 		pDelete.handle();

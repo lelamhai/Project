@@ -171,7 +171,7 @@
     <ClCompile Include="popup.cpp">
       <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
-    <ClCompile Include="popupQuestion.cpp">
+    <ClCompile Include="popupComfirm.cpp">
       <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
     <ClCompile Include="ClassroomSevice.cpp">
@@ -311,7 +311,7 @@
     <ClInclude Include="Popup.h">
       <Filter>Header Files\FE\Popups</Filter>
     </ClInclude>
-    <ClInclude Include="PopupQuestion.h">
+    <ClInclude Include="PopupComfirm.h">
       <Filter>Header Files\FE\Popups</Filter>
     </ClInclude>
     <ClInclude Include="StrucData.h">

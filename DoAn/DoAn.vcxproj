@@ -152,7 +152,7 @@
     <ClCompile Include="ManageScore.cpp" />
     <ClCompile Include="ManageStudent.cpp" />
     <ClCompile Include="ManageSubject.cpp" />
-    <ClCompile Include="popupQuestion.cpp" />
+    <ClCompile Include="popupComfirm.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="footer.cpp" />
     <ClCompile Include="inputField.cpp" />
@@ -219,7 +219,7 @@
     <ClInclude Include="Login.h" />
     <ClInclude Include="Page.h" />
     <ClInclude Include="Popup.h" />
-    <ClInclude Include="PopupQuestion.h" />
+    <ClInclude Include="PopupComfirm.h" />
     <ClInclude Include="Sidebar.h" />
     <ClInclude Include="mywindows.h" />
     <ClInclude Include="Layout.h" />

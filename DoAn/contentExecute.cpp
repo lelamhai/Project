@@ -303,7 +303,7 @@ void ContentExecute::executeExam()
 		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 		{
 			int deletePosX = getCenterX(COLUMN_CENTER, 50);
-			PopupQuestion* p = new PopupQuestion();
+			PopupComfirm* p = new PopupComfirm();
 			p->setTitle("Ban co muon nop bai thi khong?");
 			int x = getCenterX(COLUMN_CENTER, 50);
 			p->setPosition(deletePosX + 30, 17);
