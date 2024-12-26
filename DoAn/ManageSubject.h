@@ -24,6 +24,8 @@ private:
     // Hàm giúp tạo SubjectNode mới
     PTRSUBJECT createSubjectNode(const char* code, const string& name);
 
+    void insertSubjectHelper(PTRSUBJECT& subjectList, const Subject& subject);
+
     void insertSubject(const Subject& subject);
     
     // Hàm tìm kiếm môn học theo mã môn
@@ -122,23 +124,14 @@ public:
     static string getSubjectNameFromCode(const char* subjectCode);
 };
 
-PTRSUBJECT insertBalance(PTRSUBJECT root, PTRSUBJECT newNode);
-
-int getBalance(PTRSUBJECT node);
-
-int getHeight(PTRSUBJECT node);
-
-void updateHeight(PTRSUBJECT node);
-
-PTRSUBJECT rotateRight(PTRSUBJECT z);
-
-PTRSUBJECT rotateLeft(PTRSUBJECT z);
 
 void insertSubjectToTree(PTRSUBJECT& root, string subjectCode, string subjectName);
 
 void printSubjectInAVL(PTRSUBJECT root);
 
 PTRSUBJECT getMinValueNode(PTRSUBJECT node);
+
+void deleteNodeCase3(PTRSUBJECT& root);
 
 bool deleteNode(PTRSUBJECT& root, string code);
 

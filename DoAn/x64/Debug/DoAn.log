@@ -1,10 +1,2 @@
-﻿  contentExecute.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(36,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(38,59): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(42,87): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(45,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(48,84): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(51,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  main.cpp
-  Generating Code...
-  DoAn.vcxproj -> D:\Code\PTIT\CTDL & GT\Do An\Project\x64\Debug\DoAn.exe
+﻿  main.cpp
+  DoAn.vcxproj -> D:\HOC HANH\PTIT\CTDL\Project\x64\Debug\DoAn.exe

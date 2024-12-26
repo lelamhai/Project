@@ -19,18 +19,11 @@ PTRSUBJECT ManageSubject::getListSubject()
 bool ManageSubject::addSubject(const string code, const string name) {
     PTRSUBJECT subjectFound = searchSubject(subjectList, code.c_str());
     if (subjectFound != nullptr) return false;
-    PTRSUBJECT newNode = new SubjectNode;
-    strcpy_s(newNode->info.subjectCode, code.c_str());
-    newNode->info.subjectName = name;
-    newNode->left = newNode->right = nullptr;
-    newNode->height = 1;
-
-    if (subjectList == nullptr) {
-        subjectList = newNode;
-    }
-    else {
-        subjectList = insertBalance(subjectList, newNode);
-    }
+    Subject newSubject;
+    strcpy_s(newSubject.subjectCode, code.c_str());
+    newSubject.subjectName = name;
+    newSubject.listQuestion = nullptr;
+    insertSubject(newSubject);
     saveToFile();
     return true;
 }
@@ -230,7 +223,6 @@ int ManageSubject::countQuestionsInSubject(const char* subjectCode) {
         return getCountQuestionInList(subject->info.listQuestion);
     }
     else {
-        cout << "Subject not found!" << endl;
         return 0;
     }
 }
@@ -529,24 +521,28 @@ PTRSUBJECT ManageSubject::createSubjectNode(const char* code, const string& name
     strcpy_s(newNode->info.subjectCode, code);
     newNode->info.subjectName = name;
     newNode->left = newNode->right = nullptr;
-    newNode->height = 1;  // Khởi tạo chiều cao của cây nhị phân
     newNode->info.listQuestion = nullptr; // Danh sách câu hỏi bắt đầu là trống
     return newNode;
 }
 
+void ManageSubject::insertSubjectHelper(PTRSUBJECT& subjectList, const Subject& subject)
+{
+    if (subjectList == nullptr) {
+        subjectList = new SubjectNode;
+        subjectList->info = subject;
+        subjectList->left = subjectList->right = nullptr;
+    }
+    else if ((string) subject.subjectCode < (string) subjectList->info.subjectCode) {
+        insertSubjectHelper(subjectList->left, subject);
+    }
+    else if ((string)subject.subjectCode > (string)subjectList->info.subjectCode) {
+        insertSubjectHelper(subjectList->right, subject);
+    }
+}
+
 // Hàm chèn môn học vào cây nhị phân cân bằng
 void ManageSubject::insertSubject(const Subject& subject) {
-    PTRSUBJECT newNode = new SubjectNode;
-    newNode->info = subject;
-    newNode->left = newNode->right = nullptr;
-    newNode->height = 1;
-
-    if (subjectList == nullptr) {
-        subjectList = newNode;
-    }
-    else {
-        subjectList = insertBalance(subjectList, newNode);
-    }
+    insertSubjectHelper(subjectList, subject);
 }
 
 // Hàm tìm kiếm môn học theo mã môn
@@ -709,108 +705,21 @@ string ManageSubject::getSubjectNameFromCode(const char* subjectCode) {
 }
 
 
-
-///////////////////////////////////////////////////////
-
-PTRSUBJECT insertBalance(PTRSUBJECT root, PTRSUBJECT newNode) {
-    if (root == nullptr) return newNode;
-
-    if (strcmp(newNode->info.subjectCode, root->info.subjectCode) < 0) {
-        root->left = insertBalance(root->left, newNode);
-    }
-    else {
-        root->right = insertBalance(root->right, newNode);
-    }
-
-    // Cập nhật chiều cao của cây
-    root->height = 1 + max(getHeight(root->left), getHeight(root->right));
-
-    // Cân bằng cây nếu cần
-    int balance = getBalance(root);
-
-    // Xoay trái nếu cần
-    if (balance > 1 && strcmp(newNode->info.subjectCode, root->left->info.subjectCode) < 0) {
-        return rotateRight(root);
-    }
-
-    // Xoay phải nếu cần
-    if (balance < -1 && strcmp(newNode->info.subjectCode, root->right->info.subjectCode) > 0) {
-        return rotateLeft(root);
-    }
-
-    // Xoay trái-phải
-    if (balance > 1 && strcmp(newNode->info.subjectCode, root->left->info.subjectCode) > 0) {
-        root->left = rotateLeft(root->left);
-        return rotateRight(root);
-    }
-
-    // Xoay phải-trái
-    if (balance < -1 && strcmp(newNode->info.subjectCode, root->right->info.subjectCode) < 0) {
-        root->right = rotateRight(root->right);
-        return rotateLeft(root);
-    }
-
-    return root;
-}
-
-PTRSUBJECT rotateLeft(PTRSUBJECT z) {
-    PTRSUBJECT y = z->right;
-    PTRSUBJECT T2 = y->left;
-
-    y->left = z;
-    z->right = T2;
-
-    z->height = max(getHeight(z->left), getHeight(z->right)) + 1;
-    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
-
-    return y;
-}
-
-PTRSUBJECT rotateRight(PTRSUBJECT z) {
-    PTRSUBJECT y = z->left;
-    PTRSUBJECT T3 = y->right;
-
-    y->right = z;
-    z->left = T3;
-
-    z->height = max(getHeight(z->left), getHeight(z->right)) + 1;
-    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
-
-    return y;
-}
-
-int getHeight(PTRSUBJECT node) {
-    return (node == nullptr) ? 0 : node->height;
-}
-
-// Cập nhật chiều cao của một nút
-void updateHeight(PTRSUBJECT node) {
-    if (node) {
-        node->height = 1 + std::max(getHeight(node->left), getHeight(node->right));
-    }
-}
-
-int getBalance(PTRSUBJECT node) {
-    return (node == nullptr) ? 0 : getHeight(node->left) - getHeight(node->right);
-}
-
 // Hàm chèn môn học vào cây nhị phân cân bằng
 void insertSubjectToTree(PTRSUBJECT& root, string subjectCode, string subjectName) {
-    Subject newSubject;
-    strcpy_s(newSubject.subjectCode, subjectCode.c_str());
-    newSubject.subjectName = subjectName;
-    newSubject.listQuestion = nullptr;
-    
-    PTRSUBJECT newNode = new SubjectNode;
-    newNode->info = newSubject;
-    newNode->left = newNode->right = nullptr;
-    newNode->height = 1;
 
     if (root == nullptr) {
-        root = newNode;
+        root = new SubjectNode;
+        strcpy_s(root->info.subjectCode, subjectCode.c_str());
+        root->info.subjectName = subjectName;
+        root->info.listQuestion = nullptr;
+        root->left = root->right = nullptr;
     }
-    else {
-        root = insertBalance(root, newNode);
+    else if (subjectCode < (string)root->info.subjectCode) {
+        insertSubjectToTree(root->left, subjectCode, subjectName);
+    }
+    else if(subjectCode > (string)root->info.subjectCode) {
+        insertSubjectToTree(root->right, subjectCode, subjectName);
     }
 }
 
@@ -831,69 +740,47 @@ PTRSUBJECT getMinValueNode(PTRSUBJECT node) {
     return current;
 }
 
-// Hàm xóa nút theo code
-bool deleteNode(PTRSUBJECT& root, string code) {
-    if (!root) return false; // Không tìm thấy nút để xóa
-
-    if (code < (string)root->info.subjectCode) {
-        return deleteNode(root->left, code);
-    }
-    else if (code > (string)root->info.subjectCode) {
-        return deleteNode(root->right, code);
+void deleteNodeCase3(PTRSUBJECT& root)
+{
+    if (root->left != nullptr) {
+        deleteNodeCase3(root->left);
     }
     else {
-        // Nút cần xóa được tìm thấy  
-        if (getCountQuestionInList(root->info.listQuestion) > 0) {
-            // Có câu hỏi thì không thể xóa
-            return false;
+        PTRSUBJECT temp = root;
+        root = root->right; 
+        delete temp;
+    }
+}
+
+// Hàm xóa nút theo code
+bool deleteNode(PTRSUBJECT& root, string code) {
+    if (root == nullptr) return false; // Base case: node not found
+
+    // Traverse the tree
+    if (code < root->info.subjectCode) {
+        return deleteNode(root->left, code); // Traverse left
+    }
+    else if (code > root->info.subjectCode) {
+        return deleteNode(root->right, code); // Traverse right
+    }
+    else {
+        // Node found
+        PTRSUBJECT temp = root;
+
+        if (root->left == nullptr) {
+            root = root->right; // No left child, move right child up
         }
-
-        if (!root->left || !root->right) {
-            PTRSUBJECT temp = root->left ? root->left : root->right;
-
-            if (!temp) {
-                // Không có con
-                delete root;
-                root = nullptr;
-            }
-            else {
-                // Có một con
-                *root = *temp;
-                delete temp;
-            }
+        else if (root->right == nullptr) {
+            root = root->left; // No right child, move left child up
         }
         else {
-            // Có hai con
-            PTRSUBJECT temp = getMinValueNode(root->right);
-            root->info = temp->info; // Copy thông tin
-            deleteNode(root->right, temp->info.subjectCode);
+            // Both children exist, need to replace with the leftmost node of the right subtree
+            deleteNodeCase3(root->right); // Remove the leftmost node in right subtree
+            root->info = temp->info; // Copy data from the node to be deleted
         }
 
-        // Cân bằng lại cây
-        if (root) {
-            updateHeight(root);
-
-            int balance = getBalance(root);
-
-            // Cân bằng cây
-            if (balance > 1 && getBalance(root->left) >= 0)
-                root = rotateRight(root);
-
-            if (balance > 1 && getBalance(root->left) < 0) {
-                root->left = rotateLeft(root->left);
-                root = rotateRight(root);
-            }
-
-            if (balance < -1 && getBalance(root->right) <= 0)
-                root = rotateLeft(root);
-
-            if (balance < -1 && getBalance(root->right) > 0) {
-                root->right = rotateRight(root->right);
-                root = rotateLeft(root);
-            }
-        }
-
-        return true; // Xóa thành công
+        delete temp; // Delete the original node
+        return true; // Node successfully deleted
     }
 }
 
