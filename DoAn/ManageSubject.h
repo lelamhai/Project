@@ -24,6 +24,8 @@ private:
     // Hàm giúp tạo SubjectNode mới
     PTRSUBJECT createSubjectNode(const char* code, const string& name);
 
+    void insertSubjectHelper(PTRSUBJECT& subjectList, const Subject& subject);
+
     void insertSubject(const Subject& subject);
     
     // Hàm tìm kiếm môn học theo mã môn
@@ -139,6 +141,8 @@ void insertSubjectToTree(PTRSUBJECT& root, string subjectCode, string subjectNam
 void printSubjectInAVL(PTRSUBJECT root);
 
 PTRSUBJECT getMinValueNode(PTRSUBJECT node);
+
+void deleteNodeCase3(PTRSUBJECT& root);
 
 bool deleteNode(PTRSUBJECT& root, string code);
 
