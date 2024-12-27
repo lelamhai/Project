@@ -373,10 +373,10 @@ void ContentPrintPoint::selectData()
 
 				int sex = getCenterX(24, 3);
 				gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + sex, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
-				string gender = "Nam";
+				string gender = "NAM";
 				if (p->gender == 'F')
 				{
-					gender = "Nu";
+					gender = "NU";
 				}
 				cout << gender;
 
@@ -385,7 +385,7 @@ void ContentPrintPoint::selectData()
 
 				if (p->score == -1)
 				{
-					cout << "Chua Thi";
+					cout << "CHUA THI";
 				}
 				else {
 					cout << "  " << p->score;
@@ -405,7 +405,7 @@ void ContentPrintPoint::findData()
 	{
 		if (stateSearchInput == SEARCH_INPUT)
 		{
-			gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT + 1 + textSearch.length(), DISTANCE_HEADER + PADDING + 1);
+			gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT + 1 + cursorPosition, DISTANCE_HEADER + PADDING + 1);
 
 			if (GetAsyncKeyState(VK_F1) & 0x0001)
 			{
@@ -428,6 +428,18 @@ void ContentPrintPoint::findData()
 			{
 				currentPrint = C_EXIT;
 				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+			{
+				currentPrint = C_SELECT;
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+			{
+				currentPrint = C_SELECT;
 				return;
 			}
 
@@ -497,6 +509,8 @@ void ContentPrintPoint::findData()
 
 void ContentPrintPoint::loadData()
 {
+	cleanTable();
+
 	page = manangeScore.searchStudentScore(textSearch, pageNumber);
 	int noScoreThisPage = page.endIndex - page.startIndex;
 	int n = noScoreThisPage;
@@ -519,19 +533,19 @@ void ContentPrintPoint::loadData()
 
 		int sex = getCenterX(24, 3);
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + sex, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
-		string gender = "Nam";
+		string gender = "NAM";
 		if (p->gender == 'F')
 		{
-			gender = "Nu";
+			gender = "NU";
 		}
-		cout << sex;
+		cout << gender;
 
 		int point = getCenterX(24, 8);
 		gotoXY(DISTANCE_SIDEBAR + MARGIN + 24 + 24 + 24 + 24 + point, DISTANCE_HEADER + MARGIN + PADDING + PADDING + (2 * i));
 
 		if (p->score == -1)
 		{
-			cout << "Chua Thi";
+			cout << "CHUA THI";
 		}
 		else {
 			cout << "  " << p->score;
