@@ -70,11 +70,8 @@ void Layout::templateMenu()
         if (GetAsyncKeyState(VK_PRIOR) & 0x0001)
         {
             showCur(0);
-            if (hover < 0)
+            if (hover > 0)
             {
-                hover = menu.size() - 1;
-            }
-            else {
                 hover -= 1;
             }
 
@@ -84,11 +81,7 @@ void Layout::templateMenu()
         if (GetAsyncKeyState(VK_NEXT) & 0x0001)
         {
             showCur(0);
-            if (hover > menu.size() - 1)
-            {
-                hover = 0;
-            }
-            else 
+            if (hover < menu.size() - 1)
             {
                 hover += 1;
             }
