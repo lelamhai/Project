@@ -35,8 +35,8 @@ void ContentInputQuestion::drawContent()
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING, WIDTH_INPUT - 5, HEIGHT_INPUT);
 
 	string title = "Mon: " + subject.getSubject(subjectCode.c_str())->info.subjectName;
-	int titleContent = getCenterX(getConsoleWidth() - DISTANCE_SIDEBAR, title.length());
-	gotoXY(DISTANCE_SIDEBAR - MARGIN - MARGIN + titleContent, DISTANCE_HEADER + 2);
+	int titleContent = getCenterX(MARGIN + COLUMN_CENTER + MARGIN + COLUMN_RIGHT, title.length());
+	gotoXY(DISTANCE_SIDEBAR - MARGIN + titleContent, DISTANCE_HEADER + 2);
 	cout << title;
 	int y = 5;
 	int lastY = 0;
@@ -167,6 +167,12 @@ void ContentInputQuestion::createData()
 				break;
 
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -201,6 +207,12 @@ void ContentInputQuestion::createData()
 				break;
 
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -233,7 +245,14 @@ void ContentInputQuestion::createData()
 				}
 				stateInput = FORM_ContentC;
 				break;
+
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -268,6 +287,12 @@ void ContentInputQuestion::createData()
 				break;
 
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -300,7 +325,14 @@ void ContentInputQuestion::createData()
 				}
 				stateInput = FORM_ContentAnswer;
 				break;
+
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -333,7 +365,14 @@ void ContentInputQuestion::createData()
 				}
 				stateInput = FORM_ContentMain;
 				break;
+
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -427,7 +466,14 @@ void ContentInputQuestion::editData()
 				}
 				stateInput = FORM_ContentA;
 				break;
+
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -457,7 +503,14 @@ void ContentInputQuestion::editData()
 				}
 				stateInput = FORM_ContentB;
 				break;
+
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -491,7 +544,14 @@ void ContentInputQuestion::editData()
 				}
 				stateInput = FORM_ContentC;
 				break;
+
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -525,7 +585,14 @@ void ContentInputQuestion::editData()
 				}
 				stateInput = FORM_ContentD;
 				break;
+			
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -558,7 +625,14 @@ void ContentInputQuestion::editData()
 				}
 				stateInput = FORM_ContentAnswer;
 				break;
+
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -592,7 +666,14 @@ void ContentInputQuestion::editData()
 				}
 				stateInput = FORM_ContentMain;
 				break;
+
 			case ESC:
+				stageExit = 1;
+				stateInput = FORM_EXIT;
+				break;
+
+			case TAB:
+				stageExit = 0;
 				stateInput = FORM_EXIT;
 				break;
 
@@ -657,4 +738,9 @@ void ContentInputQuestion::cleanInput()
 	}
 	text.clean();
 	text.setPosition(0, posYMessage);
+}
+
+int ContentInputQuestion::getExitInput()
+{
+	return stageExit;
 }
