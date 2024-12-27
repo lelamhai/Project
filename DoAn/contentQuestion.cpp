@@ -380,7 +380,7 @@ void ContentQuestion::deleteData()
 		pNotification.close();
 	}
 	else {
-		PopupQuestion pDelete;
+		PopupComfirm pDelete;
 		pDelete.setPosition(deletePosX + 30, 17);
 		pDelete.open();
 		pDelete.handle();
@@ -391,6 +391,7 @@ void ContentQuestion::deleteData()
 			if (result)
 			{
 				hover = 0;
+				cleanTable();
 			}
 		}
 		pDelete.close();
@@ -403,14 +404,23 @@ void ContentQuestion::deleteData()
 void ContentQuestion::createData()
 {
 	cleanContent();
-	ContentInputQuestion q;
-	q.setStateInputQuestion(q.C_CREATE);
-	q.init(subjectCode);
-	q.displayContent();
+	ContentInputQuestion* q = new ContentInputQuestion();
+	q->setStateInputQuestion(q->C_CREATE);
+	q->init(subjectCode);
+	q->displayContent();
+	int result = q->getExitInput();
+	if (result == 1)
+	{
+		currentQuestion = C_SELECT;
+	}
+	else
+	{
+		currentQuestion = C_EXIT;
+	}
+	delete q;
 	cleanContent();
 	drawContent();
 	girdContent();
-	currentQuestion = C_SELECT;
 }
 
 void ContentQuestion::editData()

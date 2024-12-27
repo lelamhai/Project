@@ -13,15 +13,14 @@ void setDefualtBT()
 
 void drawColorBg(int width, int height, int x, int y)
 {
-	string RED_BACKGROUND = BG_CYAN;
-	string RESET_COLOR = BG_REST;
-
-	string line = RED_BACKGROUND + string(width, ' ') + RESET_COLOR;
-	for (int i = 0; i < height; i++) {
-		
+	string blankFill;
+	blankFill.resize(width, char(219));
+	for (int i = 0; i < height; i++)
+	{
 		gotoXY(x, y + i);
-		cout << line << endl;
+		cout << blankFill;
 	}
+	setColorText(ColorCode_Back);
 }
 
 void textbk(WORD color)

@@ -3,18 +3,6 @@
 #include <iostream>
 using namespace std;
 
-//ANSI
-#define BG_RED          "\033[41m"
-#define BG_GREEN        "\033[42m"
-#define BG_YELLOW       "\033[43m"
-#define BG_BLUE			"\033[44m"
-#define BG_PINK			"\033[45m"
-#define BG_CYAN			"\033[46m"
-#define BG_WHITE		"\033[47m"
-
-#define BG_REST			"\033[0m"
-
-
 enum ColorState {
 	ColorCode_Back			= 0,
 	ColorCode_DarkBlue		= 1,

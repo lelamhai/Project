@@ -15,6 +15,8 @@
 class ContentInputQuestion : public Content
 {
 private:
+	int stageExit;
+
 	enum SelectInput
 	{
 		FORM_ContentMain = 0,
@@ -64,6 +66,7 @@ public:
 	void editData();
 	void setStateInputQuestion(StateInputQuestion state);
 	void cleanInput();
+	int getExitInput();
 	ContentInputQuestion();
 	~ContentInputQuestion();
 };

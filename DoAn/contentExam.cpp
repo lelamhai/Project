@@ -331,58 +331,54 @@ void ContentExam::selectData()
 
 		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
 		{
-			if (isLoadFirst)
+			int result = ManageExam::checkInputExam1(Singleton::getInstance()->role.c_str(), listInput[0].getText().c_str(), stoi(listInput[1].getText()));
+			if (result == 1)
 			{
-				int result = ManageExam::checkInputExam1(Singleton::getInstance()->role.c_str(), listInput[0].getText().c_str(), stoi(listInput[1].getText()));
+				currentExam = C_DETAIL;
+				return;
+			}
 
-				if (result == 1)
+			if (result == -2)
+			{
+				int cout = subject.countQuestionsInSubject(listInput[0].getText().c_str());
+				string mes;
+				if (cout == 0)
 				{
-					currentExam = C_DETAIL;
-					return;
+					mes = "Chua Co Du Lieu Cau Hoi";
+				}
+				else
+				{
+					mes = "Nhap Toi Da " + to_string(subject.countQuestionsInSubject(listInput[0].getText().c_str())) + " Cau Hoi";
 				}
 
-				if (result == -2)
+				if (text.getLenString() != 0)
 				{
-					int cout = subject.countQuestionsInSubject(listInput[0].getText().c_str());
-					string mes;
-					if (cout == 0)
-					{
-						mes = "Chua Co Du Lieu Cau Hoi";
-					}
-					else
-					{
-						mes = "Nhap Toi Da " + to_string(subject.countQuestionsInSubject(listInput[0].getText().c_str())) + " Cau Hoi";
-					}
-
-					if (text.getLenString() != 0)
-					{
-						text.clean();
-						text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, posYMessage);
-						text.setContent("");
-					}
-
-					text.setContent(mes);
-					int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-					text.updatePositionX(textPosX);
-
-					text.display();
+					text.clean();
+					text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, posYMessage);
+					text.setContent("");
 				}
 
-				if (result == -3)
+				text.setContent(mes);
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+
+				text.display();
+			}
+
+			if (result == -3)
+			{
+				if (text.getLenString() != 0)
 				{
-					if (text.getLenString() != 0)
-					{
-						text.clean();
-						text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, posYMessage);
-						text.setContent("");
-					}
-
-					text.setContent("Mon Nay Da Thi Roi!");
-					int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
-					text.updatePositionX(textPosX);
-
-					text.display();
+					text.clean();
+					text.setPosition(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, posYMessage);
+					text.setContent("");
 				}
+
+				text.setContent("Mon Nay Da Thi Roi!");
+				int textPosX = getCenterX(COLUMN_RIGHT, text.getLenString());
+				text.updatePositionX(textPosX);
+
+				text.display();
 			}
 		}
 

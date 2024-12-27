@@ -16,7 +16,6 @@ void PopupNotification::open()
 
 void PopupNotification::createButtonEnter()
 {
-	textbk(ColorCode_DarkCyan);
 	int posX = getCenterX(getWidth(), 10);
 	box(getPosX() + posX, getPosY() + getHeight() - 4, 10, 2);
 	gotoXY(getPosX() + posX + 3, getPosY() + getHeight() - 3);

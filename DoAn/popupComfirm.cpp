@@ -1,28 +1,27 @@
-#include "PopupQuestion.h"
+#include "PopupComfirm.h"
 
-PopupQuestion::PopupQuestion()
+PopupComfirm::PopupComfirm()
 {
 }
 
-PopupQuestion::~PopupQuestion()
+PopupComfirm::~PopupComfirm()
 {
 }
 
-void PopupQuestion::open()
+void PopupComfirm::open()
 {
-	setTitle("Ban co muon xoa du lieu nay khong?");
 	content();
 	createButtonNo();
 	createButtonYes();
 }
 
-void PopupQuestion::close()
+void PopupComfirm::close()
 {
 	textbk(ColorCode_Back);
-	cleanTable();
+	clean();
 }
 
-void PopupQuestion::handle()
+void PopupComfirm::handle()
 {
 	while (true)
 	{
@@ -33,30 +32,38 @@ void PopupQuestion::handle()
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x0001)
 		{
-			setColorText(ColorCode_DarkGreen);
-			textbk(ColorCode_DarkCyan);
 			gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
-			cout << NO;
 
+			setColorText(ColorCode_DarkGreen);
+			textbk(ColorCode_DarkBlue);
+			cout << NO;
+			textbk(ColorCode_Back);
 			setColorText(ColorCode_White);
-			textbk(ColorCode_DarkCyan);
+
+			
 			gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
+			setColorText(ColorCode_White);
+			textbk(ColorCode_DarkBlue);
 			cout << YES;
+			
 
 			result = false;
 		}
 
 		if (GetAsyncKeyState(VK_RIGHT) & 0x0001)
 		{
-			setColorText(ColorCode_White);
-			textbk(ColorCode_DarkCyan);
 			gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
+			setColorText(ColorCode_White);
+			textbk(ColorCode_DarkBlue);
 			cout << NO;
 
-			setColorText(ColorCode_DarkGreen);
-			textbk(ColorCode_DarkCyan);
+
 			gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
+			setColorText(ColorCode_DarkGreen);
+			textbk(ColorCode_DarkBlue);
 			cout << YES;
+			textbk(ColorCode_Back);
+			setColorText(ColorCode_White);
 
 			result = true;
 		}
@@ -84,24 +91,28 @@ void PopupQuestion::handle()
 	}
 }
 
-void PopupQuestion::createButtonNo()
+void PopupComfirm::createButtonNo()
 {
+	textbk(ColorCode_DarkBlue);
 	box(getPosX() + 50 / 2 - 10 - 5, getPosY() + getHeight() - 5, 10, 2);
 	gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
 	cout << NO;
+	textbk(ColorCode_Back);
 }
 
-void PopupQuestion::createButtonYes()
+void PopupComfirm::createButtonYes()
 {
+	textbk(ColorCode_DarkBlue);
 	box(getPosX() + 50 / 2 + 4, getPosY() + getHeight() - 5, 9, 2);
+	gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
 
 	setColorText(ColorCode_DarkGreen);
-	textbk(ColorCode_DarkCyan);
-	gotoXY(getPosX() + 13 + 8 + 8 + 4, getPosY() + getHeight() - 5 + 1);
+	textbk(ColorCode_DarkBlue);
 	cout << YES;
+	textbk(ColorCode_Back);
 }
 
-bool PopupQuestion::getResult()
+bool PopupComfirm::getResult()
 {
 	return result;
 }

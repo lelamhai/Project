@@ -794,7 +794,7 @@ void ContentStudent::deleteData()
 	}
 	else
 	{
-		PopupQuestion pDelete;
+		PopupComfirm pDelete;
 		pDelete.setPosition(deletePosX + 30, 17);
 		pDelete.open();
 		pDelete.handle();
@@ -806,6 +806,7 @@ void ContentStudent::deleteData()
 			if (result)
 			{
 				hover = 0;
+				cleanTable();
 			}
 		}
 		pDelete.close();
