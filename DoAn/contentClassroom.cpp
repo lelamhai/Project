@@ -440,6 +440,14 @@ void ContentClassroom::createData()
 				}
 				break;
 
+			case PGUP:
+				stateInput == FORM_CODE;
+				break;
+
+			case PGDN:
+				stateInput == FORM_CODE;
+				break;
+
 			case DOWN:
 			case UP:
 				stateInput = FORM_NAME;
@@ -486,6 +494,14 @@ void ContentClassroom::createData()
 					currentClassroom = C_EXIT;
 					return;
 				}
+				break;
+
+			case PGUP:
+				stateInput == FORM_NAME;
+				break;
+
+			case PGDN:
+				stateInput == FORM_NAME;
 				break;
 
 			default:
@@ -618,6 +634,15 @@ void ContentClassroom::editData()
 					return;
 				}
 				break;
+
+			case PGUP:
+				stateInput == FORM_NAME;
+				break;
+
+			case PGDN:
+				stateInput == FORM_NAME;
+				break;
+
 			default:
 				break;
 			}
@@ -657,8 +682,7 @@ void ContentClassroom::findData()
 	{
 		if (stateSearchInput == SEARCH_INPUT)
 		{
-			gotoXY(34 + 2 + 4 + 2 + textSearch.length(), 10);
-
+			gotoXY(DISTANCE_SIDEBAR + MARGIN + 5 + cursorPosition, 10);
 			if (GetAsyncKeyState(VK_F1) & 0x0001)
 			{
 				currentClassroom = C_SELECT;
@@ -681,6 +705,19 @@ void ContentClassroom::findData()
 					return;
 				}
 			}
+
+			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+			{
+				currentClassroom = C_SELECT;
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+			{
+				currentClassroom = C_SELECT;
+				return;
+			}
+
 
 			char s = _getch();
 			int key = keySpecial(s);

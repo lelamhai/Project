@@ -390,7 +390,7 @@ void ContentStudent::selectData()
 
 				int sexX = getCenterX(24, 3);
 				gotoXY(34 + 3 + 24 + 24 + 24 + sexX, 10 + 2 + 1 + posX + (2 * i));
-				cout << (temp->info.gender == 'M' ? "Nam" : "Nu");
+				cout << (temp->info.gender == 'M' ? "NAM" : "NU");
 
 				int passX = getCenterX(24, strlen(temp->info.password));
 				gotoXY(34 + 3 + 24 + 24 + 24 + 24 + passX, 10 + 2 + 1 + posX + (2 * i));
@@ -413,7 +413,7 @@ void ContentStudent::createData()
 		listInput[i].setText("");
 	}
 
-	string gender = "Nam";
+	string gender = "NAM";
 	ManageClass test;
 	int i = 0;
 	stateInput = FORM_CODE;
@@ -462,6 +462,14 @@ void ContentStudent::createData()
 					currentDetailClassroom = C_EXIT;
 					return;
 				}
+				break;
+
+			case PGUP:
+				stateInput == FORM_CODE;
+				break;
+
+			case PGDN:
+				stateInput == FORM_CODE;
 				break;
 
 			case UP:
@@ -522,6 +530,14 @@ void ContentStudent::createData()
 				currentDetailClassroom = C_EXIT;
 				return;
 
+			case PGUP:
+				stateInput == FORM_LAST;
+				break;
+
+			case PGDN:
+				stateInput == FORM_LAST;
+				break;
+
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
 				{
@@ -578,6 +594,14 @@ void ContentStudent::createData()
 			case ESC:
 				currentDetailClassroom = C_EXIT;
 				return;
+
+			case PGUP:
+				stateInput == FORM_FIRST;
+				break;
+
+			case PGDN:
+				stateInput == FORM_FIRST;
+				break;
 
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
@@ -641,26 +665,32 @@ void ContentStudent::createData()
 				stateInput = FORM_PASSWORD;
 				break;
 
+			case PGUP:
+				stateInput == FORM_SEX;
+				break;
+
+			case PGDN:
+				stateInput == FORM_SEX;
+				break;
+
 			case ESC:
 				currentDetailClassroom = C_EXIT;
 				return;
 
 			case ADD:
-				if (listInput[3].getText() == "Nu")
+				if (listInput[3].getText() == "NU")
 				{
 					listInput[3].clean();
-					listInput[3].setText("Nam");
+					listInput[3].setText("NAM");
 					listInput[3].display();
 				}
-
-				
 				break;
 
 			case SUBTRACT:
-				if (listInput[3].getText() == "Nam")
+				if (listInput[3].getText() == "NAM")
 				{
 					listInput[3].clean();
-					listInput[3].setText("Nu");
+					listInput[3].setText("NU");
 					listInput[3].display();
 				}
 				break;
@@ -715,12 +745,20 @@ void ContentStudent::createData()
 				break;
 
 			case DOWN:
-				stateInput = FORM_CODE;
+				stateInput = FORM_SEX;
 				break;
 
 			case ESC:
 				currentDetailClassroom = C_EXIT;
 				return;
+
+			case PGUP:
+				stateInput == FORM_PASSWORD;
+				break;
+
+			case PGDN:
+				stateInput == FORM_PASSWORD;
+				break;
 
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
@@ -738,7 +776,7 @@ void ContentStudent::createData()
 		if (stateInput == FORM_ENTER)
 		{
 			char sex;
-			if (listInput[3].getText() == "Nam")
+			if (listInput[3].getText() == "NAM")
 			{
 				sex = 'M';
 			}
@@ -825,10 +863,10 @@ void ContentStudent::editData()
 	listInput[2].setText(studentFound.firstName);
 	if (studentFound.gender == 'M')
 	{
-		listInput[3].setText("Nam");
+		listInput[3].setText("NAM");
 	}
 	else {
-		listInput[3].setText("Nu");
+		listInput[3].setText("NU");
 	}
 	listInput[4].setText(studentFound.password);
 
@@ -838,7 +876,7 @@ void ContentStudent::editData()
 		listInput[i].display();
 	}
 
-	string gender = "Nam";
+	string gender = "NAM";
 	stateInput = FORM_LAST;
 	while (true)
 	{
@@ -881,6 +919,14 @@ void ContentStudent::editData()
 			case ESC:
 				currentDetailClassroom = C_EXIT;
 				return;
+
+			case PGUP:
+				stateInput == FORM_LAST;
+				break;
+
+			case PGDN:
+				stateInput == FORM_LAST;
+				break;
 
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
@@ -937,6 +983,15 @@ void ContentStudent::editData()
 
 			case DOWN:
 				stateInput = FORM_SEX;
+				break;
+
+
+			case PGUP:
+				stateInput == FORM_FIRST;
+				break;
+
+			case PGDN:
+				stateInput == FORM_FIRST;
 				break;
 
 			case TAB:
@@ -1004,20 +1059,28 @@ void ContentStudent::editData()
 				currentDetailClassroom = C_EXIT;
 				return;
 
+			case PGUP:
+				stateInput == FORM_SEX;
+				break;
+
+			case PGDN:
+				stateInput == FORM_SEX;
+				break;
+
 			case ADD:
-				if (listInput[3].getText() == "Nu")
+				if (listInput[3].getText() == "NU")
 				{
 					listInput[3].clean();
-					listInput[3].setText("Nam");
+					listInput[3].setText("NAM");
 					listInput[3].display();
 				}
 				break;
 
 			case SUBTRACT:
-				if (listInput[3].getText() == "Nam")
+				if (listInput[3].getText() == "NAM")
 				{
 					listInput[3].clean();
-					listInput[3].setText("Nu");
+					listInput[3].setText("NU");
 					listInput[3].display();
 				}
 				break;
@@ -1080,6 +1143,14 @@ void ContentStudent::editData()
 				currentDetailClassroom = C_EXIT;
 				return;
 
+			case PGUP:
+				stateInput == FORM_PASSWORD;
+				break;
+
+			case PGDN:
+				stateInput == FORM_PASSWORD;
+				break;
+
 			case TAB:
 				if (Singleton::getInstance()->moveMenu != 0)
 				{
@@ -1096,7 +1167,7 @@ void ContentStudent::editData()
 		if (stateInput == FORM_ENTER)
 		{
 			char sex;
-			if (listInput[3].getText() == "Nam")
+			if (listInput[3].getText() == "NAM")
 			{
 				sex = 'M';
 			}
@@ -1155,6 +1226,18 @@ void ContentStudent::findData()
 			{
 				currentDetailClassroom = C_CREATE;
 				Sleep(150);
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+			{
+				currentDetailClassroom = C_SELECT;
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+			{
+				currentDetailClassroom = C_SELECT;
 				return;
 			}
 
