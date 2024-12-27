@@ -101,17 +101,16 @@ void Layout::templateMenu()
             int count = menu.size();
             if (hover == count - 2)
             {
-                choice = hover;
+                choice = QUIT;
                 Sleep(50);
                 return;
             }
 
             if (hover == count - 1)
             {
-                clrscr();
-                gotoXY(0, 0);
-                setColorText(ColorCode_DarkWhite);
-                exit(0);
+                choice = EXIT;
+                Sleep(50);
+                return;
             }
 
             active = hover;
@@ -218,14 +217,23 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 delete p;
                 Singleton::getInstance()->moveMenu = 0;
             }
+        }
 
-            if (choice == 5)
-            {
-                showCur(0);
-                cleanContent();
-                Singleton::getInstance()->moveMenu = 0;
-                return 0;
-            }
+        if (choice == 5)
+        {
+            showCur(0);
+            cleanContent();
+            Singleton::getInstance()->moveMenu = 0;
+            return 0;
+        }
+
+        if (choice == -1)
+        {
+            showCur(0);
+            clrscr();
+            gotoXY(0,0);
+            setColorText(ColorCode_DarkWhite);
+            exit(0);
         }
     }
     return 0;

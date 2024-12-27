@@ -25,20 +25,24 @@
 #include <iostream>
 using namespace std;
 
-enum StateContent
-{
-    ABOUT       = 0,
-    CLASSROOM   = 1,
-    SUBJECT     = 2,
-    EXAM        = 3,
-    FILTERPOINT = 4,
-
-    EXIT        = -1
-};
-
 class Layout
 {
 protected:
+    enum StateContent
+    {
+        ABOUT       = 0,
+        CLASSROOM   = 1,
+        SUBJECT     = 2,
+        EXAM        = 3,
+        FILTERPOINT = 4,
+        QUIT        = 5,
+
+        EXIT = -1
+    };
+    StateContent currentContent;
+
+
+
     virtual void layoutHeader()
     {
         Header();
