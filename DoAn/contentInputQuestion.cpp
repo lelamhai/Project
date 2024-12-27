@@ -171,6 +171,14 @@ void ContentInputQuestion::createData()
 				stateInput = FORM_EXIT;
 				break;
 
+			case PGUP:
+				stateInput == FORM_ContentMain;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentMain;
+				break;
+
 			case TAB:
 				stageExit = 0;
 				stateInput = FORM_EXIT;
@@ -209,6 +217,14 @@ void ContentInputQuestion::createData()
 			case ESC:
 				stageExit = 1;
 				stateInput = FORM_EXIT;
+				break;
+
+			case PGUP:
+				stateInput == FORM_ContentA;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentA;
 				break;
 
 			case TAB:
@@ -251,6 +267,14 @@ void ContentInputQuestion::createData()
 				stateInput = FORM_EXIT;
 				break;
 
+			case PGUP:
+				stateInput == FORM_ContentB;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentB;
+				break;
+
 			case TAB:
 				stageExit = 0;
 				stateInput = FORM_EXIT;
@@ -289,6 +313,14 @@ void ContentInputQuestion::createData()
 			case ESC:
 				stageExit = 1;
 				stateInput = FORM_EXIT;
+				break;
+
+			case PGUP:
+				stateInput == FORM_ContentC;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentC;
 				break;
 
 			case TAB:
@@ -331,6 +363,14 @@ void ContentInputQuestion::createData()
 				stateInput = FORM_EXIT;
 				break;
 
+			case PGUP:
+				stateInput == FORM_ContentC;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentC;
+				break;
+
 			case TAB:
 				stageExit = 0;
 				stateInput = FORM_EXIT;
@@ -369,6 +409,14 @@ void ContentInputQuestion::createData()
 			case ESC:
 				stageExit = 1;
 				stateInput = FORM_EXIT;
+				break;
+
+			case PGUP:
+				stateInput == FORM_ContentAnswer;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentAnswer;
 				break;
 
 			case TAB:
@@ -472,6 +520,14 @@ void ContentInputQuestion::editData()
 				stateInput = FORM_EXIT;
 				break;
 
+			case PGUP:
+				stateInput == FORM_ContentMain;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentMain;
+				break;
+
 			case TAB:
 				stageExit = 0;
 				stateInput = FORM_EXIT;
@@ -507,6 +563,14 @@ void ContentInputQuestion::editData()
 			case ESC:
 				stageExit = 1;
 				stateInput = FORM_EXIT;
+				break;
+
+			case PGUP:
+				stateInput == FORM_ContentA;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentA;
 				break;
 
 			case TAB:
@@ -550,6 +614,14 @@ void ContentInputQuestion::editData()
 				stateInput = FORM_EXIT;
 				break;
 
+			case PGUP:
+				stateInput == FORM_ContentB;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentB;
+				break;
+
 			case TAB:
 				stageExit = 0;
 				stateInput = FORM_EXIT;
@@ -589,6 +661,14 @@ void ContentInputQuestion::editData()
 			case ESC:
 				stageExit = 1;
 				stateInput = FORM_EXIT;
+				break;
+
+			case PGUP:
+				stateInput == FORM_ContentC;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentC;
 				break;
 
 			case TAB:
@@ -631,6 +711,14 @@ void ContentInputQuestion::editData()
 				stateInput = FORM_EXIT;
 				break;
 
+			case PGUP:
+				stateInput == FORM_ContentD;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentD;
+				break;
+
 			case TAB:
 				stageExit = 0;
 				stateInput = FORM_EXIT;
@@ -670,6 +758,14 @@ void ContentInputQuestion::editData()
 			case ESC:
 				stageExit = 1;
 				stateInput = FORM_EXIT;
+				break;
+
+			case PGUP:
+				stateInput == FORM_ContentAnswer;
+				break;
+
+			case PGDN:
+				stateInput == FORM_ContentAnswer;
 				break;
 
 			case TAB:

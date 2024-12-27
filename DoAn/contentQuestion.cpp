@@ -470,6 +470,18 @@ void ContentQuestion::findData()
 				}
 			}
 
+			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+			{
+				currentQuestion = C_SELECT;
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+			{
+				currentQuestion = C_SELECT;
+				return;
+			}
+
 			if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
 			{
 				currentQuestion = C_EXIT;
