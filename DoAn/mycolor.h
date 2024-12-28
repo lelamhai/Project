@@ -19,7 +19,7 @@ enum ColorState {
 	ColorCode_Red			= 12,
 	ColorCode_Pink			= 13,
 	ColorCode_Yellow		= 14,
-	ColorCode_White			= 15
+	ColorCode_White			= 7//15
 };
 
 void setColorText(int ColorState);
