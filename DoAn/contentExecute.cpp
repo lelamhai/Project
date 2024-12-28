@@ -28,9 +28,10 @@ void ContentExecute::drawContent()
 	cout << "ESC: Tro Lai";
 	box(DISTANCE_SIDEBAR + MARGIN, DISTANCE_HEADER + PADDING, WIDTH_INPUT - 5, HEIGHT_INPUT);
 
-	int titleTime = getCenterX(COLUMN_CENTER, 26);
-	gotoXY(DISTANCE_SIDEBAR + titleTime, DISTANCE_HEADER + PADDING + PADDING);
-	cout << "Thoi Gian Lam Bai: " << time << " Phut";
+	string titleTimer = "Thoi Gian Lam Bai : " + to_string(time) + " Phut";
+	int timePosX = getCenterX(COLUMN_CENTER, titleTimer.length());
+	gotoXY(DISTANCE_SIDEBAR + MARGIN + timePosX, DISTANCE_HEADER + PADDING + PADDING);
+	cout << titleTimer;
 
 	string formatTime = "(Gio:Phut)";
 	int posXTime = getCenterX(COLUMN_CENTER, formatTime.length());
