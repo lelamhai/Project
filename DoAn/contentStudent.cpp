@@ -62,6 +62,7 @@ void ContentStudent::drawClassroom()
 		posXRight = y + (i * 4);
 	}
 
+	listInput[0].notUseSpace = true;
 	listInput[0].setMinLen(LENGTH_CODE);
 	listInput[4].setMinLen(LENGTH_CODE);
 
