@@ -365,8 +365,14 @@ void ContentStudent::selectData()
 			int posX = 3;
 			int i = 0;
 
-			studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
+			ManageClass test;
+			StudentPage studentPage = test.searchStudentInCLass(classCode, textSearch, pageNumber);
 			PTRSTUDENT temp = studentPage.studentList;
+
+			if (temp == nullptr)
+			{
+				cleanTable();
+			}
 
 			while (temp != nullptr) 
 			{
@@ -840,8 +846,7 @@ void ContentStudent::deleteData()
 
 		if (pDelete.getResult())
 		{
-			ManageClass test;
-			bool result = test.deleteStudentInClass(classCode.c_str(), studentCode.c_str());//nl.deleteClass(classCode.c_str());
+			bool result = classes.deleteStudentInClass(classCode.c_str(), studentCode.c_str());
 			if (result)
 			{
 				hover = 0;
