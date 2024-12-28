@@ -283,7 +283,7 @@ bool ManageClass::addStudentToClass(const string classCode, const string student
 {
     int index = findClass(classCode.c_str()); // Check is classCode exist
     if (index == -1) return false;
-    if (findStudentInList(classes[index]->studentList, studentCode.c_str()) != nullptr) return false; //Check is student code e st in class
+    if (isStudentExist(studentCode)) return false; //Check is student code e st in class
     
     Student std1;
     strcpy_s(std1.studentCode, studentCode.c_str());

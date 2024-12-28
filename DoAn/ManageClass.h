@@ -25,6 +25,7 @@ class ManageClass
 private:
 	Classroom* classes[MAX_NUMBER_CLASS];
 	int countClass = 0;
+
 public:
 	ManageClass();
 	~ManageClass();

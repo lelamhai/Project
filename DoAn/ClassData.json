@@ -6,6 +6,14 @@
             "className": "D24TXCN01K",
             "students": [
                 {
+                    "firstName": "HAI",
+                    "gender": 77,
+                    "lastName": "LELAM",
+                    "password": "12345678",
+                    "scores": [],
+                    "studentCode": "LELAMHAI"
+                },
+                {
                     "firstName": "TRUONG",
                     "gender": 70,
                     "lastName": "THANH HUONG",
