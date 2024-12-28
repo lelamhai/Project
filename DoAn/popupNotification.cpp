@@ -8,6 +8,11 @@ PopupNotification::~PopupNotification()
 {
 }
 
+void PopupNotification::setEnterHandled(bool flag)
+{
+	this->enterHandled = flag;
+}
+
 void PopupNotification::open()
 {
 	content();
@@ -26,7 +31,13 @@ void PopupNotification::handle()
 {
 	while (true)
 	{
-		if (GetAsyncKeyState(VK_RETURN))
+		if (!enterHandled)
+		{
+			enterHandled = true;
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_RETURN) & 0x0001)
 		{
 			return;
 		}

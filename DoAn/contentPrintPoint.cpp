@@ -330,6 +330,19 @@ void ContentPrintPoint::selectData()
 				currentPrint = C_DETAIL;
 				return;
 			}
+			else
+			{
+				int deletePosX = getCenterX(COLUMN_CENTER, 50);
+				PopupNotification pNotification;
+				pNotification.setEnterHandled(false);
+				pNotification.setTitle("Sinh vien nay chua thi");
+				pNotification.setPosition(deletePosX + 30, 17);
+				pNotification.open();
+				pNotification.handle();
+				pNotification.close();
+				lastHover = -1;
+			}
+			Sleep(150);
 		}
 
 		if (GetAsyncKeyState(VK_TAB) & 0x8000)
