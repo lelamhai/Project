@@ -336,7 +336,7 @@ void ContentPrintPoint::selectData()
 				PopupNotification pNotification;
 				pNotification.setEnterHandled(false);
 				pNotification.setTitle("Sinh vien nay chua thi");
-				pNotification.setPosition(deletePosX + 30, 17);
+				pNotification.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
 				pNotification.open();
 				pNotification.handle();
 				pNotification.close();

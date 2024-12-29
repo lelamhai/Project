@@ -33,6 +33,7 @@
 #define NOTIFICATION_UPDATE_FINISH "Cap Nhat Thong Tin Thanh Cong."
 #define NOTIFICATION_UPDATE_FAIL "Cap Nhat Thong Tin That Bai."
 #define NOTIFICATION_DELETE "Ban Co Muon Xoa Du Lieu Nay Khong?"
+#define NOTIFICATION_NOT_DELETE "Du lieu nay khong the xoa duoc!"
 
 #define SUBJECT_CODE "Ma Mon Hoc Khong Ton Tai!"
 #define CLASSROOM_CODE "Ma Lop Khong Ton Tai!"

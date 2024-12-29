@@ -373,15 +373,15 @@ void ContentQuestion::deleteData()
 	if (!isQuestionCanDelete)
 	{
 		PopupNotification pNotification;
-		pNotification.setTitle("Du lieu nay khong the xoa duoc!");
-		pNotification.setPosition(deletePosX + 30, 17);
+		pNotification.setTitle(NOTIFICATION_NOT_DELETE);
+		pNotification.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
 		pNotification.open();
 		pNotification.handle();
 		pNotification.close();
 	}
 	else {
 		PopupComfirm pDelete;
-		pDelete.setPosition(deletePosX + 30, 17);
+		pDelete.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
 		pDelete.open();
 		pDelete.handle();
 

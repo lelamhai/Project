@@ -347,8 +347,8 @@ void ContentSubject::deleteData()
 	if (countQuestion > 0)
 	{
 		PopupNotification pNotification;
-		pNotification.setTitle("Du lieu nay khong the xoa duoc!");
-		pNotification.setPosition(deletePosX + 30, 17);
+		pNotification.setTitle(NOTIFICATION_NOT_DELETE);
+		pNotification.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
 		pNotification.open();
 		pNotification.handle();
 		pNotification.close();
@@ -519,7 +519,7 @@ void ContentSubject::createData()
 				ToastMessage m;
 				m.setFrame(50, 5);
 				m.setTitle(NOTIFICATION_INSERT_FINISH);
-				m.setPosition(posX + 30, 17);
+				m.setPosition(DISTANCE_SIDEBAR + MARGIN + posX, 17);
 				m.open();
 				m.close();
 				indexTree = 0;

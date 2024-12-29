@@ -307,7 +307,7 @@ void ContentExecute::executeExam()
 			PopupComfirm* p = new PopupComfirm();
 			p->setTitle("Ban co muon nop bai thi khong?");
 			int x = getCenterX(COLUMN_CENTER, 50);
-			p->setPosition(deletePosX + 30, 17);
+			p->setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
 			p->open();
 			p->handle();
 			if (p->getResult())

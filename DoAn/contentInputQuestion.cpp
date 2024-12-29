@@ -447,7 +447,7 @@ void ContentInputQuestion::createData()
 				ToastMessage m;
 				m.setFrame(50, 5);
 				m.setTitle(NOTIFICATION_INSERT_FINISH);
-				m.setPosition(posX + 30, 17);
+				m.setPosition(DISTANCE_SIDEBAR + MARGIN + posX, 17);
 				m.open();
 				m.close();
 				cleanInput();

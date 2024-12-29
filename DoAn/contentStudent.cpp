@@ -799,7 +799,7 @@ void ContentStudent::createData()
 				ToastMessage m;
 				m.setFrame(50, 5);
 				m.setTitle(NOTIFICATION_INSERT_FINISH);
-				m.setPosition(posX + 30, 17);
+				m.setPosition(DISTANCE_SIDEBAR + MARGIN + posX, 17);
 				m.open();
 				m.close();
 				cleanInput();
@@ -831,8 +831,8 @@ void ContentStudent::deleteData()
 	if (!isStudentCanDelete)
 	{
 		PopupNotification pNotification;
-		pNotification.setTitle("Du lieu nay khong the xoa duoc!");
-		pNotification.setPosition(deletePosX + 30, 17);
+		pNotification.setTitle(NOTIFICATION_NOT_DELETE);
+		pNotification.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX , 17);
 		pNotification.open();
 		pNotification.handle();
 		pNotification.close();
@@ -840,7 +840,7 @@ void ContentStudent::deleteData()
 	else
 	{
 		PopupComfirm pDelete;
-		pDelete.setPosition(deletePosX + 30, 17);
+		pDelete.setPosition(DISTANCE_SIDEBAR + MARGIN + deletePosX, 17);
 		pDelete.open();
 		pDelete.handle();
 
@@ -1433,7 +1433,7 @@ void ContentStudent::showTutorial()
 	int posX = getCenterX(120, 50);
 	PopupTutorial pTutorial;
 	pTutorial.setFrame(50, 19);
-	pTutorial.setPosition(posX + 30, 17);
+	pTutorial.setPosition(DISTANCE_SIDEBAR + MARGIN + posX, 17);
 	pTutorial.open();
 	pTutorial.handle();
 	pTutorial.close();
