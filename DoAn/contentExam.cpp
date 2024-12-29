@@ -637,7 +637,7 @@ void ContentExam::findData()
 	stateSearchInput = SEARCH_INPUT;
 	while (true)
 	{
-		gotoXY(DISTANCE_SIDEBAR + MARGIN + 6 + textSearch.length(), DISTANCE_HEADER + 2);
+		gotoXY(DISTANCE_SIDEBAR + MARGIN + 5 + cursorPosition, DISTANCE_HEADER + 2);
 		if (GetAsyncKeyState(VK_F1) & 0x0001)
 		{
 			currentExam = C_SELECT;
@@ -657,6 +657,18 @@ void ContentExam::findData()
 				currentExam = C_EXIT;
 				return;
 			}
+		}
+
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		{
+			currentExam = C_SELECT;
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			currentExam = C_SELECT;
+			return;
 		}
 
 		char s = _getch();

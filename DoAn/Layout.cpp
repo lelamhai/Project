@@ -70,11 +70,8 @@ void Layout::templateMenu()
         if (GetAsyncKeyState(VK_PRIOR) & 0x0001)
         {
             showCur(0);
-            if (hover < 0)
+            if (hover > 0)
             {
-                hover = menu.size() - 1;
-            }
-            else {
                 hover -= 1;
             }
 
@@ -84,11 +81,7 @@ void Layout::templateMenu()
         if (GetAsyncKeyState(VK_NEXT) & 0x0001)
         {
             showCur(0);
-            if (hover > menu.size() - 1)
-            {
-                hover = 0;
-            }
-            else 
+            if (hover < menu.size() - 1)
             {
                 hover += 1;
             }
@@ -96,22 +89,21 @@ void Layout::templateMenu()
             Singleton::getInstance()->moveMenu += 1;
         }
 
-        if (GetAsyncKeyState(VK_TAB) & 0x0001 && active != hover)
+        if (GetAsyncKeyState(VK_TAB) && active != hover)
         {
             int count = menu.size();
             if (hover == count - 2)
             {
-                choice = hover;
+                choice = QUIT;
                 Sleep(50);
                 return;
             }
 
             if (hover == count - 1)
             {
-                clrscr();
-                gotoXY(0, 0);
-                setColorText(ColorCode_DarkWhite);
-                exit(0);
+                choice = EXIT;
+                Sleep(50);
+                return;
             }
 
             active = hover;
@@ -218,14 +210,23 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
                 delete p;
                 Singleton::getInstance()->moveMenu = 0;
             }
+        }
 
-            if (choice == 5)
-            {
-                showCur(0);
-                cleanContent();
-                Singleton::getInstance()->moveMenu = 0;
-                return 0;
-            }
+        if (choice == 5)
+        {
+            showCur(0);
+            cleanContent();
+            Singleton::getInstance()->moveMenu = 0;
+            return 0;
+        }
+
+        if (choice == -1)
+        {
+            showCur(0);
+            clrscr();
+            gotoXY(0,0);
+            setColorText(ColorCode_DarkWhite);
+            exit(0);
         }
     }
     return 0;

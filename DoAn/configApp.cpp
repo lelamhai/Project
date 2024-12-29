@@ -2,8 +2,7 @@
 
 void init()
 {
-	setDefualtBT();
-	setSizeWindow(1710,910);
+	setSizeWindow(1920, 1080);
 	blockResizeWindow();
 	removeScroll();
 }

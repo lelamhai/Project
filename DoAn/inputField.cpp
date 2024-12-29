@@ -53,6 +53,7 @@ void InputField::clean()
 
 void InputField::handleInput()
 {
+	showCur(1);
 	int count;
 	cursorPosition = inputString.length();
 	gotoXY(x + 1 + cursorPosition, y + 1);
@@ -200,6 +201,20 @@ void InputField::handleInput()
 		if (GetAsyncKeyState(VK_ESCAPE) & 0x0001)
 		{
 			keyInput = ESC;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+		{
+			keyInput = PGUP;
+			Sleep(150);
+			return;
+		}
+
+		if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+		{
+			keyInput = PGDN;
 			Sleep(150);
 			return;
 		}

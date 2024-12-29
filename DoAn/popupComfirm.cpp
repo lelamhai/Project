@@ -98,6 +98,8 @@ void PopupComfirm::createButtonNo()
 	gotoXY(getPosX() + 13, getPosY() + getHeight() - 5 + 1);
 	cout << NO;
 	textbk(ColorCode_Back);
+
+	result = false;
 }
 
 void PopupComfirm::createButtonYes()
@@ -110,6 +112,8 @@ void PopupComfirm::createButtonYes()
 	textbk(ColorCode_DarkBlue);
 	cout << YES;
 	textbk(ColorCode_Back);
+
+	result = true;
 }
 
 bool PopupComfirm::getResult()

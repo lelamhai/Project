@@ -445,7 +445,7 @@ void ContentQuestion::findData()
 	{
 		if (stateSearchInput == SEARCH_INPUT)
 		{
-			gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT + 1 + textSearch.length(), DISTANCE_HEADER + PADDING + 1);
+			gotoXY(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER - WIDTH_INPUT + 1 + cursorPosition, DISTANCE_HEADER + PADDING + 1);
 
 			if (GetAsyncKeyState(VK_F1) & 0x0001)
 			{
@@ -468,6 +468,18 @@ void ContentQuestion::findData()
 					currentQuestion = C_EXIT;
 					return;
 				}
+			}
+
+			if (GetAsyncKeyState(VK_PRIOR) & 0x8000)
+			{
+				currentQuestion = C_SELECT;
+				return;
+			}
+
+			if (GetAsyncKeyState(VK_NEXT) & 0x8000)
+			{
+				currentQuestion = C_SELECT;
+				return;
 			}
 
 			if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)

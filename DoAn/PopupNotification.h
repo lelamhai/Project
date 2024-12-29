@@ -4,9 +4,10 @@
 class PopupNotification:public Popup
 {
 private:
-	
+	bool enterHandled = true;
 
 public:
+	void setEnterHandled(bool flag);
 	void open();
 	void createButtonEnter();
 	void handle();

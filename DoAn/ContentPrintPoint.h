@@ -7,6 +7,7 @@
 
 #include "ManageScore.h"
 
+#include "PopupNotification.h"
 #include "ContentHistoryExam.h"
 #include "Text.h"
 #include "InputField.h"

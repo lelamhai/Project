@@ -267,6 +267,9 @@
     <ClCompile Include="toastMessage.cpp">
       <Filter>Source Files\FE\Popups</Filter>
     </ClCompile>
+    <ClCompile Include="contentExit.cpp">
+      <Filter>Source Files\FE\Contents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Loading.h">
@@ -409,6 +412,9 @@
     </ClInclude>
     <ClInclude Include="json.hpp">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentExit.h">
+      <Filter>Header Files\FE\Contents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

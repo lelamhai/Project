@@ -67,7 +67,7 @@ void Login::drawForm()
 		listInput[i].setPosition(posX + 13, y + (i * 4) - 1);
 		listInput[i].drawBox();
 
-		listText[i].setContent(NOTIFICATION_EMPTY);
+		listText[i].setContent(NOTIFICATION_CODE);
 		listText[i].setPosition(posXValidation, y + (i * 4) + 2);
 		listText[i].setColor(ColorCode_DarkYellow);
 
