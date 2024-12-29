@@ -23,7 +23,7 @@ D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageQuestion.cpp;D:\Code\PTIT\CTDL &
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageScore.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ManageScore.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageStudent.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ManageStudent.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageSubject.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\ManageSubject.obj
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popupQuestion.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popupQuestion.obj
+D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popupComfirm.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popupComfirm.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\draw.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\draw.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\footer.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\footer.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\inputField.obj
@@ -31,7 +31,6 @@ D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\InputField.h;D:\Code\PTIT\CTDL & GT\Do
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\page.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\page.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popup.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popup.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\toastMessage.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\toastMessage.obj
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popupFinishExam.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popupFinishExam.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popupNotification.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popupNotification.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popupTutorial.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\popupTutorial.obj
 D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\RandomID.cpp;D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\x64\Debug\RandomID.obj
