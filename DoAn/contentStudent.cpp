@@ -64,6 +64,8 @@ void ContentStudent::drawClassroom()
 
 	listInput[0].notUseSpace = true;
 	listInput[0].setMinLen(LENGTH_CODE);
+
+	listInput[4].notUseSpace = true;
 	listInput[4].setMinLen(LENGTH_CODE);
 
 	lineX(DISTANCE_SIDEBAR + MARGIN + COLUMN_CENTER + MARGIN, DISTANCE_HEADER + PADDING + 2, COLUMN_RIGHT);

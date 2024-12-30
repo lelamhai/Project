@@ -232,7 +232,6 @@ void InputField::handleInput()
 		/*default:
 			break;*/
 		}
-
 		switch (s)
 		{
 		case ADD:
@@ -475,6 +474,11 @@ KeyState InputField::getEndKey()
 
 string InputField::getText()
 {
+	if (!inputString.empty() && inputString.back() == ' ')
+	{
+		inputString.pop_back();
+	}
+
 	return inputString;
 }
 
