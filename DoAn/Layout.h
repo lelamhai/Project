@@ -4,6 +4,7 @@
 #include "sidebar.h"
 #include "footer.h"
 
+#include "ContentExit.h"
 #include "ContentAbout.h"
 #include "ContentClassroom.h"
 #include "ContentStudent.h"

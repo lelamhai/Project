@@ -224,9 +224,10 @@ DWORD WINAPI Layout::templateContent(LPVOID lpParam)
         {
             showCur(0);
             clrscr();
-            gotoXY(0,0);
             setColorText(ColorCode_DarkWhite);
-            exit(0);
+
+            ContentExit* e = new ContentExit();
+            e->displayContent();
         }
     }
     return 0;
