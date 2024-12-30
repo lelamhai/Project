@@ -330,7 +330,7 @@ void ContentClassroom::selectData()
 
 		if (GetAsyncKeyState(VK_DELETE) & 0x8000)
 		{
-			page = nl.getClassPerPage(1);
+			page = nl.getClassPerPage(pageNumber);
 
 			if (page.totalClass <= 0)
 			{
