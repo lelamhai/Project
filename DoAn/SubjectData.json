@@ -1405,6 +1405,11 @@
             "subjectName": "VAT LY 3 VA THI NGHIEM"
         },
         {
+            "questions": [],
+            "subjectCode": "CHUYENTOAN",
+            "subjectName": "CHUYEN TOAN"
+        },
+        {
             "questions": [
                 {
                     "answer": 66,
