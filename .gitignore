@@ -31,3 +31,5 @@
 *.out
 *.app
 *.vs
+DoAn/main.cpp
+x64/
