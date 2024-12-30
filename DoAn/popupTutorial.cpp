@@ -10,8 +10,9 @@ PopupTutorial::~PopupTutorial()
 
 void PopupTutorial::content() 
 {
+	setColorText(ColorCode_DarkBlue);
 	drawColorBg(getWidth(), getHeight(), getPosX(), getPosY());
-	
+
 	string note[] = {
 		"F1: Chon Du Lieu Trong Bang",
 		"F3: Tim Kiem Sinh Vien",
@@ -26,13 +27,15 @@ void PopupTutorial::content()
 		"   F1->Len|Xuong->Del->Trai|Phai"
 	};
 
+	setColorText(ColorCode_DarkWhite);
+	textbk(ColorCode_DarkBlue);
 	int posX = getCenterX(getWidth(), 33);
-	textbk(ColorCode_DarkCyan);
 	for (int i = 0; i < 11; i++)
 	{
 		gotoXY(getPosX() + posX, getPosY() + 2 + i);
 		cout << note[i];
 	}
+	textbk(ColorCode_Back);
 }
 
 void PopupTutorial::open()
@@ -66,8 +69,8 @@ int PopupTutorial::getMenu()
 
 void PopupTutorial::createButtonEnter()
 {
-	textbk(ColorCode_DarkCyan);
 	int posX = getCenterX(getWidth(), 10);
+	textbk(ColorCode_DarkBlue);
 	box(getPosX() + posX, getPosY() + getHeight() - 4, 10, 2);
 	gotoXY(getPosX() + posX + 3, getPosY() + getHeight() - 3);
 	cout << "Enter";
@@ -75,13 +78,6 @@ void PopupTutorial::createButtonEnter()
 
 void PopupTutorial::close()
 {
-	string blankFill;
-	blankFill.resize(getWidth(), ' ');
-
-	for (int i = 0; i < getHeight(); i++)
-	{
-		setColorText(ColorCode_Back);
-		gotoXY(getPosX(), getPosY() + i);
-		cout << blankFill;
-	}
+	textbk(ColorCode_Back);
+	clean();
 }
