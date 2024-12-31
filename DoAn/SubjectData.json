@@ -1405,7 +1405,157 @@
             "subjectName": "VAT LY 3 VA THI NGHIEM"
         },
         {
-            "questions": [],
+            "questions": [                
+                {    "answer": 66,
+                    "content": "KET QUA 1 + 1 =",
+                    "isInExam": false,
+                    "optionA": "1",
+                    "optionB": "2",
+                    "optionC": "3",
+                    "optionD": "4",
+                    "questionId": 70392
+                },
+                {
+                    "answer": 67,
+                    "content": "HINH TAM GIAC CO MAY CANH",
+                    "isInExam": false,
+                    "optionA": "1",
+                    "optionB": "2",
+                    "optionC": "3",
+                    "optionD": "KHONG CO CANH",
+                    "questionId": 10965
+                },
+                {
+                    "answer": 65,
+                    "content": "SO PI BANG BAO NHIEU",
+                    "isInExam": false,
+                    "optionA": "3.14",
+                    "optionB": "3.41",
+                    "optionC": "314",
+                    "optionD": "4.13",
+                    "questionId": 10694
+                },
+                {
+                    "answer": 68,
+                    "content": "KET QUA 12 CHIA 3",
+                    "isInExam": false,
+                    "optionA": "2",
+                    "optionB": "-2",
+                    "optionC": "-4",
+                    "optionD": "4",
+                    "questionId": 10493
+                },
+                {
+                    "answer": 66,
+                    "content": "TINH DIEN TICH HINH VUONG CO CANH BANG 2",
+                    "isInExam": false,
+                    "optionA": "2",
+                    "optionB": "4",
+                    "optionC": "8",
+                    "optionD": "16",
+                    "questionId": 11932
+                },
+                {
+                    "answer": 67,
+                    "content": "TINH DIEN TICH HINH CHU NHAT CO CANH BANG 2 VA 3",
+                    "isInExam": false,
+                    "optionA": "2",
+                    "optionB": "4",
+                    "optionC": "6",
+                    "optionD": "8",
+                    "questionId": 30106
+                },
+                {
+                    "answer": 66,
+                    "content": "CHON SO NGUYEN TO",
+                    "isInExam": false,
+                    "optionA": "8",
+                    "optionB": "13",
+                    "optionC": "16",
+                    "optionD": "20",
+                    "questionId": 80630
+                },
+                {
+                    "answer": 68,
+                    "content": "TIM PHAN SO TOI GIAN",
+                    "isInExam": false,
+                    "optionA": "18/6",
+                    "optionB": "3/15",
+                    "optionC": "2/8",
+                    "optionD": "3/17",
+                    "questionId": 70572
+                },
+                {
+                    "answer": 65,
+                    "content": "TIM SO CHIA HET CHO 3",
+                    "isInExam": false,
+                    "optionA": "36",
+                    "optionB": "20",
+                    "optionC": "100",
+                    "optionD": "200",
+                    "questionId": 70832
+                },
+                {
+                    "answer": 67,
+                    "content": "TIM SO CHIA HET CHO 7",
+                    "isInExam": false,
+                    "optionA": "13",
+                    "optionB": "17",
+                    "optionC": "21",
+                    "optionD": "15",
+                    "questionId": 80646
+                },
+                {
+                    "answer": 68,
+                    "content": "CONG THUC TINH CHU VI HINH TRON",
+                    "isInExam": false,
+                    "optionA": "0.5*R*PI",
+                    "optionB": "0.5*R*PI",
+                    "optionC": "2*D*PI",
+                    "optionD": "2*R*PI",
+                    "questionId": 50394
+                },
+                {
+                    "answer": 66,
+                    "content": "TINH CHU VI HINH VUONG CO CANH BANG 2",
+                    "isInExam": false,
+                    "optionA": "4",
+                    "optionB": "8",
+                    "optionC": "16",
+                    "optionD": "32",
+                    "questionId": 78402
+                },
+                {
+                    "answer": 65,
+                    "content": "TINH CHU VI HINH CHU NHAT CO CANH BANG 2 VA 1",
+                    "isInExam": false,
+                    "optionA": "6",
+                    "optionB": "3",
+                    "optionC": "9",
+                    "optionD": "12",
+                    "questionId": 70684
+                },
+                {
+                    "answer": 66,
+                    "content": "BA CANH TAM GIAC VUONG",
+                    "isInExam": false,
+                    "optionA": "2, 3, 4",
+                    "optionB": "3, 4, 5",
+                    "optionC": "5, 6, 7",
+                    "optionD": "6, 7, 8",
+                    "questionId": 98032
+                },
+                {
+                    "answer": 67,
+                    "content": "DAU LA BA CANH CUA MOT TAM GIAC",
+                    "isInExam": false,
+                    "optionA": "1, 8, 22",
+                    "optionB": "1, 8, 18",
+                    "optionC": "5, 8, 10",
+                    "optionD": "5, 8, 25",
+                    "questionId": 54623
+                }
+            ],
             "subjectCode": "CHUYENTOAN",
             "subjectName": "CHUYEN TOAN"
         },
