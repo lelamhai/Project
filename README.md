@@ -23,3 +23,21 @@
 - Tự động chấm điểm.  
 - Hiển thị kết quả chi tiết: số câu đúng, sai và điểm tổng.  
 - Lưu kết quả vào file để tra cứu sau.
+
+## **Hướng dẫn sử dụng**  
+
+### 1. Biên dịch và chạy chương trình  
+- Sử dụng Dev-C++ hoặc Visual Studio để mở file `main.cpp`.  
+- Biên dịch và chạy chương trình.  
+
+### 2. Quản lý câu hỏi  
+- Chọn tùy chọn "Quản lý câu hỏi" từ menu chính.  
+- Thêm, sửa hoặc xóa câu hỏi trực tiếp.  
+
+### 3. Thi trắc nghiệm  
+- Chọn "Bắt đầu thi" để thực hiện bài thi.  
+- Trả lời câu hỏi trong thời gian giới hạn.  
+
+### 4. Xem kết quả  
+- Sau khi thi xong, kết quả sẽ được hiển thị chi tiết.  
+- Có thể xem lại lịch sử thi qua chức năng "Xem kết quả".
