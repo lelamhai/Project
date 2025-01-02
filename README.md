@@ -41,3 +41,14 @@
 ### 4. Xem kết quả  
 - Sau khi thi xong, kết quả sẽ được hiển thị chi tiết.  
 - Có thể xem lại lịch sử thi qua chức năng "Xem kết quả".
+
+## **Cấu trúc dự án**  
+
+```plaintext
+.
+├── main.cpp         # File chính chạy chương trình
+├── question.cpp     # Quản lý câu hỏi
+├── exam.cpp         # Quản lý bài thi
+├── result.cpp       # Lưu trữ và xem kết quả
+├── data/            # Thư mục lưu trữ câu hỏi và kết quả
+└── README.md        # Tài liệu hướng dẫn
