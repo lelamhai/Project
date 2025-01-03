@@ -52,3 +52,9 @@
 ├── result.cpp       # Lưu trữ và xem kết quả
 ├── data/            # Thư mục lưu trữ câu hỏi và kết quả
 └── README.md        # Tài liệu hướng dẫn
+
+## **Công nghệ sử dụng**  
+- **Ngôn ngữ**: C++.  
+- **IDE**: Dev-C++ hoặc Visual Studio.  
+- **Hệ điều hành**: Windows.  
+- **File lưu trữ**: Text file (`.txt`) để lưu câu hỏi và kết quả thi.
