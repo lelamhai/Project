@@ -1,4 +1,4 @@
-# **Phần mềm thi trắc nghiệm trên console**
+để# **Phần mềm thi trắc nghiệm trên console**
 
 ## **Giới thiệu**  
 Đây là một phần mềm thi trắc nghiệm được viết bằng C++, hiển thị trên giao diện console. Phần mềm hỗ trợ:  
@@ -58,3 +58,8 @@
 - **IDE**: Dev-C++ hoặc Visual Studio.  
 - **Hệ điều hành**: Windows.  
 - **File lưu trữ**: Text file (`.txt`) để lưu câu hỏi và kết quả thi.
+
+## **Tác giả**  
+- **Tên**: Vũ Duy Dũng, Lê Lam Hải, Cao Ngọc Huy 
+- **Email**: duydung1271998@gmail.com 
+- **Liên kết GitHub**: lelamhai/Project
