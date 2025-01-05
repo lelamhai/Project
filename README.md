@@ -63,3 +63,8 @@
 - **Tên**: Vũ Duy Dũng, Lê Lam Hải, Cao Ngọc Huy 
 - **Email**: duydung1271998@gmail.com 
 - **Liên kết GitHub**: lelamhai/Project
+
+## **Tóm tắt**  
+Phần mềm thi trắc nghiệm trên console là một công cụ đơn giản nhưng hiệu quả, được xây dựng để hỗ trợ thi trắc nghiệm nhanh chóng và tiện lợi.  
+
+Cảm ơn bạn đã sử dụng phần mềm!
