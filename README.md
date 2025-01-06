@@ -1,4 +1,4 @@
-để# **Phần mềm thi trắc nghiệm trên console**
+# **Phần mềm thi trắc nghiệm trên console**
 
 ## **Giới thiệu**  
 Đây là một phần mềm thi trắc nghiệm được viết bằng C++, hiển thị trên giao diện console. Phần mềm hỗ trợ:  
@@ -23,6 +23,7 @@
 - Tự động chấm điểm.  
 - Hiển thị kết quả chi tiết: số câu đúng, sai và điểm tổng.  
 - Lưu kết quả vào file để tra cứu sau.
+- In bảng điểm theo danh sách lớp
 
 ## **Hướng dẫn sử dụng**  
 
@@ -35,7 +36,7 @@
 - Thêm, sửa hoặc xóa câu hỏi trực tiếp.  
 
 ### 3. Thi trắc nghiệm  
-- Chọn "Bắt đầu thi" để thực hiện bài thi.  
+- Chọn môn thi số câu hỏi và thời gian để thực hiện bài thi.  
 - Trả lời câu hỏi trong thời gian giới hạn.  
 
 ### 4. Xem kết quả  
