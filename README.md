@@ -23,7 +23,15 @@
 - Tự động chấm điểm.  
 - Hiển thị kết quả chi tiết: số câu đúng, sai và điểm tổng.  
 - Lưu kết quả vào file để tra cứu sau.
-- In bảng điểm theo danh sách lớp
+
+### 4. Quản lý lớp
+- Đọc thêm sửa xóa lớp
+- Thêm sửa xóa sinh viên của lớp
+- In bảng điểm của lớp đó theo môn học
+
+### 5. Quản lý môn học
+- Đọc thêm sửa xóa môn học
+- Tạo các câu hỏi theo môn học
 
 ## **Hướng dẫn sử dụng**  
 
