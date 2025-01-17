@@ -56,10 +56,9 @@
 ```plaintext
 .
 ├── main.cpp         # File chính chạy chương trình
-├── question.cpp     # Quản lý câu hỏi
-├── exam.cpp         # Quản lý bài thi
-├── result.cpp       # Lưu trữ và xem kết quả
-├── data/            # Thư mục lưu trữ câu hỏi và kết quả
+├── ClassData        # Thư mục lưu trữ danh sách lớp
+├── SubjectData      # Thư mục lưu trữ môn học và câu hỏi
+├── ExamRecordData   # Thư mục lưu trữ bài kiểm tra của sinh viên đã làm 
 └── README.md        # Tài liệu hướng dẫn
 
 ## **Công nghệ sử dụng**  
