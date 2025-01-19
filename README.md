@@ -7,6 +7,7 @@
 - Hiển thị bài thi và chấm điểm tự động.  
 
 ## **Mục tiêu**  
+- Quản lý sinh viên các lớp
 - Tạo công cụ giúp người dùng thi trắc nghiệm dễ dàng.  
 - Quản lý câu hỏi và kết quả thi một cách hiệu quả.
   
@@ -40,7 +41,8 @@
 - Biên dịch và chạy chương trình.  
 
 ### 2. Quản lý câu hỏi  
-- Chọn tùy chọn "Quản lý câu hỏi" từ menu chính.  
+- Chọn tùy chọn "Môn học" từ menu chính.
+- Sau đó nhấn Enter vào môn học bạn muốn thêm câu hỏi
 - Thêm, sửa hoặc xóa câu hỏi trực tiếp.  
 
 ### 3. Thi trắc nghiệm  
