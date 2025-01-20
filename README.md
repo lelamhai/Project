@@ -75,6 +75,7 @@
 - **Liên kết GitHub**: lelamhai/Project
 
 ## **Tóm tắt**  
-Phần mềm thi trắc nghiệm trên console là một công cụ đơn giản nhưng hiệu quả, được xây dựng để hỗ trợ thi trắc nghiệm nhanh chóng và tiện lợi.  
+Phần mềm thi trắc nghiệm trên console là một công cụ đơn giản nhưng hiệu quả, được xây dựng để hỗ trợ thi trắc nghiệm nhanh chóng và tiện lợi.
+Có khả năng lưu trữ và sử dụng lâu dài!
 
 Cảm ơn bạn đã sử dụng phần mềm!
