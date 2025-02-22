@@ -1,1 +1,104 @@
-[]
+[
+    {
+        "Answered": [
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "C",
+                "questionId": 94328
+            },
+            {
+                "chosenAnswer": "D",
+                "correctAnswer": "C",
+                "questionId": 98243
+            },
+            {
+                "chosenAnswer": "C",
+                "correctAnswer": "B",
+                "questionId": 18234
+            },
+            {
+                "chosenAnswer": "C",
+                "correctAnswer": "C",
+                "questionId": 39458
+            },
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "D",
+                "questionId": 29384
+            }
+        ],
+        "countCorrect": 1,
+        "score": 20.0,
+        "studentCode": "K24DTCN010",
+        "subjectCode": "BAS1150",
+        "totalQuestion": 5
+    },
+    {
+        "Answered": [
+            {
+                "chosenAnswer": "B",
+                "correctAnswer": "C",
+                "questionId": 85124
+            },
+            {
+                "chosenAnswer": "B",
+                "correctAnswer": "C",
+                "questionId": 46258
+            },
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "D",
+                "questionId": 56432
+            },
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "D",
+                "questionId": 79418
+            },
+            {
+                "chosenAnswer": "B",
+                "correctAnswer": "B",
+                "questionId": 85249
+            }
+        ],
+        "countCorrect": 1,
+        "score": 20.0,
+        "studentCode": "K24DTCN010",
+        "subjectCode": "BAS1201",
+        "totalQuestion": 5
+    },
+    {
+        "Answered": [
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "B",
+                "questionId": 57138
+            },
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "C",
+                "questionId": 76984
+            },
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "B",
+                "questionId": 57493
+            },
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "B",
+                "questionId": 73245
+            },
+            {
+                "chosenAnswer": "A",
+                "correctAnswer": "B",
+                "questionId": 51688
+            }
+        ],
+        "countCorrect": 0,
+        "score": 0.0,
+        "studentCode": "K24DTCN010",
+        "subjectCode": "BAS1203",
+        "totalQuestion": 5
+    }
+]

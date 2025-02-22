@@ -1,202 +1,253 @@
 ﻿  ClassroomSevice.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ClassroomSevice.cpp(85,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\ClassroomSevice.cpp(85,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   color.cpp
   configApp.cpp
   content.cpp
   contentAbout.cpp
   contentClassroom.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(39,65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(135,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(139,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(143,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(381,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(385,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(390,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(654,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(660,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(710,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(739,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(787,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(791,73): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentClassroom.cpp(796,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(39,65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(135,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(139,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(143,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(381,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(385,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(390,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(444,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(448,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(500,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(504,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(639,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(643,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(679,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(747,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(776,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(824,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(828,73): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentClassroom.cpp(833,46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  contentExit.cpp
+D:\PTIT\CTDL & GT\Project\DoAn\contentExit.cpp(33,61): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExit.cpp(42,62): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   contentStudent.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(132,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(136,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(140,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(144,43): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(148,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(379,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(383,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(387,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(395,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(1140,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(1146,71): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(1203,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(1232,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(1261,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(1265,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(1269,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(1277,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentStudent.cpp(1337,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(135,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(139,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(143,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(147,43): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(151,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(388,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(392,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(396,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(404,38): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(477,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(481,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(543,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(547,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(608,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(612,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(678,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(682,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(765,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(769,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(932,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(936,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(998,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1002,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1071,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1075,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1155,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1159,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1219,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1225,71): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1294,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1323,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1352,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1356,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1360,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1368,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentStudent.cpp(1428,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   contentExam.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp(144,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp(148,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp(152,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp(636,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp(640,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp(687,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp(719,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp(764,35): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExam.cpp(768,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExam.cpp(144,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExam.cpp(148,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExam.cpp(152,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExam.cpp(636,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExam.cpp(699,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExam.cpp(731,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExam.cpp(776,35): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExam.cpp(780,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   contentExecute.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(36,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(38,59): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(42,87): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(45,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(48,84): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentExecute.cpp(51,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExecute.cpp(32,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExecute.cpp(37,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExecute.cpp(39,59): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExecute.cpp(43,87): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExecute.cpp(46,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExecute.cpp(49,84): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentExecute.cpp(52,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   contentFilterPoint.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(142,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(146,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(161,55): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(165,57): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(569,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(573,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(753,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(757,73): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(787,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(793,69): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(847,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(877,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(892,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(896,76): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(947,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(979,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(1005,35): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentFilterPoint.cpp(1009,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(142,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(146,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(161,55): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(165,57): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(569,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(573,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(753,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(757,73): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(787,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(793,69): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(860,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(890,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(905,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(973,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(1005,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(1031,35): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentFilterPoint.cpp(1035,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   contentInputQuestion.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentInputQuestion.cpp(38,92): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentInputQuestion.cpp(105,91): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(38,92): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(105,91): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(175,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(179,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(223,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(227,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(271,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(275,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(319,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(323,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(367,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(371,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(415,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(419,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(524,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(528,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(569,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(573,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(618,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(622,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(667,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(671,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(715,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(719,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(764,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentInputQuestion.cpp(768,16): warning C4553: '==': result of expression not used; did you intend '='?
   contentPrintPoint.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(136,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(140,47): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(144,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(148,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(152,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(358,15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(362,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(366,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(370,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(402,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(408,71): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(459,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(487,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(508,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(512,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentPrintPoint.cpp(516,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(136,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(140,47): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(144,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(148,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(152,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(371,15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(375,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(379,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(383,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(415,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(484,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(512,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(535,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(539,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentPrintPoint.cpp(543,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   contentQuestion.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(99,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(103,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(107,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(111,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(115,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(119,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(123,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(326,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(442,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(448,71): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(504,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(533,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(579,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentQuestion.cpp(621,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(99,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(103,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(107,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(111,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(115,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(119,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(123,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(326,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(442,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(516,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(545,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(591,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentQuestion.cpp(633,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   contentHistoryExam.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentHistoryExam.cpp(34,91): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentHistoryExam.cpp(36,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentHistoryExam.cpp(40,115): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentHistoryExam.cpp(42,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentHistoryExam.cpp(46,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentHistoryExam.cpp(48,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentHistoryExam.cpp(52,117): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentHistoryExam.cpp(54,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentHistoryExam.cpp(34,91): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentHistoryExam.cpp(36,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentHistoryExam.cpp(40,115): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentHistoryExam.cpp(42,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentHistoryExam.cpp(46,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentHistoryExam.cpp(48,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentHistoryExam.cpp(52,117): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentHistoryExam.cpp(54,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   contentSubject.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp(126,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp(130,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp(134,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp(627,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp(631,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp(678,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp(710,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp(736,35): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\contentSubject.cpp(740,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(126,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(130,44): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(134,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(430,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(434,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(492,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(496,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(599,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(603,16): warning C4553: '==': result of expression not used; did you intend '='?
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(650,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(713,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(745,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(771,35): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\contentSubject.cpp(775,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   ContentSubject.h
   DungTest.cpp
   HuyTest.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\HuyTest.cpp(84,11): warning C4566: character represented by universal-character-name '\u1EEF' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\HuyTest.cpp(84,11): warning C4566: character represented by universal-character-name '\u1EC7' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\HuyTest.cpp(84,11): warning C4566: character represented by universal-character-name '\u01B0' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\HuyTest.cpp(134,7): warning C4101: 'studentCode': unreferenced local variable
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\HuyTest.cpp(133,7): warning C4101: 'subjectCode_input': unreferenced local variable
+D:\PTIT\CTDL & GT\Project\DoAn\HuyTest.cpp(84,11): warning C4566: character represented by universal-character-name '\u1EEF' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\HuyTest.cpp(84,11): warning C4566: character represented by universal-character-name '\u1EC7' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\HuyTest.cpp(84,11): warning C4566: character represented by universal-character-name '\u01B0' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\HuyTest.cpp(134,7): warning C4101: 'studentCode': unreferenced local variable
+D:\PTIT\CTDL & GT\Project\DoAn\HuyTest.cpp(133,7): warning C4101: 'subjectCode_input': unreferenced local variable
   LoadingData.cpp
-  LoginData.cpp
   Generating Code...
   Compiling...
+  LoginData.cpp
   ManageClass.cpp
   ManageQuestion.cpp
   ManageScore.cpp
   ManageStudent.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageStudent.cpp(414,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\ManageStudent.cpp(414,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   ManageSubject.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageSubject.cpp(442,17): warning C4566: character represented by universal-character-name '\u1EA5' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageSubject.cpp(442,17): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u1ED1' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u01B0' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u1EE3' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u1ECF' cannot be represented in the current code page (1252)
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u1ED5' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(442,17): warning C4566: character represented by universal-character-name '\u1EA5' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(442,17): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u1ED1' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u01B0' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u1EE3' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u1ECF' cannot be represented in the current code page (1252)
+D:\PTIT\CTDL & GT\Project\DoAn\ManageSubject.cpp(448,17): warning C4566: character represented by universal-character-name '\u1ED5' cannot be represented in the current code page (1252)
   popupComfirm.cpp
   draw.cpp
   footer.cpp
   inputField.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(57,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(176,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(298,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(327,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(362,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(389,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(418,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(447,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\inputField.cpp(56,6): warning C4101: 'count': unreferenced local variable
+D:\PTIT\CTDL & GT\Project\DoAn\inputField.cpp(58,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\inputField.cpp(177,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\inputField.cpp(312,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\inputField.cpp(341,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\inputField.cpp(376,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\inputField.cpp(403,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\inputField.cpp(432,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\inputField.cpp(461,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\inputField.cpp(57,6): warning C4101: 'count': unreferenced local variable
   InputField.h
   page.cpp
   popup.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\popup.cpp(58,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\popup.cpp(58,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   toastMessage.cpp
   popupNotification.cpp
   popupTutorial.cpp
   RandomID.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\RandomID.cpp(23,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\RandomID.cpp(89,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\RandomID.cpp(23,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\RandomID.cpp(89,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   sidebar.cpp
   header.cpp
   keyboard.cpp
-  loading.cpp
   Generating Code...
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageClass.cpp(330,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
+D:\PTIT\CTDL & GT\Project\DoAn\ManageClass.cpp(330,1): warning C4715: 'ManageClass::deleteStudentInClass': not all control paths return a value
   Compiling...
+  loading.cpp
   login.cpp
   main.cpp
   Layout.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\Layout.cpp(75,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\Layout.cpp(101,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\Layout.cpp(94,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   singleton.cpp
   ManageExam.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\ManageExam.cpp(258,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\ManageExam.cpp(258,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   StudentList.cpp
   StudentService.cpp
   text.cpp
-D:\Code\PTIT\CTDL & GT\Do An\Project\DoAn\text.cpp(29,23): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+D:\PTIT\CTDL & GT\Project\DoAn\text.cpp(29,23): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   windows.cpp
   Generating Code...
 x64\Debug\ContentSubject.obj : warning LNK4042: object specified more than once; extras ignored
 x64\Debug\InputField.obj : warning LNK4042: object specified more than once; extras ignored
-  DoAn.vcxproj -> D:\Code\PTIT\CTDL & GT\Do An\Project\x64\Debug\DoAn.exe
+  DoAn.vcxproj -> D:\PTIT\CTDL & GT\Project\x64\Debug\DoAn.exe

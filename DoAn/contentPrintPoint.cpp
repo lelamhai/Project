@@ -325,7 +325,7 @@ void ContentPrintPoint::selectData()
 
 		if (GetAsyncKeyState(VK_RETURN))
 		{
-			if (point > 0)
+			if (point >= 0)
 			{
 				currentPrint = C_DETAIL;
 				return;

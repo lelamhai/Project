@@ -18,7 +18,20 @@
                     "gender": 77,
                     "lastName": "VAN DAI",
                     "password": "123456789",
-                    "scores": [],
+                    "scores": [
+                        {
+                            "score": 0.0,
+                            "subjectCode": "BAS1203"
+                        },
+                        {
+                            "score": 20.0,
+                            "subjectCode": "BAS1201"
+                        },
+                        {
+                            "score": 20.0,
+                            "subjectCode": "BAS1150"
+                        }
+                    ],
                     "studentCode": "K24DTCN010"
                 },
                 {

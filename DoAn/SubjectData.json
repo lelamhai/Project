@@ -483,7 +483,7 @@
                 {
                     "answer": 67,
                     "content": "THEO TRIET HOC MAC LENIN, VAT CHAT DUOC HIEU LA GI",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "HINH THUC TON TAI KHONG GIAN VA THOI GIAN",
                     "optionB": "THUC TAI KHACH QUAN DUOC PHAN ANH VA TON TAI KHI KHONG LE PHU THUOC VAO Y THUC",
                     "optionC": "TAT CA NHUNG GIA TRI CA NHAN VA XA HOI",
@@ -503,7 +503,7 @@
                 {
                     "answer": 67,
                     "content": "TRONG CAC PHAM TRU SAU, DAU LA PHAM TRU CO BAN NHAT CUA TRIET HOC",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "NGUYEN NHAN",
                     "optionB": "VAT CHAT VA Y THUC",
                     "optionC": "KET QUA",
@@ -593,7 +593,7 @@
                 {
                     "answer": 67,
                     "content": "QUAN DIEM MAC LENIN VE VAN DE HINH THAI Y THUC THE HIEN DIEU GI",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "MOI QUAN HE KHACH QUAN GIUA VAT CHAT VA Y THUC",
                     "optionB": "MOI QUAN HE TRUU TUONG GIUA Y CHI CA NHAN",
                     "optionC": "CHU Y THUC DOI LAP VAT CHAT",
@@ -603,7 +603,7 @@
                 {
                     "answer": 68,
                     "content": "THEO LE NIN, MOI TON TAI VAT CHAT PHU THUOC VAO DIEU GI",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "Y THUC KHACH QUAN",
                     "optionB": "DUC TIN CON NGUOI",
                     "optionC": "MOI QUAN HE CONG DONG",
@@ -613,7 +613,7 @@
                 {
                     "answer": 66,
                     "content": "QUY LUAT VAT CHAT BIEN DOI TON TAI THEO NGUYEN TAC NAO",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "KHACH QUAN",
                     "optionB": "MOI QUAN HE KHACH QUAN",
                     "optionC": "KHONG CO TON TAI",
@@ -815,7 +815,7 @@
                 {
                     "answer": 68,
                     "content": "DAU LA DANG TONG QUAT CUA PHUONG TRINH BAC NHAT",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "AX + B = 0",
                     "optionB": "AX^2 + BX + C = 0",
                     "optionC": "A^2 + BX + C = 0",
@@ -855,7 +855,7 @@
                 {
                     "answer": 66,
                     "content": "KET QUA CUA PHEP NHAN MA TRAN LAY THEO DONG VA COT DUOC GOI LA GI",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "TICH MA TRAN",
                     "optionB": "HANG MA TRAN",
                     "optionC": "DONG MA TRAN",
@@ -875,7 +875,7 @@
                 {
                     "answer": 68,
                     "content": "DINH LY NHO NHAT CHO PHEP TINH HANG CUA MA TRAN",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "DINH LY LAPLACE",
                     "optionB": "DINH LY GAUSS",
                     "optionC": "DINH LY FERMAT",
@@ -895,7 +895,7 @@
                 {
                     "answer": 67,
                     "content": "TRONG TAP HOP Z, PHEP CONG VA NHAN CO TINH CHAT GI",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "TUONG HO",
                     "optionB": "GIAO HOAN",
                     "optionC": "HOP NHAT",
@@ -915,7 +915,7 @@
                 {
                     "answer": 67,
                     "content": "SO NAO LA SO NGUYEN TO TRONG CAC SO DUOI DAY",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "12",
                     "optionB": "17",
                     "optionC": "20",
@@ -941,7 +941,7 @@
                 {
                     "answer": 66,
                     "content": "DAO HAM CUA HAM SO Y = X^3 LA GI",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "3X^2",
                     "optionB": "X^2",
                     "optionC": "3X",
@@ -961,7 +961,7 @@
                 {
                     "answer": 66,
                     "content": "DAO HAM CUA HAM SO Y = E^X LA GI",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "E^X",
                     "optionB": "1/E^X",
                     "optionC": "X*E^X",
@@ -991,7 +991,7 @@
                 {
                     "answer": 67,
                     "content": "HAM SO NAO CO DAO HAM BANG 0",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "HAM HANG",
                     "optionB": "HAM BAC NHAT",
                     "optionC": "HAM BAC HAI",
@@ -1031,7 +1031,7 @@
                 {
                     "answer": 66,
                     "content": "HAM SO Y = X^2 CO GIA TRI LON NHAT O DAU TRONG TAP XAC DINH [0, 2]",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "X = 2",
                     "optionB": "X = 1",
                     "optionC": "X = 0",
@@ -1081,7 +1081,7 @@
                 {
                     "answer": 66,
                     "content": "TICH PHAN CUA HAM SO Y = E^X LA GI",
-                    "isInExam": false,
+                    "isInExam": true,
                     "optionA": "E^X + C",
                     "optionB": "E^(X^2) + C",
                     "optionC": "X*E^X + C",
@@ -1405,8 +1405,9 @@
             "subjectName": "VAT LY 3 VA THI NGHIEM"
         },
         {
-            "questions": [                
-                {    "answer": 66,
+            "questions": [
+                {
+                    "answer": 66,
                     "content": "KET QUA 1 + 1 =",
                     "isInExam": false,
                     "optionA": "1",
