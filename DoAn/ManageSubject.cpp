@@ -56,7 +56,9 @@ bool ManageSubject::addQuestionInSubject(const char* subjectCode, const string& 
 
     // Tìm kiếm môn học dựa trên mã môn học
     PTRSUBJECT subject = getSubject(subjectCode);
-
+    if (optionA == optionB || optionA == optionC || optionA == optionD || optionB == optionC || optionB == optionD || optionC == optionD) {
+        return false;
+    }
     if (subject) {
         // Nếu tìm thấy môn học, thêm câu hỏi
         addQuestionToSubject(subject, content, optionA, optionB, optionC, optionD, answer);
@@ -70,6 +72,9 @@ bool ManageSubject::editQuestionInSubject(const string subjectCode, int question
 {
     PTRSUBJECT subjectFound = getSubject(subjectCode.c_str());
     if (subjectFound == nullptr) return false;
+    if (optionA == optionB || optionA == optionC || optionA == optionD || optionB == optionC || optionB == optionD || optionC == optionD) {
+        return false;
+    }
 
     PTRQUESTION questionList = subjectFound->info.listQuestion;
     while (questionList != nullptr) {
