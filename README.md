@@ -77,5 +77,8 @@
 ## **Tóm tắt**  
 Phần mềm thi trắc nghiệm trên console là một công cụ đơn giản nhưng hiệu quả, được xây dựng để hỗ trợ thi trắc nghiệm nhanh chóng và tiện lợi.
 Có khả năng lưu trữ và sử dụng lâu dài!
-
 Cảm ơn bạn đã sử dụng phần mềm!
+
+## **Cập nhật**
+Kiểm tra lại đáp án trùng khi thêm sửa câu hỏi
+Có thể xem lại kết quả trong trường hợp 0 đ (trước đây không được)
